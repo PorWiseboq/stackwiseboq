@@ -15,7 +15,7 @@ The purpose of this repository is for forking and being used with StackBlend pla
   - Staging Branch (Deploy): staging
 7. Click "Update Profile".
 
-## Local testing step:
+## Local testing step
 1. Open command line or terminal with a preferred project directory.
 2. git clone git@github.com:tkomkrit/demo.git
 3. git checkout develop
@@ -23,7 +23,7 @@ The purpose of this repository is for forking and being used with StackBlend pla
 5. npm run build
 6. npm run watch
 
-## Remote testing on Heroku:
+## Remote testing on Heroku
 1. Open StackBlend editor, waiting for loading.
 2. Click on "Deploy" button.
 3. Wait for deployment, not longer than two minutes.
