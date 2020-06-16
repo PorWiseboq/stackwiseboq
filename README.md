@@ -9,11 +9,11 @@ The purpose of this repository is for forking and being used with StackBlend pla
 4. Please logout from your main GitHub account and create a new one, dedicated for this project.
 5. From "GitHub Account", click "Connect to a Developer Account".
 6. Please confirm that the GitHub account is the dedicated one, connect.
-7. Organization Or User Alias = [Your New Dedicated Alias]
-8. Project Name = demo
-9. Develop Branch (Save) = develop
-10. Staging Branch (Deploy) = staging
-11. Click "Update Profile".
+  - Organization Or User Alias: [Your New Dedicated Alias]
+  - Project Nam: demo
+  - Develop Branch (Save): develop
+  - Staging Branch (Deploy): staging
+7. Click "Update Profile".
 
 ## Local testing step:
 1. Open command line or terminal with a preferred project directory.
