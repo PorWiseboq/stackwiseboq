@@ -30,7 +30,7 @@ The purpose of this repository is for forking and being used with StackBlend pla
 4. If there was no problems, the new updates will be visible at: https://conone-demo-staging.herokuapp.com/.
 5. Otherwise, please clone, check, and fix defects using the "Local testing step" but with a branch "staging" instead of the "develop".
 
-## Debugging server
+## Servers and infrastructures
 ### Heroku
 Username : komkrit.apps@gmail.com
 Password : Rccon@3538
