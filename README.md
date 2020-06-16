@@ -10,7 +10,7 @@ The purpose of this repository is for forking and being used with StackBlend pla
 5. From "GitHub Account", click "Connect to a Developer Account".
 6. Please confirm that the GitHub account is the dedicated one, connect.
   - Organization Or User Alias: [Your New Dedicated Alias]
-  - Project Nam: demo
+  - Project Name: demo
   - Develop Branch (Save): develop
   - Staging Branch (Deploy): staging
 7. Click "Update Profile".
