@@ -96,7 +96,7 @@ class Controller extends Base {
           if (error) {
             resolve(null);
           } else if (results.length > 0) {
-            resolve([
+            resolve([{
      		      source: null,
      		      group: 'User',
      		      rows: [{
@@ -107,13 +107,13 @@ class Controller extends Base {
        		      }],
        		      relations: []
      		      }]
-     		    ]);
+     		    }]);
     			} else {
             resolve(null);
     		  }
     		}).bind(this));
  		  } else {
- 		    resolve([
+ 		    resolve([{
  		      source: null,
  		      group: 'User',
  		      rows: [{
@@ -124,7 +124,7 @@ class Controller extends Base {
    		      }],
    		      relations: []
  		      }]
- 		    ]);
+ 		    }]);
  		  }
  		});
   }
@@ -149,7 +149,7 @@ class Controller extends Base {
  		return await DatabaseHelper.update(data);
   }
   
-  protected async delete(data: Input[]): Promise<boolean> {
+  protected async remove(data: Input[]): Promise<boolean> {
  		return await DatabaseHelper.delete(data);
   }
   
