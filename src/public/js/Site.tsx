@@ -6,6 +6,7 @@ import {DataManipulationHelper} from './helpers/DataManipulationHelper.js';
 import {HTMLHelper} from './helpers/HTMLHelper.js';
 import {EventHelper} from './helpers/EventHelper.js';
 import './components/TextElement_05740886.js';
+import './components/LoginControl.js';
 
 declare let React: any;
 declare let ReactDOM: any;
