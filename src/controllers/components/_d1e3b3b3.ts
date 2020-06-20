@@ -168,7 +168,7 @@ class Controller extends Base {
           			  this.request.session.uid = results[0].id;
           				resolve('/');
           			} else {
-          			  reject(new Error('เกิดความผิดพลาดขณะที่กำลังบันทึกลงฐานข้อมูล กรุณาแจ้งผู้ดูแลรักษาระบบ'));
+          			  reject(new Error(`เกิดความผิดพลาดขณะที่กำลังบันทึกลงฐานข้อมูล กรุณาแจ้งผู้ดูแลรักษาระบบ (${error})`));
           			}
           		}).bind(this));
       			}
