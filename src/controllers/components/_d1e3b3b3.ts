@@ -163,14 +163,14 @@ class Controller extends Base {
       				reject(new Error('อีเมล์นี้ได้สมัครใช้งานแล้ว กรุณาเข้าสู่ระบบแทนที่จะสมัคร'));
       			} else {
               const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
-      			  RelationalDatabaseClient.query('INSERT INTO User (email, md5_password) VALUES ?', [this.email, md5Password], function(error, results, fields) {
+      			  RelationalDatabaseClient.query('INSERT INTO User (email, md5_password) VALUES ?', [this.email, md5Password], (function(error, results, fields) {
           			if (!error) {
           			  this.request.session.uid = results[0].id;
           				resolve('/');
           			} else {
           			  reject(new Error('เกิดความผิดพลาดขณะที่กำลังบันทึกลงฐานข้อมูล กรุณาแจ้งผู้ดูแลรักษาระบบ'));
           			}
-          		});
+          		}).bind(this));
       			}
       		});
         }
