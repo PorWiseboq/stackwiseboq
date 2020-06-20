@@ -82,10 +82,10 @@
       }
     ],
     "popups": [],
-    "editingPageID": "62b94b94",
+    "editingPageID": "d1e3b3b2",
     "currentMode": "site",
     "editingComponentID": "5123ea55",
-    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n// ABC\n\n",
+    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n// ABCDE\n\n",
     "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
     "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
     "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async insert(data: Input[]): Promise<HierarchicalDataRow> {\n \t\treturn await DatabaseHelper.insert(data);\n  }\n  \n  protected async update(data: Input[]): Promise<HierarchicalDataRow> {\n \t\treturn await DatabaseHelper.update(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<boolean> {\n \t\treturn await DatabaseHelper.delete(data);\n  }\n  \n  protected async retrieve(data: Input[]): Promise<HierarchicalDataTable> {\n \t\treturn await DatabaseHelper.retrieve(data);\n  }\n  \n  protected async navigate(data: Input[]): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
@@ -178,7 +178,7 @@
         ]
       },
       "extensions": {
-        "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n// ABC\n\n",
+        "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n// ABCDE\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
         "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async insert(data: Input[]): Promise<HierarchicalDataRow> {\n \t\treturn await DatabaseHelper.insert(data);\n  }\n  \n  protected async update(data: Input[]): Promise<HierarchicalDataRow> {\n \t\treturn await DatabaseHelper.update(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<boolean> {\n \t\treturn await DatabaseHelper.delete(data);\n  }\n  \n  protected async retrieve(data: Input[]): Promise<HierarchicalDataTable> {\n \t\treturn await DatabaseHelper.retrieve(data);\n  }\n  \n  protected async navigate(data: Input[]): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
