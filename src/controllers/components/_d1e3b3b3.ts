@@ -168,10 +168,18 @@ class Controller extends Base {
       				reject(new Error('อีเมล์นี้ได้สมัครใช้งานแล้ว กรุณาเข้าสู่ระบบแทนที่จะสมัคร'));
       			} else {
               const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
-      			  RelationalDatabaseClient.query('INSERT INTO User (email, md5_password) VALUES ?', [[this.email, md5Password]], (function(error, results, fields) {
+      			  RelationalDatabaseClient.query('INSERT INTO User (email, md5_password) VALUES ?', [[[this.email, md5Password]]], (function(error, results, fields) {
           			if (!error) {
-          			  this.request.session.uid = results[0].id;
-          				resolve('/');
+          			  RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], (function(error, results, fields) {
+                    if (error) {
+                      reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
+                    } else if (results.length > 0) {
+                      this.request.session.uid = results[0].id;
+          				    resolve('/');
+              			} else {
+              			  reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง`));
+              		  }
+              		}).bind(this));
           			} else {
           			  reject(new Error(`เกิดความผิดพลาดขณะที่กำลังบันทึกลงฐานข้อมูล กรุณาแจ้งผู้ดูแลรักษาระบบ (${error})`));
           			}
