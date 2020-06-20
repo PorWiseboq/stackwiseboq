@@ -15,6 +15,13 @@ const app = express();
 
 // Express configuration
 //
+app.use(session({
+  secret: '&E7gLUZYMFJzzDNmXMXZWyiXDaqN7igA',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+
 app.set("port", process.env.PORT || 8000);
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "pug");
