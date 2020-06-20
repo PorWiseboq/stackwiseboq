@@ -13,6 +13,7 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
+// Update version = 1
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -130,15 +131,15 @@ class Controller extends Base {
   }
   
   protected async post(data: Input[]): Promise<HierarchicalDataTable[]> {
- 		return await DatabaseHelper.post(data);
+ 		return super.post(data);
   }
   
   protected async put(data: Input[]): Promise<HierarchicalDataTable[]> {
- 		return await DatabaseHelper.put(data);
+ 		return super.put(data);
   }
   
   protected async delete(data: Input[]): Promise<HierarchicalDataTable[]> {
- 		return await DatabaseHelper.delete(data);
+ 		return super.delete(data);
   }
   
   protected async insert(data: Input[]): Promise<HierarchicalDataRow> {
