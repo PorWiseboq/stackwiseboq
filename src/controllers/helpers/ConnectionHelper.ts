@@ -24,7 +24,7 @@ if (process.env.VOLATILE_MEMORY_KEY) {
 		host     : connectionURL.host,
 	  user     : connectionURL.username,
 	  password : connectionURL.password,
-	  database : connectionURL.pathname
+	  port     : connectionURL.port
 	});
 }
 if (process.env.RELATIONAL_DATABASE_KEY) {
@@ -33,7 +33,7 @@ if (process.env.RELATIONAL_DATABASE_KEY) {
 	  host     : connectionURL.host,
 	  user     : connectionURL.username,
 	  password : connectionURL.password,
-	  port     : connectionURL.port
+	  database : connectionURL.pathname
 	});
 }
 if (process.env.DOCUMENT_DATABASE_KEY) {
