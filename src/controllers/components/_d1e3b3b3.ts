@@ -187,67 +187,27 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('56aab5e4', undefined, undefined, undefined);
-		ValidationHelper.registerInput('56aab5e4', "Select 1", false, undefined);
-    input = RequestHelper.getInput(request, '56aab5e4');
-    
-    // Override data parsing and manipulation of Select 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('4c3d0546', undefined, undefined, undefined);
-		ValidationHelper.registerInput('4c3d0546', "Select 2", false, undefined);
-    input = RequestHelper.getInput(request, '4c3d0546');
-    
-    // Override data parsing and manipulation of Select 2 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('4e8e63a5', undefined, undefined, undefined);
-		ValidationHelper.registerInput('4e8e63a5', "Textbox 1", false, undefined);
-    input = RequestHelper.getInput(request, '4e8e63a5');
+		RequestHelper.registerInput('74d75b70', "relational", "User", "email");
+		ValidationHelper.registerInput('74d75b70', "Textbox 1", true, "คุณจำเป็นต้องกรอกที่อยู่อีเมล์");
+    input = RequestHelper.getInput(request, '74d75b70');
     
     // Override data parsing and manipulation of Textbox 1 here:
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('e4480a5d', undefined, undefined, undefined);
-		ValidationHelper.registerInput('e4480a5d', "Select 3", false, undefined);
-    input = RequestHelper.getInput(request, 'e4480a5d');
-    
-    // Override data parsing and manipulation of Select 3 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('54e97a43', undefined, undefined, undefined);
-		ValidationHelper.registerInput('54e97a43', "Textbox 2", false, undefined);
-    input = RequestHelper.getInput(request, '54e97a43');
+		RequestHelper.registerInput('74b67c1e', "relational", "User", "password");
+		ValidationHelper.registerInput('74b67c1e', "Textbox 2", true, "คุณจำเป็นต้องกรอกรหัสผ่าน");
+    input = RequestHelper.getInput(request, '74b67c1e');
     
     // Override data parsing and manipulation of Textbox 2 here:
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('c9099404', undefined, undefined, undefined);
-		ValidationHelper.registerInput('c9099404', "Checkbox 1", false, undefined);
-    input = RequestHelper.getInput(request, 'c9099404');
+		RequestHelper.registerInput('d40a4961', "relational", "User", "confirm");
+		ValidationHelper.registerInput('d40a4961', "Textbox 3", true, "คุณจำเป็นต้องยืนยันรหัสผ่าน");
+    input = RequestHelper.getInput(request, 'd40a4961');
     
-    // Override data parsing and manipulation of Checkbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('8d4d7ae1', undefined, undefined, undefined);
-		ValidationHelper.registerInput('8d4d7ae1', "Checkbox 2", false, undefined);
-    input = RequestHelper.getInput(request, '8d4d7ae1');
-    
-    // Override data parsing and manipulation of Checkbox 2 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('3e14ad68', undefined, undefined, undefined);
-		ValidationHelper.registerInput('3e14ad68', "File 1", false, undefined);
-    input = RequestHelper.getInput(request, '3e14ad68');
-    
-    // Override data parsing and manipulation of File 1 here:
+    // Override data parsing and manipulation of Textbox 3 here:
     // 
     
     if (input != null) data.push(input);

@@ -165,7 +165,7 @@ class LoginControl extends Base {
                               <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="437e47b4" style={{'paddingTop': '20px'}}>
                                 <div className="container-fluid">
                                   <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="e968c824" style={{display: (()=>{return (this.state.signning_mode == 'signning_in') ? 'block' : 'none';})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e968c824', 'retrieve', '74d75b70 74b67c1e', ((results: any) => { this.setState({data: results}); }).bind(this)); }).bind(this)}>
+                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="e968c824" style={{display: (()=>{return (this.state.signning_mode == 'signning_in') ? 'block' : 'none';})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e968c824', 'navigate', '74d75b70 74b67c1e', ((results: any) => { this.setState({data: results}); }).bind(this)); }).bind(this)}>
                                       <div className="internal-fsb-element" internal-fsb-guid="e968c824-text">
                                         Continue
                                       </div>
