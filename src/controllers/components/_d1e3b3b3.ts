@@ -158,7 +158,7 @@ class Controller extends Base {
       			}
       		});
         } else {
-          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], function(error, results, fields) {
+          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], (function(error, results, fields) {
       			if (!error) {
       				reject(new Error('อีเมล์นี้ได้สมัครใช้งานแล้ว กรุณาเข้าสู่ระบบแทนที่จะสมัคร'));
       			} else {
@@ -172,7 +172,7 @@ class Controller extends Base {
           			}
           		}).bind(this));
       			}
-      		});
+      		}).bind(this));
         }
       }
     });
