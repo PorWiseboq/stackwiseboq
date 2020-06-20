@@ -92,8 +92,8 @@ class Controller extends Base {
   
   protected async get(data: Input[]): Promise<HierarchicalDataTable[]> {
  		return new Promise((resolve, reject) => {
- 		  if (this.request.session.id) {
- 		    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [parseInt(this.request.session.id)], (function(error, results, fields) {
+ 		  if (this.request.session.uid) {
+ 		    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [parseInt(this.request.session.uid)], (function(error, results, fields) {
           if (error) {
             resolve(null);
           } else if (results.length > 0) {
