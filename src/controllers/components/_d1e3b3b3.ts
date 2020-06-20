@@ -3,18 +3,18 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, Input, DatabaseHelper} from "../helpers/DatabaseHelper.js";
-import {ValidationInfo, ValidationHelper} from "../helpers/ValidationHelper.js";
-import {RequestHelper} from "../helpers/RequestHelper.js";
-import {RenderHelper} from "../helpers/RenderHelper.js";
-import {Base} from "./Base.js";
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
+import {RequestHelper} from '../helpers/RequestHelper.js';
+import {RenderHelper} from '../helpers/RenderHelper.js';
+import {Base} from './Base.js';
 
 // <---Auto[Import]
 
 // Import additional modules here:
 //
-import {RelationalDatabaseClient} from "../helpers/ConnectionHelper.js";
-import crypto from "crypto";
+import {RelationalDatabaseClient} from '../helpers/ConnectionHelper.js'
+import crypto from 'crypto';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -75,7 +75,7 @@ class Controller extends Base {
   	super(request, response);
   	
   	try {
-	    const [action, data] = this.initialize(request);
+	    let [action, data] = this.initialize(request);
 	    this.perform(action, data);
    	} catch(error) {
 	  	RenderHelper.error(this.response, error);
@@ -98,7 +98,7 @@ class Controller extends Base {
     let password2 = null;
     for (const item of data) {
         switch (item.validation.name) {
-            case "Textbox 1":
+            case 'Textbox 1':
                 if (!item.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
                     throw new Error("อีเมล์ที่คุณกรอกนั้นไม่ถูกต้อง");
                 }
@@ -107,14 +107,14 @@ class Controller extends Base {
                 }
                 this.email = item.value;
                 break;
-            case "Textbox 2":
+            case 'Textbox 2':
                 if (!item.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
                     throw new Error("รหัสผ่านที่คุณกรอกนั้นไม่ถูกต้อง (ความยาวอย่างน้อย 8 คัวอักษร ประกอบด้วยอย่างน้อยหนึ่งพิมพ์ใหญ่ หนึ่งพิมพ์เล็ก หนึ่งตัวเลขและหนึ่งอักขระพิเศษ)");
                 }
                 password1 = item.value;
                 this.password = item.value;
                 break;
-            case "Textbox 3":
+            case 'Textbox 3':
                 password2 = item.value;
                 break;
         }
@@ -146,33 +146,46 @@ class Controller extends Base {
   protected async navigate(data: Input[]): Promise<string> {
     return new Promise((resolve, reject) => {
       if (this.request.session.uid) {
-        resolve("/");
+        resolve('/');
       } else {
         if (this.signningIn) {
-          const md5Password = crypto.createHash("md5").update(this.password).digest("hex");
-          RelationalDatabaseClient.query("SELECT * FROM User WHERE email = ? and md5_password = ?", [this.email, md5Password], function(error, results, fields) {
-      			if (!error) {
-      				resolve("/");
+          const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
+          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ? and md5_password = ?', [this.email, md5Password], function(error, results, fields) {
+            if (error) {
+              reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
+      			} else if (results.length > 0) {
+      			  this.request.session.uid = results[0].id;
+      				resolve('/');
       			} else {
-      			  reject(new Error("คุณระบุอีเมล์และรหัสผ่านไม่ตรงกับฐานข้อมูล กรุณาลองดูอีกครั้ง"));
+      			  reject(new Error('คุณระบุอีเมล์และรหัสผ่านไม่ตรงกับฐานข้อมูล กรุณาลองดูอีกครั้ง'));
       			}
       		});
         } else {
-          RelationalDatabaseClient.query("SELECT * FROM User WHERE email = ?", [this.email], function(error, results, fields) {
-      			if (!error) {
-      				reject(new Error("อีเมล์นี้ได้สมัครใช้งานแล้ว กรุณาเข้าสู่ระบบแทนที่จะสมัคร"));
+          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], (function(error, results, fields) {
+            if (error) {
+              reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
+            } else if (results.length > 0) {
+      				reject(new Error('อีเมล์นี้ได้สมัครใช้งานแล้ว กรุณาเข้าสู่ระบบแทนที่จะสมัคร'));
       			} else {
-              const md5Password = crypto.createHash("md5").update(this.password).digest("hex");
-      			  RelationalDatabaseClient.query("INSERT INTO User (email, md5_password) VALUES (?, ?)", [this.email, md5Password], function(error, results, fields) {
+              const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
+      			  RelationalDatabaseClient.query('INSERT INTO User (email, md5_password) VALUES ?', [[[this.email, md5Password]]], (function(error, results, fields) {
           			if (!error) {
-          			  this.request.session.uid = results[0].id;
-          				resolve("/");
+          			  RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], (function(error, results, fields) {
+                    if (error) {
+                      reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
+                    } else if (results.length > 0) {
+                      this.request.session.uid = results[0].id;
+          				    resolve('/');
+              			} else {
+              			  reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง`));
+              		  }
+              		}).bind(this));
           			} else {
-          			  reject(new Error("เกิดความผิดพลาดขณะที่กำลังบันทึกลงฐานข้อมูล กรุณาแจ้งผู้ดูแลรักษาระบบ"));
+          			  reject(new Error(`เกิดความผิดพลาดขณะที่กำลังบันทึกลงฐานข้อมูล กรุณาแจ้งผู้ดูแลรักษาระบบ (${error})`));
           			}
-          		});
+          		}).bind(this));
       			}
-      		});
+      		}).bind(this));
         }
       }
     });
@@ -180,8 +193,8 @@ class Controller extends Base {
  	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, Input[]] {
-  	const action: ActionType = RequestHelper.getAction(request);
-  	const data: Input[] = [];
+  	let action: ActionType = RequestHelper.getAction(request);
+  	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
