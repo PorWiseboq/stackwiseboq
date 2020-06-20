@@ -93,9 +93,9 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<HierarchicalDataTable[]> {
  		return new Promise((resolve, reject) => {
  		  if (this.request.session.id) {
- 		    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [this.request.session.id], (function(error, results, fields) {
+ 		    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [parseInt(this.request.session.id)], (function(error, results, fields) {
           if (error) {
-            resolve(error);
+            resolve(null);
           } else if (results.length > 0) {
             resolve([{
      		      source: null,
@@ -110,7 +110,7 @@ class Controller extends Base {
      		      }]
      		    }]);
     			} else {
-            resolve(error);
+            resolve(null);
     		  }
     		}).bind(this));
  		  } else {
