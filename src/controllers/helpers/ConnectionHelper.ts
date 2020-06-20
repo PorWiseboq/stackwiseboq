@@ -6,6 +6,11 @@ import redis from "redis";
 import mysql from "mysql";
 import {MongoClient} from "mongodb";
 import sidekiq from "sidekiq";
+import dotenv from "dotenv";
+
+if (["develop", "staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
+  dotenv.config();
+}
 
 let VolatileMemoryClient = null;
 let RelationalDatabaseClient = null;
