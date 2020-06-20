@@ -71,8 +71,8 @@ interface Input {
 
 // Auto[ClassBegin]--->
 class Controller extends Base {
-  constructor(request: Request, response: Response) {
-  	super(request, response);
+  constructor(request: Request, response: Response, template: string) {
+  	super(request, response, template);
   	
   	try {
 	    let [action, data] = this.initialize(request);
@@ -135,7 +135,7 @@ class Controller extends Base {
  		return await DatabaseHelper.update(data);
   }
   
-  protected async delete(data: Input[]): Promise<boolean> {
+  protected async remove(data: Input[]): Promise<boolean> {
  		return await DatabaseHelper.delete(data);
   }
   
