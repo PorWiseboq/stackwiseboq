@@ -95,7 +95,7 @@ class Controller extends Base {
  		  if (this.request.session.id) {
  		    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [this.request.session.id], (function(error, results, fields) {
           if (error) {
-            resolve(null);
+            resolve(error);
           } else if (results.length > 0) {
             resolve([{
      		      source: null,
@@ -110,7 +110,7 @@ class Controller extends Base {
      		      }]
      		    }]);
     			} else {
-            resolve(null);
+            resolve(error);
     		  }
     		}).bind(this));
  		  } else {
