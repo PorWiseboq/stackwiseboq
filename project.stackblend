@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "globalSettings": {
+    "currentMode": "site",
+    "externalLibraries": "react@16",
+    "colorSwatches": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "editingPageID": "index",
+    "editingComponentID": null,
+    "editingPopupID": null,
+    "pages": [
+      {
+        "id": "index",
+        "name": "Home",
+        "path": "/",
+        "state": "create"
+      }
+    ],
+    "components": [],
+    "popups": [],
+    "internal-fsb-data-code-import": null,
+    "internal-fsb-data-code-declare": null,
+    "internal-fsb-data-code-interface": null,
+    "internal-fsb-data-code-body": null,
+    "internal-fsb-data-code-footer": null
+  },
+  "sites": {
+    "index": {
+      "id": "index",
+      "name": "Home",
+      "path": "/",
+      "state": "create",
+      "head": {
+        "fonts": {}
+      },
+      "body": "<body class=\"internal-fsb-guide-on\"><div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\"><div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\"></div></div></body>",
+      "accessories": {
+        "selectingElementGUID": null,
+        "currentCursorWalkPath": [
+          "0",
+          0,
+          0,
+          null
+        ]
+      },
+      "extensions": {
+        "internal-fsb-data-code-import": null,
+        "internal-fsb-data-code-declare": null,
+        "internal-fsb-data-code-interface": null,
+        "internal-fsb-data-code-body": null,
+        "internal-fsb-data-code-footer": null
+      }
+    }
+  },
+  "components": {},
+  "popups": {},
+  "flows": {},
+  "stylesheets": {}
+}
