@@ -1,3 +1,6 @@
+// Auto[Generating:V1]--->
+// PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
+
 import url from "url";
 import redis from "redis";
 import mysql from "mysql";
@@ -47,4 +50,7 @@ if (process.env.PRIORITIZED_WORKER_KEY) {
 	PrioritizedWorkerClient = new sidekiq(PrioritizedWorkerVolatileMemoryClient, process.env.NODE_ENV);
 }
 
-export {VolatileMemoryClient, RelationalDatabaseClient, DocumentDatabaseClient, PrioritizedWorkerVolatileMemoryClient, PrioritizedWorkerClient}
+export {VolatileMemoryClient, RelationalDatabaseClient, DocumentDatabaseClient, PrioritizedWorkerVolatileMemoryClient, PrioritizedWorkerClient};
+
+// <--- Auto[Generating:V1]
+// PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.

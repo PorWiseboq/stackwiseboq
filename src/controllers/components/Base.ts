@@ -1,11 +1,14 @@
+// Auto[Generating:V1]--->
+// PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
+
 import {Request, Response} from "express";
 import {HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, ActionType, Input} from "../helpers/DatabaseHelper.js";
 import {ValidationHelper} from "../helpers/ValidationHelper.js";
 import {RenderHelper} from "../helpers/RenderHelper.js";
 
 class Base {
-	request: Request;
-	response: Response;
+	protected request: Request;
+	protected response: Response;
 	
 	constructor(request: Request, response: Response) {
   	this.request = request;
@@ -69,3 +72,6 @@ class Base {
 }
 
 export {Base};
+
+// <--- Auto[Generating:V1]
+// PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
