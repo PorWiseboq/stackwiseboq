@@ -150,7 +150,7 @@ class Controller extends Base {
       } else {
         if (this.signningIn) {
           const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
-          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ? and md5_password = ?', [this.email, md5Password], function(error, results, fields) {
+          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ? and md5_password = ?', [this.email, md5Password], (function(error, results, fields) {
             if (error) {
               reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
       			} else if (results.length > 0) {
@@ -159,7 +159,7 @@ class Controller extends Base {
       			} else {
       			  reject(new Error('คุณระบุอีเมล์และรหัสผ่านไม่ตรงกับฐานข้อมูล กรุณาลองดูอีกครั้ง'));
       			}
-      		});
+      		}).bind(this));
         } else {
           RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], (function(error, results, fields) {
             if (error) {
