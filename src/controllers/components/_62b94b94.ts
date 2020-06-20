@@ -3,16 +3,17 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, Input, DatabaseHelper} from "../helpers/DatabaseHelper.js";
-import {ValidationInfo, ValidationHelper} from "../helpers/ValidationHelper.js";
-import {RequestHelper} from "../helpers/RequestHelper.js";
-import {RenderHelper} from "../helpers/RenderHelper.js";
-import {Base} from "./Base.js";
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
+import {RequestHelper} from '../helpers/RequestHelper.js';
+import {RenderHelper} from '../helpers/RenderHelper.js';
+import {Base} from './Base.js';
 
 // <---Auto[Import]
 
 // Import additional modules here:
-// ABC
+// 
+// Update version = 1
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -69,11 +70,11 @@ interface Input {
 
 // Auto[ClassBegin]--->
 class Controller extends Base {
-  constructor(request: Request, response: Response) {
-  	super(request, response);
+  constructor(request: Request, response: Response, template: string) {
+  	super(request, response, template);
   	
   	try {
-	    const [action, data] = this.initialize(request);
+	    let [action, data] = this.initialize(request);
 	    this.perform(action, data);
    	} catch(error) {
 	  	RenderHelper.error(this.response, error);
@@ -97,7 +98,7 @@ class Controller extends Base {
  		return await DatabaseHelper.update(data);
   }
   
-  protected async delete(data: Input[]): Promise<boolean> {
+  protected async remove(data: Input[]): Promise<boolean> {
  		return await DatabaseHelper.delete(data);
   }
   
@@ -106,14 +107,14 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[]): Promise<string> {
- 		return "/";
+ 		return '/';
   }
  	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, Input[]] {
-  	const action: ActionType = RequestHelper.getAction(request);
-  	const data: Input[] = [];
-  	const input: Input = null;
+  	let action: ActionType = RequestHelper.getAction(request);
+  	let data: Input[] = [];
+  	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  

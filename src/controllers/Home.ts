@@ -8,36 +8,16 @@ import Component62b94b94 from "./components/_62b94b94.js";
 import Componentd1e3b3b3 from "./components/_d1e3b3b3.js";
 
 export const index = (req: Request, res: Response) => {
-	if (req.method == 'GET') {
-		res.render("home/index", {
-  	});
-	} else {
-		new Componentindex(req, res);
-	}
+	new Componentindex(req, res, "home/index");
 }
 export const _d1e3b3b2 = (req: Request, res: Response) => {
-	if (req.method == 'GET') {
-		res.render("home/_d1e3b3b2", {
-  	});
-	} else {
-		new Componentd1e3b3b2(req, res);
-	}
+	new Componentd1e3b3b2(req, res, "home/_d1e3b3b2");
 }
 export const _62b94b94 = (req: Request, res: Response) => {
-	if (req.method == 'GET') {
-		res.render("home/_62b94b94", {
-  	});
-	} else {
-		new Component62b94b94(req, res);
-	}
+	new Component62b94b94(req, res, "home/_62b94b94");
 }
 export const _d1e3b3b3 = (req: Request, res: Response) => {
-	if (req.method == 'GET') {
-		res.render("home/_d1e3b3b3", {
-  	});
-	} else {
-		new Componentd1e3b3b3(req, res);
-	}
+	new Componentd1e3b3b3(req, res, "home/_d1e3b3b3");
 }
 
 // <--- Auto[Generating:V1]
