@@ -84,7 +84,7 @@ const DataManipulationHelper = {
 			// 
 			let tables = (current.relations || []).filter(table => (table.group == key));
 			if (tables.length > 0 && tables[0].rows && tables[0].rows.length > 0) {
-				current = tables[0].rows[0];
+				return tables[0].rows[0];
 			} else {
 				return null;
 			}
