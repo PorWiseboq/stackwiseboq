@@ -1,3 +1,6 @@
+// Auto[Generating:V1]--->
+// PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
+
 import {Input} from "./DatabaseHelper.js";
 
 interface ValidationInfo {
@@ -22,9 +25,9 @@ const ValidationHelper = {
 		input.validation = validationDict[input.guid];
 	},
 	validate: (data: Input[]) => {
-	 	for (let item of data) {
+	 	for (const item of data) {
 	 		if (item.validation.required &&
-	 			(item.value === null || item.value === undefined || item.value === '')) {
+	 			(item.value === null || item.value === undefined || item.value === "")) {
 	 			throw new Error(item.validation.customMessage || `${item.validation.name} is required.`);
 	 		}
 	 	}
@@ -32,3 +35,6 @@ const ValidationHelper = {
 };
 
 export {ValidationInfo, ValidationHelper};
+
+// <--- Auto[Generating:V1]
+// PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.

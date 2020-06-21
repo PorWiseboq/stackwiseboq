@@ -1,3 +1,6 @@
+// Auto[Generating:V1]--->
+// PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
+
 import url from "url";
 import redis from "redis";
 import mysql from "mysql";
@@ -16,16 +19,17 @@ if (process.env.VOLATILE_MEMORY_KEY) {
 		host     : connectionURL.host,
 	  user     : connectionURL.username,
 	  password : connectionURL.password,
-	  database : connectionURL.pathname
+	  port     : connectionURL.port
 	});
 }
 if (process.env.RELATIONAL_DATABASE_KEY) {
 	const connectionURL = new URL(process.env[process.env.RELATIONAL_DATABASE_KEY]);
-	RelationalDatabaseClient = mysql.createConnection({
+	RelationalDatabaseClient = mysql.createPool({
+	  connectionLimit : 10,
 	  host     : connectionURL.host,
 	  user     : connectionURL.username,
 	  password : connectionURL.password,
-	  port     : connectionURL.port
+	  database : connectionURL.pathname.split('/')[1]
 	});
 }
 if (process.env.DOCUMENT_DATABASE_KEY) {
@@ -47,4 +51,7 @@ if (process.env.PRIORITIZED_WORKER_KEY) {
 	PrioritizedWorkerClient = new sidekiq(PrioritizedWorkerVolatileMemoryClient, process.env.NODE_ENV);
 }
 
-export {VolatileMemoryClient, RelationalDatabaseClient, DocumentDatabaseClient, PrioritizedWorkerVolatileMemoryClient, PrioritizedWorkerClient}
+export {VolatileMemoryClient, RelationalDatabaseClient, DocumentDatabaseClient, PrioritizedWorkerVolatileMemoryClient, PrioritizedWorkerClient};
+
+// <--- Auto[Generating:V1]
+// PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
