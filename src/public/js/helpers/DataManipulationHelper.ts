@@ -4,6 +4,12 @@
 import {RequestHelper} from './RequestHelper.js';
 import {HTMLHelper} from './HTMLHelper.js';
 
+enum SourceType {
+  Relational,
+  PrioritizedWorker,
+  Document,
+  VolatileMemory
+}
 interface HierarchicalDataTable {
 	source: SourceType;
 	group: string;
@@ -73,10 +79,10 @@ const DataManipulationHelper = {
   	}
   },
   getDataFromKey: (key: string, current: HierarchicalDataRow, searchForFinalResults: boolean=false): any => {
-		if (!searchForLeaveNode) {
+		if (!searchForFinalResults) {
 			// Search HierarchicalDataTable
 			// 
-			let tables = (current.relations || []).filter(table => (table.group == shifted));
+			let tables = (current.relations || []).filter(table => (table.group == key));
 			if (tables.length > 0 && tables[0].rows && tables[0].rows.length > 0) {
 				current = tables[0].rows[0];
 			} else {
@@ -85,11 +91,11 @@ const DataManipulationHelper = {
 		} else {
 			// Search HierarchicalDataColumn
 			// 
-			let columns = (current.columns || []).filter(column => (column.name == shifted));
+			let columns = (current.columns || []).filter(column => (column.name == key));
 			if (columns.length > 0) {
 				return columns[0].value;
 			} else {
-				let tables = (current.relations || []).filter(table => (table.group == shifted));
+				let tables = (current.relations || []).filter(table => (table.group == key));
 				if (tables.length > 0 && tables[0].rows && tables[0].rows.length > 0) {
 					return tables[0].rows[0].relations;
 				} else {
