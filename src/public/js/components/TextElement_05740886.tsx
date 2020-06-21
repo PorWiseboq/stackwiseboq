@@ -54,14 +54,6 @@ class TextElement_05740886 extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
-    // Load and assign to this.state.data:
-    // 
-    this.load("User.email");
-    
-    // Make changes to this.state.data and save using:
-    // 
-    // this.save("User.email");
-    
     this.initialize();
   }
   // <---Auto[ClassBegin]
