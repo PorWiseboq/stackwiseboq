@@ -26,8 +26,7 @@ declare let window: any;
 interface IAutoBaseProps extends IBaseProps {
   forward: {classes: String, styles: any};
 }
-interface IAutoBaseState extends IBaseState { 
-  data: any[];
+interface IAutoBaseState extends IBaseState {
 }
 // <---Auto[Interface]
 
@@ -68,7 +67,7 @@ class LoginControl extends Base {
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string): any[] {
-    return super.getDataFromNotation(notation, this.state.data);
+    return super.getDataFromNotation(notation);
   }
   
   // Auto[Merging]--->

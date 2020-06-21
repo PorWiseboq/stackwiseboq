@@ -15,12 +15,22 @@ const app = express();
 
 // Express configuration
 //
-app.use(session({
-  secret: "&E7gLUZYMFJzzDNmXMXZWyiXDaqN7igA",
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
+if (['staging', 'production'].indexOf(process.env.NODE_ENV) != -1) {
+  app.set('trust proxy', 1);
+  app.use(session({
+    secret: "&E7gLUZYMFJzzDNmXMXZWyiXDaqN7igA",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  }));
+} else {
+  app.use(session({
+    secret: "&E7gLUZYMFJzzDNmXMXZWyiXDaqN7igA",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {}
+  }));
+}
 
 app.set("port", process.env.PORT || 8000);
 app.set("views", path.join(__dirname, "../views"));
@@ -36,7 +46,7 @@ app.use((req, res, next) => {
 });
 
 app.use(
-    express.static(path.join(__dirname, "public"), { maxAge: 31557600000 })
+    express.static(path.join(__dirname, "public"), { maxAge: 3600000 })
 );
 
 route(app);

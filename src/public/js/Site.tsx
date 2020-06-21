@@ -5,8 +5,10 @@ import {Project, DeclarationHelper} from './helpers/DeclarationHelper.js';
 import {DataManipulationHelper} from './helpers/DataManipulationHelper.js';
 import {HTMLHelper} from './helpers/HTMLHelper.js';
 import {EventHelper} from './helpers/EventHelper.js';
-import './components/TextElement_05740886.js';
 import './components/LoginControl.js';
+import './components/TextElement_05740886.js';
+import './components/AbsoluteLayout_b4386c65.js';
+import './components/AbsoluteLayout_2ebbadbe.js';
 
 declare let React: any;
 declare let ReactDOM: any;
