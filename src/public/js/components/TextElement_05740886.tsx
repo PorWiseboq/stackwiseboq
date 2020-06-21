@@ -76,7 +76,7 @@ class TextElement_05740886 extends Base {
   protected render(): any {
     return (
       <div className={"internal-fsb-element col-3 offset-7 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="05740886" style={Object.assign({'marginTop': '25px'}, this.props.forward && this.props.forward.styles || {})}>
-        {this.props.data[0].rows[0].columns[0].value}
+        {this.getDataFromNotation('User.email')}
       </div>
     )
   }
