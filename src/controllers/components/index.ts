@@ -38,7 +38,7 @@ enum ValidationInfo {
 // <---Auto[Declare]
 
 // Declare private static variables here:
-//
+// 
 
 // Auto[Interface]--->
 /*interface HierarchicalDataTable {
