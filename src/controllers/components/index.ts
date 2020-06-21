@@ -53,7 +53,6 @@ interface HierarchicalDataRow {
 interface HierarchicalDataColumn {
 	name: string;
   value: any;
-  relations: HierarchicalDataTable[];
 }
 interface Input {
   target: SourceType;
@@ -103,8 +102,7 @@ class Controller extends Base {
      		      rows: [{
        		      columns: [{
        		        name: 'email',
-       		        value: results[0].email,
-       		        relations: []
+       		        value: results[0].email
        		      }],
        		      relations: []
      		      }]
@@ -120,8 +118,7 @@ class Controller extends Base {
  		      rows: [{
    		      columns: [{
    		        name: 'email',
-   		        value: 'ยังไม่ได้เข้าสู่ระบบ',
-   		        relations: []
+   		        value: 'ยังไม่ได้เข้าสู่ระบบ'
    		      }],
    		      relations: []
  		      }]
