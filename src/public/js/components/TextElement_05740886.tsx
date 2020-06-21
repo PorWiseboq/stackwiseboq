@@ -26,8 +26,7 @@ declare let window: any;
 interface IAutoBaseProps extends IBaseProps {
   forward: {classes: String, styles: any};
 }
-interface IAutoBaseState extends IBaseState { 
-  data: any[];
+interface IAutoBaseState extends IBaseState {
 }
 // <---Auto[Interface]
 
@@ -55,6 +54,14 @@ class TextElement_05740886 extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
+    // Load and assign to this.state.data:
+    // 
+    this.load("User.email");
+    
+    // Make changes to this.state.data and save using:
+    // 
+    // this.save("User.email");
+    
     this.initialize();
   }
   // <---Auto[ClassBegin]
@@ -66,8 +73,8 @@ class TextElement_05740886 extends Base {
   
   // Providing data array base on dot notation:
   // 
-  protected getDataFromNotation(notation: string): any[] {
-    return super.getDataFromNotation(notation, this.state.data);
+  protected getDataFromNotation(notation: string): any {
+    return super.getDataFromNotation(notation);
   }
   
   // Auto[Merging]--->
@@ -76,8 +83,8 @@ class TextElement_05740886 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return (
-      <div className={"internal-fsb-element col-3 offset-7 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="05740886" style={Object.assign({'marginTop': '25px'}, this.props.forward && this.props.forward.styles || {})}>
-        {this.props.data[0].rows[0].columns[0].value}
+      <div className={"internal-fsb-element col-3 offset-7 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="05740886" style={Object.assign({'marginTop': '25px'}, this.props.forward && this.props.forward.styles || {})} [object Object]>
+        Email Address
       </div>
     )
   }
