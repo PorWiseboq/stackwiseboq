@@ -1,9 +1,9 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
 
-import {CodeHelper} from '../helpers/CodeHelper';
-import {Project, DeclarationHelper} from '../helpers/DeclarationHelper';
-import {HierarchicalDataTable, DataManipulationHelper} from '../helpers/DataManipulationHelper';
+import {CodeHelper} from '../helpers/CodeHelper.js';
+import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {HierarchicalDataTable, DataManipulationHelper} from '../helpers/DataManipulationHelper.js';
 
 declare let React: any;
 declare let ReactDOM: any;
@@ -42,6 +42,10 @@ class Base extends React.Component {
             console.log('There was an error processing hierarchical data on client side (no data).');
             return [];
         }
+    }
+    
+    public manipulate(action: string, results: any) {
+        
     }
     
     protected render() { }
