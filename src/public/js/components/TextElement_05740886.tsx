@@ -54,14 +54,6 @@ class TextElement_05740886 extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
-    // Load and assign to this.state.data:
-    // 
-    this.load("User.email");
-    
-    // Make changes to this.state.data and save using:
-    // 
-    // this.save("User.email");
-    
     this.initialize();
   }
   // <---Auto[ClassBegin]
@@ -83,9 +75,7 @@ class TextElement_05740886 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return (
-      <div className={"internal-fsb-element col-3 offset-7 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="05740886" style={Object.assign({'marginTop': '25px'}, this.props.forward && this.props.forward.styles || {})} [object Object]>
-        Email Address
-      </div>
+      <div className={"internal-fsb-element col-3 offset-7 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="05740886" style={Object.assign({'marginTop': '25px'}, this.props.forward && this.props.forward.styles || {})} dangerouslySetInnerHTML={{__html: this.getDataFromNotation('User.email')}}></div>
     )
   }
 }
