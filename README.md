@@ -43,5 +43,5 @@ The purpose of this repository is for forking and being used with StackBlend pla
 
 ## Servers and infrastructures
 ### Heroku
-Username : komkrit.apps@gmail.com
-Password : Rccon@3538
+Username : engineers@wiseboq.com
+Password : bhGA[a48236J67Y8
