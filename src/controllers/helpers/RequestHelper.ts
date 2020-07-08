@@ -2,17 +2,11 @@
 // PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
 
 import {Request} from "express";
-import {SourceType, Input} from "./DatabaseHelper.js";
+import {SourceType, ActionType, Input} from "./DatabaseHelper.js";
+import {DataTableSchema, SchemaHelper} from "./SchemaHelper.js";
 import {ValidationHelper} from "./ValidationHelper.js";
+import {ProjectConfigurationHelper} from "./ProjectConfigurationHelper.js";
 
-enum ActionType {
-  Insert,
-  Update,
-  Delete,
-  Retrieve,
-  Popup,
-  Navigate
-}
 interface RequestParamInfo {
   target: SourceType;
   group: boolean;
@@ -23,7 +17,7 @@ const requestParamInfoDict: any = {};
 
 const RequestHelper = {
 	registerInput: (guid: string, target: string, group: string, name: string): void => {
-		if (!guid || !target || !group || !name) throw new Error("There was an error trying to retrieve input info (incomplete schema).");
+		if (!guid || !target || !group || !name) throw new Error("There was an error trying to retrieve input info (guid, target, group, or name is empty).");
 		
 		let _target: SourceType;
 		switch (target) {
@@ -40,7 +34,7 @@ const RequestHelper = {
 				_target = SourceType.VolatileMemory;
 				break;
 			default:
-				throw new Error("There was an error trying to retrieve input info (invalid).");
+				throw new Error("There was an error trying to retrieve input info (target value isn't in the predefined set).");
 		}
 		
 		requestParamInfoDict[guid] = {
@@ -53,7 +47,7 @@ const RequestHelper = {
 		const json: any = request.body;
 		
 		if (json == null) {
-			throw new Error("There was an error trying to obtain requesting parameters (missing).");
+			throw new Error("There was an error trying to obtain requesting parameters (requesting body is null).");
 		}
 		
 		switch (json.action) {
@@ -69,15 +63,26 @@ const RequestHelper = {
 				return ActionType.Popup;
 			case "navigate":
 				return ActionType.Navigate;
+			case "test":
+				return ActionType.Test;
 			default:
-				throw new Error("There was an error trying to obtain requesting parameters (invalid).");
+				return null;
 		}
+	},
+	getSchema: (request: Request): DataTableSchema => {
+		const json: any = request.body;
+		
+		if (json == null) {
+			throw new Error("There was an error trying to obtain requesting parameters (requesting body is null).");
+		}
+		
+		return SchemaHelper.getDataTableSchemaFromNotation(json.notation, ProjectConfigurationHelper.getDataSchema());
 	},
 	getInput: (request: Request, guid: string): Input => {
 		const json: any = request.body;
 		
 		if (json == null) {
-			throw new Error("There was an error trying to obtain requesting parameters (missing).");
+			throw new Error("There was an error trying to obtain requesting parameters (requesting body is null).");
 		}
 		
 		if (!json.hasOwnProperty(guid)) {
@@ -103,7 +108,7 @@ const RequestHelper = {
 	}
 };
 
-export {ActionType, RequestHelper};
+export {RequestHelper};
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
