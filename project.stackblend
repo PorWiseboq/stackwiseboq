@@ -45,12 +45,6 @@
         "name": "กรุณาเข้าสู่ระบบ",
         "path": "/authentication",
         "state": "update"
-      },
-      {
-        "id": "e226d1c4",
-        "name": "a",
-        "path": "/a",
-        "state": "delete"
       }
     ],
     "components": [
@@ -231,33 +225,6 @@
     },
     "9c791561": {
       "id": "9c791561",
-      "name": "a",
-      "path": "/a",
-      "state": "delete",
-      "head": {
-        "fonts": {}
-      },
-      "body": "<body><div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\"><div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\"></div></div><style type=\"text/css\" id=\"internal-fsb-stylesheet\"></style></body>",
-      "accessories": {
-        "selectingElementGUID": null,
-        "currentCursorWalkPath": [
-          "0",
-          0,
-          0,
-          null
-        ]
-      },
-      "extensions": {
-        "internal-fsb-data-code-import": null,
-        "internal-fsb-data-code-declare": null,
-        "internal-fsb-data-code-interface": null,
-        "internal-fsb-data-code-body": null,
-        "internal-fsb-data-code-footer": null
-      },
-      "notations": {}
-    },
-    "e226d1c4": {
-      "id": "e226d1c4",
       "name": "a",
       "path": "/a",
       "state": "delete",
