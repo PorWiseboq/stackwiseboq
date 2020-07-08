@@ -1,6 +1,6 @@
 // Auto[Generating:V1]--->
-    // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
-    
+// PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
+
 // Auto[Import]--->
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
@@ -86,5 +86,5 @@ DeclarationHelper.declare('Document', 'Controls.TextElement_05740886', TextEleme
 //
 export {IProps, IState, DefaultProps, DefaultState};
 
-    // <--- Auto[Generating:V1]
-    // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
+// <--- Auto[Generating:V1]
+// PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
