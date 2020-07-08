@@ -55,8 +55,8 @@ class LoginControl extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
-DataManipulationHelper.register('e968c824', 'navigate', 74d75b70,74b67c1e, {initClass: 'null'})
-DataManipulationHelper.register('da229546', 'navigate', 74d75b70,74b67c1e,d40a4961, {initClass: 'null'})
+DataManipulationHelper.register('e968c824', 'navigate', ["74d75b70","74b67c1e"], {initClass: 'null'})
+DataManipulationHelper.register('da229546', 'navigate', ["74d75b70","74b67c1e","d40a4961"], {initClass: 'null'})
     this.initialize();
   }
   // <---Auto[ClassBegin]
