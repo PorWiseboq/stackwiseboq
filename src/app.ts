@@ -27,6 +27,11 @@ if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1
   https.createServer(options, app).listen(443);
 }
 
+if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
+	app.use(secure);
+	app.enable("trust proxy");
+}
+
 // Express configuration
 //
 if (['staging', 'production'].indexOf(process.env.NODE_ENV) != -1) {
