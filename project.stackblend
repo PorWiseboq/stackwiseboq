@@ -6,7 +6,7 @@
       "rgba(22, 98, 250, 1)",
       "rgba(0, 221, 255, 1)",
       "rgba(237, 237, 237, 1)",
-      null,
+      "rgba(255, 255, 255, 1)",
       null,
       null,
       null,
@@ -100,13 +100,13 @@
           "Roboto": true
         }
       },
-      "body": "<body class=\"internal-fsb-guide-on\"><div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\"><div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\"></div></div><style type=\"text/css\" id=\"internal-fsb-stylesheet\"></style><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"></body>",
+      "body": "<body class=\"internal-fsb-guide-on\"><div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\"><div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\"><div class=\"internal-fsb-element col-8 offset-2\" internal-fsb-guid=\"cac6727e\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 25vh; background: rgba(22, 98, 250, 1); padding-top: 50px; padding-bottom: 50px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; padding-left: 15px; padding-right: 15px\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><div contenteditable=\"true\" class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"397b4072\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; min-height: 73px; font-size: 24px; color: rgba(255, 255, 255, 1.0)\">WiseBoq กำลังมาในเร็วๆ นี้</div></div></div></div></div></div><style type=\"text/css\" id=\"internal-fsb-stylesheet\"></style><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"><link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\"></body>",
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "cac6727e",
         "currentCursorWalkPath": [
           "0",
           0,
-          0,
+          1,
           null
         ]
       },
@@ -454,6 +454,6 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "972c2ac9a8fbea3da596a13721f774493f9c5c0f",
-    "index": "061084a316115b7f5dffb9bf189878690e26b332"
+    "index": "ee43a2c72e5de75f42dfaf1545fbf72f0030c7a7"
   }
 }
