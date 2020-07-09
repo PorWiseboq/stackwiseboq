@@ -1,4 +1,5 @@
 import express from "express";
+import secure from "express-force-https";
 import compression from "compression";  // compresses requests
 import session from "express-session";
 import bodyParser from "body-parser";
