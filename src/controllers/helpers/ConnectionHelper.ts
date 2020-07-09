@@ -6,6 +6,7 @@ import redis from "redis";
 import mysql from "mysql";
 import {MongoClient} from "mongodb";
 import sidekiq from "sidekiq";
+import jsORM from "js-hibernate";
 import dotenv from "dotenv";
 
 if (["develop", "staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
@@ -14,6 +15,7 @@ if (["develop", "staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
 
 let VolatileMemoryClient = null;
 let RelationalDatabaseClient = null;
+let RelationalDatabaseORMClient = null;
 let DocumentDatabaseClient = null;
 let PrioritizedWorkerVolatileMemoryClient = null;
 let PrioritizedWorkerClient = null;
@@ -29,13 +31,15 @@ if (process.env.VOLATILE_MEMORY_KEY) {
 }
 if (process.env.RELATIONAL_DATABASE_KEY) {
 	const connectionURL = new URL(process.env[process.env.RELATIONAL_DATABASE_KEY]);
-	RelationalDatabaseClient = mysql.createPool({
+	const dbconfig = {
 	  connectionLimit : 10,
 	  host     : connectionURL.host,
 	  user     : connectionURL.username,
 	  password : connectionURL.password,
 	  database : connectionURL.pathname.split("/")[1]
-	});
+	};
+	RelationalDatabaseClient = mysql.createPool(dbconfig);
+	RelationalDatabaseORMClient = jsORM.session(dbconfig);
 }
 if (process.env.DOCUMENT_DATABASE_KEY) {
 	const connectionURL = process.env[process.env.DOCUMENT_DATABASE_KEY];
@@ -56,7 +60,7 @@ if (process.env.PRIORITIZED_WORKER_KEY) {
 	PrioritizedWorkerClient = new sidekiq(PrioritizedWorkerVolatileMemoryClient, process.env.NODE_ENV);
 }
 
-export {VolatileMemoryClient, RelationalDatabaseClient, DocumentDatabaseClient, PrioritizedWorkerVolatileMemoryClient, PrioritizedWorkerClient};
+export {VolatileMemoryClient, RelationalDatabaseClient, RelationalDatabaseORMClient, DocumentDatabaseClient, PrioritizedWorkerVolatileMemoryClient, PrioritizedWorkerClient};
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
