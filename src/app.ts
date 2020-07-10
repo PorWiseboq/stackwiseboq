@@ -1,4 +1,5 @@
 import express from "express";
+import secure from "express-force-https";
 import compression from "compression";  // compresses requests
 import session from "express-session";
 import bodyParser from "body-parser";
@@ -25,6 +26,11 @@ if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1
   };
   
   https.createServer(options, app).listen(443);
+}
+
+if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
+	app.use(secure);
+	app.enable("trust proxy");
 }
 
 // Express configuration
