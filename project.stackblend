@@ -1,5 +1,5 @@
 {
-  "version": null,
+  "version": 1.1,
   "globalSettings": {
     "externalLibraries": "react@16 jquery-core@3 bootstrap@4",
     "colorSwatches": [
