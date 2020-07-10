@@ -83,7 +83,10 @@ class FlowLayout_3e6ee363 extends Base {
           <div className="row internal-fsb-strict-layout">
             
             <div className="col-12 internal-fsb-inheriting-element" style={{'textAlign': 'center', 'fontSize': '13px'}}>
-              Copyright @2020 WiseBOQ.com
+              ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ
+              <div>
+                บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170
+              </div>
             </div>
             
           </div>
