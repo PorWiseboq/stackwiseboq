@@ -76,28 +76,88 @@ class FlowLayout_535be65e extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return (
-      <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="535be65e" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})}>
+      <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="535be65e" style={Object.assign({'null': 'undefined'}, this.props.forward && this.props.forward.styles || {})}>
         
         <div className="container-fluid">
           
-          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor" style={{'display': 'block'}}>
             
-            <div className="internal-fsb-element" internal-fsb-guid="61c7ceb8" style={{'float': 'left', 'width': '210px'}}>
+            <div className="internal-fsb-element" internal-fsb-guid="00ce1665" style={{'float': 'left'}}>
               
               <div className="container-fluid">
                 
                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                   
-                  <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="367aa105" style={{'textAlign': 'center', 'fontFamily': 'Roboto', 'color': 'rgba(22, 98, 250, 1)', 'fontSize': '24px', 'fontWeight': '400'}}>
-                    Wise
+                  <div className="internal-fsb-element" internal-fsb-guid="61c7ceb8" style={{'width': '210px'}}>
+                    
+                    <div className="container-fluid">
+                      
+                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                        
+                        <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="367aa105" style={{'textAlign': 'center', 'fontFamily': 'Roboto', 'color': 'rgba(22, 98, 250, 1)', 'fontSize': '24px', 'fontWeight': '400'}}>
+                          Wise
+                        </div>
+                        
+                        <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="85c6d876" style={{'textAlign': 'center', 'color': 'rgba(255, 255, 255, 1)', 'fontFamily': 'Roboto', 'fontSize': '24px', 'fontWeight': '400', 'background': 'rgba(22, 98, 250, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px'}}>
+                          BOQ
+                        </div>
+                        
+                        <div className="internal-fsb-element col-12" internal-fsb-guid="e7d5dbea" style={{'paddingLeft': '5px', 'paddingRight': '5px', 'fontFamily': 'Roboto', 'fontSize': '13px', 'textAlign': 'center', 'paddingTop': '5px'}}>
+                          สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                    
                   </div>
                   
-                  <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="85c6d876" style={{'textAlign': 'center', 'color': 'rgba(255, 255, 255, 1)', 'fontFamily': 'Roboto', 'fontSize': '24px', 'fontWeight': '400', 'background': 'rgba(22, 98, 250, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px'}}>
-                    BOQ
+                </div>
+                
+              </div>
+              
+            </div>
+            
+            <div className="internal-fsb-element" internal-fsb-guid="1136ae7c" style={{'fontSize': '14px', 'float': 'right'}}>
+              
+              <div className="container-fluid">
+                
+                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                  
+                  <div className="internal-fsb-element" internal-fsb-guid="2da28286">
+                    
+                    <div className="html">
+                      <a href="/buyer">
+                        สำหรับผู้ต้องการสั่งซื้อ
+                      </a>
+                    </div>
+                    
                   </div>
                   
-                  <div className="internal-fsb-element col-12" internal-fsb-guid="e7d5dbea" style={{'paddingLeft': '5px', 'paddingRight': '5px', 'fontFamily': 'Roboto', 'fontSize': '13px', 'textAlign': 'center', 'paddingTop': '5px'}}>
-                    สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์
+                  <div className="internal-fsb-element internal-fsb-allow-cursor -fsb-self-57595ad9" internal-fsb-guid="57595ad9">
+                  </div>
+                  
+                  <div className="internal-fsb-element" internal-fsb-guid="83a19bd3">
+                    
+                    <div className="html">
+                      <a href="/bidder">
+                        สำหรับร้านค้าวัสดุก่อสร้าง
+                      </a>
+                    </div>
+                    
+                  </div>
+                  
+                  <div className="internal-fsb-element internal-fsb-allow-cursor -fsb-preset-57595ad9" internal-fsb-guid="48d1ac00" style={{'FsbInheritedPresets': '57595ad9'}}>
+                  </div>
+                  
+                  <div className="internal-fsb-element" internal-fsb-guid="5523036a">
+                    
+                    <div className="html">
+                      <a href="/authentication">
+                        เข้าสู่ระบบ
+                      </a>
+                    </div>
+                    
                   </div>
                   
                 </div>
