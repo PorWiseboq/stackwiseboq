@@ -77,13 +77,19 @@ class FlowLayout_d22b95d9 extends Base {
   protected render(): any {
     return (
       <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="d22b95d9" style={Object.assign({'borderTopWidth': '1px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(22, 98, 250, 1)', 'paddingTop': '20px', 'paddingBottom': '20px'}, this.props.forward && this.props.forward.styles || {})}>
+        
         <div className="container-fluid">
+          
           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+            
             <div className="internal-fsb-element col-12" internal-fsb-guid="6b945c4a" style={{'textAlign': 'center', 'fontSize': '13px'}}>
               Copyright @2020 WiseBOQ.com
             </div>
+            
           </div>
+          
         </div>
+        
       </div>
     )
   }
