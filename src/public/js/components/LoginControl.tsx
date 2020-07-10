@@ -165,7 +165,7 @@ DataManipulationHelper.register("da229546", "navigate", ["74d75b70","74b67c1e","
                                     </div>
                                     
                                     <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="74d75b70">
-                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="email" type="text" placeholder="email@domain.com" required="true" />
+                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="email" type="text" placeholder="ที่อยู่@โดเมน.com" required="true" />
                                     </div>
                                     
                                   </div>
@@ -185,7 +185,7 @@ DataManipulationHelper.register("da229546", "navigate", ["74d75b70","74b67c1e","
                                     </div>
                                     
                                     <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="74b67c1e">
-                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="password" type="password" placeholder="password" required="true" />
+                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="password" type="password" placeholder="รหัสผ่าน" required="true" />
                                     </div>
                                     
                                   </div>
@@ -205,7 +205,7 @@ DataManipulationHelper.register("da229546", "navigate", ["74d75b70","74b67c1e","
                                     </div>
                                     
                                     <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="d40a4961">
-                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="confirm" type="password" placeholder="password" required="true" />
+                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="confirm" type="password" placeholder="ยืนยันรหัสผ่าน" required="true" />
                                     </div>
                                     
                                   </div>
