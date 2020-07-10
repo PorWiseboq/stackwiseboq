@@ -1,5 +1,5 @@
 {
-  "version": 1.1,
+  "version": null,
   "globalSettings": {
     "externalLibraries": "react@16 jquery-core@3 bootstrap@4",
     "colorSwatches": [
@@ -52,12 +52,22 @@
         "id": "7aee6ed8",
         "name": "Login Control",
         "state": "update"
+      },
+      {
+        "id": "535be65e",
+        "name": "Navigation Bar",
+        "state": "update"
       }
     ],
     "popups": [],
     "editingPageID": "index",
     "currentMode": "site",
-    "editingComponentID": "7aee6ed8"
+    "editingComponentID": "535be65e",
+    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {RelationalDatabaseClient} from '../helpers/ConnectionHelper.js'\n\n",
+    "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n// \n\n",
+    "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
+    "internal-fsb-data-code-body": "\n\n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise((resolve, reject) => {\n \t\t  if (this.request.session.uid) {\n \t\t    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [parseInt(this.request.session.uid)], (function(error, results, fields) {\n          if (error) {\n            resolve(null);\n          } else if (results.length > 0) {\n            resolve({\n              User: {\n       \t\t      source: null,\n       \t\t      group: 'User',\n       \t\t      rows: [{\n       \t\t        keys: {},\n         \t\t      columns: {\n         \t\t        email: {\n         \t\t          name: 'email',\n         \t\t          value: results[0].email\n         \t\t        }\n         \t\t      },\n         \t\t      relations: {}\n       \t\t      }]\n       \t\t    }\n            });\n    \t\t\t} else {\n            resolve(null);\n    \t\t  }\n    \t\t}).bind(this));\n \t\t  } else {\n \t\t    resolve({\n \t\t      User: {\n   \t\t      source: null,\n   \t\t      group: 'User',\n   \t\t      rows: [{\n   \t\t        keys: {},\n     \t\t      columns: {\n     \t\t        email: {\n     \t\t          name: 'email',\n     \t\t          value: 'ยังไม่ได้เข้าสู่ระบบ'\n     \t\t        }\n     \t\t      },\n     \t\t      relations: {}\n   \t\t      }]\n \t\t      }\n \t\t    });\n \t\t  }\n \t\t});\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
+    "internal-fsb-data-code-footer": null
   },
   "components": {
     "7aee6ed8": {
@@ -182,7 +192,34 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ]
+      ],
+      "id": "7aee6ed8",
+      "name": "Login Control",
+      "state": "update"
+    },
+    "535be65e": {
+      "namespace": "Project.Controls",
+      "klass": "FlowLayout_535be65e",
+      "html": [
+        "<div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"535be65e\" internal-fsb-name=\"Navigation Bar\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\">",
+        "    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"61c7ceb8\" internal-fsb-name=\"Logo\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"float: left; width: 210px\">",
+        "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"367aa105\" internal-fsb-name=\"Wise\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; font-family: Roboto; color: rgba(22, 98, 250, 1); font-size: 24px; font-weight: 400\">Wise</div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"85c6d876\" internal-fsb-name=\"BOQ\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; color: rgba(255, 255, 255, 1); font-family: Roboto; font-size: 24px; font-weight: 400; background: rgba(22, 98, 250, 1); border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\">BOQ</div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"e7d5dbea\" internal-fsb-name=\"description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 5px; padding-right: 5px; font-family: Roboto; font-size: 13px; text-align: center; padding-top: 5px\">สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์</div>",
+        "                    </div>",
+        "                </div>",
+        "            </div>",
+        "        </div>",
+        "    </div>",
+        "</div>"
+      ],
+      "id": "535be65e",
+      "name": "Navigation Bar",
+      "state": "update"
     }
   },
   "popups": {},
@@ -202,10 +239,19 @@
         "<body class=\"internal-fsb-guide-on\">",
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
-        "            <div class=\"internal-fsb-element col-8 offset-2\" internal-fsb-guid=\"cac6727e\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 25vh; background: rgba(22, 98, 250, 1); padding-top: 50px; padding-bottom: 50px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; padding-left: 15px; padding-right: 15px\">",
+        "",
+        "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"535be65e\" internal-fsb-name=\"Navigation Bar\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"397b4072\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; min-height: 73px; font-size: 24px; color: rgba(255, 255, 255, 1.0)\">WiseBoq กำลังมาในเร็วๆ นี้</div>",
+        "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"61c7ceb8\" internal-fsb-name=\"Logo\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"float: left; width: 210px\">",
+        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"367aa105\" internal-fsb-name=\"Wise\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; font-family: Roboto; color: rgba(22, 98, 250, 1); font-size: 24px; font-weight: 400\">Wise</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"85c6d876\" internal-fsb-name=\"BOQ\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; color: rgba(255, 255, 255, 1); font-family: Roboto; font-size: 24px; font-weight: 400; background: rgba(22, 98, 250, 1); border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\">BOQ</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"e7d5dbea\" internal-fsb-name=\"description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 5px; padding-right: 5px; font-family: Roboto; font-size: 13px; text-align: center; padding-top: 5px\">สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์</div>",
+        "                                </div>",
+        "                            </div>",
+        "                        </div>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -218,18 +264,30 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cac6727e",
+        "selectingElementGUID": "535be65e",
         "currentCursorWalkPath": [
-          "0",
+          "535be65e",
           0,
           1,
           null
@@ -884,10 +942,11 @@
     "index": "395ac4388271bf0f3e5aea91ddf908844cfa0cec"
   },
   "frontEndComponentsBlobSHADict": {
-    "LoginControl": "5b9a2689f05f7568d2ad9148576f75f430f6103c"
+    "LoginControl": "5b9a2689f05f7568d2ad9148576f75f430f6103c",
+    "FlowLayout_535be65e": "759447192f5f6a4b5ddd49fced060676e56e24e2"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "972c2ac9a8fbea3da596a13721f774493f9c5c0f",
-    "index": "71ee0bb2f177b418b81c7fdcf7105a0a93e275d3"
+    "index": "be3e432406f160fc473dafe7bec994b7c17047b0"
   }
 }
