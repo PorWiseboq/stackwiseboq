@@ -96,26 +96,16 @@ class FlowLayout_570decac extends Base {
                     ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที
                   </div>
                   
-                  <div className="internal-fsb-element -fsb-self-79320772 col-10 offset-1" internal-fsb-guid="79320772">
-                    
-                    <div className="html">
-                      <a className="btn btn-info col" href="/authentication?role=buyer">
-                        เริ่มต้นใช้งาน
-                      </a>
+                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-self-856191b9" internal-fsb-guid="856191b9" href="/authentication">
+                    <div className="internal-fsb-element" internal-fsb-guid="856191b9-text">
+                      เริ่มต้นใช้งาน
                     </div>
-                    
-                  </div>
-                  
-                  <div className="internal-fsb-element -fsb-preset-79320772 col-10 offset-1" internal-fsb-guid="a3a9c4d5" style={{'FsbInheritedPresets': '79320772'}}>
-                    
-                    <div className="html">
-                      <a className="btn btn-info col" href="/buyer">
-                        เรียนรู้เพิ่มเติม
-                      </a>
+                  </a>
+                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="9328819e" style={{'FsbInheritedPresets': '856191b9'}} target="/buyer">
+                    <div className="internal-fsb-element" internal-fsb-guid="9328819e-text">
+                      เรียนรู้เพิ่มเติม
                     </div>
-                    
-                  </div>
-                  
+                  </a>
                 </div>
                 
               </div>
@@ -136,26 +126,16 @@ class FlowLayout_570decac extends Base {
                     ไม่ว่าคุณจะเป็นร้านค้าวัสดุก่อสร้าง เล็กหรือใหญ่ คุณสามารถหาลูกค้าของคุณได้มากยิ่งขึ้นจากอินเทอร์เน็ต โดยใช้ระบบประมูลราคาเพื่อดึงดูดให้ลูกค้าเลือกซื้อ โดยที่ราคาวัสดุก่อสร้างของคุณนั้นไม่สามารถเห็นได้โดยคู่แข่ง
                   </div>
                   
-                  <div className="internal-fsb-element -fsb-preset-79320772 col-10 offset-1" internal-fsb-guid="13414417" style={{'FsbInheritedPresets': '79320772'}}>
-                    
-                    <div className="html">
-                      <a className="btn btn-info col" href="/authentication?role=bidder">
-                        เข้าร่วมเป็นพาร์ทเนอร์กับเรา
-                      </a>
+                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="9c6d1b75" style={{'FsbInheritedPresets': '856191b9'}} href="/authentication">
+                    <div className="internal-fsb-element" internal-fsb-guid="9c6d1b75-text">
+                      เข้าร่วมเป็นพาร์ทเนอร์กับเรา
                     </div>
-                    
-                  </div>
-                  
-                  <div className="internal-fsb-element -fsb-preset-79320772 col-10 offset-1" internal-fsb-guid="3dec8e00" style={{'FsbInheritedPresets': '79320772'}}>
-                    
-                    <div className="html">
-                      <a className="btn btn-info col" href="/bidder">
-                        เรียนรู้เพิ่มเติม
-                      </a>
+                  </a>
+                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="a2aa6041" style={{'FsbInheritedPresets': '856191b9'}} href="/bidder">
+                    <div className="internal-fsb-element" internal-fsb-guid="a2aa6041-text" style={{'null': 'undefined'}}>
+                      เรียนรู้เพิ่มเติม
                     </div>
-                    
-                  </div>
-                  
+                  </a>
                 </div>
                 
               </div>

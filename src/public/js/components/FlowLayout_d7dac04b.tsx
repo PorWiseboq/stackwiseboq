@@ -118,48 +118,33 @@ class FlowLayout_d7dac04b extends Base {
               
             </div>
             
-            <div className="internal-fsb-inheriting-element" style={{'fontSize': '14px', 'float': 'right'}}>
+            <div className="internal-fsb-inheriting-element" style={{'fontSize': '14px', 'float': 'right', 'marginTop': '15px', 'marginRight': '15px'}}>
               
               <div className="container-fluid">
                 
                 <div className="row internal-fsb-strict-layout">
                   
-                  <div className="internal-fsb-inheriting-element">
-                    
-                    <div className="html">
-                      <a href="/buyer">
-                        สำหรับผู้ต้องการสั่งซื้อ
-                      </a>
+                  <a className="internal-fsb-inheriting-element" href="/buyer" target="">
+                    <div className="internal-fsb-inheriting-element">
+                      สำหรับผู้ที่ต้องการสั่งซื้อ
                     </div>
-                    
-                  </div>
-                  
+                  </a>
                   <div className="-fsb-self-57595ad9 internal-fsb-inheriting-element">
                   </div>
                   
-                  <div className="internal-fsb-inheriting-element">
-                    
-                    <div className="html">
-                      <a href="/bidder">
-                        สำหรับร้านค้าวัสดุก่อสร้าง
-                      </a>
+                  <a className="internal-fsb-inheriting-element" href="/bidder">
+                    <div className="internal-fsb-inheriting-element">
+                      สำหรับร้านค้าวัสดุก่อสร้าง
                     </div>
-                    
-                  </div>
-                  
+                  </a>
                   <div className="-fsb-preset-57595ad9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '57595ad9'}}>
                   </div>
                   
-                  <div className="internal-fsb-inheriting-element">
-                    
-                    <div className="html">
-                      <a href="/authentication">
-                        เข้าสู่ระบบ
-                      </a>
+                  <a className="internal-fsb-inheriting-element" href="/authentication">
+                    <div className="internal-fsb-inheriting-element">
+                      เข้าสู่ระบบ
                     </div>
-                    
-                  </div>
-                  
+                  </a>
                 </div>
                 
               </div>
