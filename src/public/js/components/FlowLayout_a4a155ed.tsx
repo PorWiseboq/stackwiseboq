@@ -36,14 +36,17 @@ interface IAutoBaseState extends IBaseState {
 interface IProps extends IAutoBaseProps {
   
 }
-interface IState extends IAutoBaseState { 
+interface IState extends IAutoBaseState {
+  buyerDisplayStyle: string;
+  bidderDisplayStyle: string;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  
+  buyerDisplayStyle: (window.location.pathname.indexOf('/buyer') == 0) ? 'none' : 'block',
+  bidderDisplayStyle: (window.location.pathname.indexOf('/bidder') == 0) ? 'none' : 'block'
 });
 
 // Auto[ClassBegin]--->
@@ -97,15 +100,20 @@ class FlowLayout_a4a155ed extends Base {
                   </div>
                   
                   <a className="btn btn-info col-10 offset-1 -fsb-self-856191b9 internal-fsb-inheriting-element" href="/authentication">
+                    
                     <div className="internal-fsb-inheriting-element">
                       เริ่มต้นใช้งาน
                     </div>
+                    
                   </a>
-                  <a className="btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '856191b9'}} target="/buyer">
+                  <a className="btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '856191b9', display: this.state.buyerDisplayStyle}} href="/buyer">
+                    
                     <div className="internal-fsb-inheriting-element">
                       เรียนรู้เพิ่มเติม
                     </div>
+                    
                   </a>
+                  
                 </div>
                 
               </div>
@@ -127,15 +135,20 @@ class FlowLayout_a4a155ed extends Base {
                   </div>
                   
                   <a className="btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '856191b9'}} href="/authentication">
+                    
                     <div className="internal-fsb-inheriting-element">
                       เข้าร่วมเป็นพาร์ทเนอร์กับเรา
                     </div>
+                    
                   </a>
-                  <a className="btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '856191b9'}} href="/bidder">
+                  <a className="btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '856191b9', display: this.state.bidderDisplayStyle}} href="/bidder">
+                    
                     <div className="internal-fsb-inheriting-element" style={{'null': 'undefined'}}>
                       เรียนรู้เพิ่มเติม
                     </div>
+                    
                   </a>
+                  
                 </div>
                 
               </div>

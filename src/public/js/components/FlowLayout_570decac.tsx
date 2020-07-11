@@ -100,15 +100,20 @@ class FlowLayout_570decac extends Base {
                   </div>
                   
                   <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-self-856191b9" internal-fsb-guid="856191b9" href="/authentication">
+                    
                     <div className="internal-fsb-element" internal-fsb-guid="856191b9-text">
                       เริ่มต้นใช้งาน
                     </div>
+                    
                   </a>
                   <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="9328819e" style={{'FsbInheritedPresets': '856191b9', display: this.state.buyerDisplayStyle}} href="/buyer">
+                    
                     <div className="internal-fsb-element" internal-fsb-guid="9328819e-text">
                       เรียนรู้เพิ่มเติม
                     </div>
+                    
                   </a>
+                  
                 </div>
                 
               </div>
@@ -130,15 +135,20 @@ class FlowLayout_570decac extends Base {
                   </div>
                   
                   <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="9c6d1b75" style={{'FsbInheritedPresets': '856191b9'}} href="/authentication">
+                    
                     <div className="internal-fsb-element" internal-fsb-guid="9c6d1b75-text">
                       เข้าร่วมเป็นพาร์ทเนอร์กับเรา
                     </div>
+                    
                   </a>
                   <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="a2aa6041" style={{'FsbInheritedPresets': '856191b9', display: this.state.bidderDisplayStyle}} href="/bidder">
+                    
                     <div className="internal-fsb-element" internal-fsb-guid="a2aa6041-text" style={{'null': 'undefined'}}>
                       เรียนรู้เพิ่มเติม
                     </div>
+                    
                   </a>
+                  
                 </div>
                 
               </div>
