@@ -96,26 +96,16 @@ class FlowLayout_a4a155ed extends Base {
                     ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที
                   </div>
                   
-                  <div className="-fsb-self-79320772 col-10 offset-1 internal-fsb-inheriting-element">
-                    
-                    <div className="html">
-                      <a className="btn btn-info col" href="/authentication?role=buyer">
-                        เริ่มต้นใช้งาน
-                      </a>
+                  <a className="btn btn-info col-10 offset-1 -fsb-self-856191b9 internal-fsb-inheriting-element" href="/authentication">
+                    <div className="internal-fsb-inheriting-element">
+                      เริ่มต้นใช้งาน
                     </div>
-                    
-                  </div>
-                  
-                  <div className="-fsb-preset-79320772 col-10 offset-1 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '79320772'}}>
-                    
-                    <div className="html">
-                      <a className="btn btn-info col" href="/buyer">
-                        เรียนรู้เพิ่มเติม
-                      </a>
+                  </a>
+                  <a className="btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '856191b9'}} target="/buyer">
+                    <div className="internal-fsb-inheriting-element">
+                      เรียนรู้เพิ่มเติม
                     </div>
-                    
-                  </div>
-                  
+                  </a>
                 </div>
                 
               </div>
@@ -136,26 +126,16 @@ class FlowLayout_a4a155ed extends Base {
                     ไม่ว่าคุณจะเป็นร้านค้าวัสดุก่อสร้าง เล็กหรือใหญ่ คุณสามารถหาลูกค้าของคุณได้มากยิ่งขึ้นจากอินเทอร์เน็ต โดยใช้ระบบประมูลราคาเพื่อดึงดูดให้ลูกค้าเลือกซื้อ โดยที่ราคาวัสดุก่อสร้างของคุณนั้นไม่สามารถเห็นได้โดยคู่แข่ง
                   </div>
                   
-                  <div className="-fsb-preset-79320772 col-10 offset-1 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '79320772'}}>
-                    
-                    <div className="html">
-                      <a className="btn btn-info col" href="/authentication?role=bidder">
-                        เข้าร่วมเป็นพาร์ทเนอร์กับเรา
-                      </a>
+                  <a className="btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '856191b9'}} href="/authentication">
+                    <div className="internal-fsb-inheriting-element">
+                      เข้าร่วมเป็นพาร์ทเนอร์กับเรา
                     </div>
-                    
-                  </div>
-                  
-                  <div className="-fsb-preset-79320772 col-10 offset-1 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '79320772'}}>
-                    
-                    <div className="html">
-                      <a className="btn btn-info col" href="/bidder">
-                        เรียนรู้เพิ่มเติม
-                      </a>
+                  </a>
+                  <a className="btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '856191b9'}} href="/bidder">
+                    <div className="internal-fsb-inheriting-element" style={{'null': 'undefined'}}>
+                      เรียนรู้เพิ่มเติม
                     </div>
-                    
-                  </div>
-                  
+                  </a>
                 </div>
                 
               </div>
