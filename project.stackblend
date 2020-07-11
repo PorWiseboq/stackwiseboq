@@ -82,13 +82,13 @@
       }
     ],
     "popups": [],
-    "editingPageID": "index",
+    "editingPageID": "b140e86b",
     "currentMode": "site",
     "editingComponentID": "7aee6ed8",
-    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {RelationalDatabaseClient} from '../helpers/ConnectionHelper.js'\n\n",
-    "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n// \n\n",
-    "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-    "internal-fsb-data-code-body": "\n\n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise((resolve, reject) => {\n \t\t  if (this.request.session.uid) {\n \t\t    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [parseInt(this.request.session.uid)], (function(error, results, fields) {\n          if (error) {\n            resolve(null);\n          } else if (results.length > 0) {\n            resolve({\n              User: {\n       \t\t      source: null,\n       \t\t      group: 'User',\n       \t\t      rows: [{\n       \t\t        keys: {},\n         \t\t      columns: {\n         \t\t        email: {\n         \t\t          name: 'email',\n         \t\t          value: results[0].email\n         \t\t        }\n         \t\t      },\n         \t\t      relations: {}\n       \t\t      }]\n       \t\t    }\n            });\n    \t\t\t} else {\n            resolve(null);\n    \t\t  }\n    \t\t}).bind(this));\n \t\t  } else {\n \t\t    resolve({\n \t\t      User: {\n   \t\t      source: null,\n   \t\t      group: 'User',\n   \t\t      rows: [{\n   \t\t        keys: {},\n     \t\t      columns: {\n     \t\t        email: {\n     \t\t          name: 'email',\n     \t\t          value: 'ยังไม่ได้เข้าสู่ระบบ'\n     \t\t        }\n     \t\t      },\n     \t\t      relations: {}\n   \t\t      }]\n \t\t      }\n \t\t    });\n \t\t  }\n \t\t});\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
+    "internal-fsb-data-code-import": null,
+    "internal-fsb-data-code-declare": null,
+    "internal-fsb-data-code-interface": null,
+    "internal-fsb-data-code-body": null,
     "internal-fsb-data-code-footer": null
   },
   "components": {
@@ -793,12 +793,24 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,1,1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,1,1,1,400;1,1,1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,1,1,1,400;1,1,1,1,1,500;1,1,1,1,1,600;1,1,1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,1,1,1,100;1,1,1,1,1,300;1,1,1,1,1,400;1,1,1,1,1,500;1,1,1,1,1,700;1,1,1,1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -1721,7 +1733,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "9726178a",
+        "selectingElementGUID": "9edb5748",
         "currentCursorWalkPath": [
           "02a523e1",
           0,
@@ -1909,7 +1921,7 @@
         "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-39295633\" internal-fsb-guid=\"91b1e928\" internal-fsb-name=\"TextElement 27\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 39295633\">ระดับแพลตตินั่ม</div>",
-        "                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor -fsb-preset-9edb5748 col-4 offset-4\" internal-fsb-guid=\"0236a342\" internal-fsb-name=\"Rectangle 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"-fsb-inherited-presets: 9edb5748; border-right-color: rgba(255, 255, 255, 1); border-top-color: rgba(255, 255, 255, 1)\"></div>",
+        "                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor -fsb-preset-9edb5748 col-4 offset-4\" internal-fsb-guid=\"0236a342\" internal-fsb-name=\"Rectangle 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"-fsb-inherited-presets: 9edb5748; border-right-color: rgba(255, 255, 255, 1); border-top-color: rgba(255, 255, 255, 1); min-height: 5px\"></div>",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7b53142e\" internal-fsb-guid=\"c1357bd0\" internal-fsb-name=\"TextElement 28\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7b53142e\">",
         "                                        <div>✓ รับลูกค้าได้ไม่จำกัด</div>",
         "                                        <div>✓ ปกปิดราคาวัสดุก่อสร้างไม่ให้รั่วไหล</div>",
@@ -2174,11 +2186,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b6cc623c",
+        "selectingElementGUID": "0236a342",
         "currentCursorWalkPath": [
-          "0",
+          "80154d87",
           0,
-          4,
+          3,
           null
         ]
       },
@@ -2548,7 +2560,7 @@
   "viewBlobSHADict": {
     "d1e3b3b3": "ca8a0680e6211d53dabaf2844ef9160bbe5d8c9b",
     "index": "593ca55008b01b867a49d6959e28a453a275ef57",
-    "b140e86b": "e089520714d2e171df7b3663a951d2b38c884380",
-    "8857ca68": "6d14d8e28a728ba8562c1f3b6088056ab7075a72"
+    "b140e86b": "652db0ec0f75e404d7184b031f56bab1d6cda590",
+    "8857ca68": "c0ebeb39a556d2cfeaef9045fcc8feb97d95a318"
   }
 }
