@@ -36,14 +36,17 @@ interface IAutoBaseState extends IBaseState {
 interface IProps extends IAutoBaseProps {
   
 }
-interface IState extends IAutoBaseState { 
+interface IState extends IAutoBaseState {
+  buyerDisplayStyle: string;
+  bidderDisplayStyle: string;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  
+  buyerDisplayStyle: (window.location.pathname.indexOf('/buyer') == 0) ? 'none' : 'block';
+  bidderDisplayStyle: (window.location.pathname.indexOf('/bidder') == 0) ? 'none' : 'block';
 });
 
 // Auto[ClassBegin]--->
@@ -101,7 +104,7 @@ class FlowLayout_570decac extends Base {
                       เริ่มต้นใช้งาน
                     </div>
                   </a>
-                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="9328819e" style={{'FsbInheritedPresets': '856191b9'}} target="" href="/buyer">
+                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="9328819e" style={{'FsbInheritedPresets': '856191b9', display: this.state.buyerDisplayStyle}} href="/buyer">
                     <div className="internal-fsb-element" internal-fsb-guid="9328819e-text">
                       เรียนรู้เพิ่มเติม
                     </div>
@@ -131,7 +134,7 @@ class FlowLayout_570decac extends Base {
                       เข้าร่วมเป็นพาร์ทเนอร์กับเรา
                     </div>
                   </a>
-                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="a2aa6041" style={{'FsbInheritedPresets': '856191b9'}} href="/bidder">
+                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="a2aa6041" style={{'FsbInheritedPresets': '856191b9', display: this.state.bidderDisplayStyle}} href="/bidder">
                     <div className="internal-fsb-element" internal-fsb-guid="a2aa6041-text" style={{'null': 'undefined'}}>
                       เรียนรู้เพิ่มเติม
                     </div>
