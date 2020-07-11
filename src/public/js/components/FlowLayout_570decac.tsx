@@ -101,7 +101,7 @@ class FlowLayout_570decac extends Base {
                       เริ่มต้นใช้งาน
                     </div>
                   </a>
-                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="9328819e" style={{'FsbInheritedPresets': '856191b9'}} target="/buyer">
+                  <a className="internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9" internal-fsb-guid="9328819e" style={{'FsbInheritedPresets': '856191b9'}} target="" href="/buyer">
                     <div className="internal-fsb-element" internal-fsb-guid="9328819e-text">
                       เรียนรู้เพิ่มเติม
                     </div>
