@@ -45,8 +45,8 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  buyerDisplayStyle: (window.location.pathname.indexOf('/buyer') == 0) ? 'none' : 'block';
-  bidderDisplayStyle: (window.location.pathname.indexOf('/bidder') == 0) ? 'none' : 'block';
+  buyerDisplayStyle: (window.location.pathname.indexOf('/buyer') == 0) ? 'none' : 'block',
+  bidderDisplayStyle: (window.location.pathname.indexOf('/bidder') == 0) ? 'none' : 'block'
 });
 
 // Auto[ClassBegin]--->
