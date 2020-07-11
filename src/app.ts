@@ -15,7 +15,7 @@ import fs from "fs";
 const app = express();
 
 if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
-  const https = require('https');
+  const https = require("https");
   
   // SSL
   const sslkey = fs.readFileSync("localhost.key");
@@ -35,8 +35,8 @@ if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
 
 // Express configuration
 //
-if (['staging', 'production'].indexOf(process.env.NODE_ENV) != -1) {
-  app.set('trust proxy', 1);
+if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
+  app.set("trust proxy", 1);
   app.use(session({
     secret: "&E7gLUZYMFJzzDNmXMXZWyiXDaqN7igA",
     resave: false,
@@ -56,8 +56,8 @@ app.set("port", process.env.PORT || 8000);
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "pug");
 app.use(compression());
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
 app.use(lusca.xframe("SAMEORIGIN"));
 app.use(lusca.xssProtection(true));
 app.use((req, res, next) => {
@@ -90,7 +90,7 @@ if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
     endpoint.addRecentError(err);
     next();
   });
-  process.on('uncaughtException', (err) => {
+  process.on("uncaughtException", (err) => {
   	endpoint.addRecentError(err);
 	});
 }

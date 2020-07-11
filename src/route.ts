@@ -1,7 +1,7 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-import * as homeController from './controllers/Home.js';
+import * as homeController from "./controllers/Home.js";
 
 const route = (app: any) => {
  app.get("/", homeController.index);
@@ -12,7 +12,7 @@ const route = (app: any) => {
  app.post("/buyer", homeController._b140e86b);
  app.get("/bidder", homeController._8857ca68);
  app.post("/bidder", homeController._8857ca68);
-}
+};
 
 export default route;
 
