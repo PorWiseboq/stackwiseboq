@@ -162,7 +162,7 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
  		return new Promise((resolve, reject) => {
       if (this.request.session.uid) {
-        resolve('/');
+        resolve('/authentication/role');
       } else {
         if (this.signningIn) {
           const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
@@ -172,7 +172,7 @@ class Controller extends Base {
       			} else if (results.length > 0) {
       			  this.request.session.uid = results[0].id;
       			  this.request.session.save();
-      				resolve('/');
+      				resolve('/authentication/role');
       			} else {
       			  reject(new Error('คุณระบุอีเมล์และรหัสผ่านไม่ตรงกับฐานข้อมูล กรุณาลองดูอีกครั้ง'));
       			}
@@ -193,7 +193,7 @@ class Controller extends Base {
                     } else if (results.length > 0) {
                       this.request.session.uid = results[0].id;
                       this.request.session.save();
-          				    resolve('/');
+          				    resolve('/authentication/role');
               			} else {
               			  reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง`));
               		  }
