@@ -151,17 +151,17 @@ class Controller extends Base {
     if (rows.length != 0) {
       switch (rows[0].columns['role'].value) {
         case "buyer":
-          this.response.redirect('/buyer/auction');
-          break;
+          return '/buyer/auction';
         case "bidder":
-          this.response.redirect('/bidder/auction');
-          break;
+          return '/bidder/auction';
         default:
           throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
       }
     } else {
       throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
     }
+    
+    return '/authentication/role'; 
   }
  	
   // Auto[MergingBegin]--->  
@@ -174,22 +174,6 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('02987944', "relational", "User", "role");
-		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
-    input = RequestHelper.getInput(request, '02987944');
-    
-    // Override data parsing and manipulation of buyer here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('899069eb', "relational", "User", "role");
-		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
-    input = RequestHelper.getInput(request, '899069eb');
-    
-    // Override data parsing and manipulation of bidder here:
-    // 
-    
-    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
