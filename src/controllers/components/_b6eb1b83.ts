@@ -92,7 +92,21 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+ 		if (this.request.session) {
+ 		  switch (this.request.session.role) {
+ 		    case 'buyer':
+          this.response.navigate('/buyer/auction');
+ 		      break;
+ 		    case 'bidder':
+          this.response.navigate('/buyer/bidder');
+ 		      break;
+ 		    default:
+          this.response.navigate('/authentication/role');
+ 		      break;
+ 		  }
+    } else {
+      return super.get(data);
+    }
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -125,17 +139,17 @@ class Controller extends Base {
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     data.push({
-      target: SourceType.Relational;
-      group: "User";
-      name: "id";
-      value: this.request.session.uid;
-      guid: null;
-      validation: null;
+      target: SourceType.Relational,
+      group: "User",
+      name: "id",
+      value: this.request.session.uid,
+      guid: null,
+      validation: null
     });
     
     let rows = await DatabaseHelper.update(data, schema);
     if (rows.length != 0) {
-      switch (rows[0]) {
+      switch (rows[0].columns['role'].value) {
         case "buyer":
           this.response.navigate('/buyer/auction');
           break;
