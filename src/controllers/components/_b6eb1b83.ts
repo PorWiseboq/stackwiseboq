@@ -95,13 +95,13 @@ class Controller extends Base {
  		if (this.request.session) {
  		  switch (this.request.session.role) {
  		    case 'buyer':
-          this.response.navigate('/buyer/auction');
+          this.response.redirect('/buyer/auction');
  		      break;
  		    case 'bidder':
-          this.response.navigate('/buyer/bidder');
+          this.response.redirect('/buyer/bidder');
  		      break;
  		    default:
-          this.response.navigate('/authentication/role');
+          this.response.redirect('/authentication/role');
  		      break;
  		  }
     } else {
@@ -151,10 +151,10 @@ class Controller extends Base {
     if (rows.length != 0) {
       switch (rows[0].columns['role'].value) {
         case "buyer":
-          this.response.navigate('/buyer/auction');
+          this.response.redirect('/buyer/auction');
           break;
         case "bidder":
-          this.response.navigate('/bidder/auction');
+          this.response.redirect('/bidder/auction');
           break;
         default:
           throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
