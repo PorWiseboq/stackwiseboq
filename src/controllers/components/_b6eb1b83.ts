@@ -151,17 +151,17 @@ class Controller extends Base {
     if (rows.length != 0) {
       switch (rows[0].columns['role'].value) {
         case "buyer":
-          this.response.redirect('/buyer/auction');
-          break;
+          return '/buyer/auction';
         case "bidder":
-          this.response.redirect('/bidder/auction');
-          break;
+          return '/bidder/auction';
         default:
           throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
       }
     } else {
       throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
     }
+    
+    return '/authentication/role'; 
   }
  	
   // Auto[MergingBegin]--->  
