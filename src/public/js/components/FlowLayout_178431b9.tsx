@@ -125,26 +125,35 @@ class FlowLayout_178431b9 extends Base {
                 <div className="row internal-fsb-strict-layout">
                   
                   <a className="internal-fsb-inheriting-element" href="/buyer" target="">
+                    
                     <div className="internal-fsb-inheriting-element">
                       สำหรับผู้ที่ต้องการสั่งซื้อ
                     </div>
+                    
                   </a>
+                  
                   <div className="-fsb-self-57595ad9 internal-fsb-inheriting-element">
                   </div>
                   
                   <a className="internal-fsb-inheriting-element" href="/bidder">
+                    
                     <div className="internal-fsb-inheriting-element">
                       สำหรับร้านค้าวัสดุก่อสร้าง
                     </div>
+                    
                   </a>
+                  
                   <div className="-fsb-preset-57595ad9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '57595ad9'}}>
                   </div>
                   
                   <a className="internal-fsb-inheriting-element" href="/authentication">
+                    
                     <div className="internal-fsb-inheriting-element">
                       เข้าสู่ระบบ
                     </div>
+                    
                   </a>
+                  
                 </div>
                 
               </div>

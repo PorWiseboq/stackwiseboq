@@ -12,6 +12,12 @@ const route = (app: any) => {
  app.post("/buyer", homeController._b140e86b);
  app.get("/bidder", homeController._8857ca68);
  app.post("/bidder", homeController._8857ca68);
+ app.get("/bidder/auction", homeController._7e709334);
+ app.post("/bidder/auction", homeController._7e709334);
+ app.get("/buyer/auction", homeController._65e04a88);
+ app.post("/buyer/auction", homeController._65e04a88);
+ app.get("/authentication/role", homeController._b6eb1b83);
+ app.post("/authentication/role", homeController._b6eb1b83);
 }
 
 export default route;
