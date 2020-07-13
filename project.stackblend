@@ -106,8 +106,8 @@
     ],
     "popups": [],
     "editingPageID": "b6eb1b83",
-    "currentMode": "site",
-    "editingComponentID": "7aee6ed8",
+    "currentMode": "components",
+    "editingComponentID": "00ce1665",
     "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {SchemaHelper} from '../helpers/SchemaHelper.js';\nimport {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';\n\n",
     "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
     "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
@@ -391,7 +391,7 @@
       "namespace": "Project.Controls",
       "klass": "FlowLayout_00ce1665",
       "html": [
-        "<div class=\"internal-fsb-element\" internal-fsb-guid=\"00ce1665\" internal-fsb-name=\"header\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"float: left\" internal-fsb-react-mode=\"Site\">",
+        "<div class=\"internal-fsb-element\" internal-fsb-guid=\"00ce1665\" internal-fsb-name=\"header\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"float: left; padding-bottom: 10px\" internal-fsb-react-mode=\"Site\">",
         "    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"61c7ceb8\" internal-fsb-name=\"brand\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"width: 210px\">",
@@ -4214,7 +4214,7 @@
     "d1e3b3b3": "8bf4f349cde41d37c2e09a5226986fad9d258450",
     "8857ca68": "4e35d17f5a583b190b323510ffddc8a8f0107da6",
     "b140e86b": "4e35d17f5a583b190b323510ffddc8a8f0107da6",
-    "b6eb1b83": "a55cae1cf5f53d14b52ed3a01379cd037cc35f94",
+    "b6eb1b83": "494add8b6605b942b22c6cd7ce1e488436c9d74e",
     "7e709334": "eb5c8dcc5b6fb05826ff862bdc6ab553e45588e0",
     "65e04a88": "930c763d3304f118fdee8522ed4d0b185557f82d"
   },
@@ -4235,7 +4235,7 @@
     "FlowLayout_ad9205ea": "b24d04d64a084a230db928720ad0c932b924d10e",
     "FlowLayout_49934c23": "3838571a15545b3812479afe32aa43f5254d2dbb",
     "FlowLayout_285eea05": "37c82755a28d7f0ed47dda5485e82d41b08bc75c",
-    "FlowLayout_00ce1665": "4e5bef4ac49df587ae4fc8c7400d8b3534db7b0d",
+    "FlowLayout_00ce1665": "700fa71bf1ffd8e368b889fc9610481ad9434e29",
     "FlowLayout_29600d13": "1b663c430e583b08c5192f6d5520425eca1140d0",
     "FlowLayout_49e1cbb8": "0fcee7d7dd6354cfc863ed167b2ded4c45bfda70"
   },
@@ -4244,7 +4244,7 @@
     "index": "358dadfc9d2c0583622b82a10cb3e1a7fa37f133",
     "b140e86b": "8919e985e36f9d03bca56f6a4422a320046ab709",
     "8857ca68": "2083457c448da6aa86c05d34d119cef899cac6c6",
-    "b6eb1b83": "8e44df60a4890f88813e1115cbbad42bb63e8658",
+    "b6eb1b83": "dfaf5e6901b8f57bf3af3a3c7bd80e3681e35b0a",
     "65e04a88": "f43bfcc02ba26e5a8c14d23be82564a14bbae0dc",
     "7e709334": "83b7640c9be6fd27373bf20847d9718c746932b1"
   }
