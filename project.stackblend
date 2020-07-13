@@ -252,7 +252,7 @@
         "//",
         "",
         "// TODO: Remove this after StackBlend have a fix to recursively include nested component files.",
-        "Project.Controls = Project.Controls || {};",
+        "Project['Controls'] = Project['Controls'] || {};",
         "",
         "\" internal-fsb-react-code-body=\"",
         "  ",
@@ -4241,7 +4241,7 @@
   },
   "frontEndComponentsBlobSHADict": {
     "LoginControl": "b6c2950a5a773c05d4026f87fe4e2043474edf73",
-    "FlowLayout_535be65e": "ca85759d6cb9d3fe4510f1ac5580bcf754bbde54",
+    "FlowLayout_535be65e": "52bd1dd06aa8c58981ef34559854f87bf911ffbb",
     "FlowLayout_178431b9": "8a3b260d1bdbaea3ed1b0e78d6691d78c552f8c5",
     "FlowLayout_3e6ee363": "34c3361d973a68113172d09e55c8735f24449360",
     "FlowLayout_d22b95d9": "789d24fb481347cab54ee408b5aff4ae5760969e",

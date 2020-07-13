@@ -12,7 +12,7 @@ import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from '
 //
 
 // TODO: Remove this after StackBlend have a fix to recursively include nested component files.
-Project.Controls = Project.Controls || {};
+Project['Controls'] = Project['Controls'] || {};
 
 // Auto[Declare]--->
 
