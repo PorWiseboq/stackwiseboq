@@ -11,6 +11,9 @@ import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from '
 // Import additional modules here:
 //
 
+// TODO: Remove this after StackBlend have a fix to recursively include nested component files.
+Project['Controls'] = Project['Controls'] || {};
+
 // Auto[Declare]--->
 
 declare let React: any;

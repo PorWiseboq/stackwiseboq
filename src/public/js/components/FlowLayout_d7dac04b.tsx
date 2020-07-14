@@ -11,6 +11,9 @@ import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from '
 // Import additional modules here:
 //
 
+// TODO: Remove this after StackBlend have a fix to recursively include nested component files.
+Project['Controls'] = Project['Controls'] || {};
+
 // Auto[Declare]--->
 
 declare let React: any;
@@ -82,7 +85,7 @@ class FlowLayout_d7dac04b extends Base {
           
           <div className="row internal-fsb-strict-layout" style={{'display': 'block'}}>
             
-            <div className="internal-fsb-inheriting-element" style={{'float': 'left'}}>
+            <div className="internal-fsb-inheriting-element" style={{'float': 'left', 'paddingBottom': '10px'}}>
               
               <div className="container-fluid">
                 

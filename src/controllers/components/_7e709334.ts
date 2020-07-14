@@ -14,8 +14,6 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
-import {SchemaHelper} from '../helpers/SchemaHelper.js';
-import {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -92,18 +90,8 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.session) {
- 		  switch (this.request.session.role) {
- 		    case 'buyer':
-          this.response.redirect('/buyer/auction');
- 		      break;
- 		    case 'bidder':
-          this.response.redirect('/buyer/bidder');
- 		      break;
- 		    default:
-          this.response.redirect('/authentication/role');
- 		      break;
- 		  }
+    if (!this.request.session || !this.request.session.uid || !this.request.session.role) {
+      this.response.redirect('/authentication');
     } else {
       return super.get(data);
     }
@@ -138,30 +126,7 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    data.push({
-      target: SourceType.Relational,
-      group: "User",
-      name: "id",
-      value: this.request.session.uid,
-      guid: null,
-      validation: null
-    });
-    
-    let rows = await DatabaseHelper.update(data, schema);
-    if (rows.length != 0) {
-      switch (rows[0].columns['role'].value) {
-        case "buyer":
-          return '/buyer/auction';
-        case "bidder":
-          return '/bidder/auction';
-        default:
-          throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
-      }
-    } else {
-      throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
-    }
-    
-    return '/authentication/role'; 
+ 		return '/';
   }
  	
   // Auto[MergingBegin]--->  
@@ -174,22 +139,6 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('02987944', "relational", "User", "role");
-		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
-    input = RequestHelper.getInput(request, '02987944');
-    
-    // Override data parsing and manipulation of buyer here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('899069eb', "relational", "User", "role");
-		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
-    input = RequestHelper.getInput(request, '899069eb');
-    
-    // Override data parsing and manipulation of bidder here:
-    // 
-    
-    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->

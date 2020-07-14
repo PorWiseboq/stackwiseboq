@@ -76,7 +76,7 @@ class FlowLayout_49934c23 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return (
-      <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="49934c23" style={Object.assign({'float': 'left'}, this.props.forward && this.props.forward.styles || {})}>
+      <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="49934c23" style={Object.assign({'float': 'left', 'paddingBottom': '10px'}, this.props.forward && this.props.forward.styles || {})}>
         
         <div className="container-fluid">
           
