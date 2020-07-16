@@ -135,24 +135,24 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('d064b129', undefined, undefined, undefined);
-		ValidationHelper.registerInput('d064b129', "Textbox 2", false, undefined);
+		RequestHelper.registerInput('d064b129', "relational", "Blog", "title");
+		ValidationHelper.registerInput('d064b129', "Textbox 2", true, "ต้องมีหัวข้อเรื่อง");
     input = RequestHelper.getInput(request, 'd064b129');
     
     // Override data parsing and manipulation of Textbox 2 here:
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('a0641238', undefined, undefined, undefined);
-		ValidationHelper.registerInput('a0641238', "Textbox 1", false, undefined);
+		RequestHelper.registerInput('a0641238', "relational", "Blog", "body");
+		ValidationHelper.registerInput('a0641238', "Textbox 1", true, "ต้องมีเนื้อหา");
     input = RequestHelper.getInput(request, 'a0641238');
     
     // Override data parsing and manipulation of Textbox 1 here:
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('1d258b94', undefined, undefined, undefined);
-		ValidationHelper.registerInput('1d258b94', "Textbox 3", false, undefined);
+		RequestHelper.registerInput('1d258b94', "relational", "Blog", "description");
+		ValidationHelper.registerInput('1d258b94', "Textbox 3", true, "ต้องมีโดยย่อ");
     input = RequestHelper.getInput(request, '1d258b94');
     
     // Override data parsing and manipulation of Textbox 3 here:
