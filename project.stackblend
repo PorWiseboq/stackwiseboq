@@ -4322,7 +4322,11 @@
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"5b62d3ee\" internal-fsb-name=\"TextElement 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">เนื้อหา</div>",
         "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"a0641238\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"ต้องมีเนื้อหา\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; height: 50vh\" class=\"\" internal-fsb-data-source-type=\"relational\" required=\"true\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"body\"></textarea></div>",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"a8690a58\" internal-fsb-name=\"TextElement 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">โดยย่อ</div>",
-        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"1d258b94\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"ต้องมีโดยย่อ\" maxlength=\"165\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" rows=\"2\" internal-fsb-data-source-type=\"relational\" required=\"true\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"description\"></textarea></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-5 btn btn-primary\" internal-fsb-guid=\"10714c4a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94\" internal-fsb-data-wizard-type=\"insert\">",
+        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"1d258b94\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"ต้องมีโดยย่อ\" maxlength=\"165\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" rows=\"2\" internal-fsb-data-source-type=\"relational\" required=\"true\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"description\"></textarea></div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"556126e6\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">คีย์เวิร์ด</div>",
+        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"9ba2b637\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"ต้องใช้คีย์เวิร์ด\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" placeholder=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"keywords\" required=\"true\"></div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"76b0ad64\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">ที่อยู่ของรูปภาพ</div>",
+        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"3dcb582a\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"image\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-5 btn btn-primary\" internal-fsb-guid=\"10714c4a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94\" internal-fsb-data-wizard-type=\"insert\">",
         "                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"10714c4a-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">Button</div>",
         "                        </button>",
         "                    </div>",
@@ -4618,11 +4622,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0a8bed8a",
+        "selectingElementGUID": "5b62d3ee",
         "currentCursorWalkPath": [
-          "0",
+          "3537bdb3",
           0,
-          3,
+          10,
           null
         ]
       },
@@ -4742,7 +4746,7 @@
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"e96eb101\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 307px; top: 59px; width: 150px; min-height: 20px;\" data-title-name=\"User <-> Employee\" data-source-group-name=\"User\" data-source-entity-name=\"id\" data-target-group-name=\"Employee\" data-target-entity-name=\"id\">",
       "                            <div class=\"internal-fsb-title\">User &lt;-&gt; Employee</div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"c74dace6\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 381px; top: 276px; width: 150px;\" data-title-name=\"Blog\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"c74dace6\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 382px; top: 281px; width: 225px; min-height: 228px\" data-title-name=\"Blog\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Blog</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -4757,6 +4761,9 @@
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"1bdd5d08\" internal-fsb-name=\"RelationalColumn 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"description\" data-required=\"true\">",
       "                                        <div class=\"internal-fsb-title\">description</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"6d215c86\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-required=\"true\" data-title-name=\"keywords\">",
+      "                                        <div class=\"internal-fsb-title\">keywords</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"36ee650b\" internal-fsb-name=\"RelationalColumn 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"image\">",
       "                                        <div class=\"internal-fsb-title\">image</div>",
@@ -4993,6 +5000,13 @@
             "required": true,
             "unique": false
           },
+          "keywords": {
+            "name": "keywords",
+            "guid": "6d215c86",
+            "fieldType": null,
+            "required": true,
+            "unique": false
+          },
           "image": {
             "name": "image",
             "guid": "36ee650b",
@@ -5044,7 +5058,7 @@
     "b6eb1b83": "a55cae1cf5f53d14b52ed3a01379cd037cc35f94",
     "7e709334": "eb5c8dcc5b6fb05826ff862bdc6ab553e45588e0",
     "65e04a88": "930c763d3304f118fdee8522ed4d0b185557f82d",
-    "9d37c390": "0f36e941ff9f5de8ecd834d3d451887b42fc88b4",
+    "9d37c390": "242bf98e60113424662aa6ffea7f6ec3fbd3e0b3",
     "6ce794ec": "4e35d17f5a583b190b323510ffddc8a8f0107da6"
   },
   "frontEndComponentsBlobSHADict": {
@@ -5078,6 +5092,6 @@
     "65e04a88": "8b05b24784782eccebcdf057bab3101eedf98161",
     "7e709334": "83b7640c9be6fd27373bf20847d9718c746932b1",
     "6ce794ec": "da817255daa5e6826b882dce46e83e7b4a12609c",
-    "9d37c390": "d0521746a68648814459b52fbb3b86475af002df"
+    "9d37c390": "4e1f883b7172a8df3a8ea9ceff5489bd144a01be"
   }
 }

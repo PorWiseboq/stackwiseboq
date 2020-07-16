@@ -159,6 +159,22 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
+		RequestHelper.registerInput('9ba2b637', "relational", "Blog", "keywords");
+		ValidationHelper.registerInput('9ba2b637', "Textbox 1", true, "ต้องใช้คีย์เวิร์ด");
+    input = RequestHelper.getInput(request, '9ba2b637');
+    
+    // Override data parsing and manipulation of Textbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('3dcb582a', "relational", "Blog", "image");
+		ValidationHelper.registerInput('3dcb582a', "Textbox 3", false, undefined);
+    input = RequestHelper.getInput(request, '3dcb582a');
+    
+    // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
