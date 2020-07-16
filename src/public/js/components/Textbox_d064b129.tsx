@@ -76,9 +76,7 @@ class Textbox_d064b129 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return (
-      <div className={"internal-fsb-element col-10 offset-0 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="d064b129" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})} maxlength="50">
-        <input style={{'display': 'block', 'width': '100%'}} type="text" required={true} />
-      </div>
+      <div className={"internal-fsb-element col-10 offset-0 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="d064b129" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})} maxlength="50" dangerouslySetInnerHTML={{__html: this.getDataFromNotation('Blog.title')}}></div>
     )
   }
 }

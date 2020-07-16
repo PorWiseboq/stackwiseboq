@@ -175,6 +175,14 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
+		RequestHelper.registerInput('2640a89b', "relational", "Blog", "bid");
+		ValidationHelper.registerInput('2640a89b', "Textbox 4", true, "ต้องใช้ id");
+    input = RequestHelper.getInput(request, '2640a89b');
+    
+    // Override data parsing and manipulation of Textbox 4 here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
