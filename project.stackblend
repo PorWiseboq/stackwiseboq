@@ -415,7 +415,10 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ]
+      ],
+      "id": "570decac",
+      "name": "Role Navigator",
+      "state": "update"
     },
     "00ce1665": {
       "namespace": "Project.Controls",
@@ -4326,7 +4329,7 @@
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"556126e6\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">คีย์เวิร์ด</div>",
         "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"9ba2b637\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"ต้องใช้คีย์เวิร์ด\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" placeholder=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"keywords\" required=\"true\"></div>",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"76b0ad64\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">ที่อยู่ของรูปภาพ</div>",
-        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"3dcb582a\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"image\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-5 btn btn-primary\" internal-fsb-guid=\"10714c4a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94\" internal-fsb-data-wizard-type=\"insert\">",
+        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"3dcb582a\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"image\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-5 btn btn-primary\" internal-fsb-guid=\"10714c4a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94 9ba2b637 3dcb582a\" internal-fsb-data-wizard-type=\"insert\">",
         "                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"10714c4a-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">Button</div>",
         "                        </button>",
         "                    </div>",
@@ -4622,11 +4625,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "5b62d3ee",
+        "selectingElementGUID": "10714c4a",
         "currentCursorWalkPath": [
           "3537bdb3",
           0,
-          10,
+          11,
           null
         ]
       },
@@ -4750,7 +4753,7 @@
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Blog</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"24535c62\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-column-type=\"primary\" data-field-type=\"auto\" data-title-name=\"bid\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"24535c62\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"bid\" data-column-type=\"primary\" data-field-type=\"auto\">",
       "                                        <div class=\"internal-fsb-title\">bid</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9b338967\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"title\" data-required=\"true\" data-unique=\"true\">",
@@ -5062,7 +5065,7 @@
     "6ce794ec": "4e35d17f5a583b190b323510ffddc8a8f0107da6"
   },
   "frontEndComponentsBlobSHADict": {
-    "LoginControl": "b6c2950a5a773c05d4026f87fe4e2043474edf73",
+    "LoginControl": "1d89effdcc7210a5567e7c361cf50527437bfdad",
     "FlowLayout_535be65e": "52bd1dd06aa8c58981ef34559854f87bf911ffbb",
     "FlowLayout_178431b9": "95c0b851d9d4864b54215f57dfb18d6d33af4a2b",
     "FlowLayout_3e6ee363": "34c3361d973a68113172d09e55c8735f24449360",
@@ -5084,14 +5087,14 @@
     "Textbox_d064b129": "2f33b99c002d63a0bbef1802a6bc8252d0770323"
   },
   "viewBlobSHADict": {
-    "d1e3b3b3": "23c3d47bda119bfb3a47157b075484a3f9c29841",
+    "d1e3b3b3": "9ee3ffe7266cae81722b25536d89c35a854fdf0f",
     "index": "23a03ec8f8a073d06e64fc294945702f4eecad1a",
-    "b140e86b": "8919e985e36f9d03bca56f6a4422a320046ab709",
+    "b140e86b": "d3124b51043b68ce203323b71526114995da9a34",
     "8857ca68": "f152ea51c5c8ca298782dbabf1c70f1906cf4c12",
-    "b6eb1b83": "1dbc51d11ddda9141216988fe2dba93e09447b20",
+    "b6eb1b83": "493ebfbe0497c26c830719dc8c197cd4fa05850f",
     "65e04a88": "8b05b24784782eccebcdf057bab3101eedf98161",
-    "7e709334": "83b7640c9be6fd27373bf20847d9718c746932b1",
+    "7e709334": "7ec4be31a5ba8ee481ed4743d1fdcadd97e9a6e8",
     "6ce794ec": "da817255daa5e6826b882dce46e83e7b4a12609c",
-    "9d37c390": "4e1f883b7172a8df3a8ea9ceff5489bd144a01be"
+    "9d37c390": "6b18dc3caf25de998cede3611fe11b10b2f87f8e"
   }
 }
