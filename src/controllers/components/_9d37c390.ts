@@ -90,7 +90,25 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+ 		if (this.request.params.id) {
+ 		  return await DatabaseHelper.retrieve([{
+ 		    target: SourceType.Relational,
+        group: "Blog",
+        name: "id",
+        value: this.request.params.id,
+        guid: null,
+        validation: null
+ 		  }], null);
+ 		} else {
+ 		  return await DatabaseHelper.retrieve([{
+ 		    target: SourceType.Relational,
+        group: "Blog",
+        name: "id",
+        value: 1,
+        guid: null,
+        validation: null
+ 		  }], null);
+ 		}
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -175,11 +193,11 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('2640a89b', "relational", "Blog", "bid");
-		ValidationHelper.registerInput('2640a89b', "Textbox 4", true, "ต้องใช้ id");
-    input = RequestHelper.getInput(request, '2640a89b');
+		RequestHelper.registerInput('50cb1c1b', "relational", "Blog", "bid");
+		ValidationHelper.registerInput('50cb1c1b', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, '50cb1c1b');
     
-    // Override data parsing and manipulation of Textbox 4 here:
+    // Override data parsing and manipulation of Hidden 1 here:
     // 
     
     if (input != null) data.push(input);

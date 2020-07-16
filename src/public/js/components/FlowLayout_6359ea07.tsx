@@ -47,7 +47,7 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
 });
 
 // Auto[ClassBegin]--->
-class Textbox_d064b129 extends Base {
+class FlowLayout_6359ea07 extends Base {
   state: IState = null;
   protected static defaultProps: IProps = DefaultProps;
   
@@ -55,6 +55,7 @@ class Textbox_d064b129 extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
+DataManipulationHelper.register("aacbd4a7", "retrieve", ["2640a89b"], {initClass: null})
     this.initialize();
   }
   // <---Auto[ClassBegin]
@@ -76,11 +77,26 @@ class Textbox_d064b129 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return (
-      <div className={"internal-fsb-element col-10 offset-0 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="d064b129" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})} maxlength="50" dangerouslySetInnerHTML={{__html: this.getDataFromNotation('Blog.title')}}></div>
+      <div className={"internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="6359ea07" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})}>
+        <div className="container-fluid">
+          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+            {this.getDataFromNotation("Blog.bid").forEach((data, i) => {
+              return (
+                <div className="internal-fsb-element" internal-fsb-guid="2640a89b" key={"item_" + i} dangerouslySetInnerHTML={{__html: this.getDataFromNotation('Blog.bid')}}></div>
+              )
+            })()}
+            <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-1 offset-0" internal-fsb-guid="aacbd4a7" style={{'marginTop': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('aacbd4a7', '', event, ((results: any) => { this.manipulate('retrieve', '', results); }).bind(this)); }).bind(this)}>
+              <div className="internal-fsb-element" internal-fsb-guid="aacbd4a7-text">
+                Load
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
     )
   }
 }
-DeclarationHelper.declare('Document', 'Controls.Textbox_d064b129', Textbox_d064b129);
+DeclarationHelper.declare('Document', 'Controls.FlowLayout_6359ea07', FlowLayout_6359ea07);
 // <---Auto[ClassEnd]
 
 // Export variables here:
