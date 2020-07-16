@@ -4310,11 +4310,11 @@
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"52c488ce\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">ชื่อเรื่อง</div>",
-        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"d064b129\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-mode=\"Document\" internal-fsb-react-id=\"\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"ต้องมีหัวข้อเรื่อง\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
+        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"d064b129\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-mode=\"Document\" internal-fsb-react-id=\"\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"ต้องมีหัวข้อเรื่อง\" maxlength=\"50\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"5b62d3ee\" internal-fsb-name=\"TextElement 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">เนื้อหา</div>",
         "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"a0641238\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"ต้องมีเนื้อหา\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; height: 50vh\" class=\"\" internal-fsb-data-source-type=\"relational\" required=\"true\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"body\"></textarea></div>",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"a8690a58\" internal-fsb-name=\"TextElement 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">โดยย่อ</div>",
-        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"1d258b94\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"ต้องมีโดยย่อ\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" rows=\"2\" internal-fsb-data-source-type=\"relational\" required=\"true\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"description\"></textarea></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-5 btn btn-primary\" internal-fsb-guid=\"10714c4a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94\" internal-fsb-data-wizard-type=\"insert\">",
+        "                        <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"1d258b94\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"ต้องมีโดยย่อ\" maxlength=\"165\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" rows=\"2\" internal-fsb-data-source-type=\"relational\" required=\"true\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"description\"></textarea></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-5 btn btn-primary\" internal-fsb-guid=\"10714c4a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94\" internal-fsb-data-wizard-type=\"insert\">",
         "                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"10714c4a-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">Button</div>",
         "                        </button>",
         "                    </div>",
@@ -4610,7 +4610,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0a8bed8a",
+        "selectingElementGUID": "d064b129",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -5058,7 +5058,7 @@
     "FlowLayout_00ce1665": "700fa71bf1ffd8e368b889fc9610481ad9434e29",
     "FlowLayout_29600d13": "c63e87496cf33a5f09a0efc85c010bfd56cce8ad",
     "FlowLayout_49e1cbb8": "0fcee7d7dd6354cfc863ed167b2ded4c45bfda70",
-    "Textbox_d064b129": "55d7ed8e3ff9613f8b1f6ec466b1fcac1fbb3db1"
+    "Textbox_d064b129": "2f33b99c002d63a0bbef1802a6bc8252d0770323"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "23c3d47bda119bfb3a47157b075484a3f9c29841",
@@ -5069,6 +5069,6 @@
     "65e04a88": "f43bfcc02ba26e5a8c14d23be82564a14bbae0dc",
     "7e709334": "83b7640c9be6fd27373bf20847d9718c746932b1",
     "6ce794ec": "2cd48f42af420617affdd71b20484ac7ad373e6a",
-    "9d37c390": "4fb63dad97e47621671935e60fc4fedfc03bbbd2"
+    "9d37c390": "fc89cfd49486e5447ea1d2d5f5b1272db9cd3c19"
   }
 }
