@@ -9,6 +9,8 @@ import Component8857ca68 from "./components/_8857ca68.js";
 import Component7e709334 from "./components/_7e709334.js";
 import Component65e04a88 from "./components/_65e04a88.js";
 import Componentb6eb1b83 from "./components/_b6eb1b83.js";
+import Component9d37c390 from "./components/_9d37c390.js";
+import Component6ce794ec from "./components/_6ce794ec.js";
 
 export const index = (req: Request, res: Response) => {
 	new Componentindex(req, res, "home/index");
@@ -30,6 +32,12 @@ export const _65e04a88 = (req: Request, res: Response) => {
 }
 export const _b6eb1b83 = (req: Request, res: Response) => {
 	new Componentb6eb1b83(req, res, "home/_b6eb1b83");
+}
+export const _9d37c390 = (req: Request, res: Response) => {
+	new Component9d37c390(req, res, "home/_9d37c390");
+}
+export const _6ce794ec = (req: Request, res: Response) => {
+	new Component6ce794ec(req, res, "home/_6ce794ec");
 }
 
 // <--- Auto[Generating:V1]

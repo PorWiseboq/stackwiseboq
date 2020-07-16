@@ -18,6 +18,10 @@ const route = (app: any) => {
  app.post("/buyer/auction", homeController._65e04a88);
  app.get("/authentication/role", homeController._b6eb1b83);
  app.post("/authentication/role", homeController._b6eb1b83);
+ app.get("/blog/admin", homeController._9d37c390);
+ app.post("/blog/admin", homeController._9d37c390);
+ app.get("/blog", homeController._6ce794ec);
+ app.post("/blog", homeController._6ce794ec);
 }
 
 export default route;
