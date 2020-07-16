@@ -117,7 +117,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "6ce794ec",
+    "editingPageID": "9d37c390",
     "currentMode": "site",
     "editingComponentID": "535be65e",
     "internal-fsb-data-code-import": null,
@@ -1159,6 +1159,12 @@
         "",
         "",
         "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
@@ -1170,9 +1176,9 @@
       "accessories": {
         "selectingElementGUID": "570decac",
         "currentCursorWalkPath": [
-          "570decac",
+          "0",
           0,
-          2,
+          4,
           null
         ]
       },
@@ -4308,7 +4314,7 @@
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"3ad97347\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; margin-bottom: 10px; font-size: 18px\">เขียนบล็อค</div>",
-        "            <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"3537bdb3\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"\">",
+        "            <div class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"3537bdb3\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"52c488ce\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">ชื่อเรื่อง</div>",
@@ -4322,7 +4328,7 @@
         "                    </div>",
         "                </div>",
         "            </div>",
-        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"0a8bed8a\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">Code พิเศษ<div># Title</div>",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element offset--1 col-3 offset-0\" internal-fsb-guid=\"0a8bed8a\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"min-height: 617px\">Code พิเศษ<div># Title</div>",
         "                <div>## Heading</div>",
         "                <div>### Subheading</div>",
         "                <div>1. Ordered List</div>",
@@ -4612,7 +4618,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d064b129",
+        "selectingElementGUID": "0a8bed8a",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -5065,13 +5071,13 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "23c3d47bda119bfb3a47157b075484a3f9c29841",
-    "index": "7a6077e0a313cd4a35e971e8b78de4d009659349",
+    "index": "23a03ec8f8a073d06e64fc294945702f4eecad1a",
     "b140e86b": "8919e985e36f9d03bca56f6a4422a320046ab709",
-    "8857ca68": "2083457c448da6aa86c05d34d119cef899cac6c6",
+    "8857ca68": "f152ea51c5c8ca298782dbabf1c70f1906cf4c12",
     "b6eb1b83": "1dbc51d11ddda9141216988fe2dba93e09447b20",
-    "65e04a88": "f43bfcc02ba26e5a8c14d23be82564a14bbae0dc",
+    "65e04a88": "8b05b24784782eccebcdf057bab3101eedf98161",
     "7e709334": "83b7640c9be6fd27373bf20847d9718c746932b1",
-    "6ce794ec": "281326b9740838828cbfb7745c9885517640fc96",
-    "9d37c390": "fc89cfd49486e5447ea1d2d5f5b1272db9cd3c19"
+    "6ce794ec": "da817255daa5e6826b882dce46e83e7b4a12609c",
+    "9d37c390": "d0521746a68648814459b52fbb3b86475af002df"
   }
 }
