@@ -85,7 +85,7 @@
       {
         "id": "6ce794ec",
         "name": "{data.title}",
-        "path": "/blog",
+        "path": "/blog/:id/:title",
         "state": "update"
       }
     ],
@@ -117,7 +117,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "9d37c390",
+    "editingPageID": "6ce794ec",
     "currentMode": "site",
     "editingComponentID": "535be65e",
     "internal-fsb-data-code-import": null,
@@ -3998,7 +3998,7 @@
     "6ce794ec": {
       "id": "6ce794ec",
       "name": "{data.title}",
-      "path": "/blog",
+      "path": "/blog/:id/:title",
       "state": "update",
       "head": {
         "fonts": {}
@@ -4006,7 +4006,9 @@
       "body": [
         "<body class=\"\">",
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
-        "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\"></div>",
+        "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"5784aea9\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">ABC</div>",
+        "        </div>",
         "    </div>",
         "    <style type=\"text/css\" id=\"internal-fsb-stylesheet\">",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-57595ad9,",
@@ -4276,11 +4278,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "5784aea9",
         "currentCursorWalkPath": [
           "0",
           0,
-          0,
+          1,
           null
         ]
       },
@@ -5036,7 +5038,8 @@
     "b6eb1b83": "a55cae1cf5f53d14b52ed3a01379cd037cc35f94",
     "7e709334": "eb5c8dcc5b6fb05826ff862bdc6ab553e45588e0",
     "65e04a88": "930c763d3304f118fdee8522ed4d0b185557f82d",
-    "9d37c390": "0f36e941ff9f5de8ecd834d3d451887b42fc88b4"
+    "9d37c390": "0f36e941ff9f5de8ecd834d3d451887b42fc88b4",
+    "6ce794ec": "4e35d17f5a583b190b323510ffddc8a8f0107da6"
   },
   "frontEndComponentsBlobSHADict": {
     "LoginControl": "b6c2950a5a773c05d4026f87fe4e2043474edf73",
@@ -5068,7 +5071,7 @@
     "b6eb1b83": "1dbc51d11ddda9141216988fe2dba93e09447b20",
     "65e04a88": "f43bfcc02ba26e5a8c14d23be82564a14bbae0dc",
     "7e709334": "83b7640c9be6fd27373bf20847d9718c746932b1",
-    "6ce794ec": "2cd48f42af420617affdd71b20484ac7ad373e6a",
+    "6ce794ec": "281326b9740838828cbfb7745c9885517640fc96",
     "9d37c390": "fc89cfd49486e5447ea1d2d5f5b1272db9cd3c19"
   }
 }
