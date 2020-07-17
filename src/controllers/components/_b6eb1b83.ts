@@ -170,15 +170,15 @@ class Controller extends Base {
     
     // Override data parsing and manipulation of buyer here:
     // 
-    data = data.filter(input => input.name != 'id');
-    data.push({
-      target: SourceType.Relational,
-      group: "User",
-      name: "id",
-      value: this.request.session.uid,
-      guid: null,
-      validation: {}
-    });
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('56385616', "relational", "User", "id");
+		ValidationHelper.registerInput('56385616', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, '56385616');
+    
+    // Override data parsing and manipulation of Hidden 1 here:
+    // 
+    input.value = this.request.session.uid;
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('899069eb', "relational", "User", "role");
@@ -187,15 +187,6 @@ class Controller extends Base {
     
     // Override data parsing and manipulation of bidder here:
     // 
-    data = data.filter(input => input.name != 'id');
-    data.push({
-      target: SourceType.Relational,
-      group: "User",
-      name: "id",
-      value: this.request.session.uid,
-      guid: null,
-      validation: {}
-    });
     
     if (input != null) data.push(input);
 	  // <---Auto[Merging]
