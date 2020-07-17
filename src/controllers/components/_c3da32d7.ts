@@ -110,7 +110,7 @@ class Controller extends Base {
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  	  return new Promise(async (resolve) => {
- 		  resolve(await DatabaseHelper.retrieve([], ProjectConfigurationHelper.getDataSchema().tables['Blog']));
+ 		  resolve(await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']));
  	  });
   }
   
