@@ -178,7 +178,7 @@ class Controller extends Base {
     
     // Override data parsing and manipulation of Hidden 1 here:
     // 
-    input.value = this.request.session.uid;
+    if (input) input.value = this.request.session.uid;
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('899069eb', "relational", "User", "role");
