@@ -90,8 +90,10 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.params.id) {
- 		  return await DatabaseHelper.retrieve([{
+ 		if (this.request.params.id == 'new') {
+ 		  resolve(null);
+ 		} else {
+ 		  this.results = await DatabaseHelper.retrieve([{
  		    target: SourceType.Relational,
         group: "Blog",
         name: "bid",
@@ -99,15 +101,12 @@ class Controller extends Base {
         guid: null,
         validation: null
  		  }], null);
- 		} else {
- 		  return await DatabaseHelper.retrieve([{
- 		    target: SourceType.Relational,
-        group: "Blog",
-        name: "bid",
-        value: 1,
-        guid: null,
-        validation: null
- 		  }], null);
+ 		  
+ 		  if (this.results['Blog'].rows.length == 0) {
+ 		    this.response.redirect('/error/404');
+ 		  } else {
+   		  resolve(this.results);
+ 		  }
  		}
   }
   
