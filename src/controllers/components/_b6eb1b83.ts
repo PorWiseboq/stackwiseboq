@@ -101,7 +101,6 @@ class Controller extends Base {
           this.response.redirect('/buyer/bidder');
  		      break;
  		    default:
-          this.response.redirect('/authentication/role');
  		      break;
  		  }
     } else {
