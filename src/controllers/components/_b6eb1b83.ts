@@ -92,7 +92,7 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.session.uid) {
+ 		if (this.request.session && this.request.session.uid) {
  		  switch (this.request.session.role) {
  		    case 'buyer':
           this.response.redirect('/buyer/auction');
@@ -100,11 +100,11 @@ class Controller extends Base {
  		    case 'bidder':
           this.response.redirect('/buyer/bidder');
  		      break;
- 		    default:
+ 		    default: 
  		      break;
  		  }
     } else {
-      return super.get(data);
+      this.response.redirect('/authentication');
     }
   }
   
@@ -137,21 +137,29 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    let rows = await DatabaseHelper.update(data, schema);
-    if (rows.length != 0) {
-      switch (rows[0].columns['role'].value) {
-        case "buyer":
-          return '/buyer/auction';
-        case "bidder":
-          return '/bidder/auction';
-        default:
-          throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
+    return new Promise((resolve) => {
+      let rows = await DatabaseHelper.update(data, schema);
+      if (rows.length != 0) {
+        switch (rows[0].columns['role'].value) {
+          case "buyer":
+            this.request.session.role = 'buyer';
+            this.request.session.save();
+            resolve('/buyer/auction');
+            break;
+          case "bidder":
+            this.request.session.role = 'bidder';
+            this.request.session.save();
+            resolve('/bidder/auction');
+            break;
+          default:
+            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
+        }
+      } else {
+        throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
       }
-    } else {
-      throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
-    }
-    
-    return '/authentication/role'; 
+      
+      resolve('/authentication/role');
+    });
   }
  	
   // Auto[MergingBegin]--->  
