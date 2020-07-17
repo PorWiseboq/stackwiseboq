@@ -94,7 +94,7 @@ class Controller extends Base {
  		  return await DatabaseHelper.retrieve([{
  		    target: SourceType.Relational,
         group: "Blog",
-        name: "id",
+        name: "bid",
         value: this.request.params.id,
         guid: null,
         validation: null
@@ -103,7 +103,7 @@ class Controller extends Base {
  		  return await DatabaseHelper.retrieve([{
  		    target: SourceType.Relational,
         group: "Blog",
-        name: "id",
+        name: "bid",
         value: 1,
         guid: null,
         validation: null

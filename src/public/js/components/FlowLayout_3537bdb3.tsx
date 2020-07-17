@@ -68,8 +68,8 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
   
   // Providing data array base on dot notation:
   // 
-  protected getDataFromNotation(notation: string): any {
-    return super.getDataFromNotation(notation);
+  protected getDataFromNotation(notation: string, inArray: boolean=false): any {
+    return super.getDataFromNotation(notation, inArray);
   }
   
   // Auto[Merging]--->
@@ -88,52 +88,64 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
               ชื่อเรื่อง
             </div>
             
-            {this.getDataFromNotation("Blog.title").forEach((data, i) => {
+            {this.getDataFromNotation("title", true).map((data, i) => {
               return (
-                <Project.Controls.Textbox_d064b129 key={"item_" + i} data={data} />
+                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="d064b129" key={"item_" + i} maxlength="50">
+                  <input style={{'display': 'block', 'width': '100%'}} type="text" required={true} defaultValue={this.getDataFromNotation('title')} />
+                </div>
               )
-            })()}
+            })}
             
             <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="5b62d3ee">
               เนื้อหา
             </div>
             
-            {this.getDataFromNotation("Blog.body").forEach((data, i) => {
+            {this.getDataFromNotation("body", true).map((data, i) => {
               return (
-                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="a0641238" key={"item_" + i} dangerouslySetInnerHTML={{__html: this.getDataFromNotation('Blog.body')}}></div>
+                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="a0641238" key={"item_" + i}>
+                  <textarea style={{'display': 'block', 'width': '100%', 'height': '50vh'}} type="text" required={true} defaultValue={this.getDataFromNotation('body')}>
+                  </textarea>
+                </div>
               )
-            })()}
+            })}
             
             <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="a8690a58">
               โดยย่อ
             </div>
             
-            {this.getDataFromNotation("Blog.description").forEach((data, i) => {
+            {this.getDataFromNotation("description", true).map((data, i) => {
               return (
-                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="1d258b94" key={"item_" + i} maxlength="165" dangerouslySetInnerHTML={{__html: this.getDataFromNotation('Blog.description')}}></div>
+                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="1d258b94" key={"item_" + i} maxlength="165">
+                  <textarea style={{'display': 'block', 'width': '100%'}} type="text" rows="2" required={true} defaultValue={this.getDataFromNotation('description')}>
+                  </textarea>
+                </div>
               )
-            })()}
+            })}
             
             <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="556126e6">
               คีย์เวิร์ด
             </div>
             
-            {this.getDataFromNotation("Blog.keywords").forEach((data, i) => {
+            {this.getDataFromNotation("keywords", true).map((data, i) => {
               return (
-                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="9ba2b637" key={"item_" + i} dangerouslySetInnerHTML={{__html: this.getDataFromNotation('Blog.keywords')}}></div>
+                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="9ba2b637" key={"item_" + i}>
+                  <input style={{'display': 'block', 'width': '100%'}} type="text" placeholder="" required={true} defaultValue={this.getDataFromNotation('keywords')} />
+                </div>
               )
-            })()}
+            })}
             
             <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="76b0ad64">
               ที่อยู่ของรูปภาพ
             </div>
             
-            {this.getDataFromNotation("Blog.image").forEach((data, i) => {
+            {this.getDataFromNotation("image", true).map((data, i) => {
               return (
-                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="3dcb582a" key={"item_" + i} dangerouslySetInnerHTML={{__html: this.getDataFromNotation('Blog.image')}}></div>
+                <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="3dcb582a" key={"item_" + i}>
+                  <input style={{'display': 'block', 'width': '100%'}} type="text" defaultValue={this.getDataFromNotation('image')} />
+                </div>
               )
-            })()}
-            <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-2 offset-4" internal-fsb-guid="10714c4a" style={{'marginTop': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('10714c4a', '', event, ((results: any) => { this.manipulate('insert', '', results); }).bind(this)); }).bind(this)}>
+            })}
+            <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-2 offset-4" internal-fsb-guid="10714c4a" style={{'marginTop': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('10714c4a', 'null', event, ((results: any) => { this.manipulate('10714c4a', 'null', results); }).bind(this)); }).bind(this)}>
               
               <div className="internal-fsb-element" internal-fsb-guid="10714c4a-text">
                 Insert
@@ -141,18 +153,18 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
               
             </button>
             
-            <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary" internal-fsb-guid="2258be6b" style={{'marginTop': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('2258be6b', '', event, ((results: any) => { this.manipulate('update', '', results); }).bind(this)); }).bind(this)}>
+            <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary" internal-fsb-guid="2258be6b" style={{'marginTop': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('2258be6b', 'null', event, ((results: any) => { this.manipulate('2258be6b', 'null', results); }).bind(this)); }).bind(this)}>
               
               <div className="internal-fsb-element" internal-fsb-guid="2258be6b-text">
                 Update
               </div>
               
             </button>
-            {this.getDataFromNotation("Blog.bid").forEach((data, i) => {
+            {this.getDataFromNotation("bid", true).map((data, i) => {
               return (
-                <input className="internal-fsb-element col-12" internal-fsb-guid="50cb1c1b" key={"item_" + i} type="hidden" value={this.getDataFromNotation('Blog.bid')} />
+                <input className="internal-fsb-element col-12" internal-fsb-guid="50cb1c1b" key={"item_" + i} type="hidden" defaultValue={this.getDataFromNotation('bid')} />
               )
-            })()}
+            })}
             
           </div>
           
