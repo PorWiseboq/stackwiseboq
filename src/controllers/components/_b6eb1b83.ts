@@ -170,13 +170,14 @@ class Controller extends Base {
     
     // Override data parsing and manipulation of buyer here:
     // 
+    data = data.filter(input => input.name != 'id');
     data.push({
       target: SourceType.Relational,
       group: "User",
       name: "id",
       value: this.request.session.uid,
       guid: null,
-      validation: null
+      validation: {}
     });
     
     if (input != null) data.push(input);
@@ -186,13 +187,14 @@ class Controller extends Base {
     
     // Override data parsing and manipulation of bidder here:
     // 
+    data = data.filter(input => input.name != 'id');
     data.push({
       target: SourceType.Relational,
       group: "User",
       name: "id",
       value: this.request.session.uid,
       guid: null,
-      validation: null
+      validation: {}
     });
     
     if (input != null) data.push(input);
