@@ -92,20 +92,16 @@ class FlowLayout_a0b170ee extends Base {
                       
                       {this.getDataFromNotation("Blog[" + i + "].title", true).map((data, j) => {
                         return (
-                          <div className="internal-fsb-element col-12" internal-fsb-guid="181a52c5" key={"item_" + j}>
-                            ABC
-                          </div>
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="181a52c5" key={"item_" + j} dangerouslySetInnerHTML={{__html: CodeHelper.escape(data)}}></div>
                         )
                       })}
                       
                       {this.getDataFromNotation("Blog[" + i + "].body", true).map((data, j) => {
                         return (
-                          <div className="internal-fsb-element col-12" internal-fsb-guid="936c1a91" key={"item_" + j}>
-                            <div className="html">
-                            </div>
-                          </div>
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="936c1a91" key={"item_" + j} dangerouslySetInnerHTML={{__html: data}}></div>
                         )
                       })}
+                      
                     </div>
                     
                   </div>
