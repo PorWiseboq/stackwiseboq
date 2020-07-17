@@ -126,13 +126,13 @@
       }
     ],
     "popups": [],
-    "editingPageID": "bbc7dba3",
+    "editingPageID": "9d37c390",
     "currentMode": "site",
     "editingComponentID": "535be65e",
     "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\n\n",
     "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
     "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-    "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    title: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise((resolve) => {\n \t\t  let message;\n \t\t  switch (this.request.params.code) {\n \t\t    case 404:\n \t\t      message = \"หน้าดังกล่าวหาไม่พบ\";\n \t\t      break;\n \t\t    default:\n \t\t      message = \"กรุณาลองดูอีกครั้ง\";\n \t\t      break;\n \t\t  }\n \t\t  resolve({\n \t\t    Message: {\n \t\t      source: null,\n        \tgroup: 'Message',\n          rows: [{\n            keys: {},\n            columns: {\n              body: {\n                name: 'body',\n                value: message\n              }\n            },\n            relations: {}\n          }]\n \t\t    }\n \t\t  });\n \t\t});\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
+    "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\tif (this.request.params.id) {\n \t\t  return await DatabaseHelper.retrieve([{\n \t\t    target: SourceType.Relational,\n        group: \"Blog\",\n        name: \"bid\",\n        value: this.request.params.id,\n        guid: null,\n        validation: null\n \t\t  }], null);\n \t\t} else {\n \t\t  return await DatabaseHelper.retrieve([{\n \t\t    target: SourceType.Relational,\n        group: \"Blog\",\n        name: \"bid\",\n        value: 1,\n        guid: null,\n        validation: null\n \t\t  }], null);\n \t\t}\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
     "internal-fsb-data-code-footer": null
   },
   "components": {
@@ -4032,23 +4032,9 @@
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
-        "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a0b170ee\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Document\">",
-        "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"76514d5e\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"Blog\">",
-        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"181a52c5\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\">ABC</div>",
         "",
-        "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"936c1a91\" internal-fsb-name=\"HTML 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"HTML\" internal-fsb-react-data=\"body\">",
-        "                                        <div class=\"html\"></div>",
-        "                                    </div>",
-        "                                </div>",
-        "                            </div>",
-        "                        </div>",
-        "                    </div>",
-        "                </div>",
-        "            </div>",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"76b295bc\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">#{data.Blog.rows[0].columns['title'].value}</div>",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"754eba57\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">#{data.Blog.rows[0].columns['body'].value}</div>",
         "        </div>",
         "    </div>",
         "    <style type=\"text/css\" id=\"internal-fsb-stylesheet\">",
@@ -4319,9 +4305,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "754eba57",
         "currentCursorWalkPath": [
-          "76514d5e",
+          "0",
           0,
           2,
           null
@@ -4334,12 +4320,7 @@
         "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise(async (resolve) => {\n \t    if (this.request.params.id) {\n   \t\t  let results = await DatabaseHelper.retrieve([{\n   \t\t    target: SourceType.Relational,\n          group: \"Blog\",\n          name: \"bid\",\n          value: this.request.params.id,\n          guid: null,\n          validation: null\n   \t\t  }], null);\n   \t\t  \n   \t\t  resolve({\n   \t\t    title: results['Blog'].rows[0].columns['title'].value,\n   \t\t    description: results['Blog'].rows[0].columns['description'].value,\n   \t\t    keywords: results['Blog'].rows[0].columns['keywords'].value,\n   \t\t    linkUrl: `https://www.wiseboq.com/${results['Blog'].rows[0].keys['bid'].value}/${results['Blog'].rows[0].columns['title'].value}`,\n   \t\t    imageUrl: results['Blog'].rows[0].columns['image'].value,\n   \t\t    itemType: 'blog',\n   \t\t    language: 'th',\n   \t\t    contentLocale: 'th'\n   \t\t  });\n   \t\t}\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve) => {\n \t    if (this.request.params.id) {\n   \t\t  resolve(await DatabaseHelper.retrieve([{\n   \t\t    target: SourceType.Relational,\n          group: \"Blog\",\n          name: \"bid\",\n          value: this.request.params.id,\n          guid: null,\n          validation: null\n   \t\t  }], null));\n   \t\t}\n \t  });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
         "internal-fsb-data-code-footer": null
       },
-      "notations": {
-        "Blog": {
-          "title": {},
-          "body": {}
-        }
-      }
+      "notations": {}
     },
     "9d37c390": {
       "id": "9d37c390",
@@ -4676,9 +4657,9 @@
       "accessories": {
         "selectingElementGUID": "d58ae925",
         "currentCursorWalkPath": [
-          "3537bdb3",
+          "0",
           0,
-          13,
+          2,
           null
         ]
       },
@@ -4686,7 +4667,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\tif (this.request.params.id) {\n \t\t  return await DatabaseHelper.retrieve([{\n \t\t    target: SourceType.Relational,\n        group: \"Blog\",\n        name: \"id\",\n        value: this.request.params.id,\n        guid: null,\n        validation: null\n \t\t  }], null);\n \t\t} else {\n \t\t  return await DatabaseHelper.retrieve([{\n \t\t    target: SourceType.Relational,\n        group: \"Blog\",\n        name: \"id\",\n        value: 1,\n        guid: null,\n        validation: null\n \t\t  }], null);\n \t\t}\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
+        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\tif (this.request.params.id) {\n \t\t  return await DatabaseHelper.retrieve([{\n \t\t    target: SourceType.Relational,\n        group: \"Blog\",\n        name: \"bid\",\n        value: this.request.params.id,\n        guid: null,\n        validation: null\n \t\t  }], null);\n \t\t} else {\n \t\t  return await DatabaseHelper.retrieve([{\n \t\t    target: SourceType.Relational,\n        group: \"Blog\",\n        name: \"bid\",\n        value: 1,\n        guid: null,\n        validation: null\n \t\t  }], null);\n \t\t}\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
         "internal-fsb-data-code-footer": null
       },
       "notations": {
@@ -5422,7 +5403,7 @@
     "b6eb1b83": "a55cae1cf5f53d14b52ed3a01379cd037cc35f94",
     "7e709334": "eb5c8dcc5b6fb05826ff862bdc6ab553e45588e0",
     "65e04a88": "930c763d3304f118fdee8522ed4d0b185557f82d",
-    "9d37c390": "9cc47f7285697ff1d16ac12289eaf428ff6d03cd",
+    "9d37c390": "fd94cd1309cf545008b122b9eb6ab5735fa20ada",
     "6ce794ec": "52efbd7f0da25ebb8ddc16a444481da5f81ed886",
     "bbc7dba3": "5f5614151533da13dceb8e9d5e8386a5fa9b006d"
   },
@@ -5446,8 +5427,7 @@
     "FlowLayout_00ce1665": "fa8568237dac44646be2a07b50dce7a38e4656a0",
     "FlowLayout_29600d13": "4eedc0e8798b63fe4d9d6c8cf3d7b31ee5bfae7d",
     "FlowLayout_49e1cbb8": "db13de1b2def0c1e2e2c6a50c445c948065bb4c9",
-    "FlowLayout_d58ae925": "fddaab5dcbc1f583c33f492385e7c55802b20d13",
-    "FlowLayout_a0b170ee": "085859f9cfaf31b4f14d877aa2c66878cbf1f2dc"
+    "FlowLayout_d58ae925": "fddaab5dcbc1f583c33f492385e7c55802b20d13"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "5be2f90e6e0412406313563a35c74f7707c76f00",
@@ -5457,7 +5437,7 @@
     "b6eb1b83": "e3658ef3c754079d5941340472eecd932b542258",
     "65e04a88": "d6bfbd2c063e50d1405146f45a1f55b6dab01b24",
     "7e709334": "ff0f893db294780b4b41839cc2b2f6febba5e887",
-    "6ce794ec": "239ade0f8e61929c673b1f2a7c9e1d3f862aa887",
+    "6ce794ec": "913ff325cc3df984f33f8f8fdb9a3eb0d3c2396a",
     "9d37c390": "f2923e05e9d602b02b0ac2f5d7d446e09caeaa7c",
     "bbc7dba3": "8559f671ce074b5b0043e3886e24f1209ea620f2"
   }
