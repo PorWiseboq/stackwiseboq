@@ -92,7 +92,7 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.session) {
+ 		if (this.request.session.uid) {
  		  switch (this.request.session.role) {
  		    case 'buyer':
           this.response.redirect('/buyer/auction');
@@ -137,15 +137,6 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    data.push({
-      target: SourceType.Relational,
-      group: "User",
-      name: "id",
-      value: this.request.session.uid,
-      guid: null,
-      validation: null
-    });
-    
     let rows = await DatabaseHelper.update(data, schema);
     if (rows.length != 0) {
       switch (rows[0].columns['role'].value) {
@@ -173,6 +164,38 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+		RequestHelper.registerInput('02987944', "relational", "User", "role");
+		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
+    input = RequestHelper.getInput(request, '02987944');
+    
+    // Override data parsing and manipulation of buyer here:
+    // 
+    data.push({
+      target: SourceType.Relational,
+      group: "User",
+      name: "id",
+      value: this.request.session.uid,
+      guid: null,
+      validation: null
+    });
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('899069eb', "relational", "User", "role");
+		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
+    input = RequestHelper.getInput(request, '899069eb');
+    
+    // Override data parsing and manipulation of bidder here:
+    // 
+    data.push({
+      target: SourceType.Relational,
+      group: "User",
+      name: "id",
+      value: this.request.session.uid,
+      guid: null,
+      validation: null
+    });
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
