@@ -99,7 +99,6 @@ class Controller extends Base {
  		    contentType: null,
  		    revisitAfter: null,
  		    robots: null,
- 		    title: null,
  		    linkUrl: null,
  		    imageUrl: null,
  		    itemType: null,
