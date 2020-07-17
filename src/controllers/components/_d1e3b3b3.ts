@@ -171,6 +171,7 @@ class Controller extends Base {
               reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
       			} else if (results.length > 0) {
       			  this.request.session.uid = results[0].id;
+      			  this.request.session.role = results[0].role;
       			  this.request.session.save();
       				resolve('/authentication/role');
       			} else {
