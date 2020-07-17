@@ -105,9 +105,13 @@ const DataManipulationHelper = {
 	  		});
   	}
   },
-  getDataFromKey: (key: string, current: HierarchicalDataRow, index: number=-1): any => {
+  getDataFromKey: (key: string, current: HierarchicalDataRow | HierarchicalDataRow[] | HierarchicalDataTable, index: number=-1): any => {
+		if (Array.isArray(current)) {
+			current = current[0] || {};
+		}
+		
   	// Search HierarchicalDataTable
-		// 
+		// 		
 		let table = (current.relations || {})[key];
 		if (table) {
 			if (index != -1) {
@@ -126,7 +130,7 @@ const DataManipulationHelper = {
 			}
 		}
   },
-  getDataFromNotation: (notation: string, data: {[Identifier: string]: HierarchicalDataTable}, inArray: boolean=false): any => {
+  getDataFromNotation: (notation: string, data: {[Identifier: string]: HierarchicalDataTable}=window.data, inArray: boolean=false): any => {
     if (!notation) {
       console.error("The notation is null, undefined or empty.");
 	  	alert("There is an error occured, please try again.");
