@@ -118,7 +118,7 @@ class Controller extends Base {
                 password2 = item.value;
                 break;
         }
-    }
+    } 
     if (password1 !== null && password2 !== null) {
         this.signningIn = false;
         if (password1 !== password2) {
@@ -130,7 +130,7 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     if (this.request.session && this.request.session.uid) {
       this.response.redirect('/authentication/role');
-    } else {
+    } else { 
  		  return super.get(data);
     }
   }
@@ -167,7 +167,7 @@ class Controller extends Base {
  		return new Promise((resolve, reject) => {
       if (this.request.session.uid) {
         resolve('/authentication/role');
-      } else {
+      } else { 
         if (this.signningIn) {
           const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
           RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ? and md5_password = ?', [this.email, md5Password], (function(error, results, fields) {
