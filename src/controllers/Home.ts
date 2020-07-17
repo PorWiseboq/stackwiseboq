@@ -12,6 +12,7 @@ import Componentb6eb1b83 from "./components/_b6eb1b83.js";
 import Component9d37c390 from "./components/_9d37c390.js";
 import Component6ce794ec from "./components/_6ce794ec.js";
 import Componentbbc7dba3 from "./components/_bbc7dba3.js";
+import Componentc3da32d7 from "./components/_c3da32d7.js";
 
 export const index = (req: Request, res: Response) => {
 	new Componentindex(req, res, "home/index");
@@ -42,6 +43,9 @@ export const _6ce794ec = (req: Request, res: Response) => {
 }
 export const _bbc7dba3 = (req: Request, res: Response) => {
 	new Componentbbc7dba3(req, res, "home/_bbc7dba3");
+}
+export const _c3da32d7 = (req: Request, res: Response) => {
+	new Componentc3da32d7(req, res, "home/_c3da32d7");
 }
 
 // <--- Auto[Generating:V1]

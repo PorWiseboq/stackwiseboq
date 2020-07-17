@@ -24,6 +24,8 @@ const route = (app: any) => {
  app.post("/blog/:id/:title", homeController._6ce794ec);
  app.get("/error/:code", homeController._bbc7dba3);
  app.post("/error/:code", homeController._bbc7dba3);
+ app.get("/blog/:category", homeController._c3da32d7);
+ app.post("/blog/:category", homeController._c3da32d7);
 }
 
 export default route;
