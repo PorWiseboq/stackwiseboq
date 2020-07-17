@@ -83,6 +83,8 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+  results: {[Identifier: string]: HierarchicalDataTable} = null;
+  
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
