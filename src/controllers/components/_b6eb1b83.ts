@@ -173,7 +173,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('56385616', "relational", "User", "id");
-		ValidationHelper.registerInput('56385616', "Hidden 1", false, undefined);
+		ValidationHelper.registerInput('56385616', "uid", false, undefined);
     input = RequestHelper.getInput(request, '56385616');
     
     // Override data parsing and manipulation of Hidden 1 here:
