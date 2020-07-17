@@ -111,7 +111,7 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise((resolve) => {
  		  let message;
- 		  switch (this.request.params.code) {
+ 		  switch (parseInt(this.request.params.code)) {
  		    case 404:
  		      message = "หน้าดังกล่าวหาไม่พบ";
  		      break;
