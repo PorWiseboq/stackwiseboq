@@ -118,14 +118,14 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve) => {
  	    if (this.request.params.id) {
-   		  return DatabaseHelper.retrieve([{
+   		  resolve(await DatabaseHelper.retrieve([{
    		    target: SourceType.Relational,
           group: "Blog",
           name: "bid",
           value: this.request.params.id,
           guid: null,
           validation: null
-   		  }], null);
+   		  }], null));
    		}
  	  });
   }
