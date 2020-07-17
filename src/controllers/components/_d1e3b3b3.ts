@@ -128,8 +128,8 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
-    if (this.request.session.uid) {
-      resolve('/authentication/role');
+    if (this.request.session && this.request.session.uid) {
+      this.response.redirect('/authentication/role');
     } else {
  		  return super.get(data);
     }
