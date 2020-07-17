@@ -92,7 +92,7 @@ class Controller extends Base {
   }
   
   protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise(async ((resolve) => {
+ 	  return new Promise((async (resolve) => {
  	    if (this.results['Blog'].rows.length == 0) {
  	      resolve(null);
  	    } else {
@@ -111,7 +111,7 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return new Promise(async ((resolve) => {
+ 		return new Promise((async (resolve) => {
  		  this.results = await DatabaseHelper.retrieve([{
  		    target: SourceType.Relational,
         group: "Blog",
