@@ -89,8 +89,8 @@ class Controller extends Base {
  		ValidationHelper.validate(data);
   }
   
-  protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise(async (resolve) => {
+  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
+ 		return new Promise(async (resolve) => {
  	    if (this.request.params.id) {
    		  let results = await DatabaseHelper.retrieve([{
    		    target: SourceType.Relational,
@@ -105,7 +105,7 @@ class Controller extends Base {
    		    title: results['Blog'].rows[0].columns['title'].value,
    		    description: results['Blog'].rows[0].columns['description'].value,
    		    keywords: results['Blog'].rows[0].columns['keywords'].value,
-   		    linkUrl: `https://www.wiseboq.com/${results['Blog'].rows[0].columns['bid'].value}/${results['Blog'].rows[0].columns['title'].value}`,
+   		    linkUrl: `https://www.wiseboq.com/${results['Blog'].rows[0].keys['bid'].value}/${results['Blog'].rows[0].columns['title'].value}`,
    		    imageUrl: results['Blog'].rows[0].columns['image'].value,
    		    itemType: 'blog',
    		    language: 'th',
@@ -113,28 +113,6 @@ class Controller extends Base {
    		  });
    		}
  	  });
-  }
-  
-  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.params.id) {
- 		  return await DatabaseHelper.retrieve([{
- 		    target: SourceType.Relational,
-        group: "Blog",
-        name: "bid",
-        value: this.request.params.id,
-        guid: null,
-        validation: null
- 		  }], null);
- 		} else {
- 		  return await DatabaseHelper.retrieve([{
- 		    target: SourceType.Relational,
-        group: "Blog",
-        name: "bid",
-        value: 1,
-        guid: null,
-        validation: null
- 		  }], null);
- 		}
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
