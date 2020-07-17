@@ -137,7 +137,7 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    return new Promise((resolve) => {
+    return new Promise(async (resolve) => {
       let rows = await DatabaseHelper.update(data, schema);
       if (rows.length != 0) {
         switch (rows[0].columns['role'].value) {
