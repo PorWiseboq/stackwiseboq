@@ -90,7 +90,7 @@ class Controller extends Base {
   }
   
   protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise((resolve) => {
+ 	  return new Promise(async (resolve) => {
  	    if (this.request.params.id) {
    		  let results = await DatabaseHelper.retrieve([{
    		    target: SourceType.Relational,
