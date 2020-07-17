@@ -77,13 +77,19 @@ class FlowLayout_a0b170ee extends Base {
   protected render(): any {
     return (
       <div className={"internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="a0b170ee" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})}>
+        
         <div className="container-fluid">
+          
           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+            
             {this.getDataFromNotation("Blog", true).map((data, i) => {
               return (
                 <div className="internal-fsb-element col-12" internal-fsb-guid="76514d5e" key={"item_" + i}>
+                  
                   <div className="container-fluid">
+                    
                     <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                      
                       {this.getDataFromNotation("Blog[" + i + "].title", true).map((data, j) => {
                         return (
                           <div className="internal-fsb-element col-12" internal-fsb-guid="181a52c5" key={"item_" + j}>
@@ -91,20 +97,27 @@ class FlowLayout_a0b170ee extends Base {
                           </div>
                         )
                       })}
+                      
                       {this.getDataFromNotation("Blog[" + i + "].body", true).map((data, j) => {
                         return (
-                          <div className="internal-fsb-element col-12" internal-fsb-guid="5d2362c3" key={"item_" + j}>
-                            ABC
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="936c1a91" key={"item_" + j}>
+                            <div className="html">
+                            </div>
                           </div>
                         )
                       })}
                     </div>
+                    
                   </div>
+                  
                 </div>
               )
             })}
+            
           </div>
+          
         </div>
+        
       </div>
     )
   }
