@@ -128,7 +128,11 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+    if (this.request.session.uid) {
+      resolve('/authentication/role');
+    } else {
+ 		  return super.get(data);
+    }
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
