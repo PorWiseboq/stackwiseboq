@@ -147,16 +147,18 @@ class Controller extends Base {
         switch (rows[0].columns['role'].value) {
           case "buyer":
             this.request.session.role = 'buyer';
-            this.request.session.save();
-            resolve('/buyer/auction');
-            break;
+            this.request.session.save(() => {
+            	resolve('/buyer/auction');
+            });
+            break; 
           case "bidder":
             this.request.session.role = 'bidder';
-            this.request.session.save();
-            resolve('/bidder/auction');
-            break;
+            this.request.session.save(() => {
+            	resolve('/bidder/auction');
+            });
+            break; 
           default:
-            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
+            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");หม่อีกครั้ง");
         }
       } else {
         throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
