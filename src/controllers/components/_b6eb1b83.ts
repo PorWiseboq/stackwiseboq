@@ -92,20 +92,24 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.session && this.request.session.uid) {
- 		  switch (this.request.session.role) {
- 		    case 'buyer':
-          this.response.redirect('/buyer/auction');
- 		      break;
- 		    case 'bidder':
-          this.response.redirect('/buyer/bidder');
- 		      break;
- 		    default: 
- 		      break;
- 		  }
-    } else {
-      this.response.redirect('/authentication');
-    }
+    return new Promise(async (resolve) => {
+   		if (this.request.session && this.request.session.uid) {
+   		  switch (this.request.session.role) {
+   		    case 'buyer':
+            this.response.redirect('/buyer/auction');
+   		      break;
+   		    case 'bidder':
+            this.response.redirect('/buyer/bidder');
+   		      break;
+   		    default:
+   		      break;
+   		  }
+      } else {
+        this.response.redirect('/authentication');
+      }
+      
+   	  resolve(null);
+    });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
