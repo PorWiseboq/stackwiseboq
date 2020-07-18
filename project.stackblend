@@ -135,13 +135,13 @@
       }
     ],
     "popups": [],
-    "editingPageID": "c3da32d7",
+    "editingPageID": "65e04a88",
     "currentMode": "site",
     "editingComponentID": "535be65e",
-    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';\n\n",
+    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\n\n",
     "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
-    "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-    "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t  return new Promise(async (resolve) => {\n \t\t  resolve(await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']));\n \t  });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
+    "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n\n\n",
+    "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\tif (!this.request.session || !this.request.session.uid || !this.request.session.role) {\n      this.response.redirect('/authentication');\n    } else {\n      return super.get(data);\n    }\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
     "internal-fsb-data-code-footer": null
   },
   "components": {
@@ -1210,12 +1210,24 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -2591,8 +2603,9 @@
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-39295633\" internal-fsb-guid=\"39295633\" internal-fsb-name=\"TextElement 21\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"membership_title\">ระดับพื้นฐาน</div>",
         "                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor -fsb-preset-9edb5748 col-4 offset-4\" internal-fsb-guid=\"58a328e2\" internal-fsb-name=\"Rectangle 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"-fsb-inherited-presets: 9edb5748; border-top-color: rgba(255, 255, 255, 1); min-height: 5px\"></div>",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-7b53142e\" internal-fsb-guid=\"7b53142e\" internal-fsb-name=\"TextElement 22\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"membership_detail\">✓ รับลูกค้าได้สูงสุด 100 รายการต่อเดือน<div>✓ ปกปิดราคาวัสดุก่อสร้างไม่ให้รั่วไหล</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-7b53142e\" internal-fsb-guid=\"7b53142e\" internal-fsb-name=\"TextElement 22\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"membership_detail\">✓ รับลูกค้าได้ไม่จำกัด<div>✓ ปกปิดราคาวัสดุก่อสร้างไม่ให้รั่วไหล</div>",
         "                                        <div>✓ สามารถยื่นข้อเสนอพิเศษสุดได้</div>",
+        "                                        <div>✓ สามารถแชทคุยกับลูกค้าได้ทีละคน มากกว่านั้นคิดเพิ่ม 1,000 บาทต่อคน</div>",
         "                                    </div>",
         "                                </div>",
         "                            </div>",
@@ -2602,9 +2615,9 @@
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-39295633\" internal-fsb-guid=\"e4b845b9\" internal-fsb-name=\"TextElement 24\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 39295633\">ระดับมืออาชีพ</div>",
         "                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor -fsb-preset-9edb5748 col-4 offset-4\" internal-fsb-guid=\"5cab594a\" internal-fsb-name=\"Rectangle 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"-fsb-inherited-presets: 9edb5748; border-top-color: rgba(255, 255, 255, 1); min-height: 5px\"></div>",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7b53142e\" internal-fsb-guid=\"ca0303c9\" internal-fsb-name=\"TextElement 25\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7b53142e\">✓ รับลูกค้าได้สูงสุด 1500 รายการต่อเดือน<div>✓ ปกปิดราคาวัสดุก่อสร้างไม่ให้รั่วไหล</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7b53142e\" internal-fsb-guid=\"ca0303c9\" internal-fsb-name=\"TextElement 25\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7b53142e\">✓ รับลูกค้าได้ไม่จำกัด<div>✓ ปกปิดราคาวัสดุก่อสร้างไม่ให้รั่วไหล</div>",
         "                                        <div>✓ สามารถยื่นข้อเสนอพิเศษสุดได้</div>",
-        "                                        <div>✓ สามารถเลือกให้พนักงานโต้ตอบแทนได้ (เพียง 13,500 ต่อคน)</div>",
+        "                                        <div>✓ สามารถแชทคุยกับลูกค้าได้ 5 คนพร้อมกัน มากกว่านั้นคิดเพิ่ม 1,000 บาทต่อคน</div>",
         "                                    </div>",
         "                                </div>",
         "                            </div>",
@@ -2618,7 +2631,7 @@
         "                                        <div>✓ รับลูกค้าได้ไม่จำกัด</div>",
         "                                        <div>✓ ปกปิดราคาวัสดุก่อสร้างไม่ให้รั่วไหล</div>",
         "                                        <div>✓ สามารถยื่นข้อเสนอพิเศษสุดได้</div>",
-        "                                        <div>✓ สามารถเลือกให้พนักงานโต้ตอบแทนได้ (เพียง 13,500 ต่อคน)</div>✓ แสดงยอดขายไว้บนสุดของหน้า",
+        "                                        <div>✓ สามารถแชทคุยกับลูกค้าได้ไม่จำกัด</div>✓ แสดงยอดขายไว้บนสุดของหน้า",
         "                                    </div>",
         "                                </div>",
         "                            </div>",
@@ -2629,7 +2642,7 @@
         "                                    <div class=\"internal-fsb-element col-4 offset-0 -fsb-self-023baa4c\" internal-fsb-guid=\"023baa4c\" internal-fsb-name=\"FlowLayout 27\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"membership_box_bottom\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-self-e1ea91ae col-10 offset-1\" internal-fsb-guid=\"e1ea91ae\" internal-fsb-name=\"TextElement 23\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"membership_price\">ค่าคอมมิชชั่น 5%<div>ค่าสมาชิกรายเดือน 5,000 บาท</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-self-e1ea91ae col-10 offset-1\" internal-fsb-guid=\"e1ea91ae\" internal-fsb-name=\"TextElement 23\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"membership_price\">ค่าคอมมิชชั่น 2.5%<div>ไม่มีค่าสมาชิกรายเดือน</div>",
         "                                                </div>",
         "                                            </div>",
         "                                        </div>",
@@ -2637,7 +2650,7 @@
         "                                    <div class=\"internal-fsb-element col-4 offset-0 -fsb-preset-023baa4c\" internal-fsb-guid=\"d9d9da98\" internal-fsb-name=\"FlowLayout 28\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 023baa4c\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-e1ea91ae col-10 offset-1\" internal-fsb-guid=\"01e1d4e1\" internal-fsb-name=\"TextElement 26\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: e1ea91ae\">ค่าคอมมิชชั่น 2.5%<div>ค่าสมาชิกรายเดือน 35,000 บาท</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-e1ea91ae col-10 offset-1\" internal-fsb-guid=\"01e1d4e1\" internal-fsb-name=\"TextElement 26\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: e1ea91ae\">ค่าคอมมิชชั่น 1%<div>ค่าสมาชิกรายเดือน 10,000 บาท</div>",
         "                                                </div>",
         "                                            </div>",
         "                                        </div>",
@@ -2645,7 +2658,7 @@
         "                                    <div class=\"internal-fsb-element col-4 offset-0 -fsb-preset-023baa4c\" internal-fsb-guid=\"d59ace97\" internal-fsb-name=\"FlowLayout 29\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 023baa4c\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-e1ea91ae col-10 offset-1\" internal-fsb-guid=\"3a1d8c9a\" internal-fsb-name=\"TextElement 29\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: e1ea91ae\">ค่าคอมมิชชั่น 1%<div>ค่าสมาชิกรายเดือน 50,000 บาท</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-e1ea91ae col-10 offset-1\" internal-fsb-guid=\"3a1d8c9a\" internal-fsb-name=\"TextElement 29\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: e1ea91ae\">ค่าคอมมิชชั่น 0.5%<div>ค่าสมาชิกรายเดือน 50,000 บาท</div>",
         "                                                </div>",
         "                                            </div>",
         "                                        </div>",
@@ -3003,11 +3016,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "bb540e9d",
+        "selectingElementGUID": "5c827d4d",
         "currentCursorWalkPath": [
-          "0",
+          "5c827d4d",
           0,
-          6,
+          4,
           null
         ]
       },
@@ -3053,6 +3066,7 @@
         "                    </div>",
         "                </div>",
         "            </div>",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ceb17253\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-top: 20px; text-align: center\">เมื่อพร้อมแล้วเราจะติดต่อกลับไปทางอีเมล์</div>",
         "            <div class=\"col-10 offset-1 internal-fsb-element  \" internal-fsb-guid=\"49e1cbb8\" internal-fsb-name=\"Footer 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-top-style: solid; border-top-color: rgba(22, 98, 250, 1); padding-top: 20px; padding-bottom: 20px; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"d22b95d9\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
@@ -3331,11 +3345,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "49e1cbb8",
+        "selectingElementGUID": "ceb17253",
         "currentCursorWalkPath": [
           "0",
           0,
-          1,
+          3,
           null
         ]
       },
@@ -3381,6 +3395,7 @@
         "                    </div>",
         "                </div>",
         "            </div>",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"84d8ee6a\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-top: 20px; text-align: center\">เมื่อพร้อมแล้วเราจะติดต่อกลับไปทางอีเมล์</div>",
         "            <div class=\"col-10 offset-1 internal-fsb-element  \" internal-fsb-guid=\"285eea05\" internal-fsb-name=\"Footer 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-top-style: solid; border-top-color: rgba(22, 98, 250, 1); padding-top: 20px; padding-bottom: 20px; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"d22b95d9\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
@@ -3659,11 +3674,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2791ada",
+        "selectingElementGUID": "84d8ee6a",
         "currentCursorWalkPath": [
           "0",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -5807,19 +5822,19 @@
     "FlowLayout_29600d13": "4eedc0e8798b63fe4d9d6c8cf3d7b31ee5bfae7d",
     "FlowLayout_49e1cbb8": "db13de1b2def0c1e2e2c6a50c445c948065bb4c9",
     "FlowLayout_d58ae925": "fddaab5dcbc1f583c33f492385e7c55802b20d13",
-    "FlowLayout_d64677b8": "c64b635e29e5632344e80f1b57ceababb380e0e5"
+    "FlowLayout_d64677b8": "5b7c82467fdd0d87cf3a389fc2b5a6be246b13dc"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "5be2f90e6e0412406313563a35c74f7707c76f00",
-    "index": "d6d994bc2026e37ae68ca5d7983f3ab20529e716",
+    "index": "bcb1ead09cf2e53ddf7eee9cb55cae5ba9996d50",
     "b140e86b": "9913dbc39a36fc88819b4e677da8a9ce5e084059",
-    "8857ca68": "819d65cbe4bf60303acd68b17c1643d7e8780021",
+    "8857ca68": "fea663978c4310c9727e2a6d6d5041894ed272cc",
     "b6eb1b83": "c693c38665a95cf85360e70bd2b13186d5f75150",
-    "65e04a88": "d6bfbd2c063e50d1405146f45a1f55b6dab01b24",
-    "7e709334": "ff0f893db294780b4b41839cc2b2f6febba5e887",
+    "65e04a88": "c75547174e7821f53be79bced19d879a35789116",
+    "7e709334": "5d199859835bf3ad474e7445ab0e524f8d441162",
     "6ce794ec": "fa8be3563009826888de5fb15616129403cfe989",
     "9d37c390": "a064c6712f34ab7e9901114ebe52244c6c4750e3",
     "bbc7dba3": "b358a9a1fbd8a305c9bff8068e906c9f4781111b",
-    "c3da32d7": "ebdd819c317a759319db3d9f3ecd28f573251905"
+    "c3da32d7": "9b40186ad253837dc42c817a4929e56a69ea4432"
   }
 }
