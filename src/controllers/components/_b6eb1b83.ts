@@ -150,15 +150,15 @@ class Controller extends Base {
             this.request.session.save(() => {
             	resolve('/buyer/auction');
             });
-            break; 
+            break;
           case "bidder":
             this.request.session.role = 'bidder';
             this.request.session.save(() => {
             	resolve('/bidder/auction');
             });
-            break; 
+            break;
           default:
-            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");หม่อีกครั้ง");
+            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
         }
       } else {
         throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
