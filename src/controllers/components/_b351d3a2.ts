@@ -1,21 +1,22 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
+
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
-import {RequestHelper} from '../helpers/RequestHelper.js';
-import {RenderHelper} from '../helpers/RenderHelper.js';
-import {DataTableSchema} from '../helpers/SchemaHelper.js';
-import {Base} from './Base.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, Input, DatabaseHelper} from "../helpers/DatabaseHelper.js";
+import {ValidationInfo, ValidationHelper} from "../helpers/ValidationHelper.js";
+import {RequestHelper} from "../helpers/RequestHelper.js";
+import {RenderHelper} from "../helpers/RenderHelper.js";
+import {DataTableSchema} from "../helpers/SchemaHelper.js";
+import {Base} from "./Base.js";
 
 // <---Auto[Import]
 
 // Import additional modules here:
 //
-import {SchemaHelper} from '../helpers/SchemaHelper.js';
-import {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';
+const x = 1;
+
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -41,6 +42,7 @@ enum ValidationInfo {
 
 // Declare private static variables here:
 //
+
 
 // Auto[Interface]--->
 /*interface HierarchicalDataTable {
@@ -70,12 +72,13 @@ interface Input {
 // Declare or extend interfaces here:
 //
 
+
 // Auto[ClassBegin]--->
 class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    let [action, schema, data] = this.initialize(request);
+	    const [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -92,20 +95,7 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.session && this.request.session.uid) {
- 		  switch (this.request.session.role) {
- 		    case 'buyer':
-          this.response.redirect('/buyer/auction');
- 		      break;
- 		    case 'bidder':
-          this.response.redirect('/buyer/bidder');
- 		      break;
- 		    default: 
- 		      break;
- 		  }
-    } else {
-      this.response.redirect('/authentication');
-    }
+ 		return super.get(data);
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -137,63 +127,66 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    return new Promise(async (resolve) => {
-      let rows = await DatabaseHelper.update(data, schema);
-      if (rows.length != 0) {
-        switch (rows[0].columns['role'].value) {
-          case "buyer":
-            this.request.session.role = 'buyer';
-            this.request.session.save();
-            resolve('/buyer/auction');
-            break;
-          case "bidder":
-            this.request.session.role = 'bidder';
-            this.request.session.save();
-            resolve('/bidder/auction');
-            break;
-          default:
-            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
-        }
-      } else {
-        throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
-      }
-      
-      resolve('/authentication/role');
-    });
+ 		return "/";
   }
+ 	
+  
  	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let action: ActionType = RequestHelper.getAction(request);
-  	let schema: DataTableSchema = RequestHelper.getSchema(request);
-  	let data: Input[] = [];
+  	const action: ActionType = RequestHelper.getAction(request);
+  	const schema: DataTableSchema = RequestHelper.getSchema(request);
+  	const data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('02987944', "relational", "User", "role");
-		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
-    input = RequestHelper.getInput(request, '02987944');
+		RequestHelper.registerInput("94c147a5", "relational", "User", "email");
+		ValidationHelper.registerInput("94c147a5", "Textbox 1", true, "Your email address is required.");
+    input = RequestHelper.getInput(request, "94c147a5");
     
-    // Override data parsing and manipulation of buyer here:
+    // Override data parsing and manipulation of Textbox 1 here:
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('56385616', "relational", "User", "id");
-		ValidationHelper.registerInput('56385616', "uid", false, undefined);
-    input = RequestHelper.getInput(request, '56385616');
+		RequestHelper.registerInput("36aa7547", "relational", "User", "bid");
+		ValidationHelper.registerInput("36aa7547", "Textbox 1", false, undefined);
+    input = RequestHelper.getInput(request, "36aa7547");
     
-    // Override data parsing and manipulation of Hidden 1 here:
+    // Override data parsing and manipulation of Textbox 1 here:
     // 
-    if (input) input.value = this.request.session.uid;
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('899069eb', "relational", "User", "role");
-		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
-    input = RequestHelper.getInput(request, '899069eb');
+		RequestHelper.registerInput("3abe85cc", "relational", "User", "md5_password");
+		ValidationHelper.registerInput("3abe85cc", "Textbox 2", false, undefined);
+    input = RequestHelper.getInput(request, "3abe85cc");
     
-    // Override data parsing and manipulation of bidder here:
+    // Override data parsing and manipulation of Textbox 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput("88332d60", "relational", "User", "name");
+		ValidationHelper.registerInput("88332d60", "Textbox 3", false, undefined);
+    input = RequestHelper.getInput(request, "88332d60");
+    
+    // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput("dd693bac", "relational", "User", "uid");
+		ValidationHelper.registerInput("dd693bac", "Textbox 4", false, undefined);
+    input = RequestHelper.getInput(request, "dd693bac");
+    
+    // Override data parsing and manipulation of Textbox 4 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput("bb1daceb", "relational", "User", "uid");
+		ValidationHelper.registerInput("bb1daceb", "Textbox 5", false, undefined);
+    input = RequestHelper.getInput(request, "bb1daceb");
+    
+    // Override data parsing and manipulation of Textbox 5 here:
     // 
     
     if (input != null) data.push(input);
@@ -212,6 +205,7 @@ class Controller extends Base {
 // Export variables here:
 //
 export default Controller;
+
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.

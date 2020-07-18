@@ -118,7 +118,7 @@ class Controller extends Base {
                 password2 = item.value;
                 break;
         }
-    }
+    } 
     if (password1 !== null && password2 !== null) {
         this.signningIn = false;
         if (password1 !== password2) {
@@ -128,7 +128,11 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+    if (this.request.session && this.request.session.uid) {
+      this.response.redirect('/authentication/role');
+    } else { 
+ 		  return super.get(data);
+    }
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -163,7 +167,7 @@ class Controller extends Base {
  		return new Promise((resolve, reject) => {
       if (this.request.session.uid) {
         resolve('/authentication/role');
-      } else {
+      } else { 
         if (this.signningIn) {
           const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
           RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ? and md5_password = ?', [this.email, md5Password], (function(error, results, fields) {
@@ -171,6 +175,7 @@ class Controller extends Base {
               reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
       			} else if (results.length > 0) {
       			  this.request.session.uid = results[0].id;
+      			  this.request.session.role = results[0].role;
       			  this.request.session.save();
       				resolve('/authentication/role');
       			} else {

@@ -66,8 +66,8 @@ class FlowLayout_285eea05 extends Base {
   
   // Providing data array base on dot notation:
   // 
-  protected getDataFromNotation(notation: string): any {
-    return super.getDataFromNotation(notation);
+  protected getDataFromNotation(notation: string, inArray: boolean=false): any {
+    return super.getDataFromNotation(notation, inArray);
   }
   
   // Auto[Merging]--->

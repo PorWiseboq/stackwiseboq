@@ -14,7 +14,6 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
-import {SchemaHelper} from '../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';
 
 // Auto[Declare]--->
@@ -91,21 +90,28 @@ class Controller extends Base {
  		ValidationHelper.validate(data);
   }
   
+  protected async accessories(data: Input[]): Promise<any> {
+ 	  return new Promise((resolve) => {
+ 	    resolve({
+ 		    title: null,
+ 		    description: null,
+ 		    keywords: null,
+ 		    language: null,
+ 		    contentType: null,
+ 		    revisitAfter: null,
+ 		    robots: null,
+ 		    linkUrl: null,
+ 		    imageUrl: null,
+ 		    itemType: null,
+ 		    contentLocale: null
+ 		  });
+ 	  });
+  }
+  
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.session && this.request.session.uid) {
- 		  switch (this.request.session.role) {
- 		    case 'buyer':
-          this.response.redirect('/buyer/auction');
- 		      break;
- 		    case 'bidder':
-          this.response.redirect('/buyer/bidder');
- 		      break;
- 		    default: 
- 		      break;
- 		  }
-    } else {
-      this.response.redirect('/authentication');
-    }
+ 	  return new Promise(async (resolve) => {
+ 		  resolve(await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']));
+ 	  });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -137,29 +143,7 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    return new Promise(async (resolve) => {
-      let rows = await DatabaseHelper.update(data, schema);
-      if (rows.length != 0) {
-        switch (rows[0].columns['role'].value) {
-          case "buyer":
-            this.request.session.role = 'buyer';
-            this.request.session.save();
-            resolve('/buyer/auction');
-            break;
-          case "bidder":
-            this.request.session.role = 'bidder';
-            this.request.session.save();
-            resolve('/bidder/auction');
-            break;
-          default:
-            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
-        }
-      } else {
-        throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
-      }
-      
-      resolve('/authentication/role');
-    });
+ 		return '/';
   }
  	
   // Auto[MergingBegin]--->  
@@ -172,31 +156,6 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('02987944', "relational", "User", "role");
-		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
-    input = RequestHelper.getInput(request, '02987944');
-    
-    // Override data parsing and manipulation of buyer here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('56385616', "relational", "User", "id");
-		ValidationHelper.registerInput('56385616', "uid", false, undefined);
-    input = RequestHelper.getInput(request, '56385616');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    if (input) input.value = this.request.session.uid;
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('899069eb', "relational", "User", "role");
-		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
-    input = RequestHelper.getInput(request, '899069eb');
-    
-    // Override data parsing and manipulation of bidder here:
-    // 
-    
-    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->

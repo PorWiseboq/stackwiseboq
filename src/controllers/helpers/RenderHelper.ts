@@ -2,6 +2,7 @@
 // PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
 
 import {Response} from "express";
+import {DataManipulationHelper} from "./DataManipulationHelper.js";
 
 const RenderHelper = {
 	json: (response: Response, data: any) => {
@@ -22,10 +23,15 @@ const RenderHelper = {
 			redirect: data
 		});
 	},
-	page: (response: Response, path: string, data: any) => {
+	page: (response: Response, path: string, data: any, headers: any={}) => {
 	  if (response.headersSent) return;
+	  
+	  DataManipulationHelper.setData(data || null);
+	  
 	  response.render(path, {
-	    data: JSON.stringify(data)
+	  	DataManipulationHelper: DataManipulationHelper,
+	    data: data || null,
+	    headers: headers || null
 	  });
 	},
 	error: (response: Response, error: Error) => {

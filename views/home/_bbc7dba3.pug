@@ -14,7 +14,7 @@
       <meta name="revisit-after" content="#{headers && headers.revisitAfter || '7 days'}" />
       <meta name="robots" content="#{headers && headers.robots || 'index, follow'}" />
       <meta property="og:title" content="#{headers && headers.title || ''}" />
-      <meta property="og:url" content="#{headers && headers.linkUrl || '/authentication'}" />
+      <meta property="og:url" content="#{headers && headers.linkUrl || '/error/%3Acode'}" />
       <meta property="og:image" content="#{headers && headers.imageUrl || ''}" />
       <meta property="og:type" content="#{headers && headers.itemType || 'website'}" />
       <meta property="og:description" content="#{headers && headers.description || ''}" />
@@ -28,23 +28,9 @@
         
         <div class="row internal-fsb-strict-layout internal-fsb-begin-layout">
           
-          <span internal-fsb-init-class="Project.Controls.FlowLayout_535be65e" internal-fsb-init-forward="{'classes': 'col-12', 'styles': {}}"></span>
-          
-          <div internal-fsb-guid="7c61bdec" class="internal-fsb-element col-12 offset-0" style="margin-top: 100px;">
-            
-            <div class="container-fluid">
-              
-              <div class="row internal-fsb-strict-layout">
-                
-                <span internal-fsb-init-class="Project.Controls.LoginControl" internal-fsb-init-forward="{'classes': 'col-12 offset-0', 'styles': {}}"></span>
-                
-              </div>
-              
-            </div>
-            
+          <div internal-fsb-guid="78385698" class="internal-fsb-element col-12">
+            #{DataManipulationHelper.getDataFromNotation('Message.body')}
           </div>
-          
-          <span internal-fsb-init-class="Project.Controls.FlowLayout_d22b95d9" internal-fsb-init-forward="{'classes': 'col-10 offset-1', 'styles': {'marginTop': '30px'}}"></span>
           
         </div>
         

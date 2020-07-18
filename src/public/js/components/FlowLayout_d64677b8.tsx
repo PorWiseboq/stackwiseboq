@@ -47,7 +47,7 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
 });
 
 // Auto[ClassBegin]--->
-class FlowLayout_49934c23 extends Base {
+class FlowLayout_d64677b8 extends Base {
   state: IState = null;
   protected static defaultProps: IProps = DefaultProps;
   
@@ -76,35 +76,45 @@ class FlowLayout_49934c23 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return (
-      <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="49934c23" style={Object.assign({'float': 'left', 'paddingBottom': '10px'}, this.props.forward && this.props.forward.styles || {})}>
+      <div className={"internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="d64677b8" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})}>
         
         <div className="container-fluid">
           
-          <div className="row internal-fsb-strict-layout">
+          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
             
-            <div className="internal-fsb-inheriting-element" style={{'width': '210px'}}>
-              
-              <div className="container-fluid">
-                
-                <div className="row internal-fsb-strict-layout">
+            {this.getDataFromNotation("Blog", true).map((data, i) => {
+              return (
+                <div className="internal-fsb-element col-12" internal-fsb-guid="0dc16d9d" key={"item_" + i}>
                   
-                  <div className="col-6 offset-0 internal-fsb-inheriting-element" style={{'textAlign': 'center', 'fontFamily': 'Roboto', 'color': 'rgba(22, 98, 250, 1)', 'fontSize': '24px', 'fontWeight': '400'}}>
-                    Wise
-                  </div>
-                  
-                  <div className="col-6 offset-0 internal-fsb-inheriting-element" style={{'textAlign': 'center', 'color': 'rgba(255, 255, 255, 1)', 'fontFamily': 'Roboto', 'fontSize': '24px', 'fontWeight': '400', 'background': 'rgba(22, 98, 250, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px'}}>
-                    BOQ
-                  </div>
-                  
-                  <div className="col-12 internal-fsb-inheriting-element" style={{'paddingLeft': '5px', 'paddingRight': '5px', 'fontFamily': 'Roboto', 'fontSize': '13px', 'textAlign': 'center', 'paddingTop': '5px'}}>
-                    สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์
+                  <div className="container-fluid">
+                    
+                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                      
+                      {this.getDataFromNotation("Blog[" + i + "].title", true).map((data, j) => {
+                        return (
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="d531620d" key={"item_" + j} dangerouslySetInnerHTML={{__html: CodeHelper.escape(data)}}></div>
+                        )
+                      })}
+                      
+                      {this.getDataFromNotation("Blog[" + i + "].description", true).map((data, j) => {
+                        return (
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="8e81c57d" key={"item_" + j} dangerouslySetInnerHTML={{__html: CodeHelper.escape(data)}}></div>
+                        )
+                      })}
+                      
+                      {this.getDataFromNotation("Blog[" + i + "].keywords", true).map((data, j) => {
+                        return (
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="701c71d4" key={"item_" + j} dangerouslySetInnerHTML={{__html: CodeHelper.escape(data)}}></div>
+                        )
+                      })}
+                      
+                    </div>
+                    
                   </div>
                   
                 </div>
-                
-              </div>
-              
-            </div>
+              )
+            })}
             
           </div>
           
@@ -114,7 +124,7 @@ class FlowLayout_49934c23 extends Base {
     )
   }
 }
-DeclarationHelper.declare('Site', 'Controls.FlowLayout_49934c23', FlowLayout_49934c23);
+DeclarationHelper.declare('Document', 'Controls.FlowLayout_d64677b8', FlowLayout_d64677b8);
 // <---Auto[ClassEnd]
 
 // Export variables here:
