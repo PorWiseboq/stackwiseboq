@@ -135,13 +135,13 @@
       }
     ],
     "popups": [],
-    "editingPageID": "b6eb1b83",
+    "editingPageID": "c3da32d7",
     "currentMode": "site",
     "editingComponentID": "535be65e",
-    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {SchemaHelper} from '../helpers/SchemaHelper.js';\nimport {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';\n\n",
+    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';\n\n",
     "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
     "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-    "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve) => {\n   \t\tif (this.request.session && this.request.session.uid) {\n   \t\t  switch (this.request.session.role) {\n   \t\t    case 'buyer':\n            this.response.redirect('/buyer/auction');\n   \t\t      break;\n   \t\t    case 'bidder':\n            this.response.redirect('/buyer/bidder');\n   \t\t      break;\n   \t\t    default:\n   \t\t      break;\n   \t\t  }\n      } else {\n        this.response.redirect('/authentication');\n      }\n      \n   \t  resolve(null);\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve) => {\n      let rows = await DatabaseHelper.update(data, schema);\n      if (rows.length != 0) {\n        switch (rows[0].columns['role'].value) {\n          case \"buyer\":\n            this.request.session.role = 'buyer';\n            this.request.session.save(() => {\n            \tresolve('/buyer/auction');\n            });\n            break;\n          case \"bidder\":\n            this.request.session.role = 'bidder';\n            this.request.session.save(() => {\n            \tresolve('/bidder/auction');\n            });\n            break;\n          default:\n            throw new Error(\"เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง\");\n        }\n      } else {\n        throw new Error(\"เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่\");\n      }\n      \n      resolve('/authentication/role');\n    });\n  }\n \t\n  ",
+    "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t  return new Promise(async (resolve) => {\n \t\t  resolve(await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']));\n \t  });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
     "internal-fsb-data-code-footer": null
   },
   "components": {
@@ -5065,7 +5065,8 @@
         "                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0dc16d9d\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"Blog\">",
         "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d531620d\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\">ABC</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"628375e3\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"bid\">ABC</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d531620d\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\" internal-fsb-note=\"\">ABC</div>",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8e81c57d\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"description\">ABC</div>",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"701c71d4\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"keywords\">ABC</div>",
         "                                </div>",
@@ -5344,7 +5345,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "701c71d4",
+        "selectingElementGUID": "628375e3",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -5361,6 +5362,7 @@
       },
       "notations": {
         "Blog": {
+          "bid": {},
           "title": {},
           "description": {},
           "keywords": {}
@@ -5822,7 +5824,7 @@
     "FlowLayout_29600d13": "4eedc0e8798b63fe4d9d6c8cf3d7b31ee5bfae7d",
     "FlowLayout_49e1cbb8": "db13de1b2def0c1e2e2c6a50c445c948065bb4c9",
     "FlowLayout_d58ae925": "fddaab5dcbc1f583c33f492385e7c55802b20d13",
-    "FlowLayout_d64677b8": "5b7c82467fdd0d87cf3a389fc2b5a6be246b13dc"
+    "FlowLayout_d64677b8": "8d81f79b75eb0e654266e11956a66e8cc6e28d08"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "5be2f90e6e0412406313563a35c74f7707c76f00",
