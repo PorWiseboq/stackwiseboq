@@ -14,8 +14,6 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
-import {SchemaHelper} from '../helpers/SchemaHelper.js';
-import {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -85,27 +83,50 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+  results: {[Identifier: string]: HierarchicalDataTable} = null;
+  
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
   }
   
+  protected async accessories(data: Input[]): Promise<any> {
+ 	  return new Promise(async (resolve) => {
+ 	    if (this.results['Blog'].rows.length == 0) {
+ 	      resolve(null);
+ 	    } else {
+ 	      resolve({
+   		    title: this.results['Blog'].rows[0].columns['title'].value,
+   		    description: this.results['Blog'].rows[0].columns['description'].value,
+   		    keywords: this.results['Blog'].rows[0].columns['keywords'].value,
+   		    linkUrl: `https://www.wiseboq.com/${this.results['Blog'].rows[0].keys['bid'].value}/${this.results['Blog'].rows[0].columns['title'].value}`,
+   		    imageUrl: this.results['Blog'].rows[0].columns['image'].value,
+   		    itemType: 'blog',
+   		    language: 'th',
+   		    contentLocale: 'th'
+   		  });
+ 	    }
+ 	  });
+  }
+  
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.session && this.request.session.uid) {
- 		  switch (this.request.session.role) {
- 		    case 'buyer':
-          this.response.redirect('/buyer/auction');
- 		      break;
- 		    case 'bidder':
-          this.response.redirect('/buyer/bidder');
- 		      break;
- 		    default: 
- 		      break;
+ 		return new Promise(async (resolve) => {
+ 		  this.results = await DatabaseHelper.retrieve([{
+ 		    target: SourceType.Relational,
+        group: "Blog",
+        name: "bid",
+        value: this.request.params.id,
+        guid: null,
+        validation: null
+ 		  }], null);
+ 		  
+ 		  if (this.results['Blog'].rows.length == 0) {
+ 		    this.response.redirect('/error/404');
+ 		  } else {
+   		  resolve(this.results);
  		  }
-    } else {
-      this.response.redirect('/authentication');
-    }
+ 	  });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -137,29 +158,7 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    return new Promise(async (resolve) => {
-      let rows = await DatabaseHelper.update(data, schema);
-      if (rows.length != 0) {
-        switch (rows[0].columns['role'].value) {
-          case "buyer":
-            this.request.session.role = 'buyer';
-            this.request.session.save();
-            resolve('/buyer/auction');
-            break;
-          case "bidder":
-            this.request.session.role = 'bidder';
-            this.request.session.save();
-            resolve('/bidder/auction');
-            break;
-          default:
-            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
-        }
-      } else {
-        throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
-      }
-      
-      resolve('/authentication/role');
-    });
+ 		return '/';
   }
  	
   // Auto[MergingBegin]--->  
@@ -172,31 +171,6 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('02987944', "relational", "User", "role");
-		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
-    input = RequestHelper.getInput(request, '02987944');
-    
-    // Override data parsing and manipulation of buyer here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('56385616', "relational", "User", "id");
-		ValidationHelper.registerInput('56385616', "uid", false, undefined);
-    input = RequestHelper.getInput(request, '56385616');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    if (input) input.value = this.request.session.uid;
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('899069eb', "relational", "User", "role");
-		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
-    input = RequestHelper.getInput(request, '899069eb');
-    
-    // Override data parsing and manipulation of bidder here:
-    // 
-    
-    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->

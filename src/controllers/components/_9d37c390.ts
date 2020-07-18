@@ -14,8 +14,6 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
-import {SchemaHelper} from '../helpers/SchemaHelper.js';
-import {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -85,6 +83,8 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+  results: {[Identifier: string]: HierarchicalDataTable} = null;
+  
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
@@ -92,20 +92,26 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		if (this.request.session && this.request.session.uid) {
- 		  switch (this.request.session.role) {
- 		    case 'buyer':
-          this.response.redirect('/buyer/auction');
- 		      break;
- 		    case 'bidder':
-          this.response.redirect('/buyer/bidder');
- 		      break;
- 		    default: 
- 		      break;
- 		  }
-    } else {
-      this.response.redirect('/authentication');
-    }
+    return new Promise(async (resolve) => {
+   		if (this.request.params.id == 'new') {
+   		  resolve(null);
+   		} else {
+   		  this.results = await DatabaseHelper.retrieve([{
+   		    target: SourceType.Relational,
+          group: "Blog",
+          name: "bid",
+          value: this.request.params.id,
+          guid: null,
+          validation: null
+   		  }], null);
+   		  
+   		  if (this.results['Blog'].rows.length == 0) {
+   		    this.response.redirect('/error/404');
+   		  } else {
+     		  resolve(this.results);
+   		  }
+   		}
+    });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -137,29 +143,7 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    return new Promise(async (resolve) => {
-      let rows = await DatabaseHelper.update(data, schema);
-      if (rows.length != 0) {
-        switch (rows[0].columns['role'].value) {
-          case "buyer":
-            this.request.session.role = 'buyer';
-            this.request.session.save();
-            resolve('/buyer/auction');
-            break;
-          case "bidder":
-            this.request.session.role = 'bidder';
-            this.request.session.save();
-            resolve('/bidder/auction');
-            break;
-          default:
-            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
-        }
-      } else {
-        throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
-      }
-      
-      resolve('/authentication/role');
-    });
+ 		return '/';
   }
  	
   // Auto[MergingBegin]--->  
@@ -172,28 +156,51 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('02987944', "relational", "User", "role");
-		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
-    input = RequestHelper.getInput(request, '02987944');
+		RequestHelper.registerInput('d064b129', "relational", "Blog", "title");
+		ValidationHelper.registerInput('d064b129', "Textbox 2", true, "ต้องมีหัวข้อเรื่อง");
+    input = RequestHelper.getInput(request, 'd064b129');
     
-    // Override data parsing and manipulation of buyer here:
+    // Override data parsing and manipulation of Textbox 2 here:
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('56385616', "relational", "User", "id");
-		ValidationHelper.registerInput('56385616', "uid", false, undefined);
-    input = RequestHelper.getInput(request, '56385616');
+		RequestHelper.registerInput('a0641238', "relational", "Blog", "body");
+		ValidationHelper.registerInput('a0641238', "Textbox 1", true, "ต้องมีเนื้อหา");
+    input = RequestHelper.getInput(request, 'a0641238');
+    
+    // Override data parsing and manipulation of Textbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('1d258b94', "relational", "Blog", "description");
+		ValidationHelper.registerInput('1d258b94', "Textbox 3", true, "ต้องมีโดยย่อ");
+    input = RequestHelper.getInput(request, '1d258b94');
+    
+    // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('9ba2b637', "relational", "Blog", "keywords");
+		ValidationHelper.registerInput('9ba2b637', "Textbox 1", true, "ต้องใช้คีย์เวิร์ด");
+    input = RequestHelper.getInput(request, '9ba2b637');
+    
+    // Override data parsing and manipulation of Textbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('3dcb582a', "relational", "Blog", "image");
+		ValidationHelper.registerInput('3dcb582a', "Textbox 3", false, undefined);
+    input = RequestHelper.getInput(request, '3dcb582a');
+    
+    // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('50cb1c1b', "relational", "Blog", "bid");
+		ValidationHelper.registerInput('50cb1c1b', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, '50cb1c1b');
     
     // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    if (input) input.value = this.request.session.uid;
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('899069eb', "relational", "User", "role");
-		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
-    input = RequestHelper.getInput(request, '899069eb');
-    
-    // Override data parsing and manipulation of bidder here:
     // 
     
     if (input != null) data.push(input);

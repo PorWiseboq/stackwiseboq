@@ -47,7 +47,7 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
 });
 
 // Auto[ClassBegin]--->
-class FlowLayout_3e6ee363 extends Base {
+class FlowLayout_0929c333 extends Base {
   state: IState = null;
   protected static defaultProps: IProps = DefaultProps;
   
@@ -76,28 +76,40 @@ class FlowLayout_3e6ee363 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return (
-      <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="3e6ee363" style={Object.assign({'borderTopWidth': '1px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(22, 98, 250, 1)', 'paddingTop': '20px', 'paddingBottom': '20px'}, this.props.forward && this.props.forward.styles || {})}>
-        
+      <div className={"internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="0929c333" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})}>
         <div className="container-fluid">
-          
-          <div className="row internal-fsb-strict-layout">
-            
-            <div className="col-12 internal-fsb-inheriting-element" style={{'textAlign': 'center', 'fontSize': '13px'}}>
-              ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ
-              <div>
-                บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170
-              </div>
-            </div>
-            
+          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+            {this.getDataFromNotation("Blog", true).map((data, i) => {
+              return (
+                <div className="internal-fsb-element col-12" internal-fsb-guid="20c22cab" key={"item_" + i}>
+                  <div className="container-fluid">
+                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                      {this.getDataFromNotation("Blog[" + i + "].title", true).map((data, j) => {
+                        return (
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="44b6d080" key={"item_" + j}>
+                            ABC
+                          </div>
+                        )
+                      })}
+                      {this.getDataFromNotation("Blog[" + i + "].body", true).map((data, j) => {
+                        return (
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="ba0109a5" key={"item_" + j}>
+                            ABC
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
-          
         </div>
-        
       </div>
     )
   }
 }
-DeclarationHelper.declare('Site', 'Controls.FlowLayout_3e6ee363', FlowLayout_3e6ee363);
+DeclarationHelper.declare('Document', 'Controls.FlowLayout_0929c333', FlowLayout_0929c333);
 // <---Auto[ClassEnd]
 
 // Export variables here:

@@ -45,19 +45,18 @@ class Base extends React.Component {
     });
   }
   
-  protected getDataFromNotation(notation: string): any {
+  protected getDataFromNotation(notation: string, inArray: boolean=false): any {
     if (!notation) {
       console.error("There was an error processing hierarchical data on client side (notation isn't a string).");
       return [];
     }
     
     if (this.state.data) {
-    	return DataManipulationHelper.getDataFromNotation(notation, this.state.data);
+    	return DataManipulationHelper.getDataFromNotation(notation, this.state.data, inArray);
     } else if (this.props.data) {
-    	return DataManipulationHelper.getDataFromNotation(notation, this.props.data);
+    	return DataManipulationHelper.getDataFromNotation(notation, this.props.data, inArray);
     } else {
-      console.error('There was an error processing hierarchical data on client side (there is no data available, please check the get method on back-end).');
-      return [];
+      return [''];
     }
   }
   
@@ -73,15 +72,15 @@ class Base extends React.Component {
         break;
       case 'update':
         for (let result of results) {
-          data.rows = data.rows.map((row) => {
+          data.rows = [...data.rows].map((row) => {
             for (let key in row.keys) {
               if (row.keys.hasOwnProperty(key)) {
                 if (row.keys[key].value != result.keys[key].value) {
-                  return result;
+                  return row;
                 }
               }
             }
-            return row;
+            return result;
           });
         }
         break;
@@ -109,7 +108,6 @@ class Base extends React.Component {
         /* handled */
         break;
     }
-    update(data);
   }
   
   protected render() { }
