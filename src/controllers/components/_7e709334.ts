@@ -89,12 +89,26 @@ class Controller extends Base {
  		ValidationHelper.validate(data);
   }
   
+  protected async accessories(data: Input[]): Promise<any> {
+ 	  return new Promise((resolve) => {
+ 	    resolve({
+ 		    title: null,
+ 		    description: null,
+ 		    keywords: null,
+ 		    language: null,
+ 		    contentType: null,
+ 		    revisitAfter: null,
+ 		    robots: null,
+ 		    linkUrl: null,
+ 		    imageUrl: null,
+ 		    itemType: null,
+ 		    contentLocale: null
+ 		  });
+ 	  });
+  }
+  
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
-    if (!this.request.session || !this.request.session.uid || !this.request.session.role) {
-      this.response.redirect('/authentication');
-    } else {
-      return super.get(data);
-    }
+ 		return super.get(data);
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
