@@ -26,6 +26,8 @@ const route = (app: any) => {
  app.post("/error/:code", homeController._bbc7dba3);
  app.get("/blog/:category", homeController._c3da32d7);
  app.post("/blog/:category", homeController._c3da32d7);
+ app.get("/buyer/auction/waiting", homeController._8a4a42e4);
+ app.post("/buyer/auction/waiting", homeController._8a4a42e4);
 }
 
 export default route;
