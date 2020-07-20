@@ -217,6 +217,54 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
+		RequestHelper.registerInput('33408187', undefined, undefined, undefined);
+		ValidationHelper.registerInput('33408187', "Checkbox 1", false, undefined);
+    input = RequestHelper.getInput(request, '33408187');
+    
+    // Override data parsing and manipulation of Checkbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('230ab296', undefined, undefined, undefined);
+		ValidationHelper.registerInput('230ab296', "Textbox 6", false, undefined);
+    input = RequestHelper.getInput(request, '230ab296');
+    
+    // Override data parsing and manipulation of Textbox 6 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('babc9e30', undefined, undefined, undefined);
+		ValidationHelper.registerInput('babc9e30', "Checkbox 2", false, undefined);
+    input = RequestHelper.getInput(request, 'babc9e30');
+    
+    // Override data parsing and manipulation of Checkbox 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('9200d56a', undefined, undefined, undefined);
+		ValidationHelper.registerInput('9200d56a', "Textbox 7", false, undefined);
+    input = RequestHelper.getInput(request, '9200d56a');
+    
+    // Override data parsing and manipulation of Textbox 7 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('c82d677d', undefined, undefined, undefined);
+		ValidationHelper.registerInput('c82d677d', "Radio 6", false, undefined);
+    input = RequestHelper.getInput(request, 'c82d677d');
+    
+    // Override data parsing and manipulation of Radio 6 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('a4459d6e', undefined, undefined, undefined);
+		ValidationHelper.registerInput('a4459d6e', "Radio 7", false, undefined);
+    input = RequestHelper.getInput(request, 'a4459d6e');
+    
+    // Override data parsing and manipulation of Radio 7 here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
