@@ -257,11 +257,35 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
+		RequestHelper.registerInput('c3daa46d', undefined, undefined, undefined);
+		ValidationHelper.registerInput('c3daa46d', "Textbox 1", false, undefined);
+    input = RequestHelper.getInput(request, 'c3daa46d');
+    
+    // Override data parsing and manipulation of Textbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
 		RequestHelper.registerInput('a4459d6e', undefined, undefined, undefined);
 		ValidationHelper.registerInput('a4459d6e', "Radio 7", false, undefined);
     input = RequestHelper.getInput(request, 'a4459d6e');
     
     // Override data parsing and manipulation of Radio 7 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('915d8ec6', undefined, undefined, undefined);
+		ValidationHelper.registerInput('915d8ec6', "Textbox 2", false, undefined);
+    input = RequestHelper.getInput(request, '915d8ec6');
+    
+    // Override data parsing and manipulation of Textbox 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('4a397863', undefined, undefined, undefined);
+		ValidationHelper.registerInput('4a397863', "Textbox 3", false, undefined);
+    input = RequestHelper.getInput(request, '4a397863');
+    
+    // Override data parsing and manipulation of Textbox 3 here:
     // 
     
     if (input != null) data.push(input);
