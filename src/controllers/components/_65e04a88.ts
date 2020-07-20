@@ -249,11 +249,11 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('c82d677d', undefined, undefined, undefined);
-		ValidationHelper.registerInput('c82d677d', "Radio 6", false, undefined);
-    input = RequestHelper.getInput(request, 'c82d677d');
+		RequestHelper.registerInput('12403b79', undefined, undefined, undefined);
+		ValidationHelper.registerInput('12403b79', "Radio 5", false, undefined);
+    input = RequestHelper.getInput(request, '12403b79');
     
-    // Override data parsing and manipulation of Radio 6 here:
+    // Override data parsing and manipulation of Radio 5 here:
     // 
     
     if (input != null) data.push(input);
@@ -265,19 +265,11 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('a4459d6e', undefined, undefined, undefined);
-		ValidationHelper.registerInput('a4459d6e', "Radio 7", false, undefined);
-    input = RequestHelper.getInput(request, 'a4459d6e');
+		RequestHelper.registerInput('0606ea02', undefined, undefined, undefined);
+		ValidationHelper.registerInput('0606ea02', "Radio 6", false, undefined);
+    input = RequestHelper.getInput(request, '0606ea02');
     
-    // Override data parsing and manipulation of Radio 7 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('915d8ec6', undefined, undefined, undefined);
-		ValidationHelper.registerInput('915d8ec6', "Textbox 2", false, undefined);
-    input = RequestHelper.getInput(request, '915d8ec6');
-    
-    // Override data parsing and manipulation of Textbox 2 here:
+    // Override data parsing and manipulation of Radio 6 here:
     // 
     
     if (input != null) data.push(input);
@@ -286,6 +278,14 @@ class Controller extends Base {
     input = RequestHelper.getInput(request, '4a397863');
     
     // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('915d8ec6', undefined, undefined, undefined);
+		ValidationHelper.registerInput('915d8ec6', "Textbox 2", false, undefined);
+    input = RequestHelper.getInput(request, '915d8ec6');
+    
+    // Override data parsing and manipulation of Textbox 2 here:
     // 
     
     if (input != null) data.push(input);
