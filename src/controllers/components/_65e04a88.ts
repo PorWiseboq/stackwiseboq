@@ -153,6 +153,70 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+		RequestHelper.registerInput('5a972a57', undefined, undefined, undefined);
+		ValidationHelper.registerInput('5a972a57', "Textbox 4", false, undefined);
+    input = RequestHelper.getInput(request, '5a972a57');
+    
+    // Override data parsing and manipulation of Textbox 4 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('607d8ee2', undefined, undefined, undefined);
+		ValidationHelper.registerInput('607d8ee2', "Textbox 5", false, undefined);
+    input = RequestHelper.getInput(request, '607d8ee2');
+    
+    // Override data parsing and manipulation of Textbox 5 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('54e20435', undefined, undefined, undefined);
+		ValidationHelper.registerInput('54e20435', "Textbox 1", false, undefined);
+    input = RequestHelper.getInput(request, '54e20435');
+    
+    // Override data parsing and manipulation of Textbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('31894d87', undefined, undefined, undefined);
+		ValidationHelper.registerInput('31894d87', "Textbox 2", false, undefined);
+    input = RequestHelper.getInput(request, '31894d87');
+    
+    // Override data parsing and manipulation of Textbox 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('b2321320', undefined, undefined, undefined);
+		ValidationHelper.registerInput('b2321320', "Textbox 3", false, undefined);
+    input = RequestHelper.getInput(request, 'b2321320');
+    
+    // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('b6c9ad89', undefined, undefined, undefined);
+		ValidationHelper.registerInput('b6c9ad89', "Radio 3", false, undefined);
+    input = RequestHelper.getInput(request, 'b6c9ad89');
+    
+    // Override data parsing and manipulation of Radio 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('a0b78888', undefined, undefined, undefined);
+		ValidationHelper.registerInput('a0b78888', "Radio 4", false, undefined);
+    input = RequestHelper.getInput(request, 'a0b78888');
+    
+    // Override data parsing and manipulation of Radio 4 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('cc34eced', undefined, undefined, undefined);
+		ValidationHelper.registerInput('cc34eced', "Radio 5", false, undefined);
+    input = RequestHelper.getInput(request, 'cc34eced');
+    
+    // Override data parsing and manipulation of Radio 5 here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
