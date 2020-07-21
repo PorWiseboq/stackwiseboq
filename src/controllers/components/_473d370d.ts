@@ -153,6 +153,22 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+		RequestHelper.registerInput('bc041e39', undefined, undefined, undefined);
+		ValidationHelper.registerInput('bc041e39', "Radio 1", false, undefined);
+    input = RequestHelper.getInput(request, 'bc041e39');
+    
+    // Override data parsing and manipulation of Radio 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('b235ec3d', undefined, undefined, undefined);
+		ValidationHelper.registerInput('b235ec3d', "Radio 2", false, undefined);
+    input = RequestHelper.getInput(request, 'b235ec3d');
+    
+    // Override data parsing and manipulation of Radio 2 here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->

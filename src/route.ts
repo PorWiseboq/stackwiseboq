@@ -24,12 +24,12 @@ const route = (app: any) => {
  app.post("/buyer", homeController._b140e86b);
  app.get("/buyer/auction", homeController._65e04a88);
  app.post("/buyer/auction", homeController._65e04a88);
+ app.get("/buyer/auction/results", homeController._473d370d);
+ app.post("/buyer/auction/results", homeController._473d370d);
  app.get("/buyer/auction/waiting", homeController._8a4a42e4);
  app.post("/buyer/auction/waiting", homeController._8a4a42e4);
  app.get("/error/:code", homeController._bbc7dba3);
  app.post("/error/:code", homeController._bbc7dba3);
- app.get("/buyer/auction/results", homeController._473d370d);
- app.post("/buyer/auction/results", homeController._473d370d);
 }
 
 export default route;
