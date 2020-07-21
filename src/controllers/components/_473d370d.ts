@@ -161,11 +161,11 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('b235ec3d', undefined, undefined, undefined);
-		ValidationHelper.registerInput('b235ec3d', "Radio 2", false, undefined);
-    input = RequestHelper.getInput(request, 'b235ec3d');
+		RequestHelper.registerInput('1411ca4c', undefined, undefined, undefined);
+		ValidationHelper.registerInput('1411ca4c', "Checkbox 1", false, undefined);
+    input = RequestHelper.getInput(request, '1411ca4c');
     
-    // Override data parsing and manipulation of Radio 2 here:
+    // Override data parsing and manipulation of Checkbox 1 here:
     // 
     
     if (input != null) data.push(input);
