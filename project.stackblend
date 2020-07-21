@@ -7936,7 +7936,7 @@
         "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-7a279686 col-12 offset-0\" internal-fsb-guid=\"28d79e4e\" internal-fsb-name=\"TextElement 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; text-align: center\">ร้านค้าที่เสนอครบ</div>",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"9e116c4b\" internal-fsb-name=\"TextElement 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; text-align: center\">(ครบทุกรายการสินค้าตามที่คุณได้ระบุไว้)</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"9e116c4b\" internal-fsb-name=\"TextElement 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; text-align: center\">ครบทุกรายการสินค้าตามที่คุณได้ระบุไว้</div>",
         "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"839d87a6\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><label class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"0a1d7749\" internal-fsb-name=\"Label 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"padding-left: 0px; padding-right: 0px\">",
@@ -7958,7 +7958,7 @@
         "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"32d5d986\" internal-fsb-name=\"TextElement 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; text-align: center\">ร้านค้าที่เสนอไม่ครบ</div>",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"740014ae\" internal-fsb-name=\"TextElement 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; text-align: center\">(มีเฉพาะบางรายการสินค้าตามที่คุณได้ระบุไว้)</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"740014ae\" internal-fsb-name=\"TextElement 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; text-align: center\">มีเฉพาะบางรายการสินค้าตามที่คุณได้ระบุไว้</div>",
         "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"33eb2aa3\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><label class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9db8b3b2\" internal-fsb-name=\"Label 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"padding-left: 0px; padding-right: 0px\">",
@@ -8108,9 +8108,10 @@
         "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a3c6554b\" internal-fsb-name=\"FlowLayout 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 15px\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"782d3986\" internal-fsb-name=\"TextElement 20\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: b5cd72c0; font-weight: bold; margin-bottom: 5px\">กรุณาเปิดหน้านี้ไว้และดำเนินการผ่านธนาคาร</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"782d3986\" internal-fsb-name=\"TextElement 20\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: b5cd72c0; font-weight: bold; margin-bottom: 5px\">โปรดดำเนินการผ่านธนาคาร</div>",
         "",
-        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"c6cd6a36\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm\"></div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-8050ab15\" internal-fsb-guid=\"5eeaed97\" internal-fsb-name=\"TextElement 23\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8050ab15; text-align: center; margin-bottom: 15px\">คุณสามารถเปิดหน้านี้ทิ้งไว้หรือกลับเข้ามาในภายหลังก็ได้</div>",
+        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"c6cd6a36\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 5px\" class=\"form-control form-control-sm \" placeholder=\"วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm\"></div>",
         "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"0c59a0a4\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อผู้ที่ได้ทำการโอน\"></div>",
         "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"5cab012e\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อธนาคารและสาขาต้นทาง\"></div>",
         "                                            </div>",
@@ -8646,9 +8647,9 @@
       "accessories": {
         "selectingElementGUID": "41288a78",
         "currentCursorWalkPath": [
-          "0",
+          "8173e6a3",
           0,
-          6,
+          3,
           null
         ]
       },
@@ -9125,7 +9126,7 @@
     "FlowLayout_a04733d3": "a41d78728460ba3dbdace73cd03ec6f46bacbe12",
     "FlowLayout_ee5d6390": "dc5499382a5e19149af604fec2264cb214692adb",
     "FlowLayout_a6314edc": "943c0af461eee55edfcf59c669603f1bd71808a3",
-    "FlowLayout_41288a78": "a7019a2880422d6dd20ae00ecf8cbdbe12fe07c0"
+    "FlowLayout_41288a78": "5ffe7aa62d3f33eb69122ad692c358346302b0d6"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "ace429394716b403ae6339164fc40fc6bbc644db",
@@ -9140,6 +9141,6 @@
     "bbc7dba3": "6940ac00ad529fad8d3d0ccedcd4c56f3679f685",
     "c3da32d7": "76cb6f09fa668ca563f8d330ab3a83a3d1e0c146",
     "8a4a42e4": "df94a62964403fa1baf1b47e3d7190524660828c",
-    "473d370d": "3b87ddd60d8c7856774075346979319d0b318bf8"
+    "473d370d": "fdc56d347017e23454813872c5e62bd93cdde58d"
   }
 }

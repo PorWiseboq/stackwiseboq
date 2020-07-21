@@ -216,11 +216,14 @@ class FlowLayout_41288a78 extends Base {
                       <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                         
                         <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="782d3986" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px'}}>
-                          กรุณาเปิดหน้านี้ไว้และดำเนินการผ่านธนาคาร
+                          โปรดดำเนินการผ่านธนาคาร
                         </div>
                         
+                        <div className="internal-fsb-element col-12 -fsb-preset-8050ab15" internal-fsb-guid="5eeaed97" style={{'FsbInheritedPresets': '8050ab15', 'textAlign': 'center', 'marginBottom': '15px'}}>
+                          คุณสามารถเปิดหน้านี้ทิ้งไว้หรือกลับเข้ามาในภายหลังก็ได้
+                        </div>
                         <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c6cd6a36">
-                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm" />
+                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}} type="text" placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm" />
                         </div>
                         
                         <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="0c59a0a4">
