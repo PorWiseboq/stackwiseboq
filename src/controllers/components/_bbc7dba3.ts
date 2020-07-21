@@ -108,33 +108,7 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return new Promise((resolve) => {
- 		  let message;
- 		  switch (parseInt(this.request.params.code)) {
- 		    case 404:
- 		      message = "หน้าดังกล่าวหาไม่พบ";
- 		      break;
- 		    default:
- 		      message = "กรุณาลองดูอีกครั้ง";
- 		      break;
- 		  }
- 		  resolve({
- 		    Message: {
- 		      source: null,
-        	group: 'Message',
-          rows: [{
-            keys: {},
-            columns: {
-              body: {
-                name: 'body',
-                value: message
-              }
-            },
-            relations: {}
-          }]
- 		    }
- 		  });
- 		});
+ 		return super.get(data);
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
