@@ -4804,7 +4804,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "67c431d0",
+        "selectingElementGUID": "607d8ee2",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -8100,8 +8100,19 @@
         "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"7443b335\" internal-fsb-name=\"FlowLayout 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"ae38da00\" internal-fsb-name=\"TextElement 18\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: b5cd72c0; font-weight: bold\">จำนวนเงิน</div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"9699d64d\" internal-fsb-name=\"TextElement 19\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0; text-align: center\">หนึ่งหมื่นห้าพันบาทถ้วน</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"ae38da00\" internal-fsb-name=\"TextElement 18\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: b5cd72c0; font-weight: bold; margin-bottom: 5px\">จำนวนเงิน</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"9699d64d\" internal-fsb-name=\"TextElement 19\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0; text-align: center\">หนึ่งหมื่นห้าพันบาทยี่สิบสตางค์ถ้วน</div>",
+        "                                            </div>",
+        "                                        </div>",
+        "                                    </div>",
+        "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a3c6554b\" internal-fsb-name=\"FlowLayout 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 15px\">",
+        "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"782d3986\" internal-fsb-name=\"TextElement 20\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: b5cd72c0; font-weight: bold; margin-bottom: 5px\">กรุณาเปิดหน้านี้ไว้และดำเนินการผ่านธนาคาร</div>",
+        "",
+        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"c6cd6a36\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm\"></div>",
+        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"0c59a0a4\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อผู้ที่ได้ทำการโอน\"></div>",
+        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"5cab012e\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อธนาคารและสาขาต้นทาง\"></div>",
         "                                            </div>",
         "                                        </div>",
         "                                    </div>",
@@ -8635,9 +8646,9 @@
       "accessories": {
         "selectingElementGUID": "41288a78",
         "currentCursorWalkPath": [
-          "8173e6a3",
+          "0",
           0,
-          3,
+          6,
           null
         ]
       },
@@ -9088,7 +9099,7 @@
     "bbc7dba3": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "c3da32d7": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "8a4a42e4": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "473d370d": "86b94ba445cc78d1e21f52f335ed8f5139a27bdd"
+    "473d370d": "94808a94e1ab8bf390ec8f586e81930bb1565b65"
   },
   "frontEndComponentsBlobSHADict": {
     "LoginControl": "d8dd4fdf9625542b6b81fec2b9d3d24cda79aba2",
@@ -9114,7 +9125,7 @@
     "FlowLayout_a04733d3": "a41d78728460ba3dbdace73cd03ec6f46bacbe12",
     "FlowLayout_ee5d6390": "dc5499382a5e19149af604fec2264cb214692adb",
     "FlowLayout_a6314edc": "943c0af461eee55edfcf59c669603f1bd71808a3",
-    "FlowLayout_41288a78": "53fb8f32876fe82899765b04c0eadafbaa8dc6c1"
+    "FlowLayout_41288a78": "a7019a2880422d6dd20ae00ecf8cbdbe12fe07c0"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "ace429394716b403ae6339164fc40fc6bbc644db",

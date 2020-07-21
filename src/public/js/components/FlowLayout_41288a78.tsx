@@ -195,12 +195,40 @@ class FlowLayout_41288a78 extends Base {
                       
                       <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                         
-                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="ae38da00" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold'}}>
+                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="ae38da00" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px'}}>
                           จำนวนเงิน
                         </div>
                         
                         <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="9699d64d" style={{'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center'}}>
-                          หนึ่งหมื่นห้าพันบาทถ้วน
+                          หนึ่งหมื่นห้าพันบาทยี่สิบสตางค์ถ้วน
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                  
+                  <div className="internal-fsb-element col-12" internal-fsb-guid="a3c6554b" style={{'marginTop': '15px'}}>
+                    
+                    <div className="container-fluid">
+                      
+                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                        
+                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="782d3986" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px'}}>
+                          กรุณาเปิดหน้านี้ไว้และดำเนินการผ่านธนาคาร
+                        </div>
+                        
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c6cd6a36">
+                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm" />
+                        </div>
+                        
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="0c59a0a4">
+                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" placeholder="ชื่อผู้ที่ได้ทำการโอน" />
+                        </div>
+                        
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5cab012e">
+                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" placeholder="ชื่อธนาคารและสาขาต้นทาง" />
                         </div>
                         
                       </div>
