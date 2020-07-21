@@ -195,7 +195,7 @@ class FlowLayout_41288a78 extends Base {
                       
                       <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                         
-                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="ae38da00" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px'}}>
+                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="ae38da00" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px', 'fontSize': '14px'}}>
                           จำนวนเงิน
                         </div>
                         
@@ -215,13 +215,14 @@ class FlowLayout_41288a78 extends Base {
                       
                       <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                         
-                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="782d3986" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px'}}>
+                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="782d3986" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px', 'fontSize': '14px'}}>
                           โปรดดำเนินการผ่านธนาคาร
                         </div>
                         
-                        <div className="internal-fsb-element col-12 -fsb-preset-8050ab15" internal-fsb-guid="5eeaed97" style={{'FsbInheritedPresets': '8050ab15', 'textAlign': 'center', 'marginBottom': '15px'}}>
-                          คุณสามารถเปิดหน้านี้ทิ้งไว้หรือกลับเข้ามาในภายหลังก็ได้
+                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="5eeaed97" style={{'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center', 'marginBottom': '15px'}}>
+                          คุณอาจเปิดหน้านี้ทิ้งไว้หรือเข้าสู่ระบบเพื่อกลับเข้ามายังหน้านี้ในภายหลังได้เช่นกัน
                         </div>
+                        
                         <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c6cd6a36">
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}} type="text" placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm" />
                         </div>
