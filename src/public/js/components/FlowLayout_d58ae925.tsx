@@ -64,6 +64,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
   // Declare class variables and functions here:
   //
   protected initialize(): void {
+    
   }
   
   // Providing data array base on dot notation:
@@ -192,7 +193,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
                         
                       </button>
                       
-                      <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary" internal-fsb-guid="2258be6b" style={{'marginTop': '10px'}} type="button" custom-event-submitting={this.onButtonSubmitting_2258be6b.bind(this)} custom-event-submitted={this.onButtonSubmitted_2258be6b.bind(this)} custom-event-failed={this.onButtonFailed_2258be6b.bind(this)} custom-event-success={this.onButtonSuccess_2258be6b.bind(this)} onClick={((event) => { window.internalFsbSubmit('2258be6b', 'Blog', event, ((results: any) => { this.manipulate('2258be6b', 'Blog', results); }).bind(this)); }).bind(this)}>
+                      <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary" internal-fsb-guid="2258be6b" style={{'marginTop': '10px'}} type="button" data-event-submitting={this.onButtonSubmitting_2258be6b.bind(this)} data-event-submitted={this.onButtonSubmitted_2258be6b.bind(this)} data-event-failed={this.onButtonFailed_2258be6b.bind(this)} data-event-success={this.onButtonSuccess_2258be6b.bind(this)} onClick={((event) => { window.internalFsbSubmit('2258be6b', 'Blog', event, ((results: any) => { this.manipulate('2258be6b', 'Blog', results); }).bind(this)); }).bind(this)}>
                         
                         <div className="internal-fsb-element" internal-fsb-guid="2258be6b-text">
                           Update
