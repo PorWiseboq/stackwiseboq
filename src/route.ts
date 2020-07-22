@@ -16,8 +16,6 @@ const route = (app: any) => {
  app.post("/bidder/auction", homeController._7e709334);
  app.get("/blog/:category", homeController._c3da32d7);
  app.post("/blog/:category", homeController._c3da32d7);
- app.get("/blog/:id/:title", homeController._6ce794ec);
- app.post("/blog/:id/:title", homeController._6ce794ec);
  app.get("/blog/admin/:id", homeController._9d37c390);
  app.post("/blog/admin/:id", homeController._9d37c390);
  app.get("/buyer", homeController._b140e86b);
@@ -30,6 +28,8 @@ const route = (app: any) => {
  app.post("/buyer/auction/waiting", homeController._8a4a42e4);
  app.get("/error/:code", homeController._bbc7dba3);
  app.post("/error/:code", homeController._bbc7dba3);
+ app.get("/article/:id/:title", homeController._6ce794ec);
+ app.post("/article/:id/:title", homeController._6ce794ec);
 }
 
 export default route;

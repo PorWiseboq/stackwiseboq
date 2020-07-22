@@ -74,12 +74,6 @@
         "state": "update"
       },
       {
-        "id": "6ce794ec",
-        "name": "WiseBoq - อ่านบล็อก",
-        "path": "/blog/:id/:title",
-        "state": "update"
-      },
-      {
         "id": "9d37c390",
         "name": "Admin - เขียนบล็อก",
         "path": "/blog/admin/:id",
@@ -123,6 +117,12 @@
         "image": null,
         "path": "/error/:code",
         "state": "update"
+      },
+      {
+        "id": "6ce794ec",
+        "name": "WiseBoq - อ่านบล็อก",
+        "path": "/article/:id/:title",
+        "state": "update"
       }
     ],
     "components": [
@@ -153,7 +153,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "473d370d",
+    "editingPageID": "6ce794ec",
     "currentMode": "site",
     "editingComponentID": "535be65e"
   },
@@ -5410,7 +5410,7 @@
     "6ce794ec": {
       "id": "6ce794ec",
       "name": "WiseBoq - อ่านบล็อก",
-      "path": "/blog/:id/:title",
+      "path": "/article/:id/:title",
       "state": "update",
       "head": {
         "fonts": {}
@@ -6389,7 +6389,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d58ae925",
+        "selectingElementGUID": "3ad97347",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -9166,7 +9166,7 @@
     "9d37c390": "33a5765fc5acca6d461c56e34a3729b34c31353a",
     "6ce794ec": "4f7b0fe72da78f3e0cec7b480ceae92e2c0a75cb",
     "bbc7dba3": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "c3da32d7": "fb7632ce1363f1867691b3cab83e9566311f01a2",
+    "c3da32d7": "3c0c8ab28881abf92d258a63eb18c8e05b47c50a",
     "8a4a42e4": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "473d370d": "94808a94e1ab8bf390ec8f586e81930bb1565b65"
   },
@@ -9205,10 +9205,10 @@
     "b6eb1b83": "790a2c4bde09639f7648275901951081f2fcb4eb",
     "65e04a88": "2d276725d2186ba71637abcc43bcd7981953914e",
     "7e709334": "570555dac711073db874beea52868ba009eccd67",
-    "6ce794ec": "87dc3ba69ded6d1d5823b55c9961a9247aa73d04",
+    "6ce794ec": "52cf5f952ec36c88d4fe96513fb5a5c53e4a3df5",
     "9d37c390": "c323e7af5d3efb88cbfc0ffeb24a24c7c0cdec1b",
     "bbc7dba3": "6940ac00ad529fad8d3d0ccedcd4c56f3679f685",
-    "c3da32d7": "76cb6f09fa668ca563f8d330ab3a83a3d1e0c146",
+    "c3da32d7": "6d77decb434c37a31d49c217988e359930dd37aa",
     "8a4a42e4": "eec6c2188cd690ad986da0d51f033f400f3b2df8",
     "473d370d": "95497c97cd6138a0903f0244c002cfb45d60ce59"
   }
