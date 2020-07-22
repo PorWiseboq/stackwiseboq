@@ -95,6 +95,7 @@ class FlowLayout_d64677b8 extends Base {
                           <div className="internal-fsb-element col-12" internal-fsb-guid="628375e3" key={"item_" + j} dangerouslySetInnerHTML={{__html: CodeHelper.escape(data)}}></div>
                         )
                       })}
+                      
                       {this.getDataFromNotation("Blog[" + i + "].title", true).map((data, j) => {
                         return (
                           <div className="internal-fsb-element col-12" internal-fsb-guid="d531620d" key={"item_" + j} dangerouslySetInnerHTML={{__html: CodeHelper.escape(data)}}></div>

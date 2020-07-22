@@ -135,14 +135,9 @@
       }
     ],
     "popups": [],
-    "editingPageID": "c3da32d7",
+    "editingPageID": "9d37c390",
     "currentMode": "site",
-    "editingComponentID": "535be65e",
-    "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';\n\n",
-    "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
-    "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-    "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t  return new Promise(async (resolve) => {\n \t\t  resolve(await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']));\n \t  });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  ",
-    "internal-fsb-data-code-footer": null
+    "editingComponentID": "535be65e"
   },
   "components": {
     "7aee6ed8": {
@@ -4415,7 +4410,31 @@
         "                                    <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"3dcb582a\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"image\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"image\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-2 offset-4\" internal-fsb-guid=\"10714c4a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94 9ba2b637 3dcb582a\" internal-fsb-data-wizard-type=\"insert\">",
         "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"10714c4a-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">Insert</div>",
         "                                    </button>",
-        "                                    <button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary\" internal-fsb-guid=\"2258be6b\" internal-fsb-name=\"Button 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94 9ba2b637 3dcb582a 50cb1c1b\" internal-fsb-data-wizard-type=\"update\">",
+        "                                    <button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary\" internal-fsb-guid=\"2258be6b\" internal-fsb-name=\"Button 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94 9ba2b637 3dcb582a 50cb1c1b\" internal-fsb-data-wizard-type=\"update\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" onfsbfailed=\"{&quot;event&quot;:true}\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
+        "",
+        "    // Handle the event of onButtonSubmitting (Button 3) here:",
+        "    // ",
+        "    alert('a');",
+        "    ",
+        "    \" internal-fsb-react-code-onfsbsubmitted=\"",
+        "",
+        "    // Handle the event of onButtonSubmitted (Button 3) here:",
+        "    // ",
+        "    alert('b');",
+        "    ",
+        "    \" internal-fsb-react-code-onfsbfailed=\"",
+        "",
+        "    // Handle the event of onButtonFailed (Button 3) here:",
+        "    // ",
+        "    alert('c');",
+        "    ",
+        "    \" internal-fsb-react-code-onfsbsuccess=\"",
+        "",
+        "    // Handle the event of onButtonSuccess (Button 3) here:",
+        "    // ",
+        "    alert('d');",
+        "    ",
+        "    \">",
         "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"2258be6b-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">Update</div>",
         "                                    </button><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"50cb1c1b\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"bid\" internal-fsb-react-data=\"bid\">",
         "                                </div>",
@@ -4714,7 +4733,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "3ad97347",
+        "selectingElementGUID": "2258be6b",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -5798,10 +5817,10 @@
     "b6eb1b83": "37e04191834c3fb7e58f54097c8d94190f871302",
     "7e709334": "eb5c8dcc5b6fb05826ff862bdc6ab553e45588e0",
     "65e04a88": "930c763d3304f118fdee8522ed4d0b185557f82d",
-    "9d37c390": "33a5765fc5acca6d461c56e34a3729b34c31353a",
+    "9d37c390": "812e4582f35e490a62278b1a172a0be054c329a4",
     "6ce794ec": "4f7b0fe72da78f3e0cec7b480ceae92e2c0a75cb",
     "bbc7dba3": "66bb8529f62b319faa4e256f94f4e605fe9cf105",
-    "c3da32d7": "3c0c8ab28881abf92d258a63eb18c8e05b47c50a"
+    "c3da32d7": "fb7632ce1363f1867691b3cab83e9566311f01a2"
   },
   "frontEndComponentsBlobSHADict": {
     "LoginControl": "d8dd4fdf9625542b6b81fec2b9d3d24cda79aba2",
@@ -5823,8 +5842,8 @@
     "FlowLayout_00ce1665": "fa8568237dac44646be2a07b50dce7a38e4656a0",
     "FlowLayout_29600d13": "4eedc0e8798b63fe4d9d6c8cf3d7b31ee5bfae7d",
     "FlowLayout_49e1cbb8": "db13de1b2def0c1e2e2c6a50c445c948065bb4c9",
-    "FlowLayout_d58ae925": "fddaab5dcbc1f583c33f492385e7c55802b20d13",
-    "FlowLayout_d64677b8": "8d81f79b75eb0e654266e11956a66e8cc6e28d08"
+    "FlowLayout_d58ae925": "cb5db9ee2549944219ae47a700ad250cafb7a840",
+    "FlowLayout_d64677b8": "5b7c5084fa9bec8fe3ba08716bf72027cda03be2"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "5be2f90e6e0412406313563a35c74f7707c76f00",
@@ -5835,8 +5854,8 @@
     "65e04a88": "c75547174e7821f53be79bced19d879a35789116",
     "7e709334": "5d199859835bf3ad474e7445ab0e524f8d441162",
     "6ce794ec": "fa8be3563009826888de5fb15616129403cfe989",
-    "9d37c390": "a064c6712f34ab7e9901114ebe52244c6c4750e3",
+    "9d37c390": "258db2031eb3a81416ccb7c54f87000fd01ee784",
     "bbc7dba3": "b358a9a1fbd8a305c9bff8068e906c9f4781111b",
-    "c3da32d7": "9b40186ad253837dc42c817a4929e56a69ea4432"
+    "c3da32d7": "6a1ad0c73b12ed28d4a3c8c4e02fbb97e3be3dff"
   }
 }
