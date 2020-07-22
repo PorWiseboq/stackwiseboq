@@ -106,9 +106,9 @@ class FlowLayout_d58ae925 extends Base {
 
     // Handle the event of onButtonSubmitted (Button 3) here:
     // 
-    alert('b');
+    alert('b'); 
     
-    return EventHelper.stopPropagation(event);
+    return EventHelper.cancel(event);
   }
 
   protected onButtonFailed_2258be6b(event: Event) {
