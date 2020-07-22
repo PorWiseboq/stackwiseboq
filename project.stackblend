@@ -5941,7 +5941,7 @@
         "                                    <div class=\"internal-fsb-element col-10 offset-0\" internal-fsb-guid=\"3dcb582a\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"image\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Blog\" internal-fsb-data-source-column=\"image\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-2 offset-4\" internal-fsb-guid=\"10714c4a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94 9ba2b637 3dcb582a\" internal-fsb-data-wizard-type=\"insert\">",
         "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"10714c4a-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">Insert</div>",
         "                                    </button>",
-        "                                    <button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary\" internal-fsb-guid=\"2258be6b\" internal-fsb-name=\"Button 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94 9ba2b637 3dcb582a 50cb1c1b\" internal-fsb-data-wizard-type=\"update\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" onfsbfailed=\"{&quot;event&quot;:true}\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
+        "                                    <button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary\" internal-fsb-guid=\"2258be6b\" internal-fsb-name=\"Button 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px\" internal-fsb-data-controls=\" d064b129 a0641238 1d258b94 9ba2b637 3dcb582a 50cb1c1b\" internal-fsb-data-wizard-type=\"update\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true,&quot;no-propagation&quot;:true}\" onfsbfailed=\"{&quot;event&quot;:true}\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
         "    // Handle the event of onButtonSubmitting (Button 3) here:",
         "    // ",
@@ -6425,7 +6425,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d58ae925",
+        "selectingElementGUID": "2258be6b",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -9224,7 +9224,7 @@
     "FlowLayout_49934c23": "455952c80a336649f3607e8853c88b81af244efa",
     "FlowLayout_285eea05": "a0140c20498ce68090ad96764b9ba3a3c9e82e36",
     "FlowLayout_00ce1665": "fa8568237dac44646be2a07b50dce7a38e4656a0",
-    "FlowLayout_d58ae925": "ad2df6dac105860ed626fc75e6797dbffa2e67c1",
+    "FlowLayout_d58ae925": "9fa98a17ec973b1d99be82dd31119db28d167c1b",
     "FlowLayout_d64677b8": "1ba5dbca52beaf71baebea86bd80c461e30d9c76",
     "FlowLayout_5449c278": "f90f71966c41f133063a4147440873c045c3694c",
     "FlowLayout_a04733d3": "a41d78728460ba3dbdace73cd03ec6f46bacbe12",
