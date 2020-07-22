@@ -108,6 +108,7 @@ class FlowLayout_d58ae925 extends Base {
     // 
     alert('b');
     
+    return EventHelper.stopPropagation(event);
   }
 
   protected onButtonFailed_2258be6b(event: Event) {
