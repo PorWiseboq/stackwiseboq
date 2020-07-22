@@ -55,9 +55,28 @@ class FlowLayout_d58ae925 extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
-DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null})
-DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null})
     this.initialize();
+  }
+  
+  register() {
+    DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null})
+    DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null})
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('submitting', 'this.onButtonSubmitting_2258be6b.bind(this)');
+    }
+
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('submitted', 'this.onButtonSubmitted_2258be6b.bind(this)');
+    }
+
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('failed', 'this.onButtonFailed_2258be6b.bind(this)');
+    }
+
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('success', 'this.onButtonSuccess_2258be6b.bind(this)');
+    }
+
   }
   // <---Auto[ClassBegin]
   
@@ -65,6 +84,10 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
   //
   protected initialize(): void {
     
+  }
+  
+  protected componentDidMount(): void {
+    this.register();
   }
   
   // Providing data array base on dot notation:
@@ -193,7 +216,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
                         
                       </button>
                       
-                      <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary" internal-fsb-guid="2258be6b" style={{'marginTop': '10px'}} type="button" data-event-submitting={this.onButtonSubmitting_2258be6b.bind(this)} data-event-submitted={this.onButtonSubmitted_2258be6b.bind(this)} data-event-failed={this.onButtonFailed_2258be6b.bind(this)} data-event-success={this.onButtonSuccess_2258be6b.bind(this)} onClick={((event) => { window.internalFsbSubmit('2258be6b', 'Blog', event, ((results: any) => { this.manipulate('2258be6b', 'Blog', results); }).bind(this)); }).bind(this)}>
+                      <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary" internal-fsb-guid="2258be6b" style={{'marginTop': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('2258be6b', 'Blog', event, ((results: any) => { this.manipulate('2258be6b', 'Blog', results); }).bind(this)); }).bind(this)}>
                         
                         <div className="internal-fsb-element" internal-fsb-guid="2258be6b-text">
                           Update
