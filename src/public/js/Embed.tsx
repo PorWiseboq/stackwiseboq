@@ -1,12 +1,14 @@
 import {DataManipulationHelper} from './helpers/DataManipulationHelper.js';
 
+declare let window: any;
+
 (() => {
 	// Auto Height Layout
 	// 
   function update(event) {  
-    let elements = [...document.body.getElementsByClassName('internal-fsb-absolute-layout')];
+    let elements: any[] = [...document.body.getElementsByClassName('internal-fsb-absolute-layout')];
     elements.reverse().forEach((element) => {
-      let children = [...element.children];
+      let children: any[] = [...element.children];
       let maximum = 20;
       children.forEach((child) => {
         if (child.getAttribute('id') == 'internal-fsb-cursor') {
