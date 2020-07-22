@@ -76,7 +76,7 @@ const DataManipulationHelper = {
 	  	
 	  	const button = HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', guid);
 	  	if (button && button.getAttribute('custom-event-submitting')) {
-	  		const event = new CustomEvent('success', {
+	  		const event = new CustomEvent('submitting', {
 					detail: {
 						params: params
 					}
@@ -89,7 +89,7 @@ const DataManipulationHelper = {
 	  	RequestHelper.post((registeredEndpoint || `${location.protocol}//${location.host}`) + (currentPath || `${location.pathname}`), params)
 	  		.then((json) => {
 	  			if (button && button.getAttribute('custom-event-submitted')) {
-						const event = new CustomEvent('success', {
+						const event = new CustomEvent('submitted', {
 							detail: {
 								params: params,
 								results: json
@@ -124,7 +124,7 @@ const DataManipulationHelper = {
 	  				}
 	  			} else {
 	  				if (button && button.getAttribute('custom-event-failed')) {
-							const event = new CustomEvent('success', {
+							const event = new CustomEvent('failed', {
 								detail: {
 									params: params,
 									results: json
