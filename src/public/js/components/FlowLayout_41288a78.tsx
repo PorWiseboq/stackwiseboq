@@ -71,8 +71,6 @@ class FlowLayout_41288a78 extends Base {
   }
   
   private onStripeLoaded(event) {
-    let stripe = Stripe('pk_test_51H7FVCFTijJaGDsZVOskcTj7woT4DJeecH86J9l7sXN0AFeMpdBe6N5tWz0lZ07VW5Zv2PrIMO0pgvY5t5zLHdrZ00FvWbdBwi');
-    
     // Create a Stripe client.
     var stripe = Stripe('pk_test_51H7FVCFTijJaGDsZVOskcTj7woT4DJeecH86J9l7sXN0AFeMpdBe6N5tWz0lZ07VW5Zv2PrIMO0pgvY5t5zLHdrZ00FvWbdBwi');
     

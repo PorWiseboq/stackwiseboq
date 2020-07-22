@@ -78,8 +78,11 @@ class FlowLayout_b2020622 extends Base {
   protected render(): any {
     return (
       <div className={"internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="b2020622" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})}>
+        
         <div className="container-fluid">
+          
           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+            
             <div className="internal-fsb-element col-10 offset-1 -fsb-self-180079a2" internal-fsb-guid="180079a2">
               
               <div className="container-fluid">
@@ -127,6 +130,7 @@ class FlowLayout_b2020622 extends Base {
               </div>
               
             </div>
+            
             <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="7600ca53" style={{'FsbInheritedPresets': '180079a2'}}>
               
               <div className="container-fluid">
@@ -191,6 +195,7 @@ class FlowLayout_b2020622 extends Base {
               </div>
               
             </div>
+            
             <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="b1a8c59c" style={{'FsbInheritedPresets': '180079a2'}}>
               
               <div className="container-fluid">
@@ -304,6 +309,7 @@ class FlowLayout_b2020622 extends Base {
               </div>
               
             </div>
+            
             <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="e01619d3" style={{'FsbInheritedPresets': '180079a2'}}>
               
               <div className="container-fluid">
@@ -498,8 +504,11 @@ class FlowLayout_b2020622 extends Base {
               </div>
               
             </div>
+            
           </div>
+          
         </div>
+        
       </div>
     )
   }

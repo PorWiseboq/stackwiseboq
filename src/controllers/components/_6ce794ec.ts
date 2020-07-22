@@ -83,6 +83,8 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+  results: {[Identifier: string]: HierarchicalDataTable} = null;
+  
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
@@ -90,25 +92,41 @@ class Controller extends Base {
   }
   
   protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise((resolve) => {
- 	    resolve({
- 		    title: null,
- 		    description: null,
- 		    keywords: null,
- 		    language: null,
- 		    contentType: null,
- 		    revisitAfter: null,
- 		    robots: null,
- 		    linkUrl: null,
- 		    imageUrl: null,
- 		    itemType: null,
- 		    contentLocale: null
- 		  });
+ 	  return new Promise(async (resolve) => {
+ 	    if (this.results['Blog'].rows.length == 0) {
+ 	      resolve(null);
+ 	    } else {
+ 	      resolve({
+   		    title: this.results['Blog'].rows[0].columns['title'].value,
+   		    description: this.results['Blog'].rows[0].columns['description'].value,
+   		    keywords: this.results['Blog'].rows[0].columns['keywords'].value,
+   		    linkUrl: `https://www.wiseboq.com/${this.results['Blog'].rows[0].keys['bid'].value}/${this.results['Blog'].rows[0].columns['title'].value}`,
+   		    imageUrl: this.results['Blog'].rows[0].columns['image'].value,
+   		    itemType: 'blog',
+   		    language: 'th',
+   		    contentLocale: 'th'
+   		  });
+ 	    }
  	  });
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+ 		return new Promise(async (resolve) => {
+ 		  this.results = await DatabaseHelper.retrieve([{
+ 		    target: SourceType.Relational,
+        group: "Blog",
+        name: "bid",
+        value: this.request.params.id,
+        guid: null,
+        validation: null
+ 		  }], null);
+ 		  
+ 		  if (this.results['Blog'].rows.length == 0) {
+ 		    this.response.redirect('/error/404');
+ 		  } else {
+   		  resolve(this.results);
+ 		  }
+ 	  });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
