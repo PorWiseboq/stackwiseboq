@@ -8131,7 +8131,7 @@
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"81a37061\" internal-fsb-name=\"TextElement 16\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 7a279686\">จ่ายผ่านบัตรเครดิต</div>",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"9b4e1a4c\" internal-fsb-name=\"TextElement 17\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 4839e353\">กรุณาเลือกประเภทบัตรเครดิต กรอกหมายเลขบัตร วันหมดอายุ พร้อมทั้งหมายเลข cvv ที่อยู่หลังบัตร</div>",
-        "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a1407abd\" internal-fsb-name=\"HTML 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"HTML\" internal-fsb-inner-html=\"<style type=&quot;text/css&quot;>",
+        "                                    <div class=\"internal-fsb-element col-10 offset-1\" internal-fsb-guid=\"a1407abd\" internal-fsb-name=\"HTML 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"HTML\" internal-fsb-inner-html=\"<style type=&quot;text/css&quot;>",
         ".StripeElement {",
         "  box-sizing: border-box;",
         "",
@@ -8168,7 +8168,7 @@
         "    <!-- Used to display form errors. -->",
         "    <div id=&quot;card-errors&quot; role=&quot;alert&quot;></div>",
         "  </div>",
-        "</form>\">",
+        "</form>\" style=\"\">",
         "                                        <div class=\"html\">",
         "                                            <style type=\"text/css\">",
         "                                                .StripeElement {",
@@ -8651,7 +8651,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d4338262",
+        "selectingElementGUID": "a1407abd",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -9132,7 +9132,7 @@
     "FlowLayout_a04733d3": "a41d78728460ba3dbdace73cd03ec6f46bacbe12",
     "FlowLayout_ee5d6390": "dc5499382a5e19149af604fec2264cb214692adb",
     "FlowLayout_a6314edc": "943c0af461eee55edfcf59c669603f1bd71808a3",
-    "FlowLayout_41288a78": "f573556bbf2deebaf8c8ea66d1891c5007322598"
+    "FlowLayout_41288a78": "50b8b31c6282234e8322e0509be90f2e193a3be2"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "ace429394716b403ae6339164fc40fc6bbc644db",
@@ -9147,6 +9147,6 @@
     "bbc7dba3": "6940ac00ad529fad8d3d0ccedcd4c56f3679f685",
     "c3da32d7": "76cb6f09fa668ca563f8d330ab3a83a3d1e0c146",
     "8a4a42e4": "df94a62964403fa1baf1b47e3d7190524660828c",
-    "473d370d": "a510ca65d3b1ab0b3cd3b23eda49c79b5dedf157"
+    "473d370d": "95497c97cd6138a0903f0244c002cfb45d60ce59"
   }
 }

@@ -261,45 +261,7 @@ class FlowLayout_41288a78 extends Base {
                     กรุณาเลือกประเภทบัตรเครดิต กรอกหมายเลขบัตร วันหมดอายุ พร้อมทั้งหมายเลข cvv ที่อยู่หลังบัตร
                   </div>
                   
-                  <div className="internal-fsb-element col-12" internal-fsb-guid="a1407abd">
-                    
-                    <div className="html">
-                      
-                      <style type="text/css">
-                        
-                                                .StripeElement {
-                                                    box-sizing: border-box;
-
-                                                    height: 40px;
-
-                                                    padding: 10px 12px;
-
-                                                    border: 1px solid transparent;
-                                                    border-radius: 4px;
-                                                    background-color: white;
-
-                                                    box-shadow: 0 1px 3px 0 #e6ebf1;
-                                                    -webkit-transition: box-shadow 150ms ease;
-                                                    transition: box-shadow 150ms ease;
-                                                }
-
-                                                .StripeElement--focus {
-                                                    box-shadow: 0 1px 3px 0 #cfd7df;
-                                                }
-
-                                                .StripeElement--invalid {
-                                                    border-color: #fa755a;
-                                                }
-
-                                                .StripeElement--webkit-autofill {
-                                                    background-color: #fefde5 !important;
-                                                }
-                                            
-                      </style>
-                      
-                    </div>
-                    
-                  </div>
+                  <div className="internal-fsb-element col-10 offset-1" internal-fsb-guid="a1407abd" dangerouslySetInnerHTML={{__html: "<style type=\"text/css\">\n.StripeElement {\n  box-sizing: border-box;\n\n  height: 40px;\n\n  padding: 10px 12px;\n\n  border: 1px solid transparent;\n  border-radius: 4px;\n  background-color: white;\n\n  box-shadow: 0 1px 3px 0 #e6ebf1;\n  -webkit-transition: box-shadow 150ms ease;\n  transition: box-shadow 150ms ease;\n}\n\n.StripeElement--focus {\n  box-shadow: 0 1px 3px 0 #cfd7df;\n}\n\n.StripeElement--invalid {\n  border-color: #fa755a;\n}\n\n.StripeElement--webkit-autofill {\n  background-color: #fefde5 !important;\n}\n</style>\n<form action=\"/charge\" method=\"post\" id=\"payment-form\">\n  <div class=\"form-row\">\n    <div id=\"card-element\">\n      <!-- A Stripe Element will be inserted here. -->\n    </div>\n    <!-- Used to display form errors. -->\n    <div id=\"card-errors\" role=\"alert\"></div>\n  </div>\n</form>"}}></div>
                   
                 </div>
                 
