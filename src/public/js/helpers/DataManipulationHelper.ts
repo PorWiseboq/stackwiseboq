@@ -77,8 +77,10 @@ const DataManipulationHelper = {
 	  	const button = HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', guid);
 	  	if (button && button.getAttribute('custom-event-submitting')) {
 	  		const event = new CustomEvent('submitting', {
-	  			params: params
-	  		});
+					detail: {
+						params: params
+					}
+				});
 	  		if (button.getAttribute('custom-event-submitting')(event) === false) {
 	  			return;
 	  		}
@@ -88,8 +90,10 @@ const DataManipulationHelper = {
 	  		.then((json) => {
 	  			if (button && button.getAttribute('custom-event-submitted')) {
 						const event = new CustomEvent('submitted', {
-							params: params,
-							results: json
+							detail: {
+								params: params,
+								results: json
+							}
 						});
 						if (button.getAttribute('custom-event-submitted')(event) === false) {
 							return;
@@ -99,8 +103,10 @@ const DataManipulationHelper = {
 	  			if (json.success) {
 	  				if (button && button.getAttribute('custom-event-success')) {
 							const event = new CustomEvent('success', {
-								params: params,
-								results: json
+								detail: {
+									params: params,
+									results: json
+								}
 							});
 							if (button.getAttribute('custom-event-success')(event) === false) {
 								return;
@@ -119,8 +125,10 @@ const DataManipulationHelper = {
 	  			} else {
 	  				if (button && button.getAttribute('custom-event-failed')) {
 							const event = new CustomEvent('failed', {
-								params: params,
-								results: json
+								detail: {
+									params: params,
+									results: json
+								}
 							});
 							if (button.getAttribute('custom-event-failed')(event) === false) {
 								return;
