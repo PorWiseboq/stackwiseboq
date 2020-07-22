@@ -60,31 +60,27 @@ class FlowLayout_d58ae925 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null})
-    DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null})
+    DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null});
+    DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null});
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('submitting', 'this.onButtonSubmitting_2258be6b.bind(this)');
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('submitting', this.onButtonSubmitting_2258be6b.bind(this));
     }
-
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('submitted', 'this.onButtonSubmitted_2258be6b.bind(this)');
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('submitted', this.onButtonSubmitted_2258be6b.bind(this));
     }
-
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('failed', 'this.onButtonFailed_2258be6b.bind(this)');
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('failed', this.onButtonFailed_2258be6b.bind(this));
     }
-
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('success', 'this.onButtonSuccess_2258be6b.bind(this)');
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('success', this.onButtonSuccess_2258be6b.bind(this));
     }
-
   }
   // <---Auto[ClassBegin]
   
   // Declare class variables and functions here:
   //
   protected initialize(): void {
-    
+     
   }
   
   protected componentDidMount(): void {
