@@ -83,32 +83,35 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+  results: {[Identifier: string]: HierarchicalDataTable} = null;
+  
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
   }
   
-  protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise((resolve) => {
- 	    resolve({
- 		    title: null,
- 		    description: null,
- 		    keywords: null,
- 		    language: null,
- 		    contentType: null,
- 		    revisitAfter: null,
- 		    robots: null,
- 		    linkUrl: null,
- 		    imageUrl: null,
- 		    itemType: null,
- 		    contentLocale: null
- 		  });
- 	  });
-  }
-  
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+    return new Promise(async (resolve) => {
+   		if (this.request.params.id == 'new') {
+   		  resolve(null);
+   		} else {
+   		  this.results = await DatabaseHelper.retrieve([{
+   		    target: SourceType.Relational,
+          group: "Blog",
+          name: "bid",
+          value: this.request.params.id,
+          guid: null,
+          validation: null
+   		  }], null);
+   		  
+   		  if (this.results['Blog'].rows.length == 0) {
+   		    this.response.redirect('/error/404');
+   		  } else {
+     		  resolve(this.results);
+   		  }
+   		}
+    });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
