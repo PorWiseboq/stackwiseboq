@@ -5,6 +5,7 @@
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
+import {HTMLHelper} from '../helpers/HTMLHelper.js';
 import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
 // <---Auto[Import]
 
@@ -87,7 +88,7 @@ class FlowLayout_d58ae925 extends Base {
   }
   
   protected componentDidMount(): void {
-    this.register();
+    this.register(); 
   }
   
   // Providing data array base on dot notation:
