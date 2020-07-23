@@ -62,18 +62,6 @@ class FlowLayout_d58ae925 extends Base {
   register() {
     DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null});
     DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null});
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('submitting', this.onButtonSubmitting_2258be6b.bind(this));
-    }
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('submitted', this.onButtonSubmitted_2258be6b.bind(this));
-    }
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('failed', this.onButtonFailed_2258be6b.bind(this));
-    }
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '2258be6b').addEventListener('success', this.onButtonSuccess_2258be6b.bind(this));
-    }
   }
   // <---Auto[ClassBegin]
   
@@ -94,38 +82,6 @@ class FlowLayout_d58ae925 extends Base {
   }
   
   // Auto[Merging]--->
-  protected onButtonSubmitting_2258be6b(event: Event) {
-
-    // Handle the event of onButtonSubmitting (Button 3) here:
-    // 
-    alert('a');
-    
-  }
-
-  protected onButtonSubmitted_2258be6b(event: Event) {
-
-    // Handle the event of onButtonSubmitted (Button 3) here:
-    // 
-    alert('b'); 
-    
-    return EventHelper.cancel(event);
-  }
-
-  protected onButtonFailed_2258be6b(event: Event) {
-
-    // Handle the event of onButtonFailed (Button 3) here:
-    // 
-    alert('c');
-    
-  }
-
-  protected onButtonSuccess_2258be6b(event: Event) {
-
-    // Handle the event of onButtonSuccess (Button 3) here:
-    // 
-    alert('d');
-    
-  }
   // <---Auto[Merging]
   
   // Auto[ClassEnd]--->
