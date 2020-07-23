@@ -14,6 +14,7 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
+import {RelationalDatabaseClient} from '../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -38,7 +39,7 @@ enum ValidationInfo {
 // <---Auto[Declare]
 
 // Declare private static variables here:
-//
+// 
 
 // Auto[Interface]--->
 /*interface HierarchicalDataTable {
@@ -80,7 +81,7 @@ class Controller extends Base {
 	  }
   }
   // <---Auto[ClassBegin]
-  
+
   // Declare class variables and functions here:
   //
   protected validate(data: Input[]): void {
@@ -89,26 +90,52 @@ class Controller extends Base {
  		ValidationHelper.validate(data);
   }
   
-  protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise((resolve) => {
- 	    resolve({
- 		    title: null,
- 		    description: null,
- 		    keywords: null,
- 		    language: null,
- 		    contentType: null,
- 		    revisitAfter: null,
- 		    robots: null,
- 		    linkUrl: null,
- 		    imageUrl: null,
- 		    itemType: null,
- 		    contentLocale: null
- 		  });
- 	  });
-  }
-  
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+ 		return new Promise((resolve, reject) => {
+ 		  if (this.request.session.uid) {
+ 		    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [parseInt(this.request.session.uid)], (function(error, results, fields) {
+          if (error) {
+            resolve(null);
+          } else if (results.length > 0) {
+            resolve({
+              User: {
+       		      source: null,
+       		      group: 'User',
+       		      rows: [{
+       		        keys: {},
+         		      columns: {
+         		        email: {
+         		          name: 'email',
+         		          value: results[0].email
+         		        }
+         		      },
+         		      relations: {}
+       		      }]
+       		    }
+            });
+    			} else {
+            resolve(null);
+    		  }
+    		}).bind(this));
+ 		  } else {
+ 		    resolve({
+ 		      User: {
+   		      source: null,
+   		      group: 'User',
+   		      rows: [{
+   		        keys: {},
+     		      columns: {
+     		        email: {
+     		          name: 'email',
+     		          value: 'ยังไม่ได้เข้าสู่ระบบ'
+     		        }
+     		      },
+     		      relations: {}
+   		      }]
+ 		      }
+ 		    });
+ 		  }
+ 		});
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
