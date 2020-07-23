@@ -153,7 +153,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "9d37c390",
+    "editingPageID": "65e04a88",
     "currentMode": "site",
     "editingComponentID": "535be65e"
   },
@@ -4292,7 +4292,7 @@
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><label class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"a60b855b\" internal-fsb-name=\"Label 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89\" internal-fsb-guid=\"b6c9ad89\" internal-fsb-name=\"Radio 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Radio\" internal-fsb-reusable-preset-name=\"quote_box_input\"><input type=\"radio\" class=\"\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89\" internal-fsb-guid=\"b6c9ad89\" internal-fsb-name=\"Radio 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Radio\" internal-fsb-reusable-preset-name=\"quote_box_input\" style=\"-fsb-empty\"><input type=\"radio\" class=\"\"></div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-0 -fsb-self-b5cd72c0\" internal-fsb-guid=\"b5cd72c0\" internal-fsb-name=\"TextElement 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"quote_box_input_title\">ทดแทน</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2 -fsb-self-8050ab15\" internal-fsb-guid=\"8050ab15\" internal-fsb-name=\"TextElement 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"quote_box_input_subtitle\">สินค้าทดแทนใช้งานได้เหมือนกันแต่ประหยัดกว่า</div>",
         "                                                        </div>",
@@ -4848,7 +4848,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2791ada",
+        "selectingElementGUID": "b6c9ad89",
         "currentCursorWalkPath": [
           "b2020622",
           0,
@@ -9217,8 +9217,8 @@
     "FlowLayout_2ab933a5": "5dd6fd550c3a3ff298488b436b91f32b39a6f006",
     "FlowLayout_040b1e86": "8398f0c7767b4ca98618cc10397f785779772582",
     "FlowLayout_ad9205ea": "e690109c8ed5e9219553cb4669949290ace0ec3c",
-    "FlowLayout_49934c23": "455952c80a336649f3607e8853c88b81af244efa",
-    "FlowLayout_285eea05": "a0140c20498ce68090ad96764b9ba3a3c9e82e36",
+    "FlowLayout_49934c23": "457679a2540ea6b77118f9fa127cb68a700ceeb0",
+    "FlowLayout_285eea05": "ff23a7c992b3d7663a19fc4a89e4e807175a2e04",
     "FlowLayout_00ce1665": "fa8568237dac44646be2a07b50dce7a38e4656a0",
     "FlowLayout_d58ae925": "749b43ef4a746cdccd1527eabdba85cd3b3b0668",
     "FlowLayout_d64677b8": "1ba5dbca52beaf71baebea86bd80c461e30d9c76",
@@ -9227,7 +9227,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "3deee7bd3c59c6060d8edeaf4a2024584cf81d7f"
+    "FlowLayout_b2020622": "2be94f10884a3e70e74c387139c23cd47142c48a"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "ace429394716b403ae6339164fc40fc6bbc644db",
