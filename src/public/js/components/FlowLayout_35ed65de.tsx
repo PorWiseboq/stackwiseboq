@@ -5,6 +5,7 @@
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
+import {HTMLHelper} from '../helpers/HTMLHelper.js';
 import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
 // <---Auto[Import]
 
@@ -60,6 +61,10 @@ class FlowLayout_35ed65de extends Base {
     
     this.initialize();
   }
+  
+  register() {
+
+  }
   // <---Auto[ClassBegin]
   
   // Declare class variables and functions here:
@@ -96,7 +101,7 @@ class FlowLayout_35ed65de extends Base {
                   </div>
                   
                   <div className="col-12 -fsb-self-5d1104e1 internal-fsb-inheriting-element">
-                    ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที
+                    ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง....เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที
                   </div>
                   
                   <a className="btn btn-info col-10 offset-1 -fsb-self-856191b9 internal-fsb-inheriting-element" href="/authentication">

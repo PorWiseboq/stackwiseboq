@@ -14,6 +14,7 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
+import {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -108,7 +109,9 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+ 	  return new Promise(async (resolve) => {
+ 		  resolve(await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']));
+ 	  });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
