@@ -5,6 +5,7 @@
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
+import {HTMLHelper} from '../helpers/HTMLHelper.js';
 import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
 // <---Auto[Import]
 
@@ -55,15 +56,25 @@ class FlowLayout_d58ae925 extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
-DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null})
-DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null})
     this.initialize();
+  }
+  
+  register() {
+    DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null});
+    DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null});
   }
   // <---Auto[ClassBegin]
   
   // Declare class variables and functions here:
   //
   protected initialize(): void {
+  }
+  
+  protected componentDidMount(): void {
+  	this.register();
+  }
+  
+  protected componentWillUnmount(): void {
   }
   
   // Providing data array base on dot notation:
