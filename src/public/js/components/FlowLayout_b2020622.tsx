@@ -23,6 +23,12 @@ declare let DataManipulationHelper: any;
 
 // Declare private static variables here:
 //
+enum Status {
+  CREATE,
+  LIST,
+  SUBSTITUTE,
+  DELIVERY
+}
 
 // Auto[Interface]--->
 interface IAutoBaseProps extends IBaseProps {
@@ -38,14 +44,14 @@ interface IProps extends IAutoBaseProps {
   
 }
 interface IState extends IAutoBaseState {
-  
+  status: Status
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  
+  status: Status.CREATE
 });
 
 // Auto[ClassBegin]--->
@@ -61,7 +67,24 @@ class FlowLayout_b2020622 extends Base {
   }
   
   register() {
-
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '9ce000e1')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '9ce000e1').addEventListener('success', this.onButtonSuccess_9ce000e1.bind(this));
+    }
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a').addEventListener('submitting', this.onButtonSubmitting_1bb72b1a.bind(this));
+    }
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '011ad9dc')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '011ad9dc').addEventListener('success', this.onButtonSuccess_011ad9dc.bind(this));
+    }
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '88297439')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '88297439').addEventListener('submitting', this.onButtonSubmitting_88297439.bind(this));
+    }
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '67c431d0')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '67c431d0').addEventListener('success', this.onButtonSuccess_67c431d0.bind(this));
+    }
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'a7592071')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'a7592071').addEventListener('submitting', this.onButtonSubmitting_a7592071.bind(this));
+    }
   }
   // <---Auto[ClassBegin]
   
@@ -76,7 +99,74 @@ class FlowLayout_b2020622 extends Base {
     return super.getDataFromNotation(notation, inArray);
   }
   
+  private getDisplay(status: Status) {
+    console.log(this.state.status == status);
+    return (this.state.status == status) ? 'block' : 'none';
+  }
+  
   // Auto[Merging]--->
+  protected onButtonSuccess_9ce000e1(event: Event) {
+
+    // Handle the event of onButtonSuccess (Button 2) here:
+    // 
+    this.setState({
+      status: Status.LIST
+    });
+    
+  }
+
+  protected onButtonSubmitting_1bb72b1a(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 4) here:
+    // 
+    this.setState({
+      status: Status.CREATE
+    });
+    
+    return EventHelper.cancel(event);
+  }
+
+  protected onButtonSuccess_011ad9dc(event: Event) {
+
+    // Handle the event of onButtonSuccess (Button 5) here:
+    // 
+    this.setState({
+      status: Status.SUBSTITUTE
+    });
+    
+  }
+
+  protected onButtonSubmitting_88297439(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 6) here:
+    // 
+    this.setState({
+      status: Status.LIST
+    });
+    
+    return EventHelper.cancel(event);
+  }
+
+  protected onButtonSuccess_67c431d0(event: Event) {
+
+    // Handle the event of onButtonSuccess (Button 7) here:
+    // 
+    this.setState({
+      status: Status.DELIVERY
+    });
+    
+  }
+
+  protected onButtonSubmitting_a7592071(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 1) here:
+    // 
+    this.setState({
+      status: Status.SUBSTITUTE
+    });
+    
+    return EventHelper.cancel(event);
+  }
   // <---Auto[Merging]
   
   // Auto[ClassEnd]--->
@@ -88,7 +178,7 @@ class FlowLayout_b2020622 extends Base {
           
           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
             
-            <div className="internal-fsb-element col-10 offset-1 -fsb-self-180079a2" internal-fsb-guid="180079a2">
+            <div className="internal-fsb-element col-10 offset-1 -fsb-self-180079a2" internal-fsb-guid="180079a2" style={{display: (()=>{return this.getDisplay(Status.CREATE);})()}}>
               
               <div className="container-fluid">
                 
@@ -136,7 +226,7 @@ class FlowLayout_b2020622 extends Base {
               
             </div>
             
-            <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="7600ca53" style={{'FsbInheritedPresets': '180079a2'}}>
+            <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="7600ca53" style={{'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.LIST);})()}}>
               
               <div className="container-fluid">
                 
@@ -201,7 +291,7 @@ class FlowLayout_b2020622 extends Base {
               
             </div>
             
-            <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="b1a8c59c" style={{'FsbInheritedPresets': '180079a2'}}>
+            <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="b1a8c59c" style={{'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.SUBSTITUTE);})()}}>
               
               <div className="container-fluid">
                 
@@ -227,7 +317,7 @@ class FlowLayout_b2020622 extends Base {
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
                               <div className="internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89" internal-fsb-guid="b6c9ad89">
-                                <input type="radio" />
+                                <input type="radio" name="substitute" />
                               </div>
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-self-b5cd72c0" internal-fsb-guid="b5cd72c0">
@@ -250,7 +340,7 @@ class FlowLayout_b2020622 extends Base {
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
                               <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="a0b78888">
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
+                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" />
                               </div>
                               
                               <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="35767bbc" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -273,7 +363,7 @@ class FlowLayout_b2020622 extends Base {
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
                               <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="cc34eced">
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
+                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" />
                               </div>
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="127c0175" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -315,7 +405,7 @@ class FlowLayout_b2020622 extends Base {
               
             </div>
             
-            <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="e01619d3" style={{'FsbInheritedPresets': '180079a2'}}>
+            <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="e01619d3" style={{'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.DELIVERY);})()}}>
               
               <div className="container-fluid">
                 
@@ -424,7 +514,7 @@ class FlowLayout_b2020622 extends Base {
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
                               <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79">
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
+                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" />
                               </div>
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="b8a9d038" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -464,7 +554,7 @@ class FlowLayout_b2020622 extends Base {
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
                               <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02">
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
+                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" />
                               </div>
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="94ec51a9" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -496,7 +586,12 @@ class FlowLayout_b2020622 extends Base {
                     
                   </div>
                   
-                  <button className="internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-primary btn-sm" internal-fsb-guid="0e75306a" style={{'marginTop': '15px'}} type="button">
+                  <button className="internal-fsb-element internal-fsb-allow-cursor col-4 offset-2 btn btn-primary btn-sm" internal-fsb-guid="a7592071" style={{'marginTop': '15px', 'marginRight': '10px'}} type="button">
+                    <div className="internal-fsb-element" internal-fsb-guid="a7592071-text">
+                      ย้อนกลับ
+                    </div>
+                  </button>
+                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-0" internal-fsb-guid="0e75306a" style={{'marginTop': '15px', 'marginLeft': '10px'}} type="button">
                     
                     <div className="internal-fsb-element" internal-fsb-guid="0e75306a-text">
                       เริ่มต้นการประมูลราคา
