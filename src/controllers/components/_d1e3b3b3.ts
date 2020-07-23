@@ -14,6 +14,8 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
+import {RelationalDatabaseClient} from '../helpers/ConnectionHelper.js'
+import crypto from 'crypto';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -38,7 +40,7 @@ enum ValidationInfo {
 // <---Auto[Declare]
 
 // Declare private static variables here:
-//
+// 
 
 // Auto[Interface]--->
 /*interface HierarchicalDataTable {
@@ -83,32 +85,54 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+  private email: string = null;
+  private password: string = null;
+  private signningIn: boolean = true;
+  
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
-  }
-  
-  protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise((resolve) => {
- 	    resolve({
- 		    title: null,
- 		    description: null,
- 		    keywords: null,
- 		    language: null,
- 		    contentType: null,
- 		    revisitAfter: null,
- 		    robots: null,
- 		    linkUrl: null,
- 		    imageUrl: null,
- 		    itemType: null,
- 		    contentLocale: null
- 		  });
- 	  });
+ 		
+ 		let password1 = null;
+    let password2 = null;
+    for (const item of data) {
+        switch (item.validation.name) {
+            case 'Textbox 1':
+                if (!item.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+                    throw new Error("อีเมล์ที่คุณกรอกนั้นไม่ถูกต้อง");
+                }
+                else if (item.value.length > 255) {
+                    throw new Error("อีเมล์ที่คุณกรอกนั้นยาวเกินไป");
+                }
+                this.email = item.value;
+                break;
+            case 'Textbox 2':
+                if (!item.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
+                    throw new Error("รหัสผ่านที่คุณกรอกนั้นไม่ถูกต้อง (ความยาวอย่างน้อย 8 คัวอักษร ประกอบด้วยอย่างน้อยหนึ่งพิมพ์ใหญ่ หนึ่งพิมพ์เล็ก หนึ่งตัวเลขและหนึ่งอักขระพิเศษ)");
+                }
+                password1 = item.value;
+                this.password = item.value;
+                break;
+            case 'Textbox 3':
+                password2 = item.value;
+                break;
+        }
+    } 
+    if (password1 !== null && password2 !== null) {
+        this.signningIn = false;
+        if (password1 !== password2) {
+            throw new Error("รหัสผ่านที่คุณยืนยันไม่ตรงกัน กรุณาลองใหม่");
+        }
+    }
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+    if (this.request.session && this.request.session.uid) {
+      this.response.redirect('/authentication/role');
+    } else { 
+ 		  return super.get(data);
+    }
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -140,7 +164,56 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
- 		return '/';
+ 		return new Promise((resolve, reject) => {
+      if (this.request.session.uid) {
+        resolve('/authentication/role');
+      } else { 
+        if (this.signningIn) {
+          const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
+          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ? and md5_password = ?', [this.email, md5Password], (function(error, results, fields) {
+            if (error) {
+              reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
+      			} else if (results.length > 0) {
+      			  this.request.session.uid = results[0].id;
+      			  this.request.session.role = results[0].role;
+      			  this.request.session.save(() => {
+      				  resolve('/authentication/role');
+      			  });
+      			} else {
+      			  reject(new Error('คุณระบุอีเมล์และรหัสผ่านไม่ตรงกับฐานข้อมูล กรุณาลองดูอีกครั้ง'));
+      			}
+      		}).bind(this));
+        } else {
+          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], (function(error, results, fields) {
+            if (error) {
+              reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
+            } else if (results.length > 0) {
+      				reject(new Error('อีเมล์นี้ได้สมัครใช้งานแล้ว กรุณาเข้าสู่ระบบแทนที่จะสมัคร'));
+      			} else {
+              const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
+      			  RelationalDatabaseClient.query('INSERT INTO User (email, md5_password) VALUES ?', [[[this.email, md5Password]]], (function(error, results, fields) {
+          			if (!error) {
+          			  RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], (function(error, results, fields) {
+                    if (error) {
+                      reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
+                    } else if (results.length > 0) {
+                      this.request.session.uid = results[0].id;
+                      this.request.session.save(() => {
+          				      resolve('/authentication/role');
+                      });
+              			} else {
+              			  reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง`));
+              		  }
+              		}).bind(this));
+          			} else {
+          			  reject(new Error(`เกิดความผิดพลาดขณะที่กำลังบันทึกลงฐานข้อมูล กรุณาแจ้งผู้ดูแลรักษาระบบ (${error})`));
+          			}
+          		}).bind(this));
+      			}
+      		}).bind(this));
+        }
+      }
+    });
   }
  	
   // Auto[MergingBegin]--->  

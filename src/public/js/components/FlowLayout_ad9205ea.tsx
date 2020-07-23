@@ -5,6 +5,7 @@
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
+import {HTMLHelper} from '../helpers/HTMLHelper.js';
 import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
 // <---Auto[Import]
 
@@ -57,11 +58,22 @@ class FlowLayout_ad9205ea extends Base {
     
     this.initialize();
   }
+  
+  register() {
+
+  }
   // <---Auto[ClassBegin]
   
   // Declare class variables and functions here:
   //
   protected initialize(): void {
+  }
+  
+  protected componentDidMount(): void {
+  	this.register();
+  }
+  
+  protected componentWillUnmount(): void {
   }
   
   // Providing data array base on dot notation:

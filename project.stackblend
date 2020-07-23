@@ -153,7 +153,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "index",
+    "editingPageID": "b6eb1b83",
     "currentMode": "site",
     "editingComponentID": "535be65e"
   },
@@ -417,7 +417,7 @@
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-4011457d\" internal-fsb-guid=\"4011457d\" internal-fsb-name=\"title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"role_title\">ผู้ต้องการสั่งซื้อ</div>",
-        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-5d1104e1\" internal-fsb-guid=\"5d1104e1\" internal-fsb-name=\"subtitle\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"role_subtitle\">ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที</div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-5d1104e1\" internal-fsb-guid=\"5d1104e1\" internal-fsb-name=\"subtitle\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"role_subtitle\">ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง....เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที</div>",
         "",
         "",
         "                        <a class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-self-856191b9\" internal-fsb-guid=\"856191b9\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/authentication\" internal-fsb-reusable-preset-name=\"role_button\">",
@@ -446,10 +446,7 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ],
-      "id": "570decac",
-      "name": "Role Navigator",
-      "state": "update"
+      ]
     },
     "00ce1665": {
       "namespace": "Project.Controls",
@@ -563,8 +560,8 @@
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-1c6d525c\" internal-fsb-guid=\"1c6d525c\" internal-fsb-name=\"wording\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"herounit_wording\">WiseBOQ ผู้ช่วยงานจัดซื้อวัสดุก่อสร้าง<div>เพียงลงรายการวัสดุที่ต้องการ</div>",
         "                            <div>เราจะสืบจนได้ราคาถูกที่สุด ฟรี !!!</div>",
         "                        </div>",
-        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-3\" internal-fsb-guid=\"53b1cc20\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(255, 255, 255, 1)\">เข้าใช้งาน</div>",
-        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-2\" internal-fsb-guid=\"e830aa39\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(77, 195, 250, 1)\">ลงทะเบียนผู้ซื้อ</div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-3\" internal-fsb-guid=\"53b1cc20\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(255, 255, 255, 1); margin-bottom: 30px\">เข้าใช้งาน</div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-2\" internal-fsb-guid=\"e830aa39\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(77, 195, 250, 1); margin-bottom: 30px\">ลงทะเบียนผู้ซื้อ</div>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -615,7 +612,7 @@
         "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-4011457d\" internal-fsb-guid=\"4011457d\" internal-fsb-name=\"title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"role_title\">ผู้ต้องการสั่งซื้อ</div>",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-5d1104e1\" internal-fsb-guid=\"5d1104e1\" internal-fsb-name=\"subtitle\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"role_subtitle\">ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-5d1104e1\" internal-fsb-guid=\"5d1104e1\" internal-fsb-name=\"subtitle\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"role_subtitle\">ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง....เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที</div>",
         "",
         "",
         "                                    <a class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-self-856191b9\" internal-fsb-guid=\"856191b9\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/authentication\" internal-fsb-reusable-preset-name=\"role_button\">",
@@ -1444,11 +1441,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e830aa39",
+        "selectingElementGUID": "570decac",
         "currentCursorWalkPath": [
-          "81b0161d",
+          "570decac",
           0,
-          3,
+          2,
           null
         ]
       },
@@ -2175,7 +2172,8 @@
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-81b0161d {",
         "            background: rgba(22, 98, 250, 1);",
         "            -fsb-reusable-name: herounit_box;",
-        "            -fsb-reusable-id: 81b0161d",
+        "            -fsb-reusable-id: 81b0161d;",
+        "            text-align: center",
         "        }",
         "",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-d0010264,",
@@ -2224,7 +2222,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "7c61bdec",
+        "selectingElementGUID": "178431b9",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -4904,7 +4902,7 @@
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4011457d\" internal-fsb-guid=\"83db14be\" internal-fsb-name=\"TextElement 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4011457d\">เป็นร้านค้าวัสดุก่อสร้าง</div>",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-5d1104e1\" internal-fsb-guid=\"ecae1b8c\" internal-fsb-name=\"TextElement 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 5d1104e1\">✓ ขายวัสดุก่อสร้าง<div>✓ ประมูลราคาวัสดุก่อสร้างตามที่ได้ตั้งไว้</div>",
         "                                        <div>✓ สามารถคุยกับลูกค้าผ่านระบบ</div>",
-        "                                        <div>✓ มีค่าใช้จ่ายรายเดือน</div>",
+        "                                        <div>✓ เริ่มต้นใช้งานฟรี</div>",
         "                                    </div>",
         "                                    <button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-8 offset-2 btn btn-info\" internal-fsb-guid=\"9e104782\" internal-fsb-name=\"Button 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"navigate\" internal-fsb-data-controls=\" 899069eb 56385616\">",
         "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"9e104782-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เลือก</div>",
@@ -5310,7 +5308,8 @@
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-81b0161d {",
         "            background: rgba(22, 98, 250, 1);",
         "            -fsb-reusable-name: herounit_box;",
-        "            -fsb-reusable-id: 81b0161d",
+        "            -fsb-reusable-id: 81b0161d;",
+        "            text-align: center",
         "        }",
         "",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-d0010264,",
@@ -5359,7 +5358,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "9e104782",
+        "selectingElementGUID": "eb7259a4",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -9104,10 +9103,10 @@
   },
   "backEndControllerBlobSHADict": {
     "index": "395ac4388271bf0f3e5aea91ddf908844cfa0cec",
-    "d1e3b3b3": "82d5c4056ad2652413728677067e146d3c08a42a",
+    "d1e3b3b3": "f66aa9acc6c6a338c37298d87c18d4866f3460be",
     "8857ca68": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "b140e86b": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "b6eb1b83": "033d962875d41373686e03ab73fa9f343a41d978",
+    "b6eb1b83": "37e04191834c3fb7e58f54097c8d94190f871302",
     "7e709334": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "65e04a88": "19332acce94bed8734fcfff6f994e21599fa71b4",
     "9d37c390": "812e4582f35e490a62278b1a172a0be054c329a4",
@@ -9118,20 +9117,20 @@
     "473d370d": "94808a94e1ab8bf390ec8f586e81930bb1565b65"
   },
   "frontEndComponentsBlobSHADict": {
-    "LoginControl": "d8dd4fdf9625542b6b81fec2b9d3d24cda79aba2",
+    "LoginControl": "cd990e0fa476210cad2e1812df23eafd9f82fba7",
     "FlowLayout_535be65e": "3d43f70746a78520ddabff3513de2893b70d4f3f",
-    "FlowLayout_178431b9": "95c0b851d9d4864b54215f57dfb18d6d33af4a2b",
-    "FlowLayout_3e6ee363": "1342db8109c801f38fad60cba4bf47246c6a1827",
+    "FlowLayout_178431b9": "c92176a213342e347561ce22118881c95c9cca54",
+    "FlowLayout_3e6ee363": "fdcef2fabf0c3a815364c0a5e41ba1c14010d696",
     "FlowLayout_d22b95d9": "8eee599323fd0f805335801764fc5d919fbdab1e",
-    "FlowLayout_570decac": "be19f4fa9163aa68e54764f8d79807238ea52371",
+    "FlowLayout_570decac": "ae5ccad2b55461236a4a2f355f6d6d07b8f58a7b",
     "FlowLayout_d7dac04b": "e484676f68d4de5166a7c0562fa573408cc6cd69",
     "FlowLayout_35ed65de": "ce77ebbbc87d76e6b36932932bc1479b28b2d299",
     "FlowLayout_50a46b38": "1e4148047000bdb4510375c6a78624577a096cbd",
     "FlowLayout_6e517cd5": "7575ea69b50918d1664ca817ec6fd710010e6f0e",
     "FlowLayout_a4a155ed": "60f8a0f052205f7dbab245ca8cacb578385fd8cf",
     "FlowLayout_2ab933a5": "5dd6fd550c3a3ff298488b436b91f32b39a6f006",
-    "FlowLayout_040b1e86": "8398f0c7767b4ca98618cc10397f785779772582",
-    "FlowLayout_ad9205ea": "e690109c8ed5e9219553cb4669949290ace0ec3c",
+    "FlowLayout_040b1e86": "e31ac8e1228b78472dec711659dd8d2d74a1ccdc",
+    "FlowLayout_ad9205ea": "17d43d41d94671b507d02cf1f884916bdaf3112b",
     "FlowLayout_49934c23": "455952c80a336649f3607e8853c88b81af244efa",
     "FlowLayout_285eea05": "a0140c20498ce68090ad96764b9ba3a3c9e82e36",
     "FlowLayout_00ce1665": "248df8cbebc4b88ca5224e91a910c557235baf32",
@@ -9144,11 +9143,11 @@
     "FlowLayout_41288a78": "c9f67027d251736018e3e8f1ba80234664e3028e"
   },
   "viewBlobSHADict": {
-    "d1e3b3b3": "ace429394716b403ae6339164fc40fc6bbc644db",
-    "index": "c276265ab925e18db8688b5d7c20c863c8441dc0",
+    "d1e3b3b3": "e0e1998375b99866703c85cf53ded3135719638f",
+    "index": "d727df49c273961e9ab177d538a615af37f964d1",
     "b140e86b": "de5c8e6c1dba39d8ae4abf36c55cd7bf689723e7",
     "8857ca68": "409efba4c1fb0b6c57f6b4da8132b1c46aaac1de",
-    "b6eb1b83": "790a2c4bde09639f7648275901951081f2fcb4eb",
+    "b6eb1b83": "0885d7b538a5adc1181457d9273bfb84730ad0c9",
     "65e04a88": "b3cd2f43f85b7d43d3010db5d64ce8a372b22a8e",
     "7e709334": "570555dac711073db874beea52868ba009eccd67",
     "6ce794ec": "a7dedc2cc8cb7edacdfa3b72640e01cbe03516d1",

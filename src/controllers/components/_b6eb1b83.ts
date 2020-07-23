@@ -14,6 +14,8 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
+import {SchemaHelper} from '../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -89,26 +91,25 @@ class Controller extends Base {
  		ValidationHelper.validate(data);
   }
   
-  protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise((resolve) => {
- 	    resolve({
- 		    title: null,
- 		    description: null,
- 		    keywords: null,
- 		    language: null,
- 		    contentType: null,
- 		    revisitAfter: null,
- 		    robots: null,
- 		    linkUrl: null,
- 		    imageUrl: null,
- 		    itemType: null,
- 		    contentLocale: null
- 		  });
- 	  });
-  }
-  
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+    return new Promise(async (resolve) => {
+   		if (this.request.session && this.request.session.uid) {
+   		  switch (this.request.session.role) {
+   		    case 'buyer':
+            this.response.redirect('/buyer/auction');
+   		      break;
+   		    case 'bidder':
+            this.response.redirect('/buyer/bidder');
+   		      break;
+   		    default:
+   		      break;
+   		  }
+      } else {
+        this.response.redirect('/authentication');
+      }
+      
+   	  resolve(null);
+    });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -140,7 +141,31 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
- 		return '/';
+    return new Promise(async (resolve) => {
+      let rows = await DatabaseHelper.update(data, schema);
+      if (rows.length != 0) {
+        switch (rows[0].columns['role'].value) {
+          case "buyer":
+            this.request.session.role = 'buyer';
+            this.request.session.save(() => {
+            	resolve('/buyer/auction');
+            });
+            break;
+          case "bidder":
+            this.request.session.role = 'bidder';
+            this.request.session.save(() => {
+            	resolve('/bidder/auction');
+            });
+            break;
+          default:
+            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
+        }
+      } else {
+        throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
+      }
+      
+      resolve('/authentication/role');
+    });
   }
  	
   // Auto[MergingBegin]--->  
