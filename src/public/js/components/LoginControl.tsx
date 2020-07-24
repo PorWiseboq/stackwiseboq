@@ -5,6 +5,7 @@
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
+import {HTMLHelper} from '../helpers/HTMLHelper.js';
 import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
 // <---Auto[Import]
 
@@ -56,9 +57,12 @@ class LoginControl extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
-DataManipulationHelper.register("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null})
-DataManipulationHelper.register("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null})
     this.initialize();
+  }
+  
+  register() {
+    DataManipulationHelper.register("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null});
+    DataManipulationHelper.register("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null});
   }
   // <---Auto[ClassBegin]
   
