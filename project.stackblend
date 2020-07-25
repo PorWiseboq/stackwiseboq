@@ -153,7 +153,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "d1e3b3b3",
+    "editingPageID": "65e04a88",
     "currentMode": "site",
     "editingComponentID": "7aee6ed8"
   },
@@ -4086,17 +4086,17 @@
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"1e4c0d68\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686\">รายการวัสดุก่อสร้าง</div>",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"65ca1989\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353\">กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, ขนาด, ปริมาณ)</div>",
-        "                                    <div class=\"internal-fsb-element col-12 offset-0 -fsb-self-97d707b7\" internal-fsb-guid=\"97d707b7\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"min-height: 22px; -fsb-reusable-name: ; -fsb-reusable-id: 97d707b7\">",
+        "                                    <div class=\"internal-fsb-element col-12 offset-0 -fsb-self-97d707b7\" internal-fsb-guid=\"97d707b7\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"min-height: 22px; -fsb-reusable-name: ; -fsb-reusable-id: 97d707b7\" internal-fsb-react-data=\"Listing\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"รายการ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\"></div>",
-        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\"></div>",
-        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "                                                <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"รายการ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\"></div>",
+        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\"></div>",
+        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
         "    // Handle the event of onButtonSuccess (Button 1) here:",
         "    // ",
         "    ",
-        "    \">",
+        "    \" internal-fsb-data-controls=\" 54e20435 31894d87 b2321320\" internal-fsb-data-wizard-type=\"insert\">",
         "                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"05179431-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เพิ่ม</div>",
         "                                                </button>",
         "                                            </div>",
@@ -4717,11 +4717,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2020622",
+        "selectingElementGUID": "05179431",
         "currentCursorWalkPath": [
-          "b2020622",
+          "180079a2",
           0,
-          4,
+          7,
           null
         ]
       },
@@ -4737,6 +4737,11 @@
           "description": {},
           "qid": {},
           "uid": {}
+        },
+        "Listing": {
+          "title": {},
+          "size": {},
+          "quantity": {}
         }
       }
     },
@@ -8765,10 +8770,7 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ],
-      "id": "7aee6ed8",
-      "name": "Login Control",
-      "state": "update"
+      ]
     },
     "535be65e": {
       "namespace": "Project.Controls",
@@ -9512,7 +9514,7 @@
     "b140e86b": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "b6eb1b83": "033d962875d41373686e03ab73fa9f343a41d978",
     "7e709334": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "65e04a88": "55ecf42feb1b5d94f12d17b7deb7c560eb28cf9c",
+    "65e04a88": "2cb13b2f139e9aa98702f6bcd3bdf3e1f4c9d9a0",
     "9d37c390": "33a5765fc5acca6d461c56e34a3729b34c31353a",
     "6ce794ec": "4f7b0fe72da78f3e0cec7b480ceae92e2c0a75cb",
     "bbc7dba3": "fb7632ce1363f1867691b3cab83e9566311f01a2",
@@ -9521,10 +9523,10 @@
     "473d370d": "94808a94e1ab8bf390ec8f586e81930bb1565b65"
   },
   "frontEndComponentsBlobSHADict": {
-    "LoginControl": "d8dd4fdf9625542b6b81fec2b9d3d24cda79aba2",
+    "LoginControl": "7c40f505478a448abb95ec829bbb48add1b730cb",
     "FlowLayout_535be65e": "52bd1dd06aa8c58981ef34559854f87bf911ffbb",
-    "FlowLayout_178431b9": "95c0b851d9d4864b54215f57dfb18d6d33af4a2b",
-    "FlowLayout_3e6ee363": "1342db8109c801f38fad60cba4bf47246c6a1827",
+    "FlowLayout_178431b9": "c92176a213342e347561ce22118881c95c9cca54",
+    "FlowLayout_3e6ee363": "fdcef2fabf0c3a815364c0a5e41ba1c14010d696",
     "FlowLayout_d22b95d9": "bf0bde3f1e78d6a6d45df6848721a32a8aff5ddc",
     "FlowLayout_570decac": "b1adb28ebdb8e2c8a587ee54069e56665bc460b1",
     "FlowLayout_d7dac04b": "e484676f68d4de5166a7c0562fa573408cc6cd69",
@@ -9535,8 +9537,8 @@
     "FlowLayout_2ab933a5": "5dd6fd550c3a3ff298488b436b91f32b39a6f006",
     "FlowLayout_040b1e86": "8398f0c7767b4ca98618cc10397f785779772582",
     "FlowLayout_ad9205ea": "e690109c8ed5e9219553cb4669949290ace0ec3c",
-    "FlowLayout_49934c23": "455952c80a336649f3607e8853c88b81af244efa",
-    "FlowLayout_285eea05": "a0140c20498ce68090ad96764b9ba3a3c9e82e36",
+    "FlowLayout_49934c23": "457679a2540ea6b77118f9fa127cb68a700ceeb0",
+    "FlowLayout_285eea05": "ff23a7c992b3d7663a19fc4a89e4e807175a2e04",
     "FlowLayout_00ce1665": "fa8568237dac44646be2a07b50dce7a38e4656a0",
     "FlowLayout_d58ae925": "749b43ef4a746cdccd1527eabdba85cd3b3b0668",
     "FlowLayout_d64677b8": "1ba5dbca52beaf71baebea86bd80c461e30d9c76",
@@ -9545,7 +9547,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "3deee7bd3c59c6060d8edeaf4a2024584cf81d7f"
+    "FlowLayout_b2020622": "e23432bc8380a1f5b38a9d1ea9c7b5225fd43874"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",

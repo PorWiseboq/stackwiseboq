@@ -77,6 +77,10 @@ class LoginControl extends Base {
     return super.getDataFromNotation(notation);
   }
   
+  protected componentDidMount() {
+    this.register();
+  }
+  
   // Auto[Merging]--->
   protected onTextElementClick_44677dd0(event: Event) {
 
