@@ -386,28 +386,26 @@ class FlowLayout_b2020622 extends Base {
                             
                             {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
                               return (
-                                <div className="internal-fsb-element col-6 offset-0 form-control form-control-sm" internal-fsb-guid="d83e549e" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" type="text" disabled={true} defaultValue={data} />
+                                <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" key={"item_" + j}>
+                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
                                 </div>
                               )
                             })}
-                            
                             {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
                               return (
-                                <div className="internal-fsb-element col-2 offset-0 form-control form-control-sm" internal-fsb-guid="ccd1c929" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" type="text" disabled={true} defaultValue={data} />
+                                <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" key={"item_" + j}>
+                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
                                 </div>
                               )
                             })}
-                            
                             {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
                               return (
-                                <div className="internal-fsb-element col-2 offset-0 form-control form-control-sm" internal-fsb-guid="a449e52d" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" type="text" disabled={true} defaultValue={data} />
+                                <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" key={"item_" + j}>
+                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
                                 </div>
                               )
                             })}
-                            <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-danger btn-sm" internal-fsb-guid="d910ad00" type="button" onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1" internal-fsb-guid="d910ad00" type="button" onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
                               
                               <div className="internal-fsb-element" internal-fsb-guid="d910ad00-text">
                                 ลบ

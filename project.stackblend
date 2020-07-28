@@ -4126,9 +4126,11 @@
         "    \">",
         "                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"05179431-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เพิ่ม</div>",
         "                                                </button>",
-        "                                                <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"d83e549e\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\"><input type=\"text\" class=\"form-control form-control-sm\" style=\"\" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-column=\"title\" internal-fsb-data-source-name=\"Listing\"></div>",
-        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"ccd1c929\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\"><input type=\"text\" class=\"form-control form-control-sm \" style=\"\" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-column=\"size\" internal-fsb-data-source-name=\"Listing\"></div>",
-        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"a449e52d\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\"><input type=\"text\" class=\"form-control form-control-sm\" style=\"\" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-column=\"quantity\" internal-fsb-data-source-name=\"Listing\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-danger btn-sm\" internal-fsb-guid=\"d910ad00\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"delete\" internal-fsb-data-controls=\" 41bdc9b3\">",
+        "",
+        "",
+        "                                                <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"2ce10e8e\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" disabled=\"true\"></div>",
+        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"0d2c5b71\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" disabled=\"true\"></div>",
+        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"1cabb5c5\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" disabled=\"true\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1\" internal-fsb-guid=\"d910ad00\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"delete\" internal-fsb-data-controls=\" 41bdc9b3\">",
         "                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"d910ad00-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ลบ</div>",
         "                                                </button><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"41bdc9b3\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"lid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"lid\">",
         "                                            </div>",
@@ -4773,11 +4775,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a449e52d",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
-          "180079a2",
+          "97d707b7",
           0,
-          8,
+          9,
           null
         ]
       },
@@ -10085,7 +10087,7 @@
     "b140e86b": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "b6eb1b83": "033d962875d41373686e03ab73fa9f343a41d978",
     "7e709334": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "65e04a88": "4dcc593ed76f9efd65af88eb676392d5ea3a3108",
+    "65e04a88": "76fa9f407f0e60961f625037c8e197010d95e33a",
     "9d37c390": "33a5765fc5acca6d461c56e34a3729b34c31353a",
     "6ce794ec": "4f7b0fe72da78f3e0cec7b480ceae92e2c0a75cb",
     "bbc7dba3": "fb7632ce1363f1867691b3cab83e9566311f01a2",
@@ -10118,7 +10120,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "17667b5d4c0c620634a1652d24cbf53fdfbeda29"
+    "FlowLayout_b2020622": "7b7d46613c6859ad765bd663c020ed5c6b8850b9"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
