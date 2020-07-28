@@ -235,7 +235,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('2ce10e8e', undefined, undefined, undefined);
+		RequestHelper.registerInput('2ce10e8e', "relational", "Listing", "title");
 		ValidationHelper.registerInput('2ce10e8e', "Textbox 1", false, undefined);
     input = RequestHelper.getInput(request, '2ce10e8e');
     
@@ -243,7 +243,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('0d2c5b71', undefined, undefined, undefined);
+		RequestHelper.registerInput('0d2c5b71', "relational", "Listing", "size");
 		ValidationHelper.registerInput('0d2c5b71', "Textbox 2", false, undefined);
     input = RequestHelper.getInput(request, '0d2c5b71');
     
@@ -251,7 +251,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('1cabb5c5', undefined, undefined, undefined);
+		RequestHelper.registerInput('1cabb5c5', "relational", "Listing", "quantity");
 		ValidationHelper.registerInput('1cabb5c5', "Textbox 3", false, undefined);
     input = RequestHelper.getInput(request, '1cabb5c5');
     
