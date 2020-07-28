@@ -78,6 +78,7 @@ class FlowLayout_b2020622 extends Base {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bc39a2b').addEventListener('success', this.onButtonSuccess_1bc39a2b.bind(this));
     }
     DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null});
+    DataManipulationHelper.register("d910ad00", "delete", ["41bdc9b3"], {initClass: null});
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a').addEventListener('submitting', this.onButtonSubmitting_1bb72b1a.bind(this));
     }
@@ -143,12 +144,6 @@ class FlowLayout_b2020622 extends Base {
       status: Status.LIST,
       inserted: true
     });
-    
-    let quote_qid = ReactDOM.findDOMNode(this.refs.quote_qid);
-    quote_qid.value = event.detail.results.results[0].keys['qid'].value;
-    
-    let listing_qid = ReactDOM.findDOMNode(this.refs.listing_qid);
-    listing_qid.value = event.detail.results.results[0].keys['qid'].value;
     
   }
 
@@ -295,7 +290,7 @@ class FlowLayout_b2020622 extends Base {
                   </div>
                   {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
                     return (
-                      <input className="internal-fsb-element col-12" internal-fsb-guid="5d34dc3b" key={"item_" + i} ref="quote_qid" type="hidden" defaultValue={data} />
+                      <input className="internal-fsb-element col-12" internal-fsb-guid="5d34dc3b" key={"item_" + i} type="hidden" defaultValue={data} />
                     )
                   })}
                   {this.getDataFromNotation("Quote.uid", true).map((data, i) => {
@@ -303,7 +298,11 @@ class FlowLayout_b2020622 extends Base {
                       <input className="internal-fsb-element col-12" internal-fsb-guid="5752cb4d" key={"item_" + i} type="hidden" defaultValue={data} />
                     )
                   })}
-                  <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" ref="listing_qid" type="hidden" />
+                  {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
+                    return (
+                      <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" key={"item_" + i} type="hidden" defaultValue={data} />
+                    )
+                  })}
                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9ce000e1" style={{'marginTop': '15px', display: (()=>{return this.state.inserted ? 'none' : 'block'})()}} type="button" onClick={((event) => { window.internalFsbSubmit('9ce000e1', 'Quote', event, ((results: any) => { this.manipulate('9ce000e1', 'Quote', results); }).bind(this)); }).bind(this)}>
                     
                     <div className="internal-fsb-element" internal-fsb-guid="9ce000e1-text">
@@ -379,6 +378,37 @@ class FlowLayout_b2020622 extends Base {
                               
                             </button>
                             
+                            {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
+                              return (
+                                <div className="internal-fsb-element col-6 offset-0 form-control form-control-sm" internal-fsb-guid="d83e549e" key={"item_" + j}>
+                                  <input className="form-control form-control-sm" type="text" disabled={true} defaultValue={data} />
+                                </div>
+                              )
+                            })}
+                            {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
+                              return (
+                                <div className="internal-fsb-element col-2 offset-0 form-control form-control-sm" internal-fsb-guid="ccd1c929" key={"item_" + j}>
+                                  <input className="form-control form-control-sm" type="text" disabled={true} defaultValue={data} />
+                                </div>
+                              )
+                            })}
+                            {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
+                              return (
+                                <div className="internal-fsb-element col-2 offset-0 form-control form-control-sm" internal-fsb-guid="a449e52d" key={"item_" + j}>
+                                  <input className="form-control form-control-sm" type="text" disabled={true} defaultValue={data} />
+                                </div>
+                              )
+                            })}
+                            <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-danger btn-sm" internal-fsb-guid="d910ad00" type="button" onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
+                              <div className="internal-fsb-element" internal-fsb-guid="d910ad00-text">
+                                ลบ
+                              </div>
+                            </button>
+                            {this.getDataFromNotation("Listing[" + i + "].lid", true).map((data, j) => {
+                              return (
+                                <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" key={"item_" + j} type="hidden" defaultValue={data} />
+                              )
+                            })}
                           </div>
                           
                         </div>

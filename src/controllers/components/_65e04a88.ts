@@ -235,6 +235,38 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
+		RequestHelper.registerInput('d83e549e', "relational", "Listing", "title");
+		ValidationHelper.registerInput('d83e549e', "Textbox 1", false, undefined);
+    input = RequestHelper.getInput(request, 'd83e549e');
+    
+    // Override data parsing and manipulation of Textbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('ccd1c929', "relational", "Listing", "size");
+		ValidationHelper.registerInput('ccd1c929', "Textbox 2", false, undefined);
+    input = RequestHelper.getInput(request, 'ccd1c929');
+    
+    // Override data parsing and manipulation of Textbox 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('a449e52d', "relational", "Listing", "quantity");
+		ValidationHelper.registerInput('a449e52d', "Textbox 3", false, undefined);
+    input = RequestHelper.getInput(request, 'a449e52d');
+    
+    // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
+		ValidationHelper.registerInput('41bdc9b3', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, '41bdc9b3');
+    
+    // Override data parsing and manipulation of Hidden 1 here:
+    // 
+    
+    if (input != null) data.push(input);
 		RequestHelper.registerInput('b6c9ad89', "relational", "Listing", "substitute");
 		ValidationHelper.registerInput('b6c9ad89', "Radio 3", false, undefined);
     input = RequestHelper.getInput(request, 'b6c9ad89');
