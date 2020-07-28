@@ -314,7 +314,7 @@ class FlowLayout_b2020622 extends Base {
                             {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
                               return (
                                 <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="54e20435" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="รายการ" defaultValue={data} />
+                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="วัสดุ" required={true} defaultValue={data} />
                                 </div>
                               )
                             })}
@@ -322,7 +322,7 @@ class FlowLayout_b2020622 extends Base {
                             {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
                               return (
                                 <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ขนาด" defaultValue={data} />
+                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ขนาด" required={true} value="" defaultValue={data} />
                                 </div>
                               )
                             })}
@@ -330,7 +330,7 @@ class FlowLayout_b2020622 extends Base {
                             {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
                               return (
                                 <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ปริมาณ" defaultValue={data} />
+                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ปริมาณ" value="" required={true} defaultValue={data} />
                                 </div>
                               )
                             })}

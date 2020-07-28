@@ -212,7 +212,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('54e20435', "relational", "Listing", "title");
-		ValidationHelper.registerInput('54e20435', "Textbox 1", false, undefined);
+		ValidationHelper.registerInput('54e20435', "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ");
     input = RequestHelper.getInput(request, '54e20435');
     
     // Override data parsing and manipulation of Textbox 1 here:
@@ -220,7 +220,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('31894d87', "relational", "Listing", "size");
-		ValidationHelper.registerInput('31894d87', "Textbox 2", false, undefined);
+		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
     input = RequestHelper.getInput(request, '31894d87');
     
     // Override data parsing and manipulation of Textbox 2 here:
@@ -228,7 +228,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
-		ValidationHelper.registerInput('b2321320', "Textbox 3", false, undefined);
+		ValidationHelper.registerInput('b2321320', "Textbox 3", true, "คุณต้องระบุจำนวน");
     input = RequestHelper.getInput(request, 'b2321320');
     
     // Override data parsing and manipulation of Textbox 3 here:

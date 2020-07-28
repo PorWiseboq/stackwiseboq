@@ -4102,9 +4102,9 @@
         "                                    <div class=\"internal-fsb-element col-12 offset-0 -fsb-self-97d707b7\" internal-fsb-guid=\"97d707b7\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"min-height: 22px; -fsb-reusable-name: ; -fsb-reusable-id: 97d707b7\" internal-fsb-react-data=\"Listing\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"รายการ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\"></div>",
-        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\"></div>",
-        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "                                                <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\" internal-fsb-data-validation-message=\"คุณต้องระบุชื่อวัสดุ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"วัสดุ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
+        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\" internal-fsb-data-validation-message=\"คุณต้องระบุขนาด\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\" required=\"true\" value=\"\"></div>",
+        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\" internal-fsb-data-validation-message=\"คุณต้องระบุจำนวน\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\" value=\"\" required=\"true\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
         "    // Handle the event of onButtonSuccess (Button 1) here:",
         "    // ",
@@ -4735,7 +4735,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2020622",
+        "selectingElementGUID": "54e20435",
         "currentCursorWalkPath": [
           "7600ca53",
           0,
@@ -10045,7 +10045,7 @@
     "b140e86b": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "b6eb1b83": "033d962875d41373686e03ab73fa9f343a41d978",
     "7e709334": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "65e04a88": "a762146a3ee01dedbfd9899daf810b31a8fbe69d",
+    "65e04a88": "3f514f2f862c3420400e51efcf19e3af1c4081ab",
     "9d37c390": "33a5765fc5acca6d461c56e34a3729b34c31353a",
     "6ce794ec": "4f7b0fe72da78f3e0cec7b480ceae92e2c0a75cb",
     "bbc7dba3": "fb7632ce1363f1867691b3cab83e9566311f01a2",
@@ -10078,7 +10078,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "b97c19729bc6eec22614aeff16624138ab87a6d0"
+    "FlowLayout_b2020622": "72775401f778ed58c0c4781731bfb6ff9d52807d"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
