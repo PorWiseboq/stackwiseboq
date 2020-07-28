@@ -69,7 +69,7 @@ class FlowLayout_b2020622 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2"], {initClass: null});
+    DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d"], {initClass: null});
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '9ce000e1')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '9ce000e1').addEventListener('success', this.onButtonSuccess_9ce000e1.bind(this));
     }
@@ -77,7 +77,7 @@ class FlowLayout_b2020622 extends Base {
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bc39a2b')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bc39a2b').addEventListener('success', this.onButtonSuccess_1bc39a2b.bind(this));
     }
-    DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320"], {initClass: null});
+    DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null});
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a').addEventListener('submitting', this.onButtonSubmitting_1bb72b1a.bind(this));
     }
@@ -104,7 +104,17 @@ class FlowLayout_b2020622 extends Base {
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
-    return super.getDataFromNotation(notation, inArray);
+    if (!this.state.inserted {
+      return [''];
+    } else {
+      let data = super.getDataFromNotation(notation, inArray);
+      
+      if (notation.split('.')[0] == 'Listing' && this.state.inserted) {
+        data.push('');
+      }
+      
+      return data;
+    }
   }
   
   protected componentDidMount() {
@@ -125,6 +135,9 @@ class FlowLayout_b2020622 extends Base {
       status: Status.LIST,
       inserted: true
     });
+    
+    let input = ReactDOM.findDOMNode(this.refs.qid);
+    input.value = event.detail.results.results[0].keys['qid'].value;
     
   }
 
@@ -253,6 +266,7 @@ class FlowLayout_b2020622 extends Base {
                       <input className="internal-fsb-element col-12" internal-fsb-guid="5752cb4d" key={"item_" + i} type="hidden" defaultValue={data} />
                     )
                   })}
+                  <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" ref="qid" type="hidden" />
                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9ce000e1" style={{'marginTop': '15px', display: (()=>{return this.state.inserted ? 'none' : 'block'})()}} type="button" onClick={((event) => { window.internalFsbSubmit('9ce000e1', 'Quote', event, ((results: any) => { this.manipulate('9ce000e1', 'Quote', results); }).bind(this)); }).bind(this)}>
                     
                     <div className="internal-fsb-element" internal-fsb-guid="9ce000e1-text">

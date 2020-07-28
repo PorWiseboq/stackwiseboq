@@ -154,7 +154,7 @@
     ],
     "popups": [],
     "editingPageID": "65e04a88",
-    "currentMode": "data",
+    "currentMode": "site",
     "editingComponentID": "7aee6ed8"
   },
   "sites": {
@@ -3948,7 +3948,7 @@
       "notations": {}
     },
     "65e04a88": {
-            "id": "65e04a88",
+      "id": "65e04a88",
       "name": "WiseBOQ - สืบราคา",
       "path": "/buyer/auction",
       "state": "update",
@@ -4747,7 +4747,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve) => {\n   \t\tresolve(null);\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  "
+        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve) => {\n   \t\tif (this.request.session && this.request.session.uid) {\n   \t\t  resolve({\n   \t\t    Quote: {\n   \t\t      source: SourceType.Relational,\n          \tgroup: 'Quote',\n            rows: []\n   \t\t    },\n   \t\t    Listing: {\n   \t\t      source: SourceType.Relational,\n          \tgroup: 'Listing',\n            rows: []\n   \t\t    }\n   \t\t  });\n   \t\t} else {\n   \t\t  this.response.redirect('/authentication');\n   \t\t}\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  "
       },
       "notations": {
         "Quote": {
@@ -8788,7 +8788,10 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ]
+      ],
+      "id": "7aee6ed8",
+      "name": "Login Control",
+      "state": "update"
     },
     "535be65e": {
       "namespace": "Project.Controls",
@@ -10042,7 +10045,7 @@
     "b140e86b": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "b6eb1b83": "033d962875d41373686e03ab73fa9f343a41d978",
     "7e709334": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "65e04a88": "ab368ffb1cd87b5a4569e6871feec8d94f5f29e2",
+    "65e04a88": "a762146a3ee01dedbfd9899daf810b31a8fbe69d",
     "9d37c390": "33a5765fc5acca6d461c56e34a3729b34c31353a",
     "6ce794ec": "4f7b0fe72da78f3e0cec7b480ceae92e2c0a75cb",
     "bbc7dba3": "fb7632ce1363f1867691b3cab83e9566311f01a2",
@@ -10075,7 +10078,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "e23432bc8380a1f5b38a9d1ea9c7b5225fd43874"
+    "FlowLayout_b2020622": "b97c19729bc6eec22614aeff16624138ab87a6d0"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
@@ -10083,7 +10086,7 @@
     "b140e86b": "def4b1d0a97b7505ca0d01f6a974153f2fe5ef21",
     "8857ca68": "5da1a75a3582a0c77f97144fdd21f4ca336d2fbf",
     "b6eb1b83": "790a2c4bde09639f7648275901951081f2fcb4eb",
-    "65e04a88": "336a324b76cc38bda994036ad03fc41394cc0f1c",
+    "65e04a88": "2d276725d2186ba71637abcc43bcd7981953914e",
     "7e709334": "f4b6029b14f2a111c41f5bc9ae16cbcc4faa3c21",
     "6ce794ec": "52cf5f952ec36c88d4fe96513fb5a5c53e4a3df5",
     "9d37c390": "c323e7af5d3efb88cbfc0ffeb24a24c7c0cdec1b",
