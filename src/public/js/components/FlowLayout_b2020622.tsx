@@ -106,12 +106,18 @@ class FlowLayout_b2020622 extends Base {
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
-    if (!this.state.inserted {
+    if (!this.state.inserted) {
       return [''];
     } else {
       let data = super.getDataFromNotation(notation, inArray);
       
-      if (notation.split('.')[0] == 'Listing' && this.state.inserted) {
+      for (let i=data.length-1; i>=0; i--) {
+        if (data[i] === '') {
+          data.splice(i, 1);
+        }
+      }
+      
+      if (notation.split('.')[0] == 'Listing') {
         data.push('');
       }
       
@@ -350,7 +356,7 @@ class FlowLayout_b2020622 extends Base {
                             {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
                               return (
                                 <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ขนาด" required={true} value="" defaultValue={data} />
+                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ขนาด" required={true} defaultValue={data} />
                                 </div>
                               )
                             })}
@@ -358,7 +364,7 @@ class FlowLayout_b2020622 extends Base {
                             {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
                               return (
                                 <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ปริมาณ" value="" required={true} defaultValue={data} />
+                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ปริมาณ" required={true} defaultValue={data} />
                                 </div>
                               )
                             })}

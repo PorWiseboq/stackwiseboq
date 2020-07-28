@@ -4011,12 +4011,18 @@
         "  // Providing data array base on dot notation:",
         "  // ",
         "  protected getDataFromNotation(notation: string, inArray: boolean=false): any {",
-        "    if (!this.state.inserted {",
+        "    if (!this.state.inserted) {",
         "      return [''];",
         "    } else {",
         "      let data = super.getDataFromNotation(notation, inArray);",
         "      ",
-        "      if (notation.split('.')[0] == 'Listing' &amp;&amp; this.state.inserted) {",
+        "      for (let i=data.length-1; i>=0; i--) {",
+        "        if (data[i] === '') {",
+        "          data.splice(i, 1);",
+        "        }",
+        "      }",
+        "      ",
+        "      if (notation.split('.')[0] == 'Listing') {",
         "        data.push('');",
         "      }",
         "      ",
@@ -4103,8 +4109,8 @@
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\" internal-fsb-data-validation-message=\"คุณต้องระบุชื่อวัสดุ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"วัสดุ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
-        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\" internal-fsb-data-validation-message=\"คุณต้องระบุขนาด\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\" required=\"true\" value=\"\"></div>",
-        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\" internal-fsb-data-validation-message=\"คุณต้องระบุจำนวน\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\" value=\"\" required=\"true\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\" internal-fsb-data-validation-message=\"คุณต้องระบุขนาด\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\" required=\"true\"></div>",
+        "                                                <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\" internal-fsb-data-validation-message=\"คุณต้องระบุจำนวน\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\" required=\"true\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
         "    // Handle the event of onButtonSuccess (Button 1) here:",
         "    // ",
@@ -4759,11 +4765,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0e75306a",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
-          "b2791ada",
+          "7600ca53",
           0,
-          1,
+          5,
           null
         ]
       },
@@ -5330,7 +5336,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {SchemaHelper} from '../helpers/SchemaHelper.js';\nimport {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve) => {\n   \t\tif (this.request.session && this.request.session.uid) {\n   \t\t  switch (this.request.session.role) {\n   \t\t    case 'buyer':\n            this.response.redirect('/buyer/auction');\n   \t\t      break;\n   \t\t    case 'bidder':\n            this.response.redirect('/buyer/bidder');\n   \t\t      break;\n   \t\t    default:\n   \t\t      break;\n   \t\t  }\n      } else {\n        this.response.redirect('/authentication');\n      }\n      \n   \t  resolve(null);\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve) => {\n      let rows = await DatabaseHelper.update(data, schema);\n      if (rows.length != 0) {\n        switch (rows[0].columns['role'].value) {\n          case \"buyer\":\n            this.request.session.role = 'buyer';\n            this.request.session.save(() => {\n            \tresolve('/buyer/auction');\n            });\n            break;\n          case \"bidder\":\n            this.request.session.role = 'bidder';\n            this.request.session.save(() => {\n            \tresolve('/bidder/auction');\n            });\n            break;\n          default:\n            throw new Error(\"เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง\");\n        }\n      } else {\n        throw new Error(\"เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่\");\n      }\n      \n      resolve('/authentication/role');\n    });\n  }\n \t\n  ",
+        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve) => {\n   \t\tif (this.request.session && this.request.session.uid) {\n   \t\t  switch (this.request.session.role) {\n   \t\t    case 'buyer':\n            this.response.redirect('/buyer/auction');\n   \t\t      break;\n   \t\t    case 'bidder':\n            this.response.redirect('/buyer/bidder');\n   \t\t      break;\n   \t\t    default:\n   \t\t      break;\n   \t\t  }\n      } else {\n        this.response.redirect('/authentication');\n      }\n      \n   \t  resolve(null);\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve) => {\n      let rows = await DatabaseHelper.update(data, schema);\n      if (rows.length != 0) {\n        switch (rows[0].columns['role'].value) {\n          case \"buyer\":\n            this.request.session.role = 'buyer';\n            this.request.session.save(() => {\n            \tresolve('/buyer/auction');\n            });\n            return;\n          case \"bidder\":\n            this.request.session.role = 'bidder';\n            this.request.session.save(() => {\n            \tresolve('/bidder/auction');\n            });\n            return;\n          default:\n            throw new Error(\"เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง\");\n        }\n      } else {\n        throw new Error(\"เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่\");\n      }\n      \n      resolve('/authentication/role');\n    });\n  }\n \t\n  ",
         "internal-fsb-data-code-footer": null
       },
       "notations": {}
@@ -10102,7 +10108,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "47feb544e22718609f6d2ae7097f92b38a1fc12f"
+    "FlowLayout_b2020622": "f16985868274f38c34058fe9b871816c3bbc007b"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
