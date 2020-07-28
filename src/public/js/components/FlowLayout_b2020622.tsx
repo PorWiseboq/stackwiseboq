@@ -117,7 +117,7 @@ class FlowLayout_b2020622 extends Base {
         }
       }
       
-      if (notation.split('.')[0] == 'Listing') {
+      if (notation.split('.').length == 1 || data.length == 0) {
         data.push('');
       }
       
@@ -144,8 +144,11 @@ class FlowLayout_b2020622 extends Base {
       inserted: true
     });
     
-    let input = ReactDOM.findDOMNode(this.refs.qid);
-    input.value = event.detail.results.results[0].keys['qid'].value;
+    let quote_qid = ReactDOM.findDOMNode(this.refs.quote_qid);
+    quote_qid.value = event.detail.results.results[0].keys['qid'].value;
+    
+    let listing_qid = ReactDOM.findDOMNode(this.refs.listing_qid);
+    listing_qid.value = event.detail.results.results[0].keys['qid'].value;
     
   }
 
@@ -292,7 +295,7 @@ class FlowLayout_b2020622 extends Base {
                   </div>
                   {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
                     return (
-                      <input className="internal-fsb-element col-12" internal-fsb-guid="5d34dc3b" key={"item_" + i} type="hidden" defaultValue={data} />
+                      <input className="internal-fsb-element col-12" internal-fsb-guid="5d34dc3b" key={"item_" + i} ref="quote_qid" type="hidden" defaultValue={data} />
                     )
                   })}
                   {this.getDataFromNotation("Quote.uid", true).map((data, i) => {
@@ -300,7 +303,7 @@ class FlowLayout_b2020622 extends Base {
                       <input className="internal-fsb-element col-12" internal-fsb-guid="5752cb4d" key={"item_" + i} type="hidden" defaultValue={data} />
                     )
                   })}
-                  <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" ref="qid" type="hidden" />
+                  <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" ref="listing_qid" type="hidden" />
                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9ce000e1" style={{'marginTop': '15px', display: (()=>{return this.state.inserted ? 'none' : 'block'})()}} type="button" onClick={((event) => { window.internalFsbSubmit('9ce000e1', 'Quote', event, ((results: any) => { this.manipulate('9ce000e1', 'Quote', results); }).bind(this)); }).bind(this)}>
                     
                     <div className="internal-fsb-element" internal-fsb-guid="9ce000e1-text">
@@ -333,13 +336,13 @@ class FlowLayout_b2020622 extends Base {
                     รายการวัสดุก่อสร้าง
                   </div>
                   
-                  <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="65ca1989" style={{'FsbInheritedPresets': '4839e353'}}>
+                  <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="65ca1989" style={{'FsbInheritedPresets': '4839e353', 'marginBottom': '10px'}}>
                     กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, ขนาด, ปริมาณ)
                   </div>
                   
                   {this.getDataFromNotation("Listing", true).map((data, i) => {
                     return (
-                      <div className="internal-fsb-element col-12 offset-0 -fsb-self-97d707b7" internal-fsb-guid="97d707b7" style={{'minHeight': '22px', 'FsbReusableName': '', 'FsbReusableId': '97d707b7'}} key={"item_" + i}>
+                      <div className="internal-fsb-element col-12 offset-0 -fsb-self-97d707b7" internal-fsb-guid="97d707b7" style={{'minHeight': '22px', 'FsbReusableName': '', 'FsbReusableId': '97d707b7', 'marginTop': '5px'}} key={"item_" + i}>
                         
                         <div className="container-fluid">
                           
