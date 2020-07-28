@@ -155,7 +155,7 @@
     "popups": [],
     "editingPageID": "65e04a88",
     "currentMode": "site",
-    "editingComponentID": "7aee6ed8"
+    "editingComponentID": "d22b95d9"
   },
   "sites": {
     "index": {
@@ -4016,14 +4016,20 @@
         "    } else {",
         "      let data = super.getDataFromNotation(notation, inArray);",
         "      ",
-        "      for (let i=data.length-1; i>=0; i--) {",
-        "        if (data[i] === '') {",
-        "          data.splice(i, 1);",
-        "        }",
-        "      }",
-        "      ",
-        "      if (notation.split('.').length == 1 || data.length == 0) {",
-        "        data.push('');",
+        "      let splited = notation.split('.');",
+        "      switch (splited[0]) {",
+        "        case 'Quote':",
+        "          break;",
+        "        case 'Listing':",
+        "          for (let i=data.length-1; i>=0; i--) {",
+        "            if (data[i] === '') {",
+        "              data.splice(i, 1);",
+        "            }",
+        "          }",
+        "          if (splited.length == 1 || data.length == 0) {",
+        "            data.push('');",
+        "          }",
+        "          break;",
         "      }",
         "      ",
         "      return data;",
@@ -4767,11 +4773,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "5d34dc3b",
+        "selectingElementGUID": "a449e52d",
         "currentCursorWalkPath": [
-          "7600ca53",
+          "180079a2",
           0,
-          5,
+          8,
           null
         ]
       },
@@ -8905,7 +8911,8 @@
         "<div class=\"internal-fsb-element col-10 offset-1\" internal-fsb-guid=\"d22b95d9\" internal-fsb-name=\"footer\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-top-style: solid; border-top-color: rgba(22, 98, 250, 1); padding-top: 20px; padding-bottom: 20px; margin-top: 30px\" internal-fsb-react-mode=\"Site\">",
         "    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"6b945c4a\" internal-fsb-name=\"copyright\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; font-size: 13px\">ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ<div>บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170</div></div>",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"6b945c4a\" internal-fsb-name=\"copyright\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; font-size: 13px\">ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ<div>บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170</div>",
+        "            </div>",
         "        </div>",
         "    </div>",
         "</div>"
@@ -10102,7 +10109,7 @@
     "FlowLayout_040b1e86": "8398f0c7767b4ca98618cc10397f785779772582",
     "FlowLayout_ad9205ea": "e690109c8ed5e9219553cb4669949290ace0ec3c",
     "FlowLayout_49934c23": "457679a2540ea6b77118f9fa127cb68a700ceeb0",
-    "FlowLayout_285eea05": "ff23a7c992b3d7663a19fc4a89e4e807175a2e04",
+    "FlowLayout_285eea05": "d20eb9e887fe9dc2efb6c947cc791b7e8e13e3b4",
     "FlowLayout_00ce1665": "fa8568237dac44646be2a07b50dce7a38e4656a0",
     "FlowLayout_d58ae925": "749b43ef4a746cdccd1527eabdba85cd3b3b0668",
     "FlowLayout_d64677b8": "1ba5dbca52beaf71baebea86bd80c461e30d9c76",
@@ -10111,7 +10118,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "e96a233a9d8614e3aa3693932d695815fa6272b2"
+    "FlowLayout_b2020622": "17667b5d4c0c620634a1652d24cbf53fdfbeda29"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",

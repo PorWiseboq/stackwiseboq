@@ -112,14 +112,20 @@ class FlowLayout_b2020622 extends Base {
     } else {
       let data = super.getDataFromNotation(notation, inArray);
       
-      for (let i=data.length-1; i>=0; i--) {
-        if (data[i] === '') {
-          data.splice(i, 1);
-        }
-      }
-      
-      if (notation.split('.').length == 1 || data.length == 0) {
-        data.push('');
+      let splited = notation.split('.');
+      switch (splited[0]) {
+        case 'Quote':
+          break;
+        case 'Listing':
+          for (let i=data.length-1; i>=0; i--) {
+            if (data[i] === '') {
+              data.splice(i, 1);
+            }
+          }
+          if (splited.length == 1 || data.length == 0) {
+            data.push('');
+          }
+          break;
       }
       
       return data;
@@ -290,17 +296,17 @@ class FlowLayout_b2020622 extends Base {
                   </div>
                   {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
                     return (
-                      <input className="internal-fsb-element col-12" internal-fsb-guid="5d34dc3b" key={"item_" + i} type="hidden" defaultValue={data} />
+                      <input className="internal-fsb-element col-12" internal-fsb-guid="5d34dc3b" key={"item_" + i} type="hidden" value={data} />
                     )
                   })}
                   {this.getDataFromNotation("Quote.uid", true).map((data, i) => {
                     return (
-                      <input className="internal-fsb-element col-12" internal-fsb-guid="5752cb4d" key={"item_" + i} type="hidden" defaultValue={data} />
+                      <input className="internal-fsb-element col-12" internal-fsb-guid="5752cb4d" key={"item_" + i} type="hidden" value={data} />
                     )
                   })}
                   {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
                     return (
-                      <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" key={"item_" + i} type="hidden" defaultValue={data} />
+                      <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" key={"item_" + i} type="hidden" value={data} />
                     )
                   })}
                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9ce000e1" style={{'marginTop': '15px', display: (()=>{return this.state.inserted ? 'none' : 'block'})()}} type="button" onClick={((event) => { window.internalFsbSubmit('9ce000e1', 'Quote', event, ((results: any) => { this.manipulate('9ce000e1', 'Quote', results); }).bind(this)); }).bind(this)}>
@@ -385,6 +391,7 @@ class FlowLayout_b2020622 extends Base {
                                 </div>
                               )
                             })}
+                            
                             {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
                               return (
                                 <div className="internal-fsb-element col-2 offset-0 form-control form-control-sm" internal-fsb-guid="ccd1c929" key={"item_" + j}>
@@ -392,6 +399,7 @@ class FlowLayout_b2020622 extends Base {
                                 </div>
                               )
                             })}
+                            
                             {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
                               return (
                                 <div className="internal-fsb-element col-2 offset-0 form-control form-control-sm" internal-fsb-guid="a449e52d" key={"item_" + j}>
@@ -400,15 +408,18 @@ class FlowLayout_b2020622 extends Base {
                               )
                             })}
                             <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-danger btn-sm" internal-fsb-guid="d910ad00" type="button" onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
+                              
                               <div className="internal-fsb-element" internal-fsb-guid="d910ad00-text">
                                 ลบ
                               </div>
+                              
                             </button>
                             {this.getDataFromNotation("Listing[" + i + "].lid", true).map((data, j) => {
                               return (
-                                <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" key={"item_" + j} type="hidden" defaultValue={data} />
+                                <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" key={"item_" + j} type="hidden" value={data} />
                               )
                             })}
+                            
                           </div>
                           
                         </div>
