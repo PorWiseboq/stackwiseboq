@@ -95,7 +95,7 @@ class FlowLayout_b2020622 extends Base {
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'a7592071')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'a7592071').addEventListener('submitting', this.onButtonSubmitting_a7592071.bind(this));
     }
-    DataManipulationHelper.register("0e75306a", "update", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","915d8ec6"], {initClass: null});
+    DataManipulationHelper.register("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","915d8ec6","147c9060"], {initClass: null});
   }
   // <---Auto[ClassBegin]
   
@@ -360,13 +360,16 @@ class FlowLayout_b2020622 extends Base {
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                             
                             <div className="internal-fsb-element col-12" internal-fsb-guid="2b7a46e0" style={{display: (()=>{return this.getDisplayForListInserting(i);})()}}>
+                              
                               <div className="container-fluid">
+                                
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   {this.getDataFromNotation("Listing[" + i + "].Quote.qid", true).map((data, j) => {
                                     return (
                                       <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" key={"item_" + j} type="hidden" value={data} />
                                     )
                                   })}
+                                  
                                   {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="54e20435" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
@@ -374,6 +377,7 @@ class FlowLayout_b2020622 extends Base {
                                       </div>
                                     )
                                   })}
+                                  
                                   {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
@@ -381,6 +385,7 @@ class FlowLayout_b2020622 extends Base {
                                       </div>
                                     )
                                   })}
+                                  
                                   {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
@@ -395,17 +400,24 @@ class FlowLayout_b2020622 extends Base {
                                     </div>
                                     
                                   </button>
+                                  
                                 </div>
+                                
                               </div>
+                              
                             </div>
+                            
                             <div className="internal-fsb-element col-12" internal-fsb-guid="ce24263d" style={{display: (()=>{return this.getDisplayForListDeleting(i);})()}}>
+                              
                               <div className="container-fluid">
+                                
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   {this.getDataFromNotation("Listing[" + i + "].lid", true).map((data, j) => {
                                     return (
                                       <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" key={"item_" + j} type="hidden" value={data} />
                                     )
                                   })}
+                                  
                                   {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
@@ -413,6 +425,7 @@ class FlowLayout_b2020622 extends Base {
                                       </div>
                                     )
                                   })}
+                                  
                                   {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
@@ -420,6 +433,7 @@ class FlowLayout_b2020622 extends Base {
                                       </div>
                                     )
                                   })}
+                                  
                                   {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
@@ -434,9 +448,13 @@ class FlowLayout_b2020622 extends Base {
                                     </div>
                                     
                                   </button>
+                                  
                                 </div>
+                                
                               </div>
+                              
                             </div>
+                            
                           </div>
                           
                         </div>
@@ -772,7 +790,7 @@ class FlowLayout_b2020622 extends Base {
                     </div>
                     
                   </button>
-                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-0" internal-fsb-guid="0e75306a" style={{'marginTop': '15px', 'marginLeft': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('0e75306a', '', event, ((results: any) => { this.manipulate('0e75306a', '', results); }).bind(this)); }).bind(this)}>
+                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-0" internal-fsb-guid="0e75306a" style={{'marginTop': '15px', 'marginLeft': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('0e75306a', 'Quote', event, ((results: any) => { this.manipulate('0e75306a', 'Quote', results); }).bind(this)); }).bind(this)}>
                     
                     <div className="internal-fsb-element" internal-fsb-guid="0e75306a-text">
                       เริ่มต้นการประมูลราคา
@@ -785,6 +803,7 @@ class FlowLayout_b2020622 extends Base {
                       <input className="internal-fsb-element col-12" internal-fsb-guid="147c9060" key={"item_" + i} type="hidden" value={data} />
                     )
                   })}
+                  
                 </div>
                 
               </div>
