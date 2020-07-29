@@ -157,7 +157,10 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
- 		return '/';
+    return new Promise(async (resolve) => {
+ 		  await DatabaseHelper.update(data, schema);
+ 		  resolve('/buyer/auction/waiting');
+    });
   }
  	
   // Auto[MergingBegin]--->  
