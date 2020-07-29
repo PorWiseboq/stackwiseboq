@@ -515,7 +515,7 @@ class FlowLayout_b2020622 extends Base {
                               {this.getDataFromNotation("Quote.substitute", true).map((data, i) => {
                                 return (
                                   <div className="internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89" internal-fsb-guid="b6c9ad89" key={"item_" + i}>
-                                    <input type="radio" name="substitute" value="0" defaultChecked={data == '0'} />
+                                    <input type="radio" name="substitute" value="0" required={true} defaultChecked={data == '0'} />
                                   </div>
                                 )
                               })}
@@ -542,7 +542,7 @@ class FlowLayout_b2020622 extends Base {
                               {this.getDataFromNotation("Quote.substitute", true).map((data, i) => {
                                 return (
                                   <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="a0b78888" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
-                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" value="1" defaultChecked={data == '1'} />
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" value="1" required={true} defaultChecked={data == '1'} />
                                   </div>
                                 )
                               })}
@@ -569,7 +569,7 @@ class FlowLayout_b2020622 extends Base {
                               {this.getDataFromNotation("Quote.substitute", true).map((data, i) => {
                                 return (
                                   <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="cc34eced" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
-                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" value="2" defaultChecked={data == '2'} />
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" value="2" required={true} defaultChecked={data == '2'} />
                                   </div>
                                 )
                               })}
@@ -745,7 +745,7 @@ class FlowLayout_b2020622 extends Base {
                               {this.getDataFromNotation("Quote.pickup", true).map((data, i) => {
                                 return (
                                   <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
-                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="1" defaultChecked={data == '1'} />
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="1" required={true} defaultChecked={data == '1'} />
                                   </div>
                                 )
                               })}
@@ -767,7 +767,7 @@ class FlowLayout_b2020622 extends Base {
                         {this.getDataFromNotation("Quote.number", true).map((data, i) => {
                           return (
                             <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="c3daa46d" style={{'display': 'block', 'width': '100%'}} key={"item_" + i}>
-                              <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="หมายเลขโทรศัพท์" defaultValue={data} />
+                              <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="หมายเลขโทรศัพท์" required={true} defaultValue={data} />
                             </div>
                           )
                         })}
@@ -793,7 +793,7 @@ class FlowLayout_b2020622 extends Base {
                               {this.getDataFromNotation("Quote.pickup", true).map((data, i) => {
                                 return (
                                   <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
-                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="0" defaultChecked={data == '0'} />
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="0" required={true} defaultChecked={data == '0'} />
                                   </div>
                                 )
                               })}

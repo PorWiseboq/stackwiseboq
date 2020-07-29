@@ -88,6 +88,28 @@ class Controller extends Base {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
+ 		
+ 		for (const item of data) {
+        switch (item.validation.name) {
+            case 'Hours':
+                if (!item.value.match(/^[0-9]+$/)) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมงเป็นตัวเลข");
+                }
+                break;
+            case 'DeliverAt':
+                if (!item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/)) {
+                    throw new Error("กรุณาระบุวันที่ให้ถูกต้อง (ddmmyyyy เช่น 15102563)");
+                }
+                break;
+            case 'Number':
+                if (!item.value.match(/^(\+[0-9]+)([0-9]{9,10})$/)) {
+                    throw new Error("กรุณาระบุหมายเลขโทรศัพท์ให้ถูกต้อง");
+                }
+                break;
+            case 'Address':
+                break;
+        }
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -292,7 +314,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('b6c9ad89', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('b6c9ad89', "Radio 3", false, undefined);
+		ValidationHelper.registerInput('b6c9ad89', "Radio 3", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     input = RequestHelper.getInput(request, 'b6c9ad89');
     
     // Override data parsing and manipulation of Radio 3 here:
@@ -300,7 +322,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('a0b78888', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('a0b78888', "Radio 4", false, undefined);
+		ValidationHelper.registerInput('a0b78888', "Radio 4", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     input = RequestHelper.getInput(request, 'a0b78888');
     
     // Override data parsing and manipulation of Radio 4 here:
@@ -308,7 +330,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('cc34eced', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('cc34eced', "Radio 5", false, undefined);
+		ValidationHelper.registerInput('cc34eced', "Radio 5", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     input = RequestHelper.getInput(request, 'cc34eced');
     
     // Override data parsing and manipulation of Radio 5 here:
@@ -332,10 +354,10 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('230ab296', "relational", "Quote", "hours");
-		ValidationHelper.registerInput('230ab296', "Textbox 6", false, undefined);
+		ValidationHelper.registerInput('230ab296', "Hours", false, undefined);
     input = RequestHelper.getInput(request, '230ab296');
     
-    // Override data parsing and manipulation of Textbox 6 here:
+    // Override data parsing and manipulation of Hours here:
     // 
     
     if (input != null) data.push(input);
@@ -348,15 +370,15 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('9200d56a', "relational", "Quote", "deliverAt");
-		ValidationHelper.registerInput('9200d56a', "Textbox 7", false, undefined);
+		ValidationHelper.registerInput('9200d56a', "DeliverAt", false, undefined);
     input = RequestHelper.getInput(request, '9200d56a');
     
-    // Override data parsing and manipulation of Textbox 7 here:
+    // Override data parsing and manipulation of DeliverAt here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('12403b79', "relational", "Quote", "pickup");
-		ValidationHelper.registerInput('12403b79', "Radio 5", false, undefined);
+		ValidationHelper.registerInput('12403b79', "Radio 5", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     input = RequestHelper.getInput(request, '12403b79');
     
     // Override data parsing and manipulation of Radio 5 here:
@@ -364,15 +386,15 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('c3daa46d', "relational", "Quote", "number");
-		ValidationHelper.registerInput('c3daa46d', "Textbox 1", false, undefined);
+		ValidationHelper.registerInput('c3daa46d', "Number", true, "คุณจำเป็นต้องระบุหมายเลขโทรศัพท์");
     input = RequestHelper.getInput(request, 'c3daa46d');
     
-    // Override data parsing and manipulation of Textbox 1 here:
+    // Override data parsing and manipulation of Number here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('0606ea02', "relational", "Quote", "pickup");
-		ValidationHelper.registerInput('0606ea02', "Radio 6", false, undefined);
+		ValidationHelper.registerInput('0606ea02', "Radio 6", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     input = RequestHelper.getInput(request, '0606ea02');
     
     // Override data parsing and manipulation of Radio 6 here:
@@ -380,10 +402,10 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('4a397863', "relational", "Quote", "address");
-		ValidationHelper.registerInput('4a397863', "Textbox 3", false, undefined);
+		ValidationHelper.registerInput('4a397863', "Address", false, undefined);
     input = RequestHelper.getInput(request, '4a397863');
     
-    // Override data parsing and manipulation of Textbox 3 here:
+    // Override data parsing and manipulation of Address here:
     // 
     
     if (input != null) data.push(input);
