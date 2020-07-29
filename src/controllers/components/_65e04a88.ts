@@ -267,7 +267,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('b6c9ad89', "relational", "Listing", "substitute");
+		RequestHelper.registerInput('b6c9ad89', "relational", "Quote", "substitute");
 		ValidationHelper.registerInput('b6c9ad89', "Radio 3", false, undefined);
     input = RequestHelper.getInput(request, 'b6c9ad89');
     
@@ -275,7 +275,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('a0b78888', "relational", "Listing", "substitute");
+		RequestHelper.registerInput('a0b78888', "relational", "Quote", "substitute");
 		ValidationHelper.registerInput('a0b78888', "Radio 4", false, undefined);
     input = RequestHelper.getInput(request, 'a0b78888');
     
@@ -283,11 +283,19 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('cc34eced', "relational", "Listing", "substitute");
+		RequestHelper.registerInput('cc34eced', "relational", "Quote", "substitute");
 		ValidationHelper.registerInput('cc34eced', "Radio 5", false, undefined);
     input = RequestHelper.getInput(request, 'cc34eced');
     
     // Override data parsing and manipulation of Radio 5 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('9036c707', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('9036c707', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, '9036c707');
+    
+    // Override data parsing and manipulation of Hidden 1 here:
     // 
     
     if (input != null) data.push(input);
@@ -360,6 +368,14 @@ class Controller extends Base {
     input = RequestHelper.getInput(request, '915d8ec6');
     
     // Override data parsing and manipulation of Textbox 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('147c9060', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('147c9060', "Hidden 2", false, undefined);
+    input = RequestHelper.getInput(request, '147c9060');
+    
+    // Override data parsing and manipulation of Hidden 2 here:
     // 
     
     if (input != null) data.push(input);
