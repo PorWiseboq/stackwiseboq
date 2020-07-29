@@ -89,24 +89,70 @@ class Controller extends Base {
   	//
  		ValidationHelper.validate(data);
  		
+ 		let hoursChecked = false;
+ 		let deliverChecked = false;
+ 		let pickup = false;
+ 		
+ 		for (const item of data) {
+        switch (item.validation.name) {
+            case 'hoursChecked':
+                if (item.value == '1') {
+                    hoursChecked = true;
+                }
+                break;
+            case 'deliverChecked':
+                if (item.value == '1') {
+                    deliverChecked = true;
+                }
+                break;
+            case 'pickup':
+                if (item.value == '1') {
+                    pickup = true;
+                }
+                break;
+        }
+    }
+ 		
  		for (const item of data) {
         switch (item.validation.name) {
             case 'Hours':
-                if (!item.value.match(/^[0-9]+$/)) {
+                if (hoursChecked && !item.value) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมง");
+                } else if (item.value && !item.value.match(/^[0-9]+$/)) {
                     throw new Error("กรุณาระบุจำนวนชั่วโมงเป็นตัวเลข");
+                } else if (parseInt(item.value) < 24) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมงไม่ต่ำกว่า 24 ชั่วโมง");
+                } else if (parseInt(item.value) > 168) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมงไม่มากไปกว่า 168 ชั่วโมง");
                 }
                 break;
             case 'DeliverAt':
-                if (!item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/)) {
+                if (deliverChecked && !item.value) {
+                    throw new Error("กรุณาระบุวันที่ต้องใช้สินค้า");
+                } else if (item.value && !item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/)) {
                     throw new Error("กรุณาระบุวันที่ให้ถูกต้อง (ddmmyyyy เช่น 15102563)");
+                } else {
+                    let matched = item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/);
+                    let day = parseInt(matched[1]);
+                    let month = parseInt(matched[2]);
+                    let year = parseInt(matched[3]) - 543;
+                    
+                    item.value = `${year}-${month}-${day}`;
+                    
+                    if (new Date(item.value) < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
+                      throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
+                    }
                 }
                 break;
             case 'Number':
-                if (!item.value.match(/^(\+[0-9]+)([0-9]{9,10})$/)) {
+                if (item.value && !item.value.match(/^(\+[0-9]+)?([0-9]{9,10})$/)) {
                     throw new Error("กรุณาระบุหมายเลขโทรศัพท์ให้ถูกต้อง");
                 }
                 break;
             case 'Address':
+                if (!pickup && !item.value) {
+                    throw new Error("กรุณาระบุที่อยู่สำหรับจัดส่งสินค้า");
+                }
                 break;
         }
     }
@@ -346,10 +392,10 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('33408187', "relational", "Quote", "hoursChecked");
-		ValidationHelper.registerInput('33408187', "Checkbox 1", false, undefined);
+		ValidationHelper.registerInput('33408187', "hoursChecked", false, undefined);
     input = RequestHelper.getInput(request, '33408187');
     
-    // Override data parsing and manipulation of Checkbox 1 here:
+    // Override data parsing and manipulation of hoursChecked here:
     // 
     
     if (input != null) data.push(input);
@@ -362,10 +408,10 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('babc9e30', "relational", "Quote", "deliverChecked");
-		ValidationHelper.registerInput('babc9e30', "Checkbox 2", false, undefined);
+		ValidationHelper.registerInput('babc9e30', "deliverChecked", false, undefined);
     input = RequestHelper.getInput(request, 'babc9e30');
     
-    // Override data parsing and manipulation of Checkbox 2 here:
+    // Override data parsing and manipulation of deliverChecked here:
     // 
     
     if (input != null) data.push(input);
@@ -378,10 +424,10 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('12403b79', "relational", "Quote", "pickup");
-		ValidationHelper.registerInput('12403b79', "Radio 5", true, "คุณต้องเลือกวิธีในการรับสินค้า");
+		ValidationHelper.registerInput('12403b79', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     input = RequestHelper.getInput(request, '12403b79');
     
-    // Override data parsing and manipulation of Radio 5 here:
+    // Override data parsing and manipulation of pickup here:
     // 
     
     if (input != null) data.push(input);
@@ -394,10 +440,10 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('0606ea02', "relational", "Quote", "pickup");
-		ValidationHelper.registerInput('0606ea02', "Radio 6", true, "คุณต้องเลือกวิธีในการรับสินค้า");
+		ValidationHelper.registerInput('0606ea02', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     input = RequestHelper.getInput(request, '0606ea02');
     
-    // Override data parsing and manipulation of Radio 6 here:
+    // Override data parsing and manipulation of pickup here:
     // 
     
     if (input != null) data.push(input);
