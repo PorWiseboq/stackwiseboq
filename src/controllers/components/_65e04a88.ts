@@ -14,6 +14,7 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
+import {DataManipulationHelper} from '../helpers/DataManipulationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -110,18 +111,34 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve) => {
    		if (this.request.session && this.request.session.uid) {
-   		  resolve({
-   		    Quote: {
-   		      source: SourceType.Relational,
-          	group: 'Quote',
-            rows: []
-   		    },
-   		    Listing: {
-   		      source: SourceType.Relational,
-          	group: 'Listing',
-            rows: []
-   		    }
-   		  });
+   		  data = [{
+   		    target: SourceType.Relational,
+          group: 'Quote',
+          name: 'uid',
+          value: parseInt(this.request.session.uid),
+          guid: null,
+          validation: null
+   		  },{
+   		    target: SourceType.Relational,
+          group: 'Quote',
+          name: 'filled',
+          value: null,
+          guid: null,
+          validation: null
+   		  }];
+   		  let datasetA = await DatabaseHelper.retrieve(data, null);
+   		  
+   		  data = [{
+   		    target: SourceType.Relational,
+          group: 'Listing',
+          name: 'qid',
+          value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
+          guid: null,
+          validation: null
+   		  }];
+   		  let datasetB = await DatabaseHelper.retrieve(data, null);
+   		  
+   		  resolve(Object.assign({}, datasetA, datasetB));
    		} else {
    		  this.response.redirect('/authentication');
    		}

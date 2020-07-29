@@ -102,6 +102,7 @@ class FlowLayout_b2020622 extends Base {
   // Declare class variables and functions here:
   //
   protected initialize(): void {
+    this.state.inserted = (super.getDataFromNotation('Quote.qid') !== '');
   }
   
   // Providing data array base on dot notation:
