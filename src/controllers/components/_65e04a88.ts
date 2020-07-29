@@ -134,7 +134,7 @@ class Controller extends Base {
                 } else {
                     let matched = item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/);
                     let day = parseInt(matched[1]);
-                    let month = parseInt(matched[2]);
+                    let month = parseInt(matched[2]) - 1;
                     let year = parseInt(matched[3]) - 543;
                     
                     item.value = `${year}-${month}-${day}`;
@@ -195,6 +195,20 @@ class Controller extends Base {
           validation: null
    		  }];
    		  let datasetA = await DatabaseHelper.retrieve(data, null);
+   		  
+   		  if (datasetA['Quote'].rows.length != 0) {
+   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt'].value);
+   		    
+   		    var mm = date.getMonth() + 1;
+          var dd = date.getDate();
+          var yyyy = date.getFullYear() + 543;
+          
+   		    datasetA['Quote'].rows[0].columns['deliverAt'].value = `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`;
+   		    
+   		    if (datasetA['Quote'].rows[0].columns['hours'].value == '0') {
+   		      datasetA['Quote'].rows[0].columns['hours'].value = null;
+   		    }
+   		  }
    		  
    		  data = [{
    		    target: SourceType.Relational,
