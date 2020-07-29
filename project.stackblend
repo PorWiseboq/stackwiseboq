@@ -154,7 +154,7 @@
     ],
     "popups": [],
     "editingPageID": "65e04a88",
-    "currentMode": "site",
+    "currentMode": "data",
     "editingComponentID": "d22b95d9"
   },
   "sites": {
@@ -4805,11 +4805,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "4a397863",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
-          "e01619d3",
+          "b2020622",
           0,
-          9,
+          4,
           null
         ]
       },
@@ -9068,7 +9068,7 @@
       "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"00032595\" internal-fsb-name=\"RelationalDatabase 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalDatabase\" style=\"; left: 69px; top: 51px; width: 1220px; min-height: 964px\" data-title-name=\"MySQL Database\">",
       "                <div class=\"internal-fsb-title internal-fsb-dragging-handle\">MySQL Database</div>",
       "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 609px;\">",
+      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 692px;\">",
       "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9957a62d\" internal-fsb-name=\"RelationalTable 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 382px; top: 45px; width: 198px; min-height: 87px;\" data-title-name=\"Employee\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Employee</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -9177,7 +9177,7 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9e6bb0d3\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 379px; top: 292px; width: 225px; min-height: 314px;\" data-title-name=\"Quote\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9e6bb0d3\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 380px; top: 302px; width: 225px; min-height: 390px\" data-title-name=\"Quote\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Quote</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -9196,8 +9196,14 @@
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2bd99479\" internal-fsb-name=\"RelationalColumn 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"substitute\" data-field-type=\"number\">",
       "                                        <div class=\"internal-fsb-title\">substitute</div>",
       "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ba92db7e\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"boolean\" data-title-name=\"hoursChecked\">",
+      "                                        <div class=\"internal-fsb-title\">hoursChecked</div>",
+      "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2e2b4e6b\" internal-fsb-name=\"RelationalColumn 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"hours\" data-field-type=\"number\">",
       "                                        <div class=\"internal-fsb-title\">hours</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"4d298b27\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"deliverChecked\" data-field-type=\"boolean\">",
+      "                                        <div class=\"internal-fsb-title\">deliverChecked</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"76e376e1\" internal-fsb-name=\"RelationalColumn 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"deliverAt\">",
       "                                        <div class=\"internal-fsb-title\">deliverAt</div>",
@@ -9966,10 +9972,24 @@
             "required": false,
             "unique": false
           },
+          "hoursChecked": {
+            "name": "hoursChecked",
+            "guid": "ba92db7e",
+            "fieldType": "boolean",
+            "required": false,
+            "unique": false
+          },
           "hours": {
             "name": "hours",
             "guid": "2e2b4e6b",
             "fieldType": "number",
+            "required": false,
+            "unique": false
+          },
+          "deliverChecked": {
+            "name": "deliverChecked",
+            "guid": "4d298b27",
+            "fieldType": "boolean",
             "required": false,
             "unique": false
           },
@@ -10120,7 +10140,7 @@
     "b140e86b": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "b6eb1b83": "c88b117147f3b9b6635e3eeea65a9949247d7f09",
     "7e709334": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "65e04a88": "fdd9b0ddf79e37ffca700d1d11ee3dcb87f9d692",
+    "65e04a88": "aa078fe4e73be4236ce95c4e51943d1f7ffe316e",
     "9d37c390": "33a5765fc5acca6d461c56e34a3729b34c31353a",
     "6ce794ec": "4f7b0fe72da78f3e0cec7b480ceae92e2c0a75cb",
     "bbc7dba3": "fb7632ce1363f1867691b3cab83e9566311f01a2",
@@ -10153,7 +10173,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "6daac9d65de28e60cf7e2ef47a5537c5abab7dbc"
+    "FlowLayout_b2020622": "f2689542785da5ab59ad510d4935804f4e04d07e"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
@@ -10161,7 +10181,7 @@
     "b140e86b": "def4b1d0a97b7505ca0d01f6a974153f2fe5ef21",
     "8857ca68": "5da1a75a3582a0c77f97144fdd21f4ca336d2fbf",
     "b6eb1b83": "bfe979edc807fe99b9d84c5291b2272aec2cd45d",
-    "65e04a88": "2d276725d2186ba71637abcc43bcd7981953914e",
+    "65e04a88": "d04b277f0fb6ee019cefe826d80ac07c30cf8dcb",
     "7e709334": "f4b6029b14f2a111c41f5bc9ae16cbcc4faa3c21",
     "6ce794ec": "52cf5f952ec36c88d4fe96513fb5a5c53e4a3df5",
     "9d37c390": "c323e7af5d3efb88cbfc0ffeb24a24c7c0cdec1b",
