@@ -235,6 +235,14 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
+		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
+		ValidationHelper.registerInput('41bdc9b3', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, '41bdc9b3');
+    
+    // Override data parsing and manipulation of Hidden 1 here:
+    // 
+    
+    if (input != null) data.push(input);
 		RequestHelper.registerInput('2ce10e8e', "relational", "Listing", "title");
 		ValidationHelper.registerInput('2ce10e8e', "Textbox 1", false, undefined);
     input = RequestHelper.getInput(request, '2ce10e8e');
@@ -256,14 +264,6 @@ class Controller extends Base {
     input = RequestHelper.getInput(request, '1cabb5c5');
     
     // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
-		ValidationHelper.registerInput('41bdc9b3', "Hidden 1", false, undefined);
-    input = RequestHelper.getInput(request, '41bdc9b3');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
     // 
     
     if (input != null) data.push(input);

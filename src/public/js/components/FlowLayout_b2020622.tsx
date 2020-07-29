@@ -110,6 +110,10 @@ class FlowLayout_b2020622 extends Base {
     if (!this.state.inserted) {
       return [''];
     } else {
+      if (notation.indexOf('Quote.qid') != -1) {
+        notation = 'Quote.qid';
+      }
+      
       let data = super.getDataFromNotation(notation, inArray);
       
       let splited = notation.split('.');
@@ -137,8 +141,15 @@ class FlowLayout_b2020622 extends Base {
   }
   
   private getDisplay(status: Status) {
-    console.log(this.state.status == status);
     return (this.state.status == status) ? 'block' : 'none';
+  }
+  
+  private getDisplayForListInserting(index: number) {
+    return (this.getDataFromNotation("Listing[" + index + "].lid")) ? 'none' : 'block';
+  }
+  
+  private getDisplayForListDeleting(index: number) {
+    return (this.getDataFromNotation("Listing[" + index + "].lid")) ? 'block' : 'none';
   }
   
   // Auto[Merging]--->
@@ -274,7 +285,7 @@ class FlowLayout_b2020622 extends Base {
                         
                         {this.getDataFromNotation("Quote.title", true).map((data, i) => {
                           return (
-                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5a972a57" key={"item_" + i}>
+                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5a972a57" style={{'display': 'block', 'width': '100%'}} key={"item_" + i}>
                               <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ชื่อรายการ" required={true} defaultValue={data} />
                             </div>
                           )
@@ -282,7 +293,7 @@ class FlowLayout_b2020622 extends Base {
                         
                         {this.getDataFromNotation("Quote.description", true).map((data, i) => {
                           return (
-                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="607d8ee2" key={"item_" + i}>
+                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="607d8ee2" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} key={"item_" + i}>
                               <textarea className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" rows="3" placeholder="รายละเอียดโดยย่อ" defaultValue={data}>
                               </textarea>
                             </div>
@@ -302,11 +313,6 @@ class FlowLayout_b2020622 extends Base {
                   {this.getDataFromNotation("Quote.uid", true).map((data, i) => {
                     return (
                       <input className="internal-fsb-element col-12" internal-fsb-guid="5752cb4d" key={"item_" + i} type="hidden" value={data} />
-                    )
-                  })}
-                  {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
-                    return (
-                      <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" key={"item_" + i} type="hidden" value={data} />
                     )
                   })}
                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9ce000e1" style={{'marginTop': '15px', display: (()=>{return this.state.inserted ? 'none' : 'block'})()}} type="button" onClick={((event) => { window.internalFsbSubmit('9ce000e1', 'Quote', event, ((results: any) => { this.manipulate('9ce000e1', 'Quote', results); }).bind(this)); }).bind(this)}>
@@ -353,71 +359,84 @@ class FlowLayout_b2020622 extends Base {
                           
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                             
-                            {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
-                              return (
-                                <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="54e20435" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="วัสดุ" required={true} defaultValue={data} />
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="2b7a46e0" style={{display: (()=>{return this.getDisplayForListInserting(i);})()}}>
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  {this.getDataFromNotation("Listing[" + i + "].Quote.qid", true).map((data, j) => {
+                                    return (
+                                      <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" key={"item_" + j} type="hidden" value={data} />
+                                    )
+                                  })}
+                                  {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="54e20435" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="วัสดุ" required={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
+                                  {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ขนาด" required={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
+                                  {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ปริมาณ" required={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
+                                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-2 offset-0" internal-fsb-guid="05179431" type="button" onClick={((event) => { window.internalFsbSubmit('05179431', 'Listing', event, ((results: any) => { this.manipulate('05179431', 'Listing', results); }).bind(this)); }).bind(this)}>
+                                    
+                                    <div className="internal-fsb-element" internal-fsb-guid="05179431-text">
+                                      เพิ่ม
+                                    </div>
+                                    
+                                  </button>
                                 </div>
-                              )
-                            })}
-                            
-                            {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
-                              return (
-                                <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ขนาด" required={true} defaultValue={data} />
-                                </div>
-                              )
-                            })}
-                            
-                            {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
-                              return (
-                                <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ปริมาณ" required={true} defaultValue={data} />
-                                </div>
-                              )
-                            })}
-                            <button className="internal-fsb-element internal-fsb-allow-cursor col-2 offset-0 btn btn-primary btn-sm" internal-fsb-guid="05179431" type="button" onClick={((event) => { window.internalFsbSubmit('05179431', 'Listing', event, ((results: any) => { this.manipulate('05179431', 'Listing', results); }).bind(this)); }).bind(this)}>
-                              
-                              <div className="internal-fsb-element" internal-fsb-guid="05179431-text">
-                                เพิ่ม
                               </div>
-                              
-                            </button>
-                            
-                            {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
-                              return (
-                                <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                            </div>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="ce24263d" style={{display: (()=>{return this.getDisplayForListDeleting(i);})()}}>
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  {this.getDataFromNotation("Listing[" + i + "].lid", true).map((data, j) => {
+                                    return (
+                                      <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" key={"item_" + j} type="hidden" value={data} />
+                                    )
+                                  })}
+                                  {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
+                                  {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
+                                  {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
+                                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1" internal-fsb-guid="d910ad00" type="button" onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
+                                    
+                                    <div className="internal-fsb-element" internal-fsb-guid="d910ad00-text">
+                                      ลบ
+                                    </div>
+                                    
+                                  </button>
                                 </div>
-                              )
-                            })}
-                            {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
-                              return (
-                                <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
-                                </div>
-                              )
-                            })}
-                            {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
-                              return (
-                                <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" key={"item_" + j}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
-                                </div>
-                              )
-                            })}
-                            <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1" internal-fsb-guid="d910ad00" type="button" onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
-                              
-                              <div className="internal-fsb-element" internal-fsb-guid="d910ad00-text">
-                                ลบ
                               </div>
-                              
-                            </button>
-                            {this.getDataFromNotation("Listing[" + i + "].lid", true).map((data, j) => {
-                              return (
-                                <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" key={"item_" + j} type="hidden" value={data} />
-                              )
-                            })}
-                            
+                            </div>
                           </div>
                           
                         </div>
@@ -494,7 +513,7 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="a0b78888">
+                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="a0b78888" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" />
                               </div>
                               
@@ -517,7 +536,7 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="cc34eced">
+                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="cc34eced" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" />
                               </div>
                               
@@ -585,7 +604,7 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="33408187">
+                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="33408187" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="checkbox" />
                               </div>
                               
@@ -603,7 +622,7 @@ class FlowLayout_b2020622 extends Base {
                           
                         </label>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="230ab296">
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="230ab296" style={{'display': 'block', 'width': '100%'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="จำนวนชั่วโมง" />
                         </div>
                         
@@ -628,7 +647,7 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="babc9e30">
+                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="babc9e30" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="checkbox" />
                               </div>
                               
@@ -646,7 +665,7 @@ class FlowLayout_b2020622 extends Base {
                           
                         </label>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="9200d56a">
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="9200d56a" style={{'display': 'block', 'width': '100%'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ddmmyyyy" />
                         </div>
                         
@@ -668,7 +687,7 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79">
+                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" />
                               </div>
                               
@@ -686,7 +705,7 @@ class FlowLayout_b2020622 extends Base {
                           
                         </label>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="c3daa46d">
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="c3daa46d" style={{'display': 'block', 'width': '100%'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="หมายเลขโทรศัพท์" />
                         </div>
                         
@@ -708,7 +727,7 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02">
+                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" />
                               </div>
                               
@@ -726,12 +745,12 @@ class FlowLayout_b2020622 extends Base {
                           
                         </label>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="4a397863">
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="4a397863" style={{'display': 'block', 'width': '100%'}}>
                           <textarea className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ที่อยู่สำหรับจัดส่งสินค้า">
                           </textarea>
                         </div>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="915d8ec6">
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="915d8ec6" style={{'display': 'block', 'width': '100%'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="หมายเลขโทรศัพท์" />
                         </div>
                         
