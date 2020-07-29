@@ -88,7 +88,7 @@ class FlowLayout_b2020622 extends Base {
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '88297439')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '88297439').addEventListener('submitting', this.onButtonSubmitting_88297439.bind(this));
     }
-    DataManipulationHelper.register("67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced"], {initClass: null});
+    DataManipulationHelper.register("67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null});
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '67c431d0')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '67c431d0').addEventListener('success', this.onButtonSuccess_67c431d0.bind(this));
     }
@@ -558,6 +558,11 @@ class FlowLayout_b2020622 extends Base {
                     </div>
                     
                   </div>
+                  {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
+                    return (
+                      <input className="internal-fsb-element" internal-fsb-guid="9036c707" key={"item_" + i} type="hidden" value={data} />
+                    )
+                  })}
                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-2" internal-fsb-guid="88297439" style={{'marginRight': '10px'}} type="button" onClick={this.onButtonClick_88297439.bind(this)}>
                     
                     <div className="internal-fsb-element" internal-fsb-guid="88297439-text">
@@ -565,7 +570,7 @@ class FlowLayout_b2020622 extends Base {
                     </div>
                     
                   </button>
-                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-0" internal-fsb-guid="67c431d0" style={{'marginLeft': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('67c431d0', '', event, ((results: any) => { this.manipulate('67c431d0', '', results); }).bind(this)); }).bind(this)}>
+                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-0" internal-fsb-guid="67c431d0" style={{'marginLeft': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('67c431d0', 'Quote', event, ((results: any) => { this.manipulate('67c431d0', 'Quote', results); }).bind(this)); }).bind(this)}>
                     
                     <div className="internal-fsb-element" internal-fsb-guid="67c431d0-text">
                       ถัดไป: ระบุข้อมูลจัดส่งและระยะเวลา
@@ -688,7 +693,7 @@ class FlowLayout_b2020622 extends Base {
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
                               <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" />
+                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="1" />
                               </div>
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="b8a9d038" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -728,7 +733,7 @@ class FlowLayout_b2020622 extends Base {
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
                               <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" />
+                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="0" />
                               </div>
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="94ec51a9" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -775,6 +780,11 @@ class FlowLayout_b2020622 extends Base {
                     
                   </button>
                   
+                  {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
+                    return (
+                      <input className="internal-fsb-element col-12" internal-fsb-guid="147c9060" key={"item_" + i} type="hidden" value={data} />
+                    )
+                  })}
                 </div>
                 
               </div>
