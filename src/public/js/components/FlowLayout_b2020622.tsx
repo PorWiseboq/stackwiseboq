@@ -95,7 +95,7 @@ class FlowLayout_b2020622 extends Base {
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'a7592071')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'a7592071').addEventListener('submitting', this.onButtonSubmitting_a7592071.bind(this));
     }
-    DataManipulationHelper.register("0e75306a", "update", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","915d8ec6"], {initClass: null});
+    DataManipulationHelper.register("0e75306a", "update", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","915d8ec6","147c9060"], {initClass: null});
   }
   // <---Auto[ClassBegin]
   
@@ -810,9 +810,6 @@ class FlowLayout_b2020622 extends Base {
               
             </div>
             
-            <div className="internal-fsb-element col-12" internal-fsb-guid="4191c031">
-              ABC
-            </div>
           </div>
           
         </div>
