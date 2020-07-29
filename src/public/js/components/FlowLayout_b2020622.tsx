@@ -95,7 +95,7 @@ class FlowLayout_b2020622 extends Base {
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'a7592071')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'a7592071').addEventListener('submitting', this.onButtonSubmitting_a7592071.bind(this));
     }
-    DataManipulationHelper.register("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","915d8ec6","147c9060"], {initClass: null});
+    DataManipulationHelper.register("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060"], {initClass: null});
   }
   // <---Auto[ClassBegin]
   
@@ -509,9 +509,13 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89" internal-fsb-guid="b6c9ad89">
-                                <input type="radio" name="substitute" />
-                              </div>
+                              {this.getDataFromNotation("Quote.substitute", true).map((data, i) => {
+                                return (
+                                  <div className="internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89" internal-fsb-guid="b6c9ad89" key={"item_" + i}>
+                                    <input type="radio" name="substitute" value="0" checked={data == '0'} />
+                                  </div>
+                                )
+                              })}
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-self-b5cd72c0" internal-fsb-guid="b5cd72c0">
                                 ทดแทน
@@ -532,9 +536,13 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="a0b78888" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" />
-                              </div>
+                              {this.getDataFromNotation("Quote.substitute", true).map((data, i) => {
+                                return (
+                                  <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="a0b78888" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" value="1" checked={data == '1'} />
+                                  </div>
+                                )
+                              })}
                               
                               <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="35767bbc" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                 เทียบเท่า
@@ -555,9 +563,13 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="cc34eced" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" />
-                              </div>
+                              {this.getDataFromNotation("Quote.substitute", true).map((data, i) => {
+                                return (
+                                  <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="cc34eced" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" value="2" checked={data == '2'} />
+                                  </div>
+                                )
+                              })}
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="127c0175" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                 เจาะจง
@@ -628,9 +640,13 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="33408187" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="checkbox" />
-                              </div>
+                              {this.getDataFromNotation("Quote.hoursChecked", true).map((data, i) => {
+                                return (
+                                  <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="33408187" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="checkbox" checked={data === true} />
+                                  </div>
+                                )
+                              })}
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="9875301c" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                 ต้องการราคาภายในเวลา
@@ -646,9 +662,13 @@ class FlowLayout_b2020622 extends Base {
                           
                         </label>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="230ab296" style={{'display': 'block', 'width': '100%'}}>
-                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="จำนวนชั่วโมง" />
-                        </div>
+                        {this.getDataFromNotation("Quote.hours", true).map((data, i) => {
+                          return (
+                            <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="230ab296" style={{'display': 'block', 'width': '100%'}} key={"item_" + i}>
+                              <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="จำนวนชั่วโมง" defaultValue={data} />
+                            </div>
+                          )
+                        })}
                         
                         <div className="internal-fsb-element col-4 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="1d96cc04" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                           ชั่วโมง
@@ -671,9 +691,13 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="babc9e30" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="checkbox" />
-                              </div>
+                              {this.getDataFromNotation("Quote.deliverChecked", true).map((data, i) => {
+                                return (
+                                  <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="babc9e30" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="checkbox" checked={data === true} />
+                                  </div>
+                                )
+                              })}
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="23ba11a8" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                 วันที่ต้องใช้สินค้า
@@ -689,9 +713,13 @@ class FlowLayout_b2020622 extends Base {
                           
                         </label>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="9200d56a" style={{'display': 'block', 'width': '100%'}}>
-                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ddmmyyyy" />
-                        </div>
+                        {this.getDataFromNotation("Quote.deliverAt", true).map((data, i) => {
+                          return (
+                            <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="9200d56a" style={{'display': 'block', 'width': '100%'}} key={"item_" + i}>
+                              <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ddmmyyyy" defaultValue={data} />
+                            </div>
+                          )
+                        })}
                         
                       </div>
                       
@@ -711,9 +739,13 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="1" />
-                              </div>
+                              {this.getDataFromNotation("Quote.pickup", true).map((data, i) => {
+                                return (
+                                  <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="1" checked={data == '1'} />
+                                  </div>
+                                )
+                              })}
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="b8a9d038" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                 ไปรับสินค้าด้วยตนเอง
@@ -729,9 +761,13 @@ class FlowLayout_b2020622 extends Base {
                           
                         </label>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="c3daa46d" style={{'display': 'block', 'width': '100%'}}>
-                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="หมายเลขโทรศัพท์" />
-                        </div>
+                        {this.getDataFromNotation("Quote.number", true).map((data, i) => {
+                          return (
+                            <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="c3daa46d" style={{'display': 'block', 'width': '100%'}} key={"item_" + i}>
+                              <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="หมายเลขโทรศัพท์" defaultValue={data} />
+                            </div>
+                          )
+                        })}
                         
                       </div>
                       
@@ -751,9 +787,13 @@ class FlowLayout_b2020622 extends Base {
                             
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               
-                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="0" />
-                              </div>
+                              {this.getDataFromNotation("Quote.pickup", true).map((data, i) => {
+                                return (
+                                  <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} key={"item_" + i}>
+                                    <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="0" checked={data == '0'} />
+                                  </div>
+                                )
+                              })}
                               
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="94ec51a9" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                 จัดส่งสินค้ามาให้
@@ -769,14 +809,14 @@ class FlowLayout_b2020622 extends Base {
                           
                         </label>
                         
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="4a397863" style={{'display': 'block', 'width': '100%'}}>
-                          <textarea className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ที่อยู่สำหรับจัดส่งสินค้า">
-                          </textarea>
-                        </div>
-                        
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="915d8ec6" style={{'display': 'block', 'width': '100%'}}>
-                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="หมายเลขโทรศัพท์" />
-                        </div>
+                        {this.getDataFromNotation("Quote.address", true).map((data, i) => {
+                          return (
+                            <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="4a397863" style={{'display': 'block', 'width': '100%'}} key={"item_" + i}>
+                              <textarea className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ที่อยู่สำหรับจัดส่งสินค้า" defaultValue={data}>
+                              </textarea>
+                            </div>
+                          )
+                        })}
                         
                       </div>
                       
@@ -810,7 +850,6 @@ class FlowLayout_b2020622 extends Base {
               </div>
               
             </div>
-            
           </div>
           
         </div>

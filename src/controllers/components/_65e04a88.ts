@@ -383,14 +383,6 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('915d8ec6', "relational", "Quote", "number");
-		ValidationHelper.registerInput('915d8ec6', "Textbox 2", false, undefined);
-    input = RequestHelper.getInput(request, '915d8ec6');
-    
-    // Override data parsing and manipulation of Textbox 2 here:
-    // 
-    
-    if (input != null) data.push(input);
 		RequestHelper.registerInput('147c9060', "relational", "Quote", "qid");
 		ValidationHelper.registerInput('147c9060', "Hidden 2", false, undefined);
     input = RequestHelper.getInput(request, '147c9060');
