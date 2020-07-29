@@ -174,9 +174,13 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    return new Promise(async (resolve) => {
- 		  await DatabaseHelper.update(data, schema);
- 		  resolve('/buyer/auction/waiting');
+    return new Promise(async (resolve, reject) => {
+      try {
+   		  await DatabaseHelper.update(data, schema);
+   		  resolve('/buyer/auction/waiting');
+      } catch(error) {
+        reject(error);
+      }
     });
   }
  	

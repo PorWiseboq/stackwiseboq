@@ -4024,6 +4024,9 @@
         "      let splited = notation.split('.');",
         "      switch (splited[0]) {",
         "        case 'Quote':",
+        "          if (data.length == 0) {",
+        "            data.push('');",
+        "          }",
         "          break;",
         "        case 'Listing':",
         "          for (let i=data.length-1; i>=0; i--) {",
@@ -4807,11 +4810,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0e75306a",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
-          "e01619d3",
+          "7600ca53",
           0,
-          9,
+          5,
           null
         ]
       },
@@ -4819,7 +4822,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {DataManipulationHelper} from '../helpers/DataManipulationHelper.js';\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve) => {\n   \t\tif (this.request.session && this.request.session.uid) {\n   \t\t  data = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Quote',\n          name: 'uid',\n          value: parseInt(this.request.session.uid),\n          guid: null,\n          validation: null\n   \t\t  },{\n   \t\t    target: SourceType.Relational,\n          group: 'Quote',\n          name: 'filled',\n          value: null,\n          guid: null,\n          validation: null\n   \t\t  }];\n   \t\t  let datasetA = await DatabaseHelper.retrieve(data, null);\n   \t\t  \n   \t\t  data = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Listing',\n          name: 'qid',\n          value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),\n          guid: null,\n          validation: null\n   \t\t  }];\n   \t\t  let datasetB = await DatabaseHelper.retrieve(data, null);\n   \t\t  \n   \t\t  resolve(Object.assign({}, datasetA, datasetB));\n   \t\t} else {\n   \t\t  this.response.redirect('/authentication');\n   \t\t}\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve) => {\n \t\t  await DatabaseHelper.update(data, schema);\n \t\t  resolve('/buyer/auction/waiting');\n    });\n  }\n \t\n  "
+        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve) => {\n   \t\tif (this.request.session && this.request.session.uid) {\n   \t\t  data = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Quote',\n          name: 'uid',\n          value: parseInt(this.request.session.uid),\n          guid: null,\n          validation: null\n   \t\t  },{\n   \t\t    target: SourceType.Relational,\n          group: 'Quote',\n          name: 'filled',\n          value: null,\n          guid: null,\n          validation: null\n   \t\t  }];\n   \t\t  let datasetA = await DatabaseHelper.retrieve(data, null);\n   \t\t  \n   \t\t  data = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Listing',\n          name: 'qid',\n          value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),\n          guid: null,\n          validation: null\n   \t\t  }];\n   \t\t  let datasetB = await DatabaseHelper.retrieve(data, null);\n   \t\t  \n   \t\t  resolve(Object.assign({}, datasetA, datasetB));\n   \t\t} else {\n   \t\t  this.response.redirect('/authentication');\n   \t\t}\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n      try {\n   \t\t  await DatabaseHelper.update(data, schema);\n   \t\t  resolve('/buyer/auction/waiting');\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n \t\n  "
       },
       "notations": {
         "Quote": {
@@ -10160,7 +10163,7 @@
     "b140e86b": "fb7632ce1363f1867691b3cab83e9566311f01a2",
     "b6eb1b83": "c88b117147f3b9b6635e3eeea65a9949247d7f09",
     "7e709334": "fb7632ce1363f1867691b3cab83e9566311f01a2",
-    "65e04a88": "9597f0518ebe39b162b5a9e8a9c5afa65d75b14c",
+    "65e04a88": "337abb45542fe018b4acaa006f7647d7e88f6524",
     "9d37c390": "33a5765fc5acca6d461c56e34a3729b34c31353a",
     "6ce794ec": "4f7b0fe72da78f3e0cec7b480ceae92e2c0a75cb",
     "bbc7dba3": "fb7632ce1363f1867691b3cab83e9566311f01a2",
@@ -10193,7 +10196,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "68074f5403b37266dbca0907ca70234343e19700",
     "FlowLayout_41288a78": "1d620e21fb0782ccbf5bb9a7f80e1c7aff0973cf",
-    "FlowLayout_b2020622": "de3c41ac8348bcc0dd024f235dc6b91ae21b43c7"
+    "FlowLayout_b2020622": "65f728a9d2342f3f09a0b746cafdec3024e55377"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
