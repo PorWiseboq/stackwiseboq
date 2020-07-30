@@ -4172,7 +4172,10 @@
         "    // ",
         "    ReactDOM.findDOMNode(this.refs.title).value = '';",
         "    ReactDOM.findDOMNode(this.refs.size).value = '';",
-        "    ReactDOM.findDOMNode(this.refs.).value = '';",
+        "    ReactDOM.findDOMNode(this.refs.quantity).value = '';",
+        "    ",
+        "    ",
+        "    ",
         "    ",
         "    \" internal-fsb-data-controls=\" 54e20435 31894d87 b2321320 eda631c1\" internal-fsb-data-wizard-type=\"insert\" onfsbsubmitting=\"{}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
@@ -4831,9 +4834,9 @@
       "accessories": {
         "selectingElementGUID": "05179431",
         "currentCursorWalkPath": [
-          "7600ca53",
+          "0",
           0,
-          5,
+          2,
           null
         ]
       },
@@ -10216,7 +10219,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "5198048469559ff31a3bd15e2f72eec7532ebee7",
     "FlowLayout_41288a78": "cf0230473159ce5db509bdff165898a4ad511cb9",
-    "FlowLayout_b2020622": "219fb768cb131ab77265d8c51ce0f129936989dd"
+    "FlowLayout_b2020622": "3c2e311840429fe524e95ce784c88ab881caa3cb"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",

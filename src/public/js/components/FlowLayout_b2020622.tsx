@@ -179,7 +179,7 @@ class FlowLayout_b2020622 extends Base {
     // 
     ReactDOM.findDOMNode(this.refs.title).value = '';
     ReactDOM.findDOMNode(this.refs.size).value = '';
-    ReactDOM.findDOMNode(this.refs.).value = '';
+    ReactDOM.findDOMNode(this.refs.quantity).value = '';
     
   }
 
