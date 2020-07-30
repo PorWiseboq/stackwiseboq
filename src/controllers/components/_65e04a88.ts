@@ -196,19 +196,20 @@ class Controller extends Base {
    		  }];
    		  let datasetA = await DatabaseHelper.retrieve(data, null);
    		  
-   		  if (datasetA['Quote'].rows.length != 0 && datasetA['Quote'].rows[0].columns['deliverAt'] != null) {
-   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
+   		  if (datasetA['Quote'].rows.length != 0 && !isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
+   		    let date = datasetA['Quote'].rows[0].columns['deliverAt'];
    		    
    		    var mm = date.getMonth() + 1;
           var dd = date.getDate();
           var yyyy = date.getFullYear() + 543;
           
    		    datasetA['Quote'].rows[0].columns['deliverAt'] = `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`;
-   		    
-   		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
-   		      datasetA['Quote'].rows[0].columns['hours'] = null;
-   		    }
+   		  } else {
+   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
    		  }
+ 		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
+ 		      datasetA['Quote'].rows[0].columns['hours'] = null;
+ 		    }
    		  
    		  data = [{
    		    target: SourceType.Relational,
