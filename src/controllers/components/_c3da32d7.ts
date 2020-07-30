@@ -3,7 +3,7 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
 import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
 import {RequestHelper} from '../helpers/RequestHelper.js';
 import {RenderHelper} from '../helpers/RenderHelper.js';
@@ -48,13 +48,9 @@ enum ValidationInfo {
   rows: HierarchicalDataRow[];
 }
 interface HierarchicalDataRow {
-  keys: {[Identifier: string]: HierarchicalDataColumn};
-  columns: {[Identifier: string]: HierarchicalDataColumn};
+  keys: {[Identifier: string]: any};
+  columns: {[Identifier: string]: any};
   relations: {[Identifier: string]: HierarchicalDataTable};
-}
-interface HierarchicalDataColumn {
-	name: string;
-  value: any;
 }
 interface Input {
   target: SourceType;
