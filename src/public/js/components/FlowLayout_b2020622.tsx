@@ -79,6 +79,9 @@ class FlowLayout_b2020622 extends Base {
     }
     DataManipulationHelper.register("d910ad00", "delete", ["41bdc9b3"], {initClass: null});
     DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null});
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '05179431')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '05179431').addEventListener('success', this.onButtonSuccess_05179431.bind(this));
+    }
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a').addEventListener('submitting', this.onButtonSubmitting_1bb72b1a.bind(this));
     }
@@ -167,6 +170,16 @@ class FlowLayout_b2020622 extends Base {
     this.setState({
       status: Status.LIST
     });
+    
+  }
+
+  protected onButtonSuccess_05179431(event: Event) {
+
+    // Handle the event of onButtonSuccess (Button 1) here:
+    // 
+    ReactDOM.findDOMNode(this.refs.title).value = '';
+    ReactDOM.findDOMNode(this.refs.size).value = '';
+    ReactDOM.findDOMNode(this.refs.).value = '';
     
   }
 
@@ -347,92 +360,52 @@ class FlowLayout_b2020622 extends Base {
                     กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, ขนาด, ปริมาณ)
                   </div>
                   
-                  {this.getDataFromNotation("Listing", true).map((data, i) => {
-                    return (
-                      <div className="internal-fsb-element col-12 offset-0 -fsb-self-97d707b7" internal-fsb-guid="97d707b7" style={{'minHeight': '22px', 'FsbReusableName': '', 'FsbReusableId': '97d707b7', 'marginTop': '5px'}} key={"item_" + i}>
+                  <div className="internal-fsb-element col-12 offset-0 -fsb-self-97d707b7" internal-fsb-guid="97d707b7" style={{'minHeight': '22px', 'FsbReusableName': '', 'FsbReusableId': '97d707b7', 'marginTop': '5px'}}>
+                    
+                    <div className="container-fluid">
+                      
+                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                         
-                        <div className="container-fluid">
-                          
-                          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            
-                            {this.getDataFromNotation("Listing[" + i + "].Listing", true).map((data, j) => {
-                              return (
-                                <div className="internal-fsb-element col-12" internal-fsb-guid="ce24263d" style={{'marginBottom': '5px', display: (()=>{return this.getDisplayForListDeleting(i);})()}} key={"item_" + j}>
-                                  
-                                  <div className="container-fluid">
-                                    
-                                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                      {this.getDataFromNotation("Listing[" + i + "].Listing[" + j + "].lid", true).map((data, k) => {
-                                        return (
-                                          <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" key={"item_" + k} type="hidden" value={data} />
-                                        )
-                                      })}
-                                      
-                                      {this.getDataFromNotation("Listing[" + i + "].Listing[" + j + "].title", true).map((data, k) => {
-                                        return (
-                                          <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" style={{'display': 'block', 'width': '100%'}} key={"item_" + k}>
-                                            <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
-                                          </div>
-                                        )
-                                      })}
-                                      
-                                      {this.getDataFromNotation("Listing[" + i + "].Listing[" + j + "].size", true).map((data, k) => {
-                                        return (
-                                          <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" style={{'display': 'block', 'width': '100%'}} key={"item_" + k}>
-                                            <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
-                                          </div>
-                                        )
-                                      })}
-                                      
-                                      {this.getDataFromNotation("Listing[" + i + "].Listing[" + j + "].quantity", true).map((data, k) => {
-                                        return (
-                                          <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" style={{'display': 'block', 'width': '100%'}} key={"item_" + k}>
-                                            <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
-                                          </div>
-                                        )
-                                      })}
-                                      <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1" internal-fsb-guid="d910ad00" type="button" onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
-                                        
-                                        <div className="internal-fsb-element" internal-fsb-guid="d910ad00-text">
-                                          ลบ
-                                        </div>
-                                        
-                                      </button>
-                                      
-                                    </div>
-                                    
-                                  </div>
-                                  
-                                </div>
-                              )
-                            })}
-                            
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="2b7a46e0" style={{display: (()=>{return this.getDisplayForListInserting(i);})()}}>
+                        {this.getDataFromNotation("Listing", true).map((data, i) => {
+                          return (
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="ce24263d" style={{'marginBottom': '5px', display: (()=>{return this.getDisplayForListDeleting(i);})()}} key={"item_" + i}>
                               
                               <div className="container-fluid">
                                 
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                  {this.getDataFromNotation("Listing[" + i + "].Quote.qid", true).map((data, j) => {
+                                  {this.getDataFromNotation("Listing[" + i + "].lid", true).map((data, j) => {
                                     return (
-                                      <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" key={"item_" + j} type="hidden" value={data} />
+                                      <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" key={"item_" + j} type="hidden" value={data} />
                                     )
                                   })}
                                   
-                                  <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="54e20435" style={{'display': 'block', 'width': '100%'}}>
-                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="วัสดุ" required={true} />
-                                  </div>
+                                  {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
                                   
-                                  <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" style={{'display': 'block', 'width': '100%'}}>
-                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ขนาด" required={true} />
-                                  </div>
+                                  {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
                                   
-                                  <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" style={{'display': 'block', 'width': '100%'}}>
-                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ปริมาณ" required={true} />
-                                  </div>
-                                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-2 offset-0" internal-fsb-guid="05179431" type="button" onClick={((event) => { window.internalFsbSubmit('05179431', 'Listing', event, ((results: any) => { this.manipulate('05179431', 'Listing', results); }).bind(this)); }).bind(this)}>
+                                  {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
+                                    return (
+                                      <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                      </div>
+                                    )
+                                  })}
+                                  <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1" internal-fsb-guid="d910ad00" type="button" onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
                                     
-                                    <div className="internal-fsb-element" internal-fsb-guid="05179431-text">
-                                      เพิ่ม
+                                    <div className="internal-fsb-element" internal-fsb-guid="d910ad00-text">
+                                      ลบ
                                     </div>
                                     
                                   </button>
@@ -442,13 +415,49 @@ class FlowLayout_b2020622 extends Base {
                               </div>
                               
                             </div>
+                          )
+                        })}
+                        
+                        <div className="internal-fsb-element col-12" internal-fsb-guid="2b7a46e0" style={{display: (()=>{return this.getDisplayForListInserting(i);})()}}>
+                          
+                          <div className="container-fluid">
+                            
+                            <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                              {this.getDataFromNotation("Quote.qid", true).map((data, i) => {
+                                return (
+                                  <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" key={"item_" + i} type="hidden" value={data} />
+                                )
+                              })}
+                              
+                              <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="54e20435" style={{'display': 'block', 'width': '100%'}}>
+                                <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} ref="title" type="text" placeholder="วัสดุ" required={true} />
+                              </div>
+                              
+                              <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" style={{'display': 'block', 'width': '100%'}}>
+                                <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} ref="size" type="text" placeholder="ขนาด" required={true} />
+                              </div>
+                              
+                              <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" style={{'display': 'block', 'width': '100%'}}>
+                                <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} ref="quantity" type="text" placeholder="ปริมาณ" required={true} />
+                              </div>
+                              <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-2 offset-0" internal-fsb-guid="05179431" type="button" onClick={((event) => { window.internalFsbSubmit('05179431', 'Listing', event, ((results: any) => { this.manipulate('05179431', 'Listing', results); }).bind(this)); }).bind(this)}>
+                                
+                                <div className="internal-fsb-element" internal-fsb-guid="05179431-text">
+                                  เพิ่ม
+                                </div>
+                                
+                              </button>
+                              
+                            </div>
+                            
                           </div>
                           
                         </div>
-                        
                       </div>
-                    )
-                  })}
+                      
+                    </div>
+                    
+                  </div>
                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-2" internal-fsb-guid="1bb72b1a" style={{'marginTop': '15px', 'marginRight': '10px'}} type="button" onClick={this.onButtonClick_1bb72b1a.bind(this)}>
                     
                     <div className="internal-fsb-element" internal-fsb-guid="1bb72b1a-text">

@@ -4138,7 +4138,7 @@
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"1e4c0d68\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686\">รายการวัสดุก่อสร้าง</div>",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"65ca1989\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; margin-bottom: 10px\">กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, ขนาด, ปริมาณ)</div>",
-        "                                    <div class=\"internal-fsb-element col-12 offset-0 -fsb-self-97d707b7\" internal-fsb-guid=\"97d707b7\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"min-height: 22px; -fsb-reusable-name: ; -fsb-reusable-id: 97d707b7; margin-top: 5px\" internal-fsb-react-data=\"Listing\">",
+        "                                    <div class=\"internal-fsb-element col-12 offset-0 -fsb-self-97d707b7\" internal-fsb-guid=\"97d707b7\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"min-height: 22px; -fsb-reusable-name: ; -fsb-reusable-id: 97d707b7; margin-top: 5px\" internal-fsb-react-data=\"\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
@@ -4164,12 +4164,15 @@
         "                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2b7a46e0\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return this.getDisplayForListInserting(i);]\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"eda631c1\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"Quote.qid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-id=\"\">",
-        "                                                            <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุชื่อวัสดุ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"วัสดุ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุขนาด\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\" required=\"true\"></div>",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุจำนวน\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\" required=\"true\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-2 offset-0\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "                                                            <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุชื่อวัสดุ\" internal-fsb-react-id=\"title\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"วัสดุ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุขนาด\" internal-fsb-react-id=\"size\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\" required=\"true\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุจำนวน\" internal-fsb-react-id=\"quantity\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\" required=\"true\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-2 offset-0\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
         "    // Handle the event of onButtonSuccess (Button 1) here:",
         "    // ",
+        "    ReactDOM.findDOMNode(this.refs.title).value = '';",
+        "    ReactDOM.findDOMNode(this.refs.size).value = '';",
+        "    ReactDOM.findDOMNode(this.refs.).value = '';",
         "    ",
         "    \" internal-fsb-data-controls=\" 54e20435 31894d87 b2321320 eda631c1\" internal-fsb-data-wizard-type=\"insert\" onfsbsubmitting=\"{}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
@@ -4826,7 +4829,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2020622",
+        "selectingElementGUID": "05179431",
         "currentCursorWalkPath": [
           "22b7c898",
           0,
@@ -4856,15 +4859,10 @@
           "address": {}
         },
         "Listing": {
-          "Listing": {
-            "lid": {},
-            "title": {},
-            "size": {},
-            "quantity": {}
-          },
-          "Quote": {
-            "qid": {}
-          }
+          "lid": {},
+          "title": {},
+          "size": {},
+          "quantity": {}
         }
       }
     },
@@ -10218,7 +10216,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "5198048469559ff31a3bd15e2f72eec7532ebee7",
     "FlowLayout_41288a78": "cf0230473159ce5db509bdff165898a4ad511cb9",
-    "FlowLayout_b2020622": "fcdae0f90a6ee6d0736f0a23ec5f7eeff01fb3f8"
+    "FlowLayout_b2020622": "219fb768cb131ab77265d8c51ce0f129936989dd"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
