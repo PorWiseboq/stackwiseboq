@@ -294,8 +294,8 @@ class FlowLayout_b2020622 extends Base {
                         
                         {this.getDataFromNotation("Quote.description", true).map((data, i) => {
                           return (
-                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="607d8ee2" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} key={"item_" + i}>
-                              <textarea className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" rows="3" placeholder="รายละเอียดโดยย่อ" defaultValue={data}>
+                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="607d8ee2" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}} key={"item_" + i}>
+                              <textarea className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}} type="text" rows="3" placeholder="รายละเอียดโดยย่อ" defaultValue={data}>
                               </textarea>
                             </div>
                           )
