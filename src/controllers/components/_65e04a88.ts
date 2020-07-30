@@ -92,17 +92,17 @@ class Controller extends Base {
  		for (const item of data) {
         switch (item.validation.name) {
             case 'hoursChecked':
-                if (item.value == '1') {
+                if (item.value == 'true') {
                     hoursChecked = true;
                 }
                 break;
             case 'deliverChecked':
-                if (item.value == '1') {
+                if (item.value == 'true') {
                     deliverChecked = true;
                 }
                 break;
             case 'pickup':
-                if (item.value == '1') {
+                if (item.value == 'true') {
                     pickup = true;
                 }
                 break;
