@@ -1,6 +1,7 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
+
 // Auto[Import]--->
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
@@ -82,6 +83,7 @@ class FlowLayout_285eea05 extends Base {
     return super.getDataFromNotation(notation, inArray);
   }
   
+  
   // Auto[Merging]--->
   // <---Auto[Merging]
   
@@ -90,9 +92,12 @@ class FlowLayout_285eea05 extends Base {
     return (
       <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="285eea05" style={Object.assign({'borderTopWidth': '1px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(22, 98, 250, 1)', 'paddingTop': '20px', 'paddingBottom': '20px'}, this.props.forward && this.props.forward.styles || {})}>
         
+    
         <div className="container-fluid">
           
+        
           <div className="row internal-fsb-strict-layout">
+            
             
             <div className="col-12 internal-fsb-inheriting-element" style={{'textAlign': 'center', 'fontSize': '13px'}}>
               ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ
@@ -100,12 +105,16 @@ class FlowLayout_285eea05 extends Base {
                 บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170
               </div>
               
+            
             </div>
             
+        
           </div>
           
+    
         </div>
         
+
       </div>
     )
   }
@@ -116,6 +125,7 @@ DeclarationHelper.declare('Site', 'Controls.FlowLayout_285eea05', FlowLayout_285
 // Export variables here:
 //
 export {IProps, IState, DefaultProps, DefaultState};
+
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.

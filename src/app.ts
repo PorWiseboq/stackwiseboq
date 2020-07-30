@@ -59,7 +59,7 @@ app.use(compression());
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
-if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
+if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
 	app.use(lusca.xframe("SAMEORIGIN"));
 }
 
