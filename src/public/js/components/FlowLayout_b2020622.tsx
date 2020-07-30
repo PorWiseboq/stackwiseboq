@@ -374,7 +374,7 @@ class FlowLayout_b2020622 extends Base {
                                   {this.getDataFromNotation("Listing[" + i + "].title", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
-                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={data} defaultValue={data} />
                                       </div>
                                     )
                                   })}
@@ -382,7 +382,7 @@ class FlowLayout_b2020622 extends Base {
                                   {this.getDataFromNotation("Listing[" + i + "].size", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
-                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={data} defaultValue={data} />
                                       </div>
                                     )
                                   })}
@@ -390,7 +390,7 @@ class FlowLayout_b2020622 extends Base {
                                   {this.getDataFromNotation("Listing[" + i + "].quantity", true).map((data, j) => {
                                     return (
                                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
-                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} defaultValue={data} />
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={data} defaultValue={data} />
                                       </div>
                                     )
                                   })}
