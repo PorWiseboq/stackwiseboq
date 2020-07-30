@@ -4067,14 +4067,6 @@
         "    return (this.state.status == status) ? 'block' : 'none';",
         "  }",
         "  ",
-        "  private getDisplayForListInserting(index: number) {",
-        "    return (this.getDataFromNotation(&quot;Listing[&quot; + index + &quot;].lid&quot;)) ? 'none' : 'block';",
-        "  }",
-        "  ",
-        "  private getDisplayForListDeleting(index: number) {",
-        "    return (this.getDataFromNotation(&quot;Listing[&quot; + index + &quot;].lid&quot;)) ? 'block' : 'none';",
-        "  }",
-        "  ",
         "  \" internal-fsb-react-code-declare=\"",
         "",
         "// Declare private static variables here:",
@@ -4832,11 +4824,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "05179431",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
-          "0",
+          "b2020622",
           0,
-          2,
+          4,
           null
         ]
       },
@@ -10219,7 +10211,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "5198048469559ff31a3bd15e2f72eec7532ebee7",
     "FlowLayout_41288a78": "cf0230473159ce5db509bdff165898a4ad511cb9",
-    "FlowLayout_b2020622": "3c2e311840429fe524e95ce784c88ab881caa3cb"
+    "FlowLayout_b2020622": "a7651393be13fefee0e41314b6ef937675fc11c1"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",

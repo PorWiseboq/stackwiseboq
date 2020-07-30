@@ -143,14 +143,6 @@ class FlowLayout_b2020622 extends Base {
     return (this.state.status == status) ? 'block' : 'none';
   }
   
-  private getDisplayForListInserting(index: number) {
-    return (this.getDataFromNotation("Listing[" + index + "].lid")) ? 'none' : 'block';
-  }
-  
-  private getDisplayForListDeleting(index: number) {
-    return (this.getDataFromNotation("Listing[" + index + "].lid")) ? 'block' : 'none';
-  }
-  
   // Auto[Merging]--->
   protected onButtonSuccess_9ce000e1(event: Event) {
 
