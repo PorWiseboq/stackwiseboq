@@ -112,31 +112,35 @@ class Controller extends Base {
  		for (const item of data) {
         switch (item.validation.name) {
             case 'Hours':
-                if (hoursChecked && !item.value) {
-                    throw new Error("กรุณาระบุจำนวนชั่วโมง");
-                } else if (item.value && !item.value.match(/^[0-9]+$/)) {
-                    throw new Error("กรุณาระบุจำนวนชั่วโมงเป็นตัวเลข");
-                } else if (parseInt(item.value) < 24) {
-                    throw new Error("กรุณาระบุจำนวนชั่วโมงไม่ต่ำกว่า 24 ชั่วโมง");
-                } else if (parseInt(item.value) > 168) {
-                    throw new Error("กรุณาระบุจำนวนชั่วโมงไม่มากไปกว่า 168 ชั่วโมง");
+                if (hoursChecked) {
+                    if (!item.value) {
+                        throw new Error("กรุณาระบุจำนวนชั่วโมง");
+                    } else if (item.value && !item.value.match(/^[0-9]+$/)) {
+                        throw new Error("กรุณาระบุจำนวนชั่วโมงเป็นตัวเลข");
+                    } else if (parseInt(item.value) < 24) {
+                        throw new Error("กรุณาระบุจำนวนชั่วโมงไม่ต่ำกว่า 24 ชั่วโมง");
+                    } else if (parseInt(item.value) > 168) {
+                        throw new Error("กรุณาระบุจำนวนชั่วโมงไม่มากไปกว่า 168 ชั่วโมง");
+                    }
                 }
                 break;
             case 'DeliverAt':
-                if (deliverChecked && !item.value) {
-                    throw new Error("กรุณาระบุวันที่ต้องใช้สินค้า");
-                } else if (item.value && !item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/)) {
-                    throw new Error("กรุณาระบุวันที่ให้ถูกต้อง (ddmmyyyy เช่น 15102563)");
-                } else {
-                    let matched = item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/);
-                    let day = parseInt(matched[1]);
-                    let month = parseInt(matched[2]) - 1;
-                    let year = parseInt(matched[3]) - 543;
-                    
-                    item.value = `${year}-${month}-${day}`;
-                    
-                    if (new Date(item.value) < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
-                      throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
+                if (deliverChecked) {
+                    if (!item.value) {
+                        throw new Error("กรุณาระบุวันที่ต้องใช้สินค้า");
+                    } else if (item.value && !item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/)) {
+                        throw new Error("กรุณาระบุวันที่ให้ถูกต้อง (ddmmyyyy เช่น 15102563)");
+                    } else {
+                        let matched = item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/);
+                        let day = parseInt(matched[1]);
+                        let month = parseInt(matched[2]) - 1;
+                        let year = parseInt(matched[3]) - 543;
+                        
+                        item.value = `${year}-${month}-${day}`;
+                        
+                        if (new Date(item.value) < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
+                          throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
+                        }
                     }
                 }
                 break;
