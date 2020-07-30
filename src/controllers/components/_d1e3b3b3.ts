@@ -118,7 +118,7 @@ class Controller extends Base {
                 password2 = item.value;
                 break;
         }
-    } 
+    }
     if (password1 !== null && password2 !== null) {
         this.signningIn = false;
         if (password1 !== password2) {

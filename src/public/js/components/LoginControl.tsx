@@ -172,7 +172,7 @@ class LoginControl extends Base {
                                       ที่อยู่อีเมล์
                                     </div>
                                     
-                                    <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="74d75b70">
+                                    <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="74d75b70" style={{'display': 'block', 'width': '100%'}}>
                                       <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="email" type="text" placeholder="ที่อยู่@โดเมน.com" required={true} />
                                     </div>
                                     
@@ -192,7 +192,7 @@ class LoginControl extends Base {
                                       รหัสผ่าน
                                     </div>
                                     
-                                    <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="74b67c1e">
+                                    <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="74b67c1e" style={{'display': 'block', 'width': '100%'}}>
                                       <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="password" type="password" placeholder="รหัสผ่าน" required={true} />
                                     </div>
                                     
@@ -212,7 +212,7 @@ class LoginControl extends Base {
                                       ยืนยันรหัสผ่าน
                                     </div>
                                     
-                                    <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="d40a4961">
+                                    <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="d40a4961" style={{'display': 'block', 'width': '100%'}}>
                                       <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="confirm" type="password" placeholder="ยืนยันรหัสผ่าน" required={true} />
                                     </div>
                                     
@@ -227,14 +227,14 @@ class LoginControl extends Base {
                                 <div className="container-fluid">
                                   
                                   <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="e968c824" style={{display: (()=>{return (this.state.signning_mode == 'signning_in') ? 'block' : 'none';})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e968c824', '', event, ((results: any) => { this.manipulate('e968c824', '', results); }).bind(this)); }).bind(this)}>
+                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="e968c824" style={{display: (()=>{return (this.state.signning_mode == 'signning_in') ? 'block' : 'none';})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e968c824', 'User', event, ((results: any) => { this.manipulate('e968c824', 'User', results); }).bind(this)); }).bind(this)}>
                                       
                                       <div className="internal-fsb-element" internal-fsb-guid="e968c824-text">
                                         ถัดไป
                                       </div>
                                       
                                     </button>
-                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="da229546" style={{display: (()=>{return (this.state.signning_mode == 'signning_up') ? 'block' : 'none';})()}} type="button" onClick={((event) => { window.internalFsbSubmit('da229546', '', event, ((results: any) => { this.manipulate('da229546', '', results); }).bind(this)); }).bind(this)}>
+                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="da229546" style={{display: (()=>{return (this.state.signning_mode == 'signning_up') ? 'block' : 'none';})()}} type="button" onClick={((event) => { window.internalFsbSubmit('da229546', 'User', event, ((results: any) => { this.manipulate('da229546', 'User', results); }).bind(this)); }).bind(this)}>
                                       
                                       <div className="internal-fsb-element" internal-fsb-guid="da229546-text">
                                         ถัดไป
