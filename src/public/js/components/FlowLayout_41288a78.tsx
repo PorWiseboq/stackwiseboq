@@ -67,17 +67,17 @@ class FlowLayout_41288a78 extends Base {
   // Declare class variables and functions here:
   //
   protected initialize(): void {
-    let script = document.createElement('script');
+    /*let script = document.createElement('script');
     script.setAttribute('src', 'https://js.stripe.com/v3/');
     script.setAttribute('type', 'text/javascript');
     script.addEventListener(this.onStripeLoaded.bind(this));
     
-    document.body.appendChild(script);
+    document.body.appendChild(script);*/
   }
   
   private onStripeLoaded(event) {
     // Create a Stripe client.
-    var stripe = Stripe('pk_test_51H7FVCFTijJaGDsZVOskcTj7woT4DJeecH86J9l7sXN0AFeMpdBe6N5tWz0lZ07VW5Zv2PrIMO0pgvY5t5zLHdrZ00FvWbdBwi');
+    /*var stripe = Stripe('pk_test_51H7FVCFTijJaGDsZVOskcTj7woT4DJeecH86J9l7sXN0AFeMpdBe6N5tWz0lZ07VW5Zv2PrIMO0pgvY5t5zLHdrZ00FvWbdBwi');
     
     // Create an instance of Elements.
     var elements = stripe.elements();
@@ -145,7 +145,7 @@ class FlowLayout_41288a78 extends Base {
     
       // Submit the form
       form.submit();
-    }
+    }*/
   }
   
   // Providing data array base on dot notation:
@@ -226,15 +226,15 @@ class FlowLayout_41288a78 extends Base {
                           คุณอาจเปิดหน้านี้ทิ้งไว้หรือเข้าสู่ระบบเพื่อกลับเข้ามายังหน้านี้ในภายหลังได้เช่นกัน
                         </div>
                         
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c6cd6a36">
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c6cd6a36" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}} type="text" placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm" />
                         </div>
                         
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="0c59a0a4">
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="0c59a0a4" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" placeholder="ชื่อผู้ที่ได้ทำการโอน" />
                         </div>
                         
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5cab012e">
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5cab012e" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" placeholder="ชื่อธนาคารและสาขาต้นทาง" />
                         </div>
                         
