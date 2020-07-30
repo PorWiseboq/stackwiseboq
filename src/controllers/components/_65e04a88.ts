@@ -196,7 +196,7 @@ class Controller extends Base {
    		  }];
    		  let datasetA = await DatabaseHelper.retrieve(data, null);
    		  
-   		  if (datasetA['Quote'].rows.length != 0) {
+   		  if (datasetA['Quote'].rows.length != 0 && datasetA['Quote'].rows[0].columns['deliverAt'] != null) {
    		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
    		    
    		    var mm = date.getMonth() + 1;
