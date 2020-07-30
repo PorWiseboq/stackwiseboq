@@ -14,6 +14,7 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
+import {DataManipulationHelper} from '../helpers/DataManipulationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -87,6 +88,74 @@ class Controller extends Base {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
+ 		
+ 		let hoursChecked = false;
+ 		let deliverChecked = false;
+ 		let pickup = false;
+ 		
+ 		for (const item of data) {
+        switch (item.validation.name) {
+            case 'hoursChecked':
+                if (item.value == '1') {
+                    hoursChecked = true;
+                }
+                break;
+            case 'deliverChecked':
+                if (item.value == '1') {
+                    deliverChecked = true;
+                }
+                break;
+            case 'pickup':
+                if (item.value == '1') {
+                    pickup = true;
+                }
+                break;
+        }
+    }
+ 		
+ 		for (const item of data) {
+        switch (item.validation.name) {
+            case 'Hours':
+                if (hoursChecked && !item.value) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมง");
+                } else if (item.value && !item.value.match(/^[0-9]+$/)) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมงเป็นตัวเลข");
+                } else if (parseInt(item.value) < 24) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมงไม่ต่ำกว่า 24 ชั่วโมง");
+                } else if (parseInt(item.value) > 168) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมงไม่มากไปกว่า 168 ชั่วโมง");
+                }
+                break;
+            case 'DeliverAt':
+                if (deliverChecked && !item.value) {
+                    throw new Error("กรุณาระบุวันที่ต้องใช้สินค้า");
+                } else if (item.value && !item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/)) {
+                    throw new Error("กรุณาระบุวันที่ให้ถูกต้อง (ddmmyyyy เช่น 15102563)");
+                } else {
+                    let matched = item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/);
+                    let day = parseInt(matched[1]);
+                    let month = parseInt(matched[2]) - 1;
+                    let year = parseInt(matched[3]) - 543;
+                    
+                    item.value = `${year}-${month}-${day}`;
+                    
+                    if (new Date(item.value) < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
+                      throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
+                    }
+                }
+                break;
+            case 'Number':
+                if (item.value && !item.value.match(/^(\+[0-9]+)?([0-9]{9,10})$/)) {
+                    throw new Error("กรุณาระบุหมายเลขโทรศัพท์ให้ถูกต้อง");
+                }
+                break;
+            case 'Address':
+                if (!pickup && !item.value) {
+                    throw new Error("กรุณาระบุที่อยู่สำหรับจัดส่งสินค้า");
+                }
+                break;
+        }
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -110,18 +179,48 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve) => {
    		if (this.request.session && this.request.session.uid) {
-   		  resolve({
-   		    Quote: {
-   		      source: SourceType.Relational,
-          	group: 'Quote',
-            rows: []
-   		    },
-   		    Listing: {
-   		      source: SourceType.Relational,
-          	group: 'Listing',
-            rows: []
+   		  data = [{
+   		    target: SourceType.Relational,
+          group: 'Quote',
+          name: 'uid',
+          value: parseInt(this.request.session.uid),
+          guid: null,
+          validation: null
+   		  },{
+   		    target: SourceType.Relational,
+          group: 'Quote',
+          name: 'filled',
+          value: null,
+          guid: null,
+          validation: null
+   		  }];
+   		  let datasetA = await DatabaseHelper.retrieve(data, null);
+   		  
+   		  if (datasetA['Quote'].rows.length != 0) {
+   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt'].value);
+   		    
+   		    var mm = date.getMonth() + 1;
+          var dd = date.getDate();
+          var yyyy = date.getFullYear() + 543;
+          
+   		    datasetA['Quote'].rows[0].columns['deliverAt'].value = `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`;
+   		    
+   		    if (datasetA['Quote'].rows[0].columns['hours'].value == '0') {
+   		      datasetA['Quote'].rows[0].columns['hours'].value = null;
    		    }
-   		  });
+   		  }
+   		  
+   		  data = [{
+   		    target: SourceType.Relational,
+          group: 'Listing',
+          name: 'qid',
+          value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
+          guid: null,
+          validation: null
+   		  }];
+   		  let datasetB = await DatabaseHelper.retrieve(data, null);
+   		  
+   		  resolve(Object.assign({}, datasetA, datasetB));
    		} else {
    		  this.response.redirect('/authentication');
    		}
@@ -157,9 +256,13 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    return new Promise(async (resolve) => {
- 		  await DatabaseHelper.update(data, schema);
- 		  resolve('/buyer/auction/waiting');
+    return new Promise(async (resolve, reject) => {
+      try {
+   		  await DatabaseHelper.update(data, schema);
+   		  resolve('/buyer/auction/waiting');
+      } catch(error) {
+        reject(error);
+      }
     });
   }
  	
@@ -271,7 +374,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('b6c9ad89', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('b6c9ad89', "Radio 3", false, undefined);
+		ValidationHelper.registerInput('b6c9ad89', "Radio 3", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     input = RequestHelper.getInput(request, 'b6c9ad89');
     
     // Override data parsing and manipulation of Radio 3 here:
@@ -279,7 +382,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('a0b78888', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('a0b78888', "Radio 4", false, undefined);
+		ValidationHelper.registerInput('a0b78888', "Radio 4", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     input = RequestHelper.getInput(request, 'a0b78888');
     
     // Override data parsing and manipulation of Radio 4 here:
@@ -287,7 +390,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('cc34eced', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('cc34eced', "Radio 5", false, undefined);
+		ValidationHelper.registerInput('cc34eced', "Radio 5", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     input = RequestHelper.getInput(request, 'cc34eced');
     
     // Override data parsing and manipulation of Radio 5 here:
@@ -303,74 +406,66 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('33408187', "relational", "Quote", "hoursChecked");
-		ValidationHelper.registerInput('33408187', "Checkbox 1", false, undefined);
+		ValidationHelper.registerInput('33408187', "hoursChecked", false, undefined);
     input = RequestHelper.getInput(request, '33408187');
     
-    // Override data parsing and manipulation of Checkbox 1 here:
+    // Override data parsing and manipulation of hoursChecked here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('230ab296', "relational", "Quote", "hours");
-		ValidationHelper.registerInput('230ab296', "Textbox 6", false, undefined);
+		ValidationHelper.registerInput('230ab296', "Hours", false, undefined);
     input = RequestHelper.getInput(request, '230ab296');
     
-    // Override data parsing and manipulation of Textbox 6 here:
+    // Override data parsing and manipulation of Hours here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('babc9e30', "relational", "Quote", "deliverChecked");
-		ValidationHelper.registerInput('babc9e30', "Checkbox 2", false, undefined);
+		ValidationHelper.registerInput('babc9e30', "deliverChecked", false, undefined);
     input = RequestHelper.getInput(request, 'babc9e30');
     
-    // Override data parsing and manipulation of Checkbox 2 here:
+    // Override data parsing and manipulation of deliverChecked here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('9200d56a', "relational", "Quote", "deliverAt");
-		ValidationHelper.registerInput('9200d56a', "Textbox 7", false, undefined);
+		ValidationHelper.registerInput('9200d56a', "DeliverAt", false, undefined);
     input = RequestHelper.getInput(request, '9200d56a');
     
-    // Override data parsing and manipulation of Textbox 7 here:
+    // Override data parsing and manipulation of DeliverAt here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('12403b79', "relational", "Quote", "pickup");
-		ValidationHelper.registerInput('12403b79', "Radio 5", false, undefined);
+		ValidationHelper.registerInput('12403b79', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     input = RequestHelper.getInput(request, '12403b79');
     
-    // Override data parsing and manipulation of Radio 5 here:
+    // Override data parsing and manipulation of pickup here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('c3daa46d', "relational", "Quote", "number");
-		ValidationHelper.registerInput('c3daa46d', "Textbox 1", false, undefined);
+		ValidationHelper.registerInput('c3daa46d', "Number", true, "คุณจำเป็นต้องระบุหมายเลขโทรศัพท์");
     input = RequestHelper.getInput(request, 'c3daa46d');
     
-    // Override data parsing and manipulation of Textbox 1 here:
+    // Override data parsing and manipulation of Number here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('0606ea02', "relational", "Quote", "pickup");
-		ValidationHelper.registerInput('0606ea02', "Radio 6", false, undefined);
+		ValidationHelper.registerInput('0606ea02', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     input = RequestHelper.getInput(request, '0606ea02');
     
-    // Override data parsing and manipulation of Radio 6 here:
+    // Override data parsing and manipulation of pickup here:
     // 
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('4a397863', "relational", "Quote", "address");
-		ValidationHelper.registerInput('4a397863', "Textbox 3", false, undefined);
+		ValidationHelper.registerInput('4a397863', "Address", false, undefined);
     input = RequestHelper.getInput(request, '4a397863');
     
-    // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('915d8ec6', "relational", "Quote", "number");
-		ValidationHelper.registerInput('915d8ec6', "Textbox 2", false, undefined);
-    input = RequestHelper.getInput(request, '915d8ec6');
-    
-    // Override data parsing and manipulation of Textbox 2 here:
+    // Override data parsing and manipulation of Address here:
     // 
     
     if (input != null) data.push(input);
