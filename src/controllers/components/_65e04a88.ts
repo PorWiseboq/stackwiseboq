@@ -1,7 +1,6 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-
 // Auto[Import]--->
 import {Request, Response} from "express";
 import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
@@ -16,7 +15,6 @@ import {Base} from './Base.js';
 // Import additional modules here:
 //
 import {DataManipulationHelper} from '../helpers/DataManipulationHelper.js';
-
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -43,7 +41,6 @@ enum ValidationInfo {
 // Declare private static variables here:
 //
 
-
 // Auto[Interface]--->
 /*interface HierarchicalDataTable {
 	source: SourceType;
@@ -67,7 +64,6 @@ interface Input {
 
 // Declare or extend interfaces here:
 //
-
 
 // Auto[ClassBegin]--->
 class Controller extends Base {
@@ -266,8 +262,6 @@ class Controller extends Base {
     });
   }
  	
-  
- 	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let action: ActionType = RequestHelper.getAction(request);
@@ -311,38 +305,6 @@ class Controller extends Base {
     if (input) input.value = parseInt(this.request.session.uid);
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('eda631c1', "relational", "Listing", "qid");
-		ValidationHelper.registerInput('eda631c1', "Hidden 1", false, undefined);
-    input = RequestHelper.getInput(request, 'eda631c1');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('54e20435', "relational", "Listing", "title");
-		ValidationHelper.registerInput('54e20435', "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ");
-    input = RequestHelper.getInput(request, '54e20435');
-    
-    // Override data parsing and manipulation of Textbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('31894d87', "relational", "Listing", "size");
-		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
-    input = RequestHelper.getInput(request, '31894d87');
-    
-    // Override data parsing and manipulation of Textbox 2 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
-		ValidationHelper.registerInput('b2321320', "Textbox 3", true, "คุณต้องระบุจำนวน");
-    input = RequestHelper.getInput(request, 'b2321320');
-    
-    // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
 		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
 		ValidationHelper.registerInput('41bdc9b3', "Hidden 1", false, undefined);
     input = RequestHelper.getInput(request, '41bdc9b3');
@@ -370,6 +332,38 @@ class Controller extends Base {
 		RequestHelper.registerInput('1cabb5c5', "relational", "Listing", "quantity");
 		ValidationHelper.registerInput('1cabb5c5', "Textbox 3", false, undefined);
     input = RequestHelper.getInput(request, '1cabb5c5');
+    
+    // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('eda631c1', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('eda631c1', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, 'eda631c1');
+    
+    // Override data parsing and manipulation of Hidden 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('54e20435', "relational", "Listing", "title");
+		ValidationHelper.registerInput('54e20435', "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ");
+    input = RequestHelper.getInput(request, '54e20435');
+    
+    // Override data parsing and manipulation of Textbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('31894d87', "relational", "Listing", "size");
+		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
+    input = RequestHelper.getInput(request, '31894d87');
+    
+    // Override data parsing and manipulation of Textbox 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
+		ValidationHelper.registerInput('b2321320', "Textbox 3", true, "คุณต้องระบุจำนวน");
+    input = RequestHelper.getInput(request, 'b2321320');
     
     // Override data parsing and manipulation of Textbox 3 here:
     // 
@@ -494,7 +488,6 @@ class Controller extends Base {
 // Export variables here:
 //
 export default Controller;
-
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.

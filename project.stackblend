@@ -4052,14 +4052,6 @@
         "          }",
         "          break;",
         "        case 'Listing':",
-        "          for (let i=data.length-1; i>=0; i--) {",
-        "            if (data[i] === '') {",
-        "              data.splice(i, 1);",
-        "            }",
-        "          }",
-        "          if (splited.length == 1 || data.length == 0) {",
-        "            data.push('');",
-        "          }",
         "          break;",
         "      }",
         "      ",
@@ -4157,12 +4149,24 @@
         "",
         "",
         "",
+        "",
+        "                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ce24263d\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return this.getDisplayForListDeleting(i);]\" style=\"margin-bottom: 5px\" internal-fsb-react-data=\"Listing\">",
+        "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"41bdc9b3\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"lid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"lid\">",
+        "                                                            <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"2ce10e8e\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"0d2c5b71\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"1cabb5c5\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1\" internal-fsb-guid=\"d910ad00\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"delete\" internal-fsb-data-controls=\" 41bdc9b3\">",
+        "                                                                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"d910ad00-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ลบ</div>",
+        "                                                            </button>",
+        "                                                        </div>",
+        "                                                    </div>",
+        "                                                </div>",
         "                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2b7a46e0\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return this.getDisplayForListInserting(i);]\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"eda631c1\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"Quote.qid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-id=\"\">",
-        "                                                            <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\" internal-fsb-data-validation-message=\"คุณต้องระบุชื่อวัสดุ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"วัสดุ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\" internal-fsb-data-validation-message=\"คุณต้องระบุขนาด\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\" required=\"true\"></div>",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\" internal-fsb-data-validation-message=\"คุณต้องระบุจำนวน\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\" required=\"true\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-2 offset-0\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "                                                            <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุชื่อวัสดุ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"วัสดุ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"31894d87\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุขนาด\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ขนาด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\" required=\"true\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b2321320\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุจำนวน\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"ปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\" required=\"true\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-2 offset-0\" internal-fsb-guid=\"05179431\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbsuccess=\"{}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
         "    // Handle the event of onButtonSuccess (Button 1) here:",
         "    // ",
@@ -4174,17 +4178,6 @@
         "    ",
         "    \">",
         "                                                                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"05179431-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เพิ่ม</div>",
-        "                                                            </button>",
-        "                                                        </div>",
-        "                                                    </div>",
-        "                                                </div>",
-        "                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ce24263d\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return this.getDisplayForListDeleting(i);]\">",
-        "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"41bdc9b3\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"lid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"lid\">",
-        "                                                            <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"2ce10e8e\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\"></div>",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"0d2c5b71\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"size\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"size\"></div>",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"1cabb5c5\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"quantity\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"quantity\"></div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1\" internal-fsb-guid=\"d910ad00\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"delete\" internal-fsb-data-controls=\" 41bdc9b3\">",
-        "                                                                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"d910ad00-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ลบ</div>",
         "                                                            </button>",
         "                                                        </div>",
         "                                                    </div>",
@@ -4833,7 +4826,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
           "22b7c898",
           0,
@@ -4863,13 +4856,15 @@
           "address": {}
         },
         "Listing": {
+          "Listing": {
+            "lid": {},
+            "title": {},
+            "size": {},
+            "quantity": {}
+          },
           "Quote": {
             "qid": {}
-          },
-          "title": {},
-          "size": {},
-          "quantity": {},
-          "lid": {}
+          }
         }
       }
     },
@@ -10190,7 +10185,7 @@
     "b140e86b": "e9c44f4e72cdaab392fa969f533517146225c4c2",
     "b6eb1b83": "b45532b3abbbf6b4febe458e6582cfb6bfa89ab4",
     "7e709334": "e9c44f4e72cdaab392fa969f533517146225c4c2",
-    "65e04a88": "7ba9a170ec907fae9a5df64096276248d28857a2",
+    "65e04a88": "5c89d37244f289f7f0de80dcc0d6c66ed0f9ec2c",
     "9d37c390": "e15b542b11119a077c086184390600735b70bf1e",
     "6ce794ec": "f50d1cd2d760fd5136f1d44dac8cf28ffd901691",
     "bbc7dba3": "791a10e8f969f64a2ebb47a3ad9ca2e67e49fa6e",
@@ -10223,7 +10218,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "5198048469559ff31a3bd15e2f72eec7532ebee7",
     "FlowLayout_41288a78": "cf0230473159ce5db509bdff165898a4ad511cb9",
-    "FlowLayout_b2020622": "4aa82f26adc3eddc39450ee29e7ffc92ebe5202d"
+    "FlowLayout_b2020622": "fcdae0f90a6ee6d0736f0a23ec5f7eeff01fb3f8"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
