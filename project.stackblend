@@ -4142,7 +4142,7 @@
         "",
         "",
         "",
-        "                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ce24263d\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return this.getDisplayForListDeleting(i);]\" style=\"margin-bottom: 5px\" internal-fsb-react-data=\"Listing\">",
+        "                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ce24263d\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-bottom: 5px\" internal-fsb-react-data=\"Listing\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"41bdc9b3\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"lid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"lid\">",
         "                                                            <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"2ce10e8e\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"title\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" disabled=\"true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\"></div>",
@@ -4153,7 +4153,7 @@
         "                                                        </div>",
         "                                                    </div>",
         "                                                </div>",
-        "                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2b7a46e0\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return this.getDisplayForListInserting(i);]\">",
+        "                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2b7a46e0\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"eda631c1\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"Quote.qid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-id=\"\">",
         "                                                            <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"54e20435\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องระบุชื่อวัสดุ\" internal-fsb-react-id=\"title\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"วัสดุ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"title\" required=\"true\"></div>",
@@ -4824,7 +4824,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2020622",
+        "selectingElementGUID": "ce24263d",
         "currentCursorWalkPath": [
           "b2020622",
           0,
@@ -10211,7 +10211,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "5198048469559ff31a3bd15e2f72eec7532ebee7",
     "FlowLayout_41288a78": "cf0230473159ce5db509bdff165898a4ad511cb9",
-    "FlowLayout_b2020622": "a7651393be13fefee0e41314b6ef937675fc11c1"
+    "FlowLayout_b2020622": "915887ffdac6ebaf4d60f3e09f4994fad5e3dec9"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",

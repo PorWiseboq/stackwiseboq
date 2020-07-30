@@ -360,7 +360,7 @@ class FlowLayout_b2020622 extends Base {
                         
                         {this.getDataFromNotation("Listing", true).map((data, i) => {
                           return (
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="ce24263d" style={{'marginBottom': '5px', display: (()=>{return this.getDisplayForListDeleting(i);})()}} key={"item_" + i}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="ce24263d" style={{'marginBottom': '5px'}} key={"item_" + i}>
                               
                               <div className="container-fluid">
                                 
@@ -410,7 +410,7 @@ class FlowLayout_b2020622 extends Base {
                           )
                         })}
                         
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="2b7a46e0" style={{display: (()=>{return this.getDisplayForListInserting(i);})()}}>
+                        <div className="internal-fsb-element col-12" internal-fsb-guid="2b7a46e0">
                           
                           <div className="container-fluid">
                             
