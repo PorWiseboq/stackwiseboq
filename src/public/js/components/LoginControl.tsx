@@ -38,14 +38,16 @@ interface IProps extends IAutoBaseProps {
   
 }
 interface IState extends IAutoBaseState {
-  signning_mode: string
+  signning_mode: string;
+  disabled: boolean;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  signning_mode: 'signning_in'
+  signning_mode: 'signning_in',
+  disabled: false
 });
 
 // Auto[ClassBegin]--->
@@ -62,7 +64,19 @@ class LoginControl extends Base {
   
   register() {
     DataManipulationHelper.register("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null});
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e968c824')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e968c824').addEventListener('submitting', this.onButtonSubmitting_e968c824.bind(this));
+    }
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e968c824')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e968c824').addEventListener('submitted', this.onButtonSubmitted_e968c824.bind(this));
+    }
     DataManipulationHelper.register("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null});
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'da229546')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'da229546').addEventListener('submitting', this.onButtonSubmitting_da229546.bind(this));
+    }
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'da229546')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'da229546').addEventListener('submitted', this.onButtonSubmitted_da229546.bind(this));
+    }
   }
   // <---Auto[ClassBegin]
   
@@ -99,6 +113,38 @@ class LoginControl extends Base {
     this.setState({
       signning_mode: 'signning_up'
     });
+    
+  }
+
+  protected onButtonSubmitting_e968c824(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 1) here:
+    // 
+    this.setState({disabled: true});
+    
+  }
+
+  protected onButtonSubmitted_e968c824(event: Event) {
+
+    // Handle the event of onButtonSubmitted (Button 1) here:
+    // 
+    this.setState({disabled: false});
+    
+  }
+
+  protected onButtonSubmitting_da229546(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 1) here:
+    // 
+    this.setState({disabled: true});
+    
+  }
+
+  protected onButtonSubmitted_da229546(event: Event) {
+
+    // Handle the event of onButtonSubmitted (Button 1) here:
+    // 
+    this.setState({disabled: false});
     
   }
   // <---Auto[Merging]
@@ -173,7 +219,7 @@ class LoginControl extends Base {
                                     </div>
                                     
                                     <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="74d75b70" style={{'display': 'block', 'width': '100%'}}>
-                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="email" type="text" placeholder="ที่อยู่@โดเมน.com" required={true} />
+                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="email" type="text" placeholder="ที่อยู่@โดเมน.com" required={true} disabled={this.state.disabled} />
                                     </div>
                                     
                                   </div>
@@ -193,7 +239,7 @@ class LoginControl extends Base {
                                     </div>
                                     
                                     <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="74b67c1e" style={{'display': 'block', 'width': '100%'}}>
-                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="password" type="password" placeholder="รหัสผ่าน" required={true} />
+                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="password" type="password" placeholder="รหัสผ่าน" required={true} disabled={this.state.disabled} />
                                     </div>
                                     
                                   </div>
@@ -213,7 +259,7 @@ class LoginControl extends Base {
                                     </div>
                                     
                                     <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="d40a4961" style={{'display': 'block', 'width': '100%'}}>
-                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="confirm" type="password" placeholder="ยืนยันรหัสผ่าน" required={true} />
+                                      <input className="form-control" style={{'display': 'block', 'width': '100%'}} ref="confirm" type="password" placeholder="ยืนยันรหัสผ่าน" required={true} disabled={this.state.disabled} />
                                     </div>
                                     
                                   </div>
@@ -227,14 +273,14 @@ class LoginControl extends Base {
                                 <div className="container-fluid">
                                   
                                   <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="e968c824" style={{display: (()=>{return (this.state.signning_mode == 'signning_in') ? 'block' : 'none';})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e968c824', 'User', event, ((results: any) => { this.manipulate('e968c824', 'User', results); }).bind(this)); }).bind(this)}>
+                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="e968c824" style={{display: (()=>{return (this.state.signning_mode == 'signning_in') ? 'block' : 'none';})()}} type="button" disabled={this.state.disabled} onClick={((event) => { window.internalFsbSubmit('e968c824', 'User', event, ((results: any) => { this.manipulate('e968c824', 'User', results); }).bind(this)); }).bind(this)}>
                                       
                                       <div className="internal-fsb-element" internal-fsb-guid="e968c824-text">
                                         ถัดไป
                                       </div>
                                       
                                     </button>
-                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="da229546" style={{display: (()=>{return (this.state.signning_mode == 'signning_up') ? 'block' : 'none';})()}} type="button" onClick={((event) => { window.internalFsbSubmit('da229546', 'User', event, ((results: any) => { this.manipulate('da229546', 'User', results); }).bind(this)); }).bind(this)}>
+                                    <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-12 offset-0" internal-fsb-guid="da229546" style={{display: (()=>{return (this.state.signning_mode == 'signning_up') ? 'block' : 'none';})()}} type="button" disabled={this.state.disabled} onClick={((event) => { window.internalFsbSubmit('da229546', 'User', event, ((results: any) => { this.manipulate('da229546', 'User', results); }).bind(this)); }).bind(this)}>
                                       
                                       <div className="internal-fsb-element" internal-fsb-guid="da229546-text">
                                         ถัดไป

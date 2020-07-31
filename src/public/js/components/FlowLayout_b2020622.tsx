@@ -46,6 +46,7 @@ interface IProps extends IAutoBaseProps {
 interface IState extends IAutoBaseState {
   status: Status;
   inserted: boolean;
+  disabled: boolean;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -53,7 +54,8 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
   status: Status.CREATE,
-  inserted: false
+  inserted: false,
+  disabled: false
 });
 
 // Auto[ClassBegin]--->
