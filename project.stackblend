@@ -4247,7 +4247,7 @@
         "    // Handle the event of onButtonSuccess (Button 5) here:",
         "    // ",
         "    ",
-        "    \" onfsbsubmitting=\"{&quot;event&quot;:true,&quot;no-propagation&quot;:true}\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
+        "    \" onfsbsubmitting=\"{&quot;no-propagation&quot;:true}\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
         "    // Handle the event of onButtonClick (Button 5) here:",
         "    // ",
@@ -4261,7 +4261,7 @@
         "    // ",
         "    this.setState({disabled: true});",
         "    ",
-        "    \" disabled=\"{this.state.disabled}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitted=\"",
+        "    \" disabled=\"{this.state.disabled}\" onfsbsubmitted=\"{}\" internal-fsb-react-code-onfsbsubmitted=\"",
         "",
         "    // Handle the event of onButtonSubmitted (Button 5) here:",
         "    // ",
@@ -4901,7 +4901,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2020622",
+        "selectingElementGUID": "011ad9dc",
         "currentCursorWalkPath": [
           "b1a8c59c",
           0,
@@ -10288,7 +10288,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "5198048469559ff31a3bd15e2f72eec7532ebee7",
     "FlowLayout_41288a78": "cf0230473159ce5db509bdff165898a4ad511cb9",
-    "FlowLayout_b2020622": "5bd7dc4c74e8b7bed3a035e98394712bcce6f154"
+    "FlowLayout_b2020622": "4c8b3e9dc6eb63b9fdf7e62d9240079797d109f5"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",

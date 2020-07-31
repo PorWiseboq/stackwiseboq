@@ -109,12 +109,6 @@ class FlowLayout_b2020622 extends Base {
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '1bb72b1a').addEventListener('submitting', this.onButtonSubmitting_1bb72b1a.bind(this));
     }
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '011ad9dc')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '011ad9dc').addEventListener('submitting', this.onButtonSubmitting_011ad9dc.bind(this));
-    }
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '011ad9dc')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '011ad9dc').addEventListener('submitted', this.onButtonSubmitted_011ad9dc.bind(this));
-    }
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '88297439')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '88297439').addEventListener('submitting', this.onButtonSubmitting_88297439.bind(this));
     }
@@ -300,23 +294,6 @@ class FlowLayout_b2020622 extends Base {
     this.setState({
       status: Status.SUBSTITUTE
     });
-    
-  }
-
-  protected onButtonSubmitting_011ad9dc(event: Event) {
-
-    // Handle the event of onButtonSubmitting (Button 5) here:
-    // 
-    this.setState({disabled: true});
-    
-    return EventHelper.cancel(event);
-  }
-
-  protected onButtonSubmitted_011ad9dc(event: Event) {
-
-    // Handle the event of onButtonSubmitted (Button 5) here:
-    // 
-    this.setState({disabled: false});
     
   }
 
