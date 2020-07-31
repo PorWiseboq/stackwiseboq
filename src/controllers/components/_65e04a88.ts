@@ -199,7 +199,7 @@ class Controller extends Base {
      		  
      		  if (datasetA['Quote'].rows.length != 0) {
   	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
-  	   		    let date = datasetA['Quote'].rows[0].columns['deliverAt'];
+  	   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
   	   		    
   	   		    var mm = date.getMonth() + 1;
   	          var dd = date.getDate();
