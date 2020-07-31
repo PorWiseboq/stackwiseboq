@@ -3,7 +3,7 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
 import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
 import {RequestHelper} from '../helpers/RequestHelper.js';
 import {RenderHelper} from '../helpers/RenderHelper.js';
@@ -49,13 +49,9 @@ enum ValidationInfo {
   rows: HierarchicalDataRow[];
 }
 interface HierarchicalDataRow {
-  keys: {[Identifier: string]: HierarchicalDataColumn};
-  columns: {[Identifier: string]: HierarchicalDataColumn};
+  keys: {[Identifier: string]: any};
+  columns: {[Identifier: string]: any};
   relations: {[Identifier: string]: HierarchicalDataTable};
-}
-interface HierarchicalDataColumn {
-	name: string;
-  value: any;
 }
 interface Input {
   target: SourceType;
@@ -97,10 +93,10 @@ class Controller extends Base {
    		  switch (this.request.session.role) {
    		    case 'buyer':
             this.response.redirect('/buyer/auction');
-   		      break;
+   		      return;
    		    case 'bidder':
             this.response.redirect('/buyer/bidder');
-   		      break;
+   		      return;
    		    default:
    		      break;
    		  }
@@ -150,13 +146,13 @@ class Controller extends Base {
             this.request.session.save(() => {
             	resolve('/buyer/auction');
             });
-            break;
+            return;
           case "bidder":
             this.request.session.role = 'bidder';
             this.request.session.save(() => {
             	resolve('/bidder/auction');
             });
-            break;
+            return;
           default:
             throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
         }

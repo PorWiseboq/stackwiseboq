@@ -5,6 +5,7 @@
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
+import {HTMLHelper} from '../helpers/HTMLHelper.js';
 import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
 // <---Auto[Import]
 
@@ -55,15 +56,23 @@ class FlowLayout_d58ae925 extends Base {
     super(props);
     this.state = CodeHelper.clone(DefaultState);
     
-DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null})
-DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null})
     this.initialize();
+  }
+  
+  register() {
+    DataManipulationHelper.register("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null});
+    DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null});
   }
   // <---Auto[ClassBegin]
   
   // Declare class variables and functions here:
   //
   protected initialize(): void {
+     
+  }
+  
+  protected componentDidMount(): void {
+    this.register(); 
   }
   
   // Providing data array base on dot notation:
@@ -98,7 +107,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
                       
                       {this.getDataFromNotation("Blog[" + i + "].title", true).map((data, j) => {
                         return (
-                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="d064b129" key={"item_" + j} maxlength="50">
+                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="d064b129" style={{'display': 'block', 'width': '100%'}} key={"item_" + j} maxlength="50">
                             <input style={{'display': 'block', 'width': '100%'}} type="text" required={true} defaultValue={data} />
                           </div>
                         )
@@ -110,7 +119,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
                       
                       {this.getDataFromNotation("Blog[" + i + "].body", true).map((data, j) => {
                         return (
-                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="a0641238" key={"item_" + j}>
+                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="a0641238" style={{'display': 'block', 'width': '100%', 'height': '50vh'}} key={"item_" + j}>
                             <textarea style={{'display': 'block', 'width': '100%', 'height': '50vh'}} type="text" required={true} defaultValue={data}>
                             </textarea>
                           </div>
@@ -123,7 +132,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
                       
                       {this.getDataFromNotation("Blog[" + i + "].description", true).map((data, j) => {
                         return (
-                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="1d258b94" key={"item_" + j} maxlength="165">
+                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="1d258b94" style={{'display': 'block', 'width': '100%'}} key={"item_" + j} maxlength="165">
                             <textarea style={{'display': 'block', 'width': '100%'}} type="text" rows="2" required={true} defaultValue={data}>
                             </textarea>
                           </div>
@@ -136,7 +145,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
                       
                       {this.getDataFromNotation("Blog[" + i + "].keywords", true).map((data, j) => {
                         return (
-                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="9ba2b637" key={"item_" + j}>
+                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="9ba2b637" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
                             <input style={{'display': 'block', 'width': '100%'}} type="text" placeholder="" required={true} defaultValue={data} />
                           </div>
                         )
@@ -148,7 +157,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
                       
                       {this.getDataFromNotation("Blog[" + i + "].image", true).map((data, j) => {
                         return (
-                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="3dcb582a" key={"item_" + j}>
+                          <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="3dcb582a" style={{'display': 'block', 'width': '100%'}} key={"item_" + j}>
                             <input style={{'display': 'block', 'width': '100%'}} type="text" defaultValue={data} />
                           </div>
                         )
@@ -170,7 +179,7 @@ DataManipulationHelper.register("2258be6b", "update", ["d064b129","a0641238","1d
                       </button>
                       {this.getDataFromNotation("Blog[" + i + "].bid", true).map((data, j) => {
                         return (
-                          <input className="internal-fsb-element col-12" internal-fsb-guid="50cb1c1b" key={"item_" + j} type="hidden" defaultValue={data} />
+                          <input className="internal-fsb-element col-12" internal-fsb-guid="50cb1c1b" key={"item_" + j} type="hidden" value={data} />
                         )
                       })}
                       

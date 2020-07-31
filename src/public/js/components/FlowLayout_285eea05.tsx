@@ -5,6 +5,7 @@
 import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
+import {HTMLHelper} from '../helpers/HTMLHelper.js';
 import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
 // <---Auto[Import]
 
@@ -57,11 +58,22 @@ class FlowLayout_285eea05 extends Base {
     
     this.initialize();
   }
+  
+  register() {
+
+  }
   // <---Auto[ClassBegin]
   
   // Declare class variables and functions here:
   //
   protected initialize(): void {
+  }
+  
+  protected componentDidMount(): void {
+  	this.register();
+  }
+  
+  protected componentWillUnmount(): void {
   }
   
   // Providing data array base on dot notation:
@@ -87,6 +99,7 @@ class FlowLayout_285eea05 extends Base {
               <div>
                 บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170
               </div>
+              
             </div>
             
           </div>
