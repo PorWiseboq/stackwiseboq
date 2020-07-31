@@ -177,56 +177,60 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return new Promise(async (resolve) => {
-   		if (this.request.session && this.request.session.uid) {
-   		  data = [{
-   		    target: SourceType.Relational,
-          group: 'Quote',
-          name: 'uid',
-          value: parseInt(this.request.session.uid),
-          guid: null,
-          validation: null
-   		  },{
-   		    target: SourceType.Relational,
-          group: 'Quote',
-          name: 'filled',
-          value: null,
-          guid: null,
-          validation: null
-   		  }];
-   		  let datasetA = await DatabaseHelper.retrieve(data, null);
-   		  
-   		  if (datasetA['Quote'].rows.length != 0) {
-	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
-	   		    let date = datasetA['Quote'].rows[0].columns['deliverAt'];
-	   		    
-	   		    var mm = date.getMonth() + 1;
-	          var dd = date.getDate();
-	          var yyyy = date.getFullYear() + 543;
-	          
-	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`;
-	   		  } else {
-	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
-	   		  }
-	 		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
-	 		      datasetA['Quote'].rows[0].columns['hours'] = null;
-	 		    }
-	 		  }
-   		  
-   		  data = [{
-   		    target: SourceType.Relational,
-          group: 'Listing',
-          name: 'qid',
-          value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
-          guid: null,
-          validation: null
-   		  }];
-   		  let datasetB = await DatabaseHelper.retrieve(data, null);
-   		  
-   		  resolve(Object.assign({}, datasetA, datasetB));
-   		} else {
-   		  this.response.redirect('/authentication');
-   		}
+ 		return new Promise(async (resolve, reject) => {
+ 		  try {
+     		if (this.request.session && this.request.session.uid) {
+     		  data = [{
+     		    target: SourceType.Relational,
+            group: 'Quote',
+            name: 'uid',
+            value: parseInt(this.request.session.uid),
+            guid: null,
+            validation: null
+     		  },{
+     		    target: SourceType.Relational,
+            group: 'Quote',
+            name: 'filled',
+            value: null,
+            guid: null,
+            validation: null
+     		  }];
+     		  let datasetA = await DatabaseHelper.retrieve(data, null);
+     		  
+     		  if (datasetA['Quote'].rows.length != 0) {
+  	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
+  	   		    let date = datasetA['Quote'].rows[0].columns['deliverAt'];
+  	   		    
+  	   		    var mm = date.getMonth() + 1;
+  	          var dd = date.getDate();
+  	          var yyyy = date.getFullYear() + 543;
+  	          
+  	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`;
+  	   		  } else {
+  	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
+  	   		  }
+  	 		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
+  	 		      datasetA['Quote'].rows[0].columns['hours'] = null;
+  	 		    }
+  	 		  }
+     		  
+     		  data = [{
+     		    target: SourceType.Relational,
+            group: 'Listing',
+            name: 'qid',
+            value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
+            guid: null,
+            validation: null
+     		  }];
+     		  let datasetB = await DatabaseHelper.retrieve(data, null);
+     		  
+     		  resolve(Object.assign({}, datasetA, datasetB));
+     		} else {
+     		  this.response.redirect('/authentication');
+     		}
+ 		  } catch(error) {
+ 		    reject(error);
+ 		  }
     });
   }
   
