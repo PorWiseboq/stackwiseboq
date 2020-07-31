@@ -9256,7 +9256,7 @@
       "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"00032595\" internal-fsb-name=\"RelationalDatabase 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalDatabase\" style=\"; left: 70px; top: 52px; width: 1579px; min-height: 966px\" data-title-name=\"MySQL Database\">",
       "                <div class=\"internal-fsb-title internal-fsb-dragging-handle\">MySQL Database</div>",
       "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 914px;\">",
+      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 966px;\">",
       "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9957a62d\" internal-fsb-name=\"RelationalTable 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 382px; top: 45px; width: 198px; min-height: 87px;\" data-title-name=\"Employee\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Employee</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -9365,7 +9365,7 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9e6bb0d3\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 377px; top: 509px; width: 225px; min-height: 405px;\" data-title-name=\"Quote\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9e6bb0d3\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 378px; top: 511px; width: 225px; min-height: 455px;\" data-title-name=\"Quote\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Quote</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -9408,6 +9408,12 @@
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9b5795cd\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"boolean\" data-title-name=\"filled\">",
       "                                        <div class=\"internal-fsb-title\">filled</div>",
       "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b81098d0\" internal-fsb-name=\"RelationalColumn 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"ended\" data-field-type=\"boolean\">",
+      "                                        <div class=\"internal-fsb-title\">ended</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"16ce3b3e\" internal-fsb-name=\"RelationalColumn 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"boolean\" data-title-name=\"cancelled\">",
+      "                                        <div class=\"internal-fsb-title\">cancelled</div>",
+      "                                    </div>",
       "                                </div>",
       "                            </div>",
       "                        </div>",
@@ -9435,7 +9441,7 @@
       "                            </div>",
       "                        </div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"dd96a62e\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 679px; top: 535px; width: 150px;\" data-source-group-name=\"Quote\" data-source-entity-name=\"qid\" data-target-group-name=\"Listing\" data-target-entity-name=\"qid\"></div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"702b06a8\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 613px; top: 316px; width: 225px; min-height: 167px\" data-title-name=\"Auction\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"702b06a8\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 615px; top: 307px; width: 225px; min-height: 199px;\" data-title-name=\"Auction\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Auction</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -9453,6 +9459,9 @@
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"891815c0\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"promotion\">",
       "                                        <div class=\"internal-fsb-title\">promotion</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a7991bb2\" internal-fsb-name=\"RelationalColumn 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"cancelled\" data-field-type=\"boolean\">",
+      "                                        <div class=\"internal-fsb-title\">cancelled</div>",
       "                                    </div>",
       "                                </div>",
       "                            </div>",
@@ -9484,7 +9493,7 @@
       "                            </div>",
       "                        </div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"eb17109d\" internal-fsb-name=\"Connection 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 883px; top: 319px; width: 10px; min-height: 20px\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Substitute\" data-target-entity-name=\"aid\"></div>",
-      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"618a3aa1\" internal-fsb-name=\"Connection 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 755px; top: 511px; width: 150px;\" data-source-group-name=\"Substitute\" data-source-entity-name=\"lid\" data-target-group-name=\"Listing\" data-target-entity-name=\"lid\"></div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"618a3aa1\" internal-fsb-name=\"Connection 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 758px; top: 519px; width: 150px;\" data-source-group-name=\"Substitute\" data-source-entity-name=\"lid\" data-target-group-name=\"Listing\" data-target-entity-name=\"lid\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"b84d6e06\" internal-fsb-name=\"Connection 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 434px; top: 322px; width: 150px;\" data-source-group-name=\"User\" data-source-entity-name=\"id\" data-target-group-name=\"Auction\" data-target-entity-name=\"uid\"></div>",
       "                    </div>",
       "                </div>",
@@ -10277,6 +10286,20 @@
             "fieldType": "boolean",
             "required": false,
             "unique": false
+          },
+          "ended": {
+            "name": "ended",
+            "guid": "b81098d0",
+            "fieldType": "boolean",
+            "required": false,
+            "unique": false
+          },
+          "cancelled": {
+            "name": "cancelled",
+            "guid": "16ce3b3e",
+            "fieldType": "boolean",
+            "required": false,
+            "unique": false
           }
         },
         "relations": {
@@ -10407,6 +10430,13 @@
             "name": "promotion",
             "guid": "891815c0",
             "fieldType": null,
+            "required": false,
+            "unique": false
+          },
+          "cancelled": {
+            "name": "cancelled",
+            "guid": "a7991bb2",
+            "fieldType": "boolean",
             "required": false,
             "unique": false
           }
@@ -10593,7 +10623,7 @@
     "b140e86b": "def4b1d0a97b7505ca0d01f6a974153f2fe5ef21",
     "8857ca68": "5da1a75a3582a0c77f97144fdd21f4ca336d2fbf",
     "b6eb1b83": "bfe979edc807fe99b9d84c5291b2272aec2cd45d",
-    "65e04a88": "d549ba334ad1ce837d81d6e0a7508de31f851e51",
+    "65e04a88": "3c17fd7561ba132920fde9a46062f4584d9824b8",
     "7e709334": "f4b6029b14f2a111c41f5bc9ae16cbcc4faa3c21",
     "6ce794ec": "52cf5f952ec36c88d4fe96513fb5a5c53e4a3df5",
     "9d37c390": "c323e7af5d3efb88cbfc0ffeb24a24c7c0cdec1b",
