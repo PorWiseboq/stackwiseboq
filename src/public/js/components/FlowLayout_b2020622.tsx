@@ -600,7 +600,7 @@ class FlowLayout_b2020622 extends Base {
               
             </div>
             
-            <div className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2" internal-fsb-guid="b1a8c59c" style={{'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.SUBSTITUTE);})()}}>
+            <div className="internal-fsb-element -fsb-preset-180079a2 col-10 offset-1" internal-fsb-guid="b1a8c59c" style={{'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.SUBSTITUTE);})()}}>
               
               <div className="container-fluid">
                 

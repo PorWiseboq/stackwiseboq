@@ -149,46 +149,6 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('bc041e39', undefined, undefined, undefined);
-		ValidationHelper.registerInput('bc041e39', "Radio 1", false, undefined);
-    input = RequestHelper.getInput(request, 'bc041e39');
-    
-    // Override data parsing and manipulation of Radio 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('1411ca4c', undefined, undefined, undefined);
-		ValidationHelper.registerInput('1411ca4c', "Checkbox 1", false, undefined);
-    input = RequestHelper.getInput(request, '1411ca4c');
-    
-    // Override data parsing and manipulation of Checkbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('c6cd6a36', undefined, undefined, undefined);
-		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", false, undefined);
-    input = RequestHelper.getInput(request, 'c6cd6a36');
-    
-    // Override data parsing and manipulation of Textbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('0c59a0a4', undefined, undefined, undefined);
-		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", false, undefined);
-    input = RequestHelper.getInput(request, '0c59a0a4');
-    
-    // Override data parsing and manipulation of Textbox 2 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('5cab012e', undefined, undefined, undefined);
-		ValidationHelper.registerInput('5cab012e', "Textbox 3", false, undefined);
-    input = RequestHelper.getInput(request, '5cab012e');
-    
-    // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
