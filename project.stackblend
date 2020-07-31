@@ -154,7 +154,7 @@
     ],
     "popups": [],
     "editingPageID": "65e04a88",
-    "currentMode": "site",
+    "currentMode": "data",
     "editingComponentID": "d22b95d9"
   },
   "sites": {
@@ -4330,7 +4330,7 @@
         "                                </div>",
         "                            </div>",
         "                        </div>",
-        "                        <div class=\"internal-fsb-element col-10 offset-1 -fsb-preset-180079a2\" internal-fsb-guid=\"b1a8c59c\" internal-fsb-name=\"FlowLayout 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 180079a2\" internal-fsb-react-style-display=\"CODE[return this.getDisplay(Status.SUBSTITUTE);]\">",
+        "                        <div class=\"internal-fsb-element -fsb-preset-180079a2 col-10 offset-1\" internal-fsb-guid=\"b1a8c59c\" internal-fsb-name=\"FlowLayout 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 180079a2\" internal-fsb-react-style-display=\"CODE[return this.getDisplay(Status.SUBSTITUTE);]\">",
         "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"b92865ba\" internal-fsb-name=\"TextElement 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686\">สินค้าเทียบเคียง</div>",
@@ -4958,7 +4958,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "011ad9dc",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
           "7600ca53",
           0,
@@ -9252,11 +9252,11 @@
     "default": [
       "<body class=\"internal-fsb-guide-on internal-fsb-disabled-guide\">",
       "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\" style=\"height: 100%;\">",
-      "        <div class=\"row internal-fsb-absolute-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" style=\"height: 100%; min-height: 1017px;\" internal-fsb-event-no-propagate=\"1\">",
-      "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"00032595\" internal-fsb-name=\"RelationalDatabase 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalDatabase\" style=\"; left: 69px; top: 51px; width: 1220px; min-height: 964px\" data-title-name=\"MySQL Database\">",
+      "        <div class=\"row internal-fsb-absolute-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" style=\"height: 100%; min-height: 1020px;\" internal-fsb-event-no-propagate=\"1\">",
+      "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"00032595\" internal-fsb-name=\"RelationalDatabase 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalDatabase\" style=\"; left: 70px; top: 52px; width: 1579px; min-height: 966px\" data-title-name=\"MySQL Database\">",
       "                <div class=\"internal-fsb-title internal-fsb-dragging-handle\">MySQL Database</div>",
       "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 712px;\">",
+      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 914px;\">",
       "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9957a62d\" internal-fsb-name=\"RelationalTable 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 382px; top: 45px; width: 198px; min-height: 87px;\" data-title-name=\"Employee\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Employee</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -9365,7 +9365,7 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9e6bb0d3\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 381px; top: 307px; width: 225px; min-height: 405px\" data-title-name=\"Quote\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9e6bb0d3\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 377px; top: 509px; width: 225px; min-height: 405px;\" data-title-name=\"Quote\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Quote</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -9412,7 +9412,7 @@
       "                            </div>",
       "                        </div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"06b4460c\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 318px; top: 208px; width: 150px;\" data-source-group-name=\"User\" data-source-entity-name=\"id\" data-target-group-name=\"Quote\" data-target-entity-name=\"uid\"></div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"a4532302\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 718px; top: 376px; width: 225px; min-height: 233px;\" data-title-name=\"Listing\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"a4532302\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 792px; top: 565px; width: 225px; min-height: 233px;\" data-title-name=\"Listing\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Listing</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -9434,7 +9434,58 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"dd96a62e\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 643px; top: 358px; width: 150px;\" data-source-group-name=\"Quote\" data-source-entity-name=\"qid\" data-target-group-name=\"Listing\" data-target-entity-name=\"qid\"></div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"dd96a62e\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 679px; top: 535px; width: 150px;\" data-source-group-name=\"Quote\" data-source-entity-name=\"qid\" data-target-group-name=\"Listing\" data-target-entity-name=\"qid\"></div>",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"702b06a8\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 613px; top: 316px; width: 225px; min-height: 167px\" data-title-name=\"Auction\">",
+      "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Auction</div>",
+      "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+      "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c5da1008\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"auto\" data-column-type=\"primary\" data-title-name=\"aid\">",
+      "                                        <div class=\"internal-fsb-title\">aid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"68234865\" internal-fsb-name=\"RelationalColumn 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"uid\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">uid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"60e8e7d7\" internal-fsb-name=\"RelationalColumn 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"qid\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">qid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"cb042d65\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"price\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">price</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"891815c0\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"promotion\">",
+      "                                        <div class=\"internal-fsb-title\">promotion</div>",
+      "                                    </div>",
+      "                                </div>",
+      "                            </div>",
+      "                        </div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"7ed26b09\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 566px; top: 403px; width: 150px;\" data-source-group-name=\"Quote\" data-source-entity-name=\"qid\" data-target-group-name=\"Auction\" data-target-entity-name=\"qid\"></div>",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"81c8a4e6\" internal-fsb-name=\"RelationalTable 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 959px; top: 316px; width: 225px; min-height: 204px;\" data-title-name=\"Substitute\">",
+      "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Substitute</div>",
+      "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+      "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"74dcb1eb\" internal-fsb-name=\"RelationalColumn 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"aid\" data-column-type=\"primary\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">aid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"58a28dbd\" internal-fsb-name=\"RelationalColumn 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"lid\" data-column-type=\"primary\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">lid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c424cc35\" internal-fsb-name=\"RelationalColumn 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"type\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">type</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"509ccdb1\" internal-fsb-name=\"RelationalColumn 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"title\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">title</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"7034c887\" internal-fsb-name=\"RelationalColumn 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"size\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">size</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"13790eec\" internal-fsb-name=\"RelationalColumn 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"quantity\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">quantity</div>",
+      "                                    </div>",
+      "                                </div>",
+      "                            </div>",
+      "                        </div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"eb17109d\" internal-fsb-name=\"Connection 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 883px; top: 319px; width: 10px; min-height: 20px\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Substitute\" data-target-entity-name=\"aid\"></div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"618a3aa1\" internal-fsb-name=\"Connection 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 755px; top: 511px; width: 150px;\" data-source-group-name=\"Substitute\" data-source-entity-name=\"lid\" data-target-group-name=\"Listing\" data-target-entity-name=\"lid\"></div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"b84d6e06\" internal-fsb-name=\"Connection 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 434px; top: 322px; width: 150px;\" data-source-group-name=\"User\" data-source-entity-name=\"id\" data-target-group-name=\"Auction\" data-target-entity-name=\"uid\"></div>",
       "                    </div>",
       "                </div>",
       "            </div>",
@@ -10066,6 +10117,14 @@
             "sourceEntity": "id",
             "targetGroup": "Quote",
             "targetEntity": "uid"
+          },
+          "Auction": {
+            "name": null,
+            "guid": "b84d6e06",
+            "sourceGroup": "User",
+            "sourceEntity": "id",
+            "targetGroup": "Auction",
+            "targetEntity": "uid"
           }
         }
       },
@@ -10236,6 +10295,14 @@
             "sourceEntity": "qid",
             "targetGroup": "Listing",
             "targetEntity": "qid"
+          },
+          "Auction": {
+            "name": null,
+            "guid": "7ed26b09",
+            "sourceGroup": "Quote",
+            "sourceEntity": "qid",
+            "targetGroup": "Auction",
+            "targetEntity": "qid"
           }
         }
       },
@@ -10290,6 +10357,153 @@
             "sourceEntity": "qid",
             "targetGroup": "Quote",
             "targetEntity": "qid"
+          },
+          "Substitute": {
+            "name": null,
+            "guid": "618a3aa1",
+            "sourceGroup": "Listing",
+            "sourceEntity": "lid",
+            "targetGroup": "Substitute",
+            "targetEntity": "lid"
+          }
+        }
+      },
+      "Auction": {
+        "source": "relational",
+        "group": "Auction",
+        "guid": "702b06a8",
+        "keys": {
+          "aid": {
+            "name": "aid",
+            "guid": "c5da1008",
+            "fieldType": "auto",
+            "required": false,
+            "unique": false
+          }
+        },
+        "columns": {
+          "uid": {
+            "name": "uid",
+            "guid": "68234865",
+            "fieldType": "number",
+            "required": true,
+            "unique": false
+          },
+          "qid": {
+            "name": "qid",
+            "guid": "60e8e7d7",
+            "fieldType": "number",
+            "required": true,
+            "unique": false
+          },
+          "price": {
+            "name": "price",
+            "guid": "cb042d65",
+            "fieldType": "number",
+            "required": true,
+            "unique": false
+          },
+          "promotion": {
+            "name": "promotion",
+            "guid": "891815c0",
+            "fieldType": null,
+            "required": false,
+            "unique": false
+          }
+        },
+        "relations": {
+          "Quote": {
+            "name": null,
+            "guid": "7ed26b09",
+            "sourceGroup": "Auction",
+            "sourceEntity": "qid",
+            "targetGroup": "Quote",
+            "targetEntity": "qid"
+          },
+          "Substitute": {
+            "name": null,
+            "guid": "eb17109d",
+            "sourceGroup": "Auction",
+            "sourceEntity": "aid",
+            "targetGroup": "Substitute",
+            "targetEntity": "aid"
+          },
+          "User": {
+            "name": null,
+            "guid": "b84d6e06",
+            "sourceGroup": "Auction",
+            "sourceEntity": "uid",
+            "targetGroup": "User",
+            "targetEntity": "id"
+          }
+        }
+      },
+      "Substitute": {
+        "source": "relational",
+        "group": "Substitute",
+        "guid": "81c8a4e6",
+        "keys": {
+          "aid": {
+            "name": "aid",
+            "guid": "74dcb1eb",
+            "fieldType": "number",
+            "required": true,
+            "unique": false
+          },
+          "lid": {
+            "name": "lid",
+            "guid": "58a28dbd",
+            "fieldType": "number",
+            "required": true,
+            "unique": false
+          }
+        },
+        "columns": {
+          "type": {
+            "name": "type",
+            "guid": "c424cc35",
+            "fieldType": "number",
+            "required": true,
+            "unique": false
+          },
+          "title": {
+            "name": "title",
+            "guid": "509ccdb1",
+            "fieldType": null,
+            "required": true,
+            "unique": false
+          },
+          "size": {
+            "name": "size",
+            "guid": "7034c887",
+            "fieldType": null,
+            "required": true,
+            "unique": false
+          },
+          "quantity": {
+            "name": "quantity",
+            "guid": "13790eec",
+            "fieldType": null,
+            "required": true,
+            "unique": false
+          }
+        },
+        "relations": {
+          "Auction": {
+            "name": null,
+            "guid": "eb17109d",
+            "sourceGroup": "Substitute",
+            "sourceEntity": "aid",
+            "targetGroup": "Auction",
+            "targetEntity": "aid"
+          },
+          "Listing": {
+            "name": null,
+            "guid": "618a3aa1",
+            "sourceGroup": "Substitute",
+            "sourceEntity": "lid",
+            "targetGroup": "Listing",
+            "targetEntity": "lid"
           }
         }
       }
@@ -10338,7 +10552,7 @@
     "b140e86b": "e9c44f4e72cdaab392fa969f533517146225c4c2",
     "b6eb1b83": "b45532b3abbbf6b4febe458e6582cfb6bfa89ab4",
     "7e709334": "e9c44f4e72cdaab392fa969f533517146225c4c2",
-    "65e04a88": "6a0c18d284f5ed7a1d612e76d8f9557bda378d41",
+    "65e04a88": "a984d81acc2fc8a568b51d0230bc9ea1824d5bf7",
     "9d37c390": "e15b542b11119a077c086184390600735b70bf1e",
     "6ce794ec": "f50d1cd2d760fd5136f1d44dac8cf28ffd901691",
     "bbc7dba3": "791a10e8f969f64a2ebb47a3ad9ca2e67e49fa6e",
@@ -10379,7 +10593,7 @@
     "b140e86b": "def4b1d0a97b7505ca0d01f6a974153f2fe5ef21",
     "8857ca68": "5da1a75a3582a0c77f97144fdd21f4ca336d2fbf",
     "b6eb1b83": "bfe979edc807fe99b9d84c5291b2272aec2cd45d",
-    "65e04a88": "2337743f2bae2d678505c11aaad1b6ec5bc0ce6d",
+    "65e04a88": "d549ba334ad1ce837d81d6e0a7508de31f851e51",
     "7e709334": "f4b6029b14f2a111c41f5bc9ae16cbcc4faa3c21",
     "6ce794ec": "52cf5f952ec36c88d4fe96513fb5a5c53e4a3df5",
     "9d37c390": "c323e7af5d3efb88cbfc0ffeb24a24c7c0cdec1b",
