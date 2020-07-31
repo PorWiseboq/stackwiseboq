@@ -4029,7 +4029,7 @@
         "  // Declare class variables and functions here:",
         "  //",
         "  protected initialize(): void {",
-        "    this.state.inserted = (super.getDataFromNotation('Quote.qid') !== '');",
+        "    this.state.inserted = (super.getDataFromNotation('Quote.qid') !== null);",
         "  }",
         "  ",
         "  // Providing data array base on dot notation:",
@@ -10291,7 +10291,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "5198048469559ff31a3bd15e2f72eec7532ebee7",
     "FlowLayout_41288a78": "cf0230473159ce5db509bdff165898a4ad511cb9",
-    "FlowLayout_b2020622": "4c8b3e9dc6eb63b9fdf7e62d9240079797d109f5"
+    "FlowLayout_b2020622": "76c86d13b5acfc730a92d02624d9e70fc5a0ba9d"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",
