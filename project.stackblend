@@ -153,7 +153,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "d1e3b3b3",
+    "editingPageID": "65e04a88",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -758,6 +758,18 @@
         "            border-top-color: rgba(22, 98, 250, 1)",
         "        }",
         "    </style>",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -1959,7 +1971,7 @@
         "currentCursorWalkPath": [
           "0",
           0,
-          2,
+          3,
           null
         ]
       },
@@ -4287,7 +4299,12 @@
         "    // Handle the event of onButtonSuccess (Button 5) here:",
         "    // ",
         "    ",
-        "    \" onfsbsubmitting=\"{&quot;no-propagation&quot;:true}\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
+        "    \" onfsbsubmitting=\"{}\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
+        "",
+        "    if (this.getDataFromNotation(&quot;Listing&quot;, true).length == 0) {",
+        "      alert('กรุณาระบุรายการวัสดุก่อสร้างอย่างน้อยหนึ่งรายการ');",
+        "      return EventHelper.cancel(event);",
+        "    }",
         "",
         "    // Handle the event of onButtonClick (Button 5) here:",
         "    // ",
@@ -4941,11 +4958,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2020622",
+        "selectingElementGUID": "011ad9dc",
         "currentCursorWalkPath": [
-          "b2020622",
+          "7600ca53",
           0,
-          4,
+          5,
           null
         ]
       },
@@ -5509,11 +5526,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "eb7259a4",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
-          "0",
+          "29b56091",
           0,
-          1,
+          4,
           null
         ]
       },
@@ -6540,7 +6557,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "3537bdb3",
+        "selectingElementGUID": "5b62d3ee",
         "currentCursorWalkPath": [
           "3537bdb3",
           0,
@@ -9039,10 +9056,7 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ],
-      "id": "7aee6ed8",
-      "name": "Login Control",
-      "state": "update"
+      ]
     },
     "535be65e": {
       "namespace": "Project.Controls",
@@ -9206,10 +9220,7 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ],
-      "id": "570decac",
-      "name": "Role Navigator",
-      "state": "update"
+      ]
     },
     "00ce1665": {
       "namespace": "Project.Controls",
@@ -10360,7 +10371,7 @@
     "FlowLayout_ee5d6390": "c83a0416b028731c6911282c605c99e2d6097425",
     "FlowLayout_a6314edc": "5198048469559ff31a3bd15e2f72eec7532ebee7",
     "FlowLayout_41288a78": "cf0230473159ce5db509bdff165898a4ad511cb9",
-    "FlowLayout_b2020622": "0d9f21f0dfc16d440832bde0548202699e3e9a81"
+    "FlowLayout_b2020622": "559abfbbb9e4c572cb59175035d41c9cc6e3b4a8"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "15fadaa9d8d3e785e1128d830db3324c8dc492e4",

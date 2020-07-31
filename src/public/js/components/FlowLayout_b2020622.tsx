@@ -291,6 +291,11 @@ class FlowLayout_b2020622 extends Base {
 
   protected onButtonClick_011ad9dc(event: Event) {
 
+    if (this.getDataFromNotation("Listing", true).length == 0) {
+      alert('กรุณาระบุรายการวัสดุก่อสร้างอย่างน้อยหนึ่งรายการ');
+      return EventHelper.cancel(event);
+    }
+
     // Handle the event of onButtonClick (Button 5) here:
     // 
     this.setState({
