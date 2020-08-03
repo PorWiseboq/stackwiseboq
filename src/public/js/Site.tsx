@@ -29,6 +29,7 @@ import './components/FlowLayout_ee5d6390.js';
 import './components/FlowLayout_a6314edc.js';
 import './components/FlowLayout_41288a78.js';
 import './components/FlowLayout_b2020622.js';
+import './components/Rectangle_cad06e8d.js';
 
 declare let React: any;
 declare let ReactDOM: any;

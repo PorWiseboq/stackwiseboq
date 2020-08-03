@@ -149,6 +149,14 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+		RequestHelper.registerInput('7db28ea1', undefined, undefined, undefined);
+		ValidationHelper.registerInput('7db28ea1', "Navigate Value", false, undefined);
+    input = RequestHelper.getInput(request, '7db28ea1');
+    
+    // Override data parsing and manipulation of Navigate Value here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
