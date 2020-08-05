@@ -285,30 +285,82 @@ class Rectangle_cad06e8d extends Base {
                       </div>
                     </div>
                   </div>
-                  <div className="internal-fsb-element" internal-fsb-guid="6e3ac549" style={{'flexGrow': '1', 'WebkitFlexGrow': '1', 'background': 'rgba(214, 237, 255, 1)'}}>
-                    <div className="container-fluid">
-                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="6780405e">
-                          <div className="container-fluid">
-                            <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                  <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="ddec7e5c" style={{'background': 'rgba(255, 255, 255, 1)', 'flexGrow': '1', 'WebkitFlexGrow': '1'}}>
+                    <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="71616aa2" style={{'display': 'table', 'height': '100%', 'width': '100%'}}>
+                      <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="2dbce05c" style={{'display': 'table-row'}}>
+                        <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="394c4745" style={{'display': 'table-cell', 'width': '200px', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'borderRightWidth': '2px', 'borderRightStyle': 'solid', 'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'scroll', 'MsOverflowY': 'scroll'}}>
+                          <div className="internal-fsb-element" internal-fsb-guid="c3d853d0">
+                            <div className="container-fluid">
+                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="49a6327a">
+                                  ABC
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="24d70384">
+                            <div className="container-fluid">
+                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="0b66e663">
+                                  ABC
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="3493d374">
+                            <div className="container-fluid">
+                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="751e10de">
+                                  ABC
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="internal-fsb-element col-12" internal-fsb-guid="a1595e85">
+                            <div className="container-fluid">
+                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="513d9c87">
+                                  ABC
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="ab6509ae">
-                          <div className="container-fluid">
-                            <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                        <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="ed65b978" style={{'display': 'table-cell', 'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'scroll', 'MsOverflowY': 'scroll'}}>
+                          <div className="internal-fsb-element" internal-fsb-guid="ae9a328e">
+                            <div className="container-fluid">
+                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="ed9dee96">
+                                  ABC
+                                </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="9a851e7c">
-                          <div className="container-fluid">
-                            <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                          <div className="internal-fsb-element" internal-fsb-guid="51201e78">
+                            <div className="container-fluid">
+                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="bea1ebe5">
+                                  ABC
+                                </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="939e05e7">
-                          <div className="container-fluid">
-                            <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                          <div className="internal-fsb-element" internal-fsb-guid="76cdd2cd">
+                            <div className="container-fluid">
+                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="7958b83c">
+                                  ABC
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="internal-fsb-element" internal-fsb-guid="3318b254">
+                            <div className="container-fluid">
+                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="a34ccc8e">
+                                  ABC
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
