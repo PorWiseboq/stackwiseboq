@@ -85,93 +85,65 @@ class FlowLayout_6e517cd5 extends Base {
   protected render(): any {
     return (
       <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="6e517cd5" style={Object.assign({}, this.props.forward && this.props.forward.styles || {})}>
-        
         <div className="container-fluid">
-          
           <div className="row internal-fsb-strict-layout" style={{'display': 'block'}}>
-            
             <div className="internal-fsb-inheriting-element" style={{'float': 'left', 'paddingBottom': '10px'}}>
-              
               <div className="container-fluid">
-                
                 <div className="row internal-fsb-strict-layout">
-                  
                   <div className="internal-fsb-inheriting-element" style={{'width': '210px'}}>
-                    
                     <div className="container-fluid">
-                      
                       <div className="row internal-fsb-strict-layout">
-                        
                         <div className="col-6 offset-0 internal-fsb-inheriting-element" style={{'textAlign': 'center', 'fontFamily': 'Roboto', 'color': 'rgba(22, 98, 250, 1)', 'fontSize': '24px', 'fontWeight': '400'}}>
                           Wise
                         </div>
-                        
                         <div className="col-6 offset-0 internal-fsb-inheriting-element" style={{'textAlign': 'center', 'color': 'rgba(255, 255, 255, 1)', 'fontFamily': 'Roboto', 'fontSize': '24px', 'fontWeight': '400', 'background': 'rgba(22, 98, 250, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px'}}>
                           BOQ
                         </div>
-                        
                         <div className="col-12 internal-fsb-inheriting-element" style={{'paddingLeft': '5px', 'paddingRight': '5px', 'fontFamily': 'Roboto', 'fontSize': '13px', 'textAlign': 'center', 'paddingTop': '5px'}}>
                           สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์
                         </div>
-                        
                       </div>
-                      
                     </div>
-                    
                   </div>
-                  
                 </div>
-                
               </div>
-              
             </div>
-            
             <div className="internal-fsb-inheriting-element" style={{'fontSize': '14px', 'float': 'right', 'marginTop': '15px', 'marginRight': '15px'}}>
-              
               <div className="container-fluid">
-                
                 <div className="row internal-fsb-strict-layout">
-                  
+                  <div className="internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                    <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/buy.png" />
+                  </div>
                   <a className="internal-fsb-inheriting-element" href="/buyer" target="">
-                    
                     <div className="internal-fsb-inheriting-element">
                       สำหรับผู้ที่ต้องการสั่งซื้อ
                     </div>
-                    
                   </a>
-                  
                   <div className="-fsb-self-57595ad9 internal-fsb-inheriting-element">
                   </div>
-                  
+                  <div className="internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                    <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid.png" />
+                  </div>
                   <a className="internal-fsb-inheriting-element" href="/bidder">
-                    
                     <div className="internal-fsb-inheriting-element">
                       สำหรับร้านค้าวัสดุก่อสร้าง
                     </div>
-                    
                   </a>
-                  
                   <div className="-fsb-preset-57595ad9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '57595ad9'}}>
                   </div>
-                  
+                  <div className="internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                    <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png" />
+                  </div>
                   <a className="internal-fsb-inheriting-element" href="/authentication">
-                    
                     <div className="internal-fsb-inheriting-element">
                       เข้าสู่ระบบ
                     </div>
-                    
                   </a>
-                  
                 </div>
-                
               </div>
-              
             </div>
-            
           </div>
-          
         </div>
-        
       </div>
     )
   }
