@@ -213,6 +213,14 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
+		RequestHelper.registerInput('1382e4c9', undefined, undefined, undefined);
+		ValidationHelper.registerInput('1382e4c9', "Price", false, undefined);
+    input = RequestHelper.getInput(request, '1382e4c9');
+    
+    // Override data parsing and manipulation of Price here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->

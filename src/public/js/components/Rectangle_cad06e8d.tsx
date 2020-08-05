@@ -232,7 +232,7 @@ class Rectangle_cad06e8d extends Base {
                                       ประมูลผ่าน
                                     </div>
                                     <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="4bb72418" style={{'FsbInheritedPresets': '4839e353', 'textAlign': 'left'}}>
-                                      งานประมูลราคาวัสดุก่อสร้างซึ่งผ่านงานประมูลที่รอลูกค้าเลือกซื้อ
+                                      งานประมูลราคาวัสดุก่อสร้างซึ่งผ่านงานประมูลที่รอลูกค้าเลือกซื้อ กรุณาระบุราคาของแต่ละรายการภายใน 24 ชั่วโมง
                                     </div>
                                   </div>
                                 </div>
@@ -387,13 +387,13 @@ class Rectangle_cad06e8d extends Base {
                                       <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="7484ac1e" style={{'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
                                         รายละเอียดโดยย่อ
                                       </div>
-                                      <div className="internal-fsb-element col-12" internal-fsb-guid="1715aae1" style={{'textAlign': 'center', 'marginBottom': '15px'}}>
+                                      <div className="internal-fsb-element col-12 -fsb-self-1715aae1" internal-fsb-guid="1715aae1">
                                         ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
                                       </div>
-                                      <div className="internal-fsb-element col-12" internal-fsb-guid="c6ba5b53" style={{'background': 'rgba(214, 237, 255, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'marginBottom': '5px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'borderBottomStyle': 'solid', 'borderTopWidth': '1px', 'borderLeftWidth': '1px', 'borderRightWidth': '1px', 'borderBottomWidth': '1px', 'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                                      <div className="internal-fsb-element col-12 -fsb-self-c6ba5b53" internal-fsb-guid="c6ba5b53">
                                         <div className="container-fluid">
                                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                            <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="65ec89d1" style={{'fontSize': '13px', 'color': 'rgba(69, 69, 69, 1)', 'background': 'rgba(255, 255, 255, 0)', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px'}}>
+                                            <div className="internal-fsb-element col-4 offset-0 -fsb-self-65ec89d1" internal-fsb-guid="65ec89d1">
                                               <div className="container-fluid">
                                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                                   <div className="internal-fsb-element col-12" internal-fsb-guid="a818c946">
@@ -480,11 +480,11 @@ class Rectangle_cad06e8d extends Base {
                                           </div>
                                         </div>
                                       </div>
-                                      <div className="internal-fsb-element col-12" internal-fsb-guid="da4a5daa" style={{'textAlign': 'center', 'marginBottom': '10px', 'marginTop': '10px'}}>
-                                        ราคาเสนอราคาใหม่ที่
+                                      <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="da4a5daa" style={{'FsbInheritedPresets': '1715aae1'}}>
+                                        เสนอราคาใหม่ที่ราคา
                                       </div>
                                       <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="c03d6613" style={{'display': 'block', 'width': '100%'}}>
-                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="รวมราคาทั้งหมด" />
+                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ราคารวมทั้งหมด" />
                                       </div>
                                       <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="2b06dab6">
                                         บาท
@@ -503,9 +503,83 @@ class Rectangle_cad06e8d extends Base {
                           <div className="internal-fsb-element" internal-fsb-guid="51201e78">
                             <div className="container-fluid">
                               <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12" internal-fsb-guid="bea1ebe5">
-                                  ABC
+                                <div className="internal-fsb-element col-12" internal-fsb-guid="7b15e8a1">
+                                  <div className="container-fluid">
+                                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                      <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="c7226b52" style={{'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                                        ชื่อรายการ
+                                      </div>
+                                      <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="39ca61d5" style={{'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                                        รายละเอียดโดยย่อ
+                                      </div>
+                                      <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="e1b315be" style={{'FsbInheritedPresets': '1715aae1'}}>
+                                        คุณอยู่อันดับที่ 2 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอไม่ครบ
+                                      </div>
+                                      <div className="internal-fsb-element col-12 -fsb-preset-c6ba5b53" internal-fsb-guid="ce9a10c5" style={{'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'}}>
+                                        <div className="container-fluid">
+                                          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                            <div className="internal-fsb-element col-4 offset-0 -fsb-preset-65ec89d1" internal-fsb-guid="19ce03e8" style={{'FsbInheritedPresets': '65ec89d1'}}>
+                                              <div className="container-fluid">
+                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="07673d1a">
+                                                    ชื่อวัสดุ
+                                                  </div>
+                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="19d0b023">
+                                                    ขนาด
+                                                  </div>
+                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="bd0d3bad">
+                                                    ปริมาณ
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div className="internal-fsb-element -fsb-preset-65ec89d1 col-3 offset-0" internal-fsb-guid="9ecd9ed0" style={{'FsbInheritedPresets': '65ec89d1'}}>
+                                              <div className="container-fluid">
+                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="00758360" style={{'fontWeight': 'bold', 'marginBottom': '5px'}}>
+                                                    สินค้าเทียบเคียง: ทดแทน
+                                                  </div>
+                                                  <div className="internal-fsb-element col-9 offset-0" internal-fsb-guid="1382e4c9" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}}>
+                                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}} type="text" placeholder="ราคา" />
+                                                  </div>
+                                                  <div className="internal-fsb-element col-3 offset-0" internal-fsb-guid="530bacd3" style={{'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '0px'}}>
+                                                    บาท
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div className="internal-fsb-element col-5 offset-0 -fsb-preset-65ec89d1" internal-fsb-guid="176a4c29" style={{'FsbInheritedPresets': '65ec89d1'}}>
+                                              <div className="container-fluid">
+                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="b840c1c0" style={{'fontWeight': 'bold', 'marginBottom': '5px'}}>
+                                                    เปลี่ยนวัสดุเป็น:
+                                                  </div>
+                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="8656cea5">
+                                                    ชื่อวัสดุใหม่
+                                                  </div>
+                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="ed22bc9a">
+                                                    ขนาดใหม่
+                                                  </div>
+                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="a9a3406a">
+                                                    ปริมาณใหม่
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
+                                <div className="internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0" internal-fsb-guid="5428078e" style={{'FsbInheritedPresets': '1715aae1'}}>
+                                  คุณเสนอราคาที่ 125,000 บาท
+                                </div>
+                                <button className="internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm" internal-fsb-guid="d3e31c36" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
+                                  <div className="internal-fsb-element" internal-fsb-guid="d3e31c36-text">
+                                    ยกเลิก
+                                  </div>
+                                </button>
                               </div>
                             </div>
                           </div>
