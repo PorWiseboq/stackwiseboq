@@ -93,6 +93,9 @@ class FlowLayout_35ed65de extends Base {
                   <div className="col-12 -fsb-self-4011457d internal-fsb-inheriting-element">
                     ผู้ต้องการสั่งซื้อ
                   </div>
+                  <div className="col-6 offset-3 internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                    <img style={{'display': 'block', 'width': '100%', 'marginTop': '15px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/home-repair.png" />
+                  </div>
                   <div className="col-12 -fsb-self-5d1104e1 internal-fsb-inheriting-element">
                     ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที
                   </div>
@@ -114,6 +117,9 @@ class FlowLayout_35ed65de extends Base {
                 <div className="row internal-fsb-strict-layout">
                   <div className="col-12 -fsb-preset-4011457d internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '4011457d'}}>
                     ร้านค้าวัสดุก่อสร้าง
+                  </div>
+                  <div className="col-6 offset-3 internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                    <img style={{'display': 'block', 'width': '100%', 'minHeight': '100px', 'marginTop': '15px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/laptop-auction.png" />
                   </div>
                   <div className="col-12 -fsb-preset-5d1104e1 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '5d1104e1'}}>
                     ไม่ว่าคุณจะเป็นร้านค้าวัสดุก่อสร้าง เล็กหรือใหญ่ คุณสามารถหาลูกค้าของคุณได้มากยิ่งขึ้นจากอินเทอร์เน็ต โดยใช้ระบบประมูลราคาเพื่อดึงดูดให้ลูกค้าเลือกซื้อ โดยที่ราคาวัสดุก่อสร้างของคุณนั้นไม่สามารถเห็นได้โดยคู่แข่ง
