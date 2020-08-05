@@ -111,12 +111,27 @@ class Rectangle_cad06e8d extends Base {
           </div>
         </div>
         <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="a30c3884" style={{'background': 'rgba(255, 255, 255, 0)', 'flexGrow': '1', 'WebkitFlexGrow': '1', 'display': 'flex'}}>
-          <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="712e9de1" style={{'borderRightColor': 'rgba(255, 255, 255, 1)', 'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1.0)', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'fontSize': '14px', 'width': '60px', 'paddingLeft': '10px'}}>
-            <div className="internal-fsb-element" internal-fsb-guid="74e4253b">
+          <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="712e9de1" style={{'borderRightColor': 'rgba(255, 255, 255, 1)', 'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1.0)', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'fontSize': '14px', 'width': '100px'}}>
+            <div className="internal-fsb-element" internal-fsb-guid="74e4253b" style={{'null': 'undefined'}}>
               <div className="container-fluid">
                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                  <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="04b90b11" style={{'display': 'block', 'width': '100%', 'minHeight': '26px'}}>
-                    <img style={{'display': 'block', 'width': '100%', 'minHeight': '26px'}} />
+                  <div className="internal-fsb-element col-12" internal-fsb-guid="04b90b11" style={{'display': 'block', 'width': '100%'}}>
+                    <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png" />
+                  </div>
+                  <div className="internal-fsb-element col-12" internal-fsb-guid="42b3dc9b" style={{'display': 'block', 'width': '100%'}}>
+                    <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-active.png" />
+                  </div>
+                  <div className="internal-fsb-element col-12" internal-fsb-guid="b6ec8d55" style={{'display': 'block', 'width': '100%'}}>
+                    <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png" />
+                  </div>
+                  <div className="internal-fsb-element col-12" internal-fsb-guid="40ada351" style={{'display': 'block', 'width': '100%'}}>
+                    <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-active.png" />
+                  </div>
+                  <div className="internal-fsb-element col-12" internal-fsb-guid="4bac7ab7" style={{'display': 'block', 'width': '100%'}}>
+                    <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png" />
+                  </div>
+                  <div className="internal-fsb-element col-12" internal-fsb-guid="7eb8a313" style={{'display': 'block', 'width': '100%'}}>
+                    <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-active.png" />
                   </div>
                 </div>
               </div>
