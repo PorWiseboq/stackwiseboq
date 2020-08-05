@@ -92,7 +92,7 @@ class FlowLayout_535be65e extends Base {
               <div className="container-fluid">
                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                   <div className="internal-fsb-element" internal-fsb-guid="8eaa2c0a" style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}}>
-                    <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/people.png" />
+                    <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/buy.png" />
                   </div>
                   <a className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="2934a208" href="/buyer" target="">
                     <div className="internal-fsb-element" internal-fsb-guid="2934a208-text">
