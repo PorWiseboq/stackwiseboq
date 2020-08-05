@@ -149,6 +149,70 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+		RequestHelper.registerInput('1832b944', undefined, undefined, undefined);
+		ValidationHelper.registerInput('1832b944', "Radio 5", false, undefined);
+    input = RequestHelper.getInput(request, '1832b944');
+    
+    // Override data parsing and manipulation of Radio 5 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('b91e2739', undefined, undefined, undefined);
+		ValidationHelper.registerInput('b91e2739', "Radio 4", false, undefined);
+    input = RequestHelper.getInput(request, 'b91e2739');
+    
+    // Override data parsing and manipulation of Radio 4 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('03aab0e5', undefined, undefined, undefined);
+		ValidationHelper.registerInput('03aab0e5', "Radio 3", false, undefined);
+    input = RequestHelper.getInput(request, '03aab0e5');
+    
+    // Override data parsing and manipulation of Radio 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('957c1568', undefined, undefined, undefined);
+		ValidationHelper.registerInput('957c1568', "Radio 6", false, undefined);
+    input = RequestHelper.getInput(request, '957c1568');
+    
+    // Override data parsing and manipulation of Radio 6 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('9c338431', undefined, undefined, undefined);
+		ValidationHelper.registerInput('9c338431', "Name", false, undefined);
+    input = RequestHelper.getInput(request, '9c338431');
+    
+    // Override data parsing and manipulation of Name here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('d913e6a1', undefined, undefined, undefined);
+		ValidationHelper.registerInput('d913e6a1', "Size", false, undefined);
+    input = RequestHelper.getInput(request, 'd913e6a1');
+    
+    // Override data parsing and manipulation of Size here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('c22ec668', undefined, undefined, undefined);
+		ValidationHelper.registerInput('c22ec668', "Quantity", false, undefined);
+    input = RequestHelper.getInput(request, 'c22ec668');
+    
+    // Override data parsing and manipulation of Quantity here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('c03d6613', undefined, undefined, undefined);
+		ValidationHelper.registerInput('c03d6613', "Textbox 5", false, undefined);
+    input = RequestHelper.getInput(request, 'c03d6613');
+    
+    // Override data parsing and manipulation of Textbox 5 here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
