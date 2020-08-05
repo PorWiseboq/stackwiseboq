@@ -85,59 +85,45 @@ class FlowLayout_535be65e extends Base {
   protected render(): any {
     return (
       <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="535be65e" style={Object.assign({'null': 'undefined'}, this.props.forward && this.props.forward.styles || {})}>
-        
         <div className="container-fluid">
-          
           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor" style={{'display': 'block'}}>
-            
             <Project.Controls.FlowLayout_00ce1665 forward={{'classes': '', 'styles': {}}} />
-            
             <div className="internal-fsb-element" internal-fsb-guid="1136ae7c" style={{'fontSize': '14px', 'float': 'right', 'marginTop': '15px', 'marginRight': '15px'}}>
-              
               <div className="container-fluid">
-                
                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                  
+                  <div className="internal-fsb-element" internal-fsb-guid="8eaa2c0a" style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}}>
+                    <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/people.png" />
+                  </div>
                   <a className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="2934a208" href="/buyer" target="">
-                    
                     <div className="internal-fsb-element" internal-fsb-guid="2934a208-text">
                       สำหรับผู้ที่ต้องการสั่งซื้อ
                     </div>
-                    
                   </a>
-                  
                   <div className="internal-fsb-element internal-fsb-allow-cursor -fsb-self-57595ad9" internal-fsb-guid="57595ad9">
                   </div>
-                  
+                  <div className="internal-fsb-element" internal-fsb-guid="4db67171" style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}}>
+                    <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid.png" />
+                  </div>
                   <a className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="7001d8c4" href="/bidder">
-                    
                     <div className="internal-fsb-element" internal-fsb-guid="7001d8c4-text">
                       สำหรับร้านค้าวัสดุก่อสร้าง
                     </div>
-                    
                   </a>
-                  
                   <div className="internal-fsb-element internal-fsb-allow-cursor -fsb-preset-57595ad9" internal-fsb-guid="48d1ac00" style={{'FsbInheritedPresets': '57595ad9'}}>
                   </div>
-                  
+                  <div className="internal-fsb-element" internal-fsb-guid="530a1666" style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}}>
+                    <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png" />
+                  </div>
                   <a className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="24c1dbd3" href="/authentication">
-                    
                     <div className="internal-fsb-element" internal-fsb-guid="24c1dbd3-text">
                       เข้าสู่ระบบ
                     </div>
-                    
                   </a>
-                  
                 </div>
-                
               </div>
-              
             </div>
-            
           </div>
-          
         </div>
-        
       </div>
     )
   }
