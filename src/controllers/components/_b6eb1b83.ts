@@ -92,10 +92,10 @@ class Controller extends Base {
    		if (this.request.session && this.request.session.uid) {
    		  switch (this.request.session.role) {
    		    case 'buyer':
-            this.response.redirect('/buyer/auction');
+            this.response.redirect('/authentication/role/buyer');
    		      return;
    		    case 'bidder':
-            this.response.redirect('/buyer/bidder');
+            this.response.redirect('/authentication/role/bidder');
    		      return;
    		    default:
    		      break;

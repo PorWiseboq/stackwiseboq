@@ -104,7 +104,13 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+ 		return new Promise(async (resolve) => {
+   		if (!this.request.session || !this.request.session.uid) {
+        this.response.redirect('/authentication');
+      }
+      
+   	  resolve(null);
+    });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -171,6 +177,15 @@ class Controller extends Base {
     
     // Override data parsing and manipulation of Textbox 7 here:
     // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('bd78c5c4', "relational", "User", "id");
+		ValidationHelper.registerInput('bd78c5c4', "Hidden 2", false, undefined);
+    input = RequestHelper.getInput(request, 'bd78c5c4');
+    
+    // Override data parsing and manipulation of Hidden 2 here:
+    // 
+    if (input) input.value = this.request.session.uid;
     
     if (input != null) data.push(input);
 	  // <---Auto[Merging]

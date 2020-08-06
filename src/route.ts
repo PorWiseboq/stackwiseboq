@@ -14,6 +14,8 @@ const route = (app: any) => {
  app.post("/authentication/role", homeController._b6eb1b83);
  app.get("/authentication/role/bidder", homeController._ea2e6d53);
  app.post("/authentication/role/bidder", homeController._ea2e6d53);
+ app.get("/authentication/role/buyer", homeController._5488072c);
+ app.post("/authentication/role/buyer", homeController._5488072c);
  app.get("/bidder", homeController._8857ca68);
  app.post("/bidder", homeController._8857ca68);
  app.get("/bidder/auction", homeController._7e709334);
@@ -32,8 +34,6 @@ const route = (app: any) => {
  app.post("/buyer/auction/waiting", homeController._8a4a42e4);
  app.get("/error/:code", homeController._bbc7dba3);
  app.post("/error/:code", homeController._bbc7dba3);
- app.get("/authentication/role/buyer", homeController._5488072c);
- app.post("/authentication/role/buyer", homeController._5488072c);
 }
 
 export default route;

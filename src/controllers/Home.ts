@@ -7,6 +7,7 @@ import Component6ce794ec from "./components/_6ce794ec.js";
 import Componentd1e3b3b3 from "./components/_d1e3b3b3.js";
 import Componentb6eb1b83 from "./components/_b6eb1b83.js";
 import Componentea2e6d53 from "./components/_ea2e6d53.js";
+import Component5488072c from "./components/_5488072c.js";
 import Component8857ca68 from "./components/_8857ca68.js";
 import Component7e709334 from "./components/_7e709334.js";
 import Componentc3da32d7 from "./components/_c3da32d7.js";
@@ -16,7 +17,6 @@ import Component65e04a88 from "./components/_65e04a88.js";
 import Component473d370d from "./components/_473d370d.js";
 import Component8a4a42e4 from "./components/_8a4a42e4.js";
 import Componentbbc7dba3 from "./components/_bbc7dba3.js";
-import Component5488072c from "./components/_5488072c.js";
 
 export const index = (req: Request, res: Response) => {
 	new Componentindex(req, res, "home/index");
@@ -32,6 +32,9 @@ export const _b6eb1b83 = (req: Request, res: Response) => {
 }
 export const _ea2e6d53 = (req: Request, res: Response) => {
 	new Componentea2e6d53(req, res, "home/_ea2e6d53");
+}
+export const _5488072c = (req: Request, res: Response) => {
+	new Component5488072c(req, res, "home/_5488072c");
 }
 export const _8857ca68 = (req: Request, res: Response) => {
 	new Component8857ca68(req, res, "home/_8857ca68");
@@ -59,9 +62,6 @@ export const _8a4a42e4 = (req: Request, res: Response) => {
 }
 export const _bbc7dba3 = (req: Request, res: Response) => {
 	new Componentbbc7dba3(req, res, "home/_bbc7dba3");
-}
-export const _5488072c = (req: Request, res: Response) => {
-	new Component5488072c(req, res, "home/_5488072c");
 }
 
 // <--- Auto[Generating:V1]
