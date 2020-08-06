@@ -11824,11 +11824,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d00dba12",
+        "selectingElementGUID": "d66b23a4",
         "currentCursorWalkPath": [
-          "d00dba12",
+          "91074151",
           0,
-          3,
+          2,
           null
         ]
       },
@@ -13126,7 +13126,7 @@
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"eb17109d\" internal-fsb-name=\"Connection 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 1226px; top: 315px; width: 10px; min-height: 20px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Substitute\" data-target-entity-name=\"aid\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"618a3aa1\" internal-fsb-name=\"Connection 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 1244px; top: 447px; width: 150px;\" data-source-group-name=\"Substitute\" data-source-entity-name=\"lid\" data-target-group-name=\"Listing\" data-target-entity-name=\"lid\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"b84d6e06\" internal-fsb-name=\"Connection 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 913px; top: 253px; width: 150px;\" data-source-group-name=\"Store\" data-source-entity-name=\"sid\" data-target-group-name=\"Auction\" data-target-entity-name=\"sid\"></div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"4bdcc412\" internal-fsb-name=\"RelationalTable 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 1150px; top: 95px; width: 150px;\" data-title-name=\"Store\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"4bdcc412\" internal-fsb-name=\"RelationalTable 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 1148px; top: 94px; width: 225px; min-height: 179px;\" data-title-name=\"Store\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Store</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -13135,6 +13135,9 @@
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"46c70c90\" internal-fsb-name=\"RelationalColumn 16\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"number\" data-required=\"true\" data-unique=\"true\" data-title-name=\"oid\">",
       "                                        <div class=\"internal-fsb-title\">oid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"b0938184\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" style=\"min-height: 46px\" data-title-name=\"name\" data-required=\"true\" data-unique=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">name</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"12c78c70\" internal-fsb-name=\"RelationalColumn 17\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"supervisorName\">",
       "                                        <div class=\"internal-fsb-title\">supervisorName</div>",
@@ -14254,6 +14257,13 @@
             "required": true,
             "unique": true
           },
+          "name": {
+            "name": "name",
+            "guid": "b0938184",
+            "fieldType": null,
+            "required": true,
+            "unique": true
+          },
           "supervisorName": {
             "name": "supervisorName",
             "guid": "12c78c70",
@@ -14534,7 +14544,7 @@
     "c3da32d7": "035717894c57a821c07dd6f40a0e97d985587685",
     "8a4a42e4": "393b054f9c01477ebf3df766f95c62514202bed6",
     "473d370d": "d1a0c2358786cbbd1573aec20491bbce14b5b8b4",
-    "ea2e6d53": "50074cd47d94b6a16bc051a870466199960aa333",
+    "ea2e6d53": "d7949346c3d27ba494c3860aecf1bb4d393ee805",
     "5488072c": "92f438bb3bc1d0d6dfbcd3396bfd8c08784c8c12"
   }
 }
