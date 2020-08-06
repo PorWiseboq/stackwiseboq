@@ -60,7 +60,7 @@
                             </div>
                             
                             <div internal-fsb-guid="ab3a1c6e" class="internal-fsb-element col-7 offset-0">
-                              <input class="form-control" style="display: block; width: 100%;" type="text" />
+                              <input class="form-control" style="display: block; width: 100%;" type="text" required="true" />
                             </div>
                             
                           </div>
@@ -80,7 +80,7 @@
                             </div>
                             
                             <div internal-fsb-guid="340b9ddb" class="internal-fsb-element col-7 offset-0">
-                              <input class="form-control" style="display: block; width: 100%;" type="text" />
+                              <input class="form-control" style="display: block; width: 100%;" type="text" required="true" />
                             </div>
                             
                           </div>
@@ -100,7 +100,7 @@
                             </div>
                             
                             <div internal-fsb-guid="30d60c48" class="internal-fsb-element col-7 offset-0">
-                              <input class="form-control" style="display: block; width: 100%;" type="text" />
+                              <input class="form-control" style="display: block; width: 100%;" type="text" required="true" value="" />
                             </div>
                             
                           </div>
@@ -114,7 +114,7 @@
                         <div class="container-fluid">
                           
                           <div class="row internal-fsb-strict-layout">
-                            <button internal-fsb-guid="68130617" class="internal-fsb-element  col-6 offset-3 btn btn-primary" type="button">
+                            <button internal-fsb-guid="68130617" class="internal-fsb-element  col-6 offset-3 btn btn-primary" type="button" onClick="internalFsbSubmit('68130617', null, event, null)">
                               
                               <div internal-fsb-guid="68130617-text" class="internal-fsb-element">
                                 บันทึก
@@ -173,6 +173,7 @@
           return Controller;
       }());
       var controller = new Controller();
+      DataManipulationHelper.register("68130617", "update", ["ab3a1c6e", "340b9ddb", "30d60c48"], { initClass: null });
       
       </script>
       <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />

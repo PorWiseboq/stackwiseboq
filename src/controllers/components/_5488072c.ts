@@ -149,24 +149,24 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('ab3a1c6e', undefined, undefined, undefined);
-		ValidationHelper.registerInput('ab3a1c6e', "Textbox 5", false, undefined);
+		RequestHelper.registerInput('ab3a1c6e', "relational", "User", "firstName");
+		ValidationHelper.registerInput('ab3a1c6e', "Textbox 5", true, "กรุณาระบุชื่อ");
     input = RequestHelper.getInput(request, 'ab3a1c6e');
     
     // Override data parsing and manipulation of Textbox 5 here:
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('340b9ddb', undefined, undefined, undefined);
-		ValidationHelper.registerInput('340b9ddb', "Textbox 6", false, undefined);
+		RequestHelper.registerInput('340b9ddb', "relational", "User", "lastName");
+		ValidationHelper.registerInput('340b9ddb', "Textbox 6", true, "กรุณาระบุนามสกุล");
     input = RequestHelper.getInput(request, '340b9ddb');
     
     // Override data parsing and manipulation of Textbox 6 here:
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('30d60c48', undefined, undefined, undefined);
-		ValidationHelper.registerInput('30d60c48', "Textbox 7", false, undefined);
+		RequestHelper.registerInput('30d60c48', "relational", "User", "contactNumber");
+		ValidationHelper.registerInput('30d60c48', "Textbox 7", true, "กรุณาระบุหมายเลชโทรศัพท์");
     input = RequestHelper.getInput(request, '30d60c48');
     
     // Override data parsing and manipulation of Textbox 7 here:
