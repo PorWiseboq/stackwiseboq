@@ -149,6 +149,94 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+		RequestHelper.registerInput('d66b23a4', "relational", "User.Store", "name");
+		ValidationHelper.registerInput('d66b23a4', "Textbox 3", true, "กรุณาระบุชื่อร้านค้า");
+    input = RequestHelper.getInput(request, 'd66b23a4');
+    
+    // Override data parsing and manipulation of Textbox 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('e27d4c3b', "relational", "User", "firstName");
+		ValidationHelper.registerInput('e27d4c3b', "Textbox 1", true, "กรุณาระบุชื่อเจ้าของร้านค้า");
+    input = RequestHelper.getInput(request, 'e27d4c3b');
+    
+    // Override data parsing and manipulation of Textbox 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('3a931201', "relational", "User", "lastName");
+		ValidationHelper.registerInput('3a931201', "Textbox 2", true, "กรุณาระบุนามสกุลเจ้าของร้านค้า");
+    input = RequestHelper.getInput(request, '3a931201');
+    
+    // Override data parsing and manipulation of Textbox 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('8bcca5bc', "relational", "User", "contactNumber");
+		ValidationHelper.registerInput('8bcca5bc', "Textbox 4", true, "กรุณาระบุเบอร์โทรศัพท์เจ้าของร้านค้า");
+    input = RequestHelper.getInput(request, '8bcca5bc');
+    
+    // Override data parsing and manipulation of Textbox 4 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('37473e1c', "relational", "User", "province");
+		ValidationHelper.registerInput('37473e1c', "Textbox 14", true, "กรุณาระบุชื่อจังหวัด");
+    input = RequestHelper.getInput(request, '37473e1c');
+    
+    // Override data parsing and manipulation of Textbox 14 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('9d2bb91e', "relational", "User", "district");
+		ValidationHelper.registerInput('9d2bb91e', "Textbox 12", true, "กรุณาระบุชื่ออำเภอ / แขวง");
+    input = RequestHelper.getInput(request, '9d2bb91e');
+    
+    // Override data parsing and manipulation of Textbox 12 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('c085ee08', "relational", "User", "subDistrict");
+		ValidationHelper.registerInput('c085ee08', "Textbox 13", true, "กรุณาระบุชื่อตำบล / เขต");
+    input = RequestHelper.getInput(request, 'c085ee08');
+    
+    // Override data parsing and manipulation of Textbox 13 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('eca33837', "relational", "User", "address");
+		ValidationHelper.registerInput('eca33837', "Textbox 9", true, "กรุณาระบุบ้านเลขที่");
+    input = RequestHelper.getInput(request, 'eca33837');
+    
+    // Override data parsing and manipulation of Textbox 9 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('3a91a437', "relational", "User", "lane");
+		ValidationHelper.registerInput('3a91a437', "Textbox 10", false, undefined);
+    input = RequestHelper.getInput(request, '3a91a437');
+    
+    // Override data parsing and manipulation of Textbox 10 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('e07e83cb', "relational", "User", "road");
+		ValidationHelper.registerInput('e07e83cb', "Textbox 11", false, undefined);
+    input = RequestHelper.getInput(request, 'e07e83cb');
+    
+    // Override data parsing and manipulation of Textbox 11 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('903420db', "relational", "User", "postalCode");
+		ValidationHelper.registerInput('903420db', "Textbox 15", true, "กรุณาระบุรหัสไปรษณีย์");
+    input = RequestHelper.getInput(request, '903420db');
+    
+    // Override data parsing and manipulation of Textbox 15 here:
+    // 
+    
+    if (input != null) data.push(input);
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
