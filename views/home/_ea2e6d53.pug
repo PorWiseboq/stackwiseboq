@@ -14,7 +14,7 @@
       <meta name="revisit-after" content="#{headers && headers.revisitAfter || '7 days'}" />
       <meta name="robots" content="#{headers && headers.robots || 'index, follow'}" />
       <meta property="og:title" content="#{headers && headers.title || ''}" />
-      <meta property="og:url" content="#{headers && headers.linkUrl || '/authentication/role'}" />
+      <meta property="og:url" content="#{headers && headers.linkUrl || '/authentication/role/bidder'}" />
       <meta property="og:image" content="#{headers && headers.imageUrl || ''}" />
       <meta property="og:type" content="#{headers && headers.itemType || 'website'}" />
       <meta property="og:description" content="#{headers && headers.description || ''}" />
@@ -28,118 +28,256 @@
         
         <div class="row internal-fsb-strict-layout internal-fsb-begin-layout">
           
-          <div internal-fsb-guid="e5020200" class="internal-fsb-element col-12">
-            
-            <div class="container-fluid">
-              
-              <div class="row internal-fsb-strict-layout">
-                
-                <span internal-fsb-init-class="Project.Controls.FlowLayout_00ce1665" internal-fsb-init-forward="{'classes': '', 'styles': {}}"></span>
-                
-              </div>
-              
-            </div>
-            
-          </div>
+          <span internal-fsb-init-class="Project.Controls.FlowLayout_00ce1665" internal-fsb-init-forward="{'classes': '', 'styles': {}}"></span>
           
-          <div internal-fsb-guid="eb7259a4" class="internal-fsb-element col-10 offset-1 -fsb-self-eb7259a4">
+          <div internal-fsb-guid="d00dba12" class="internal-fsb-element col-12 -fsb-preset-eb7259a4" style="-fsb-inherited-presets: eb7259a4;">
             
             <div class="container-fluid">
               
               <div class="row internal-fsb-strict-layout">
                 
-                <div internal-fsb-guid="8141382a" class="internal-fsb-element col-12 -fsb-self-8141382a">
-                  กรุณาเลือกบทบาท
+                <div internal-fsb-guid="3ed1711b" class="internal-fsb-element col-12 -fsb-preset-8141382a" style="-fsb-inherited-presets: 8141382a;">
+                  กรุณากรอกข้อมูลของร้านค้า
                 </div>
                 
-                <div internal-fsb-guid="41e62256" class="internal-fsb-element  col-6 offset-3 -fsb-self-41e62256">
+                <div internal-fsb-guid="e9e7d664" class="internal-fsb-element  col-6 offset-3 -fsb-preset-41e62256" style="-fsb-inherited-presets: 41e62256;">
                 </div>
                 
-                <div internal-fsb-guid="24428d5c" class="internal-fsb-element col-5 offset-0 -fsb-preset-69085d73" style="-fsb-inherited-presets: 69085d73;">
+                <div internal-fsb-guid="cbb338d5" class="internal-fsb-element col-6 offset-3">
                   
                   <div class="container-fluid">
                     
                     <div class="row internal-fsb-strict-layout">
                       
-                      <div internal-fsb-guid="95eba621" class="internal-fsb-element col-12 -fsb-preset-4011457d" style="-fsb-inherited-presets: 4011457d;">
-                        เป็นผู้ต้องการสั่งซื้อ
-                      </div>
-                      
-                      <div internal-fsb-guid="249c0e91" class="internal-fsb-element col-6 offset-3">
-                        <img style="display: block; width: 100%; margin-top: 15px;" src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/buy.png" />
-                      </div>
-                      
-                      <div internal-fsb-guid="07c00e54" class="internal-fsb-element col-12 -fsb-preset-5d1104e1" style="-fsb-inherited-presets: 5d1104e1;">
-                        ✓ สามารถกรอกรายการวัสดุก่อสร้าง
-                        <div>
-                          ✓ สามารถสั่งซื้อผ่านบัตรเครดิตได้
-                        </div>
+                      <div internal-fsb-guid="91074151" class="internal-fsb-element col-12">
                         
-                        <div>
-                          ✓ สามารถคุยกับร้านค้าวัสดุก่อสร้างต่างๆ
-                        </div>
-                        
-                        <div>
-                          ✓ ไม่คิดค่าใช้จ่ายเพิ่มเติม
+                        <div class="container-fluid">
+                          
+                          <div class="row internal-fsb-strict-layout">
+                            
+                            <div internal-fsb-guid="267cdd86" class="internal-fsb-element col-4 offset-0" style="text-align: right; padding-top: 7px; padding-right: 10px;">
+                              ชื่อร้านค้า
+                            </div>
+                            
+                            <div internal-fsb-guid="d66b23a4" class="internal-fsb-element col-8 offset-0">
+                              <input class="form-control" style="display: block; width: 100%;" type="text" />
+                            </div>
+                            
+                          </div>
+                          
                         </div>
                         
                       </div>
                       
-                      <button internal-fsb-guid="85ebe32c" class="internal-fsb-element  col-8 offset-2 btn btn-info" type="button" onClick="internalFsbSubmit('85ebe32c', null, event, null)">
+                      <div internal-fsb-guid="d331c249" class="internal-fsb-element col-12" style="margin-top: 10px;">
                         
-                        <div internal-fsb-guid="85ebe32c-text" class="internal-fsb-element">
-                          เลือก
-                        </div>
-                        
-                      </button>
-                      <input internal-fsb-guid="02987944" class="internal-fsb-element col-12" type="hidden" value="buyer" />
-                      
-                      <input internal-fsb-guid="56385616" class="internal-fsb-element col-12" type="hidden" value="123" />
-                      
-                    </div>
-                    
-                  </div>
-                  
-                </div>
-                
-                <div internal-fsb-guid="29b56091" class="internal-fsb-element col-5 offset-2 -fsb-preset-69085d73" style="-fsb-inherited-presets: 69085d73; background: rgba(153, 24, 245, 1);">
-                  
-                  <div class="container-fluid">
-                    
-                    <div class="row internal-fsb-strict-layout">
-                      
-                      <div internal-fsb-guid="83db14be" class="internal-fsb-element col-12 -fsb-preset-4011457d" style="-fsb-inherited-presets: 4011457d;">
-                        เป็นร้านค้าวัสดุก่อสร้าง
-                      </div>
-                      
-                      <div internal-fsb-guid="740b8a8c" class="internal-fsb-element col-6 offset-3">
-                        <img style="display: block; width: 100%; margin-top: 15px;" src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid.png" />
-                      </div>
-                      
-                      <div internal-fsb-guid="ecae1b8c" class="internal-fsb-element col-12 -fsb-preset-5d1104e1" style="-fsb-inherited-presets: 5d1104e1;">
-                        ✓ ขายวัสดุก่อสร้าง
-                        <div>
-                          ✓ ประมูลราคาวัสดุก่อสร้างตามที่ได้ตั้งไว้
-                        </div>
-                        
-                        <div>
-                          ✓ สามารถคุยกับลูกค้าผ่านระบบ
-                        </div>
-                        
-                        <div>
-                          ✓ มีค่าใช้จ่ายรายเดือน
+                        <div class="container-fluid">
+                          
+                          <div class="row internal-fsb-strict-layout">
+                            
+                            <div internal-fsb-guid="b29e039a" class="internal-fsb-element col-4 offset-0" style="padding-top: 7px; padding-right: 10px; text-align: right;">
+                              ชื่อ (เจ้าของร้านค้า)
+                            </div>
+                            
+                            <div internal-fsb-guid="e27d4c3b" class="internal-fsb-element col-8 offset-0">
+                              <input class="form-control" style="display: block; width: 100%;" type="text" />
+                            </div>
+                            
+                          </div>
+                          
                         </div>
                         
                       </div>
                       
-                      <button internal-fsb-guid="9e104782" class="internal-fsb-element  col-8 offset-2 btn btn-info" type="button" onClick="internalFsbSubmit('9e104782', null, event, null)">
+                      <div internal-fsb-guid="75a9d0dc" class="internal-fsb-element col-12" style="margin-top: 10px;">
                         
-                        <div internal-fsb-guid="9e104782-text" class="internal-fsb-element">
-                          เลือก
+                        <div class="container-fluid">
+                          
+                          <div class="row internal-fsb-strict-layout">
+                            
+                            <div internal-fsb-guid="7d617e5d" class="internal-fsb-element col-4 offset-0" style="text-align: right; padding-top: 7px; padding-right: 10px;">
+                              นามสกุล (เจ้าของร้านค้า)
+                            </div>
+                            
+                            <div internal-fsb-guid="3a931201" class="internal-fsb-element col-8 offset-0">
+                              <input class="form-control" style="display: block; width: 100%;" type="text" />
+                            </div>
+                            
+                          </div>
+                          
                         </div>
                         
-                      </button>
-                      <input internal-fsb-guid="899069eb" class="internal-fsb-element col-12" type="hidden" value="bidder" />
+                      </div>
+                      
+                      <div internal-fsb-guid="c7e794b0" class="internal-fsb-element col-12" style="margin-top: 10px;">
+                        
+                        <div class="container-fluid">
+                          
+                          <div class="row internal-fsb-strict-layout">
+                            
+                            <div internal-fsb-guid="3a9447ea" class="internal-fsb-element col-4 offset-0" style="text-align: right; padding-top: 7px; padding-right: 10px;">
+                              เบอร์โทรศัพท์ (เจ้าของร้านค้า)
+                            </div>
+                            
+                            <div internal-fsb-guid="8bcca5bc" class="internal-fsb-element col-8 offset-0">
+                              <input class="form-control" style="display: block; width: 100%;" type="text" />
+                            </div>
+                            
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                      
+                      <div internal-fsb-guid="3353b490" class="internal-fsb-element col-12 offset-0" style="margin-top: 10px;">
+                        
+                        <div class="container-fluid">
+                          
+                          <div class="row internal-fsb-strict-layout">
+                            
+                            <div internal-fsb-guid="8a053c9a" class="internal-fsb-element col-12">
+                              
+                              <div class="container-fluid">
+                                
+                                <div class="row internal-fsb-strict-layout">
+                                  
+                                  <div internal-fsb-guid="bee7e7b3" class="internal-fsb-element col-2 offset-0" style="padding-top: 7px; padding-right: 10px; text-align: right;">
+                                    ที่อยู่:
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="aca398eb" class="internal-fsb-element col-2 offset-0" style="text-align: right; padding-top: 7px; padding-right: 10px;">
+                                    จังหวัด
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="37473e1c" class="internal-fsb-element col-4 offset-0">
+                                    <input class="form-control" style="display: block; width: 100%;" type="text" />
+                                  </div>
+                                  
+                                </div>
+                                
+                              </div>
+                              
+                            </div>
+                            
+                            <div internal-fsb-guid="4bb18449" class="internal-fsb-element col-12" style="margin-top: 10px;">
+                              
+                              <div class="container-fluid">
+                                
+                                <div class="row internal-fsb-strict-layout">
+                                  
+                                  <div internal-fsb-guid="86ab6312" class="internal-fsb-element col-1 offset-3" style="text-align: right; padding-top: 7px; padding-right: 10px;">
+                                    อำเภอ
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="9d2bb91e" class="internal-fsb-element col-4 offset-0">
+                                    <input class="form-control" style="display: block; width: 100%;" type="text" />
+                                  </div>
+                                  
+                                </div>
+                                
+                              </div>
+                              
+                            </div>
+                            
+                            <div internal-fsb-guid="9708548b" class="internal-fsb-element col-12" style="margin-top: 10px;">
+                              
+                              <div class="container-fluid">
+                                
+                                <div class="row internal-fsb-strict-layout">
+                                  
+                                  <div internal-fsb-guid="d43d7ee8" class="internal-fsb-element col-1 offset-3" style="text-align: right; padding-top: 7px; padding-right: 10px;">
+                                    ตำบล
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="c085ee08" class="internal-fsb-element col-4 offset-0">
+                                    <input class="form-control" style="display: block; width: 100%;" type="text" />
+                                  </div>
+                                  
+                                </div>
+                                
+                              </div>
+                              
+                            </div>
+                            
+                            <div internal-fsb-guid="2bc69d3c" class="internal-fsb-element col-12" style="margin-top: 10px;">
+                              
+                              <div class="container-fluid">
+                                
+                                <div class="row internal-fsb-strict-layout">
+                                  
+                                  <div internal-fsb-guid="005dc3d9" class="internal-fsb-element col-2 offset-2" style="text-align: right; padding-top: 7px; padding-right: 10px;">
+                                    บ้านเลขที่
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="eca33837" class="internal-fsb-element col-2 offset-0">
+                                    <input class="form-control" style="display: block; width: 100%;" type="text" />
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="9476b17d" class="internal-fsb-element col-1 offset-0" style="padding-top: 7px; padding-right: 10px; text-align: right;">
+                                    ซอย
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="3a91a437" class="internal-fsb-element col-2 offset-0">
+                                    <input class="form-control" style="display: block; width: 100%;" type="text" />
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="7c1d19a9" class="internal-fsb-element col-1 offset-0" style="padding-top: 7px; padding-right: 10px; text-align: right;">
+                                    ถนน
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="e07e83cb" class="internal-fsb-element col-2 offset-0">
+                                    <input class="form-control" style="display: block; width: 100%;" type="text" />
+                                  </div>
+                                  
+                                </div>
+                                
+                              </div>
+                              
+                            </div>
+                            
+                            <div internal-fsb-guid="a2495b85" class="internal-fsb-element col-12" style="margin-top: 10px;">
+                              
+                              <div class="container-fluid">
+                                
+                                <div class="row internal-fsb-strict-layout">
+                                  
+                                  <div internal-fsb-guid="d1a3b49b" class="internal-fsb-element col-2 offset-2" style="padding-top: 7px; padding-right: 10px;">
+                                    รหัสไปรษณีย์
+                                  </div>
+                                  
+                                  <div internal-fsb-guid="903420db" class="internal-fsb-element col-4 offset-0">
+                                    <input class="form-control" style="display: block; width: 100%;" type="text" />
+                                  </div>
+                                  
+                                </div>
+                                
+                              </div>
+                              
+                            </div>
+                            
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                      
+                      <div internal-fsb-guid="0816dd23" class="internal-fsb-element col-12" style="padding-top: 20px;">
+                        
+                        <div class="container-fluid">
+                          
+                          <div class="row internal-fsb-strict-layout">
+                            <button internal-fsb-guid="e6d44b49" class="internal-fsb-element  col-4 offset-4 btn btn-primary" type="button">
+                              
+                              <div internal-fsb-guid="e6d44b49-text" class="internal-fsb-element">
+                                บันทึก
+                              </div>
+                              
+                            </button>
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
                       
                     </div>
                     
@@ -187,8 +325,6 @@
           return Controller;
       }());
       var controller = new Controller();
-      DataManipulationHelper.register("85ebe32c", "navigate", ["02987944", "56385616"], { initClass: null });
-      DataManipulationHelper.register("9e104782", "navigate", ["899069eb", "56385616"], { initClass: null });
       
       </script>
       <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
