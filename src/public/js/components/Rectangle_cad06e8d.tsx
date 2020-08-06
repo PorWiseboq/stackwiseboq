@@ -288,84 +288,86 @@ class Rectangle_cad06e8d extends Base {
                   <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="ddec7e5c" style={{'background': 'rgba(255, 255, 255, 1)', 'flexGrow': '1', 'WebkitFlexGrow': '1'}}>
                     <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="71616aa2" style={{'display': 'table', 'height': '100%', 'width': '100%'}}>
                       <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="2dbce05c" style={{'display': 'table-row'}}>
-                        <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="394c4745" style={{'display': 'table-cell', 'width': '200px', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'borderRightWidth': '2px', 'borderRightStyle': 'solid', 'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'scroll', 'MsOverflowY': 'scroll', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
-                          <div className="internal-fsb-element" internal-fsb-guid="c3d853d0">
-                            <div className="container-fluid">
-                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12 -fsb-self-5a671a7d" internal-fsb-guid="5a671a7d">
-                                  <div className="container-fluid">
-                                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                      <div className="internal-fsb-element col-12 -fsb-self-49a6327a" internal-fsb-guid="49a6327a">
-                                        ชื่อรายการ
-                                      </div>
-                                      <div className="internal-fsb-element col-7 offset-0 -fsb-self-4aee31ab" internal-fsb-guid="4aee31ab">
-                                        อันดับที่ 5 / 10
-                                      </div>
-                                      <div className="internal-fsb-element col-5 offset-0 -fsb-self-3bec5885" internal-fsb-guid="3bec5885">
-                                        เสนอครบ
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="internal-fsb-element col-12" internal-fsb-guid="24d70384" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                            <div className="container-fluid">
-                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="704100b7" style={{'FsbInheritedPresets': '5a671a7d'}}>
-                                  <div className="container-fluid">
-                                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                      <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="53d42bea" style={{'FsbInheritedPresets': '49a6327a'}}>
-                                        ชื่อรายการ
-                                      </div>
-                                      <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="3945ba95" style={{'FsbInheritedPresets': '4aee31ab'}}>
-                                        อันดับที่ 2 / 10
-                                      </div>
-                                      <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="c78396c8" style={{'FsbInheritedPresets': '3bec5885'}}>
-                                        เสนอไม่ครบ
+                        <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="03a20d7c" style={{'display': 'table-cell', 'borderRightWidth': '2px', 'width': '200px', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'position': 'relative'}}>
+                          <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="394c4745" style={{'borderRightColor': 'rgba(22, 98, 250, 1)', 'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'top': '0px', 'left': '0px', 'bottom': '0px', 'right': '0px', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
+                            <div className="internal-fsb-element" internal-fsb-guid="c3d853d0">
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  <div className="internal-fsb-element col-12 -fsb-self-5a671a7d" internal-fsb-guid="5a671a7d">
+                                    <div className="container-fluid">
+                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                        <div className="internal-fsb-element col-12 -fsb-self-49a6327a" internal-fsb-guid="49a6327a">
+                                          ชื่อรายการ
+                                        </div>
+                                        <div className="internal-fsb-element col-7 offset-0 -fsb-self-4aee31ab" internal-fsb-guid="4aee31ab">
+                                          อันดับที่ 5 / 10
+                                        </div>
+                                        <div className="internal-fsb-element col-5 offset-0 -fsb-self-3bec5885" internal-fsb-guid="3bec5885">
+                                          เสนอครบ
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div className="internal-fsb-element col-12" internal-fsb-guid="3493d374" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                            <div className="container-fluid">
-                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="24731127" style={{'borderTopWidth': '1px', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px', 'paddingTop': '5px', 'paddingLeft': '8px', 'marginBottom': '5px', 'FsbInheritedPresets': '5a671a7d'}}>
-                                  <div className="container-fluid">
-                                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                      <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="32663907" style={{'FsbInheritedPresets': '49a6327a'}}>
-                                        ชื่อรายการ
-                                      </div>
-                                      <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="211827b2" style={{'FsbInheritedPresets': '4aee31ab'}}>
-                                        150,000 บาท
-                                      </div>
-                                      <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="0e8e4701" style={{'FsbInheritedPresets': '3bec5885'}}>
-                                        ข้อความใหม่
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="24d70384" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="704100b7" style={{'FsbInheritedPresets': '5a671a7d'}}>
+                                    <div className="container-fluid">
+                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                        <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="53d42bea" style={{'FsbInheritedPresets': '49a6327a'}}>
+                                          ชื่อรายการ
+                                        </div>
+                                        <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="3945ba95" style={{'FsbInheritedPresets': '4aee31ab'}}>
+                                          อันดับที่ 2 / 10
+                                        </div>
+                                        <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="c78396c8" style={{'FsbInheritedPresets': '3bec5885'}}>
+                                          เสนอไม่ครบ
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div className="internal-fsb-element col-12" internal-fsb-guid="a1595e85" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                            <div className="container-fluid">
-                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="6bdca277" style={{'FsbInheritedPresets': '5a671a7d'}}>
-                                  <div className="container-fluid">
-                                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                      <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="1c822d56" style={{'FsbInheritedPresets': '49a6327a'}}>
-                                        ชื่อรายการ
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="3493d374" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="24731127" style={{'borderTopWidth': '1px', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px', 'paddingTop': '5px', 'paddingLeft': '8px', 'marginBottom': '5px', 'FsbInheritedPresets': '5a671a7d'}}>
+                                    <div className="container-fluid">
+                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                        <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="32663907" style={{'FsbInheritedPresets': '49a6327a'}}>
+                                          ชื่อรายการ
+                                        </div>
+                                        <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="211827b2" style={{'FsbInheritedPresets': '4aee31ab'}}>
+                                          150,000 บาท
+                                        </div>
+                                        <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="0e8e4701" style={{'FsbInheritedPresets': '3bec5885'}}>
+                                          ข้อความใหม่
+                                        </div>
                                       </div>
-                                      <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="39506c79" style={{'FsbInheritedPresets': '4aee31ab'}}>
-                                        55,000 บาท
-                                      </div>
-                                      <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="9ec45baa" style={{'FsbInheritedPresets': '3bec5885'}}>
-                                        บัตรเครดิต
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="a1595e85" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="6bdca277" style={{'FsbInheritedPresets': '5a671a7d'}}>
+                                    <div className="container-fluid">
+                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                        <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="1c822d56" style={{'FsbInheritedPresets': '49a6327a'}}>
+                                          ชื่อรายการ
+                                        </div>
+                                        <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="39506c79" style={{'FsbInheritedPresets': '4aee31ab'}}>
+                                          55,000 บาท
+                                        </div>
+                                        <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="9ec45baa" style={{'FsbInheritedPresets': '3bec5885'}}>
+                                          บัตรเครดิต
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -374,105 +376,196 @@ class Rectangle_cad06e8d extends Base {
                             </div>
                           </div>
                         </div>
-                        <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="ed65b978" style={{'display': 'table-cell', 'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'scroll', 'MsOverflowY': 'scroll'}}>
-                          <div className="internal-fsb-element" internal-fsb-guid="ae9a328e">
-                            <div className="container-fluid">
-                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12" internal-fsb-guid="64a6ac8c">
-                                  <div className="container-fluid">
-                                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                      <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="8c2aa238" style={{'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                                        ชื่อรายการ
-                                      </div>
-                                      <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="7484ac1e" style={{'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                                        รายละเอียดโดยย่อ
-                                      </div>
-                                      <div className="internal-fsb-element col-12 -fsb-self-1715aae1" internal-fsb-guid="1715aae1">
-                                        ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
-                                      </div>
-                                      <div className="internal-fsb-element col-12 -fsb-self-c6ba5b53" internal-fsb-guid="c6ba5b53">
-                                        <div className="container-fluid">
-                                          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                            <div className="internal-fsb-element col-4 offset-0 -fsb-self-65ec89d1" internal-fsb-guid="65ec89d1">
-                                              <div className="container-fluid">
-                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="a818c946">
-                                                    ชื่อวัสดุ
+                        <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="154b7137" style={{'display': 'table-cell', 'position': 'relative'}}>
+                          <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="ed65b978" style={{'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'left': '0px', 'top': '0px', 'right': '0px', 'bottom': '0px', 'paddingTop': '5px', 'paddingBottom': '5px'}}>
+                            <div className="internal-fsb-element" internal-fsb-guid="ae9a328e">
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  <div className="internal-fsb-element col-12" internal-fsb-guid="64a6ac8c">
+                                    <div className="container-fluid">
+                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                        <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="8c2aa238" style={{'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                                          ชื่อรายการ
+                                        </div>
+                                        <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="7484ac1e" style={{'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                                          รายละเอียดโดยย่อ
+                                        </div>
+                                        <div className="internal-fsb-element col-12 -fsb-self-1715aae1" internal-fsb-guid="1715aae1">
+                                          ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
+                                        </div>
+                                        <div className="internal-fsb-element col-12 -fsb-self-c6ba5b53" internal-fsb-guid="c6ba5b53">
+                                          <div className="container-fluid">
+                                            <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                              <div className="internal-fsb-element col-4 offset-0 -fsb-self-65ec89d1" internal-fsb-guid="65ec89d1">
+                                                <div className="container-fluid">
+                                                  <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="a818c946">
+                                                      ชื่อวัสดุ
+                                                    </div>
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="eccb7c51">
+                                                      ขนาด
+                                                    </div>
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="0e3365eb">
+                                                      ปริมาณ
+                                                    </div>
                                                   </div>
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="eccb7c51">
-                                                    ขนาด
+                                                </div>
+                                              </div>
+                                              <div className="internal-fsb-element col-3 offset-0" internal-fsb-guid="e5e63918">
+                                                <div className="container-fluid">
+                                                  <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                    <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="b42d4545" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
+                                                      <div className="container-fluid">
+                                                        <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="1832b944" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                                                            <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
+                                                          </div>
+                                                          <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="b80041d3" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
+                                                            เจาะจง
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </label>
+                                                    <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="eb192633" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
+                                                      <div className="container-fluid">
+                                                        <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="b91e2739" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                                                            <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
+                                                          </div>
+                                                          <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="58266972" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
+                                                            เทียบเท่า
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </label>
+                                                    <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="2cb33325" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
+                                                      <div className="container-fluid">
+                                                        <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="03aab0e5" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                                                            <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
+                                                          </div>
+                                                          <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="5c2b0578" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
+                                                            ทดแทน
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </label>
+                                                    <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c1c5b10b" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
+                                                      <div className="container-fluid">
+                                                        <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="957c1568" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                                                            <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
+                                                          </div>
+                                                          <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="a3b9410d" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
+                                                            ไม่มี
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </label>
                                                   </div>
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="0e3365eb">
-                                                    ปริมาณ
+                                                </div>
+                                              </div>
+                                              <div className="internal-fsb-element col-5 offset-0" internal-fsb-guid="483390a6">
+                                                <div className="container-fluid">
+                                                  <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="9c338431" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}}>
+                                                      <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนวัสดุเป็น" />
+                                                    </div>
+                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="d913e6a1" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}}>
+                                                      <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนขนาดเป็น" />
+                                                    </div>
+                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c22ec668" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}}>
+                                                      <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนปริมาณเป็น" />
+                                                    </div>
                                                   </div>
                                                 </div>
                                               </div>
                                             </div>
-                                            <div className="internal-fsb-element col-3 offset-0" internal-fsb-guid="e5e63918">
-                                              <div className="container-fluid">
-                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                  <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="b42d4545" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
-                                                    <div className="container-fluid">
-                                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                        <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="1832b944" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                                          <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
-                                                        </div>
-                                                        <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="b80041d3" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
-                                                          เจาะจง
-                                                        </div>
-                                                      </div>
+                                          </div>
+                                        </div>
+                                        <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="da4a5daa" style={{'FsbInheritedPresets': '1715aae1'}}>
+                                          เสนอราคาใหม่ที่ราคา
+                                        </div>
+                                        <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="c03d6613" style={{'display': 'block', 'width': '100%'}}>
+                                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ราคารวมทั้งหมด" />
+                                        </div>
+                                        <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="2b06dab6">
+                                          บาท
+                                        </div>
+                                        <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9868a6d5" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
+                                          <div className="internal-fsb-element" internal-fsb-guid="9868a6d5-text">
+                                            เคาะ
+                                          </div>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="internal-fsb-element" internal-fsb-guid="51201e78">
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  <div className="internal-fsb-element col-12" internal-fsb-guid="7b15e8a1">
+                                    <div className="container-fluid">
+                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                        <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="c7226b52" style={{'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                                          ชื่อรายการ
+                                        </div>
+                                        <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="39ca61d5" style={{'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                                          รายละเอียดโดยย่อ
+                                        </div>
+                                        <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="e1b315be" style={{'FsbInheritedPresets': '1715aae1'}}>
+                                          คุณอยู่อันดับที่ 2 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอไม่ครบ
+                                        </div>
+                                        <div className="internal-fsb-element col-12 -fsb-preset-c6ba5b53" internal-fsb-guid="ce9a10c5" style={{'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'}}>
+                                          <div className="container-fluid">
+                                            <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                              <div className="internal-fsb-element col-4 offset-0 -fsb-preset-65ec89d1" internal-fsb-guid="19ce03e8" style={{'FsbInheritedPresets': '65ec89d1'}}>
+                                                <div className="container-fluid">
+                                                  <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="07673d1a">
+                                                      ชื่อวัสดุ
                                                     </div>
-                                                  </label>
-                                                  <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="eb192633" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
-                                                    <div className="container-fluid">
-                                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                        <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="b91e2739" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                                          <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
-                                                        </div>
-                                                        <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="58266972" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
-                                                          เทียบเท่า
-                                                        </div>
-                                                      </div>
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="19d0b023">
+                                                      ขนาด
                                                     </div>
-                                                  </label>
-                                                  <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="2cb33325" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
-                                                    <div className="container-fluid">
-                                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                        <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="03aab0e5" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                                          <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
-                                                        </div>
-                                                        <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="5c2b0578" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
-                                                          ทดแทน
-                                                        </div>
-                                                      </div>
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="bd0d3bad">
+                                                      ปริมาณ
                                                     </div>
-                                                  </label>
-                                                  <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c1c5b10b" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
-                                                    <div className="container-fluid">
-                                                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                        <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="957c1568" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
-                                                          <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" />
-                                                        </div>
-                                                        <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="a3b9410d" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
-                                                          ไม่มี
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </label>
+                                                  </div>
                                                 </div>
                                               </div>
-                                            </div>
-                                            <div className="internal-fsb-element col-5 offset-0" internal-fsb-guid="483390a6">
-                                              <div className="container-fluid">
-                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                  <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="9c338431" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}}>
-                                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนวัสดุเป็น" />
+                                              <div className="internal-fsb-element -fsb-preset-65ec89d1 col-3 offset-0" internal-fsb-guid="9ecd9ed0" style={{'FsbInheritedPresets': '65ec89d1'}}>
+                                                <div className="container-fluid">
+                                                  <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="00758360" style={{'fontWeight': 'bold', 'marginBottom': '5px'}}>
+                                                      สินค้าเทียบเคียง: ทดแทน
+                                                    </div>
+                                                    <div className="internal-fsb-element col-9 offset-0" internal-fsb-guid="1382e4c9" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}}>
+                                                      <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}} type="text" placeholder="ราคาต่อหน่วย" />
+                                                    </div>
+                                                    <div className="internal-fsb-element col-3 offset-0" internal-fsb-guid="530bacd3" style={{'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '0px'}}>
+                                                      บาท
+                                                    </div>
                                                   </div>
-                                                  <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="d913e6a1" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}}>
-                                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนขนาดเป็น" />
-                                                  </div>
-                                                  <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c22ec668" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}}>
-                                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนปริมาณเป็น" />
+                                                </div>
+                                              </div>
+                                              <div className="internal-fsb-element col-5 offset-0 -fsb-preset-65ec89d1" internal-fsb-guid="176a4c29" style={{'FsbInheritedPresets': '65ec89d1'}}>
+                                                <div className="container-fluid">
+                                                  <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="b840c1c0" style={{'fontWeight': 'bold', 'marginBottom': '5px'}}>
+                                                      เปลี่ยนวัสดุเป็น:
+                                                    </div>
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="8656cea5">
+                                                      ชื่อวัสดุใหม่
+                                                    </div>
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="ed22bc9a">
+                                                      ขนาดใหม่
+                                                    </div>
+                                                    <div className="internal-fsb-element col-12" internal-fsb-guid="a9a3406a">
+                                                      ปริมาณใหม่
+                                                    </div>
                                                   </div>
                                                 </div>
                                               </div>
@@ -480,138 +573,49 @@ class Rectangle_cad06e8d extends Base {
                                           </div>
                                         </div>
                                       </div>
-                                      <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="da4a5daa" style={{'FsbInheritedPresets': '1715aae1'}}>
-                                        เสนอราคาใหม่ที่ราคา
-                                      </div>
-                                      <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="c03d6613" style={{'display': 'block', 'width': '100%'}}>
-                                        <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ราคารวมทั้งหมด" />
-                                      </div>
-                                      <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="2b06dab6">
-                                        บาท
-                                      </div>
-                                      <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9868a6d5" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
-                                        <div className="internal-fsb-element" internal-fsb-guid="9868a6d5-text">
-                                          เคาะ
-                                        </div>
-                                      </button>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="internal-fsb-element" internal-fsb-guid="51201e78">
-                            <div className="container-fluid">
-                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12" internal-fsb-guid="7b15e8a1">
-                                  <div className="container-fluid">
-                                    <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                      <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="c7226b52" style={{'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                                        ชื่อรายการ
-                                      </div>
-                                      <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="39ca61d5" style={{'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                                        รายละเอียดโดยย่อ
-                                      </div>
-                                      <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="e1b315be" style={{'FsbInheritedPresets': '1715aae1'}}>
-                                        คุณอยู่อันดับที่ 2 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอไม่ครบ
-                                      </div>
-                                      <div className="internal-fsb-element col-12 -fsb-preset-c6ba5b53" internal-fsb-guid="ce9a10c5" style={{'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'}}>
-                                        <div className="container-fluid">
-                                          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                            <div className="internal-fsb-element col-4 offset-0 -fsb-preset-65ec89d1" internal-fsb-guid="19ce03e8" style={{'FsbInheritedPresets': '65ec89d1'}}>
-                                              <div className="container-fluid">
-                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="07673d1a">
-                                                    ชื่อวัสดุ
-                                                  </div>
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="19d0b023">
-                                                    ขนาด
-                                                  </div>
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="bd0d3bad">
-                                                    ปริมาณ
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div className="internal-fsb-element -fsb-preset-65ec89d1 col-3 offset-0" internal-fsb-guid="9ecd9ed0" style={{'FsbInheritedPresets': '65ec89d1'}}>
-                                              <div className="container-fluid">
-                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="00758360" style={{'fontWeight': 'bold', 'marginBottom': '5px'}}>
-                                                    สินค้าเทียบเคียง: ทดแทน
-                                                  </div>
-                                                  <div className="internal-fsb-element col-9 offset-0" internal-fsb-guid="1382e4c9" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}}>
-                                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}} type="text" placeholder="ราคาต่อหน่วย" />
-                                                  </div>
-                                                  <div className="internal-fsb-element col-3 offset-0" internal-fsb-guid="530bacd3" style={{'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '0px'}}>
-                                                    บาท
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div className="internal-fsb-element col-5 offset-0 -fsb-preset-65ec89d1" internal-fsb-guid="176a4c29" style={{'FsbInheritedPresets': '65ec89d1'}}>
-                                              <div className="container-fluid">
-                                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="b840c1c0" style={{'fontWeight': 'bold', 'marginBottom': '5px'}}>
-                                                    เปลี่ยนวัสดุเป็น:
-                                                  </div>
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="8656cea5">
-                                                    ชื่อวัสดุใหม่
-                                                  </div>
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="ed22bc9a">
-                                                    ขนาดใหม่
-                                                  </div>
-                                                  <div className="internal-fsb-element col-12" internal-fsb-guid="a9a3406a">
-                                                    ปริมาณใหม่
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
+                                  <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="53e2a8cc" style={{'FsbInheritedPresets': '1715aae1'}}>
+                                    กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด
+                                  </div>
+                                  <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="e68b9c07" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px'}}>
+                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px'}} type="text" placeholder="ค่าขนส่ง (ถ้ามี)" />
+                                  </div>
+                                  <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="95c77e1a" style={{'marginBottom': '5px'}}>
+                                    บาท
+                                  </div>
+                                  <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="dde4302b" style={{'display': 'block', 'width': '100%'}}>
+                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ส่วนลด" disabled={true} />
+                                  </div>
+                                  <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="3c910e36">
+                                    บาท
+                                  </div>
+                                  <div className="internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0" internal-fsb-guid="5428078e" style={{'FsbInheritedPresets': '1715aae1'}}>
+                                    คุณเสนอราคาที่ 125,000 บาท
+                                  </div>
+                                  <button className="internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm" internal-fsb-guid="d3e31c36" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
+                                    <div className="internal-fsb-element" internal-fsb-guid="d3e31c36-text">
+                                      ยกเลิก
                                     </div>
-                                  </div>
-                                </div>
-                                <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="53e2a8cc" style={{'FsbInheritedPresets': '1715aae1'}}>
-                                  กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด
-                                </div>
-                                <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="e68b9c07" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px'}}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px'}} type="text" placeholder="ค่าขนส่ง (ถ้ามี)" />
-                                </div>
-                                <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="95c77e1a" style={{'marginBottom': '5px'}}>
-                                  บาท
-                                </div>
-                                <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="dde4302b" style={{'display': 'block', 'width': '100%'}}>
-                                  <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ส่วนลด" disabled={true} />
-                                </div>
-                                <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="3c910e36">
-                                  บาท
-                                </div>
-                                <div className="internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0" internal-fsb-guid="5428078e" style={{'FsbInheritedPresets': '1715aae1'}}>
-                                  คุณเสนอราคาที่ 125,000 บาท
-                                </div>
-                                <button className="internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm" internal-fsb-guid="d3e31c36" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
-                                  <div className="internal-fsb-element" internal-fsb-guid="d3e31c36-text">
-                                    ยกเลิก
-                                  </div>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="internal-fsb-element" internal-fsb-guid="76cdd2cd">
-                            <div className="container-fluid">
-                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12" internal-fsb-guid="7958b83c">
-                                  ABC
+                                  </button>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div className="internal-fsb-element" internal-fsb-guid="3318b254">
-                            <div className="container-fluid">
-                              <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                <div className="internal-fsb-element col-12" internal-fsb-guid="a34ccc8e">
-                                  ABC
+                            <div className="internal-fsb-element" internal-fsb-guid="76cdd2cd">
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  <div className="internal-fsb-element col-12" internal-fsb-guid="7958b83c">
+                                    ABC
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="internal-fsb-element" internal-fsb-guid="3318b254">
+                              <div className="container-fluid">
+                                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
+                                  <div className="internal-fsb-element col-12" internal-fsb-guid="a34ccc8e">
+                                    ABC
+                                  </div>
                                 </div>
                               </div>
                             </div>
