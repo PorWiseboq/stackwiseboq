@@ -572,6 +572,9 @@ class Rectangle_cad06e8d extends Base {
                                     </div>
                                   </div>
                                 </div>
+                                <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="53e2a8cc" style={{'FsbInheritedPresets': '1715aae1'}}>
+                                  กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด
+                                </div>
                                 <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="dde4302b" style={{'display': 'block', 'width': '100%'}}>
                                   <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ส่วนลด" disabled={true} />
                                 </div>
