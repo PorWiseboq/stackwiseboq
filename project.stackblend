@@ -4330,6 +4330,8 @@
         "",
         "",
         "                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1715aae1\" internal-fsb-guid=\"53e2a8cc\" internal-fsb-name=\"TextElement 39\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\">กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด</div>",
+        "                                                                <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"e68b9c07\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-bottom: 5px\" class=\"form-control form-control-sm \" placeholder=\"ค่าขนส่ง (ถ้ามี)\"></div>",
+        "                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0\" internal-fsb-guid=\"95c77e1a\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-bottom: 5px\">บาท</div>",
         "                                                                <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"dde4302b\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" placeholder=\"ส่วนลด\" disabled=\"true\" class=\"form-control form-control-sm \"></div>",
         "                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0\" internal-fsb-guid=\"3c910e36\" internal-fsb-name=\"TextElement 38\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">บาท</div>",
         "                                                                <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0\" internal-fsb-guid=\"5428078e\" internal-fsb-name=\"TextElement 27\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\">คุณเสนอราคาที่ 125,000 บาท</div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm \" internal-fsb-guid=\"d3e31c36\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\">",
@@ -4922,11 +4924,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "24731127",
         "currentCursorWalkPath": [
           "51201e78",
           0,
-          2,
+          8,
           null
         ]
       },
@@ -12486,7 +12488,7 @@
     "8857ca68": "e9c44f4e72cdaab392fa969f533517146225c4c2",
     "b140e86b": "e9c44f4e72cdaab392fa969f533517146225c4c2",
     "b6eb1b83": "b45532b3abbbf6b4febe458e6582cfb6bfa89ab4",
-    "7e709334": "b808ed9df1cb6a7692210d7162176ea905a79f45",
+    "7e709334": "92087c4be06d4f32e1eadcf61cd37f48b2b2c388",
     "65e04a88": "6a0c18d284f5ed7a1d612e76d8f9557bda378d41",
     "9d37c390": "e15b542b11119a077c086184390600735b70bf1e",
     "6ce794ec": "f50d1cd2d760fd5136f1d44dac8cf28ffd901691",
@@ -12521,7 +12523,7 @@
     "FlowLayout_a6314edc": "3ead6bf6f76a55651027221184d395b72c0cdd09",
     "FlowLayout_41288a78": "3c9ff9ea341c7371b3b7e54049bd8d2deddeda58",
     "FlowLayout_b2020622": "de6f1ed41c49af462f64d665293f02953614a5c4",
-    "Rectangle_cad06e8d": "9235a58803d9c8b0f407ef50f262fe651e84183c"
+    "Rectangle_cad06e8d": "fdc87b87cbde42897d517b5780ac93eb9a1733a5"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "3e485690fbe98cfe2e5c4745116e482bb5e1ece2",
