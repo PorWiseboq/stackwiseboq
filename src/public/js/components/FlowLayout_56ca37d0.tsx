@@ -61,7 +61,7 @@ class FlowLayout_56ca37d0 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("68130617", "update", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null});
+    DataManipulationHelper.register("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null});
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '68130617')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '68130617').addEventListener('submitting', this.onButtonSubmitting_68130617.bind(this));
     }
