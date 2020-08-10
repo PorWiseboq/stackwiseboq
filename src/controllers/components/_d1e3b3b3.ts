@@ -166,7 +166,7 @@ class Controller extends Base {
       } else { 
         if (this.signningIn) {
           const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
-          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ? and md5_password = ?', [this.email, md5Password], (function(error, results, fields) {
+          RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ? and md5Password = ?', [this.email, md5Password], (function(error, results, fields) {
             if (error) {
               reject(new Error(`เกิดความผิดพลาดขณะติดต่อฐานข้อมูล กรุณาลองดูใหม่อีกครั้ง (${error})`));
       			} else if (results.length > 0) {
@@ -187,7 +187,7 @@ class Controller extends Base {
       				reject(new Error('อีเมล์นี้ได้สมัครใช้งานแล้ว กรุณาเข้าสู่ระบบแทนที่จะสมัคร'));
       			} else {
               const md5Password = crypto.createHash('md5').update(this.password).digest('hex');
-      			  RelationalDatabaseClient.query('INSERT INTO User (email, md5_password) VALUES ?', [[[this.email, md5Password]]], (function(error, results, fields) {
+      			  RelationalDatabaseClient.query('INSERT INTO User (email, md5Password) VALUES ?', [[[this.email, md5Password]]], (function(error, results, fields) {
           			if (!error) {
           			  RelationalDatabaseClient.query('SELECT * FROM User WHERE email = ?', [this.email], (function(error, results, fields) {
                     if (error) {
