@@ -41,7 +41,7 @@ interface IState extends IAutoBaseState {
   disabled: boolean;
 }
 
-let DefaultProps = Object.assign({}, DefaultBaseProps, {this.setState({disabled: true});
+let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {

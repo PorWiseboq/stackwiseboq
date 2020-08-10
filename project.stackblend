@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "7e709334",
+    "editingPageID": "ea2e6d53",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -11198,7 +11198,7 @@
         "  disabled: boolean;",
         "}",
         "",
-        "let DefaultProps = Object.assign({}, DefaultBaseProps, {this.setState({disabled: true});",
+        "let DefaultProps = Object.assign({}, DefaultBaseProps, {",
         "  ",
         "});",
         "let DefaultState = Object.assign({}, DefaultBaseState, {",
@@ -11958,11 +11958,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e6d44b49",
+        "selectingElementGUID": "cbb338d5",
         "currentCursorWalkPath": [
-          "0816dd23",
+          "d00dba12",
           0,
-          1,
+          3,
           null
         ]
       },
@@ -12718,9 +12718,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "56ca37d0",
         "currentCursorWalkPath": [
-          "0",
+          "41537ae8",
           0,
           3,
           null
@@ -14730,7 +14730,7 @@
     "FlowLayout_4a4ce3d8": "04e53f389fd41bb67f880166da4ce7db32181aac",
     "FlowLayout_3a49b824": "edf9d58b58f240cb1e79adc738a7991ac8034ec6",
     "FlowLayout_56ca37d0": "6117c61266df59d5e4eaf1a0746659fe92fe9d15",
-    "FlowLayout_cbb338d5": "22cce57f5dcaa7c913179ce5bfb37a0e803b34eb"
+    "FlowLayout_cbb338d5": "a5fa2206565dafde25489ed019b13292ce7315f7"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "6687f4024ec2bfd41642de6ee733c04670cbe993",
