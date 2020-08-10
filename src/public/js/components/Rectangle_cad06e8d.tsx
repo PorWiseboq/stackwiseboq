@@ -12,11 +12,10 @@ import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from '
 // Import additional modules here:
 //
 enum QuoteType {
-  IN_CONTEST,
-  OFFERING_CONSIDERATION,
-  OFFERING_SUCCEEDED,
-  OFFERING_FAILED,
-  MISSING
+  AUCTIONING,
+  OFFERING,
+  CHATTING,
+  PAID
 }
 
 // Auto[Declare]--->
@@ -44,14 +43,15 @@ interface IAutoBaseState extends IBaseState {
 interface IProps extends IAutoBaseProps {
   
 }
-interface IState extends IAutoBaseState { 
+interface IState extends IAutoBaseState {
+  quoteType: QuoteType;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  quoteType: QuoteType
+  quoteType: QuoteType.AUCTIONING
 });
 
 // Auto[ClassBegin]--->
@@ -89,7 +89,43 @@ class Rectangle_cad06e8d extends Base {
     return super.getDataFromNotation(notation, inArray);
   }
   
+  private getDisplayOf(quoteType: QuoteType, active: boolean) {
+    if (active) return (this.state.quoteType === quoteType) ? 'block' : 'none';
+    else return (this.state.quoteType === quoteType) ? 'none' : 'block';
+  }
+  
   // Auto[Merging]--->
+  protected onImageClick_04b90b11(event: Event) {
+
+    // Handle the event of onImageClick (Image 1) here:
+    // 
+    this.setState({quoteType: QuoteType.AUCTIONING});
+    
+  }
+
+  protected onImageClick_b6ec8d55(event: Event) {
+
+    // Handle the event of onImageClick (Image 2) here:
+    // 
+    this.setState({quoteType: QuoteType.OFFERING});
+    
+  }
+
+  protected onImageClick_4bac7ab7(event: Event) {
+
+    // Handle the event of onImageClick (Image 4) here:
+    // 
+    this.setState({quoteType: QuoteType.CHATTING});
+    
+  }
+
+  protected onImageClick_6b7e8340(event: Event) {
+
+    // Handle the event of onImageClick (Image 9) here:
+    // 
+    this.setState({quoteType: QuoteType.PAID});
+    
+  }
   // <---Auto[Merging]
   
   // Auto[ClassEnd]--->
@@ -120,16 +156,16 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="04b90b11" style={{'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px'}}>
-                              <img style={{'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png" />
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="04b90b11" style={{'display': (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})() || 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}} onClick={this.onImageClick_04b90b11.bind(this)}>
+                              <img style={{'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png" />
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="9a91246d" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="9a91246d" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}}>
                               เคาะประมูล
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="42b3dc9b" style={{'display': 'block', 'width': '40px', 'height': '40px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="42b3dc9b" style={{'display': (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})() || 'block', 'width': '40px', 'height': '40px'}}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-active.png" />
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="51315831" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="51315831" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}}>
                               เคาะประมูล
                             </div>
                           </div>
@@ -138,16 +174,16 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="7b54582d" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="b6ec8d55" style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px'}}>
-                              <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png" />
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="b6ec8d55" style={{'display': (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})() || 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} onClick={this.onImageClick_b6ec8d55.bind(this)}>
+                              <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png" />
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="ac1a1bce" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="ac1a1bce" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}}>
                               ประมูลผ่าน
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="40ada351" style={{'display': 'block', 'width': '40px', 'height': '40px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="40ada351" style={{'display': (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})() || 'block', 'width': '40px', 'height': '40px'}}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-active.png" />
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="936e036b" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="936e036b" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}}>
                               ประมูลผ่าน
                             </div>
                           </div>
@@ -156,16 +192,16 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="12a672c3" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="4bac7ab7" style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px'}}>
-                              <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png" />
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="4bac7ab7" style={{'display': (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})() || 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} onClick={this.onImageClick_4bac7ab7.bind(this)}>
+                              <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png" />
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="8a12a919" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="8a12a919" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}}>
                               คุยกับลูกค้า
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="7eb8a313" style={{'display': 'block', 'width': '40px', 'height': '40px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="7eb8a313" style={{'display': (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})() || 'block', 'width': '40px', 'height': '40px'}}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-active.png" />
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="579741b7" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="579741b7" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}}>
                               คุยกับลูกค้า
                             </div>
                           </div>
@@ -174,16 +210,16 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="9a5131da">
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="6b7e8340" style={{'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5'}}>
-                              <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png" />
+                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="6b7e8340" style={{'display': (()=>{return this.getDisplayOf(QuoteType.PAID, false);})() || 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}} onClick={this.onImageClick_6b7e8340.bind(this)}>
+                              <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png" />
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="83e40405" style={{'textAlign': 'center', 'color': 'rgba(255, 255, 255, 0.45)', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="83e40405" style={{'textAlign': 'center', 'color': 'rgba(255, 255, 255, 0.45)', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}}>
                               จ่ายเงินแล้ว
                             </div>
-                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="86510a55" style={{'display': 'block', 'width': '40px', 'height': '40px'}}>
+                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="86510a55" style={{'display': (()=>{return this.getDisplayOf(QuoteType.PAID, true);})() || 'block', 'width': '40px', 'height': '40px'}}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-active.png" />
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="b4775a3d" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="b4775a3d" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}}>
                               จ่ายเงินแล้ว
                             </div>
                           </div>
@@ -198,7 +234,7 @@ class Rectangle_cad06e8d extends Base {
                   <div className="internal-fsb-element" internal-fsb-guid="4069ed4d" style={{'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(22, 98, 250, 1)', 'borderBottomWidth': '2px', 'paddingTop': '10px', 'paddingBottom': '10px'}}>
                     <div className="container-fluid">
                       <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="88db4eda">
+                        <div className="internal-fsb-element col-12" internal-fsb-guid="88db4eda" style={{display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="34a98650" style={{'display': 'block', 'width': '100%'}}>
@@ -219,7 +255,7 @@ class Rectangle_cad06e8d extends Base {
                             </div>
                           </div>
                         </div>
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="0d656c9d">
+                        <div className="internal-fsb-element col-12" internal-fsb-guid="0d656c9d" style={{display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="44d05cb6" style={{'display': 'block', 'width': '100%'}}>
@@ -240,7 +276,7 @@ class Rectangle_cad06e8d extends Base {
                             </div>
                           </div>
                         </div>
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="ba43b015">
+                        <div className="internal-fsb-element col-12" internal-fsb-guid="ba43b015" style={{display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               <div className="internal-fsb-element offset--1 col-1 offset-0" internal-fsb-guid="694bb341" style={{'display': 'block', 'width': '100%'}}>
@@ -261,7 +297,7 @@ class Rectangle_cad06e8d extends Base {
                             </div>
                           </div>
                         </div>
-                        <div className="internal-fsb-element col-12" internal-fsb-guid="2d35d6ec">
+                        <div className="internal-fsb-element col-12" internal-fsb-guid="2d35d6ec" style={{display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="83bea00c" style={{'display': 'block', 'width': '100%'}}>
@@ -290,7 +326,7 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="2dbce05c" style={{'display': 'table-row'}}>
                         <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="03a20d7c" style={{'display': 'table-cell', 'borderRightWidth': '2px', 'width': '200px', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'position': 'relative'}}>
                           <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="394c4745" style={{'borderRightColor': 'rgba(22, 98, 250, 1)', 'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'top': '0px', 'left': '0px', 'bottom': '0px', 'right': '0px', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
-                            <div className="internal-fsb-element" internal-fsb-guid="c3d853d0">
+                            <div className="internal-fsb-element" internal-fsb-guid="c3d853d0" style={{display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}}>
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12 -fsb-self-5a671a7d" internal-fsb-guid="5a671a7d">
@@ -311,7 +347,7 @@ class Rectangle_cad06e8d extends Base {
                                 </div>
                               </div>
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="24d70384" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="24d70384" style={{'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}}>
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="704100b7" style={{'FsbInheritedPresets': '5a671a7d'}}>
@@ -332,7 +368,7 @@ class Rectangle_cad06e8d extends Base {
                                 </div>
                               </div>
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="3493d374" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="3493d374" style={{'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}}>
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="24731127" style={{'borderTopWidth': '1px', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px', 'paddingTop': '5px', 'paddingLeft': '8px', 'marginBottom': '5px', 'FsbInheritedPresets': '5a671a7d'}}>
@@ -353,7 +389,7 @@ class Rectangle_cad06e8d extends Base {
                                 </div>
                               </div>
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="a1595e85" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="a1595e85" style={{'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}}>
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12 -fsb-preset-5a671a7d" internal-fsb-guid="6bdca277" style={{'FsbInheritedPresets': '5a671a7d'}}>
@@ -378,7 +414,7 @@ class Rectangle_cad06e8d extends Base {
                         </div>
                         <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="154b7137" style={{'display': 'table-cell', 'position': 'relative'}}>
                           <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="ed65b978" style={{'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'left': '0px', 'top': '0px', 'right': '0px', 'bottom': '0px', 'paddingTop': '5px', 'paddingBottom': '5px'}}>
-                            <div className="internal-fsb-element" internal-fsb-guid="ae9a328e">
+                            <div className="internal-fsb-element" internal-fsb-guid="ae9a328e" style={{display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}}>
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12" internal-fsb-guid="64a6ac8c">
@@ -503,7 +539,7 @@ class Rectangle_cad06e8d extends Base {
                                 </div>
                               </div>
                             </div>
-                            <div className="internal-fsb-element" internal-fsb-guid="51201e78">
+                            <div className="internal-fsb-element" internal-fsb-guid="51201e78" style={{display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}}>
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12" internal-fsb-guid="7b15e8a1">
@@ -601,7 +637,7 @@ class Rectangle_cad06e8d extends Base {
                                 </div>
                               </div>
                             </div>
-                            <div className="internal-fsb-element" internal-fsb-guid="76cdd2cd">
+                            <div className="internal-fsb-element" internal-fsb-guid="76cdd2cd" style={{display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}}>
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12" internal-fsb-guid="7958b83c">
@@ -610,7 +646,7 @@ class Rectangle_cad06e8d extends Base {
                                 </div>
                               </div>
                             </div>
-                            <div className="internal-fsb-element" internal-fsb-guid="3318b254">
+                            <div className="internal-fsb-element" internal-fsb-guid="3318b254" style={{display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}}>
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12" internal-fsb-guid="a34ccc8e">
