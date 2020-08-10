@@ -154,16 +154,18 @@ class FlowLayout_b2020622 extends Base {
       }
       
       let data = super.getDataFromNotation(notation, inArray);
-      
       let splited = notation.split('.');
-      switch (splited[0]) {
-        case 'Quote':
-          if (data.length == 0) {
-            data.push('');
-          }
-          break;
-        case 'Listing':
-          break;
+      
+      if (inArray) {
+        switch (splited[0]) {
+          case 'Quote':
+            if (data.length == 0) {
+              data.push('');
+            }
+            break;
+          case 'Listing':
+            break;
+        }
       }
       
       return data;
