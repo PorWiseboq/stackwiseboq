@@ -133,7 +133,7 @@ class Controller extends Base {
                     } else {
                         let matched = item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/);
                         let day = parseInt(matched[1]);
-                        let month = parseInt(matched[2]) - 1;
+                        let month = parseInt(matched[2]);
                         let year = parseInt(matched[3]) - 543;
                         
                         item.value = `${year}-${month}-${day}`;
