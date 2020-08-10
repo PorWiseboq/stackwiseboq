@@ -144,7 +144,7 @@ class FlowLayout_56ca37d0 extends Base {
                     เบอร์โทรศัพท์
                   </div>
                   <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="30d60c48" style={{'display': 'block', 'width': '100%'}}>
-                    <input className="form-control" style={{'display': 'block', 'width': '100%'}} type="text" required={true} value="" disabled={this.state.disabled} />
+                    <input className="form-control" style={{'display': 'block', 'width': '100%'}} type="text" required={true} disabled={this.state.disabled} />
                   </div>
                 </div>
               </div>

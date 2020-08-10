@@ -180,7 +180,7 @@ class Controller extends Base {
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('30d60c48', "relational", "User", "contactNumber");
-		ValidationHelper.registerInput('30d60c48', "Textbox 7", true, "กรุณาระบุหมายเลชโทรศัพท์");
+		ValidationHelper.registerInput('30d60c48', "Textbox 7", true, "กรุณาระบุหมายเลขโทรศัพท์");
     input = RequestHelper.getInput(request, '30d60c48');
     
     // Override data parsing and manipulation of Textbox 7 here:

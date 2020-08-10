@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "65e04a88",
+    "editingPageID": "5488072c",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -12114,7 +12114,7 @@
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0\" internal-fsb-guid=\"a87dd41a\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: right; padding-top: 7px; padding-right: 10px\">เบอร์โทรศัพท์</div>",
-        "                                                <div class=\"internal-fsb-element col-7 offset-0\" internal-fsb-guid=\"30d60c48\" internal-fsb-name=\"Textbox 7\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาระบุหมายเลชโทรศัพท์\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User\" internal-fsb-data-source-column=\"contactNumber\" required=\"true\" value=\"\" disabled=\"{this.state.disabled}\"></div>",
+        "                                                <div class=\"internal-fsb-element col-7 offset-0\" internal-fsb-guid=\"30d60c48\" internal-fsb-name=\"Textbox 7\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาระบุหมายเลขโทรศัพท์\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User\" internal-fsb-data-source-column=\"contactNumber\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
         "                                            </div>",
         "                                        </div>",
         "                                    </div>",
@@ -12762,7 +12762,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "56ca37d0",
+        "selectingElementGUID": "30d60c48",
         "currentCursorWalkPath": [
           "41537ae8",
           0,
@@ -14740,7 +14740,7 @@
     "8a4a42e4": "e9c44f4e72cdaab392fa969f533517146225c4c2",
     "473d370d": "81a4619092ac2b7112e7b9bc4396060b0b4baea5",
     "ea2e6d53": "1c5161245061f48e0cdec1717527d073e7d215cb",
-    "5488072c": "bb1e111d569dfe4b5d762152ffadd33175182874"
+    "5488072c": "9380835fd5b0506ff4598c5fd13652b81f8be82f"
   },
   "frontEndComponentsBlobSHADict": {
     "LoginControl": "1a4b6df00c06001dcd8e33e583bb5e0157d6b06f",
@@ -14773,7 +14773,7 @@
     "FlowLayout_d700a5d4": "664f2f705dcfd4416b17cab7c79b53ba3b81f63a",
     "FlowLayout_4a4ce3d8": "04e53f389fd41bb67f880166da4ce7db32181aac",
     "FlowLayout_3a49b824": "edf9d58b58f240cb1e79adc738a7991ac8034ec6",
-    "FlowLayout_56ca37d0": "6117c61266df59d5e4eaf1a0746659fe92fe9d15",
+    "FlowLayout_56ca37d0": "33faf86beaf07a74fd879cd180c04b7e1b82d3d8",
     "FlowLayout_cbb338d5": "a5fa2206565dafde25489ed019b13292ce7315f7"
   },
   "viewBlobSHADict": {
