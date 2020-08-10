@@ -450,10 +450,10 @@ class FlowLayout_b2020622 extends Base {
                                     <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={this.getDataFromNotation("Listing[" + i + "].title")} defaultValue={this.getDataFromNotation("Listing[" + i + "].title")} />
                                   </div>
                                   <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" style={{'display': 'block', 'width': '100%'}}>
-                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value="this.getDataFromNotation(&quot;Listing[&quot; + i + &quot;].size&quot;)" defaultValue={this.getDataFromNotation("Listing[" + i + "].size")} />
+                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={this.getDataFromNotation("Listing[" + i + "].size")} defaultValue={this.getDataFromNotation("Listing[" + i + "].size")} />
                                   </div>
                                   <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" style={{'display': 'block', 'width': '100%'}}>
-                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value="this.getDataFromNotation(&quot;Listing[&quot; + i + &quot;].quantity&quot;)" defaultValue={this.getDataFromNotation("Listing[" + i + "].quantity")} />
+                                    <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={this.getDataFromNotation("Listing[" + i + "].quantity")} defaultValue={this.getDataFromNotation("Listing[" + i + "].quantity")} />
                                   </div>
                                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1" internal-fsb-guid="d910ad00" type="button" disabled={this.state.disabled} onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
                                     <div className="internal-fsb-element" internal-fsb-guid="d910ad00-text">
