@@ -518,7 +518,7 @@ class FlowLayout_b2020622 extends Base {
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               <div className="internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89" internal-fsb-guid="b6c9ad89">
-                                <input type="radio" name="substitute" value="0" required={true} disabled={this.state.disabled} defaultChecked={data == '0'} />
+                                <input type="radio" name="substitute" value="0" required={true} disabled={this.state.disabled} defaultChecked={this.getDataFromNotation("Quote.substituteQuote.substitute") == '0'} />
                               </div>
                               <div className="internal-fsb-element col-10 offset-0 -fsb-self-b5cd72c0" internal-fsb-guid="b5cd72c0">
                                 ทดแทน
