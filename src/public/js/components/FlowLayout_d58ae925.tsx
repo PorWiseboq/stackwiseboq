@@ -99,33 +99,33 @@ class FlowLayout_d58ae925 extends Base {
                         ชื่อเรื่อง
                       </div>
                       <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="d064b129" style={{'display': 'block', 'width': '100%'}} maxlength="50">
-                        <input style={{'display': 'block', 'width': '100%'}} type="text" required={true} defaultValue={data} />
+                        <input style={{'display': 'block', 'width': '100%'}} type="text" required={true} defaultValue={this.getDataFromNotation("Blog[" + i + "].title")} />
                       </div>
                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="5b62d3ee">
                         เนื้อหา
                       </div>
                       <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="a0641238" style={{'display': 'block', 'width': '100%', 'height': '50vh'}}>
-                        <textarea style={{'display': 'block', 'width': '100%', 'height': '50vh'}} type="text" required={true} defaultValue={data}>
+                        <textarea style={{'display': 'block', 'width': '100%', 'height': '50vh'}} type="text" required={true} defaultValue={this.getDataFromNotation("Blog[" + i + "].body")}>
                         </textarea>
                       </div>
                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="a8690a58">
                         โดยย่อ
                       </div>
                       <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="1d258b94" style={{'display': 'block', 'width': '100%'}} maxlength="165">
-                        <textarea style={{'display': 'block', 'width': '100%'}} type="text" rows="2" required={true} defaultValue={data}>
+                        <textarea style={{'display': 'block', 'width': '100%'}} type="text" rows="2" required={true} defaultValue={this.getDataFromNotation("Blog[" + i + "].description")}>
                         </textarea>
                       </div>
                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="556126e6">
                         คีย์เวิร์ด
                       </div>
                       <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="9ba2b637" style={{'display': 'block', 'width': '100%'}}>
-                        <input style={{'display': 'block', 'width': '100%'}} type="text" placeholder="" required={true} defaultValue={data} />
+                        <input style={{'display': 'block', 'width': '100%'}} type="text" placeholder="" required={true} defaultValue={this.getDataFromNotation("Blog[" + i + "].keywords")} />
                       </div>
                       <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="76b0ad64">
                         ที่อยู่ของรูปภาพ
                       </div>
                       <div className="internal-fsb-element col-10 offset-0" internal-fsb-guid="3dcb582a" style={{'display': 'block', 'width': '100%'}}>
-                        <input style={{'display': 'block', 'width': '100%'}} type="text" defaultValue={data} />
+                        <input style={{'display': 'block', 'width': '100%'}} type="text" defaultValue={this.getDataFromNotation("Blog[" + i + "].image")} />
                       </div>
                       <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary col-2 offset-4" internal-fsb-guid="10714c4a" style={{'marginTop': '10px'}} type="button" onClick={((event) => { window.internalFsbSubmit('10714c4a', 'Blog', event, ((results: any) => { this.manipulate('10714c4a', 'Blog', results); }).bind(this)); }).bind(this)}>
                         <div className="internal-fsb-element" internal-fsb-guid="10714c4a-text">
