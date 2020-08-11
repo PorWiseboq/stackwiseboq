@@ -4306,7 +4306,7 @@
         "",
         "",
         "",
-        "                                            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ca80140b\" internal-fsb-name=\"Auction\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-bottom: 10px\">",
+        "                                            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ca80140b\" internal-fsb-name=\"Auction\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-bottom: 10px; margin-top: 10px\">",
         "                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
@@ -5377,9 +5377,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e9c9b721",
+        "selectingElementGUID": "ca80140b",
         "currentCursorWalkPath": [
-          "9a5131da",
+          "74e4253b",
           0,
           1,
           null
@@ -15250,7 +15250,7 @@
     "FlowLayout_a6314edc": "3ead6bf6f76a55651027221184d395b72c0cdd09",
     "FlowLayout_41288a78": "295ff4128d32c5ea8a3788a0ae875718518c61fd",
     "FlowLayout_b2020622": "6536e75ea993fc1d4c52086777ff5b08377dbc04",
-    "Rectangle_cad06e8d": "213f1b88f4a10f7bb34cd163b55e25554c1f04e0",
+    "Rectangle_cad06e8d": "575dfbc50c6ecca6fc6e9db42e57a5083a1c6895",
     "FlowLayout_5e1d3916": "a9a8ee82d93e051cf1e511d0ee2130634a08ef49",
     "FlowLayout_d700a5d4": "664f2f705dcfd4416b17cab7c79b53ba3b81f63a",
     "FlowLayout_4a4ce3d8": "04e53f389fd41bb67f880166da4ce7db32181aac",

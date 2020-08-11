@@ -172,7 +172,7 @@ class Rectangle_cad06e8d extends Base {
                 <div className="internal-fsb-element" internal-fsb-guid="74e4253b" style={{'fontSize': '11px', 'flexShrink': '1', 'WebkitFlexShrink': '1', 'cursor': 'default'}}>
                   <div className="container-fluid">
                     <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                      <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px'}}>
+                      <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px', 'marginTop': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                             <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="4a579143" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results: any) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this)}>
