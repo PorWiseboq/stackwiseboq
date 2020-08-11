@@ -111,7 +111,7 @@ class FlowLayout_d7dac04b extends Base {
             <div className="internal-fsb-inheriting-element" style={{'fontSize': '14px', 'float': 'right', 'marginTop': '15px', 'marginRight': '15px'}}>
               <div className="container-fluid">
                 <div className="row internal-fsb-strict-layout">
-                  <div className="internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                  <div className="internal-fsb-inheriting-element">
                     <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/buy.png" />
                   </div>
                   <a className="internal-fsb-inheriting-element" href="/buyer" target="">
@@ -121,7 +121,7 @@ class FlowLayout_d7dac04b extends Base {
                   </a>
                   <div className="-fsb-self-57595ad9 internal-fsb-inheriting-element">
                   </div>
-                  <div className="internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                  <div className="internal-fsb-inheriting-element">
                     <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid.png" />
                   </div>
                   <a className="internal-fsb-inheriting-element" href="/bidder">
@@ -131,7 +131,7 @@ class FlowLayout_d7dac04b extends Base {
                   </a>
                   <div className="-fsb-preset-57595ad9 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '57595ad9'}}>
                   </div>
-                  <div className="internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                  <div className="internal-fsb-inheriting-element">
                     <img style={{'display': 'block', 'width': '20px', 'marginRight': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png" />
                   </div>
                   <a className="internal-fsb-inheriting-element" href="/authentication">

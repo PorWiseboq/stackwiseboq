@@ -108,10 +108,27 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
+ 		    let quoteData = [{
+   		    target: SourceType.Relational,
+          group: 'Quote',
+          name: 'qid',
+          value: undefined,
+          guid: null,
+          validation: null
+     		}
+     		let listingData = [{
+   		    target: SourceType.Relational,
+          group: 'Listing',
+          name: 'lid',
+          value: undefined,
+          guid: null,
+          validation: null
+   		  }];
+ 		    
  		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
  		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
  		    
- 		    let results = [...await DatabaseHelper.retrieve([], quote), ...await DatabaseHelper.retrieve([], listing)];
+ 		    let results = [...await DatabaseHelper.retrieve(quoteData, quote), ...await DatabaseHelper.retrieve(listingData, listing)];
  		    
  		    resolve(results);
  		  } catch(error) {

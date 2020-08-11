@@ -202,13 +202,13 @@ class FlowLayout_41288a78 extends Base {
                         <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="5eeaed97" style={{'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center', 'marginBottom': '15px'}}>
                           คุณอาจเปิดหน้านี้ทิ้งไว้หรือเข้าสู่ระบบเพื่อกลับเข้ามายังหน้านี้ในภายหลังได้เช่นกัน
                         </div>
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c6cd6a36" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}}>
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c6cd6a36" style={{padding: '0px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}} type="text" placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm" />
                         </div>
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="0c59a0a4" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}}>
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="0c59a0a4" style={{padding: '0px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" placeholder="ชื่อผู้ที่ได้ทำการโอน" />
                         </div>
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5cab012e" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}}>
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5cab012e" style={{padding: '0px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" placeholder="ชื่อธนาคารและสาขาต้นทาง" />
                         </div>
                       </div>

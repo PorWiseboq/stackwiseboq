@@ -403,10 +403,10 @@ class FlowLayout_b2020622 extends Base {
                   <div className="internal-fsb-element col-12" internal-fsb-guid="8b1a4a93">
                     <div className="container-fluid">
                       <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5a972a57" style={{'display': 'block', 'width': '100%'}}>
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5a972a57" style={{padding: '0px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ชื่อรายการ" required={true} disabled={this.state.disabled} defaultValue={this.getDataFromNotation("Quote.title")} />
                         </div>
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="607d8ee2" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}}>
+                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="607d8ee2" style={{padding: '0px'}}>
                           <textarea className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}} type="text" rows="3" placeholder="รายละเอียดโดยย่อ" disabled={this.state.disabled} defaultValue={this.getDataFromNotation("Quote.description")}>
                           </textarea>
                         </div>
@@ -446,13 +446,13 @@ class FlowLayout_b2020622 extends Base {
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <input className="internal-fsb-element col-12" internal-fsb-guid="41bdc9b3" type="hidden" value={this.getDataFromNotation("Listing[" + i + "].lid")} />
-                                  <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" style={{'display': 'block', 'width': '100%'}}>
+                                  <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="2ce10e8e" style={{padding: '0px'}}>
                                     <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={this.getDataFromNotation("Listing[" + i + "].title")} defaultValue={this.getDataFromNotation("Listing[" + i + "].title")} />
                                   </div>
-                                  <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" style={{'display': 'block', 'width': '100%'}}>
+                                  <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="0d2c5b71" style={{padding: '0px'}}>
                                     <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={this.getDataFromNotation("Listing[" + i + "].size")} defaultValue={this.getDataFromNotation("Listing[" + i + "].size")} />
                                   </div>
-                                  <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" style={{'display': 'block', 'width': '100%'}}>
+                                  <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="1cabb5c5" style={{padding: '0px'}}>
                                     <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" disabled={true} value={this.getDataFromNotation("Listing[" + i + "].quantity")} defaultValue={this.getDataFromNotation("Listing[" + i + "].quantity")} />
                                   </div>
                                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-danger btn-sm col-2 offset--1" internal-fsb-guid="d910ad00" type="button" disabled={this.state.disabled} onClick={((event) => { window.internalFsbSubmit('d910ad00', 'Listing', event, ((results: any) => { this.manipulate('d910ad00', 'Listing', results); }).bind(this)); }).bind(this)}>
@@ -469,13 +469,13 @@ class FlowLayout_b2020622 extends Base {
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                               <input className="internal-fsb-element col-12" internal-fsb-guid="eda631c1" type="hidden" value={this.getDataFromNotation("Quote.qid")} />
-                              <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="54e20435" style={{'display': 'block', 'width': '100%'}}>
+                              <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="54e20435" style={{padding: '0px'}}>
                                 <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} ref="title" type="text" placeholder="วัสดุ" required={true} disabled={this.state.disabled} />
                               </div>
-                              <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" style={{'display': 'block', 'width': '100%'}}>
+                              <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="31894d87" style={{padding: '0px'}}>
                                 <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} ref="size" type="text" placeholder="ขนาด" required={true} disabled={this.state.disabled} />
                               </div>
-                              <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" style={{'display': 'block', 'width': '100%'}}>
+                              <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="b2321320" style={{padding: '0px'}}>
                                 <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} ref="quantity" type="text" placeholder="ปริมาณ" required={true} disabled={this.state.disabled} />
                               </div>
                               <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-2 offset-0" internal-fsb-guid="05179431" type="button" disabled={this.state.disabled} onClick={((event) => { window.internalFsbSubmit('05179431', 'Listing', event, ((results: any) => { this.manipulate('05179431', 'Listing', results); }).bind(this)); }).bind(this)}>
@@ -517,8 +517,8 @@ class FlowLayout_b2020622 extends Base {
                         <label className="internal-fsb-element col-4 offset-0" internal-fsb-guid="a60b855b" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89" internal-fsb-guid="b6c9ad89">
-                                <input type="radio" name="substitute" value="0" required={true} disabled={this.state.disabled} defaultChecked={this.getDataFromNotation("Quote.substituteQuote.substitute") == '0'} />
+                              <div className="internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89" internal-fsb-guid="b6c9ad89" style={{padding: '0px'}}>
+                                <input type="radio" name="substitute" value="0" required={true} disabled={this.state.disabled} defaultChecked={data == '0'} />
                               </div>
                               <div className="internal-fsb-element col-10 offset-0 -fsb-self-b5cd72c0" internal-fsb-guid="b5cd72c0">
                                 ทดแทน
@@ -532,7 +532,7 @@ class FlowLayout_b2020622 extends Base {
                         <label className="internal-fsb-element col-4 offset-0" internal-fsb-guid="7a03394d" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="a0b78888" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="a0b78888" style={{padding: '0px'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" value="1" required={true} disabled={this.state.disabled} defaultChecked={this.getDataFromNotation("Quote.substitute") == '1'} />
                               </div>
                               <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="35767bbc" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -547,7 +547,7 @@ class FlowLayout_b2020622 extends Base {
                         <label className="internal-fsb-element col-4 offset-0" internal-fsb-guid="eee57414" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="cc34eced" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="cc34eced" style={{padding: '0px'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="substitute" value="2" required={true} disabled={this.state.disabled} defaultChecked={this.getDataFromNotation("Quote.substitute") == '2'} />
                               </div>
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="127c0175" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -591,7 +591,7 @@ class FlowLayout_b2020622 extends Base {
                         <label className="internal-fsb-element col-4 offset-0" internal-fsb-guid="9a5a06e9" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="33408187" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="33408187" style={{padding: '0px'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="checkbox" disabled={this.state.disabled} defaultChecked={this.getDataFromNotation("Quote.hoursChecked") === true} />
                               </div>
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="9875301c" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -603,7 +603,7 @@ class FlowLayout_b2020622 extends Base {
                             </div>
                           </div>
                         </label>
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="230ab296" style={{'display': 'block', 'width': '100%'}}>
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="230ab296" style={{padding: '0px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="จำนวนชั่วโมง" disabled={this.state.disabled} defaultValue={this.getDataFromNotation("Quote.hours")} />
                         </div>
                         <div className="internal-fsb-element col-4 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="1d96cc04" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -618,7 +618,7 @@ class FlowLayout_b2020622 extends Base {
                         <label className="internal-fsb-element col-4 offset-0" internal-fsb-guid="78890e54" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="babc9e30" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                              <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="babc9e30" style={{padding: '0px'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="checkbox" disabled={this.state.disabled} defaultChecked={this.getDataFromNotation("Quote.deliverChecked") === true} />
                               </div>
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="23ba11a8" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -630,7 +630,7 @@ class FlowLayout_b2020622 extends Base {
                             </div>
                           </div>
                         </label>
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="9200d56a" style={{'display': 'block', 'width': '100%'}}>
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="9200d56a" style={{padding: '0px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ddmmyyyy" disabled={this.state.disabled} defaultValue={this.getDataFromNotation("Quote.deliverAt")} />
                         </div>
                       </div>
@@ -642,7 +642,7 @@ class FlowLayout_b2020622 extends Base {
                         <label className="internal-fsb-element col-4 offset-0" internal-fsb-guid="47881859" style={{'FsbInheritedPresets': '', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="12403b79" style={{padding: '0px'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="1" required={true} disabled={this.state.disabled} defaultChecked={this.getDataFromNotation("Quote.pickup") == '1'} />
                               </div>
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="b8a9d038" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -654,7 +654,7 @@ class FlowLayout_b2020622 extends Base {
                             </div>
                           </div>
                         </label>
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="c3daa46d" style={{'display': 'block', 'width': '100%'}}>
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="c3daa46d" style={{padding: '0px'}}>
                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="หมายเลขโทรศัพท์" required={true} disabled={this.state.disabled} defaultValue={this.getDataFromNotation("Quote.number")} />
                         </div>
                       </div>
@@ -666,7 +666,7 @@ class FlowLayout_b2020622 extends Base {
                         <label className="internal-fsb-element col-4 offset-0" internal-fsb-guid="165d186a" style={{'paddingLeft': '0px', 'paddingRight': '0px'}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                              <div className="internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89" internal-fsb-guid="0606ea02" style={{padding: '0px'}}>
                                 <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" name="delivery" value="0" required={true} disabled={this.state.disabled} defaultChecked={this.getDataFromNotation("Quote.pickup") == '0'} />
                               </div>
                               <div className="internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0" internal-fsb-guid="94ec51a9" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -678,7 +678,7 @@ class FlowLayout_b2020622 extends Base {
                             </div>
                           </div>
                         </label>
-                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="4a397863" style={{'display': 'block', 'width': '100%'}}>
+                        <div className="internal-fsb-element col-4 offset-0" internal-fsb-guid="4a397863" style={{padding: '0px'}}>
                           <textarea className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ที่อยู่สำหรับจัดส่งสินค้า" disabled={this.state.disabled} defaultValue={this.getDataFromNotation("Quote.address")}>
                           </textarea>
                         </div>
