@@ -4474,10 +4474,10 @@
         "                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
-        "                                                                    <div class=\"internal-fsb-element col-12 -fsb-self-5a671a7d\" internal-fsb-guid=\"5a671a7d\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"inbox_item_box\">",
+        "                                                                    <div class=\"internal-fsb-element col-12 -fsb-self-5a671a7d\" internal-fsb-guid=\"5a671a7d\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"inbox_item_box\" internal-fsb-react-data=\"Quote\">",
         "                                                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-49a6327a\" internal-fsb-guid=\"49a6327a\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_title\">ชื่อรายการ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-49a6327a\" internal-fsb-guid=\"49a6327a\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_title\" internal-fsb-react-data=\"title\">ชื่อรายการ</div>",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-7 offset-0 -fsb-self-4aee31ab\" internal-fsb-guid=\"4aee31ab\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_subtitle\">อันดับที่ 5 / 10</div>",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0 -fsb-self-3bec5885\" internal-fsb-guid=\"3bec5885\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_tag\">เสนอครบ</div>",
         "                                                                            </div>",
@@ -4549,15 +4549,15 @@
         "",
         "",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-1715aae1\" internal-fsb-guid=\"1715aae1\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"quote_box_notice\">ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ</div>",
-        "                                                                                <div class=\"internal-fsb-element col-12 -fsb-self-c6ba5b53\" internal-fsb-guid=\"c6ba5b53\" internal-fsb-name=\"List\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"quote_box_review_item\">",
+        "                                                                                <div class=\"internal-fsb-element col-12 -fsb-self-c6ba5b53\" internal-fsb-guid=\"c6ba5b53\" internal-fsb-name=\"List\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"quote_box_review_item\" internal-fsb-react-data=\"Listing\">",
         "                                                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                            <div class=\"internal-fsb-element col-4 offset-0 -fsb-self-65ec89d1\" internal-fsb-guid=\"65ec89d1\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"quote_box_review_detail\">",
         "                                                                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a818c946\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">ชื่อวัสดุ</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"eccb7c51\" internal-fsb-name=\"Size\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">ขนาด</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0e3365eb\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">ปริมาณ</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a818c946\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\">ชื่อวัสดุ</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"eccb7c51\" internal-fsb-name=\"Size\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"size\">ขนาด</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0e3365eb\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"quantity\">ปริมาณ</div>",
         "                                                                                                    </div>",
         "                                                                                                </div>",
         "                                                                                            </div>",
@@ -5311,11 +5311,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "24731127",
+        "selectingElementGUID": "0e3365eb",
         "currentCursorWalkPath": [
-          "51201e78",
+          "65ec89d1",
           0,
-          8,
+          3,
           null
         ]
       },
@@ -5325,7 +5325,16 @@
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
         "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve, reject) => {\n \t\t  try {\n \t\t    let quoteData = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Quote',\n          name: 'qid',\n          value: 951,\n          guid: null,\n          validation: null\n     \t\t}];\n     \t\tlet listingData = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Listing',\n          name: 'qid',\n          value: 951,\n          guid: null,\n          validation: null\n   \t\t  }];\n \t\t    \n \t\t    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());\n \t\t    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());\n \t\t    \n \t\t    let results = Object.assign({}, await DatabaseHelper.retrieve(quoteData, quote), await DatabaseHelper.retrieve(listingData, listing));\n \t\t    \n \t\t    resolve(results);\n \t\t  } catch(error) {\n \t\t    reject(error);\n \t\t  }\n \t\t});\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  "
       },
-      "notations": {}
+      "notations": {
+        "Quote": {
+          "title": {}
+        },
+        "Listing": {
+          "title": {},
+          "size": {},
+          "quantity": {}
+        }
+      }
     },
     "65e04a88": {
       "id": "65e04a88",
@@ -14998,7 +15007,7 @@
     "FlowLayout_a6314edc": "3ead6bf6f76a55651027221184d395b72c0cdd09",
     "FlowLayout_41288a78": "295ff4128d32c5ea8a3788a0ae875718518c61fd",
     "FlowLayout_b2020622": "6536e75ea993fc1d4c52086777ff5b08377dbc04",
-    "Rectangle_cad06e8d": "b2f5f2a47696ee5b0d9e96f1b28cb8aae8f97d09",
+    "Rectangle_cad06e8d": "fa04d7bab533c18b4dc3660d25a4b31e5b07ea24",
     "FlowLayout_5e1d3916": "a9a8ee82d93e051cf1e511d0ee2130634a08ef49",
     "FlowLayout_d700a5d4": "664f2f705dcfd4416b17cab7c79b53ba3b81f63a",
     "FlowLayout_4a4ce3d8": "04e53f389fd41bb67f880166da4ce7db32181aac",
