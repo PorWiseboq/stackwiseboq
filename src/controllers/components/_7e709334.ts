@@ -14,6 +14,7 @@ import {Base} from './Base.js';
 
 // Import additional modules here:
 //
+import {SchemaHelper} from '../helpers/SchemaHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -104,7 +105,18 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.get(data);
+ 		return new Promise(async (resolve, reject) => {
+ 		  try {
+ 		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+ 		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
+ 		    
+ 		    let results = [...await DatabaseHelper.retrieve([], quote), ...await DatabaseHelper.retrieve([], listing)];
+ 		    
+ 		    resolve(results);
+ 		  } catch(error) {
+ 		    reject(error);
+ 		  }
+ 		});
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
