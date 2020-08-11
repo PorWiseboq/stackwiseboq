@@ -422,12 +422,8 @@ class Rectangle_cad06e8d extends Base {
                                   <div className="internal-fsb-element col-12" internal-fsb-guid="64a6ac8c">
                                     <div className="container-fluid">
                                       <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                        <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="8c2aa238" style={{'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                                          ชื่อรายการ
-                                        </div>
-                                        <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="7484ac1e" style={{'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}}>
-                                          รายละเอียดโดยย่อ
-                                        </div>
+                                        <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="8c2aa238" style={{'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}} dangerouslySetInnerHTML={{__html: CodeHelper.escape(this.getDataFromNotation("Quote.title"))}}></div>
+                                        <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="7484ac1e" style={{'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}} dangerouslySetInnerHTML={{__html: CodeHelper.escape(this.getDataFromNotation("Quote.description"))}}></div>
                                         <div className="internal-fsb-element col-12 -fsb-self-1715aae1" internal-fsb-guid="1715aae1">
                                           ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
                                         </div>
