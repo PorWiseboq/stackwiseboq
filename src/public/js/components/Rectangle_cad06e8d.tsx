@@ -68,9 +68,21 @@ class Rectangle_cad06e8d extends Base {
   
   register() {
     DataManipulationHelper.register("4a579143", "retrieve", ["1ae8405a"], {initClass: null});
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '4a579143')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '4a579143').addEventListener('success', this.onButtonSuccess_4a579143.bind(this));
+    }
     DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7"], {initClass: null});
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'c05b11c1')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'c05b11c1').addEventListener('success', this.onButtonSuccess_c05b11c1.bind(this));
+    }
     DataManipulationHelper.register("833e4eb9", "retrieve", ["d24ed774"], {initClass: null});
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '833e4eb9')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '833e4eb9').addEventListener('success', this.onButtonSuccess_833e4eb9.bind(this));
+    }
     DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261"], {initClass: null});
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e9c9b721')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e9c9b721').addEventListener('success', this.onButtonSuccess_e9c9b721.bind(this));
+    }
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null});
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null});
     DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null});
@@ -102,33 +114,33 @@ class Rectangle_cad06e8d extends Base {
   }
   
   // Auto[Merging]--->
-  protected onButtonClick_4a579143(event: Event) {
+  protected onButtonSuccess_4a579143(event: Event) {
 
-    // Handle the event of onButtonClick (Button 1) here:
+    // Handle the event of onButtonSuccess (Button 1) here:
     // 
     this.setState({quoteType: QuoteType.AUCTIONING});
     
   }
 
-  protected onButtonClick_c05b11c1(event: Event) {
+  protected onButtonSuccess_c05b11c1(event: Event) {
 
-    // Handle the event of onButtonClick (Button 2) here:
+    // Handle the event of onButtonSuccess (Button 2) here:
     // 
     this.setState({quoteType: QuoteType.OFFERING});
     
   }
 
-  protected onButtonClick_833e4eb9(event: Event) {
+  protected onButtonSuccess_833e4eb9(event: Event) {
 
-    // Handle the event of onButtonClick (Button 3) here:
+    // Handle the event of onButtonSuccess (Button 3) here:
     // 
     this.setState({quoteType: QuoteType.CHATTING});
     
   }
 
-  protected onButtonClick_e9c9b721(event: Event) {
+  protected onButtonSuccess_e9c9b721(event: Event) {
 
-    // Handle the event of onButtonClick (Button 4) here:
+    // Handle the event of onButtonSuccess (Button 4) here:
     // 
     this.setState({quoteType: QuoteType.PAID});
     
@@ -163,7 +175,7 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="4a579143" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}} type="button" onClick={this.onButtonClick_4a579143.bind(this)} onClick={((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results: any) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="4a579143" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results: any) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="04b90b11" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png" />
                               </div>
@@ -184,7 +196,7 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="7b54582d" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="c05b11c1" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}} type="button" onClick={this.onButtonClick_c05b11c1.bind(this)} onClick={((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results: any) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="c05b11c1" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results: any) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="b6ec8d55" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png" />
                               </div>
@@ -205,7 +217,7 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="12a672c3" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="833e4eb9" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}} type="button" onClick={this.onButtonClick_833e4eb9.bind(this)} onClick={((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results: any) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="833e4eb9" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results: any) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="4bac7ab7" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png" />
                               </div>
@@ -226,7 +238,7 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="9a5131da">
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="e9c9b721" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}} type="button" onClick={this.onButtonClick_e9c9b721.bind(this)} onClick={((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results: any) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="e9c9b721" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results: any) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="6b7e8340" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png" />
                               </div>
