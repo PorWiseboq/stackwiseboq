@@ -316,6 +316,15 @@ class Controller extends Base {
     if (input) input.value = parseInt(this.request.session.uid);
     
     if (input != null) data.push(input);
+		RequestHelper.registerInput('2acce16d', "relational", "Quote", "status");
+		ValidationHelper.registerInput('2acce16d', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, '2acce16d');
+    
+    // Override data parsing and manipulation of Hidden 1 here:
+    // 
+    input.value = '0';
+    
+    if (input != null) data.push(input);
 		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
 		ValidationHelper.registerInput('41bdc9b3', "Hidden 1", false, undefined);
     input = RequestHelper.getInput(request, '41bdc9b3');

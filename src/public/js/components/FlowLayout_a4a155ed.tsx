@@ -93,7 +93,7 @@ class FlowLayout_a4a155ed extends Base {
                   <div className="col-12 -fsb-self-4011457d internal-fsb-inheriting-element">
                     ผู้ต้องการสั่งซื้อ
                   </div>
-                  <div className="col-6 offset-3 internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                  <div className="col-6 offset-3 internal-fsb-inheriting-element">
                     <img style={{'display': 'block', 'width': '100%', 'marginTop': '15px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/home-repair.png" />
                   </div>
                   <div className="col-12 -fsb-self-5d1104e1 internal-fsb-inheriting-element">
@@ -118,7 +118,7 @@ class FlowLayout_a4a155ed extends Base {
                   <div className="col-12 -fsb-preset-4011457d internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '4011457d'}}>
                     ร้านค้าวัสดุก่อสร้าง
                   </div>
-                  <div className="col-6 offset-3 internal-fsb-inheriting-element" style={{'FsbEmpty': 'undefined'}}>
+                  <div className="col-6 offset-3 internal-fsb-inheriting-element">
                     <img style={{'display': 'block', 'width': '100%', 'minHeight': '100px', 'marginTop': '15px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/laptop-auction.png" />
                   </div>
                   <div className="col-12 -fsb-preset-5d1104e1 internal-fsb-inheriting-element" style={{'FsbInheritedPresets': '5d1104e1'}}>

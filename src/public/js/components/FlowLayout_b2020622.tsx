@@ -71,7 +71,7 @@ class FlowLayout_b2020622 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d"], {initClass: null});
+    DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null});
     if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '9ce000e1')) {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '9ce000e1').addEventListener('success', this.onButtonSuccess_9ce000e1.bind(this));
     }
@@ -415,6 +415,7 @@ class FlowLayout_b2020622 extends Base {
                   </div>
                   <input className="internal-fsb-element col-12" internal-fsb-guid="5d34dc3b" type="hidden" value={this.getDataFromNotation("Quote.qid")} />
                   <input className="internal-fsb-element col-12" internal-fsb-guid="5752cb4d" type="hidden" value={this.getDataFromNotation("Quote.uid")} />
+                  <input className="internal-fsb-element col-12" internal-fsb-guid="2acce16d" type="hidden" value="0" />
                   <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9ce000e1" style={{'marginTop': '15px', display: (()=>{return this.state.inserted ? 'none' : 'block'})()}} type="button" disabled={this.state.disabled} onClick={((event) => { window.internalFsbSubmit('9ce000e1', 'Quote', event, ((results: any) => { this.manipulate('9ce000e1', 'Quote', results); }).bind(this)); }).bind(this)}>
                     <div className="internal-fsb-element" internal-fsb-guid="9ce000e1-text">
                       ถัดไป: ระบุรายการวัสดุก่อสร้าง
