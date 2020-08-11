@@ -5548,7 +5548,7 @@
         "    ",
         "    // Override data parsing and manipulation of Hidden 1 here:",
         "    // ",
-        "    input.value = '0';",
+        "    if (input) input.value = '0';",
         "    ",
         "    \"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4\" internal-fsb-guid=\"9ce000e1\" internal-fsb-name=\"Button 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 15px\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
@@ -6525,11 +6525,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "9ce000e1",
+        "selectingElementGUID": "2acce16d",
         "currentCursorWalkPath": [
           "180079a2",
           0,
-          7,
+          6,
           null
         ]
       },
@@ -15222,7 +15222,7 @@
     "b140e86b": "e9c44f4e72cdaab392fa969f533517146225c4c2",
     "b6eb1b83": "2809e1923d2bf463d21570025ee4a833dfeef1c0",
     "7e709334": "edbce4ca05de75eeab324c1d7c20dd11ad5e25fc",
-    "65e04a88": "77ec3568994f97392a1d1e8263e6ba153ece8921",
+    "65e04a88": "a6a68db8a54fc7dc9bd339b5ba9a31b082cc4871",
     "9d37c390": "e15b542b11119a077c086184390600735b70bf1e",
     "6ce794ec": "f50d1cd2d760fd5136f1d44dac8cf28ffd901691",
     "bbc7dba3": "791a10e8f969f64a2ebb47a3ad9ca2e67e49fa6e",

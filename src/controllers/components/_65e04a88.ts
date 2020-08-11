@@ -322,7 +322,7 @@ class Controller extends Base {
     
     // Override data parsing and manipulation of Hidden 1 here:
     // 
-    input.value = '0';
+    if (input) input.value = '0';
     
     if (input != null) data.push(input);
 		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
