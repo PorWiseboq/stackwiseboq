@@ -525,7 +525,7 @@ class Rectangle_cad06e8d extends Base {
                                         <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="c03d6613" style={{padding: '0px'}}>
                                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ราคารวมทั้งหมด" />
                                         </div>
-                                        <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="2b06dab6">
+                                        <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="2b06dab6">
                                           บาท
                                         </div>
                                         <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9868a6d5" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
@@ -578,10 +578,10 @@ class Rectangle_cad06e8d extends Base {
                                                     <div className="internal-fsb-element col-12" internal-fsb-guid="00758360" style={{'fontWeight': 'bold', 'marginBottom': '5px'}}>
                                                       สินค้าเทียบเคียง: ทดแทน
                                                     </div>
-                                                    <div className="internal-fsb-element col-9 offset-0" internal-fsb-guid="1382e4c9" style={{padding: '0px'}}>
+                                                    <div className="internal-fsb-element col-7 offset-0" internal-fsb-guid="1382e4c9" style={{padding: '0px'}}>
                                                       <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}} type="text" placeholder="ราคาต่อหน่วย" />
                                                     </div>
-                                                    <div className="internal-fsb-element col-3 offset-0" internal-fsb-guid="530bacd3" style={{'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '0px'}}>
+                                                    <div className="internal-fsb-element col-5 offset-0" internal-fsb-guid="530bacd3" style={{'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px'}}>
                                                       บาท
                                                     </div>
                                                   </div>
@@ -617,13 +617,13 @@ class Rectangle_cad06e8d extends Base {
                                   <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="e68b9c07" style={{padding: '0px'}}>
                                     <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px'}} type="text" placeholder="ค่าขนส่ง (ถ้ามี)" />
                                   </div>
-                                  <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="95c77e1a" style={{'marginBottom': '5px'}}>
+                                  <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="95c77e1a" style={{'marginBottom': '5px'}}>
                                     บาท
                                   </div>
                                   <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="dde4302b" style={{padding: '0px'}}>
                                     <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ส่วนลด" disabled={true} />
                                   </div>
-                                  <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="3c910e36">
+                                  <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="3c910e36">
                                     บาท
                                   </div>
                                   <div className="internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0" internal-fsb-guid="5428078e" style={{'FsbInheritedPresets': '1715aae1'}}>
