@@ -150,7 +150,7 @@ class Rectangle_cad06e8d extends Base {
           <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="9b826999" style={{'display': 'table', 'height': '100%', 'width': '100%'}}>
             <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="e2254eb7" style={{'display': 'table-row', 'height': '100%'}}>
               <div className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="712e9de1" style={{'borderRightColor': 'rgba(255, 255, 255, 1)', 'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1.0)', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'display': 'table-cell', 'verticalAlign': 'top', 'width': '1px'}}>
-                <div className="internal-fsb-element" internal-fsb-guid="74e4253b" style={{'fontSize': '11px', 'flexShrink': '1', 'WebkitFlexShrink': '1'}}>
+                <div className="internal-fsb-element" internal-fsb-guid="74e4253b" style={{'fontSize': '11px', 'flexShrink': '1', 'WebkitFlexShrink': '1', 'cursor': 'default'}}>
                   <div className="container-fluid">
                     <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                       <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px'}}>
