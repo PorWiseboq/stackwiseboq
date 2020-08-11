@@ -179,6 +179,70 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
+		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);
+    input = RequestHelper.getInput(request, '1ae8405a');
+    
+    // Override data parsing and manipulation of Hidden 1 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('4cade2e7', "relational", "Quote", "status");
+		ValidationHelper.registerInput('4cade2e7', "Hidden 2", false, undefined);
+    input = RequestHelper.getInput(request, '4cade2e7');
+    
+    // Override data parsing and manipulation of Hidden 2 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('d24ed774', "relational", "Quote", "status");
+		ValidationHelper.registerInput('d24ed774', "Hidden 3", false, undefined);
+    input = RequestHelper.getInput(request, 'd24ed774');
+    
+    // Override data parsing and manipulation of Hidden 3 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('d1920261', "relational", "Quote", "status");
+		ValidationHelper.registerInput('d1920261', "Hidden 4", false, undefined);
+    input = RequestHelper.getInput(request, 'd1920261');
+    
+    // Override data parsing and manipulation of Hidden 4 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('31c75169', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('31c75169', "Hidden 5", false, undefined);
+    input = RequestHelper.getInput(request, '31c75169');
+    
+    // Override data parsing and manipulation of Hidden 5 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('72aecc3a', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('72aecc3a', "Hidden 6", false, undefined);
+    input = RequestHelper.getInput(request, '72aecc3a');
+    
+    // Override data parsing and manipulation of Hidden 6 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('e8656190', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('e8656190', "Hidden 7", false, undefined);
+    input = RequestHelper.getInput(request, 'e8656190');
+    
+    // Override data parsing and manipulation of Hidden 7 here:
+    // 
+    
+    if (input != null) data.push(input);
+		RequestHelper.registerInput('95270ad9', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('95270ad9', "Hidden 8", false, undefined);
+    input = RequestHelper.getInput(request, '95270ad9');
+    
+    // Override data parsing and manipulation of Hidden 8 here:
+    // 
+    
+    if (input != null) data.push(input);
 		RequestHelper.registerInput('1832b944', "relational", "Substitute", "type");
 		ValidationHelper.registerInput('1832b944', "Radio 5", false, undefined);
     input = RequestHelper.getInput(request, '1832b944');
