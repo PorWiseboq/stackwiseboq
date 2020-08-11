@@ -112,15 +112,15 @@ class Controller extends Base {
    		    target: SourceType.Relational,
           group: 'Quote',
           name: 'qid',
-          value: undefined,
+          value: 951,
           guid: null,
           validation: null
      		}];
      		let listingData = [{
    		    target: SourceType.Relational,
           group: 'Listing',
-          name: 'lid',
-          value: undefined,
+          name: 'qid',
+          value: 951,
           guid: null,
           validation: null
    		  }];
