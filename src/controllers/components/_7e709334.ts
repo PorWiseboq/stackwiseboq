@@ -128,7 +128,7 @@ class Controller extends Base {
  		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
  		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
  		    
- 		    let results = [...await DatabaseHelper.retrieve(quoteData, quote), ...await DatabaseHelper.retrieve(listingData, listing)];
+ 		    let results = Object.assign({}, await DatabaseHelper.retrieve(quoteData, quote), await DatabaseHelper.retrieve(listingData, listing));
  		    
  		    resolve(results);
  		  } catch(error) {
