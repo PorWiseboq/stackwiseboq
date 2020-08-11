@@ -149,7 +149,7 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('1832b944', undefined, undefined, undefined);
+		RequestHelper.registerInput('1832b944', "relational", "Substitute", "type");
 		ValidationHelper.registerInput('1832b944', "Radio 5", false, undefined);
     input = RequestHelper.getInput(request, '1832b944');
     
@@ -157,7 +157,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('b91e2739', undefined, undefined, undefined);
+		RequestHelper.registerInput('b91e2739', "relational", "Substitute", "type");
 		ValidationHelper.registerInput('b91e2739', "Radio 4", false, undefined);
     input = RequestHelper.getInput(request, 'b91e2739');
     
@@ -165,7 +165,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('03aab0e5', undefined, undefined, undefined);
+		RequestHelper.registerInput('03aab0e5', "relational", "Substitute", "type");
 		ValidationHelper.registerInput('03aab0e5', "Radio 3", false, undefined);
     input = RequestHelper.getInput(request, '03aab0e5');
     
@@ -173,7 +173,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('957c1568', undefined, undefined, undefined);
+		RequestHelper.registerInput('957c1568', "relational", "Substitute", "type");
 		ValidationHelper.registerInput('957c1568', "Radio 6", false, undefined);
     input = RequestHelper.getInput(request, '957c1568');
     
@@ -181,7 +181,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('9c338431', undefined, undefined, undefined);
+		RequestHelper.registerInput('9c338431', "relational", "Substitute", "title");
 		ValidationHelper.registerInput('9c338431', "Name", false, undefined);
     input = RequestHelper.getInput(request, '9c338431');
     
@@ -189,7 +189,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('d913e6a1', undefined, undefined, undefined);
+		RequestHelper.registerInput('d913e6a1', "relational", "Substitute", "size");
 		ValidationHelper.registerInput('d913e6a1', "Size", false, undefined);
     input = RequestHelper.getInput(request, 'd913e6a1');
     
@@ -197,7 +197,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('c22ec668', undefined, undefined, undefined);
+		RequestHelper.registerInput('c22ec668', "relational", "Substitute", "quantity");
 		ValidationHelper.registerInput('c22ec668', "Quantity", false, undefined);
     input = RequestHelper.getInput(request, 'c22ec668');
     
@@ -205,7 +205,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('c03d6613', undefined, undefined, undefined);
+		RequestHelper.registerInput('c03d6613', "relational", "Auction", "price");
 		ValidationHelper.registerInput('c03d6613', "Textbox 5", false, undefined);
     input = RequestHelper.getInput(request, 'c03d6613');
     
@@ -213,7 +213,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('1382e4c9', undefined, undefined, undefined);
+		RequestHelper.registerInput('1382e4c9', "relational", "Substitute", "price");
 		ValidationHelper.registerInput('1382e4c9', "Price", false, undefined);
     input = RequestHelper.getInput(request, '1382e4c9');
     
@@ -221,7 +221,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('e68b9c07', undefined, undefined, undefined);
+		RequestHelper.registerInput('e68b9c07', "relational", "Auction", "deliverCost");
 		ValidationHelper.registerInput('e68b9c07', "Textbox 3", false, undefined);
     input = RequestHelper.getInput(request, 'e68b9c07');
     
