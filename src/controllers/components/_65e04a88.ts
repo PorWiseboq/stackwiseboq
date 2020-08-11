@@ -214,15 +214,20 @@ class Controller extends Base {
   	 		    }
   	 		  }
      		  
-     		  data = [{
-     		    target: SourceType.Relational,
-            group: 'Listing',
-            name: 'qid',
-            value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
-            guid: null,
-            validation: null
-     		  }];
-     		  let datasetB = await DatabaseHelper.retrieve(data, null);
+     		  let datasetB;
+     		  if (DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)) {
+       		  data = [{
+       		    target: SourceType.Relational,
+              group: 'Listing',
+              name: 'qid',
+              value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
+              guid: null,
+              validation: null
+       		  }];
+       		  datasetB = await DatabaseHelper.retrieve(data, null);
+     		  } else {
+     		    datasetB = {};
+     		  }
      		  
      		  resolve(Object.assign({}, datasetA, datasetB));
      		} else {
