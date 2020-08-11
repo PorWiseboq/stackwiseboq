@@ -156,13 +156,13 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="04b90b11" style={{'display': (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})() || 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}} onClick={this.onImageClick_04b90b11.bind(this)}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="04b90b11" style={{padding: '0px'}} onClick={this.onImageClick_04b90b11.bind(this)}>
                               <img style={{'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="9a91246d" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}}>
                               เคาะประมูล
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="42b3dc9b" style={{'display': (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})() || 'block', 'width': '40px', 'height': '40px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="42b3dc9b" style={{padding: '0px'}}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-active.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="51315831" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}}>
@@ -174,13 +174,13 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="7b54582d" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="b6ec8d55" style={{'display': (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})() || 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} onClick={this.onImageClick_b6ec8d55.bind(this)}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="b6ec8d55" style={{padding: '0px'}} onClick={this.onImageClick_b6ec8d55.bind(this)}>
                               <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="ac1a1bce" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}}>
                               ประมูลผ่าน
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="40ada351" style={{'display': (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})() || 'block', 'width': '40px', 'height': '40px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="40ada351" style={{padding: '0px'}}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-active.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="936e036b" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}}>
@@ -192,13 +192,13 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="12a672c3" style={{'marginBottom': '10px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="4bac7ab7" style={{'display': (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})() || 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} onClick={this.onImageClick_4bac7ab7.bind(this)}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="4bac7ab7" style={{padding: '0px'}} onClick={this.onImageClick_4bac7ab7.bind(this)}>
                               <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="8a12a919" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}}>
                               คุยกับลูกค้า
                             </div>
-                            <div className="internal-fsb-element col-12" internal-fsb-guid="7eb8a313" style={{'display': (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})() || 'block', 'width': '40px', 'height': '40px'}}>
+                            <div className="internal-fsb-element col-12" internal-fsb-guid="7eb8a313" style={{padding: '0px'}}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-active.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="579741b7" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}}>
@@ -210,13 +210,13 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="9a5131da">
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="6b7e8340" style={{'display': (()=>{return this.getDisplayOf(QuoteType.PAID, false);})() || 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}} onClick={this.onImageClick_6b7e8340.bind(this)}>
+                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="6b7e8340" style={{padding: '0px'}} onClick={this.onImageClick_6b7e8340.bind(this)}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="83e40405" style={{'textAlign': 'center', 'color': 'rgba(255, 255, 255, 0.45)', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}}>
                               จ่ายเงินแล้ว
                             </div>
-                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="86510a55" style={{'display': (()=>{return this.getDisplayOf(QuoteType.PAID, true);})() || 'block', 'width': '40px', 'height': '40px'}}>
+                            <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="86510a55" style={{padding: '0px'}}>
                               <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-active.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="b4775a3d" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}}>
@@ -237,7 +237,7 @@ class Rectangle_cad06e8d extends Base {
                         <div className="internal-fsb-element col-12" internal-fsb-guid="88db4eda" style={{display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="34a98650" style={{'display': 'block', 'width': '100%'}}>
+                              <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="34a98650" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-active.png" />
                               </div>
                               <div className="internal-fsb-element col-11 offset-0" internal-fsb-guid="5775d3be">
@@ -258,7 +258,7 @@ class Rectangle_cad06e8d extends Base {
                         <div className="internal-fsb-element col-12" internal-fsb-guid="0d656c9d" style={{display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="44d05cb6" style={{'display': 'block', 'width': '100%'}}>
+                              <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="44d05cb6" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-active.png" />
                               </div>
                               <div className="internal-fsb-element col-11 offset-0" internal-fsb-guid="945cdc26">
@@ -279,7 +279,7 @@ class Rectangle_cad06e8d extends Base {
                         <div className="internal-fsb-element col-12" internal-fsb-guid="ba43b015" style={{display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element offset--1 col-1 offset-0" internal-fsb-guid="694bb341" style={{'display': 'block', 'width': '100%'}}>
+                              <div className="internal-fsb-element offset--1 col-1 offset-0" internal-fsb-guid="694bb341" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-active.png" />
                               </div>
                               <div className="internal-fsb-element col-11 offset-0" internal-fsb-guid="6daabaa5">
@@ -300,7 +300,7 @@ class Rectangle_cad06e8d extends Base {
                         <div className="internal-fsb-element col-12" internal-fsb-guid="2d35d6ec" style={{display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}}>
                           <div className="container-fluid">
                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                              <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="83bea00c" style={{'display': 'block', 'width': '100%'}}>
+                              <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="83bea00c" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '100%'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-active.png" />
                               </div>
                               <div className="internal-fsb-element col-11 offset-0" internal-fsb-guid="3231834e">
@@ -453,7 +453,7 @@ class Rectangle_cad06e8d extends Base {
                                                     <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="b42d4545" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
                                                       <div className="container-fluid">
                                                         <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="1832b944" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="1832b944" style={{padding: '0px'}}>
                                                             <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="0" />
                                                           </div>
                                                           <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="b80041d3" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -465,7 +465,7 @@ class Rectangle_cad06e8d extends Base {
                                                     <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="eb192633" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
                                                       <div className="container-fluid">
                                                         <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="b91e2739" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="b91e2739" style={{padding: '0px'}}>
                                                             <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="1" />
                                                           </div>
                                                           <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="58266972" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -477,7 +477,7 @@ class Rectangle_cad06e8d extends Base {
                                                     <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="2cb33325" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
                                                       <div className="container-fluid">
                                                         <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="03aab0e5" style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="03aab0e5" style={{padding: '0px'}}>
                                                             <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="2" />
                                                           </div>
                                                           <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="5c2b0578" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -489,7 +489,7 @@ class Rectangle_cad06e8d extends Base {
                                                     <label className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c1c5b10b" style={{'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}}>
                                                       <div className="container-fluid">
                                                         <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="957c1568" style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}}>
+                                                          <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="957c1568" style={{padding: '0px'}}>
                                                             <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="3" />
                                                           </div>
                                                           <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="a3b9410d" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
@@ -504,13 +504,13 @@ class Rectangle_cad06e8d extends Base {
                                               <div className="internal-fsb-element col-5 offset-0" internal-fsb-guid="483390a6">
                                                 <div className="container-fluid">
                                                   <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="9c338431" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}}>
+                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="9c338431" style={{padding: '0px'}}>
                                                       <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนวัสดุเป็น" />
                                                     </div>
-                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="d913e6a1" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}}>
+                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="d913e6a1" style={{padding: '0px'}}>
                                                       <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนขนาดเป็น" />
                                                     </div>
-                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c22ec668" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}}>
+                                                    <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c22ec668" style={{padding: '0px'}}>
                                                       <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}} type="text" placeholder="เปลี่ยนปริมาณเป็น" />
                                                     </div>
                                                   </div>
@@ -522,7 +522,7 @@ class Rectangle_cad06e8d extends Base {
                                         <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="da4a5daa" style={{'FsbInheritedPresets': '1715aae1'}}>
                                           เสนอราคาใหม่ที่ราคา
                                         </div>
-                                        <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="c03d6613" style={{'display': 'block', 'width': '100%'}}>
+                                        <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="c03d6613" style={{padding: '0px'}}>
                                           <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ราคารวมทั้งหมด" />
                                         </div>
                                         <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="2b06dab6">
@@ -578,7 +578,7 @@ class Rectangle_cad06e8d extends Base {
                                                     <div className="internal-fsb-element col-12" internal-fsb-guid="00758360" style={{'fontWeight': 'bold', 'marginBottom': '5px'}}>
                                                       สินค้าเทียบเคียง: ทดแทน
                                                     </div>
-                                                    <div className="internal-fsb-element col-9 offset-0" internal-fsb-guid="1382e4c9" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}}>
+                                                    <div className="internal-fsb-element col-9 offset-0" internal-fsb-guid="1382e4c9" style={{padding: '0px'}}>
                                                       <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'fontSize': '12px'}} type="text" placeholder="ราคาต่อหน่วย" />
                                                     </div>
                                                     <div className="internal-fsb-element col-3 offset-0" internal-fsb-guid="530bacd3" style={{'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '0px'}}>
@@ -614,13 +614,13 @@ class Rectangle_cad06e8d extends Base {
                                   <div className="internal-fsb-element col-12 -fsb-preset-1715aae1" internal-fsb-guid="53e2a8cc" style={{'FsbInheritedPresets': '1715aae1'}}>
                                     กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด
                                   </div>
-                                  <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="e68b9c07" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px'}}>
+                                  <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="e68b9c07" style={{padding: '0px'}}>
                                     <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginBottom': '5px'}} type="text" placeholder="ค่าขนส่ง (ถ้ามี)" />
                                   </div>
                                   <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="95c77e1a" style={{'marginBottom': '5px'}}>
                                     บาท
                                   </div>
-                                  <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="dde4302b" style={{'display': 'block', 'width': '100%'}}>
+                                  <div className="internal-fsb-element col-6 offset-3" internal-fsb-guid="dde4302b" style={{padding: '0px'}}>
                                     <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%'}} type="text" placeholder="ส่วนลด" disabled={true} />
                                   </div>
                                   <div className="internal-fsb-element col-1 offset-0" internal-fsb-guid="3c910e36">
