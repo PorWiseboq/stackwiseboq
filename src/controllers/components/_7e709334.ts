@@ -229,7 +229,7 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-		RequestHelper.registerInput('dde4302b', undefined, undefined, undefined);
+		RequestHelper.registerInput('dde4302b', "relational", "Auction", "discount");
 		ValidationHelper.registerInput('dde4302b', "Textbox 2", false, undefined);
     input = RequestHelper.getInput(request, 'dde4302b');
     

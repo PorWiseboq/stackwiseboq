@@ -4674,7 +4674,7 @@
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1715aae1\" internal-fsb-guid=\"53e2a8cc\" internal-fsb-name=\"TextElement 39\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\">กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด</div>",
         "                                                                    <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"e68b9c07\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-bottom: 5px\" class=\"form-control form-control-sm \" placeholder=\"ค่าขนส่ง (ถ้ามี)\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"deliverCost\"></div>",
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0\" internal-fsb-guid=\"95c77e1a\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-bottom: 5px\">บาท</div>",
-        "                                                                    <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"dde4302b\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" placeholder=\"ส่วนลด\" disabled=\"true\" class=\"form-control form-control-sm \"></div>",
+        "                                                                    <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"dde4302b\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" placeholder=\"ส่วนลด\" disabled=\"true\" class=\"form-control form-control-sm \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"discount\"></div>",
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0\" internal-fsb-guid=\"3c910e36\" internal-fsb-name=\"TextElement 38\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">บาท</div>",
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0\" internal-fsb-guid=\"5428078e\" internal-fsb-name=\"TextElement 27\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\">คุณเสนอราคาที่ 125,000 บาท</div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm \" internal-fsb-guid=\"d3e31c36\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\">",
         "                                                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"d3e31c36-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ยกเลิก</div>",
@@ -5311,11 +5311,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e68b9c07",
+        "selectingElementGUID": "dde4302b",
         "currentCursorWalkPath": [
           "51201e78",
           0,
-          3,
+          5,
           null
         ]
       },
@@ -13513,7 +13513,7 @@
       "                            </div>",
       "                        </div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"dd96a62e\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 891px; top: 558px; width: 150px;\" data-source-group-name=\"Quote\" data-source-entity-name=\"qid\" data-target-group-name=\"Listing\" data-target-entity-name=\"qid\"></div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"702b06a8\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 962px; top: 300px; width: 225px; min-height: 270px\" data-title-name=\"Auction\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"702b06a8\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 963px; top: 305px; width: 225px; min-height: 280px\" data-title-name=\"Auction\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Auction</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -13531,6 +13531,9 @@
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b92e022c\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"deliverCost\" data-field-type=\"number\">",
       "                                        <div class=\"internal-fsb-title\">deliverCost</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"1273274a\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"number\" data-title-name=\"discount\">",
+      "                                        <div class=\"internal-fsb-title\">discount</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"891815c0\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"promotion\">",
       "                                        <div class=\"internal-fsb-title\">promotion</div>",
@@ -14567,6 +14570,13 @@
             "required": false,
             "unique": false
           },
+          "discount": {
+            "name": "discount",
+            "guid": "1273274a",
+            "fieldType": "number",
+            "required": false,
+            "unique": false
+          },
           "promotion": {
             "name": "promotion",
             "guid": "891815c0",
@@ -14951,7 +14961,7 @@
     "8857ca68": "e9c44f4e72cdaab392fa969f533517146225c4c2",
     "b140e86b": "e9c44f4e72cdaab392fa969f533517146225c4c2",
     "b6eb1b83": "2809e1923d2bf463d21570025ee4a833dfeef1c0",
-    "7e709334": "ca90cacfa48ea7aa994c87a7bdbe3442018cad61",
+    "7e709334": "4c5dcca80fee45d102183617eb8ea975f444c6e7",
     "65e04a88": "41c974352cae4a8864ae4f726a01357794f07514",
     "9d37c390": "e15b542b11119a077c086184390600735b70bf1e",
     "6ce794ec": "f50d1cd2d760fd5136f1d44dac8cf28ffd901691",
