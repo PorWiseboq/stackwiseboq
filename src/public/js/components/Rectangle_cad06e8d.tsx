@@ -497,7 +497,7 @@ class Rectangle_cad06e8d extends Base {
                                                           <div className="container-fluid">
                                                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                                               <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="1832b944" style={{padding: '0px'}}>
-                                                                <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="0" />
+                                                                <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="0" name={"group" + i} />
                                                               </div>
                                                               <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="b80041d3" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                                                 เจาะจง
@@ -509,7 +509,7 @@ class Rectangle_cad06e8d extends Base {
                                                           <div className="container-fluid">
                                                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                                               <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="b91e2739" style={{padding: '0px'}}>
-                                                                <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="1" />
+                                                                <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="1" name={"group" + i} />
                                                               </div>
                                                               <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="58266972" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                                                 เทียบเท่า
@@ -521,7 +521,7 @@ class Rectangle_cad06e8d extends Base {
                                                           <div className="container-fluid">
                                                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                                               <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="03aab0e5" style={{padding: '0px'}}>
-                                                                <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="2" />
+                                                                <input style={{'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="2" name={"group" + i} />
                                                               </div>
                                                               <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="5c2b0578" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                                                 ทดแทน
@@ -533,7 +533,7 @@ class Rectangle_cad06e8d extends Base {
                                                           <div className="container-fluid">
                                                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                                               <div className="internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0" internal-fsb-guid="957c1568" style={{padding: '0px'}}>
-                                                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="3" />
+                                                                <input style={{'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}} type="radio" value="3" name={"group" + i} />
                                                               </div>
                                                               <div className="internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0" internal-fsb-guid="a3b9410d" style={{'FsbInheritedPresets': 'b5cd72c0'}}>
                                                                 ไม่มี
