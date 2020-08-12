@@ -172,10 +172,10 @@ class Rectangle_cad06e8d extends Base {
                 <div className="internal-fsb-element" internal-fsb-guid="74e4253b" style={{'fontSize': '11px', 'flexShrink': '1', 'WebkitFlexShrink': '1', 'cursor': 'default'}}>
                   <div className="container-fluid">
                     <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                      <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px', 'marginTop': '10px'}}>
+                      <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px', 'marginTop': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="4a579143" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results: any) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="4a579143" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results: any) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="04b90b11" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png" />
                               </div>
@@ -185,7 +185,7 @@ class Rectangle_cad06e8d extends Base {
                               เคาะประมูล
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="42b3dc9b" style={{display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})(), padding: '0px'}}>
-                              <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-active.png" />
+                              <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'marginTop': '5px', 'borderRightWidth': '5px', 'marginLeft': '5px', 'marginBottom': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-active.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="51315831" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}}>
                               เคาะประมูล
@@ -193,10 +193,10 @@ class Rectangle_cad06e8d extends Base {
                           </div>
                         </div>
                       </div>
-                      <div className="internal-fsb-element col-12" internal-fsb-guid="7b54582d" style={{'marginBottom': '10px'}}>
+                      <div className="internal-fsb-element col-12" internal-fsb-guid="7b54582d" style={{'marginBottom': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="c05b11c1" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results: any) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="c05b11c1" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results: any) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="b6ec8d55" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png" />
                               </div>
@@ -206,7 +206,7 @@ class Rectangle_cad06e8d extends Base {
                               ประมูลผ่าน
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="40ada351" style={{display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})(), padding: '0px'}}>
-                              <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-active.png" />
+                              <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'marginTop': '5px', 'marginLeft': '5px', 'marginRight': '5px', 'marginBottom': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-active.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="936e036b" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}}>
                               ประมูลผ่าน
@@ -214,10 +214,10 @@ class Rectangle_cad06e8d extends Base {
                           </div>
                         </div>
                       </div>
-                      <div className="internal-fsb-element col-12" internal-fsb-guid="12a672c3" style={{'marginBottom': '10px'}}>
+                      <div className="internal-fsb-element col-12" internal-fsb-guid="12a672c3" style={{'marginBottom': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="833e4eb9" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results: any) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="833e4eb9" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results: any) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="4bac7ab7" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png" />
                               </div>
@@ -227,7 +227,7 @@ class Rectangle_cad06e8d extends Base {
                               คุยกับลูกค้า
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="7eb8a313" style={{display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})(), padding: '0px'}}>
-                              <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-active.png" />
+                              <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'marginTop': '5px', 'marginRight': '5px', 'marginBottom': '5px', 'marginLeft': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-active.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="579741b7" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}}>
                               คุยกับลูกค้า
@@ -235,10 +235,10 @@ class Rectangle_cad06e8d extends Base {
                           </div>
                         </div>
                       </div>
-                      <div className="internal-fsb-element col-12" internal-fsb-guid="9a5131da">
+                      <div className="internal-fsb-element col-12" internal-fsb-guid="9a5131da" style={{'paddingLeft': '5px', 'paddingRight': '5px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="e9c9b721" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results: any) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="e9c9b721" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results: any) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="6b7e8340" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png" />
                               </div>
@@ -248,7 +248,7 @@ class Rectangle_cad06e8d extends Base {
                               จ่ายเงินแล้ว
                             </div>
                             <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="86510a55" style={{display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})(), padding: '0px'}}>
-                              <img style={{'display': 'block', 'width': '40px', 'height': '40px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-active.png" />
+                              <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'marginTop': '5px', 'marginRight': '5px', 'marginBottom': '5px', 'marginLeft': '5px'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-active.png" />
                             </div>
                             <div className="internal-fsb-element col-12" internal-fsb-guid="b4775a3d" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}}>
                               จ่ายเงินแล้ว
