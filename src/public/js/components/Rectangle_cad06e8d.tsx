@@ -682,7 +682,7 @@ class Rectangle_cad06e8d extends Base {
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12" internal-fsb-guid="7958b83c">
-                                    ABC
+                                    ABCD
                                   </div>
                                 </div>
                               </div>
@@ -691,7 +691,7 @@ class Rectangle_cad06e8d extends Base {
                               <div className="container-fluid">
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   <div className="internal-fsb-element col-12" internal-fsb-guid="a34ccc8e">
-                                    ABC
+                                    ABCD
                                   </div>
                                 </div>
                               </div>
