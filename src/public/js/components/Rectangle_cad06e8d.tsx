@@ -370,7 +370,7 @@ class Rectangle_cad06e8d extends Base {
                                           <div className="container-fluid">
                                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                               <div className="internal-fsb-element col-12 -fsb-self-49a6327a" internal-fsb-guid="49a6327a" style={{color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} dangerouslySetInnerHTML={{__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}}></div>
-                                              <div className="internal-fsb-element col-7 offset-0 -fsb-self-4aee31ab" internal-fsb-guid="4aee31ab">
+                                              <div className="internal-fsb-element col-7 offset-0 -fsb-self-4aee31ab" internal-fsb-guid="4aee31ab" style={{color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}}>
                                                 อันดับที่ 5 / 10
                                               </div>
                                               <div className="internal-fsb-element col-5 offset-0 -fsb-self-3bec5885" internal-fsb-guid="3bec5885">
@@ -396,7 +396,7 @@ class Rectangle_cad06e8d extends Base {
                                           <div className="container-fluid">
                                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                               <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="53d42bea" style={{'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} dangerouslySetInnerHTML={{__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}}></div>
-                                              <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="3945ba95" style={{'FsbInheritedPresets': '4aee31ab'}}>
+                                              <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="3945ba95" style={{'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}}>
                                                 อันดับที่ 2 / 10
                                               </div>
                                               <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="c78396c8" style={{'FsbInheritedPresets': '3bec5885'}}>
@@ -422,7 +422,7 @@ class Rectangle_cad06e8d extends Base {
                                           <div className="container-fluid">
                                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                               <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="32663907" style={{'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} dangerouslySetInnerHTML={{__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}}></div>
-                                              <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="211827b2" style={{'FsbInheritedPresets': '4aee31ab'}}>
+                                              <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="211827b2" style={{'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}}>
                                                 150,000 บาท
                                               </div>
                                               <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="0e8e4701" style={{'FsbInheritedPresets': '3bec5885'}}>
@@ -448,7 +448,7 @@ class Rectangle_cad06e8d extends Base {
                                           <div className="container-fluid">
                                             <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                               <div className="internal-fsb-element col-12 -fsb-preset-49a6327a" internal-fsb-guid="1c822d56" style={{'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} dangerouslySetInnerHTML={{__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}}></div>
-                                              <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="39506c79" style={{'FsbInheritedPresets': '4aee31ab'}}>
+                                              <div className="internal-fsb-element -fsb-preset-4aee31ab col-7" internal-fsb-guid="39506c79" style={{'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}}>
                                                 55,000 บาท
                                               </div>
                                               <div className="internal-fsb-element -fsb-preset-3bec5885 col-5" internal-fsb-guid="9ec45baa" style={{'FsbInheritedPresets': '3bec5885'}}>
