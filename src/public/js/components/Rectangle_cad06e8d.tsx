@@ -86,6 +86,9 @@ class Rectangle_cad06e8d extends Base {
       HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e9c9b721').addEventListener('success', this.onButtonSuccess_e9c9b721.bind(this));
     }
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null});
+    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e76846ad')) {
+      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e76846ad').addEventListener('success', this.onButtonSuccess_e76846ad.bind(this));
+    }
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null});
     DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null});
@@ -145,6 +148,14 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
     this.setState({quoteType: QuoteType.PAID});
+    
+  }
+
+  protected onButtonSuccess_e76846ad(event: Event) {
+
+    // Handle the event of onButtonSuccess (Button 5) here:
+    // 
+    // DEMO
     
   }
   // <---Auto[Merging]

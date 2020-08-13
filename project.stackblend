@@ -4540,7 +4540,13 @@
         "    // Handle the event of onButtonClick (Button 5) here:",
         "    // ",
         "    ",
-        "    \" internal-fsb-react-style-background-color=\"CODE[return (this.state.selectedIndex == i) ? '#007BFF' : '';]\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"31c75169\" internal-fsb-name=\"Hidden 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"qid\">",
+        "    \" internal-fsb-react-style-background-color=\"CODE[return (this.state.selectedIndex == i) ? '#007BFF' : '';]\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "",
+        "    // Handle the event of onButtonSuccess (Button 5) here:",
+        "    // ",
+        "    // DEMO",
+        "    ",
+        "    \"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"31c75169\" internal-fsb-name=\"Hidden 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"qid\">",
         "                                                                        <div class=\"internal-fsb-element -fsb-self-5a671a7d\" internal-fsb-guid=\"5a671a7d\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"\" style=\"background: rgba(214, 237, 255, 0); border-top-color: rgba(77, 195, 250, 1); border-left-color: rgba(77, 195, 250, 1); border-right-color: rgba(77, 195, 250, 1); border-bottom-color: rgba(77, 195, 250, 1); -fsb-reusable-name: ; -fsb-reusable-id: 5a671a7d; -fsb-inherited-presets: \">",
         "                                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -5390,11 +5396,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "39506c79",
+        "selectingElementGUID": "e76846ad",
         "currentCursorWalkPath": [
-          "6bdca277",
+          "c3d853d0",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -15272,7 +15278,7 @@
     "FlowLayout_a6314edc": "3ead6bf6f76a55651027221184d395b72c0cdd09",
     "FlowLayout_41288a78": "295ff4128d32c5ea8a3788a0ae875718518c61fd",
     "FlowLayout_b2020622": "fa5a3132b355d81b37552f382d9f1e0b174151b3",
-    "Rectangle_cad06e8d": "895a0db815028ba7a7a6b313ddaa959ee1e60f3c",
+    "Rectangle_cad06e8d": "3e1b22b2233bba6e4e84ba514b00f7089d43d2e1",
     "FlowLayout_5e1d3916": "a9a8ee82d93e051cf1e511d0ee2130634a08ef49",
     "FlowLayout_d700a5d4": "664f2f705dcfd4416b17cab7c79b53ba3b81f63a",
     "FlowLayout_4a4ce3d8": "04e53f389fd41bb67f880166da4ce7db32181aac",
