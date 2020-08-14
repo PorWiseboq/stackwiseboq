@@ -316,7 +316,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" data-index=i + '' onSuccess=this.onButtonSuccess_e76846ad.bind(this) onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this) internal-fsb-guid="e76846ad")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key="item_" + i type="button" data-index=i + '' onSuccess=this.onButtonSuccess_e76846ad.bind(this) onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this) internal-fsb-guid="e76846ad")
                                       input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="31c75169")
                                       .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''} internal-fsb-guid="5a671a7d")
                                         .container-fluid
@@ -330,7 +330,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_802159d0.bind(this) onClick=((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this) internal-fsb-guid="802159d0")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key="item_" + i type="button" onSuccess=this.onButtonSuccess_802159d0.bind(this) onClick=((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this) internal-fsb-guid="802159d0")
                                       input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="72aecc3a")
                                       .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': 'rgba(214, 237, 255, 0)'} internal-fsb-guid="704100b7")
                                         .container-fluid
@@ -344,7 +344,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_8cbc5b17.bind(this) onClick=((event) => { window.internalFsbSubmit('8cbc5b17', 'Listing', event, ((results) => { this.manipulate('8cbc5b17', 'Listing', results); }).bind(this)); }).bind(this) internal-fsb-guid="8cbc5b17")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key="item_" + i type="button" onSuccess=this.onButtonSuccess_8cbc5b17.bind(this) onClick=((event) => { window.internalFsbSubmit('8cbc5b17', 'Listing', event, ((results) => { this.manipulate('8cbc5b17', 'Listing', results); }).bind(this)); }).bind(this) internal-fsb-guid="8cbc5b17")
                                       input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="e8656190")
                                       .internal-fsb-element(style={'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'} internal-fsb-guid="1e5c65cc")
                                         .container-fluid
@@ -358,7 +358,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_323ba37c.bind(this) onClick=((event) => { window.internalFsbSubmit('323ba37c', 'Listing', event, ((results) => { this.manipulate('323ba37c', 'Listing', results); }).bind(this)); }).bind(this) internal-fsb-guid="323ba37c")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key="item_" + i type="button" onSuccess=this.onButtonSuccess_323ba37c.bind(this) onClick=((event) => { window.internalFsbSubmit('323ba37c', 'Listing', event, ((results) => { this.manipulate('323ba37c', 'Listing', results); }).bind(this)); }).bind(this) internal-fsb-guid="323ba37c")
                                       input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="95270ad9")
                                       .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'} internal-fsb-guid="6bdca277")
                                         .container-fluid
@@ -381,7 +381,7 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
                                         each data, i in this.getDataFromNotation("Listing", true)
-                                          .internal-fsb-element.col-12.-fsb-self-c6ba5b53(key={"item_" + i} internal-fsb-guid="c6ba5b53")
+                                          .internal-fsb-element.col-12.-fsb-self-c6ba5b53(key="item_" + i internal-fsb-guid="c6ba5b53")
                                             .container-fluid
                                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                 .internal-fsb-element.col-4.offset-0.-fsb-self-65ec89d1(internal-fsb-guid="65ec89d1")
@@ -450,7 +450,7 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'} internal-fsb-guid="e1b315be")
                                           | คุณอยู่อันดับที่ 2 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอไม่ครบ
                                         each data, i in this.getDataFromNotation("Listing", true)
-                                          .internal-fsb-element.col-12.-fsb-preset-c6ba5b53(style={'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'} key={"item_" + i} internal-fsb-guid="ce9a10c5")
+                                          .internal-fsb-element.col-12.-fsb-preset-c6ba5b53(style={'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'} key="item_" + i internal-fsb-guid="ce9a10c5")
                                             .container-fluid
                                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                 .internal-fsb-element.col-4.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'} internal-fsb-guid="19ce03e8")
