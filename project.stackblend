@@ -4250,6 +4250,8 @@
         "  // Providing data array base on dot notation:",
         "  // ",
         "  protected getDataFromNotation(notation: string, inArray: boolean=false): any {",
+        "    notation = notation.replace('#{i}', this.state.selectedIndex);",
+        "    ",
         "    return super.getDataFromNotation(notation, inArray);",
         "  }",
         "  ",
@@ -5426,11 +5428,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "7484ac1e",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "64a6ac8c",
+          "24731127",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -15312,7 +15314,7 @@
     "FlowLayout_a6314edc": "3ead6bf6f76a55651027221184d395b72c0cdd09",
     "FlowLayout_41288a78": "295ff4128d32c5ea8a3788a0ae875718518c61fd",
     "FlowLayout_b2020622": "fa5a3132b355d81b37552f382d9f1e0b174151b3",
-    "Rectangle_cad06e8d": "be84e0b20774b6b970c9ad5f872280be2369febe",
+    "Rectangle_cad06e8d": "4417fbf855ccf681c4421e9cc89f997bb3edb976",
     "FlowLayout_5e1d3916": "a9a8ee82d93e051cf1e511d0ee2130634a08ef49",
     "FlowLayout_d700a5d4": "664f2f705dcfd4416b17cab7c79b53ba3b81f63a",
     "FlowLayout_4a4ce3d8": "04e53f389fd41bb67f880166da4ce7db32181aac",
