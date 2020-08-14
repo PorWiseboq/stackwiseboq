@@ -4653,8 +4653,8 @@
         "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"64a6ac8c\" internal-fsb-name=\"Inner\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
         "                                                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"8c2aa238\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote.title\">ชื่อรายการ</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"7484ac1e\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote.description\">รายละเอียดโดยย่อ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"8c2aa238\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#{i}].title\">ชื่อรายการ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"7484ac1e\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#{i}].description\">รายละเอียดโดยย่อ</div>",
         "",
         "",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-1715aae1\" internal-fsb-guid=\"1715aae1\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"quote_box_notice\">ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ</div>",
@@ -5426,9 +5426,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "4069ed4d",
+        "selectingElementGUID": "7484ac1e",
         "currentCursorWalkPath": [
-          "6daabaa5",
+          "64a6ac8c",
           0,
           2,
           null
@@ -5443,6 +5443,10 @@
       "notations": {
         "Quote": {
           "qid": {},
+          "title": {},
+          "description": {}
+        },
+        "Quote[#{i}]": {
           "title": {},
           "description": {}
         },
@@ -15308,7 +15312,7 @@
     "FlowLayout_a6314edc": "3ead6bf6f76a55651027221184d395b72c0cdd09",
     "FlowLayout_41288a78": "295ff4128d32c5ea8a3788a0ae875718518c61fd",
     "FlowLayout_b2020622": "fa5a3132b355d81b37552f382d9f1e0b174151b3",
-    "Rectangle_cad06e8d": "4caa279b0c4d52b5a79736bc958e85207975b7b3",
+    "Rectangle_cad06e8d": "be84e0b20774b6b970c9ad5f872280be2369febe",
     "FlowLayout_5e1d3916": "a9a8ee82d93e051cf1e511d0ee2130634a08ef49",
     "FlowLayout_d700a5d4": "664f2f705dcfd4416b17cab7c79b53ba3b81f63a",
     "FlowLayout_4a4ce3d8": "04e53f389fd41bb67f880166da4ce7db32181aac",

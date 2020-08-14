@@ -377,8 +377,8 @@ class Rectangle_cad06e8d extends Base {
                                   .internal-fsb-element.col-12(internal-fsb-guid="64a6ac8c")
                                     .container-fluid
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                        .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.title"))} internal-fsb-guid="8c2aa238")
-                                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.description"))} internal-fsb-guid="7484ac1e")
+                                        .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#{i}].title"))} internal-fsb-guid="8c2aa238")
+                                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#{i}].description"))} internal-fsb-guid="7484ac1e")
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
                                         each data, i in this.getDataFromNotation("Listing", true)
