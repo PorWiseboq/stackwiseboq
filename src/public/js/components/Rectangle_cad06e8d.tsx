@@ -70,25 +70,10 @@ class Rectangle_cad06e8d extends Base {
   
   register() {
     DataManipulationHelper.register("4a579143", "retrieve", ["1ae8405a"], {initClass: null});
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '4a579143')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '4a579143').addEventListener('success', this.onButtonSuccess_4a579143.bind(this));
-    }
     DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7"], {initClass: null});
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'c05b11c1')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'c05b11c1').addEventListener('success', this.onButtonSuccess_c05b11c1.bind(this));
-    }
     DataManipulationHelper.register("833e4eb9", "retrieve", ["d24ed774"], {initClass: null});
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '833e4eb9')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', '833e4eb9').addEventListener('success', this.onButtonSuccess_833e4eb9.bind(this));
-    }
     DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261"], {initClass: null});
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e9c9b721')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e9c9b721').addEventListener('success', this.onButtonSuccess_e9c9b721.bind(this));
-    }
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null});
-    if (HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e76846ad')) {
-      HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', 'e76846ad').addEventListener('success', this.onButtonSuccess_e76846ad.bind(this));
-    }
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null});
     DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null});
@@ -170,11 +155,11 @@ class Rectangle_cad06e8d extends Base {
               <div className="internal-fsb-element offset-0" internal-fsb-guid="c6200677" style={{'fontSize': '24px', 'marginTop': '10px', 'marginLeft': '10px', 'marginBottom': '10px', 'float': 'left'}}>
                 WiseBOQ
               </div>
-              <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary" internal-fsb-guid="108bb2b9" style={{'paddingLeft': '15px', 'paddingRight': '15px', 'float': 'right', 'fontSize': '14px', 'marginTop': '10px', 'marginRight': '10px'}} type="button">
+              <Button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary" internal-fsb-guid="108bb2b9" style={{'paddingLeft': '15px', 'paddingRight': '15px', 'float': 'right', 'fontSize': '14px', 'marginTop': '10px', 'marginRight': '10px'}} type="button">
                 <div className="internal-fsb-element" internal-fsb-guid="108bb2b9-text">
                   ออกจากระบบ
                 </div>
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -188,11 +173,11 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="ca80140b" style={{'marginBottom': '10px', 'marginTop': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="4a579143" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results: any) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <Button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="4a579143" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}} type="button" onSuccess={this.onButtonSuccess_4a579143.bind(this)} onClick={((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results: any) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="04b90b11" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png" />
                               </div>
-                            </button>
+                            </Button>
                             <input className="internal-fsb-element" internal-fsb-guid="1ae8405a" type="hidden" value="0" />
                             <div className="internal-fsb-element col-12" internal-fsb-guid="9a91246d" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}}>
                               เคาะประมูล
@@ -209,11 +194,11 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="7b54582d" style={{'marginBottom': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="c05b11c1" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results: any) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <Button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="c05b11c1" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}} type="button" onSuccess={this.onButtonSuccess_c05b11c1.bind(this)} onClick={((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results: any) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="b6ec8d55" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png" />
                               </div>
-                            </button>
+                            </Button>
                             <input className="internal-fsb-element" internal-fsb-guid="4cade2e7" type="hidden" value="1" />
                             <div className="internal-fsb-element col-12" internal-fsb-guid="ac1a1bce" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}}>
                               ประมูลผ่าน
@@ -230,11 +215,11 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="12a672c3" style={{'marginBottom': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="833e4eb9" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results: any) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <Button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="833e4eb9" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}} type="button" onSuccess={this.onButtonSuccess_833e4eb9.bind(this)} onClick={((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results: any) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="4bac7ab7" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png" />
                               </div>
-                            </button>
+                            </Button>
                             <input className="internal-fsb-element" internal-fsb-guid="d24ed774" type="hidden" value="2" />
                             <div className="internal-fsb-element col-12" internal-fsb-guid="8a12a919" style={{'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}}>
                               คุยกับลูกค้า
@@ -251,11 +236,11 @@ class Rectangle_cad06e8d extends Base {
                       <div className="internal-fsb-element col-12" internal-fsb-guid="9a5131da" style={{'paddingLeft': '5px', 'paddingRight': '5px'}}>
                         <div className="container-fluid">
                           <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                            <button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="e9c9b721" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}} type="button" onClick={((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results: any) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this)}>
+                            <Button className="internal-fsb-element internal-fsb-allow-cursor" internal-fsb-guid="e9c9b721" style={{'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}} type="button" onSuccess={this.onButtonSuccess_e9c9b721.bind(this)} onClick={((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results: any) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this)}>
                               <div className="internal-fsb-element" internal-fsb-guid="6b7e8340" style={{padding: '0px'}}>
                                 <img style={{'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png" />
                               </div>
-                            </button>
+                            </Button>
                             <input className="internal-fsb-element" internal-fsb-guid="d1920261" type="hidden" value="3" />
                             <div className="internal-fsb-element col-12" internal-fsb-guid="83e40405" style={{'textAlign': 'center', 'color': 'rgba(255, 255, 255, 0.45)', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}}>
                               จ่ายเงินแล้ว
@@ -375,7 +360,7 @@ class Rectangle_cad06e8d extends Base {
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   {this.getDataFromNotation("Quote", true).map((data, i) => {
                                     return (
-                                      <button className="internal-fsb-element internal-fsb-allow-cursor -fsb-self-e76846ad" internal-fsb-guid="e76846ad" style={{background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} key={"item_" + i} type="button" data-index={i + ''} onClick={((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results: any) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this)}>
+                                      <Button className="internal-fsb-element internal-fsb-allow-cursor -fsb-self-e76846ad" internal-fsb-guid="e76846ad" style={{background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} key={"item_" + i} type="button" data-index={i + ''} onSuccess={this.onButtonSuccess_e76846ad.bind(this)} onClick={((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results: any) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this)}>
                                         <input className="internal-fsb-element col-12" internal-fsb-guid="31c75169" type="hidden" value={this.getDataFromNotation("Quote[" + i + "].qid")} />
                                         <div className="internal-fsb-element -fsb-self-5a671a7d" internal-fsb-guid="5a671a7d" style={{'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''}}>
                                           <div className="container-fluid">
@@ -390,7 +375,7 @@ class Rectangle_cad06e8d extends Base {
                                             </div>
                                           </div>
                                         </div>
-                                      </button>
+                                      </Button>
                                     )
                                   })}
                                 </div>
@@ -401,7 +386,7 @@ class Rectangle_cad06e8d extends Base {
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   {this.getDataFromNotation("Quote", true).map((data, i) => {
                                     return (
-                                      <button className="internal-fsb-element internal-fsb-allow-cursor -fsb-preset-e76846ad" internal-fsb-guid="802159d0" style={{'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} key={"item_" + i} type="button" onClick={((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results: any) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this)}>
+                                      <Button className="internal-fsb-element internal-fsb-allow-cursor -fsb-preset-e76846ad" internal-fsb-guid="802159d0" style={{'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} key={"item_" + i} type="button" onClick={((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results: any) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this)}>
                                         <input className="internal-fsb-element col-12" internal-fsb-guid="72aecc3a" type="hidden" value={this.getDataFromNotation("Quote[" + i + "].qid")} />
                                         <div className="internal-fsb-element" internal-fsb-guid="704100b7" style={{'FsbInheritedPresets': '', 'background': 'rgba(214, 237, 255, 0)'}}>
                                           <div className="container-fluid">
@@ -416,7 +401,7 @@ class Rectangle_cad06e8d extends Base {
                                             </div>
                                           </div>
                                         </div>
-                                      </button>
+                                      </Button>
                                     )
                                   })}
                                 </div>
@@ -427,7 +412,7 @@ class Rectangle_cad06e8d extends Base {
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   {this.getDataFromNotation("Quote", true).map((data, i) => {
                                     return (
-                                      <button className="internal-fsb-element internal-fsb-allow-cursor -fsb-preset-e76846ad" internal-fsb-guid="8cbc5b17" style={{'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} key={"item_" + i} type="button" onClick={((event) => { window.internalFsbSubmit('8cbc5b17', 'Listing', event, ((results: any) => { this.manipulate('8cbc5b17', 'Listing', results); }).bind(this)); }).bind(this)}>
+                                      <Button className="internal-fsb-element internal-fsb-allow-cursor -fsb-preset-e76846ad" internal-fsb-guid="8cbc5b17" style={{'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} key={"item_" + i} type="button" onClick={((event) => { window.internalFsbSubmit('8cbc5b17', 'Listing', event, ((results: any) => { this.manipulate('8cbc5b17', 'Listing', results); }).bind(this)); }).bind(this)}>
                                         <input className="internal-fsb-element col-12" internal-fsb-guid="e8656190" type="hidden" value={this.getDataFromNotation("Quote[" + i + "].qid")} />
                                         <div className="internal-fsb-element" internal-fsb-guid="1e5c65cc" style={{'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'}}>
                                           <div className="container-fluid">
@@ -442,7 +427,7 @@ class Rectangle_cad06e8d extends Base {
                                             </div>
                                           </div>
                                         </div>
-                                      </button>
+                                      </Button>
                                     )
                                   })}
                                 </div>
@@ -453,7 +438,7 @@ class Rectangle_cad06e8d extends Base {
                                 <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
                                   {this.getDataFromNotation("Quote", true).map((data, i) => {
                                     return (
-                                      <button className="internal-fsb-element internal-fsb-allow-cursor -fsb-preset-e76846ad" internal-fsb-guid="323ba37c" style={{'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} key={"item_" + i} type="button" onClick={((event) => { window.internalFsbSubmit('323ba37c', 'Listing', event, ((results: any) => { this.manipulate('323ba37c', 'Listing', results); }).bind(this)); }).bind(this)}>
+                                      <Button className="internal-fsb-element internal-fsb-allow-cursor -fsb-preset-e76846ad" internal-fsb-guid="323ba37c" style={{'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}} key={"item_" + i} type="button" onClick={((event) => { window.internalFsbSubmit('323ba37c', 'Listing', event, ((results: any) => { this.manipulate('323ba37c', 'Listing', results); }).bind(this)); }).bind(this)}>
                                         <input className="internal-fsb-element col-12" internal-fsb-guid="95270ad9" type="hidden" value={this.getDataFromNotation("Quote[" + i + "].qid")} />
                                         <div className="internal-fsb-element" internal-fsb-guid="6bdca277" style={{'FsbInheritedPresets': '', 'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'}}>
                                           <div className="container-fluid">
@@ -468,7 +453,7 @@ class Rectangle_cad06e8d extends Base {
                                             </div>
                                           </div>
                                         </div>
-                                      </button>
+                                      </Button>
                                     )
                                   })}
                                 </div>
@@ -586,11 +571,11 @@ class Rectangle_cad06e8d extends Base {
                                         <div className="internal-fsb-element col-2 offset-0" internal-fsb-guid="2b06dab6">
                                           บาท
                                         </div>
-                                        <button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9868a6d5" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
+                                        <Button className="internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4" internal-fsb-guid="9868a6d5" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
                                           <div className="internal-fsb-element" internal-fsb-guid="9868a6d5-text">
                                             เคาะ
                                           </div>
-                                        </button>
+                                        </Button>
                                       </div>
                                     </div>
                                   </div>
@@ -681,11 +666,11 @@ class Rectangle_cad06e8d extends Base {
                                   <div className="internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0" internal-fsb-guid="5428078e" style={{'FsbInheritedPresets': '1715aae1'}}>
                                     คุณเสนอราคาที่ 125,000 บาท
                                   </div>
-                                  <button className="internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm" internal-fsb-guid="d3e31c36" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
+                                  <Button className="internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm" internal-fsb-guid="d3e31c36" style={{'marginTop': '10px', 'marginBottom': '10px'}} type="button">
                                     <div className="internal-fsb-element" internal-fsb-guid="d3e31c36-text">
                                       ยกเลิก
                                     </div>
-                                  </button>
+                                  </Button>
                                 </div>
                               </div>
                             </div>
