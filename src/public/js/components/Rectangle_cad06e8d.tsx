@@ -314,58 +314,58 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                      Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" data-index=i + '' onSuccess=this.onButtonSuccess_e76846ad.bind(this) onClick={((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results: any) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this)} internal-fsb-guid="e76846ad")
-                                        input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="31c75169")
-                                        .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''} internal-fsb-guid="5a671a7d")
-                                          .container-fluid
-                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                              .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))} internal-fsb-guid="49a6327a")
-                                              .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} internal-fsb-guid="4aee31ab")
-                                                | อันดับที่ 5 / 10
-                                              .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(internal-fsb-guid="3bec5885")
-                                                | เสนอครบ
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" data-index=i + '' onSuccess=this.onButtonSuccess_e76846ad.bind(this) onClick={((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results: any) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this)} internal-fsb-guid="e76846ad")
+                                      input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="31c75169")
+                                      .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''} internal-fsb-guid="5a671a7d")
+                                        .container-fluid
+                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))} internal-fsb-guid="49a6327a")
+                                            .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} internal-fsb-guid="4aee31ab")
+                                              | อันดับที่ 5 / 10
+                                            .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(internal-fsb-guid="3bec5885")
+                                              | เสนอครบ
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()} internal-fsb-guid="24d70384")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                      Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_802159d0.bind(this) onClick={((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results: any) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this)} internal-fsb-guid="802159d0")
-                                        input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="72aecc3a")
-                                        .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': 'rgba(214, 237, 255, 0)'} internal-fsb-guid="704100b7")
-                                          .container-fluid
-                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                              .internal-fsb-element.col-12.-fsb-preset-49a6327a(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))} internal-fsb-guid="53d42bea")
-                                              .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} internal-fsb-guid="3945ba95")
-                                                | อันดับที่ 2 / 10
-                                              .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'} internal-fsb-guid="c78396c8")
-                                                | เสนอไม่ครบ
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_802159d0.bind(this) onClick={((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results: any) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this)} internal-fsb-guid="802159d0")
+                                      input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="72aecc3a")
+                                      .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': 'rgba(214, 237, 255, 0)'} internal-fsb-guid="704100b7")
+                                        .container-fluid
+                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                            .internal-fsb-element.col-12.-fsb-preset-49a6327a(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))} internal-fsb-guid="53d42bea")
+                                            .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} internal-fsb-guid="3945ba95")
+                                              | อันดับที่ 2 / 10
+                                            .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'} internal-fsb-guid="c78396c8")
+                                              | เสนอไม่ครบ
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()} internal-fsb-guid="0250cb01")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                      Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_8cbc5b17.bind(this) onClick={((event) => { window.internalFsbSubmit('8cbc5b17', 'Listing', event, ((results: any) => { this.manipulate('8cbc5b17', 'Listing', results); }).bind(this)); }).bind(this)} internal-fsb-guid="8cbc5b17")
-                                        input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="e8656190")
-                                        .internal-fsb-element(style={'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'} internal-fsb-guid="1e5c65cc")
-                                          .container-fluid
-                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                              .internal-fsb-element.col-12.-fsb-preset-49a6327a(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))} internal-fsb-guid="32663907")
-                                              .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} internal-fsb-guid="211827b2")
-                                                | 150,000 บาท
-                                              .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'} internal-fsb-guid="0e8e4701")
-                                                | ข้อความใหม่
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_8cbc5b17.bind(this) onClick={((event) => { window.internalFsbSubmit('8cbc5b17', 'Listing', event, ((results: any) => { this.manipulate('8cbc5b17', 'Listing', results); }).bind(this)); }).bind(this)} internal-fsb-guid="8cbc5b17")
+                                      input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="e8656190")
+                                      .internal-fsb-element(style={'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'} internal-fsb-guid="1e5c65cc")
+                                        .container-fluid
+                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                            .internal-fsb-element.col-12.-fsb-preset-49a6327a(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))} internal-fsb-guid="32663907")
+                                            .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} internal-fsb-guid="211827b2")
+                                              | 150,000 บาท
+                                            .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'} internal-fsb-guid="0e8e4701")
+                                              | ข้อความใหม่
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()} internal-fsb-guid="a1595e85")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                      Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_323ba37c.bind(this) onClick={((event) => { window.internalFsbSubmit('323ba37c', 'Listing', event, ((results: any) => { this.manipulate('323ba37c', 'Listing', results); }).bind(this)); }).bind(this)} internal-fsb-guid="323ba37c")
-                                        input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="95270ad9")
-                                        .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'} internal-fsb-guid="6bdca277")
-                                          .container-fluid
-                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                              .internal-fsb-element.col-12.-fsb-preset-49a6327a(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))} internal-fsb-guid="1c822d56")
-                                              .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} internal-fsb-guid="39506c79")
-                                                | 55,000 บาท
-                                              .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'} internal-fsb-guid="9ec45baa")
-                                                | บัตรเครดิต
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} key={"item_" + i} type="button" onSuccess=this.onButtonSuccess_323ba37c.bind(this) onClick={((event) => { window.internalFsbSubmit('323ba37c', 'Listing', event, ((results: any) => { this.manipulate('323ba37c', 'Listing', results); }).bind(this)); }).bind(this)} internal-fsb-guid="323ba37c")
+                                      input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[" + i + "].qid") internal-fsb-guid="95270ad9")
+                                      .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'} internal-fsb-guid="6bdca277")
+                                        .container-fluid
+                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                            .internal-fsb-element.col-12.-fsb-preset-49a6327a(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))} internal-fsb-guid="1c822d56")
+                                            .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()} internal-fsb-guid="39506c79")
+                                              | 55,000 บาท
+                                            .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'} internal-fsb-guid="9ec45baa")
+                                              | บัตรเครดิต
                         .internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'table-cell', 'position': 'relative'} internal-fsb-guid="154b7137")
                           .internal-fsb-element.internal-fsb-allow-cursor(style={'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'left': '0px', 'top': '0px', 'right': '0px', 'bottom': '0px', 'paddingTop': '5px', 'paddingBottom': '5px'} internal-fsb-guid="ed65b978")
                             .internal-fsb-element(style={display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()} internal-fsb-guid="ae9a328e")
@@ -379,55 +379,55 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
                                         each data, i in this.getDataFromNotation("Listing", true)
-                                            .internal-fsb-element.col-12.-fsb-self-c6ba5b53(key={"item_" + i} internal-fsb-guid="c6ba5b53")
-                                              .container-fluid
-                                                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-4.offset-0.-fsb-self-65ec89d1(internal-fsb-guid="65ec89d1")
-                                                    .container-fluid
-                                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                        .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].title"))} internal-fsb-guid="a818c946")
-                                                        .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].size"))} internal-fsb-guid="eccb7c51")
-                                                        .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].quantity"))} internal-fsb-guid="0e3365eb")
-                                                  .internal-fsb-element.col-3.offset-0(internal-fsb-guid="e5e63918")
-                                                    .container-fluid
-                                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                        label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="b42d4545")
-                                                          .container-fluid
-                                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                              .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="1832b944")
-                                                                input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="0" name="group" + i)
-                                                              .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="b80041d3")
-                                                                | เจาะจง
-                                                        label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="eb192633")
-                                                          .container-fluid
-                                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                              .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="b91e2739")
-                                                                input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="1" name="group" + i)
-                                                              .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="58266972")
-                                                                | เทียบเท่า
-                                                        label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="2cb33325")
-                                                          .container-fluid
-                                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                              .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="03aab0e5")
-                                                                input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="2" name="group" + i)
-                                                              .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="5c2b0578")
-                                                                | ทดแทน
-                                                        label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="c1c5b10b")
-                                                          .container-fluid
-                                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                              .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="957c1568")
-                                                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="3" name="group" + i)
-                                                              .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="a3b9410d")
-                                                                | ไม่มี
-                                                  .internal-fsb-element.col-5.offset-0(internal-fsb-guid="483390a6")
-                                                    .container-fluid
-                                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="9c338431")
-                                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนวัสดุเป็น")
-                                                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="d913e6a1")
-                                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนขนาดเป็น")
-                                                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="c22ec668")
-                                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนปริมาณเป็น")
+                                          .internal-fsb-element.col-12.-fsb-self-c6ba5b53(key={"item_" + i} internal-fsb-guid="c6ba5b53")
+                                            .container-fluid
+                                              .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                .internal-fsb-element.col-4.offset-0.-fsb-self-65ec89d1(internal-fsb-guid="65ec89d1")
+                                                  .container-fluid
+                                                    .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].title"))} internal-fsb-guid="a818c946")
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].size"))} internal-fsb-guid="eccb7c51")
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].quantity"))} internal-fsb-guid="0e3365eb")
+                                                .internal-fsb-element.col-3.offset-0(internal-fsb-guid="e5e63918")
+                                                  .container-fluid
+                                                    .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                      label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="b42d4545")
+                                                        .container-fluid
+                                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                            .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="1832b944")
+                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="0" name="group" + i)
+                                                            .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="b80041d3")
+                                                              | เจาะจง
+                                                      label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="eb192633")
+                                                        .container-fluid
+                                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                            .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="b91e2739")
+                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="1" name="group" + i)
+                                                            .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="58266972")
+                                                              | เทียบเท่า
+                                                      label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="2cb33325")
+                                                        .container-fluid
+                                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                            .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="03aab0e5")
+                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="2" name="group" + i)
+                                                            .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="5c2b0578")
+                                                              | ทดแทน
+                                                      label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="c1c5b10b")
+                                                        .container-fluid
+                                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                            .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="957c1568")
+                                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="3" name="group" + i)
+                                                            .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="a3b9410d")
+                                                              | ไม่มี
+                                                .internal-fsb-element.col-5.offset-0(internal-fsb-guid="483390a6")
+                                                  .container-fluid
+                                                    .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                      .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="9c338431")
+                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนวัสดุเป็น")
+                                                      .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="d913e6a1")
+                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนขนาดเป็น")
+                                                      .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="c22ec668")
+                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนปริมาณเป็น")
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'} internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'} internal-fsb-guid="c03d6613")
@@ -448,35 +448,35 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'} internal-fsb-guid="e1b315be")
                                           | คุณอยู่อันดับที่ 2 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอไม่ครบ
                                         each data, i in this.getDataFromNotation("Listing", true)
-                                            .internal-fsb-element.col-12.-fsb-preset-c6ba5b53(style={'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'} key={"item_" + i} internal-fsb-guid="ce9a10c5")
-                                              .container-fluid
-                                                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-4.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'} internal-fsb-guid="19ce03e8")
-                                                    .container-fluid
-                                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                        .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].title"))} internal-fsb-guid="07673d1a")
-                                                        .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].size"))} internal-fsb-guid="19d0b023")
-                                                        .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].quantity"))} internal-fsb-guid="bd0d3bad")
-                                                  .internal-fsb-element.-fsb-preset-65ec89d1.col-3.offset-0(style={'FsbInheritedPresets': '65ec89d1'} internal-fsb-guid="9ecd9ed0")
-                                                    .container-fluid
-                                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                        .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'} internal-fsb-guid="00758360")
-                                                          | สินค้าเทียบเคียง: ทดแทน
-                                                        .internal-fsb-element.col-7.offset-0(style={padding: '0px'} internal-fsb-guid="1382e4c9")
-                                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'} type="text" placeholder="ราคาต่อหน่วย")
-                                                        .internal-fsb-element.col-5.offset-0(style={'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px'} internal-fsb-guid="530bacd3")
-                                                          | บาท
-                                                  .internal-fsb-element.col-5.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'} internal-fsb-guid="176a4c29")
-                                                    .container-fluid
-                                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                        .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'} internal-fsb-guid="b840c1c0")
-                                                          | เปลี่ยนวัสดุเป็น:
-                                                        .internal-fsb-element.col-12(internal-fsb-guid="8656cea5")
-                                                          | ชื่อวัสดุใหม่
-                                                        .internal-fsb-element.col-12(internal-fsb-guid="ed22bc9a")
-                                                          | ขนาดใหม่
-                                                        .internal-fsb-element.col-12(internal-fsb-guid="a9a3406a")
-                                                          | ปริมาณใหม่
+                                          .internal-fsb-element.col-12.-fsb-preset-c6ba5b53(style={'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'} key={"item_" + i} internal-fsb-guid="ce9a10c5")
+                                            .container-fluid
+                                              .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                .internal-fsb-element.col-4.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'} internal-fsb-guid="19ce03e8")
+                                                  .container-fluid
+                                                    .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].title"))} internal-fsb-guid="07673d1a")
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].size"))} internal-fsb-guid="19d0b023")
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].quantity"))} internal-fsb-guid="bd0d3bad")
+                                                .internal-fsb-element.-fsb-preset-65ec89d1.col-3.offset-0(style={'FsbInheritedPresets': '65ec89d1'} internal-fsb-guid="9ecd9ed0")
+                                                  .container-fluid
+                                                    .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                      .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'} internal-fsb-guid="00758360")
+                                                        | สินค้าเทียบเคียง: ทดแทน
+                                                      .internal-fsb-element.col-7.offset-0(style={padding: '0px'} internal-fsb-guid="1382e4c9")
+                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'} type="text" placeholder="ราคาต่อหน่วย")
+                                                      .internal-fsb-element.col-5.offset-0(style={'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px'} internal-fsb-guid="530bacd3")
+                                                        | บาท
+                                                .internal-fsb-element.col-5.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'} internal-fsb-guid="176a4c29")
+                                                  .container-fluid
+                                                    .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                      .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'} internal-fsb-guid="b840c1c0")
+                                                        | เปลี่ยนวัสดุเป็น:
+                                                      .internal-fsb-element.col-12(internal-fsb-guid="8656cea5")
+                                                        | ชื่อวัสดุใหม่
+                                                      .internal-fsb-element.col-12(internal-fsb-guid="ed22bc9a")
+                                                        | ขนาดใหม่
+                                                      .internal-fsb-element.col-12(internal-fsb-guid="a9a3406a")
+                                                        | ปริมาณใหม่
                                   .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'} internal-fsb-guid="53e2a8cc")
                                     | กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด
                                   .internal-fsb-element.col-6.offset-3(style={padding: '0px'} internal-fsb-guid="e68b9c07")
