@@ -24,6 +24,7 @@ declare let React: any;
 declare let ReactDOM: any;
 declare let window: any;
 declare let DataManipulationHelper: any;
+declare let pug: any;
 
 let Button = $Button;
 
