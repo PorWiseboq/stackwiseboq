@@ -4215,7 +4215,7 @@
         "fonts": {}
       },
       "body": [
-        "<body class=\"internal-fsb-element col-12\" internal-fsb-guid=\"24731127\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; margin-bottom: 5px; -fsb-inherited-presets: ; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; overflow-x: hidden; -ms-overflow-x: hidden; overflow-y: hidden; -ms-overflow-y: hidden; width: 100%; height: 100%\">",
+        "<body class=\"internal-fsb-element col-12 internal-fsb-focusing-text-element\" internal-fsb-guid=\"24731127\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; margin-bottom: 5px; -fsb-inherited-presets: ; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; overflow-x: hidden; -ms-overflow-x: hidden; overflow-y: hidden; -ms-overflow-y: hidden; width: 100%; height: 100%\">",
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\" internal-fsb-event-no-propagate=\"1\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
@@ -5426,7 +5426,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "3e557242",
+        "selectingElementGUID": "b3410868",
         "currentCursorWalkPath": [
           "6daabaa5",
           0,
@@ -15323,7 +15323,7 @@
     "8857ca68": "9b392ac5eb41fb2007861afc7f677fad4e8fb7f3",
     "b6eb1b83": "7bad88d607a9cb4eb4be195fbc5854e8b67b0eb7",
     "65e04a88": "ee1b4c432c39eab9f60a446bf648a2a679e044e6",
-    "7e709334": "f7caae6644d326df88ed035b1d481a4e778dc25b",
+    "7e709334": "7dd3038f38484cc69d7051d9521aecd013457b3f",
     "6ce794ec": "8e5205284b136c54872752e571b03f70646140a8",
     "9d37c390": "a8120d45a2681f5d7ead6826cd4c27a75e39b012",
     "bbc7dba3": "864eca754b48d0d855639c2122ba5b439cfb203e",
