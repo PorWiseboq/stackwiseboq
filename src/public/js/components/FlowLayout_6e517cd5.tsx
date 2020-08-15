@@ -2,7 +2,7 @@
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
 // Auto[Import]--->
-import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
@@ -24,6 +24,7 @@ declare let DataManipulationHelper: any;
 declare let pug: any;
 
 let Button = $Button;
+let Project = $Project;
 
 // <---Auto[Declare]
 

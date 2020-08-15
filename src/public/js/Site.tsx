@@ -1,7 +1,7 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-import {Project, DeclarationHelper} from './helpers/DeclarationHelper.js';
+import {Project as $Project, DeclarationHelper} from './helpers/DeclarationHelper.js';
 import {HTMLHelper} from './helpers/HTMLHelper.js';
 import {EventHelper} from './helpers/EventHelper.js';
 import './components/LoginControl.js';
@@ -41,6 +41,8 @@ declare let React: any;
 declare let ReactDOM: any;
 declare let window: any;
 declare let DataManipulationHelper: any;
+
+let Project = $Project;
 
 let expandingPlaceholders = [...document.querySelectorAll('[internal-fsb-init-class]')];
 for (let expandingPlaceholder of expandingPlaceholders) {
