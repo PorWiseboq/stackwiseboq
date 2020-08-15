@@ -10,10 +10,7 @@ import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Button as $B
 // <---Auto[Import]
 
 // Import additional modules here:
-//
-
-// TODO: Remove this after StackBlend have a fix to recursively include nested component files.
-Project['Controls'] = Project['Controls'] || {};
+//Project['Controls'] =
 
 // Auto[Declare]--->
 
@@ -30,6 +27,7 @@ let Project = $Project;
 
 // Declare private static variables here:
 //
+Project['Controls'] = Project['Controls'] || {};
 
 // Auto[Interface]--->
 interface IAutoBaseProps extends IBaseProps {
