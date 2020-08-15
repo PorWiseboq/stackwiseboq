@@ -90,7 +90,7 @@ class FlowLayout_535be65e extends Base {
       div(style=Object.assign({'null': 'undefined'}, this.props.forward && this.props.forward.styles || {}) className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || '') internal-fsb-guid="535be65e")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor(style={'display': 'block'})
-            =Project.Controls.FlowLayout_00ce1665 forward={'classes': '', 'styles': {}} 
+            Project.Controls.FlowLayout_00ce1665 forward={'classes': '', 'styles': {}} 
             .internal-fsb-element(style={'fontSize': '14px', 'float': 'right', 'marginTop': '15px', 'marginRight': '15px'} internal-fsb-guid="1136ae7c")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
