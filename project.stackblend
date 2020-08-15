@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "index",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "535be65e"
   },
@@ -1448,16 +1448,22 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "1c6d525c",
+        "selectingElementGUID": "81b0161d",
         "currentCursorWalkPath": [
           "81b0161d",
           0,
@@ -2444,9 +2450,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "7aee6ed8",
+        "selectingElementGUID": "100b12a4",
         "currentCursorWalkPath": [
-          "68a04e8d",
+          "25cdd095",
           0,
           1,
           null
@@ -3352,7 +3358,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "7db38519",
+        "selectingElementGUID": "bc22d8d6",
         "currentCursorWalkPath": [
           "bc22d8d6",
           0,
@@ -4302,7 +4308,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "200e2846",
+        "selectingElementGUID": "83bb535d",
         "currentCursorWalkPath": [
           "83bb535d",
           0,
@@ -4363,7 +4369,7 @@
         "  // Providing data array base on dot notation:",
         "  // ",
         "  protected getDataFromNotation(notation: string, inArray: boolean=false): any {",
-        "    notation = notation.replace('#{i}', this.state.selectedIndex);",
+        "    notation = notation.replace('#{i}', this.state.selectedIndex.toString());",
         "    ",
         "    return super.getDataFromNotation(notation, inArray);",
         "  }",
@@ -5538,7 +5544,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0d656c9d",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
           "945cdc26",
           0,
@@ -6699,7 +6705,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "180079a2",
+        "selectingElementGUID": "8b1a4a93",
         "currentCursorWalkPath": [
           "b2020622",
           0,
@@ -7437,7 +7443,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "eb7259a4",
+        "selectingElementGUID": "24428d5c",
         "currentCursorWalkPath": [
           "24428d5c",
           0,
@@ -8075,7 +8081,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "754eba57",
+        "selectingElementGUID": "76b295bc",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -8816,7 +8822,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a0641238",
+        "selectingElementGUID": "d58ae925",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -9463,7 +9469,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "78385698",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -10117,7 +10123,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0dc16d9d",
+        "selectingElementGUID": "8e81c57d",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -10897,7 +10903,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0cdd1aca",
+        "selectingElementGUID": "db81898d",
         "currentCursorWalkPath": [
           "db6e5207",
           0,
@@ -11841,11 +11847,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "94ab9997",
+        "selectingElementGUID": "5037e0c4",
         "currentCursorWalkPath": [
-          "0",
+          "0a1d7749",
           0,
-          4,
+          5,
           null
         ]
       },
@@ -12664,7 +12670,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d00dba12",
+        "selectingElementGUID": "cbb338d5",
         "currentCursorWalkPath": [
           "d00dba12",
           0,
@@ -13425,7 +13431,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a991db6a",
+        "selectingElementGUID": "41537ae8",
         "currentCursorWalkPath": [
           "41537ae8",
           0,
@@ -15642,7 +15648,7 @@
     "FlowLayout_a6314edc": "26db4dd1306de6797343e3756669bea82aac61c2",
     "FlowLayout_41288a78": "a76a92224f2678280ccc5b494676d63f073f996a",
     "FlowLayout_b2020622": "3a9392f45f21e11e502e9950cba2db3226c73ddb",
-    "Rectangle_cad06e8d": "373aafe43c9594eeaa3a13aeb710bba1a47b2b89",
+    "Rectangle_cad06e8d": "38deee25aceba99fb991d544040a040677930f4c",
     "FlowLayout_5e1d3916": "bc84da90adaf255b2e2695cd8fff8dd470dd7f85",
     "FlowLayout_d700a5d4": "ddd51ab5a6e7ad5fcc0577bbc6952542a47cb9d5",
     "FlowLayout_4a4ce3d8": "95848e69be2928bc04914907476ddb0c1952cba3",
@@ -15652,7 +15658,7 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "b3dfbde227b0010d4e987158c58b185815f95b7f",
-    "index": "e2f3313561fd561e8ef860e120a2066da8440a14",
+    "index": "56adbcb0ba4f31f285b297e291fc577f8ea7a0fe",
     "b140e86b": "6db88b15665e080d045e549cb50ad93f52a0c91b",
     "8857ca68": "beb018f611436ec9ea5d5b6f7d649c5698870efd",
     "b6eb1b83": "82847b47acb58f7f834df07974338100bae00168",

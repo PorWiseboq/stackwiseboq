@@ -100,7 +100,7 @@ class Rectangle_cad06e8d extends Base {
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
-    notation = notation.replace('#{i}', this.state.selectedIndex);
+    notation = notation.replace('#{i}', this.state.selectedIndex.toString());
     
     return super.getDataFromNotation(notation, inArray);
   }
