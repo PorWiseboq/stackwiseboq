@@ -72,14 +72,15 @@ class Rectangle_cad06e8d extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("4a579143", "retrieve", ["1ae8405a"], {initClass: null});
-    DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7"], {initClass: null});
-    DataManipulationHelper.register("833e4eb9", "retrieve", ["d24ed774"], {initClass: null});
-    DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261"], {initClass: null});
-    DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null});
-    DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null});
-    DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null});
-    DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null});
+    DataManipulationHelper.register("4a579143", "retrieve", ["1ae8405a"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("833e4eb9", "retrieve", ["d24ed774"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("9868a6d5", "insert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, submitCrossType: "upsert"});
   }
   // <---Auto[ClassBegin]
   
@@ -400,46 +401,49 @@ class Rectangle_cad06e8d extends Base {
                                                         .container-fluid
                                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                             .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="1832b944")
-                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="0" name="group" + i)
+                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="0" name="group" + i defaultChecked=this.getDataFromNotation("Listing[" + i + "].Listing.Substitute.type") == '0')
                                                             .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="b80041d3")
                                                               | เจาะจง
                                                       label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="eb192633")
                                                         .container-fluid
                                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                             .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="b91e2739")
-                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="1" name="group" + i)
+                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="1" name="group" + i defaultChecked=this.getDataFromNotation("Listing[" + i + "].Listing.Substitute.type") == '1')
                                                             .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="58266972")
                                                               | เทียบเท่า
                                                       label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="2cb33325")
                                                         .container-fluid
                                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                             .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="03aab0e5")
-                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="2" name="group" + i)
+                                                              input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="2" name="group" + i defaultChecked=this.getDataFromNotation("Listing[" + i + "].Listing.Substitute.type") == '2')
                                                             .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="5c2b0578")
                                                               | ทดแทน
                                                       label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'} internal-fsb-guid="c1c5b10b")
                                                         .container-fluid
                                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                             .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'} internal-fsb-guid="957c1568")
-                                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="3" name="group" + i)
+                                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'} type="radio" value="3" name="group" + i defaultChecked=this.getDataFromNotation("Listing[" + i + "].Listing.Substitute.type") == '3')
                                                             .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'} internal-fsb-guid="a3b9410d")
                                                               | ไม่มี
                                                 .internal-fsb-element.col-5.offset-0(internal-fsb-guid="483390a6")
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                       .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="9c338431")
-                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนวัสดุเป็น")
+                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนวัสดุเป็น" defaultValue=this.getDataFromNotation("Listing[" + i + "].Listing.Substitute.title"))
                                                       .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="d913e6a1")
-                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนขนาดเป็น")
+                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนขนาดเป็น" defaultValue=this.getDataFromNotation("Listing[" + i + "].Listing.Substitute.size"))
                                                       .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="c22ec668")
-                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนปริมาณเป็น")
+                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'} type="text" placeholder="เปลี่ยนปริมาณเป็น" defaultValue=this.getDataFromNotation("Listing[" + i + "].Listing.Substitute.quantity"))
+                                                input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Listing[" + i + "].lid") internal-fsb-guid="ae7e2437")
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'} internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'} internal-fsb-guid="c03d6613")
                                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'} type="text" placeholder="ราคารวมทั้งหมด")
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'} type="button" internal-fsb-guid="9868a6d5")
+                                        input.internal-fsb-element.col-12(type="hidden" value="123" internal-fsb-guid="d30aa93b")
+                                        input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[#{i}].qid") internal-fsb-guid="a5b102c4")
+                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'} type="button" onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction.Substitute', event, ((results) => { this.manipulate('9868a6d5', 'Auction.Substitute', results); }).bind(this)); }).bind(this) internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
                             .internal-fsb-element(style={display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()} internal-fsb-guid="51201e78")
