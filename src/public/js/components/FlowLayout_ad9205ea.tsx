@@ -6,7 +6,7 @@ import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
-import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
+import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Button as $Button, Base} from './Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
@@ -18,6 +18,9 @@ declare let React: any;
 declare let ReactDOM: any;
 declare let window: any;
 declare let DataManipulationHelper: any;
+declare let pug: any;
+
+let Button = $Button;
 
 // <---Auto[Declare]
 
@@ -87,20 +90,15 @@ class FlowLayout_ad9205ea extends Base {
   
   // Auto[ClassEnd]--->
   protected render(): any {
-    return (
-      <div className={"internal-fsb-element " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="ad9205ea" style={Object.assign({'borderTopWidth': '1px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(22, 98, 250, 1)', 'paddingTop': '20px', 'paddingBottom': '20px'}, this.props.forward && this.props.forward.styles || {})}>
-        <div className="container-fluid">
-          <div className="row internal-fsb-strict-layout">
-            <div className="col-12 internal-fsb-inheriting-element" style={{'textAlign': 'center', 'fontSize': '13px'}}>
-              ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ
-              <div>
-                บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+    return pug `
+      div(style=Object.assign({'borderTopWidth': '1px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(22, 98, 250, 1)', 'paddingTop': '20px', 'paddingBottom': '20px'}, this.props.forward && this.props.forward.styles || {}) className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || '') internal-fsb-guid="ad9205ea")
+        .container-fluid
+          .row.internal-fsb-strict-layout
+            .col-12.internal-fsb-inheriting-element(style={'textAlign': 'center', 'fontSize': '13px'})
+              | ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ
+              div
+                | บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170
+    `
   }
 }
 DeclarationHelper.declare('Site', 'Controls.FlowLayout_ad9205ea', FlowLayout_ad9205ea);

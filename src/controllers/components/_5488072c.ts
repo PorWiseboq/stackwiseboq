@@ -196,7 +196,8 @@ class Controller extends Base {
     if (input) input.value = this.request.session.uid;
     
     if (input != null) data.push(input);
-	  // <---Auto[Merging]
+
+    RequestHelper.registerSubmit("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  

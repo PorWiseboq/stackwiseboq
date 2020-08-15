@@ -6,7 +6,7 @@ import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
-import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Base} from './Base.js';
+import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Button as $Button, Base} from './Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
@@ -18,6 +18,9 @@ declare let React: any;
 declare let ReactDOM: any;
 declare let window: any;
 declare let DataManipulationHelper: any;
+declare let pug: any;
+
+let Button = $Button;
 
 // <---Auto[Declare]
 
@@ -159,81 +162,52 @@ class FlowLayout_41288a78 extends Base {
   
   // Auto[ClassEnd]--->
   protected render(): any {
-    return (
-      <div className={"internal-fsb-element col-10 offset-1 -fsb-preset-180079a2 " + (this.props.forward && this.props.forward.classes || '')} internal-fsb-guid="41288a78" style={Object.assign({'FsbInheritedPresets': '180079a2'}, this.props.forward && this.props.forward.styles || {})}>
-        <div className="container-fluid">
-          <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-            <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="b0e94808" style={{'FsbInheritedPresets': '7a279686'}}>
-              จ่ายเงินค่าสินค้า
-            </div>
-            <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="a68112ee" style={{'FsbInheritedPresets': '4839e353'}}>
-              กรุณาเลือกว่าจะจ่ายโดยการโอนเงินไปยังธนาคาร หรือว่าจะให้ตัดผ่านบัตรเครดิต
-            </div>
-            <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="179c943c" style={{'borderRightWidth': '1px', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'borderRightStyle': 'solid'}}>
-              <div className="container-fluid">
-                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                  <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="4040dba7" style={{'textAlign': 'center', 'FsbInheritedPresets': '7a279686'}}>
-                    โอนเงินผ่านธนาคาร
-                  </div>
-                  <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="16ed2784" style={{'textAlign': 'center', 'FsbInheritedPresets': '4839e353'}}>
-                    กรุณาโอนเงินไปที่ธนาคารเอบีซี สาขาห้าหกเจ็ด
-                    <div>
-                      นายกอขอคอ
-                    </div>
-                  </div>
-                  <div className="internal-fsb-element col-12" internal-fsb-guid="7443b335">
-                    <div className="container-fluid">
-                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="ae38da00" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px', 'fontSize': '14px'}}>
-                          จำนวนเงิน
-                        </div>
-                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="9699d64d" style={{'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center'}}>
-                          หนึ่งหมื่นห้าพันบาทยี่สิบสตางค์ถ้วน
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="internal-fsb-element col-12" internal-fsb-guid="a3c6554b" style={{'marginTop': '15px'}}>
-                    <div className="container-fluid">
-                      <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="782d3986" style={{'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px', 'fontSize': '14px'}}>
-                          โปรดดำเนินการผ่านธนาคาร
-                        </div>
-                        <div className="internal-fsb-element col-12 -fsb-preset-b5cd72c0" internal-fsb-guid="5eeaed97" style={{'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center', 'marginBottom': '15px'}}>
-                          คุณอาจเปิดหน้านี้ทิ้งไว้หรือเข้าสู่ระบบเพื่อกลับเข้ามายังหน้านี้ในภายหลังได้เช่นกัน
-                        </div>
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="c6cd6a36" style={{padding: '0px'}}>
-                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '5px'}} type="text" placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm" />
-                        </div>
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="0c59a0a4" style={{padding: '0px'}}>
-                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" placeholder="ชื่อผู้ที่ได้ทำการโอน" />
-                        </div>
-                        <div className="internal-fsb-element col-12 offset-0" internal-fsb-guid="5cab012e" style={{padding: '0px'}}>
-                          <input className="form-control form-control-sm" style={{'display': 'block', 'width': '100%', 'marginTop': '10px'}} type="text" placeholder="ชื่อธนาคารและสาขาต้นทาง" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="internal-fsb-element col-6 offset-0" internal-fsb-guid="8173e6a3" style={{'borderLeftColor': 'rgba(22, 98, 250, 1)', 'borderLeftStyle': 'solid', 'borderLeftWidth': '1px'}}>
-              <div className="container-fluid">
-                <div className="row internal-fsb-strict-layout internal-fsb-allow-cursor">
-                  <div className="internal-fsb-element col-12 -fsb-preset-7a279686" internal-fsb-guid="81a37061" style={{'textAlign': 'center', 'FsbInheritedPresets': '7a279686'}}>
-                    จ่ายผ่านบัตรเครดิต
-                  </div>
-                  <div className="internal-fsb-element col-12 -fsb-preset-4839e353" internal-fsb-guid="9b4e1a4c" style={{'textAlign': 'center', 'FsbInheritedPresets': '4839e353'}}>
-                    กรุณาเลือกประเภทบัตรเครดิต กรอกหมายเลขบัตร วันหมดอายุ พร้อมทั้งหมายเลข cvv ที่อยู่หลังบัตร
-                  </div>
-                  <div className="internal-fsb-element col-10 offset-1" internal-fsb-guid="a1407abd" dangerouslySetInnerHTML={{__html: "<style type=\"text/css\">\n.StripeElement {\n  box-sizing: border-box;\n\n  height: 40px;\n\n  padding: 10px 12px;\n\n  border: 1px solid transparent;\n  border-radius: 4px;\n  background-color: white;\n\n  box-shadow: 0 1px 3px 0 #e6ebf1;\n  -webkit-transition: box-shadow 150ms ease;\n  transition: box-shadow 150ms ease;\n}\n\n.StripeElement--focus {\n  box-shadow: 0 1px 3px 0 #cfd7df;\n}\n\n.StripeElement--invalid {\n  border-color: #fa755a;\n}\n\n.StripeElement--webkit-autofill {\n  background-color: #fefde5 !important;\n}\n</style>\n<form action=\"/charge\" method=\"post\" id=\"payment-form\">\n  <div class=\"form-row\">\n    <div id=\"card-element\">\n      <!-- A Stripe Element will be inserted here. -->\n    </div>\n    <!-- Used to display form errors. -->\n    <div id=\"card-errors\" role=\"alert\"></div>\n  </div>\n</form>"}}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+    return pug `
+      div(style=Object.assign({'FsbInheritedPresets': '180079a2'}, this.props.forward && this.props.forward.styles || {}) className="internal-fsb-element col-10 offset-1 -fsb-preset-180079a2 " + (this.props.forward && this.props.forward.classes || '') internal-fsb-guid="41288a78")
+        .container-fluid
+          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+            .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686'} internal-fsb-guid="b0e94808")
+              | จ่ายเงินค่าสินค้า
+            .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353'} internal-fsb-guid="a68112ee")
+              | กรุณาเลือกว่าจะจ่ายโดยการโอนเงินไปยังธนาคาร หรือว่าจะให้ตัดผ่านบัตรเครดิต
+            .internal-fsb-element.col-6.offset-0(style={'borderRightWidth': '1px', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'borderRightStyle': 'solid'} internal-fsb-guid="179c943c")
+              .container-fluid
+                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                  .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'textAlign': 'center', 'FsbInheritedPresets': '7a279686'} internal-fsb-guid="4040dba7")
+                    | โอนเงินผ่านธนาคาร
+                  .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'textAlign': 'center', 'FsbInheritedPresets': '4839e353'} internal-fsb-guid="16ed2784")
+                    | กรุณาโอนเงินไปที่ธนาคารเอบีซี สาขาห้าหกเจ็ด
+                    div
+                      | นายกอขอคอ
+                  .internal-fsb-element.col-12(internal-fsb-guid="7443b335")
+                    .container-fluid
+                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                        .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px', 'fontSize': '14px'} internal-fsb-guid="ae38da00")
+                          | จำนวนเงิน
+                        .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center'} internal-fsb-guid="9699d64d")
+                          | หนึ่งหมื่นห้าพันบาทยี่สิบสตางค์ถ้วน
+                  .internal-fsb-element.col-12(style={'marginTop': '15px'} internal-fsb-guid="a3c6554b")
+                    .container-fluid
+                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                        .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px', 'fontSize': '14px'} internal-fsb-guid="782d3986")
+                          | โปรดดำเนินการผ่านธนาคาร
+                        .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center', 'marginBottom': '15px'} internal-fsb-guid="5eeaed97")
+                          | คุณอาจเปิดหน้านี้ทิ้งไว้หรือเข้าสู่ระบบเพื่อกลับเข้ามายังหน้านี้ในภายหลังได้เช่นกัน
+                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="c6cd6a36")
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'} type="text" placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm")
+                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="0c59a0a4")
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '10px'} type="text" placeholder="ชื่อผู้ที่ได้ทำการโอน")
+                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'} internal-fsb-guid="5cab012e")
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '10px'} type="text" placeholder="ชื่อธนาคารและสาขาต้นทาง")
+            .internal-fsb-element.col-6.offset-0(style={'borderLeftColor': 'rgba(22, 98, 250, 1)', 'borderLeftStyle': 'solid', 'borderLeftWidth': '1px'} internal-fsb-guid="8173e6a3")
+              .container-fluid
+                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                  .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'textAlign': 'center', 'FsbInheritedPresets': '7a279686'} internal-fsb-guid="81a37061")
+                    | จ่ายผ่านบัตรเครดิต
+                  .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'textAlign': 'center', 'FsbInheritedPresets': '4839e353'} internal-fsb-guid="9b4e1a4c")
+                    | กรุณาเลือกประเภทบัตรเครดิต กรอกหมายเลขบัตร วันหมดอายุ พร้อมทั้งหมายเลข cvv ที่อยู่หลังบัตร
+                  .internal-fsb-element.col-10.offset-1(dangerouslySetInnerHTML={__html: "<style type=\"text/css\">\n.StripeElement {\n  box-sizing: border-box;\n\n  height: 40px;\n\n  padding: 10px 12px;\n\n  border: 1px solid transparent;\n  border-radius: 4px;\n  background-color: white;\n\n  box-shadow: 0 1px 3px 0 #e6ebf1;\n  -webkit-transition: box-shadow 150ms ease;\n  transition: box-shadow 150ms ease;\n}\n\n.StripeElement--focus {\n  box-shadow: 0 1px 3px 0 #cfd7df;\n}\n\n.StripeElement--invalid {\n  border-color: #fa755a;\n}\n\n.StripeElement--webkit-autofill {\n  background-color: #fefde5 !important;\n}\n</style>\n<form action=\"/charge\" method=\"post\" id=\"payment-form\">\n  <div class=\"form-row\">\n    <div id=\"card-element\">\n      <!-- A Stripe Element will be inserted here. -->\n    </div>\n    <!-- Used to display form errors. -->\n    <div id=\"card-errors\" role=\"alert\"></div>\n  </div>\n</form>"} internal-fsb-guid="a1407abd")
+    `
   }
 }
 DeclarationHelper.declare('Document', 'Controls.FlowLayout_41288a78', FlowLayout_41288a78);

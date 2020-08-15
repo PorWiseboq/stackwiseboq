@@ -498,7 +498,17 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-	  // <---Auto[Merging]
+
+    RequestHelper.registerSubmit("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("d910ad00", "delete", ["41bdc9b3"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("1bb72b1a", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("011ad9dc", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("88297439", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("a7592071", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060"], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  

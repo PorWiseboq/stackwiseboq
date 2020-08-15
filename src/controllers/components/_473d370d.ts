@@ -189,7 +189,10 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-	  // <---Auto[Merging]
+
+    RequestHelper.registerSubmit("bdcbb907", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("c1c0694d", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("d480ae4d", null, [], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  

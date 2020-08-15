@@ -246,7 +246,9 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-	  // <---Auto[Merging]
+
+    RequestHelper.registerSubmit("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  
