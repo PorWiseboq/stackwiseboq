@@ -355,7 +355,18 @@ class Controller extends Base {
     // 
     
     if (input != null) data.push(input);
-	  // <---Auto[Merging]
+
+    RequestHelper.registerSubmit("108bb2b9", null, [], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("4a579143", "retrieve", ["1ae8405a"], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("c05b11c1", "retrieve", ["4cade2e7"], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("833e4eb9", "retrieve", ["d24ed774"], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("e9c9b721", "retrieve", ["d1920261"], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("8cbc5b17", "retrieve", ["e8656190"], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null});
+    RequestHelper.registerSubmit("9868a6d5", "insert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, submitCrossType: "upsert"});
+    RequestHelper.registerSubmit("d3e31c36", null, [], {initClass: null, submitCrossType: null});	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  
