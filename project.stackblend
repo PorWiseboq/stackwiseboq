@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "index",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "535be65e"
   },
@@ -1526,12 +1526,24 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,1,400;1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,1,400;1,1,1,500;1,1,1,600;1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,1,100;1,1,1,300;1,1,1,400;1,1,1,500;1,1,1,700;1,1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -5616,11 +5628,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b3410868",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "945cdc26",
+          "24731127",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -5628,7 +5640,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\nimport {SchemaHelper} from '../helpers/SchemaHelper.js';\nimport {ProjectConfigurationHelper} from '../helpers/ProjectConfigurationHelper.js';\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve, reject) => {\n \t\t  try {\n \t\t    let quoteData = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Quote',\n          name: 'qid',\n          value: 951,\n          guid: null,\n          validation: null\n     \t\t}];\n     \t\tlet listingData = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Listing',\n          name: 'qid',\n          value: 951,\n          guid: null,\n          validation: null\n   \t\t  }];\n \t\t    \n \t\t    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());\n \t\t    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());\n \t\t    \n \t\t    let results = Object.assign({}, await DatabaseHelper.retrieve(quoteData, quote), await DatabaseHelper.retrieve(listingData, listing));\n \t\t    \n \t\t    resolve(results);\n \t\t  } catch(error) {\n \t\t    reject(error);\n \t\t  }\n \t\t});\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  "
+        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n \t  return new Promise((resolve) => {\n \t    resolve({\n \t\t    title: null,\n \t\t    description: null,\n \t\t    keywords: null,\n \t\t    language: null,\n \t\t    contentType: null,\n \t\t    revisitAfter: null,\n \t\t    robots: null,\n \t\t    linkUrl: null,\n \t\t    imageUrl: null,\n \t\t    itemType: null,\n \t\t    contentLocale: null\n \t\t  });\n \t  });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve, reject) => {\n \t\t  try {\n \t\t    let quoteData = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Quote',\n          name: 'qid',\n          value: 951,\n          guid: null,\n          validation: null\n     \t\t}];\n     \t\tlet listingData = [{\n   \t\t    target: SourceType.Relational,\n          group: 'Listing',\n          name: 'qid',\n          value: 951,\n          guid: null,\n          validation: null\n   \t\t  }];\n \t\t    \n \t\t    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());\n \t\t    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());\n \t\t    \n \t\t    let results = Object.assign({\n \t\t      Substitute: {\n          \tsource: SourceType.Relational,\n          \tgroup: 'Substitute',\n            rows: []\n          }\n \t\t    }, await DatabaseHelper.retrieve(quoteData, quote), await DatabaseHelper.retrieve(listingData, listing));\n \t\t    \n \t\t    resolve(results);\n \t\t  } catch(error) {\n \t\t    reject(error);\n \t\t  }\n \t\t});\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.post(data);\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.put(data);\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn super.delete(data);\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.insert(data, schema);\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.update(data, schema);\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n \t\treturn await DatabaseHelper.delete(data, schema);\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn await DatabaseHelper.retrieve(data, schema);\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n \t\treturn '/';\n  }\n \t\n  "
       },
       "notations": {
         "Quote": {
@@ -6777,7 +6789,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "180079a2",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
           "b2020622",
           0,
@@ -15687,7 +15699,7 @@
     "8857ca68": "70b3108322b8e00a3a64a4c653c1bf56f2a943a0",
     "b140e86b": "70b3108322b8e00a3a64a4c653c1bf56f2a943a0",
     "b6eb1b83": "cc0bdacfd6dcd0f190f8a8e967945b1c7e516ad6",
-    "7e709334": "eba0ab56637562335f7263c2ebc22f25a0365df2",
+    "7e709334": "edd8aef6533766133e96cabc2df0e14af5eff6bb",
     "65e04a88": "15d7272ac32dc81bc7432e03ac3501a02054a51e",
     "9d37c390": "cdf3847ae6c93c25bfbb74a758a2ce1601cb091f",
     "6ce794ec": "0cb7e7a7373ecd2e6867448c93637f2a957226fe",
@@ -15734,7 +15746,7 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "861ac55f186f56c55991f7be2e22f7083749dcda",
-    "index": "84142e19d293aa7e4ad3e4b22f1cb36e518fc4c8",
+    "index": "515cfea1d4aaa6b4e3e82fbc8e15ef8cd4e49e22",
     "b140e86b": "f7b9f7f946540c19c7b6587c4139e2438d25c6f1",
     "8857ca68": "6e784f8e176c4b83d245de99ad9ff5d852794222",
     "b6eb1b83": "3749f4e7afba88c701dd693605bff8fc1edd2a57",
