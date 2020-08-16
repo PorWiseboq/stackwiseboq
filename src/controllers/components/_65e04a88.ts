@@ -288,217 +288,6 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-		RequestHelper.registerInput('5a972a57', "relational", "Quote", "title");
-		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "คุณต้องตั้งชื่อรายการ");
-    input = RequestHelper.getInput(request, '5a972a57');
-    
-    // Override data parsing and manipulation of Textbox 4 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('607d8ee2', "relational", "Quote", "description");
-		ValidationHelper.registerInput('607d8ee2', "Textbox 5", false, undefined);
-    input = RequestHelper.getInput(request, '607d8ee2');
-    
-    // Override data parsing and manipulation of Textbox 5 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('5d34dc3b', "relational", "Quote", "qid");
-		ValidationHelper.registerInput('5d34dc3b', "Hidden 1", false, undefined);
-    input = RequestHelper.getInput(request, '5d34dc3b');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('5752cb4d', "relational", "Quote", "uid");
-		ValidationHelper.registerInput('5752cb4d', "Hidden 2", false, undefined);
-    input = RequestHelper.getInput(request, '5752cb4d');
-    
-    // Override data parsing and manipulation of Hidden 2 here:
-    // 
-    if (input) input.value = parseInt(this.request.session.uid);
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('2acce16d', "relational", "Quote", "status");
-		ValidationHelper.registerInput('2acce16d', "Hidden 1", false, undefined);
-    input = RequestHelper.getInput(request, '2acce16d');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    if (input) input.value = '0';
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
-		ValidationHelper.registerInput('41bdc9b3', "Hidden 1", false, undefined);
-    input = RequestHelper.getInput(request, '41bdc9b3');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('2ce10e8e', "relational", "Listing", "title");
-		ValidationHelper.registerInput('2ce10e8e', "Textbox 1", false, undefined);
-    input = RequestHelper.getInput(request, '2ce10e8e');
-    
-    // Override data parsing and manipulation of Textbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('0d2c5b71', "relational", "Listing", "size");
-		ValidationHelper.registerInput('0d2c5b71', "Textbox 2", false, undefined);
-    input = RequestHelper.getInput(request, '0d2c5b71');
-    
-    // Override data parsing and manipulation of Textbox 2 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('1cabb5c5', "relational", "Listing", "quantity");
-		ValidationHelper.registerInput('1cabb5c5', "Textbox 3", false, undefined);
-    input = RequestHelper.getInput(request, '1cabb5c5');
-    
-    // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('eda631c1', "relational", "Listing", "qid");
-		ValidationHelper.registerInput('eda631c1', "Hidden 1", false, undefined);
-    input = RequestHelper.getInput(request, 'eda631c1');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('54e20435', "relational", "Listing", "title");
-		ValidationHelper.registerInput('54e20435', "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ");
-    input = RequestHelper.getInput(request, '54e20435');
-    
-    // Override data parsing and manipulation of Textbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('31894d87', "relational", "Listing", "size");
-		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
-    input = RequestHelper.getInput(request, '31894d87');
-    
-    // Override data parsing and manipulation of Textbox 2 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
-		ValidationHelper.registerInput('b2321320', "Textbox 3", true, "คุณต้องระบุจำนวน");
-    input = RequestHelper.getInput(request, 'b2321320');
-    
-    // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('b6c9ad89', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('b6c9ad89', "Radio 3", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
-    input = RequestHelper.getInput(request, 'b6c9ad89');
-    
-    // Override data parsing and manipulation of Radio 3 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('a0b78888', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('a0b78888', "Radio 4", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
-    input = RequestHelper.getInput(request, 'a0b78888');
-    
-    // Override data parsing and manipulation of Radio 4 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('cc34eced', "relational", "Quote", "substitute");
-		ValidationHelper.registerInput('cc34eced', "Radio 5", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
-    input = RequestHelper.getInput(request, 'cc34eced');
-    
-    // Override data parsing and manipulation of Radio 5 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('9036c707', "relational", "Quote", "qid");
-		ValidationHelper.registerInput('9036c707', "Hidden 1", false, undefined);
-    input = RequestHelper.getInput(request, '9036c707');
-    
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('33408187', "relational", "Quote", "hoursChecked");
-		ValidationHelper.registerInput('33408187', "hoursChecked", false, undefined);
-    input = RequestHelper.getInput(request, '33408187');
-    
-    // Override data parsing and manipulation of hoursChecked here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('230ab296', "relational", "Quote", "hours");
-		ValidationHelper.registerInput('230ab296', "Hours", false, undefined);
-    input = RequestHelper.getInput(request, '230ab296');
-    
-    // Override data parsing and manipulation of Hours here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('babc9e30', "relational", "Quote", "deliverChecked");
-		ValidationHelper.registerInput('babc9e30', "deliverChecked", false, undefined);
-    input = RequestHelper.getInput(request, 'babc9e30');
-    
-    // Override data parsing and manipulation of deliverChecked here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('9200d56a', "relational", "Quote", "deliverAt");
-		ValidationHelper.registerInput('9200d56a', "DeliverAt", false, undefined);
-    input = RequestHelper.getInput(request, '9200d56a');
-    
-    // Override data parsing and manipulation of DeliverAt here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('12403b79', "relational", "Quote", "pickup");
-		ValidationHelper.registerInput('12403b79', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
-    input = RequestHelper.getInput(request, '12403b79');
-    
-    // Override data parsing and manipulation of pickup here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('c3daa46d', "relational", "Quote", "number");
-		ValidationHelper.registerInput('c3daa46d', "Number", true, "คุณจำเป็นต้องระบุหมายเลขโทรศัพท์");
-    input = RequestHelper.getInput(request, 'c3daa46d');
-    
-    // Override data parsing and manipulation of Number here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('0606ea02', "relational", "Quote", "pickup");
-		ValidationHelper.registerInput('0606ea02', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
-    input = RequestHelper.getInput(request, '0606ea02');
-    
-    // Override data parsing and manipulation of pickup here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('4a397863', "relational", "Quote", "address");
-		ValidationHelper.registerInput('4a397863', "Address", false, undefined);
-    input = RequestHelper.getInput(request, '4a397863');
-    
-    // Override data parsing and manipulation of Address here:
-    // 
-    
-    if (input != null) data.push(input);
-		RequestHelper.registerInput('147c9060', "relational", "Quote", "qid");
-		ValidationHelper.registerInput('147c9060', "Hidden 2", false, undefined);
-    input = RequestHelper.getInput(request, '147c9060');
-    
-    // Override data parsing and manipulation of Hidden 2 here:
-    // 
-    
-    if (input != null) data.push(input);
-
     RequestHelper.registerSubmit("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("d910ad00", "delete", ["41bdc9b3"], {initClass: null, crossRelationUpsert: false});
@@ -508,7 +297,297 @@ class Controller extends Base {
     RequestHelper.registerSubmit("88297439", null, [], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("a7592071", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060"], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
+    RequestHelper.registerSubmit("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060"], {initClass: null, crossRelationUpsert: false});
+		RequestHelper.registerInput('5a972a57', "relational", "Quote", "title");
+		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "คุณต้องตั้งชื่อรายการ");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '5a972a57' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 4 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('607d8ee2', "relational", "Quote", "description");
+		ValidationHelper.registerInput('607d8ee2', "Textbox 5", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '607d8ee2' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 5 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('5d34dc3b', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('5d34dc3b', "Hidden 1", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '5d34dc3b' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('5752cb4d', "relational", "Quote", "uid");
+		ValidationHelper.registerInput('5752cb4d', "Hidden 2", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '5752cb4d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+    // Override data parsing and manipulation of Hidden 2 here:
+    // 
+    if (input) input.value = parseInt(this.request.session.uid);
+    
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('2acce16d', "relational", "Quote", "status");
+		ValidationHelper.registerInput('2acce16d', "Hidden 1", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '2acce16d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+    // Override data parsing and manipulation of Hidden 1 here:
+    // 
+    if (input) input.value = '0';
+    
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
+		ValidationHelper.registerInput('41bdc9b3', "Hidden 1", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '41bdc9b3' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('2ce10e8e', "relational", "Listing", "title");
+		ValidationHelper.registerInput('2ce10e8e', "Textbox 1", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '2ce10e8e' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('0d2c5b71', "relational", "Listing", "size");
+		ValidationHelper.registerInput('0d2c5b71', "Textbox 2", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '0d2c5b71' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('1cabb5c5', "relational", "Listing", "quantity");
+		ValidationHelper.registerInput('1cabb5c5', "Textbox 3", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '1cabb5c5' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('eda631c1', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('eda631c1', "Hidden 1", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'eda631c1' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('54e20435', "relational", "Listing", "title");
+		ValidationHelper.registerInput('54e20435', "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '54e20435' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('31894d87', "relational", "Listing", "size");
+		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '31894d87' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
+		ValidationHelper.registerInput('b2321320', "Textbox 3", true, "คุณต้องระบุจำนวน");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'b2321320' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('b6c9ad89', "relational", "Quote", "substitute");
+		ValidationHelper.registerInput('b6c9ad89', "Radio 3", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'b6c9ad89' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('a0b78888', "relational", "Quote", "substitute");
+		ValidationHelper.registerInput('a0b78888', "Radio 4", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'a0b78888' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 4 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('cc34eced', "relational", "Quote", "substitute");
+		ValidationHelper.registerInput('cc34eced', "Radio 5", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'cc34eced' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 5 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('9036c707', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('9036c707', "Hidden 1", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '9036c707' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('33408187', "relational", "Quote", "hoursChecked");
+		ValidationHelper.registerInput('33408187', "hoursChecked", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '33408187' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of hoursChecked here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('230ab296', "relational", "Quote", "hours");
+		ValidationHelper.registerInput('230ab296', "Hours", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '230ab296' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hours here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('babc9e30', "relational", "Quote", "deliverChecked");
+		ValidationHelper.registerInput('babc9e30', "deliverChecked", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'babc9e30' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of deliverChecked here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('9200d56a', "relational", "Quote", "deliverAt");
+		ValidationHelper.registerInput('9200d56a', "DeliverAt", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '9200d56a' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of DeliverAt here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('12403b79', "relational", "Quote", "pickup");
+		ValidationHelper.registerInput('12403b79', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '12403b79' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of pickup here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('c3daa46d', "relational", "Quote", "number");
+		ValidationHelper.registerInput('c3daa46d', "Number", true, "คุณจำเป็นต้องระบุหมายเลขโทรศัพท์");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'c3daa46d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Number here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('0606ea02', "relational", "Quote", "pickup");
+		ValidationHelper.registerInput('0606ea02', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '0606ea02' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of pickup here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('4a397863', "relational", "Quote", "address");
+		ValidationHelper.registerInput('4a397863', "Address", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '4a397863' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Address here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('147c9060', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('147c9060', "Hidden 2", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '147c9060' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+
+	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  

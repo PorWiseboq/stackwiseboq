@@ -2,7 +2,7 @@
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
 // Auto[Import]--->
-import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
@@ -27,7 +27,6 @@ declare let DataManipulationHelper: any;
 declare let pug: any;
 
 let Button = $Button;
-let Project = $Project;
 
 // <---Auto[Declare]
 
@@ -444,7 +443,7 @@ class Rectangle_cad06e8d extends Base {
                                           | บาท
                                         input.internal-fsb-element.col-12(type="hidden" value="123" internal-fsb-guid="d30aa93b")
                                         input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Quote[#{i}].qid") internal-fsb-guid="a5b102c4")
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'} type="button" onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction.Substitute', event, ((results) => { this.manipulate('9868a6d5', 'Auction.Substitute', results); }).bind(this)); }).bind(this) internal-fsb-guid="9868a6d5")
+                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'} type="button" onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this) internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
                             .internal-fsb-element(style={display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()} internal-fsb-guid="51201e78")

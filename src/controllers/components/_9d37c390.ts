@@ -152,57 +152,76 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+    RequestHelper.registerSubmit("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('d064b129', "relational", "Blog", "title");
 		ValidationHelper.registerInput('d064b129', "Textbox 2", true, "ต้องมีหัวข้อเรื่อง");
-    input = RequestHelper.getInput(request, 'd064b129');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'd064b129' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 2 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('a0641238', "relational", "Blog", "body");
 		ValidationHelper.registerInput('a0641238', "Textbox 1", true, "ต้องมีเนื้อหา");
-    input = RequestHelper.getInput(request, 'a0641238');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'a0641238' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('1d258b94', "relational", "Blog", "description");
 		ValidationHelper.registerInput('1d258b94', "Textbox 3", true, "ต้องมีโดยย่อ");
-    input = RequestHelper.getInput(request, '1d258b94');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '1d258b94' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('9ba2b637', "relational", "Blog", "keywords");
 		ValidationHelper.registerInput('9ba2b637', "Textbox 1", true, "ต้องใช้คีย์เวิร์ด");
-    input = RequestHelper.getInput(request, '9ba2b637');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '9ba2b637' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('3dcb582a', "relational", "Blog", "image");
 		ValidationHelper.registerInput('3dcb582a', "Textbox 3", false, undefined);
-    input = RequestHelper.getInput(request, '3dcb582a');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '3dcb582a' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('50cb1c1b', "relational", "Blog", "bid");
 		ValidationHelper.registerInput('50cb1c1b', "Hidden 1", false, undefined);
-    input = RequestHelper.getInput(request, '50cb1c1b');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '50cb1c1b' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Hidden 1 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 
-    RequestHelper.registerSubmit("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
+	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  

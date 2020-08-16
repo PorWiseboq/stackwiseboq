@@ -174,34 +174,44 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+    RequestHelper.registerSubmit("85ebe32c", "navigate", ["02987944","56385616"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("9e104782", "navigate", ["899069eb","56385616"], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('02987944', "relational", "User", "role");
 		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
-    input = RequestHelper.getInput(request, '02987944');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '02987944' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of buyer here:
     // 
     
-    if (input != null) data.push(input);
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('56385616', "relational", "User", "id");
 		ValidationHelper.registerInput('56385616', "uid", false, undefined);
-    input = RequestHelper.getInput(request, '56385616');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '56385616' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of Hidden 1 here:
     // 
     if (input) input.value = this.request.session.uid;
     
-    if (input != null) data.push(input);
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('899069eb', "relational", "User", "role");
 		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
-    input = RequestHelper.getInput(request, '899069eb');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '899069eb' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of bidder here:
     // 
     
-    if (input != null) data.push(input);
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 
-    RequestHelper.registerSubmit("85ebe32c", "navigate", ["02987944","56385616"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("9e104782", "navigate", ["899069eb","56385616"], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
+	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  

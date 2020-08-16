@@ -222,33 +222,43 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+    RequestHelper.registerSubmit("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('74d75b70', "relational", "User", "email");
 		ValidationHelper.registerInput('74d75b70', "Textbox 1", true, "คุณจำเป็นต้องกรอกที่อยู่อีเมล์");
-    input = RequestHelper.getInput(request, '74d75b70');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '74d75b70' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 1 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('74b67c1e', "relational", "User", "password");
 		ValidationHelper.registerInput('74b67c1e', "Textbox 2", true, "คุณจำเป็นต้องกรอกรหัสผ่าน");
-    input = RequestHelper.getInput(request, '74b67c1e');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '74b67c1e' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 2 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('d40a4961', "relational", "User", "confirm");
 		ValidationHelper.registerInput('d40a4961', "Textbox 3", true, "คุณจำเป็นต้องยืนยันรหัสผ่าน");
-    input = RequestHelper.getInput(request, 'd40a4961');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'd40a4961' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 3 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 
-    RequestHelper.registerSubmit("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
+	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  

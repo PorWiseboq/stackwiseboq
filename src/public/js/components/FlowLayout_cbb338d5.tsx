@@ -2,7 +2,7 @@
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
 // Auto[Import]--->
-import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
@@ -21,7 +21,6 @@ declare let DataManipulationHelper: any;
 declare let pug: any;
 
 let Button = $Button;
-let Project = $Project;
 
 // <---Auto[Declare]
 
@@ -190,7 +189,7 @@ class FlowLayout_cbb338d5 extends Base {
             .internal-fsb-element.col-12(style={'paddingTop': '20px'} internal-fsb-guid="0816dd23")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-primary(type="button" onSubmitting=this.onButtonSubmitting_e6d44b49.bind(this) onSubmitted=this.onButtonSubmitted_e6d44b49.bind(this) disabled=this.state.disabled onClick=((event) => { window.internalFsbSubmit('e6d44b49', 'User.Store', event, ((results) => { this.manipulate('e6d44b49', 'User.Store', results); }).bind(this)); }).bind(this) internal-fsb-guid="e6d44b49")
+                  Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-primary(type="button" onSubmitting=this.onButtonSubmitting_e6d44b49.bind(this) onSubmitted=this.onButtonSubmitted_e6d44b49.bind(this) disabled=this.state.disabled onClick=((event) => { window.internalFsbSubmit('e6d44b49', 'User', event, ((results) => { this.manipulate('e6d44b49', 'User', results); }).bind(this)); }).bind(this) internal-fsb-guid="e6d44b49")
                     .internal-fsb-element(internal-fsb-guid="e6d44b49-text")
                       | บันทึก
                   input.internal-fsb-element.col-12(type="hidden" value="123" internal-fsb-guid="8ce0a253")

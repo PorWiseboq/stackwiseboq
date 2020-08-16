@@ -163,41 +163,54 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+    RequestHelper.registerSubmit("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('ab3a1c6e', "relational", "User", "firstName");
 		ValidationHelper.registerInput('ab3a1c6e', "Textbox 5", true, "กรุณาระบุชื่อ");
-    input = RequestHelper.getInput(request, 'ab3a1c6e');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'ab3a1c6e' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 5 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 5 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('340b9ddb', "relational", "User", "lastName");
 		ValidationHelper.registerInput('340b9ddb', "Textbox 6", true, "กรุณาระบุนามสกุล");
-    input = RequestHelper.getInput(request, '340b9ddb');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '340b9ddb' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 6 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 6 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('30d60c48', "relational", "User", "contactNumber");
 		ValidationHelper.registerInput('30d60c48', "Textbox 7", true, "กรุณาระบุหมายเลขโทรศัพท์");
-    input = RequestHelper.getInput(request, '30d60c48');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '30d60c48' + ((i == -1) ? '' : '[' + i + ']'));
     
-    // Override data parsing and manipulation of Textbox 7 here:
-    // 
-    
-    if (input != null) data.push(input);
+      // Override data parsing and manipulation of Textbox 7 here:
+      // 
+      
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 		RequestHelper.registerInput('bd78c5c4', "relational", "User", "id");
 		ValidationHelper.registerInput('bd78c5c4', "Hidden 2", false, undefined);
-    input = RequestHelper.getInput(request, 'bd78c5c4');
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, 'bd78c5c4' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of Hidden 2 here:
     // 
     if (input) input.value = this.request.session.uid;
     
-    if (input != null) data.push(input);
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
 
-    RequestHelper.registerSubmit("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null, crossRelationUpsert: false});	  // <---Auto[Merging]
+	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->
 	  
