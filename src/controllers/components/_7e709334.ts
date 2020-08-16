@@ -129,9 +129,9 @@ class Controller extends Base {
  		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
  		    
  		    let results = Object.assign({
- 		      Substitute: {
+ 		      Auction: {
           	source: SourceType.Relational,
-          	group: 'Substitute',
+          	group: 'Auction',
             rows: []
           }
  		    }, await DatabaseHelper.retrieve(quoteData, quote), await DatabaseHelper.retrieve(listingData, listing));
