@@ -15,16 +15,6 @@ enum FieldType {
 interface DataSchema {
   tables: {[Identifier: string]: DataTableSchema};
 }
-interface Permission {
-  mode: string;
-  relationModeSourceGroup: string;
-  relationModeSourceEntity: string;
-  relationMatchingMode: string;
-  relationMatchingConstantValue: string;
-  relationMatchingSessionName: string;
-  sessionMatchingSessionName: string;
-  sessionMatchingConstantValue: string;
-}
 interface DataTableSchema {
 	source: SourceType;
 	group: string;
