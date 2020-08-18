@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "bbc7dba3",
+    "editingPageID": "index",
     "currentMode": "site",
     "editingComponentID": "535be65e"
   },
@@ -1544,6 +1544,12 @@
         "",
         "",
         "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
@@ -1553,11 +1559,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "81b0161d",
+        "selectingElementGUID": "535be65e",
         "currentCursorWalkPath": [
-          "81b0161d",
+          "535be65e",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -17377,7 +17383,7 @@
     "e76846ad": "background: rgba(214, 237, 255, 1); width: 100%; -fsb-reusable-name: inbox_item_box; -fsb-reusable-id: e76846ad; text-align: left; border-radius: 3px 3px 3px 3px; -webkit-border-radius: 3px 3px 3px 3px; border-top-style: solid; border-top-color: rgba(77, 195, 250, 1); border-left-color: rgba(77, 195, 250, 1); border-left-style: solid; border-right-style: solid; border-right-color: rgba(77, 195, 250, 1); border-bottom-style: solid; border-bottom-color: rgba(77, 195, 250, 1); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 8px; padding-right: 8px; margin-bottom: 5px; font-size: 13px"
   },
   "backEndControllerBlobSHADict": {
-    "index": "45313647f523a8330da2e1316be9fee88942bdcb",
+    "index": "d8a38a8aa12d12c3059578c6bb1a6b82e97ef656",
     "d1e3b3b3": "09437b31142e1a736bfb070b5ab2e1a63bcea25e",
     "8857ca68": "5adb4d5a3457b8281cba1d1b7ba430438c64c249",
     "b140e86b": "5adb4d5a3457b8281cba1d1b7ba430438c64c249",
