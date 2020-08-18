@@ -39,6 +39,7 @@ import './components/FlowLayout_cbb338d5.js';
 import './components/RoleSelector.js';
 import './components/NavigationBar.js';
 import './components/Header.js';
+import './components/Footer.js';
 
 declare let React: any;
 declare let ReactDOM: any;

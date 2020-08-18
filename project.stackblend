@@ -173,7 +173,7 @@
     "popups": [],
     "editingPageID": "index",
     "currentMode": "components",
-    "editingComponentID": "00ce1665"
+    "editingComponentID": "d22b95d9"
   },
   "sites": {
     "index": {
@@ -13784,7 +13784,10 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ]
+      ],
+      "id": "d22b95d9",
+      "name": "Footer",
+      "state": "update"
     },
     "570decac": {
       "namespace": "WiseBOQ",
@@ -13883,10 +13886,7 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ],
-      "id": "00ce1665",
-      "name": "Logo",
-      "state": "update"
+      ]
     }
   },
   "popups": {},
@@ -17391,7 +17391,7 @@
     "5488072c": "74974b80ae93cbf328b98d483e5709c4b6616ba4"
   },
   "frontEndComponentsBlobSHADict": {
-    "LoginControl": "b6ee5773b11514f24f52cd899c50892dc5da01e3",
+    "LoginControl": "952c0166eda2a735b1fb7c09ffa3df1143bdceeb",
     "FlowLayout_535be65e": "6f9a45c351947a04bc4f7b7d6ce81e5143c4a52f",
     "FlowLayout_178431b9": "e1038bce90004575c2a391ceab82b3a1b7c638cd",
     "FlowLayout_3e6ee363": "5324675aa3ce00a3adadcf9a6ab8040405e1d72b",
@@ -17425,11 +17425,12 @@
     "FlowLayout_cbb338d5": "5703cb6e27368a6adcc48140418afe943f5faf9d",
     "RoleSelector": "438aad76396a2b7b7e4b4765f747f270ed815fd0",
     "NavigationBar": "f3759e7355ba80a82ac209a1e1e8ad53cbb6c91d",
-    "Header": "914a57cbce24eda11e4b20cb0e007527c0cabdc4"
+    "Header": "914a57cbce24eda11e4b20cb0e007527c0cabdc4",
+    "Footer": "568634dbfcde58980ed5fae42c0514da72df1bb9"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "861ac55f186f56c55991f7be2e22f7083749dcda",
-    "index": "3df8ef9e4c96099f510d61dde822d259b1f380be",
+    "index": "32aa004d0bea2e3ddd85ec8eee13e0fe199bfa3a",
     "b140e86b": "f7b9f7f946540c19c7b6587c4139e2438d25c6f1",
     "8857ca68": "6e784f8e176c4b83d245de99ad9ff5d852794222",
     "b6eb1b83": "3749f4e7afba88c701dd693605bff8fc1edd2a57",
@@ -17495,6 +17496,7 @@
     "src/public/js/components/RoleSelector.tsx",
     "src/public/js/components/NavigationBar.tsx",
     "src/public/js/components/Header.tsx",
+    "src/public/js/components/Footer.tsx",
     "views/home/authentication/_d1e3b3b3.pug",
     "views/home/index.pug",
     "views/home/buyer/_b140e86b.pug",

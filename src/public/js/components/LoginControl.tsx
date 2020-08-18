@@ -198,7 +198,7 @@ class LoginControl extends Base {
     `
   }
 }
-DeclarationHelper.declare('Site', 'Controls.LoginControl', LoginControl);
+DeclarationHelper.declare('Site', 'WiseBOQ.LoginControl', LoginControl);
 // <---Auto[ClassEnd]
 
 // Export variables here:
