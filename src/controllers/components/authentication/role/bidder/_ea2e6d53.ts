@@ -163,7 +163,7 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253","72928a9c"], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('d66b23a4', "relational", "User.Store", "name");
 		ValidationHelper.registerInput('d66b23a4', "Textbox 3", true, "กรุณาระบุชื่อร้านค้า");
     for (let i=-1; i<1024; i++) {
@@ -289,11 +289,24 @@ class Controller extends Base {
 		ValidationHelper.registerInput('8ce0a253', "Hidden 1", false, undefined);
     for (let i=-1; i<1024; i++) {
       input = RequestHelper.getInput(request, '8ce0a253' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['uid'];
     
     // Override data parsing and manipulation of Hidden 1 here:
     // 
     if (input) input.value = this.request.session.uid;
     
+      if (input != null) data.push(input);
+      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('72928a9c', "relational", "User.Store", "oid");
+		ValidationHelper.registerInput('72928a9c', "Hidden 1", false, undefined);
+    for (let i=-1; i<1024; i++) {
+      input = RequestHelper.getInput(request, '72928a9c' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['uid'];
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
       if (input != null) data.push(input);
       else if (i > -1) break;
     }

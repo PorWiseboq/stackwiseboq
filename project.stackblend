@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "index",
+    "editingPageID": "ea2e6d53",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -1616,12 +1616,18 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -12191,7 +12197,7 @@
         "                                    </div>",
         "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0816dd23\" internal-fsb-name=\"FlowLayout 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-top: 20px\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-primary\" internal-fsb-guid=\"e6d44b49\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"navigate\" internal-fsb-data-controls=\" d66b23a4 e27d4c3b 8bcca5bc 3a931201 37473e1c 9d2bb91e c085ee08 eca33837 e07e83cb 3a91a437 903420db 8ce0a253\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
+        "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-primary\" internal-fsb-guid=\"e6d44b49\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"navigate\" internal-fsb-data-controls=\" d66b23a4 e27d4c3b 8bcca5bc 3a931201 37473e1c 9d2bb91e c085ee08 eca33837 e07e83cb 3a91a437 903420db 8ce0a253 72928a9c\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
         "    // Handle the event of onButtonSubmitting (Button 1) here:",
         "    // ",
@@ -12211,7 +12217,7 @@
         "    // ",
         "    if (input) input.value = this.request.session.uid;",
         "    ",
-        "    \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User\" internal-fsb-data-source-column=\"id\" value=\"123\"></div>",
+        "    \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User\" internal-fsb-data-source-column=\"id\" value=\"123\" internal-fsb-data-session-name=\"uid\" internal-fsb-data-value-source=\"session\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"72928a9c\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User.Store\" internal-fsb-data-source-column=\"oid\" internal-fsb-data-value-source=\"session\" internal-fsb-data-session-name=\"uid\"></div>",
         "                                        </div>",
         "                                    </div>",
         "                                </div>",
@@ -12833,11 +12839,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d00dba12",
+        "selectingElementGUID": "e6d44b49",
         "currentCursorWalkPath": [
-          "d00dba12",
+          "0816dd23",
           0,
-          3,
+          1,
           null
         ]
       },
@@ -16088,7 +16094,7 @@
     "c3da32d7": "6275aa444d03651c6792805f429b535cf76c1035",
     "8a4a42e4": "7c08e95e6b12bf4fb059dbbcefb1885621a4af8b",
     "473d370d": "fa25ac5c24ae92d453a4b71684e1cf8a1d746469",
-    "ea2e6d53": "67b90b25cc30880a9012feb805c145015304b5c0",
+    "ea2e6d53": "54c8ea7c5dc642ed0438ca56d02621dc129eabb6",
     "5488072c": "74974b80ae93cbf328b98d483e5709c4b6616ba4"
   },
   "frontEndComponentsBlobSHADict": {
@@ -16102,12 +16108,12 @@
     "Project.Controls.FlowLayout_d64677b8": "5c34f5c52ef5f748898cd375bed2b31948148933",
     "Project.Controls.Rectangle_cad06e8d": "050959901acdd913f7f0fc9410c3e694a966bad8",
     "Project.Controls.FlowLayout_56ca37d0": "585b39b7bba72cdb4eb1f3c35bc8f1e5fa50393d",
-    "Project.Controls.FlowLayout_cbb338d5": "5703cb6e27368a6adcc48140418afe943f5faf9d",
+    "Project.Controls.FlowLayout_cbb338d5": "5e8cb146a27c25867e65e6851a83e14044c04639",
     "Project.Common.LoginControl": "b7dca78c72848080c2c472dcbfc5b6fa2f920148"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "1f7a4c64dee5c602c7d31a15a70695be93270ac4",
-    "index": "259ed9ac1c5c24267d28ebd657bc809033739107",
+    "index": "84d398d8fc518dd3b2dddbe88bbc6155810f6231",
     "b140e86b": "9dd961074a54cbbb5f0f50aedb1db28046b807fe",
     "8857ca68": "9b6b3ebb2073c2f74e75227a352aee3db86fa58a",
     "b6eb1b83": "ed6bb2e09882b1b119682219a79de22a987bb819",
