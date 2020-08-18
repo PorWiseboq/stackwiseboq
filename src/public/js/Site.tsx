@@ -36,6 +36,7 @@ import './components/FlowLayout_4a4ce3d8.js';
 import './components/FlowLayout_3a49b824.js';
 import './components/FlowLayout_56ca37d0.js';
 import './components/FlowLayout_cbb338d5.js';
+import './components/RoleSelector.js';
 
 declare let React: any;
 declare let ReactDOM: any;
