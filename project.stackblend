@@ -173,7 +173,7 @@
     "popups": [],
     "editingPageID": "index",
     "currentMode": "components",
-    "editingComponentID": "570decac"
+    "editingComponentID": "00ce1665"
   },
   "sites": {
     "index": {
@@ -13862,10 +13862,7 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ],
-      "id": "570decac",
-      "name": "Role Navigator",
-      "state": "update"
+      ]
     },
     "00ce1665": {
       "namespace": "WiseBOQ",
@@ -17426,11 +17423,13 @@
     "FlowLayout_3a49b824": "46db36a96e817f5d65aa83f3270583999852778c",
     "FlowLayout_56ca37d0": "585b39b7bba72cdb4eb1f3c35bc8f1e5fa50393d",
     "FlowLayout_cbb338d5": "5703cb6e27368a6adcc48140418afe943f5faf9d",
-    "RoleSelector": "438aad76396a2b7b7e4b4765f747f270ed815fd0"
+    "RoleSelector": "438aad76396a2b7b7e4b4765f747f270ed815fd0",
+    "NavigationBar": "f3759e7355ba80a82ac209a1e1e8ad53cbb6c91d",
+    "Header": "914a57cbce24eda11e4b20cb0e007527c0cabdc4"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "861ac55f186f56c55991f7be2e22f7083749dcda",
-    "index": "ec847de875c43c5146dcd638966321b30bb67a84",
+    "index": "3df8ef9e4c96099f510d61dde822d259b1f380be",
     "b140e86b": "f7b9f7f946540c19c7b6587c4139e2438d25c6f1",
     "8857ca68": "6e784f8e176c4b83d245de99ad9ff5d852794222",
     "b6eb1b83": "3749f4e7afba88c701dd693605bff8fc1edd2a57",
@@ -17494,6 +17493,8 @@
     "src/public/js/components/FlowLayout_56ca37d0.tsx",
     "src/public/js/components/FlowLayout_cbb338d5.tsx",
     "src/public/js/components/RoleSelector.tsx",
+    "src/public/js/components/NavigationBar.tsx",
+    "src/public/js/components/Header.tsx",
     "views/home/authentication/_d1e3b3b3.pug",
     "views/home/index.pug",
     "views/home/buyer/_b140e86b.pug",

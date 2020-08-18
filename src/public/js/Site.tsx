@@ -37,6 +37,8 @@ import './components/FlowLayout_3a49b824.js';
 import './components/FlowLayout_56ca37d0.js';
 import './components/FlowLayout_cbb338d5.js';
 import './components/RoleSelector.js';
+import './components/NavigationBar.js';
+import './components/Header.js';
 
 declare let React: any;
 declare let ReactDOM: any;
