@@ -3,12 +3,12 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../helpers/DatabaseHelper.js";
-import {ValidationInfo, ValidationHelper} from "../helpers/ValidationHelper.js";
-import {RequestHelper} from "../helpers/RequestHelper.js";
-import {RenderHelper} from "../helpers/RenderHelper.js";
-import {DataTableSchema} from "../helpers/SchemaHelper.js";
-import {Base} from "./Base.js";
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
+import {RequestHelper} from '../helpers/RequestHelper.js';
+import {RenderHelper} from '../helpers/RenderHelper.js';
+import {DataTableSchema} from '../helpers/SchemaHelper.js';
+import {Base} from './Base.js';
 
 // <---Auto[Import]
 
@@ -69,7 +69,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    const [action, schema, data] = this.initialize(request);
+	    let [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -89,7 +89,7 @@ class Controller extends Base {
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve) => {
-   		if (this.request.params.id == "new") {
+   		if (this.request.params.id == 'new') {
    		  resolve(null);
    		} else {
    		  this.results = await DatabaseHelper.retrieve([{
@@ -101,8 +101,8 @@ class Controller extends Base {
           validation: null
    		  }], null);
    		  
-   		  if (this.results["Blog"].rows.length == 0) {
-   		    this.response.redirect("/error/404");
+   		  if (this.results['Blog'].rows.length == 0) {
+   		    this.response.redirect('/error/404');
    		  } else {
      		  resolve(this.results);
    		  }
@@ -139,14 +139,14 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
- 		return "/";
+ 		return '/';
   }
  	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	const action: ActionType = RequestHelper.getAction(request);
-  	const schema: DataTableSchema = RequestHelper.getSchema(request);
-  	const data: Input[] = [];
+  	let action: ActionType = RequestHelper.getAction(request);
+  	let schema: DataTableSchema = RequestHelper.getSchema(request);
+  	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
@@ -154,10 +154,10 @@ class Controller extends Base {
 	  // Auto[Merging]--->
     RequestHelper.registerSubmit("10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null, crossRelationUpsert: false});
-		RequestHelper.registerInput("d064b129", "relational", "Blog", "title");
-		ValidationHelper.registerInput("d064b129", "Textbox 2", true, "ต้องมีหัวข้อเรื่อง");
+		RequestHelper.registerInput('d064b129', "relational", "Blog", "title");
+		ValidationHelper.registerInput('d064b129', "Textbox 2", true, "ต้องมีหัวข้อเรื่อง");
     for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "d064b129" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(request, 'd064b129' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
@@ -165,10 +165,10 @@ class Controller extends Base {
       if (input != null) data.push(input);
       else if (i > -1) break;
     }
-		RequestHelper.registerInput("a0641238", "relational", "Blog", "body");
-		ValidationHelper.registerInput("a0641238", "Textbox 1", true, "ต้องมีเนื้อหา");
+		RequestHelper.registerInput('a0641238', "relational", "Blog", "body");
+		ValidationHelper.registerInput('a0641238', "Textbox 1", true, "ต้องมีเนื้อหา");
     for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "a0641238" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(request, 'a0641238' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
@@ -176,10 +176,10 @@ class Controller extends Base {
       if (input != null) data.push(input);
       else if (i > -1) break;
     }
-		RequestHelper.registerInput("1d258b94", "relational", "Blog", "description");
-		ValidationHelper.registerInput("1d258b94", "Textbox 3", true, "ต้องมีโดยย่อ");
+		RequestHelper.registerInput('1d258b94', "relational", "Blog", "description");
+		ValidationHelper.registerInput('1d258b94', "Textbox 3", true, "ต้องมีโดยย่อ");
     for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "1d258b94" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(request, '1d258b94' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
@@ -187,10 +187,10 @@ class Controller extends Base {
       if (input != null) data.push(input);
       else if (i > -1) break;
     }
-		RequestHelper.registerInput("9ba2b637", "relational", "Blog", "keywords");
-		ValidationHelper.registerInput("9ba2b637", "Textbox 1", true, "ต้องใช้คีย์เวิร์ด");
+		RequestHelper.registerInput('9ba2b637', "relational", "Blog", "keywords");
+		ValidationHelper.registerInput('9ba2b637', "Textbox 1", true, "ต้องใช้คีย์เวิร์ด");
     for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "9ba2b637" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(request, '9ba2b637' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
@@ -198,10 +198,10 @@ class Controller extends Base {
       if (input != null) data.push(input);
       else if (i > -1) break;
     }
-		RequestHelper.registerInput("3dcb582a", "relational", "Blog", "image");
-		ValidationHelper.registerInput("3dcb582a", "Textbox 3", false, undefined);
+		RequestHelper.registerInput('3dcb582a', "relational", "Blog", "image");
+		ValidationHelper.registerInput('3dcb582a', "Textbox 3", false, undefined);
     for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "3dcb582a" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(request, '3dcb582a' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
@@ -209,10 +209,10 @@ class Controller extends Base {
       if (input != null) data.push(input);
       else if (i > -1) break;
     }
-		RequestHelper.registerInput("50cb1c1b", "relational", "Blog", "bid");
-		ValidationHelper.registerInput("50cb1c1b", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('50cb1c1b', "relational", "Blog", "bid");
+		ValidationHelper.registerInput('50cb1c1b', "Hidden 1", false, undefined);
     for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "50cb1c1b" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(request, '50cb1c1b' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 

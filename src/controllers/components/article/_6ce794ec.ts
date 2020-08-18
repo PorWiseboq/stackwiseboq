@@ -3,12 +3,12 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../helpers/DatabaseHelper.js";
-import {ValidationInfo, ValidationHelper} from "../helpers/ValidationHelper.js";
-import {RequestHelper} from "../helpers/RequestHelper.js";
-import {RenderHelper} from "../helpers/RenderHelper.js";
-import {DataTableSchema} from "../helpers/SchemaHelper.js";
-import {Base} from "./Base.js";
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
+import {RequestHelper} from '../helpers/RequestHelper.js';
+import {RenderHelper} from '../helpers/RenderHelper.js';
+import {DataTableSchema} from '../helpers/SchemaHelper.js';
+import {Base} from './Base.js';
 
 // <---Auto[Import]
 
@@ -69,7 +69,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    const [action, schema, data] = this.initialize(request);
+	    let [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -79,6 +79,8 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+  results: {[Identifier: string]: HierarchicalDataTable} = null;
+  
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
@@ -86,31 +88,41 @@ class Controller extends Base {
   }
   
   protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise((resolve) => {
- 	    resolve({
- 		    title: null,
- 		    description: null,
- 		    keywords: null,
- 		    language: null,
- 		    contentType: null,
- 		    revisitAfter: null,
- 		    robots: null,
- 		    linkUrl: null,
- 		    imageUrl: null,
- 		    itemType: null,
- 		    contentLocale: null
- 		  });
+ 	  return new Promise(async (resolve) => {
+ 	    if (this.results['Blog'].rows.length == 0) {
+ 	      resolve(null);
+ 	    } else {
+ 	      resolve({
+   		    title: this.results['Blog'].rows[0].columns['title'].value,
+   		    description: this.results['Blog'].rows[0].columns['description'].value,
+   		    keywords: this.results['Blog'].rows[0].columns['keywords'].value,
+   		    linkUrl: `https://www.wiseboq.com/${this.results['Blog'].rows[0].keys['bid'].value}/${this.results['Blog'].rows[0].columns['title'].value}`,
+   		    imageUrl: this.results['Blog'].rows[0].columns['image'].value,
+   		    itemType: 'blog',
+   		    language: 'th',
+   		    contentLocale: 'th'
+   		  });
+ 	    }
  	  });
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve) => {
-   		if (!this.request.session || !this.request.session.uid) {
-        this.response.redirect("/authentication");
-      }
-      
-   	  resolve(null);
-    });
+ 		  this.results = await DatabaseHelper.retrieve([{
+ 		    target: SourceType.Relational,
+        group: "Blog",
+        name: "bid",
+        value: this.request.params.id,
+        guid: null,
+        validation: null
+ 		  }], null);
+ 		  
+ 		  if (this.results['Blog'].rows.length == 0) {
+ 		    this.response.redirect('/error/404');
+ 		  } else {
+   		  resolve(this.results);
+ 		  }
+ 	  });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
@@ -142,73 +154,19 @@ class Controller extends Base {
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
- 		return new Promise(async (resolve, reject) => {
- 		  try {
- 		    await DatabaseHelper.update(data, schema);
- 		    
- 		    resolve("/buyer/auction");
- 		  } catch(error) {
- 		    reject(error);
- 		  }
- 		});
+ 		return '/';
   }
  	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	const action: ActionType = RequestHelper.getAction(request);
-  	const schema: DataTableSchema = RequestHelper.getSchema(request);
-  	const data: Input[] = [];
+  	let action: ActionType = RequestHelper.getAction(request);
+  	let schema: DataTableSchema = RequestHelper.getSchema(request);
+  	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null, crossRelationUpsert: false});
-		RequestHelper.registerInput("ab3a1c6e", "relational", "User", "firstName");
-		ValidationHelper.registerInput("ab3a1c6e", "Textbox 5", true, "กรุณาระบุชื่อ");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "ab3a1c6e" + ((i == -1) ? "" : "[" + i + "]"));
-    
-      // Override data parsing and manipulation of Textbox 5 here:
-      // 
-      
-      if (input != null) data.push(input);
-      else if (i > -1) break;
-    }
-		RequestHelper.registerInput("340b9ddb", "relational", "User", "lastName");
-		ValidationHelper.registerInput("340b9ddb", "Textbox 6", true, "กรุณาระบุนามสกุล");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "340b9ddb" + ((i == -1) ? "" : "[" + i + "]"));
-    
-      // Override data parsing and manipulation of Textbox 6 here:
-      // 
-      
-      if (input != null) data.push(input);
-      else if (i > -1) break;
-    }
-		RequestHelper.registerInput("30d60c48", "relational", "User", "contactNumber");
-		ValidationHelper.registerInput("30d60c48", "Textbox 7", true, "กรุณาระบุหมายเลขโทรศัพท์");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "30d60c48" + ((i == -1) ? "" : "[" + i + "]"));
-    
-      // Override data parsing and manipulation of Textbox 7 here:
-      // 
-      
-      if (input != null) data.push(input);
-      else if (i > -1) break;
-    }
-		RequestHelper.registerInput("bd78c5c4", "relational", "User", "id");
-		ValidationHelper.registerInput("bd78c5c4", "Hidden 2", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, "bd78c5c4" + ((i == -1) ? "" : "[" + i + "]"));
-    
-    // Override data parsing and manipulation of Hidden 2 here:
-    // 
-    if (input) input.value = this.request.session.uid;
-    
-      if (input != null) data.push(input);
-      else if (i > -1) break;
-    }
 
 	  // <---Auto[Merging]
 	  
