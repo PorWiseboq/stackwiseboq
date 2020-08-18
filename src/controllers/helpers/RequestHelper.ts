@@ -79,7 +79,7 @@ const RequestHelper = {
 				return null;
 		}
 	},
-	getOptions: (request: Request): ActionType => {
+	getOptions: (request: Request): any => {
 		const json: any = request.body;
 		
 		if (json == null) {
