@@ -3,11 +3,11 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
-import {RequestHelper} from '../helpers/RequestHelper.js';
-import {RenderHelper} from '../helpers/RenderHelper.js';
-import {DataTableSchema} from '../helpers/SchemaHelper.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from './../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from './../helpers/ValidationHelper.js';
+import {RequestHelper} from './../helpers/RequestHelper.js';
+import {RenderHelper} from './../helpers/RenderHelper.js';
+import {DataTableSchema} from './../helpers/SchemaHelper.js';
 import {Base} from './Base.js';
 
 // <---Auto[Import]
@@ -176,6 +176,7 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->

@@ -14,6 +14,7 @@ interface RequestParamInfo {
 }
 
 const requestParamInfoDict: any = {};
+const requestSubmitInfoDict: any = {};
 
 const RequestHelper = {
 	registerInput: (guid: string, target: string, group: string, name: string): void => {
@@ -43,6 +44,13 @@ const RequestHelper = {
 			name: name
 		};
 	},
+	registerSubmit: (guid: string, action: string, fields: string[], options: any): void => {
+		requestSubmitInfoDict[guid] = {
+			action: action,
+			fields: fields,
+			options: options
+		};
+	},
 	getAction: (request: Request): ActionType => {
 		const json: any = request.body;
 		
@@ -50,7 +58,9 @@ const RequestHelper = {
 			throw new Error("There was an error trying to obtain requesting parameters (requesting body is null).");
 		}
 		
-		switch (json.action) {
+		const action = requestSubmitInfoDict[json.guid] && requestSubmitInfoDict[json.guid].action || null;
+		
+		switch (action) {
 			case "insert":
 				return ActionType.Insert;
 			case "update":
@@ -68,6 +78,15 @@ const RequestHelper = {
 			default:
 				return null;
 		}
+	},
+	getOptions: (request: Request): ActionType => {
+		const json: any = request.body;
+		
+		if (json == null) {
+			throw new Error("There was an error trying to obtain requesting parameters (requesting body is null).");
+		}
+		
+		return requestSubmitInfoDict[json.guid].options;
 	},
 	getSchema: (request: Request): DataTableSchema => {
 		const json: any = request.body;
@@ -89,11 +108,18 @@ const RequestHelper = {
 		  return null;
 		}
 		
-		const paramInfo = requestParamInfoDict[guid];
+		const paramInfo = requestParamInfoDict[guid.split("[")[0]];
+		const submitInfo = requestSubmitInfoDict[json.guid];
+		
+		if (submitInfo.fields.indexOf(guid.split("[")[0]) == -1) {
+			throw new Error("There was an error trying to obtain requesting parameters (found a prohibited requesting parameter).");
+		}
+		
+		const splited = paramInfo.group.split(".");
 		
 		const input: Input = {
 		  target: paramInfo.target,
-  		group: paramInfo.group,
+  		group: splited[splited.length - 1],
   		name: paramInfo.name,
   		value: json[guid],
   		guid: guid,
