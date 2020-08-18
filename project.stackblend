@@ -12112,7 +12112,7 @@
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"267cdd86\" internal-fsb-name=\"TextElement 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: right; padding-top: 7px; padding-right: 10px\">ชื่อร้านค้า</div>",
-        "                                                <div class=\"internal-fsb-element col-8 offset-0\" internal-fsb-guid=\"d66b23a4\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาระบุชื่อร้านค้า\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User.Store\" internal-fsb-data-source-column=\"name\" required=\"true\" value=\"\" disabled=\"{this.state.disabled}\"></div>",
+        "                                                <div class=\"internal-fsb-element col-8 offset-0\" internal-fsb-guid=\"d66b23a4\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาระบุชื่อร้านค้า\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User.Store\" internal-fsb-data-source-column=\"name\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
         "                                            </div>",
         "                                        </div>",
         "                                    </div>",
@@ -12120,7 +12120,7 @@
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"b29e039a\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-top: 7px; padding-right: 10px; text-align: right\">ชื่อ (เจ้าของร้านค้า)</div>",
-        "                                                <div class=\"internal-fsb-element col-8 offset-0\" internal-fsb-guid=\"e27d4c3b\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาระบุชื่อเจ้าของร้านค้า\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User\" internal-fsb-data-source-column=\"firstName\" required=\"true\" value=\"\" disabled=\"{this.state.disabled}\"></div>",
+        "                                                <div class=\"internal-fsb-element col-8 offset-0\" internal-fsb-guid=\"e27d4c3b\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาระบุชื่อเจ้าของร้านค้า\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User\" internal-fsb-data-source-column=\"firstName\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
         "                                            </div>",
         "                                        </div>",
         "                                    </div>",
@@ -12839,7 +12839,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e6d44b49",
+        "selectingElementGUID": "e27d4c3b",
         "currentCursorWalkPath": [
           "0816dd23",
           0,
@@ -16108,7 +16108,7 @@
     "Project.Controls.FlowLayout_d64677b8": "5c34f5c52ef5f748898cd375bed2b31948148933",
     "Project.Controls.Rectangle_cad06e8d": "050959901acdd913f7f0fc9410c3e694a966bad8",
     "Project.Controls.FlowLayout_56ca37d0": "585b39b7bba72cdb4eb1f3c35bc8f1e5fa50393d",
-    "Project.Controls.FlowLayout_cbb338d5": "5e8cb146a27c25867e65e6851a83e14044c04639",
+    "Project.Controls.FlowLayout_cbb338d5": "d6fdeff645aa8cf1738062fa85e5cbcf50d0d47b",
     "Project.Common.LoginControl": "b7dca78c72848080c2c472dcbfc5b6fa2f920148"
   },
   "viewBlobSHADict": {

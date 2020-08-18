@@ -116,14 +116,14 @@ class FlowLayout_cbb338d5 extends Base {
                   .internal-fsb-element.col-4.offset-0(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'} internal-fsb-guid="267cdd86")
                     | ชื่อร้านค้า
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'} internal-fsb-guid="d66b23a4")
-                    input.form-control(style={'display': 'block', 'width': '100%'} type="text" required=true value="" disabled=this.state.disabled)
+                    input.form-control(style={'display': 'block', 'width': '100%'} type="text" required=true disabled=this.state.disabled)
             .internal-fsb-element.col-12(style={'marginTop': '10px'} internal-fsb-guid="d331c249")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-4.offset-0(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right'} internal-fsb-guid="b29e039a")
                     | ชื่อ (เจ้าของร้านค้า)
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'} internal-fsb-guid="e27d4c3b")
-                    input.form-control(style={'display': 'block', 'width': '100%'} type="text" required=true value="" disabled=this.state.disabled)
+                    input.form-control(style={'display': 'block', 'width': '100%'} type="text" required=true disabled=this.state.disabled)
             .internal-fsb-element.col-12(style={'marginTop': '10px'} internal-fsb-guid="75a9d0dc")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
