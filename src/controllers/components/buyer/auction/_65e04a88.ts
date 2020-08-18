@@ -14,7 +14,7 @@ import {Base} from '../../Base.js';
 
 // Import additional modules here:
 //
-import {DataManipulationHelper} from '../helpers/DataManipulationHelper.js';
+import {DataManipulationHelper} from '../../../helpers/DataManipulationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {

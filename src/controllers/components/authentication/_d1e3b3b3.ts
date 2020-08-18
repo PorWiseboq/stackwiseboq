@@ -14,7 +14,7 @@ import {Base} from '../Base.js';
 
 // Import additional modules here:
 //
-import {RelationalDatabaseClient} from '../helpers/ConnectionHelper.js'
+import {RelationalDatabaseClient} from '../../helpers/ConnectionHelper.js'
 import crypto from 'crypto';
 
 // Auto[Declare]--->
