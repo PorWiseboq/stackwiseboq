@@ -8,7 +8,7 @@ import {ValidationInfo, ValidationHelper} from '../helpers/ValidationHelper.js';
 import {RequestHelper} from '../helpers/RequestHelper.js';
 import {RenderHelper} from '../helpers/RenderHelper.js';
 import {DataTableSchema} from '../helpers/SchemaHelper.js';
-import {Base} from './Base.js';
+import {Base} from 'Base.js';
 
 // <---Auto[Import]
 
