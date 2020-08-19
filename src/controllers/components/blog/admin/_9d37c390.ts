@@ -98,6 +98,7 @@ class Controller extends Base {
           name: "bid",
           value: this.request.params.id,
           guid: null,
+  		    premise: null,
           validation: null
    		  }], null);
    		  

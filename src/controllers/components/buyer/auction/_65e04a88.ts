@@ -186,6 +186,7 @@ class Controller extends Base {
             name: 'uid',
             value: parseInt(this.request.session.uid),
             guid: null,
+  		      premise: null,
             validation: null
      		  },{
      		    target: SourceType.Relational,
@@ -193,6 +194,7 @@ class Controller extends Base {
             name: 'filled',
             value: null,
             guid: null,
+  		      premise: null,
             validation: null
      		  }];
      		  let datasetA = await DatabaseHelper.retrieve(data, null);
@@ -222,6 +224,7 @@ class Controller extends Base {
               name: 'qid',
               value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
               guid: null,
+  		        premise: null,
               validation: null
        		  }];
        		  datasetB = await DatabaseHelper.retrieve(data, null);

@@ -114,6 +114,7 @@ class Controller extends Base {
           name: 'qid',
           value: 951,
           guid: null,
+  		    premise: null,
           validation: null
      		}];
      		let listingData = [{
@@ -122,6 +123,7 @@ class Controller extends Base {
           name: 'qid',
           value: 951,
           guid: null,
+  		    premise: null,
           validation: null
    		  }];
  		    
