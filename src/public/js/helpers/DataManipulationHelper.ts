@@ -232,7 +232,7 @@ const DataManipulationHelper = {
     let splited = notation.split('.');
     let current;
 		
-		if (data.rows && data.columns) {
+		if (data.keys && data.columns) {
     	current = data;
     } else {
 	    current = {
