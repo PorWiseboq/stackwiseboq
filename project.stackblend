@@ -5028,13 +5028,15 @@
         "}",
         "interface IState extends IAutoBaseState {",
         "  selectedValue: number;",
+        "  group: string;",
         "}",
         "",
         "let DefaultProps = Object.assign({}, DefaultBaseProps, {",
         "  ",
         "});",
         "let DefaultState = Object.assign({}, DefaultBaseState, {",
-        "  selectedValue: -1",
+        "  selectedValue: -1,",
+        "  group: Math.random().toString()",
         "});",
         "",
         "\" internal-fsb-react-code-body=\"",
@@ -5087,7 +5089,7 @@
         "      selectedValue: 0",
         "    });",
         "    ",
-        "    \"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"0\" name=\"{&quot;group&quot; + i}\"></div>",
+        "    \"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"0\" name=\"{this.state.group}\"></div>",
         "                                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"b80041d3\" internal-fsb-name=\"TextElement 31\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">เจาะจง</div>",
         "                                                                                                                </div>",
         "                                                                                                            </div>",
@@ -5102,7 +5104,7 @@
         "      selectedValue: 1",
         "    });",
         "    ",
-        "    \"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"1\" name=\"{&quot;group&quot; + i}\"></div>",
+        "    \"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"1\" name=\"{this.state.group}\"></div>",
         "                                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"58266972\" internal-fsb-name=\"TextElement 30\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">เทียบเท่า</div>",
         "                                                                                                                </div>",
         "                                                                                                            </div>",
@@ -5117,7 +5119,7 @@
         "      selectedValue: 2",
         "    });",
         "    ",
-        "    \"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"2\" name=\"{&quot;group&quot; + i}\"></div>",
+        "    \"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"2\" name=\"{this.state.group}\"></div>",
         "                                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"5c2b0578\" internal-fsb-name=\"TextElement 29\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">ทดแทน</div>",
         "                                                                                                                </div>",
         "                                                                                                            </div>",
@@ -5132,7 +5134,7 @@
         "      selectedValue: 3",
         "    });",
         "    ",
-        "    \"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"3\" name=\"{&quot;group&quot; + i}\"></div>",
+        "    \"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"3\" name=\"{this.state.group}\"></div>",
         "                                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"a3b9410d\" internal-fsb-name=\"TextElement 32\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">ไม่มี</div>",
         "                                                                                                                </div>",
         "                                                                                                            </div>",
@@ -5859,11 +5861,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "ddec7e5c",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
           "64a6ac8c",
           0,
-          10,
+          4,
           null
         ]
       },
@@ -16254,7 +16256,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "585b39b7bba72cdb4eb1f3c35bc8f1e5fa50393d",
     "Project.Controls.FlowLayout_cbb338d5": "5d263039686a11fe6d9022b31203b5e7aaf682cf",
     "Project.Common.LoginControl": "b7dca78c72848080c2c472dcbfc5b6fa2f920148",
-    "Project.Controls.FlowLayout_c6ba5b53": "8b03db426fd05c4d7ae50322ed78c0169bcd8945"
+    "Project.Controls.FlowLayout_c6ba5b53": "6f0edc720d511165686b788c1f334e1b308b1d2e"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "1f7a4c64dee5c602c7d31a15a70695be93270ac4",
