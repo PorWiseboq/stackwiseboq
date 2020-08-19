@@ -387,7 +387,7 @@ class Rectangle_cad06e8d extends Base {
                                           | ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
                                         each data, i in this.getDataFromNotation("Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
-                                          _Project_Controls_FlowLayout_c6ba5b53_(key="item_" + i, data=data)
+                                          _Project_Controls_FlowLayout_c6ba5b53_(key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
