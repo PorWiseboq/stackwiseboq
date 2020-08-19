@@ -130,7 +130,7 @@ class Controller extends Base {
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		let options = RequestHelper.getOptions(this.request);
+ 		let options = RequestHelper.getOptions(this.pageId, this.request);
  		return await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session);
   }
   

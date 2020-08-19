@@ -255,22 +255,22 @@ class Controller extends Base {
   }
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		let options = RequestHelper.getOptions(this.request);
+ 		let options = RequestHelper.getOptions(this.pageId, this.request);
  		return await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session); 
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		let options = RequestHelper.getOptions(this.request);
+ 		let options = RequestHelper.getOptions(this.pageId, this.request);
  		return await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session);
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		let options = RequestHelper.getOptions(this.request);
+ 		let options = RequestHelper.getOptions(this.pageId, this.request);
  		return await DatabaseHelper.delete(data, schema, this.request.session);
   }
   
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		let options = RequestHelper.getOptions(this.request);
+ 		let options = RequestHelper.getOptions(this.pageId, this.request);
  		return await DatabaseHelper.retrieve(data, schema, this.request.session);
   }
   
