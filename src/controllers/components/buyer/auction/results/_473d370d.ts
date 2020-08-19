@@ -13,7 +13,7 @@ import {Base} from '../../../Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
-//
+// 
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -138,74 +138,69 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
  		return '/';
   }
- 	
+  
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let action: ActionType = RequestHelper.getAction(request);
-  	let schema: DataTableSchema = RequestHelper.getSchema(request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
   	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("bdcbb907", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("c1c0694d", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("d480ae4d", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("473d370d", "bdcbb907", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('bc041e39', undefined, undefined, undefined);
 		ValidationHelper.registerInput('bc041e39', "Radio 1", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'bc041e39' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'bc041e39' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 1 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('1411ca4c', undefined, undefined, undefined);
 		ValidationHelper.registerInput('1411ca4c', "Checkbox 1", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '1411ca4c' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '1411ca4c' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Checkbox 1 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('c6cd6a36', undefined, undefined, undefined);
 		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('0c59a0a4', undefined, undefined, undefined);
 		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '0c59a0a4' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '0c59a0a4' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('5cab012e', undefined, undefined, undefined);
 		ValidationHelper.registerInput('5cab012e', "Textbox 3", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 
 	  // <---Auto[Merging]

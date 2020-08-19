@@ -64,7 +64,7 @@ class FlowLayout_cbb338d5 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253","72928a9c","d74e7c81"], {initClass: null, submitCrossType: "upsert"});
   }
   // <---Auto[ClassBegin]
   
@@ -116,14 +116,14 @@ class FlowLayout_cbb338d5 extends Base {
                   .internal-fsb-element.col-4.offset-0(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'} internal-fsb-guid="267cdd86")
                     | ชื่อร้านค้า
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'} internal-fsb-guid="d66b23a4")
-                    input.form-control(style={'display': 'block', 'width': '100%'} type="text" required=true value="" disabled=this.state.disabled)
+                    input.form-control(style={'display': 'block', 'width': '100%'} type="text" required=true disabled=this.state.disabled)
             .internal-fsb-element.col-12(style={'marginTop': '10px'} internal-fsb-guid="d331c249")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-4.offset-0(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right'} internal-fsb-guid="b29e039a")
                     | ชื่อ (เจ้าของร้านค้า)
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'} internal-fsb-guid="e27d4c3b")
-                    input.form-control(style={'display': 'block', 'width': '100%'} type="text" required=true value="" disabled=this.state.disabled)
+                    input.form-control(style={'display': 'block', 'width': '100%'} type="text" required=true disabled=this.state.disabled)
             .internal-fsb-element.col-12(style={'marginTop': '10px'} internal-fsb-guid="75a9d0dc")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -193,6 +193,8 @@ class FlowLayout_cbb338d5 extends Base {
                     .internal-fsb-element(internal-fsb-guid="e6d44b49-text")
                       | บันทึก
                   input.internal-fsb-element.col-12(type="hidden" value="123" internal-fsb-guid="8ce0a253")
+                  input.internal-fsb-element.col-12(type="hidden" internal-fsb-guid="72928a9c")
+                  input.internal-fsb-element.col-12(type="hidden" value="" internal-fsb-guid="d74e7c81")
     `
   }
 }

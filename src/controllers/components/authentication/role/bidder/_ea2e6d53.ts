@@ -13,7 +13,7 @@ import {Base} from '../../../Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
-//
+// 
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -130,7 +130,8 @@ class Controller extends Base {
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.update(data, schema);
+    let options = RequestHelper.getOptions(this.pageId, this.request);
+ 		return await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session);
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
@@ -144,7 +145,7 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
  		return new Promise(async (resolve, reject) => {
  		  try {
- 		    await DatabaseHelper.update(data, schema);
+ 		    await DatabaseHelper.update(data, schema, true, this.request.session);
  		    
  		    resolve('/bidder/auction');
  		  } catch(error) {
@@ -152,150 +153,160 @@ class Controller extends Base {
  		  }
  		});
   }
- 	
+  
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let action: ActionType = RequestHelper.getAction(request);
-  	let schema: DataTableSchema = RequestHelper.getSchema(request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
   	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("ea2e6d53", "e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253","72928a9c","d74e7c81"], {initClass: null, crossRelationUpsert: true});
 		RequestHelper.registerInput('d66b23a4', "relational", "User.Store", "name");
 		ValidationHelper.registerInput('d66b23a4', "Textbox 3", true, "กรุณาระบุชื่อร้านค้า");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'd66b23a4' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'd66b23a4' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('e27d4c3b', "relational", "User", "firstName");
 		ValidationHelper.registerInput('e27d4c3b', "Textbox 1", true, "กรุณาระบุชื่อเจ้าของร้านค้า");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'e27d4c3b' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'e27d4c3b' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('3a931201', "relational", "User", "lastName");
 		ValidationHelper.registerInput('3a931201', "Textbox 2", true, "กรุณาระบุนามสกุลเจ้าของร้านค้า");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '3a931201' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '3a931201' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('8bcca5bc', "relational", "User", "contactNumber");
 		ValidationHelper.registerInput('8bcca5bc', "Textbox 4", true, "กรุณาระบุเบอร์โทรศัพท์เจ้าของร้านค้า");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '8bcca5bc' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '8bcca5bc' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 4 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('37473e1c', "relational", "User", "province");
 		ValidationHelper.registerInput('37473e1c', "Textbox 14", true, "กรุณาระบุชื่อจังหวัด");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '37473e1c' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '37473e1c' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 14 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('9d2bb91e', "relational", "User", "district");
 		ValidationHelper.registerInput('9d2bb91e', "Textbox 12", true, "กรุณาระบุชื่ออำเภอ / แขวง");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '9d2bb91e' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '9d2bb91e' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 12 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('c085ee08', "relational", "User", "subDistrict");
 		ValidationHelper.registerInput('c085ee08', "Textbox 13", true, "กรุณาระบุชื่อตำบล / เขต");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'c085ee08' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'c085ee08' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 13 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('eca33837', "relational", "User", "address");
 		ValidationHelper.registerInput('eca33837', "Textbox 9", true, "กรุณาระบุบ้านเลขที่");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'eca33837' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'eca33837' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 9 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('3a91a437', "relational", "User", "lane");
 		ValidationHelper.registerInput('3a91a437', "Textbox 10", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '3a91a437' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '3a91a437' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 10 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('e07e83cb', "relational", "User", "road");
 		ValidationHelper.registerInput('e07e83cb', "Textbox 11", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'e07e83cb' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'e07e83cb' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 11 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('903420db', "relational", "User", "postalCode");
 		ValidationHelper.registerInput('903420db', "Textbox 15", true, "กรุณาระบุรหัสไปรษณีย์");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '903420db' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '903420db' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 15 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('8ce0a253', "relational", "User", "id");
 		ValidationHelper.registerInput('8ce0a253', "Hidden 1", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '8ce0a253' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '8ce0a253' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['uid'];
     
     // Override data parsing and manipulation of Hidden 1 here:
     // 
     if (input) input.value = this.request.session.uid;
     
       if (input != null) data.push(input);
-      else if (i > -1) break;
+    }
+		RequestHelper.registerInput('72928a9c', "relational", "User.Store", "oid");
+		ValidationHelper.registerInput('72928a9c', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '72928a9c' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['uid'];
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('d74e7c81', "relational", "User.Store", "sid");
+		ValidationHelper.registerInput('d74e7c81', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'd74e7c81' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
     }
 
 	  // <---Auto[Merging]

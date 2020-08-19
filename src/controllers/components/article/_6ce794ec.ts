@@ -13,7 +13,7 @@ import {Base} from '../Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
-//
+// 
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -114,6 +114,7 @@ class Controller extends Base {
         name: "bid",
         value: this.request.params.id,
         guid: null,
+  		  premise: null,
         validation: null
  		  }], null);
  		  
@@ -156,11 +157,11 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
  		return '/';
   }
- 	
+  
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let action: ActionType = RequestHelper.getAction(request);
-  	let schema: DataTableSchema = RequestHelper.getSchema(request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
   	let data: Input[] = [];
   	let input: Input = null;
   	

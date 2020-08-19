@@ -13,7 +13,7 @@ import {Base} from '../Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
-//
+// 
 import {RelationalDatabaseClient} from '../../helpers/ConnectionHelper.js'
 import crypto from 'crypto';
 
@@ -211,51 +211,48 @@ class Controller extends Base {
       }
     });
   }
- 	
+  
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let action: ActionType = RequestHelper.getAction(request);
-  	let schema: DataTableSchema = RequestHelper.getSchema(request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
   	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("d1e3b3b3", "e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("d1e3b3b3", "da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('74d75b70', "relational", "User", "email");
 		ValidationHelper.registerInput('74d75b70', "Textbox 1", true, "คุณจำเป็นต้องกรอกที่อยู่อีเมล์");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '74d75b70' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '74d75b70' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('74b67c1e', "relational", "User", "password");
 		ValidationHelper.registerInput('74b67c1e', "Textbox 2", true, "คุณจำเป็นต้องกรอกรหัสผ่าน");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '74b67c1e' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '74b67c1e' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 		RequestHelper.registerInput('d40a4961', "relational", "User", "confirm");
 		ValidationHelper.registerInput('d40a4961', "Textbox 3", true, "คุณจำเป็นต้องยืนยันรหัสผ่าน");
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'd40a4961' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'd40a4961' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 
 	  // <---Auto[Merging]
