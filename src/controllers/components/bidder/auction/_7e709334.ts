@@ -183,266 +183,244 @@ class Controller extends Base {
  	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let action: ActionType = RequestHelper.getAction(request);
-  	let schema: DataTableSchema = RequestHelper.getSchema(request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
   	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("108bb2b9", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("4a579143", "retrieve", ["1ae8405a"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("c05b11c1", "retrieve", ["4cade2e7"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("833e4eb9", "retrieve", ["d24ed774"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("e9c9b721", "retrieve", ["d1920261"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("8cbc5b17", "retrieve", ["e8656190"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("9868a6d5", "insert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, crossRelationUpsert: true});
-    RequestHelper.registerSubmit("d3e31c36", null, [], {initClass: null, crossRelationUpsert: false});
-		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
+    RequestHelper.registerSubmit("7e709334", "108bb2b9", null, [], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "833e4eb9", "retrieve", ["d24ed774"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "8cbc5b17", "retrieve", ["e8656190"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "9868a6d5", "insert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, crossRelationUpsert: true});
+    RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false});
+		RequestHelper.registerInput('undefined', '1ae8405a', "relational", "Quote", "status");
 		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '1ae8405a' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '1ae8405a' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('4cade2e7', "relational", "Quote", "status");
+		RequestHelper.registerInput('undefined', '4cade2e7', "relational", "Quote", "status");
 		ValidationHelper.registerInput('4cade2e7', "Hidden 2", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '4cade2e7' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '4cade2e7' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('d24ed774', "relational", "Quote", "status");
+		RequestHelper.registerInput('undefined', 'd24ed774', "relational", "Quote", "status");
 		ValidationHelper.registerInput('d24ed774', "Hidden 3", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'd24ed774' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'd24ed774' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 3 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('d1920261', "relational", "Quote", "status");
+		RequestHelper.registerInput('undefined', 'd1920261', "relational", "Quote", "status");
 		ValidationHelper.registerInput('d1920261', "Hidden 4", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'd1920261' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'd1920261' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 4 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('31c75169', "relational", "Listing", "qid");
+		RequestHelper.registerInput('undefined', '31c75169', "relational", "Listing", "qid");
 		ValidationHelper.registerInput('31c75169', "Hidden 5", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '31c75169' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '31c75169' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 5 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('72aecc3a', "relational", "Listing", "qid");
+		RequestHelper.registerInput('undefined', '72aecc3a', "relational", "Listing", "qid");
 		ValidationHelper.registerInput('72aecc3a', "Hidden 6", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '72aecc3a' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '72aecc3a' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 6 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('e8656190', "relational", "Listing", "qid");
+		RequestHelper.registerInput('undefined', 'e8656190', "relational", "Listing", "qid");
 		ValidationHelper.registerInput('e8656190', "Hidden 7", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'e8656190' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'e8656190' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 7 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('95270ad9', "relational", "Listing", "qid");
+		RequestHelper.registerInput('undefined', '95270ad9', "relational", "Listing", "qid");
 		ValidationHelper.registerInput('95270ad9', "Hidden 8", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '95270ad9' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '95270ad9' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 8 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('1832b944', "relational", "Auction.Substitute", "type");
+		RequestHelper.registerInput('undefined', '1832b944', "relational", "Auction.Substitute", "type");
 		ValidationHelper.registerInput('1832b944', "Radio 5", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '1832b944' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '1832b944' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 5 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('b91e2739', "relational", "Auction.Substitute", "type");
+		RequestHelper.registerInput('undefined', 'b91e2739', "relational", "Auction.Substitute", "type");
 		ValidationHelper.registerInput('b91e2739', "Radio 4", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'b91e2739' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'b91e2739' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 4 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('03aab0e5', "relational", "Auction.Substitute", "type");
+		RequestHelper.registerInput('undefined', '03aab0e5', "relational", "Auction.Substitute", "type");
 		ValidationHelper.registerInput('03aab0e5', "Radio 3", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '03aab0e5' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '03aab0e5' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 3 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('957c1568', "relational", "Auction.Substitute", "type");
+		RequestHelper.registerInput('undefined', '957c1568', "relational", "Auction.Substitute", "type");
 		ValidationHelper.registerInput('957c1568', "Radio 6", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '957c1568' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '957c1568' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 6 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('9c338431', "relational", "Auction.Substitute", "title");
+		RequestHelper.registerInput('undefined', '9c338431', "relational", "Auction.Substitute", "title");
 		ValidationHelper.registerInput('9c338431', "Name", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '9c338431' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '9c338431' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Name here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('d913e6a1', "relational", "Auction.Substitute", "size");
+		RequestHelper.registerInput('undefined', 'd913e6a1', "relational", "Auction.Substitute", "size");
 		ValidationHelper.registerInput('d913e6a1', "Size", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'd913e6a1' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'd913e6a1' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Size here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('c22ec668', "relational", "Auction.Substitute", "quantity");
+		RequestHelper.registerInput('undefined', 'c22ec668', "relational", "Auction.Substitute", "quantity");
 		ValidationHelper.registerInput('c22ec668', "Quantity", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'c22ec668' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'c22ec668' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Quantity here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('ae7e2437', "relational", "Auction.Substitute", "lid");
+		RequestHelper.registerInput('undefined', 'ae7e2437', "relational", "Auction.Substitute", "lid");
 		ValidationHelper.registerInput('ae7e2437', "Hidden 3", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'ae7e2437' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'ae7e2437' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 3 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('c03d6613', "relational", "Auction", "price");
+		RequestHelper.registerInput('undefined', 'c03d6613', "relational", "Auction", "price");
 		ValidationHelper.registerInput('c03d6613', "Textbox 5", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'c03d6613' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'c03d6613' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 5 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('d30aa93b', "relational", "Auction", "sid");
+		RequestHelper.registerInput('undefined', 'd30aa93b', "relational", "Auction", "sid");
 		ValidationHelper.registerInput('d30aa93b', "Hidden 1", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'd30aa93b' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'd30aa93b' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('a5b102c4', "relational", "Auction", "qid");
+		RequestHelper.registerInput('undefined', 'a5b102c4', "relational", "Auction", "qid");
 		ValidationHelper.registerInput('a5b102c4', "Hidden 2", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'a5b102c4' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'a5b102c4' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('1382e4c9', "relational", "Substitute", "price");
+		RequestHelper.registerInput('undefined', '1382e4c9', "relational", "Substitute", "price");
 		ValidationHelper.registerInput('1382e4c9', "Price", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Price here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('e68b9c07', "relational", "Auction", "deliverCost");
+		RequestHelper.registerInput('undefined', 'e68b9c07', "relational", "Auction", "deliverCost");
 		ValidationHelper.registerInput('e68b9c07', "Textbox 3", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'e68b9c07' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'e68b9c07' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
-		RequestHelper.registerInput('dde4302b', "relational", "Auction", "discount");
+		RequestHelper.registerInput('undefined', 'dde4302b', "relational", "Auction", "discount");
 		ValidationHelper.registerInput('dde4302b', "Textbox 2", false, undefined);
-    for (let i=-1; i<1024; i++) {
-      input = RequestHelper.getInput(request, 'dde4302b' + ((i == -1) ? '' : '[' + i + ']'));
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput('undefined', request, 'dde4302b' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
-      else if (i > -1) break;
     }
 
 	  // <---Auto[Merging]
