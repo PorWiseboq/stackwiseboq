@@ -50,8 +50,7 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  selectedValue: -1,
-  group: Math.random().toString()
+  selectedValue: -1
 });
 
 // Auto[ClassBegin]--->
@@ -74,6 +73,7 @@ class FlowLayout_c6ba5b53 extends Base {
   // Declare class variables and functions here:
   //
   protected initialize(): void {
+    this.state.group = Math.random().toString();
   }
   
   protected componentDidMount(): void {

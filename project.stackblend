@@ -5035,8 +5035,7 @@
         "  ",
         "});",
         "let DefaultState = Object.assign({}, DefaultBaseState, {",
-        "  selectedValue: -1,",
-        "  group: Math.random().toString()",
+        "  selectedValue: -1",
         "});",
         "",
         "\" internal-fsb-react-code-body=\"",
@@ -5044,6 +5043,7 @@
         "  // Declare class variables and functions here:",
         "  //",
         "  protected initialize(): void {",
+        "    this.state.group = Math.random().toString();",
         "  }",
         "  ",
         "  protected componentDidMount(): void {",
@@ -5861,11 +5861,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a30c3884",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
-          "945cdc26",
+          "64a6ac8c",
           0,
-          2,
+          4,
           null
         ]
       },
@@ -16256,7 +16256,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "585b39b7bba72cdb4eb1f3c35bc8f1e5fa50393d",
     "Project.Controls.FlowLayout_cbb338d5": "5d263039686a11fe6d9022b31203b5e7aaf682cf",
     "Project.Common.LoginControl": "b7dca78c72848080c2c472dcbfc5b6fa2f920148",
-    "Project.Controls.FlowLayout_c6ba5b53": "6f0edc720d511165686b788c1f334e1b308b1d2e"
+    "Project.Controls.FlowLayout_c6ba5b53": "93ba488b30f0e54a8907d3350e89c13da55413d9"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "1f7a4c64dee5c602c7d31a15a70695be93270ac4",
