@@ -13,7 +13,7 @@ import {Base} from './Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
-//
+// 
 import {RelationalDatabaseClient} from '../helpers/ConnectionHelper.js';
 
 // Auto[Declare]--->
@@ -165,7 +165,7 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
  		return '/';
   }
- 	
+  
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let action: ActionType = RequestHelper.getAction(this.pageId, request);

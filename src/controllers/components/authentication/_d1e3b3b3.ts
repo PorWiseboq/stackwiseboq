@@ -13,7 +13,7 @@ import {Base} from '../Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
-//
+// 
 import {RelationalDatabaseClient} from '../../helpers/ConnectionHelper.js'
 import crypto from 'crypto';
 
@@ -211,7 +211,7 @@ class Controller extends Base {
       }
     });
   }
- 	
+  
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let action: ActionType = RequestHelper.getAction(this.pageId, request);
@@ -224,30 +224,30 @@ class Controller extends Base {
 	  // Auto[Merging]--->
     RequestHelper.registerSubmit("d1e3b3b3", "e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("d1e3b3b3", "da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, crossRelationUpsert: false});
-		RequestHelper.registerInput('undefined', '74d75b70', "relational", "User", "email");
+		RequestHelper.registerInput('74d75b70', "relational", "User", "email");
 		ValidationHelper.registerInput('74d75b70', "Textbox 1", true, "คุณจำเป็นต้องกรอกที่อยู่อีเมล์");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput('undefined', request, '74d75b70' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, '74d75b70' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('undefined', '74b67c1e', "relational", "User", "password");
+		RequestHelper.registerInput('74b67c1e', "relational", "User", "password");
 		ValidationHelper.registerInput('74b67c1e', "Textbox 2", true, "คุณจำเป็นต้องกรอกรหัสผ่าน");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput('undefined', request, '74b67c1e' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, '74b67c1e' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('undefined', 'd40a4961', "relational", "User", "confirm");
+		RequestHelper.registerInput('d40a4961', "relational", "User", "confirm");
 		ValidationHelper.registerInput('d40a4961', "Textbox 3", true, "คุณจำเป็นต้องยืนยันรหัสผ่าน");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput('undefined', request, 'd40a4961' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, 'd40a4961' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 

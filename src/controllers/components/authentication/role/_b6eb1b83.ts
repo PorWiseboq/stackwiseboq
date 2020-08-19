@@ -13,7 +13,7 @@ import {Base} from '../../Base.js';
 // <---Auto[Import]
 
 // Import additional modules here:
-//
+// 
 import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
 
@@ -163,7 +163,7 @@ class Controller extends Base {
       resolve('/authentication/role');
     });
   }
- 	
+  
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let action: ActionType = RequestHelper.getAction(this.pageId, request);
@@ -176,20 +176,20 @@ class Controller extends Base {
 	  // Auto[Merging]--->
     RequestHelper.registerSubmit("b6eb1b83", "85ebe32c", "navigate", ["02987944","56385616"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("b6eb1b83", "9e104782", "navigate", ["899069eb","56385616"], {initClass: null, crossRelationUpsert: false});
-		RequestHelper.registerInput('undefined', '02987944', "relational", "User", "role");
+		RequestHelper.registerInput('02987944', "relational", "User", "role");
 		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput('undefined', request, '02987944' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, '02987944' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of buyer here:
     // 
     
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('undefined', '56385616', "relational", "User", "id");
+		RequestHelper.registerInput('56385616', "relational", "User", "id");
 		ValidationHelper.registerInput('56385616', "uid", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput('undefined', request, '56385616' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, '56385616' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of Hidden 1 here:
     // 
@@ -197,10 +197,10 @@ class Controller extends Base {
     
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('undefined', '899069eb', "relational", "User", "role");
+		RequestHelper.registerInput('899069eb', "relational", "User", "role");
 		ValidationHelper.registerInput('899069eb', "bidder", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput('undefined', request, '899069eb' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, '899069eb' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of bidder here:
     // 
