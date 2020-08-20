@@ -2,7 +2,7 @@
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
 // Auto[Import]--->
-import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
@@ -21,6 +21,7 @@ declare let DataManipulationHelper: any;
 declare let pug: any;
 
 let Button = $Button;
+let Project = $Project;
 
 // <---Auto[Declare]
 
@@ -91,10 +92,10 @@ class Footer extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'borderTopWidth': '1px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(22, 98, 250, 1)', 'paddingTop': '20px', 'paddingBottom': '20px'}, this.props.forward && this.props.forward.styles || {}) className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || '') internal-fsb-guid="d22b95d9")
+      div(style=Object.assign({'borderTopWidth': '1px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(22, 98, 250, 1)', 'paddingTop': '20px', 'paddingBottom': '20px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="d22b95d9")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-            .internal-fsb-element.col-12(style={'textAlign': 'center', 'fontSize': '13px'} internal-fsb-guid="6b945c4a")
+            .internal-fsb-element.col-12(style={'textAlign': 'center', 'fontSize': '13px'}, internal-fsb-guid="6b945c4a")
               | ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ
               div
                 | บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170

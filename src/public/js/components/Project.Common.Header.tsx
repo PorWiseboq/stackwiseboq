@@ -2,7 +2,7 @@
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
 // Auto[Import]--->
-import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
@@ -21,6 +21,7 @@ declare let DataManipulationHelper: any;
 declare let pug: any;
 
 let Button = $Button;
+let Project = $Project;
 
 // <---Auto[Declare]
 
@@ -91,17 +92,17 @@ class Header extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'float': 'left', 'paddingBottom': '10px'}, this.props.forward && this.props.forward.styles || {}) className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || '') internal-fsb-guid="00ce1665")
+      div(style=Object.assign({'float': 'left', 'paddingBottom': '10px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="00ce1665")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-            .internal-fsb-element(style={'width': '210px'} internal-fsb-guid="61c7ceb8")
+            .internal-fsb-element(style={'width': '210px'}, internal-fsb-guid="61c7ceb8")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-6.offset-0(style={'textAlign': 'center', 'fontFamily': 'Roboto', 'color': 'rgba(22, 98, 250, 1)', 'fontSize': '24px', 'fontWeight': '400'} internal-fsb-guid="367aa105")
+                  .internal-fsb-element.col-6.offset-0(style={'textAlign': 'center', 'fontFamily': 'Roboto', 'color': 'rgba(22, 98, 250, 1)', 'fontSize': '24px', 'fontWeight': '400'}, internal-fsb-guid="367aa105")
                     | Wise
-                  .internal-fsb-element.col-6.offset-0(style={'textAlign': 'center', 'color': 'rgba(255, 255, 255, 1)', 'fontFamily': 'Roboto', 'fontSize': '24px', 'fontWeight': '400', 'background': 'rgba(22, 98, 250, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px'} internal-fsb-guid="85c6d876")
+                  .internal-fsb-element.col-6.offset-0(style={'textAlign': 'center', 'color': 'rgba(255, 255, 255, 1)', 'fontFamily': 'Roboto', 'fontSize': '24px', 'fontWeight': '400', 'background': 'rgba(22, 98, 250, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px'}, internal-fsb-guid="85c6d876")
                     | BOQ
-                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'fontFamily': 'Roboto', 'fontSize': '13px', 'textAlign': 'center', 'paddingTop': '5px'} internal-fsb-guid="e7d5dbea")
+                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'fontFamily': 'Roboto', 'fontSize': '13px', 'textAlign': 'center', 'paddingTop': '5px'}, internal-fsb-guid="e7d5dbea")
                     | สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์
     `
   }

@@ -2,7 +2,7 @@
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
 // Auto[Import]--->
-import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
@@ -21,6 +21,7 @@ declare let DataManipulationHelper: any;
 declare let pug: any;
 
 let Button = $Button;
+let Project = $Project;
 
 // <---Auto[Declare]
 
@@ -90,41 +91,41 @@ class FlowLayout_d58ae925 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}) className="internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || '') internal-fsb-guid="d58ae925")
+      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="d58ae925")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             each data, i in this.getDataFromNotation("Blog", true)
-              .internal-fsb-element.col-9.offset-0(key="item_" + i internal-fsb-guid="3537bdb3")
+              .internal-fsb-element.col-9.offset-0(key="item_" + i, internal-fsb-guid="3537bdb3")
                 .container-fluid
                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                     .internal-fsb-element.col-2.offset-0(internal-fsb-guid="52c488ce")
                       | ชื่อเรื่อง
-                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'} maxlength="50" internal-fsb-guid="d064b129")
-                      input(style={'display': 'block', 'width': '100%'} type="text" required=true defaultValue=this.getDataFromNotation("Blog[" + i + "].title"))
+                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'}, maxlength="50", internal-fsb-guid="d064b129")
+                      input(style={'display': 'block', 'width': '100%'}, type="text", required=true, defaultValue=this.getDataFromNotation("Blog[" + i + "].title"))
                     .internal-fsb-element.col-2.offset-0(internal-fsb-guid="5b62d3ee")
                       | เนื้อหา
-                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'} internal-fsb-guid="a0641238")
-                      textarea(style={'display': 'block', 'width': '100%', 'height': '50vh'} type="text" required=true defaultValue=this.getDataFromNotation("Blog[" + i + "].body"))
+                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'}, internal-fsb-guid="a0641238")
+                      textarea(style={'display': 'block', 'width': '100%', 'height': '50vh'}, type="text", required=true, defaultValue=this.getDataFromNotation("Blog[" + i + "].body"))
                     .internal-fsb-element.col-2.offset-0(internal-fsb-guid="a8690a58")
                       | โดยย่อ
-                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'} maxlength="165" internal-fsb-guid="1d258b94")
-                      textarea(style={'display': 'block', 'width': '100%'} type="text" rows="2" required=true defaultValue=this.getDataFromNotation("Blog[" + i + "].description"))
+                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'}, maxlength="165", internal-fsb-guid="1d258b94")
+                      textarea(style={'display': 'block', 'width': '100%'}, type="text", rows="2", required=true, defaultValue=this.getDataFromNotation("Blog[" + i + "].description"))
                     .internal-fsb-element.col-2.offset-0(internal-fsb-guid="556126e6")
                       | คีย์เวิร์ด
-                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'} internal-fsb-guid="9ba2b637")
-                      input(style={'display': 'block', 'width': '100%'} type="text" placeholder="" required=true defaultValue=this.getDataFromNotation("Blog[" + i + "].keywords"))
+                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'}, internal-fsb-guid="9ba2b637")
+                      input(style={'display': 'block', 'width': '100%'}, type="text", placeholder="", required=true, defaultValue=this.getDataFromNotation("Blog[" + i + "].keywords"))
                     .internal-fsb-element.col-2.offset-0(internal-fsb-guid="76b0ad64")
                       | ที่อยู่ของรูปภาพ
-                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'} internal-fsb-guid="3dcb582a")
-                      input(style={'display': 'block', 'width': '100%'} type="text" defaultValue=this.getDataFromNotation("Blog[" + i + "].image"))
-                    Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.col-2.offset-4(style={'marginTop': '10px'} type="button" onClick=((event) => { window.internalFsbSubmit('10714c4a', 'Blog', event, ((results) => { this.manipulate('10714c4a', 'Blog', results); }).bind(this)); }).bind(this) internal-fsb-guid="10714c4a")
+                    .internal-fsb-element.col-10.offset-0(style={padding: '0px'}, internal-fsb-guid="3dcb582a")
+                      input(style={'display': 'block', 'width': '100%'}, type="text", defaultValue=this.getDataFromNotation("Blog[" + i + "].image"))
+                    Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.col-2.offset-4(style={'marginTop': '10px'}, type="button", onClick=((event) => { window.internalFsbSubmit('10714c4a', 'Blog', event, ((results) => { this.manipulate('10714c4a', 'Blog', results); }).bind(this)); }).bind(this), internal-fsb-guid="10714c4a")
                       .internal-fsb-element(internal-fsb-guid="10714c4a-text")
                         | Insert
-                    Button.internal-fsb-element.internal-fsb-allow-cursor.col-2.offset-0.btn.btn-primary(style={'marginTop': '10px'} type="button" onClick=((event) => { window.internalFsbSubmit('2258be6b', 'Blog', event, ((results) => { this.manipulate('2258be6b', 'Blog', results); }).bind(this)); }).bind(this) internal-fsb-guid="2258be6b")
+                    Button.internal-fsb-element.internal-fsb-allow-cursor.col-2.offset-0.btn.btn-primary(style={'marginTop': '10px'}, type="button", onClick=((event) => { window.internalFsbSubmit('2258be6b', 'Blog', event, ((results) => { this.manipulate('2258be6b', 'Blog', results); }).bind(this)); }).bind(this), internal-fsb-guid="2258be6b")
                       .internal-fsb-element(internal-fsb-guid="2258be6b-text")
                         | Update
-                    input.internal-fsb-element.col-12(type="hidden" value=this.getDataFromNotation("Blog[" + i + "].bid") internal-fsb-guid="50cb1c1b")
-            .internal-fsb-element.offset--1.col-3.offset-0(style={'minHeight': '617px'} internal-fsb-guid="0a8bed8a")
+                    input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Blog[" + i + "].bid"), internal-fsb-guid="50cb1c1b")
+            .internal-fsb-element.offset--1.col-3.offset-0(style={'minHeight': '617px'}, internal-fsb-guid="0a8bed8a")
               | Code พิเศษ
               div
                 | # Title
