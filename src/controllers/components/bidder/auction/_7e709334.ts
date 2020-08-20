@@ -16,6 +16,7 @@ import {Base} from '../../Base.js';
 // 
 import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
+import {RequestHelper} from '../../../helpers/RequestHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -112,37 +113,27 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
- 		    let quoteData = [{
-   		    target: SourceType.Relational,
-          group: 'Quote',
-          name: 'qid',
-          value: 951,
-          guid: null,
-  		    premise: null,
-          validation: null
-     		}];
-     		let listingData = [{
-   		    target: SourceType.Relational,
-          group: 'Listing',
-          name: 'qid',
-          value: 951,
-          guid: null,
-  		    premise: null,
-          validation: null
-   		  }];
- 		    
- 		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
- 		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
- 		    
- 		    let results = Object.assign({
- 		      Auction: {
-          	source: SourceType.Relational,
-          	group: 'Auction',
-            rows: []
-          }
- 		    }, await DatabaseHelper.retrieve(quoteData, quote), await DatabaseHelper.retrieve(listingData, listing));
- 		    
- 		    resolve(results);
+        if (!this.request.session || !this.request.session.uid) {
+          this.response.redirect('/authentication');
+        } else {
+   		    let quoteData = RequestHelper.createInputs({
+   		      'Quote.status': 1
+   		    });
+   		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+   		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote);
+   		    
+   		    let listingDataset = {};
+   		    if (quoteDataset['Quote'].rows.length != 0) {
+   		      let listingData = RequestHelper.createInputs({
+     		      'Listing.qid': quoteDataset['Quote'].rows[0].keys['qid']
+     		    });
+     		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
+     		    listingDataset = await DatabaseHelper.retrieve(listingData, listing);
+   		    }
+   		    
+   		    let results = Object.assign({}, quoteDataset, listingDataset);
+ 		      resolve(results);
+        }
  		  } catch(error) {
  		    reject(error);
  		  }
@@ -184,14 +175,12 @@ class Controller extends Base {
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow insert action of any button on the page. */
-      /* try {
+      try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("NotImplementedError"));
+      }
     });
   }
   
@@ -223,13 +212,11 @@ class Controller extends Base {
   
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow retrieve action of any button on the page. */
-      /* try {
+    	try {
         resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("NotImplementedError"));
+      }
     });
   }
   

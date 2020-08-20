@@ -116,6 +116,9 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 1) here:
     // 
     this.setState({quoteType: QuoteType.AUCTIONING});
+    if (this.state.data) {
+      this.state.data['Listing'].rows.clear();
+    }
     
   }
 
@@ -124,6 +127,9 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 2) here:
     // 
     this.setState({quoteType: QuoteType.OFFERING});
+    if (this.state.data) {
+      this.state.data['Listing'].rows.clear();
+    }
     
   }
 
@@ -132,6 +138,9 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 3) here:
     // 
     this.setState({quoteType: QuoteType.CHATTING});
+    if (this.state.data) {
+      this.state.data['Listing'].rows.clear();
+    }
     
   }
 
@@ -140,6 +149,9 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
     this.setState({quoteType: QuoteType.PAID});
+    if (this.state.data) {
+      this.state.data['Listing'].rows.clear();
+    }
     
   }
 
@@ -213,7 +225,7 @@ class Rectangle_cad06e8d extends Base {
                             Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}, type="button", onSuccess=this.onButtonSuccess_4a579143.bind(this), onClick=((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this), internal-fsb-guid="4a579143")
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="04b90b11")
                                 img(style={'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png")
-                            input.internal-fsb-element(type="hidden", value="0", internal-fsb-guid="1ae8405a")
+                            input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="1ae8405a")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}, internal-fsb-guid="9a91246d")
                               | เคาะประมูล
                             .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})(), padding: '0px'}, internal-fsb-guid="42b3dc9b")
@@ -226,7 +238,7 @@ class Rectangle_cad06e8d extends Base {
                             Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}, type="button", onSuccess=this.onButtonSuccess_c05b11c1.bind(this), onClick=((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this), internal-fsb-guid="c05b11c1")
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="b6ec8d55")
                                 img(style={'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png")
-                            input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="4cade2e7")
+                            input.internal-fsb-element(type="hidden", value="2", internal-fsb-guid="4cade2e7")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}, internal-fsb-guid="ac1a1bce")
                               | ประมูลผ่าน
                             .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})(), padding: '0px'}, internal-fsb-guid="40ada351")
@@ -239,7 +251,7 @@ class Rectangle_cad06e8d extends Base {
                             Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}, type="button", onSuccess=this.onButtonSuccess_833e4eb9.bind(this), onClick=((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this), internal-fsb-guid="833e4eb9")
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="4bac7ab7")
                                 img(style={'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png")
-                            input.internal-fsb-element(type="hidden", value="2", internal-fsb-guid="d24ed774")
+                            input.internal-fsb-element(type="hidden", value="3", internal-fsb-guid="d24ed774")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}, internal-fsb-guid="8a12a919")
                               | คุยกับลูกค้า
                             .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})(), padding: '0px'}, internal-fsb-guid="7eb8a313")
@@ -252,7 +264,7 @@ class Rectangle_cad06e8d extends Base {
                             Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}, type="button", onSuccess=this.onButtonSuccess_e9c9b721.bind(this), onClick=((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this), internal-fsb-guid="e9c9b721")
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="6b7e8340")
                                 img(style={'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png")
-                            input.internal-fsb-element(type="hidden", value="3", internal-fsb-guid="d1920261")
+                            input.internal-fsb-element(type="hidden", value="4", internal-fsb-guid="d1920261")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(255, 255, 255, 0.45)', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}, internal-fsb-guid="83e40405")
                               | จ่ายเงินแล้ว
                             .internal-fsb-element.col-12.offset-0(style={display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})(), padding: '0px'}, internal-fsb-guid="86510a55")
