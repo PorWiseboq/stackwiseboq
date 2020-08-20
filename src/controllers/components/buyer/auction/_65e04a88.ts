@@ -222,7 +222,13 @@ class Controller extends Base {
        		  });
        		  datasetB = await DatabaseHelper.retrieve(data, null);
      		  } else {
-     		    datasetB = {};
+     		    datasetB = {
+     		      Listing: {
+     		        source: SourceType.Relational,
+              	group: 'Listing',
+                rows: []
+     		      }
+     		    };
      		  }
      		  
      		  resolve(Object.assign({}, datasetA, datasetB));
