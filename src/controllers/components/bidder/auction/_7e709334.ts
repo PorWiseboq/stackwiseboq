@@ -125,7 +125,7 @@ class Controller extends Base {
             this.response.redirect('/authentication/role/bidder');
           } else {
             this.request.session.sid = results['Store'].rows[0].keys['sid'];
-            this.request.session.save(() => {
+            this.request.session.save(async () => {
     				  let quoteData = RequestHelper.createInputs({
        		      'Quote.status': 1,
        		      'Quote.Listing.qid': null
