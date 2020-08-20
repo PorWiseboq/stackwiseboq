@@ -261,12 +261,12 @@ class Controller extends Base {
     });
   }
   
-  private async checkForBOQCRUDRestriction() {
-    let data = RequestHelper.createInputs({
+  private async checkForBOQCRUDRestriction(data: Input[]) {
+    let _data = RequestHelper.createInputs({
  	    'Quote.uid': parseInt(this.request.session.uid),
  	    'Quote.filled': null
  	  });
- 	  let dataset = await DatabaseHelper.retrieve(data, null);
+ 	  let dataset = await DatabaseHelper.retrieve(_data, null);
  	  
  	  if (dataset['Quote'].rows[0].columns['status'] == 1 &&
  	    data.filter(item => item.group == 'Listing').length != 0) {
@@ -277,7 +277,7 @@ class Controller extends Base {
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
       try {
-      	await this.checkForBOQCRUDRestriction();
+      	await this.checkForBOQCRUDRestriction(data);
    		  
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
@@ -290,7 +290,7 @@ class Controller extends Base {
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
       try {
-      	await this.checkForBOQCRUDRestriction();
+      	await this.checkForBOQCRUDRestriction(data);
         
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
@@ -305,7 +305,7 @@ class Controller extends Base {
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
       try {
-      	await this.checkForBOQCRUDRestriction();
+      	await this.checkForBOQCRUDRestriction(data);
         
         resolve(await DatabaseHelper.delete(data, schema, this.request.session));
       } catch(error) {
@@ -329,7 +329,7 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
       try {
-      	await this.checkForBOQCRUDRestriction();
+      	await this.checkForBOQCRUDRestriction(data);
       	
    		  await DatabaseHelper.update(data, schema);
    		  resolve('/buyer/auction/waiting');
@@ -358,7 +358,7 @@ class Controller extends Base {
     RequestHelper.registerSubmit("65e04a88", "88297439", null, [], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("65e04a88", "67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("65e04a88", "a7592071", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('5a972a57', "relational", "Quote", "title");
 		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "คุณต้องตั้งชื่อรายการ");
     for (let i=-1; i<128; i++) {
