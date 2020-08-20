@@ -115,14 +115,27 @@ class Controller extends Base {
         if (!this.request.session || !this.request.session.uid) {
           this.response.redirect('/authentication');
         } else {
-   		    let quoteData = RequestHelper.createInputs({
-   		      'Quote.status': 1,
-   		      'Quote.Listing.qid': null
-   		    });
-   		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
-   		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote);
-   		    
- 		      resolve(quoteDataset);
+          let schemata = ProjectConfigurationHelper.getDataSchema();
+          let inputs = RequestHelper.createInputs({
+            'Store.oid': this.request.session.uid
+          });
+          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+          
+          if (results['Store'].rows.length == 0) {
+            this.response.redirect('/authentication/role/bidder');
+          } else {
+            this.request.session.sid = results['Store'].rows[0].keys['sid'];
+            this.request.session.save(() => {
+    				  let quoteData = RequestHelper.createInputs({
+       		      'Quote.status': 1,
+       		      'Quote.Listing.qid': null
+       		    });
+       		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+       		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote);
+       		    
+     		      resolve(quoteDataset);
+    			  });
+          }
         }
  		  } catch(error) {
  		    reject(error);
