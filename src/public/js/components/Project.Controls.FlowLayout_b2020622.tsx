@@ -520,6 +520,7 @@ class FlowLayout_b2020622 extends Base {
                     .internal-fsb-element(internal-fsb-guid="0e75306a-text")
                       | เริ่มต้นการประมูลราคา
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="147c9060")
+                  input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="ab790b53")
     `
   }
 }

@@ -15,6 +15,7 @@ import {Base} from '../../Base.js';
 // Import additional modules here:
 // 
 import {DataManipulationHelper} from '../../../helpers/DataManipulationHelper.js';
+import {ProjectConfigurationHelper} from "../../../helpers/ProjectConfigurationHelper.js";
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -184,23 +185,10 @@ class Controller extends Base {
  		return new Promise(async (resolve, reject) => {
  		  try {
      		if (this.request.session && this.request.session.uid) {
-     		  data = [{
-     		    target: SourceType.Relational,
-            group: 'Quote',
-            name: 'uid',
-            value: parseInt(this.request.session.uid),
-            guid: null,
-  		      premise: null,
-            validation: null
-     		  },{
-     		    target: SourceType.Relational,
-            group: 'Quote',
-            name: 'filled',
-            value: null,
-            guid: null,
-  		      premise: null,
-            validation: null
-     		  }];
+     		  data = RequestHelper.createInputs({
+     		    'Quote.uid': parseInt(this.request.session.uid),
+     		    'Quote.filled': null
+     		  });
      		  let datasetA = await DatabaseHelper.retrieve(data, null);
      		  
      		  if (datasetA['Quote'].rows.length != 0) {
@@ -222,15 +210,9 @@ class Controller extends Base {
      		  
      		  let datasetB;
      		  if (DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)) {
-       		  data = [{
-       		    target: SourceType.Relational,
-              group: 'Listing',
-              name: 'qid',
-              value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
-              guid: null,
-  		        premise: null,
-              validation: null
-       		  }];
+     		    data = RequestHelper.createInputs({
+       		    'Listing.qid': DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)
+       		  });
        		  datasetB = await DatabaseHelper.retrieve(data, null);
      		  } else {
      		    datasetB = {};
@@ -279,28 +261,42 @@ class Controller extends Base {
     });
   }
   
+  private async checkForBOQCRUDRestriction() {
+    let data = RequestHelper.createInputs({
+ 	    'Quote.uid': parseInt(this.request.session.uid),
+ 	    'Quote.filled': null
+ 	  });
+ 	  let dataset = await DatabaseHelper.retrieve(data, null);
+ 	  
+ 	  if (dataset['Quote'].rows[0].columns['status'] == 1 &&
+ 	    data.filter(item => item.group == 'Listing').length != 0) {
+ 	    throw new Error("คุณไม่สามารถแก้ไขเพิ่มเติมรายการวัสดุก่อสร้างได้หลังจากเริ่มต้นงานประมูลไปแล้ว");
+ 	  }
+  }
+  
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow insert action of any button on the page. */
-      /* try {
+      try {
+      	await this.checkForBOQCRUDRestriction();
+   		  
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("NotImplementedError"));
+      }
     });
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow update action of any button on the page. */
-      /* try {
+      try {
+      	await this.checkForBOQCRUDRestriction();
+        
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
+      }
       reject(new Error("NotImplementedError"));
     });
     return ;
@@ -308,13 +304,13 @@ class Controller extends Base {
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow delete action of any button on the page. */
-      /* try {
+      try {
+      	await this.checkForBOQCRUDRestriction();
+        
         resolve(await DatabaseHelper.delete(data, schema, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("NotImplementedError"));
+      }
     });
   }
   
@@ -333,6 +329,8 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
       try {
+      	await this.checkForBOQCRUDRestriction();
+      	
    		  await DatabaseHelper.update(data, schema);
    		  resolve('/buyer/auction/waiting');
       } catch(error) {
@@ -619,6 +617,16 @@ class Controller extends Base {
       input = RequestHelper.getInput(this.pageId, request, '147c9060' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('ab790b53', "relational", "Quote", "status");
+		ValidationHelper.registerInput('ab790b53', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'ab790b53' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
