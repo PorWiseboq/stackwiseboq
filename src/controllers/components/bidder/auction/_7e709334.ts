@@ -16,7 +16,6 @@ import {Base} from '../../Base.js';
 // 
 import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
-import {RequestHelper} from '../../../helpers/RequestHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
