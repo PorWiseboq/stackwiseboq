@@ -14,6 +14,7 @@ import {Base} from '../../../Base.js';
 
 // Import additional modules here:
 // 
+import {ProjectConfigurationHelper} from "./ProjectConfigurationHelper.js";
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -112,6 +113,16 @@ class Controller extends Base {
       try {
         if (!this.request.session || !this.request.session.uid) {
           this.response.redirect('/authentication');
+        } else {
+          let schemata = ProjectConfigurationHelper.getDataSchema();
+          let inputs = RequestHelper.createInputs({
+            'Store.oid': this.request.session.uid
+          });
+          let results = DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+          
+          if (results['Store'].rows.length != 0) {
+            this.response.redirect('/bidder/auction');
+          }
         }
         
      	  resolve(null);
