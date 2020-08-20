@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "7e709334",
+    "editingPageID": "8a4a42e4",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -11302,14 +11302,14 @@
       "accessories": {
         "selectingElementGUID": "0cdd1aca",
         "currentCursorWalkPath": [
-          "0cdd1aca",
+          "0",
           0,
-          1,
+          3,
           null
         ]
       },
       "extensions": {
-        "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n// \n\n",
+        "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n// \nimport {ProjectConfigurationHelper} from \"../../../../helpers/ProjectConfigurationHelper.js\";\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
         "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        if (!this.request.session || !this.request.session.uid) {\n          this.response.redirect('/authentication');\n        \n     \t    resolve(null);\n        } else {\n          let schemata = ProjectConfigurationHelper.getDataSchema();\n          let inputs = RequestHelper.createInputs({\n            'Quote.status': 1\n          });\n          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session);\n          \n     \t    resolve(results);\n        }\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow insert action of any button on the page. */\n      /* try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow update action of any button on the page. */\n      /* try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n    return ;\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow delete action of any button on the page. */\n      /* try {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow retrieve action of any button on the page. */\n      /* try {\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow navigate action of any button on the page. */\n      /* try {\n        resolve('/');\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  "
@@ -12246,9 +12246,9 @@
       "accessories": {
         "selectingElementGUID": "9baed530",
         "currentCursorWalkPath": [
-          "9baed530",
+          "0",
           0,
-          1,
+          6,
           null
         ]
       },
@@ -16950,7 +16950,7 @@
     "6ce794ec": "68d54d975bee6f372163d61116134213f9381666",
     "bbc7dba3": "7b87f52bc3dfa1b4b67f0603bea75da6066cbe37",
     "c3da32d7": "92efa57f708f4887dc033d4d446c0812b39a75f8",
-    "8a4a42e4": "13afdafa536f598189f468bdbde0505efb4fbecf",
+    "8a4a42e4": "470338b4b3f23faa59a8630989183c1fa247ea79",
     "473d370d": "fccd58ff78d4ff2810205bffaffc1aee79cebe61",
     "ea2e6d53": "597a8aaa3910ecbd315213605ee8082fd2cf7188",
     "5488072c": "268b15268e910466f2a973d364d80e61bca1ac21"
