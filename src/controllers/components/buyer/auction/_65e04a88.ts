@@ -15,6 +15,7 @@ import {Base} from '../../Base.js';
 // Import additional modules here:
 // 
 import {DataManipulationHelper} from '../../../helpers/DataManipulationHelper.js';
+import {ProjectConfigurationHelper} from "../../../helpers/ProjectConfigurationHelper.js";
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -80,6 +81,9 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+ 	private dateInput: any = null;
+ 	private hourInput: any = null;
+ 		
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
@@ -122,6 +126,8 @@ class Controller extends Base {
                     } else if (parseInt(item.value) > 168) {
                         throw new Error("กรุณาระบุจำนวนชั่วโมงไม่มากไปกว่า 168 ชั่วโมง");
                     }
+                    
+                    this.hourInput = parseInt(item.value);
                 }
                 break;
             case 'DeliverAt':
@@ -138,9 +144,7 @@ class Controller extends Base {
                         
                         item.value = `${year}-${month}-${day}`;
                         
-                        if (new Date(item.value) < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
-                          throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
-                        }
+                        this.dateInput = new Date(item.value);
                     }
                 }
                 break;
@@ -180,38 +184,29 @@ class Controller extends Base {
     });
   }
   
+  private convertDateToString(date: any) {
+    var mm = date.getMonth() + 1;
+    var dd = date.getDate();
+    var yyyy = date.getFullYear() + 543;
+    
+    return `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`
+  }
+  
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
      		if (this.request.session && this.request.session.uid) {
-     		  data = [{
-     		    target: SourceType.Relational,
-            group: 'Quote',
-            name: 'uid',
-            value: parseInt(this.request.session.uid),
-            guid: null,
-  		      premise: null,
-            validation: null
-     		  },{
-     		    target: SourceType.Relational,
-            group: 'Quote',
-            name: 'filled',
-            value: null,
-            guid: null,
-  		      premise: null,
-            validation: null
-     		  }];
+     		  data = RequestHelper.createInputs({
+     		    'Quote.uid': parseInt(this.request.session.uid),
+     		    'Quote.filled': null
+     		  });
      		  let datasetA = await DatabaseHelper.retrieve(data, null);
      		  
      		  if (datasetA['Quote'].rows.length != 0) {
   	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
   	   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
   	   		    
-  	   		    var mm = date.getMonth() + 1;
-  	          var dd = date.getDate();
-  	          var yyyy = date.getFullYear() + 543;
-  	          
-  	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`;
+  	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = this.convertDateToString(date);
   	   		  } else {
   	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
   	   		  }
@@ -222,15 +217,9 @@ class Controller extends Base {
      		  
      		  let datasetB;
      		  if (DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)) {
-       		  data = [{
-       		    target: SourceType.Relational,
-              group: 'Listing',
-              name: 'qid',
-              value: DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA),
-              guid: null,
-  		        premise: null,
-              validation: null
-       		  }];
+     		    data = RequestHelper.createInputs({
+       		    'Listing.qid': DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)
+       		  });
        		  datasetB = await DatabaseHelper.retrieve(data, null);
      		  } else {
      		    datasetB = {};
@@ -279,42 +268,68 @@ class Controller extends Base {
     });
   }
   
+  private async checkForBOQCRUDRestriction(data: Input[]) {
+    let _data = RequestHelper.createInputs({
+ 	    'Quote.uid': parseInt(this.request.session.uid),
+ 	    'Quote.filled': null 
+ 	  });
+ 	  let dataset = await DatabaseHelper.retrieve(_data, null);
+ 	  
+ 	  if (dataset['Quote'].rows[0].columns['status'] == 1 &&
+ 	    data.filter(item => item.group == 'Listing').length != 0) {
+ 	    throw new Error("คุณไม่สามารถแก้ไขเพิ่มเติมรายการวัสดุก่อสร้างได้หลังจากเริ่มต้นงานประมูลไปแล้ว");
+ 	  } else if (this.hourInput != null && this.hourInput < dataset['Quote'].rows[0].columns['hours']) {
+ 	    throw new Error(`กรุณาระบุจำนวนชั่วโมงตั้งแต่ ${dataset['Quote'].rows[0].columns['hours']} ชั่วโมงเป็นต้นไป`);
+ 	  } else if (this.dateInput != null) {
+ 	    if (!isNaN(dataset['Quote'].rows[0].columns['deliverAt'])) {
+        let date = new Date(dataset['Quote'].rows[0].columns['deliverAt']);
+        if (this.dateInput < date) {
+          throw new Error(`กรุณาระบุวันที่ต้องใช้สินค้าตั้งแต่วันที่ ${this.convertDateToString(date)} หรือหลังจากนั้น`);
+        }
+ 	    } else {
+ 	      if (this.dateInput < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
+          throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
+        }
+ 	    }
+ 	  }
+  }
+  
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow insert action of any button on the page. */
-      /* try {
+      try {
+      	await this.checkForBOQCRUDRestriction(data);
+   		  
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("NotImplementedError"));
+      }
     });
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow update action of any button on the page. */
-      /* try {
+      try {
+      	await this.checkForBOQCRUDRestriction(data);
+        
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("NotImplementedError"));
+      }
     });
     return ;
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow delete action of any button on the page. */
-      /* try {
+      try {
+      	await this.checkForBOQCRUDRestriction(data);
+        
         resolve(await DatabaseHelper.delete(data, schema, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("NotImplementedError"));
+      }
     });
   }
   
@@ -333,6 +348,8 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
       try {
+      	await this.checkForBOQCRUDRestriction(data);
+      	
    		  await DatabaseHelper.update(data, schema);
    		  resolve('/buyer/auction/waiting');
       } catch(error) {
@@ -360,7 +377,7 @@ class Controller extends Base {
     RequestHelper.registerSubmit("65e04a88", "88297439", null, [], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("65e04a88", "67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("65e04a88", "a7592071", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, crossRelationUpsert: false});
 		RequestHelper.registerInput('5a972a57', "relational", "Quote", "title");
 		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "คุณต้องตั้งชื่อรายการ");
     for (let i=-1; i<128; i++) {
@@ -619,6 +636,16 @@ class Controller extends Base {
       input = RequestHelper.getInput(this.pageId, request, '147c9060' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('ab790b53', "relational", "Quote", "status");
+		ValidationHelper.registerInput('ab790b53', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'ab790b53' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
