@@ -109,12 +109,23 @@ class Controller extends Base {
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-      /* try {
-        resolve(await super.get(data));
+      try {
+        if (!this.request.session || !this.request.session.uid) {
+          this.response.redirect('/authentication');
+        
+     	    resolve(null);
+        } else {
+          let schemata = ProjectConfigurationHelper.getDataSchema();
+          let inputs = RequestHelper.createInputs({
+            'Quote.status': 1
+          });
+          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session);
+          
+     	    resolve(results);
+        }
       } catch(error) {
         reject(error);
-      } */
-      resolve({});
+      }
     });
   }
   
