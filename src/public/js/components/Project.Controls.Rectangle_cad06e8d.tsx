@@ -100,7 +100,7 @@ class Rectangle_cad06e8d extends Base {
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
-    notation = notation.replace('#{i}', this.state.selectedIndex.toString());
+    notation = notation.replace('#i', this.state.selectedIndex.toString());
     
     return super.getDataFromNotation(notation, inArray);
   }
@@ -116,9 +116,6 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 1) here:
     // 
     this.setState({quoteType: QuoteType.AUCTIONING});
-    if (this.state.data) {
-      this.state.data['Listing'].rows.clear();
-    }
     
   }
 
@@ -127,9 +124,6 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 2) here:
     // 
     this.setState({quoteType: QuoteType.OFFERING});
-    if (this.state.data) {
-      this.state.data['Listing'].rows.clear();
-    }
     
   }
 
@@ -138,9 +132,6 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 3) here:
     // 
     this.setState({quoteType: QuoteType.CHATTING});
-    if (this.state.data) {
-      this.state.data['Listing'].rows.clear();
-    }
     
   }
 
@@ -149,9 +140,6 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
     this.setState({quoteType: QuoteType.PAID});
-    if (this.state.data) {
-      this.state.data['Listing'].rows.clear();
-    }
     
   }
 
@@ -226,6 +214,7 @@ class Rectangle_cad06e8d extends Base {
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="04b90b11")
                                 img(style={'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png")
                             input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="1ae8405a")
+                            input.internal-fsb-element.col-12(type="hidden", internal-fsb-guid="0856c24b")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}, internal-fsb-guid="9a91246d")
                               | เคาะประมูล
                             .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})(), padding: '0px'}, internal-fsb-guid="42b3dc9b")
@@ -239,6 +228,7 @@ class Rectangle_cad06e8d extends Base {
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="b6ec8d55")
                                 img(style={'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png")
                             input.internal-fsb-element(type="hidden", value="2", internal-fsb-guid="4cade2e7")
+                            input.internal-fsb-element.col-12(type="hidden", internal-fsb-guid="93ab7a0b")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}, internal-fsb-guid="ac1a1bce")
                               | ประมูลผ่าน
                             .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})(), padding: '0px'}, internal-fsb-guid="40ada351")
@@ -252,6 +242,7 @@ class Rectangle_cad06e8d extends Base {
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="4bac7ab7")
                                 img(style={'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png")
                             input.internal-fsb-element(type="hidden", value="3", internal-fsb-guid="d24ed774")
+                            input.internal-fsb-element.col-12(type="hidden", internal-fsb-guid="6d57beb9")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(255, 255, 255, 0.45)', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}, internal-fsb-guid="8a12a919")
                               | คุยกับลูกค้า
                             .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})(), padding: '0px'}, internal-fsb-guid="7eb8a313")
@@ -265,6 +256,7 @@ class Rectangle_cad06e8d extends Base {
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="6b7e8340")
                                 img(style={'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png")
                             input.internal-fsb-element(type="hidden", value="4", internal-fsb-guid="d1920261")
+                            input.internal-fsb-element.col-12(type="hidden", internal-fsb-guid="c192b978")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(255, 255, 255, 0.45)', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}, internal-fsb-guid="83e40405")
                               | จ่ายเงินแล้ว
                             .internal-fsb-element.col-12.offset-0(style={display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})(), padding: '0px'}, internal-fsb-guid="86510a55")
@@ -393,11 +385,11 @@ class Rectangle_cad06e8d extends Base {
                                   .internal-fsb-element.col-12(internal-fsb-guid="64a6ac8c")
                                     .container-fluid
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                        .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#{i}].title"))}, internal-fsb-guid="8c2aa238")
-                                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#{i}].description"))}, internal-fsb-guid="7484ac1e")
+                                        .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].title"))}, internal-fsb-guid="8c2aa238")
+                                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="7484ac1e")
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
-                                        each data, i in this.getDataFromNotation("Listing", true)
+                                        each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
                                           _Project_Controls_FlowLayout_c6ba5b53_(key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
@@ -407,7 +399,7 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
                                         input.internal-fsb-element.col-12(type="hidden", value="123", internal-fsb-guid="d30aa93b")
-                                        input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#{i}].qid"), internal-fsb-guid="a5b102c4")
+                                        input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="a5b102c4")
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, type="button", onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ

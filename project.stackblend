@@ -4647,6 +4647,8 @@
         "",
         "",
         "",
+        "",
+        "",
         "            <div class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"cad06e8d\" internal-fsb-name=\"Application\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column; height: 100vh; display: flex; background: linear-gradient(15deg, rgba(153, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%); -fsb-background-type: linear; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px\" internal-fsb-react-mode=\"Document\" internal-fsb-react-code-import=\"",
         "",
         "// Import additional modules here:",
@@ -4675,7 +4677,7 @@
         "  // Providing data array base on dot notation:",
         "  // ",
         "  protected getDataFromNotation(notation: string, inArray: boolean=false): any {",
-        "    notation = notation.replace('#{i}', this.state.selectedIndex.toString());",
+        "    notation = notation.replace('#i', this.state.selectedIndex.toString());",
         "    ",
         "    return super.getDataFromNotation(notation, inArray);",
         "  }",
@@ -4750,9 +4752,6 @@
         "    // Handle the event of onButtonSuccess (Button 1) here:",
         "    // ",
         "    this.setState({quoteType: QuoteType.AUCTIONING});",
-        "    if (this.state.data) {",
-        "      this.state.data['Listing'].rows.clear();",
-        "    }",
         "    ",
         "    \">",
         "                                                            <div class=\"internal-fsb-element\" internal-fsb-guid=\"04b90b11\" internal-fsb-name=\"Image 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" onfsbclick=\"{}\" internal-fsb-react-code-onfsbclick=\"",
@@ -4762,6 +4761,7 @@
         "    ",
         "    \"><img style=\"display: block; -fsb-for-children: true; opacity: 0.5; -webkit-opacity: 0.5; width: 40px; height: 40px; cursor: pointer\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png\"></div>",
         "                                                        </button><input type=\"hidden\" class=\"internal-fsb-element\" internal-fsb-guid=\"1ae8405a\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"status\" value=\"1\">",
+        "                                                        <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0856c24b\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote.Listing\" internal-fsb-data-source-column=\"qid\">",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9a91246d\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; padding-left: 0px; padding-right: 0px; color: rgba(255, 255, 255, 0.45)\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.AUCTIONING, false);]\">เคาะประมูล</div>",
         "                                                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"42b3dc9b\" internal-fsb-name=\"Image 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.AUCTIONING, true);]\" onfsbclick=\"{}\" internal-fsb-react-code-onfsbclick=\"",
         "",
@@ -4790,9 +4790,6 @@
         "    // Handle the event of onButtonSuccess (Button 2) here:",
         "    // ",
         "    this.setState({quoteType: QuoteType.OFFERING});",
-        "    if (this.state.data) {",
-        "      this.state.data['Listing'].rows.clear();",
-        "    }",
         "    ",
         "    \">",
         "                                                            <div class=\"internal-fsb-element\" internal-fsb-guid=\"b6ec8d55\" internal-fsb-name=\"Image 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" onfsbclick=\"{}\" internal-fsb-react-code-onfsbclick=\"",
@@ -4802,6 +4799,7 @@
         "    ",
         "    \"><img style=\"display: block; width: 40px; -fsb-for-children: true; opacity: 0.5; -webkit-opacity: 0.5; height: 40px; cursor: pointer\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png\"></div>",
         "                                                        </button><input type=\"hidden\" class=\"internal-fsb-element\" internal-fsb-guid=\"4cade2e7\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"status\" value=\"2\">",
+        "                                                        <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"93ab7a0b\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote.Listing\" internal-fsb-data-source-column=\"qid\">",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ac1a1bce\" internal-fsb-name=\"TextElement 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; padding-left: 0px; padding-right: 0px; color: rgba(255, 255, 255, 0.45)\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.OFFERING, false);]\">ประมูลผ่าน</div>",
         "                                                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"40ada351\" internal-fsb-name=\"Image 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.OFFERING, true);]\"><img style=\"display: block; width: 40px; -fsb-for-children: true; height: 40px; margin-top: 5px; margin-left: 5px; margin-right: 5px; margin-bottom: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-active.png\"></div>",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"936e036b\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; padding-left: 0px; padding-right: 0px\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.OFFERING, true);]\">ประมูลผ่าน</div>",
@@ -4825,9 +4823,6 @@
         "    // Handle the event of onButtonSuccess (Button 3) here:",
         "    // ",
         "    this.setState({quoteType: QuoteType.CHATTING});",
-        "    if (this.state.data) {",
-        "      this.state.data['Listing'].rows.clear();",
-        "    }",
         "    ",
         "    \">",
         "                                                            <div class=\"internal-fsb-element\" internal-fsb-guid=\"4bac7ab7\" internal-fsb-name=\"Image 4\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" onfsbclick=\"{}\" internal-fsb-react-code-onfsbclick=\"",
@@ -4837,6 +4832,7 @@
         "    ",
         "    \"><img style=\"display: block; width: 40px; -fsb-for-children: true; opacity: 0.5; -webkit-opacity: 0.5; height: 40px; cursor: pointer\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png\"></div>",
         "                                                        </button><input type=\"hidden\" class=\"internal-fsb-element\" internal-fsb-guid=\"d24ed774\" internal-fsb-name=\"Hidden 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"status\" value=\"3\">",
+        "                                                        <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"6d57beb9\" internal-fsb-name=\"Hidden 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote.Listing\" internal-fsb-data-source-column=\"qid\">",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8a12a919\" internal-fsb-name=\"TextElement 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; padding-left: 0px; padding-right: 0px; color: rgba(255, 255, 255, 0.45)\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.CHATTING, false);]\">คุยกับลูกค้า</div>",
         "                                                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"7eb8a313\" internal-fsb-name=\"Image 5\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.CHATTING, true);]\"><img style=\"display: block; width: 40px; -fsb-for-children: true; height: 40px; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-active.png\"></div>",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"579741b7\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; padding-left: 0px; padding-right: 0px\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.CHATTING, true);]\">คุยกับลูกค้า</div>",
@@ -4860,9 +4856,6 @@
         "    // Handle the event of onButtonSuccess (Button 4) here:",
         "    // ",
         "    this.setState({quoteType: QuoteType.PAID});",
-        "    if (this.state.data) {",
-        "      this.state.data['Listing'].rows.clear();",
-        "    }",
         "    ",
         "    \">",
         "                                                            <div class=\"internal-fsb-element\" internal-fsb-guid=\"6b7e8340\" internal-fsb-name=\"Image 9\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" onfsbclick=\"{}\" internal-fsb-react-code-onfsbclick=\"",
@@ -4872,6 +4865,7 @@
         "    ",
         "    \"><img style=\"display: block; width: 40px; -fsb-for-children: true; height: 40px; opacity: 0.5; -webkit-opacity: 0.5; cursor: pointer\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png\"></div>",
         "                                                        </button><input type=\"hidden\" class=\"internal-fsb-element\" internal-fsb-guid=\"d1920261\" internal-fsb-name=\"Hidden 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"status\" value=\"4\">",
+        "                                                        <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c192b978\" internal-fsb-name=\"Hidden 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote.Listing\" internal-fsb-data-source-column=\"qid\">",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"83e40405\" internal-fsb-name=\"TextElement 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; color: rgba(255, 255, 255, 0.45); padding-left: 0px; padding-right: 0px\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.PAID, false);]\">จ่ายเงินแล้ว</div>",
         "                                                        <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"86510a55\" internal-fsb-name=\"Image 10\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.PAID, true);]\"><img style=\"display: block; width: 40px; -fsb-for-children: true; height: 40px; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-active.png\"></div>",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b4775a3d\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; padding-left: 0px; padding-right: 0px\" internal-fsb-react-style-display=\"CODE[return this.getDisplayOf(QuoteType.PAID, true);]\">จ่ายเงินแล้ว</div>",
@@ -5092,12 +5086,12 @@
         "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"64a6ac8c\" internal-fsb-name=\"Inner\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
         "                                                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"8c2aa238\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#{i}].title\">ชื่อรายการ</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"7484ac1e\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#{i}].description\">รายละเอียดโดยย่อ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"8c2aa238\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].title\">ชื่อรายการ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"7484ac1e\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].description\">รายละเอียดโดยย่อ</div>",
         "",
         "",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-1715aae1\" internal-fsb-guid=\"1715aae1\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"quote_box_notice\">ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ</div>",
-        "                                                                                <div class=\"internal-fsb-element col-12 -fsb-self-c6ba5b53\" internal-fsb-guid=\"c6ba5b53\" internal-fsb-name=\"List\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"quote_box_review_item\" internal-fsb-react-data=\"Listing\" internal-fsb-react-mode=\"Document\" internal-fsb-react-code-interface=\"",
+        "                                                                                <div class=\"internal-fsb-element col-12 -fsb-self-c6ba5b53\" internal-fsb-guid=\"c6ba5b53\" internal-fsb-name=\"List\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"quote_box_review_item\" internal-fsb-react-data=\"Quote[#i].Listing\" internal-fsb-react-mode=\"Document\" internal-fsb-react-code-interface=\"",
         "",
         "// Declare or extend interfaces here:",
         "//",
@@ -5237,7 +5231,7 @@
         "",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1715aae1\" internal-fsb-guid=\"da4a5daa\" internal-fsb-name=\"TextElement 39\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\">เสนอราคาใหม่ที่ราคา</div>",
         "                                                                                <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"c03d6613\" internal-fsb-name=\"Textbox 5\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"ราคารวมทั้งหมด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"price\"></div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"2b06dab6\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">บาท</div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d30aa93b\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" value=\"123\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a5b102c4\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"Quote[#{i}].qid\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4\" internal-fsb-guid=\"9868a6d5\" internal-fsb-name=\"Bid\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\" internal-fsb-data-wizard-type=\"insert\" internal-fsb-data-wizard-cross-operation=\"upsert\" internal-fsb-data-controls=\" 1832b944 b91e2739 03aab0e5 957c1568 9c338431 c22ec668 d913e6a1 c03d6613 d30aa93b ae7e2437 a5b102c4\">",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"2b06dab6\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">บาท</div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d30aa93b\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" value=\"123\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a5b102c4\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"Quote[#i].qid\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4\" internal-fsb-guid=\"9868a6d5\" internal-fsb-name=\"Bid\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\" internal-fsb-data-wizard-type=\"insert\" internal-fsb-data-wizard-cross-operation=\"upsert\" internal-fsb-data-controls=\" 1832b944 b91e2739 03aab0e5 957c1568 9c338431 c22ec668 d913e6a1 c03d6613 d30aa93b ae7e2437 a5b102c4\">",
         "                                                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"9868a6d5-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เคาะ</div>",
         "                                                                                </button>",
         "                                                                            </div>",
@@ -5333,7 +5327,6 @@
         "                    </div>",
         "                </div>",
         "            </div>",
-        "",
         "        </div>",
         "    </div>",
         "    <style type=\"text/css\" id=\"internal-fsb-stylesheet\">",
@@ -5939,11 +5932,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "24731127",
+        "selectingElementGUID": "e76846ad",
         "currentCursorWalkPath": [
-          "945cdc26",
+          "c3d853d0",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -5951,7 +5944,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n// \nimport {SchemaHelper} from '../../../helpers/SchemaHelper.js';\nimport {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve, reject) => {\n \t\t  try {\n        if (!this.request.session || !this.request.session.uid) {\n          this.response.redirect('/authentication');\n        } else {\n   \t\t    let quoteData = RequestHelper.createInputs({\n   \t\t      'Quote.status': 1\n   \t\t    });\n   \t\t    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());\n   \t\t    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote);\n   \t\t    \n   \t\t    let listingDataset = {};\n   \t\t    if (quoteDataset['Quote'].rows.length != 0) {\n   \t\t      let listingData = RequestHelper.createInputs({\n     \t\t      'Listing.qid': quoteDataset['Quote'].rows[0].keys['qid']\n     \t\t    });\n     \t\t    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());\n     \t\t    listingDataset = await DatabaseHelper.retrieve(listingData, listing);\n   \t\t    }\n   \t\t    \n   \t\t    let results = Object.assign({}, quoteDataset, listingDataset);\n \t\t      resolve(results);\n        }\n \t\t  } catch(error) {\n \t\t    reject(error);\n \t\t  }\n \t\t});\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n      try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow update action of any button on the page. */\n      /* try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n    return ;\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow delete action of any button on the page. */\n      /* try {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow navigate action of any button on the page. */\n      /* try {\n        resolve('/');\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  "
+        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n \t\treturn new Promise(async (resolve, reject) => {\n \t\t  try {\n        if (!this.request.session || !this.request.session.uid) {\n          this.response.redirect('/authentication');\n        } else {\n   \t\t    let quoteData = RequestHelper.createInputs({\n   \t\t      'Quote.status': 1,\n   \t\t      'Quote.Listing.qid': null\n   \t\t    });\n   \t\t    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());\n   \t\t    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote);\n   \t\t    \n \t\t      resolve(quoteDataset);\n        }\n \t\t  } catch(error) {\n \t\t    reject(error);\n \t\t  }\n \t\t});\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n      try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow update action of any button on the page. */\n      /* try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n    return ;\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow delete action of any button on the page. */\n      /* try {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow navigate action of any button on the page. */\n      /* try {\n        resolve('/');\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"NotImplementedError\"));\n    });\n  }\n  \n  "
       },
       "notations": {
         "Quote": {
@@ -5959,24 +5952,29 @@
           "title": {},
           "description": {}
         },
-        "Quote[#{i}]": {
+        "Quote[#i]": {
           "title": {},
           "description": {},
+          "Listing": {
+            "title": {},
+            "size": {},
+            "quantity": {},
+            "Listing": {
+              "Substitute": {
+                "type": {},
+                "title": {},
+                "size": {},
+                "quantity": {}
+              }
+            },
+            "lid": {}
+          },
           "qid": {}
         },
         "Listing": {
           "title": {},
           "size": {},
-          "quantity": {},
-          "Listing": {
-            "Substitute": {
-              "type": {},
-              "title": {},
-              "size": {},
-              "quantity": {}
-            }
-          },
-          "lid": {}
+          "quantity": {}
         }
       }
     },
@@ -16944,7 +16942,7 @@
     "8857ca68": "107388de9c892b78eda8562c17eb2ba4446701dd",
     "b140e86b": "5323a93c8b5ed7a480c6e52cebb1909924de7369",
     "b6eb1b83": "9924777b79fe4c7a488a9756569e38148f028f1d",
-    "7e709334": "4a84378840731dbd0ac4ff87811df8a5b8bf3994",
+    "7e709334": "0b3154e933c1293e877f606d0d254d11a8c30465",
     "65e04a88": "8330fd9a931ba7a0b25d59f071318e4491eb053e",
     "9d37c390": "6edef9b84e98458652d6be44a6ab942845279ef3",
     "6ce794ec": "68d54d975bee6f372163d61116134213f9381666",
@@ -16964,7 +16962,7 @@
     "Project.Controls.FlowLayout_b2020622": "9c56bfb2cb96429f916a9aff93fec08ff23ae236",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "e56c0691afca076fc6ac40b74413ccb9582369b4",
+    "Project.Controls.Rectangle_cad06e8d": "e7a3a8f393a2d997acf60eb1c82e939c8af5b574",
     "Project.Controls.FlowLayout_56ca37d0": "e864582dec141e7bdeed8bd285c49946bd67b83a",
     "Project.Controls.FlowLayout_cbb338d5": "bb17fe5be8564069db899df202cc36e8abebd377",
     "Project.Common.LoginControl": "c4f2a72bc5fd30224a61b7402ee95d6ae9958513",

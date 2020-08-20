@@ -116,22 +116,13 @@ class Controller extends Base {
           this.response.redirect('/authentication');
         } else {
    		    let quoteData = RequestHelper.createInputs({
-   		      'Quote.status': 1
+   		      'Quote.status': 1,
+   		      'Quote.Listing.qid': null
    		    });
    		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
    		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote);
    		    
-   		    let listingDataset = {};
-   		    if (quoteDataset['Quote'].rows.length != 0) {
-   		      let listingData = RequestHelper.createInputs({
-     		      'Listing.qid': quoteDataset['Quote'].rows[0].keys['qid']
-     		    });
-     		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
-     		    listingDataset = await DatabaseHelper.retrieve(listingData, listing);
-   		    }
-   		    
-   		    let results = Object.assign({}, quoteDataset, listingDataset);
- 		      resolve(results);
+ 		      resolve(quoteDataset);
         }
  		  } catch(error) {
  		    reject(error);
@@ -262,10 +253,30 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('0856c24b', "relational", "Quote.Listing", "qid");
+		ValidationHelper.registerInput('0856c24b', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '0856c24b' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('4cade2e7', "relational", "Quote", "status");
 		ValidationHelper.registerInput('4cade2e7', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '4cade2e7' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('93ab7a0b', "relational", "Quote.Listing", "qid");
+		ValidationHelper.registerInput('93ab7a0b', "Hidden 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '93ab7a0b' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
@@ -282,10 +293,30 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('6d57beb9', "relational", "Quote.Listing", "qid");
+		ValidationHelper.registerInput('6d57beb9', "Hidden 3", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '6d57beb9' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('d1920261', "relational", "Quote", "status");
 		ValidationHelper.registerInput('d1920261', "Hidden 4", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'd1920261' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 4 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('c192b978', "relational", "Quote.Listing", "qid");
+		ValidationHelper.registerInput('c192b978', "Hidden 4", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'c192b978' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 4 here:
       // 
