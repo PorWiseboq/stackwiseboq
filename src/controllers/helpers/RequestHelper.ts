@@ -119,10 +119,11 @@ const RequestHelper = {
 		
 		const input: Input = {
 		  target: paramInfo.target,
-  		group: splited[splited.length - 1],
+  		group: splited.pop(),
   		name: paramInfo.name,
   		value: json[guid],
   		guid: guid,
+  		premise: splited.pop() || null,
   		validation: null
 		};
 		
@@ -136,7 +137,7 @@ const RequestHelper = {
 		let results = [];
 		
 		for (let key in values) {
-			if (values.relations.hasOwnProperty(key)) {
+			if (values.hasOwnProperty(key)) {
 				let splited = key.split('[')[0].split('.');
 				let name = splited.pop() || null;
 				let group = splited.pop() || null;
