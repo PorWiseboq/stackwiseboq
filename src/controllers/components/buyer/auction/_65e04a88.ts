@@ -275,22 +275,24 @@ class Controller extends Base {
  	  });
  	  let dataset = await DatabaseHelper.retrieve(_data, null);
  	  
- 	  if (dataset['Quote'].rows[0].columns['status'] == 1 &&
- 	    data.filter(item => item.group == 'Listing').length != 0) {
- 	    throw new Error("คุณไม่สามารถแก้ไขเพิ่มเติมรายการวัสดุก่อสร้างได้หลังจากเริ่มต้นงานประมูลไปแล้ว");
- 	  } else if (this.hourInput != null && this.hourInput < dataset['Quote'].rows[0].columns['hours']) {
- 	    throw new Error(`กรุณาระบุจำนวนชั่วโมงตั้งแต่ ${dataset['Quote'].rows[0].columns['hours']} ชั่วโมงเป็นต้นไป`);
- 	  } else if (this.dateInput != null) {
- 	    if (!isNaN(dataset['Quote'].rows[0].columns['deliverAt'])) {
-        let date = new Date(dataset['Quote'].rows[0].columns['deliverAt']);
-        if (this.dateInput < date) {
-          throw new Error(`กรุณาระบุวันที่ต้องใช้สินค้าตั้งแต่วันที่ ${this.convertDateToString(date)} หรือหลังจากนั้น`);
-        }
- 	    } else {
- 	      if (this.dateInput < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
-          throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
-        }
- 	    }
+ 	  if (dataset['Quote'].rows.length != 0) {
+   	  if (dataset['Quote'].rows[0].columns['status'] == 1 &&
+   	    data.filter(item => item.group == 'Listing').length != 0) {
+   	    throw new Error("คุณไม่สามารถแก้ไขเพิ่มเติมรายการวัสดุก่อสร้างได้หลังจากเริ่มต้นงานประมูลไปแล้ว");
+   	  } else if (this.hourInput != null && this.hourInput < dataset['Quote'].rows[0].columns['hours']) {
+   	    throw new Error(`กรุณาระบุจำนวนชั่วโมงตั้งแต่ ${dataset['Quote'].rows[0].columns['hours']} ชั่วโมงเป็นต้นไป`);
+   	  } else if (this.dateInput != null) {
+   	    if (!isNaN(dataset['Quote'].rows[0].columns['deliverAt'])) {
+          let date = new Date(dataset['Quote'].rows[0].columns['deliverAt']);
+          if (this.dateInput < date) {
+            throw new Error(`กรุณาระบุวันที่ต้องใช้สินค้าตั้งแต่วันที่ ${this.convertDateToString(date)} หรือหลังจากนั้น`);
+          }
+   	    } else {
+   	      if (this.dateInput < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
+            throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
+          }
+   	    }
+   	  }
  	  }
   }
   
