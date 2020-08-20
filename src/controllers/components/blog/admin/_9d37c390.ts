@@ -219,7 +219,7 @@ class Controller extends Base {
       } */
       reject(new Error("NotImplementedError"));
     });
-  }
+  } 
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {

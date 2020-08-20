@@ -271,7 +271,7 @@ class Controller extends Base {
   private async checkForBOQCRUDRestriction(data: Input[]) {
     let _data = RequestHelper.createInputs({
  	    'Quote.uid': parseInt(this.request.session.uid),
- 	    'Quote.filled': null
+ 	    'Quote.filled': null 
  	  });
  	  let dataset = await DatabaseHelper.retrieve(_data, null);
  	  
