@@ -108,27 +108,16 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return new Promise(async (resolve, reject) => {
- 		  try {
-     		if (!this.request.session || !this.request.session.uid) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        if (!this.request.session || !this.request.session.uid) {
           this.response.redirect('/authentication');
         }
         
      	  resolve(null);
- 		  } catch(error) {
- 		    reject(null);
- 		  }
-    });
-  }
-  
-  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
-    return new Promise(async (resolve, reject) => {
-      /* try {
-        resolve(await super.get(data));
       } catch(error) {
         reject(error);
-      } */
-      resolve({});
+      }
     });
   }
   
@@ -218,26 +207,14 @@ class Controller extends Base {
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow navigate action of any button on the page. */
-      /* try {
-        resolve('/');
-      } catch(error) {
-        reject(error);
-      } */
-      reject(new Error("NotImplementedError"));
-    });
-  }
-  
-  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
- 		return new Promise(async (resolve, reject) => {
- 		  try {
- 		    await DatabaseHelper.update(data, schema, true, this.request.session);
+      try {
+        await DatabaseHelper.update(data, schema, true, this.request.session);
  		    
  		    resolve('/bidder/auction');
- 		  } catch(error) {
- 		    reject(error);
- 		  }
- 		});
+      } catch(error) {
+        reject(error);
+      }
+    });
   }
   
   // Auto[MergingBegin]--->  

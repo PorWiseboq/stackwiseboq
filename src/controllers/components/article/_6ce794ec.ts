@@ -111,7 +111,7 @@ class Controller extends Base {
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return new Promise(async (resolve) => {
+ 		return new Promise(async (resolve, reject) => {
  		  try {
    		  this.results = await DatabaseHelper.retrieve([{
    		    target: SourceType.Relational,
