@@ -227,7 +227,7 @@ class Controller extends Base {
       }
     });
   }
-  
+
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let action: ActionType = RequestHelper.getAction(this.pageId, request);

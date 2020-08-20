@@ -214,7 +214,7 @@ class Controller extends Base {
       reject(new Error("NotImplementedError"));
     });
   }
-  
+
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let action: ActionType = RequestHelper.getAction(this.pageId, request);
