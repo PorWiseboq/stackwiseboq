@@ -55,6 +55,7 @@ interface Input {
   name: string;
   value: any;
   guid: string;
+  premise: string;
   validation: ValidationInfo;
 }
 
@@ -147,6 +148,7 @@ const DatabaseHelper = {
                   name: schema.relations[key].targetEntity,
                   value: null,
                   guid: null,
+  								premise: null,
                   validation: null
                 });
               }
@@ -193,11 +195,15 @@ const DatabaseHelper = {
         continue;
       if (!schema.keys[input.name] && !schema.columns[input.name])
         throw new Error(`There was an error preparing data for manipulation ('${input.name}' column doesn\'t exist in the schema group '${schema.group}').`);
-      if (schema.keys[input.name]) {
-        row.keys[input.name] = input.value;
-      } else {
-        row.columns[input.name] = input.value;
-      }
+      if (input.premise && !schema.relations[input.premise])
+      	throw new Error(`There was an error preparing data for manipulation ('${input.premise}' couldn\'t be a predecessor of '${schema.group}'; choices are ${Object.keys(schema.relations).join(", ")}).`);
+      if (!input.premise || schema.relations[input.premise].sourceEntity != input.name) {
+	      if (schema.keys[input.name]) {
+	        row.keys[input.name] = input.value;
+	      } else {
+	        row.columns[input.name] = input.value;
+	      }
+	    }
     }
     
     for (const row of results) {
@@ -309,7 +315,7 @@ const DatabaseHelper = {
 		
 		return results;
   },
-	prepareData: (data: Input[], action: ActionType, baseSchema: DataTableSchema): [HierarchicalDataTable, DataTableSchema][] => {
+	prepareData: (data: Input[], action: ActionType, baseSchema: DataTableSchema, crossRelationUpsert: boolean=false): [HierarchicalDataTable, DataTableSchema][] => {
 	  const results: [HierarchicalDataTable, DataTableSchema][] = [];
 	  let current: HierarchicalDataTable = null;
 	  
@@ -363,6 +369,7 @@ const DatabaseHelper = {
                   name: baseSchema.relations[key].targetEntity,
                   value: "123",
                   guid: (index == -1) ? "" : "[" + index + "]",
+  								premise: null,
                   validation: null
                 });
               }
@@ -385,7 +392,7 @@ const DatabaseHelper = {
     	  const next = {
   	      source: baseSchema.source,
   	      group: baseSchema.group,
-  	      rows: DatabaseHelper.getRows(data, action, baseSchema)
+  	      rows: DatabaseHelper.getRows(data, (action == ActionType.Update && crossRelationUpsert) ? ActionType.Insert : action, baseSchema)
   	    };
     	  
     	  current.rows[0].relations[baseSchema.group] = next;
@@ -485,7 +492,7 @@ const DatabaseHelper = {
   		const transaction = await CreateTransaction({});
   		
 		  try {
-  			const list = DatabaseHelper.prepareData(data, ActionType.Insert, baseSchema);
+  			const list = DatabaseHelper.prepareData(data, ActionType.Insert, baseSchema, crossRelationUpsert);
 	  		const results = [];
   		  
   		  for (let index=0; index < list.length; index++) {
@@ -644,9 +651,15 @@ const DatabaseHelper = {
 					  }
 					}
 					
-					if (await !PermissionHelper.allowActionOnTable(ActionType.Insert, schema, hash, session)) throw new Error(`You have no permission to upsert any row in ${schema.group}.`);
-					
 					const record = await map.upsert(hash, {transaction: transaction});
+					
+					for (const key in schema.keys) {
+					  if (schema.keys.hasOwnProperty(key) && record[key] !== undefined) {
+					    hash[key] = record[key];
+					  }
+					}
+					
+					if (await !PermissionHelper.allowActionOnTable(ActionType.Update, schema, hash, session)) throw new Error(`You have no permission to upsert any row in ${schema.group}.`);
 					
 				  const result = {
 				    keys: {},
@@ -735,7 +748,7 @@ const DatabaseHelper = {
   		const transaction = await CreateTransaction({});
   		
 		  try {
-  			const list = DatabaseHelper.prepareData(data, ActionType.Update, baseSchema);
+  			const list = DatabaseHelper.prepareData(data, ActionType.Update, baseSchema, crossRelationUpsert);
 	  		const results = [];
 	  		
 	  		for (let index=0; index < list.length; index++) {
