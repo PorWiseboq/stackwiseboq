@@ -81,6 +81,9 @@ class Controller extends Base {
   
   // Declare class variables and functions here:
   //
+ 	private dateInput: any = null;
+ 	private hourInput: any = null;
+ 		
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
@@ -123,6 +126,8 @@ class Controller extends Base {
                     } else if (parseInt(item.value) > 168) {
                         throw new Error("กรุณาระบุจำนวนชั่วโมงไม่มากไปกว่า 168 ชั่วโมง");
                     }
+                    
+                    this.hourInput = parseInt(item.value);
                 }
                 break;
             case 'DeliverAt':
@@ -139,9 +144,7 @@ class Controller extends Base {
                         
                         item.value = `${year}-${month}-${day}`;
                         
-                        if (new Date(item.value) < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
-                          throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
-                        }
+                        this.dateInput = new Date(item.value);
                     }
                 }
                 break;
@@ -181,6 +184,14 @@ class Controller extends Base {
     });
   }
   
+  private convertDateToString(date: any) {
+    var mm = date.getMonth() + 1;
+    var dd = date.getDate();
+    var yyyy = date.getFullYear() + 543;
+    
+    return `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`
+  }
+  
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
@@ -195,11 +206,7 @@ class Controller extends Base {
   	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
   	   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
   	   		    
-  	   		    var mm = date.getMonth() + 1;
-  	          var dd = date.getDate();
-  	          var yyyy = date.getFullYear() + 543;
-  	          
-  	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`;
+  	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = this.convertDateToString(date);
   	   		  } else {
   	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
   	   		  }
@@ -271,6 +278,19 @@ class Controller extends Base {
  	  if (dataset['Quote'].rows[0].columns['status'] == 1 &&
  	    data.filter(item => item.group == 'Listing').length != 0) {
  	    throw new Error("คุณไม่สามารถแก้ไขเพิ่มเติมรายการวัสดุก่อสร้างได้หลังจากเริ่มต้นงานประมูลไปแล้ว");
+ 	  } else if (this.hourInput != null && this.hourInput < dataset['Quote'].rows[0].columns['hours']) {
+ 	    throw new Error(`กรุณาระบุจำนวนชั่วโมงตั้งแต่ ${dataset['Quote'].rows[0].columns['hours']} ชั่วโมงเป็นต้นไป`);
+ 	  } else if (this.dateInput != null) {
+ 	    if (!isNaN(dataset['Quote'].rows[0].columns['deliverAt'])) {
+        let date = new Date(dataset['Quote'].rows[0].columns['deliverAt']);
+        if (this.dateInput < date) {
+          throw new Error(`กรุณาระบุวันที่ต้องใช้สินค้าตั้งแต่วันที่ ${this.convertDateToString(date)} หรือหลังจากนั้น`);
+        }
+ 	    } else {
+ 	      if (this.dateInput < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
+          throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
+        }
+ 	    }
  	  }
   }
   
