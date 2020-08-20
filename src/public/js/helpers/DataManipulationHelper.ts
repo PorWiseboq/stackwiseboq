@@ -3,6 +3,7 @@
 
 import {RequestHelper} from './RequestHelper.js';
 import {HTMLHelper} from './HTMLHelper.js';
+import {EventHelper} from './EventHelper.js';
 
 declare let window: any;
 
@@ -18,13 +19,9 @@ interface HierarchicalDataTable {
   rows: HierarchicalDataRow[];
 }
 interface HierarchicalDataRow {
-  keys: {[Identifier: string]: HierarchicalDataColumn};
-  columns: {[Identifier: string]: HierarchicalDataColumn};
+  keys: {[Identifier: string]: any};
+  columns: {[Identifier: string]: any};
   relations: {[Identifier: string]: HierarchicalDataTable};
-}
-interface HierarchicalDataColumn {
-	name: string;
-  value: any;
 }
 
 const fieldManipulatorsInfoDict: any = {};
@@ -53,30 +50,113 @@ const DataManipulationHelper = {
   	if (fieldManipulatorsInfoDict[guid]) {
   		const params = {};
   		const fields = fieldManipulatorsInfoDict[guid];
-  		const action = actionManipulatorsInfoDict[guid];
   		const options = optionsManipulatorsInfoDict[guid];
   		
-	  	for (const field of fields) {
-	  		let element = HTMLHelper.getElementByAttributeNameAndValue('internal-fsb-guid', field) as any;
-	  		
-	  		if (element.tagName != 'INPUT') {
-	  			element = element.firstChild;
-	  			while (element && ['INPUT', 'TEXTAREA', 'SELECT'].indexOf(element.tagName) == -1) {
-	  				element = element.nextSibling;
-	  			}
-	  		}
-	  		
-	  		if (element) {
-	  			params[field] = element.value;
-	  		}
-	  	}
+  		let current = EventHelper.getOriginalElement(event);
+  		let foundAll = false;
+  		let foundRadio = {};
+  		
+  		while (!foundAll && current != null && current != document) {
+  			foundAll = true;
+  			
+  			for (const field of fields) {
+		  		let elements = HTMLHelper.getElementsByAttributeNameAndValue('internal-fsb-guid', field, current) as any;
+		  		
+		  		for (let index=0; index < elements.length; index++) {
+		  			let element = elements[index];
+		  			
+		  			// All of inputs are a forwarding element. To get the actual input,
+		  			// we must look into their children.
+		  			// 
+		  			if (element.tagName != 'INPUT') {
+			  			element = element.firstChild;
+			  			
+			  			// Also skip text node.
+			  			// 
+			  			while (element && ['INPUT', 'TEXTAREA', 'SELECT'].indexOf(element.tagName) == -1) {
+			  				element = element.nextSibling;
+			  			}
+			  		}
+			  		
+			  		let name = (elements.length > 1) ? `${field}[${index}]` : field;
+		  		
+		  			switch (HTMLHelper.getAttribute(element, 'type')) {
+		  				case 'radio':
+		  					if (foundRadio[element.name] === undefined) {
+		  						foundRadio[element.name] = name;
+		  					}
+		  					if (element.checked) {
+		  						foundRadio[element.name] = true;
+		  						params[name] = element.value;
+		  					}
+		  					break;
+		  				case 'checkbox':
+		  					params[name] = element.checked ? 'true' : 'false';
+		  					break;
+	  					default:
+	  						params[name] = element.value;
+	  						break;
+	  				}
+		  		}
+		  		if (elements.length == 0) {
+		  			foundAll = false;
+		  			break;
+		  		}
+		  	}
+  			
+  			current = current.parentNode;
+  		}
+  		
+  		for (let name in foundRadio) {
+  			if (foundRadio.hasOwnProperty(name)) {
+  				if (foundRadio[name] !== true) {
+  					params[foundRadio[name]] = null;
+  				}
+  			}
+  		}
 	  	
-	  	params['action'] = action;
+	  	params['guid'] = guid;
 	  	params['notation'] = notation;
+	  	
+	  	const button = EventHelper.getCurrentElement(event);
+	  	if (button) {
+	  		const event = new CustomEvent('submitting', {
+					detail: {
+						params: params
+					},
+					cancelable: true
+				});
+				button.dispatchEvent(event);
+				if (event.defaultPrevented) return;
+	  	}
 	  	
 	  	RequestHelper.post((registeredEndpoint || `${location.protocol}//${location.host}`) + (currentPath || `${location.pathname}`), params)
 	  		.then((json) => {
+	  			if (button) {
+						const event = new CustomEvent('submitted', {
+							detail: {
+								params: params,
+								results: json
+							},
+							cancelable: true
+						});
+						button.dispatchEvent(event);
+						if (event.defaultPrevented) return;
+					}
+	  			
 	  			if (json.success) {
+	  				if (button) {
+							const event = new CustomEvent('success', {
+								detail: {
+									params: params,
+									results: json
+								},
+								cancelable: true
+							});
+							button.dispatchEvent(event);
+							if (event.defaultPrevented) return;
+						}
+	  				
 	  				if (json.redirect) {
 	  				  window.location = json.redirect;
 	  				} else {
@@ -87,6 +167,18 @@ const DataManipulationHelper = {
   	  				}
 	  				}
 	  			} else {
+	  				if (button) {
+							const event = new CustomEvent('failed', {
+								detail: {
+									params: params,
+									results: json
+								},
+								cancelable: true
+							});
+							button.dispatchEvent(event);
+							if (event.defaultPrevented) return;
+						}
+	  				
 	  				if (json.error) {
 	  					console.log(json.error);
 	  					alert(json.error);
@@ -123,14 +215,14 @@ const DataManipulationHelper = {
 			// Search HierarchicalDataColumn
 			// 
 			let column = (current.keys || {})[key] || (current.columns || {})[key];
-			if (column) {
-				return column.value;
+			if (column !== undefined) {
+				return column;
 			} else {
 				return null;
 			}
 		}
   },
-  getDataFromNotation: (notation: string, data: {[Identifier: string]: HierarchicalDataTable}=window.data, inArray: boolean=false): any => {
+  getDataFromNotation: (notation: string, data: any=window.data, inArray: boolean=false): any => {
     if (!notation) {
       console.error("The notation is null, undefined or empty.");
 	  	alert("There is an error occured, please try again.");
@@ -138,11 +230,17 @@ const DataManipulationHelper = {
     }
     
     let splited = notation.split('.');
-    let current = {
-			keys: null,
-			columns: null,
-			relations: data
-		};
+    let current;
+		
+		if (data.keys && data.columns) {
+    	current = data;
+    } else {
+	    current = {
+				keys: null,
+				columns: null,
+				relations: data
+			};
+		}
 		
 		let shifted = splited.shift();
 		while (current && shifted) {
@@ -171,7 +269,7 @@ const DataManipulationHelper = {
   }
 };
 
-export {HierarchicalDataTable, HierarchicalDataRow, HierarchicalDataColumn, DataManipulationHelper};
+export {HierarchicalDataTable, HierarchicalDataRow, DataManipulationHelper};
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECUASE YOUR CHANGES MAY BE LOST.
