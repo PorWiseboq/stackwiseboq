@@ -317,7 +317,6 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       }
-      reject(new Error("NotImplementedError"));
     });
     return ;
   }
