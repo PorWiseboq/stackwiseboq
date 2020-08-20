@@ -104,4 +104,3 @@ To get started:
 ## Questions?
 
 For any questions, please send an email to [jatupon@softenstorm.com](mailto:jatupon@softenstorm.com).
->>>>>>> cb5d2b8f874f2fd5ed8e16b4766ecce54f0e0cb9
