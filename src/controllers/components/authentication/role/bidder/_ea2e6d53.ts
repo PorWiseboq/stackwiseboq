@@ -118,7 +118,7 @@ class Controller extends Base {
           let inputs = RequestHelper.createInputs({
             'Store.oid': this.request.session.uid
           });
-          let results = DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
           
           if (results['Store'].rows.length != 0) {
             this.response.redirect('/bidder/auction');
