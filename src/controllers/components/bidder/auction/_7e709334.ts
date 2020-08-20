@@ -233,10 +233,10 @@ class Controller extends Base {
 	  
 	  // Auto[Merging]--->
     RequestHelper.registerSubmit("7e709334", "108bb2b9", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("7e709334", "833e4eb9", "retrieve", ["d24ed774"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "833e4eb9", "retrieve", ["d24ed774","6d57beb9"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261","c192b978"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("7e709334", "e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("7e709334", "8cbc5b17", "retrieve", ["e8656190"], {initClass: null, crossRelationUpsert: false});

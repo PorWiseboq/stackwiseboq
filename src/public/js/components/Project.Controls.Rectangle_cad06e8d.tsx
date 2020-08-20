@@ -73,10 +73,10 @@ class Rectangle_cad06e8d extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("4a579143", "retrieve", ["1ae8405a"], {initClass: null, submitCrossType: null});
-    DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7"], {initClass: null, submitCrossType: null});
-    DataManipulationHelper.register("833e4eb9", "retrieve", ["d24ed774"], {initClass: null, submitCrossType: null});
-    DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("833e4eb9", "retrieve", ["d24ed774","6d57beb9"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261","c192b978"], {initClass: null, submitCrossType: null});
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null});
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null});
     DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null, submitCrossType: null});
