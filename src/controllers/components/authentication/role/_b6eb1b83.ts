@@ -223,7 +223,7 @@ class Controller extends Base {
       try {
         let rows = await DatabaseHelper.update(data, schema);
         if (rows.length != 0) {
-          switch (rows[0].columns['role'].value) {
+          switch (rows[0].columns['role']) {
             case "buyer":
               this.request.session.role = 'buyer';
               this.request.session.save(() => {
