@@ -112,6 +112,16 @@ class Controller extends Base {
  		  try {
      		if (!this.request.session || !this.request.session.uid) {
           this.response.redirect('/authentication');
+        } else {
+          let schemata = ProjectConfigurationHelper.getDataSchema();
+          let inputs = RequestHelper.createInputs({
+            'User.id': this.request.session.uid
+          });
+          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['User'], this.request.session);
+          
+          if (results['User'].rows[0].columns['firstName'] && results['User'].rows[0].columns['lastName']) {
+            this.response.redirect('/buyer/auction');
+          }
         }
         
      	  resolve(null);
