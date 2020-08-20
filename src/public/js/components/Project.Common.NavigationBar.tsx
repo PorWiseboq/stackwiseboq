@@ -2,7 +2,7 @@
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
 // Auto[Import]--->
-import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
@@ -21,6 +21,7 @@ declare let DataManipulationHelper: any;
 declare let pug: any;
 
 let Button = $Button;
+let Project = $Project;
 
 // <---Auto[Declare]
 
@@ -85,29 +86,29 @@ class NavigationBar extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'null': 'undefined'}, this.props.forward && this.props.forward.styles || {}) className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || '') internal-fsb-guid="535be65e")
+      div(style=Object.assign({'null': 'undefined'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="535be65e")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor(style={'display': 'block'})
             - const Project_Common_Header_ = Project.Common.Header;
             _Project_Common_Header_(forward={'classes': '', 'styles': {}})
-            .internal-fsb-element(style={'fontSize': '14px', 'float': 'right', 'marginTop': '15px', 'marginRight': '15px'} internal-fsb-guid="1136ae7c")
+            .internal-fsb-element(style={'fontSize': '14px', 'float': 'right', 'marginTop': '15px', 'marginRight': '15px'}, internal-fsb-guid="1136ae7c")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element(style={padding: '0px'} internal-fsb-guid="8eaa2c0a")
-                    img(style={'display': 'block', 'width': '20px', 'marginRight': '5px'} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/buy.png")
-                  a.internal-fsb-element.internal-fsb-allow-cursor(href="/buyer" target="" internal-fsb-guid="2934a208")
+                  .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="8eaa2c0a")
+                    img(style={'display': 'block', 'width': '20px', 'marginRight': '5px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/buy.png")
+                  a.internal-fsb-element.internal-fsb-allow-cursor(href="/buyer", target="", internal-fsb-guid="2934a208")
                     .internal-fsb-element(internal-fsb-guid="2934a208-text")
                       | สำหรับผู้ที่ต้องการสั่งซื้อ
                   .internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-57595ad9(internal-fsb-guid="57595ad9")
-                  .internal-fsb-element(style={padding: '0px'} internal-fsb-guid="4db67171")
-                    img(style={'display': 'block', 'width': '20px', 'marginRight': '5px'} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid.png")
-                  a.internal-fsb-element.internal-fsb-allow-cursor(href="/bidder" internal-fsb-guid="7001d8c4")
+                  .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="4db67171")
+                    img(style={'display': 'block', 'width': '20px', 'marginRight': '5px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid.png")
+                  a.internal-fsb-element.internal-fsb-allow-cursor(href="/bidder", internal-fsb-guid="7001d8c4")
                     .internal-fsb-element(internal-fsb-guid="7001d8c4-text")
                       | สำหรับร้านค้าวัสดุก่อสร้าง
-                  .internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-57595ad9(style={'FsbInheritedPresets': '57595ad9'} internal-fsb-guid="48d1ac00")
-                  .internal-fsb-element(style={padding: '0px'} internal-fsb-guid="530a1666")
-                    img(style={'display': 'block', 'width': '20px', 'marginRight': '5px'} src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png")
-                  a.internal-fsb-element.internal-fsb-allow-cursor(href="/authentication" internal-fsb-guid="24c1dbd3")
+                  .internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-57595ad9(style={'FsbInheritedPresets': '57595ad9'}, internal-fsb-guid="48d1ac00")
+                  .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="530a1666")
+                    img(style={'display': 'block', 'width': '20px', 'marginRight': '5px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png")
+                  a.internal-fsb-element.internal-fsb-allow-cursor(href="/authentication", internal-fsb-guid="24c1dbd3")
                     .internal-fsb-element(internal-fsb-guid="24c1dbd3-text")
                       | เข้าสู่ระบบ
     `

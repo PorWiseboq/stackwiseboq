@@ -87,80 +87,166 @@ class Controller extends Base {
  		ValidationHelper.validate(data);
   }
   
-  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
-    return new Promise(async (resolve) => {
-   		if (this.request.session && this.request.session.uid) {
-   		  switch (this.request.session.role) {
-   		    case 'buyer':
-            this.response.redirect('/authentication/role/buyer');
-   		      return;
-   		    case 'bidder':
-            this.response.redirect('/authentication/role/bidder');
-   		      return;
-   		    default:
-   		      break;
-   		  }
-      } else {
-        this.response.redirect('/authentication');
+  protected async accessories(data: Input[]): Promise<any> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        resolve({
+          title: null,
+          description: null,
+          keywords: null,
+          language: null,
+          contentType: null,
+          revisitAfter: null,
+          robots: null,
+          linkUrl: null,
+          imageUrl: null,
+          itemType: null,
+          contentLocale: null
+        });
+      } catch(error) {
+        reject(error);
       }
-      
-   	  resolve(null);
+    });
+  }
+  
+  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
+    return new Promise(async (resolve, reject) => {
+      try {
+     		if (this.request.session && this.request.session.uid) {
+     		  switch (this.request.session.role) {
+     		    case 'buyer':
+              this.response.redirect('/authentication/role/buyer');
+     		      return;
+     		    case 'bidder':
+              this.response.redirect('/authentication/role/bidder');
+     		      return;
+     		    default:
+     		      break;
+     		  }
+        } else {
+          this.response.redirect('/authentication');
+        }
+        
+     	  resolve(null);
+      } catch(error) {
+        reject(error);
+      }
     });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.post(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.post(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.put(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.put(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.delete(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.delete(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.insert(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow insert action of any button on the page. */
+      /* try {
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
+        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.update(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow update action of any button on the page. */
+      /* try {
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
+        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
+    return ;
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.delete(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow delete action of any button on the page. */
+      /* try {
+        resolve(await DatabaseHelper.delete(data, schema, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return await DatabaseHelper.retrieve(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow retrieve action of any button on the page. */
+      /* try {
+        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
-    return new Promise(async (resolve) => {
-      let rows = await DatabaseHelper.update(data, schema);
-      if (rows.length != 0) {
-        switch (rows[0].columns['role'].value) {
-          case "buyer":
-            this.request.session.role = 'buyer';
-            this.request.session.save(() => {
-            	resolve('/buyer/auction');
-            });
-            return;
-          case "bidder":
-            this.request.session.role = 'bidder';
-            this.request.session.save(() => {
-            	resolve('/bidder/auction');
-            });
-            return;
-          default:
-            throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
+    return new Promise(async (resolve, reject) => {
+      try {
+        let rows = await DatabaseHelper.update(data, schema);
+        if (rows.length != 0) {
+          switch (rows[0].columns['role'].value) {
+            case "buyer":
+              this.request.session.role = 'buyer';
+              this.request.session.save(() => {
+              	resolve('/buyer/auction');
+              });
+              return;
+            case "bidder":
+              this.request.session.role = 'bidder';
+              this.request.session.save(() => {
+              	resolve('/bidder/auction');
+              });
+              return;
+            default:
+              throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่อีกครั้ง");
+          }
+        } else {
+          throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
         }
-      } else {
-        throw new Error("เกิดข้อผิดพลาดในระบบและไม่สามารถบันทึกข้อมูลได้ กรุณาลองดูใหม่");
+        
+        resolve('/authentication/role');
+      } catch(error) {
+        reject(error);
       }
-      
-      resolve('/authentication/role');
     });
   }
   

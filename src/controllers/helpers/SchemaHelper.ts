@@ -234,7 +234,7 @@ const SchemaHelper = {
 		
 		SchemaHelper.recursiveFindShortestPathOfRelations(from, to, results);
 		
-		return results;
+		return results.reverse();
 	},
 	recursiveFindShortestPathOfRelations: (from: DataTableSchema, to: DataTableSchema, results: DataTableSchema[], walked: any={}, data: DataSchema=ProjectConfigurationHelper.getDataSchema()): boolean => {
 		if (walked[from.group]) return false;

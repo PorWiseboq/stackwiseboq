@@ -2,7 +2,7 @@
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
 // Auto[Import]--->
-import {Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
+import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
 import {EventHelper} from '../helpers/EventHelper.js';
 import {HTMLHelper} from '../helpers/HTMLHelper.js';
@@ -21,6 +21,7 @@ declare let DataManipulationHelper: any;
 declare let pug: any;
 
 let Button = $Button;
+let Project = $Project;
 
 // <---Auto[Declare]
 
@@ -91,17 +92,17 @@ class FlowLayout_d64677b8 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}) className="internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || '') internal-fsb-guid="d64677b8")
+      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="d64677b8")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             each data, i in this.getDataFromNotation("Blog", true)
-              .internal-fsb-element.col-12(key="item_" + i internal-fsb-guid="0dc16d9d")
+              .internal-fsb-element.col-12(key="item_" + i, internal-fsb-guid="0dc16d9d")
                 .container-fluid
                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].bid"))} internal-fsb-guid="628375e3")
-                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].title"))} internal-fsb-guid="d531620d")
-                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].description"))} internal-fsb-guid="8e81c57d")
-                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].keywords"))} internal-fsb-guid="701c71d4")
+                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].bid"))}, internal-fsb-guid="628375e3")
+                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].title"))}, internal-fsb-guid="d531620d")
+                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].description"))}, internal-fsb-guid="8e81c57d")
+                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].keywords"))}, internal-fsb-guid="701c71d4")
     `
   }
 }

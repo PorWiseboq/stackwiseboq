@@ -70,7 +70,7 @@ const PermissionHelper = {
 					for (let i=1; i<shortestPath.length; i++) {
 						const next = shortestPath[i];
 						
-						INNER_JOIN.push(`INNER JOIN ${current.group} ON ${current.group}.${current.relations[next.group].targetEntity} = ${next.group}.${next.relations[current.group].targetEntity}`);
+						INNER_JOIN.push(`INNER JOIN ${next.group} ON ${current.group}.${current.relations[next.group].sourceEntity} = ${next.group}.${current.relations[next.group].targetEntity}`);
 						
 						current = next;
 					}
@@ -81,12 +81,6 @@ const PermissionHelper = {
 					const from = shortestPath[shortestPath.length - 1];
 					for (const key in from.keys) {
 						if (from.keys.hasOwnProperty(key) && modifyingColumns[key] !== undefined) {
-							WHERE_CLAUSE.push(`${from.group}.${key} = ?`);
-							VALUES.push(modifyingColumns[key]);
-						}
-					}
-					for (const key in from.columns) {
-						if (from.columns.hasOwnProperty(key) && modifyingColumns[key] !== undefined) {
 							WHERE_CLAUSE.push(`${from.group}.${key} = ?`);
 							VALUES.push(modifyingColumns[key]);
 						}

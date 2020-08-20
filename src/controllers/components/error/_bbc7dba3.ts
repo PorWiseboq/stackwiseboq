@@ -86,83 +86,155 @@ class Controller extends Base {
   }
   
   protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise((resolve) => {
- 	    resolve({
- 		    title: null,
- 		    description: null,
- 		    keywords: null,
- 		    language: null,
- 		    contentType: null,
- 		    revisitAfter: null,
- 		    robots: null,
- 		    linkUrl: null,
- 		    imageUrl: null,
- 		    itemType: null,
- 		    contentLocale: null
- 		  });
- 	  });
+    return new Promise(async (resolve, reject) => {
+      try {
+        resolve({
+          title: null,
+          description: null,
+          keywords: null,
+          language: null,
+          contentType: null,
+          revisitAfter: null,
+          robots: null,
+          linkUrl: null,
+          imageUrl: null,
+          itemType: null,
+          contentLocale: null
+        });
+      } catch(error) {
+        reject(error);
+      }
+    });
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return new Promise((resolve) => {
- 		  let message;
- 		  switch (parseInt(this.request.params.code)) {
- 		    case 404:
- 		      message = "หน้าดังกล่าวหาไม่พบ";
- 		      break;
- 		    default:
- 		      message = "กรุณาลองดูอีกครั้ง";
- 		      break;
+ 		return new Promise((resolve, reject) => {
+ 		  try {
+   		  let message;
+   		  switch (parseInt(this.request.params.code)) {
+   		    case 404:
+   		      message = "หน้าดังกล่าวหาไม่พบ";
+   		      break;
+   		    default:
+   		      message = "กรุณาลองดูอีกครั้ง";
+   		      break;
+   		  }
+   		  resolve({
+   		    Message: {
+   		      source: null,
+          	group: 'Message',
+            rows: [{
+              keys: {},
+              columns: {
+                body: {
+                  name: 'body',
+                  value: message
+                }
+              },
+              relations: {}
+            }]
+   		    }
+   		  });
+ 		  } catch(error) {
+ 		    reject(error);
  		  }
- 		  resolve({
- 		    Message: {
- 		      source: null,
-        	group: 'Message',
-          rows: [{
-            keys: {},
-            columns: {
-              body: {
-                name: 'body',
-                value: message
-              }
-            },
-            relations: {}
-          }]
- 		    }
- 		  });
  		});
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.post(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.post(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.put(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.put(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.delete(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.delete(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.insert(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow insert action of any button on the page. */
+      /* try {
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
+        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.update(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow update action of any button on the page. */
+      /* try {
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
+        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
+    return ;
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.delete(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow delete action of any button on the page. */
+      /* try {
+        resolve(await DatabaseHelper.delete(data, schema, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return await DatabaseHelper.retrieve(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow retrieve action of any button on the page. */
+      /* try {
+        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
- 		return '/';
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow navigate action of any button on the page. */
+      /* try {
+        resolve('/');
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   // Auto[MergingBegin]--->  

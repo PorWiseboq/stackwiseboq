@@ -88,74 +88,146 @@ class Controller extends Base {
   }
   
   protected async accessories(data: Input[]): Promise<any> {
- 	  return new Promise(async (resolve) => {
- 	    if (this.results['Blog'].rows.length == 0) {
- 	      resolve(null);
- 	    } else {
- 	      resolve({
-   		    title: this.results['Blog'].rows[0].columns['title'].value,
-   		    description: this.results['Blog'].rows[0].columns['description'].value,
-   		    keywords: this.results['Blog'].rows[0].columns['keywords'].value,
-   		    linkUrl: `https://www.wiseboq.com/${this.results['Blog'].rows[0].keys['bid'].value}/${this.results['Blog'].rows[0].columns['title'].value}`,
-   		    imageUrl: this.results['Blog'].rows[0].columns['image'].value,
-   		    itemType: 'blog',
-   		    language: 'th',
-   		    contentLocale: 'th'
-   		  });
- 	    }
- 	  });
+    return new Promise(async (resolve, reject) => {
+      try {
+        if (this.results['Blog'].rows.length == 0) {
+   	      resolve(null);
+   	    } else {
+   	      resolve({
+     		    title: this.results['Blog'].rows[0].columns['title'].value,
+     		    description: this.results['Blog'].rows[0].columns['description'].value,
+     		    keywords: this.results['Blog'].rows[0].columns['keywords'].value,
+     		    linkUrl: `https://www.wiseboq.com/${this.results['Blog'].rows[0].keys['bid'].value}/${this.results['Blog'].rows[0].columns['title'].value}`,
+     		    imageUrl: this.results['Blog'].rows[0].columns['image'].value,
+     		    itemType: 'blog',
+     		    language: 'th',
+     		    contentLocale: 'th'
+     		  });
+   	    }
+      } catch(error) {
+        reject(error);
+      }
+    });
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return new Promise(async (resolve) => {
- 		  this.results = await DatabaseHelper.retrieve([{
- 		    target: SourceType.Relational,
-        group: "Blog",
-        name: "bid",
-        value: this.request.params.id,
-        guid: null,
-  		  premise: null,
-        validation: null
- 		  }], null);
- 		  
- 		  if (this.results['Blog'].rows.length == 0) {
- 		    this.response.redirect('/error/404');
- 		  } else {
-   		  resolve(this.results);
+ 		return new Promise(async (resolve, reject) => {
+ 		  try {
+   		  this.results = await DatabaseHelper.retrieve([{
+   		    target: SourceType.Relational,
+          group: "Blog",
+          name: "bid",
+          value: this.request.params.id,
+          guid: null,
+    		  premise: null,
+          validation: null
+   		  }], null);
+   		  
+   		  if (this.results['Blog'].rows.length == 0) {
+   		    this.response.redirect('/error/404');
+   		  } else {
+     		  resolve(this.results);
+   		  }
+ 		  } catch(error) {
+ 		    reject(error);
  		  }
  	  });
   }
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.post(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.post(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.put(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.put(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return super.delete(data);
+    return new Promise(async (resolve, reject) => {
+      /* try {
+        resolve(await super.delete(data));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.insert(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow insert action of any button on the page. */
+      /* try {
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
+        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.update(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow update action of any button on the page. */
+      /* try {
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
+        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
+    return ;
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
- 		return await DatabaseHelper.delete(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow delete action of any button on the page. */
+      /* try {
+        resolve(await DatabaseHelper.delete(data, schema, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
- 		return await DatabaseHelper.retrieve(data, schema);
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow retrieve action of any button on the page. */
+      /* try {
+        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
- 		return '/';
+    return new Promise(async (resolve, reject) => {
+    	/* Uncomment to allow navigate action of any button on the page. */
+      /* try {
+        resolve('/');
+      } catch(error) {
+        reject(error);
+      } */
+      reject(new Error("NotImplementedError"));
+    });
   }
   
   // Auto[MergingBegin]--->  
