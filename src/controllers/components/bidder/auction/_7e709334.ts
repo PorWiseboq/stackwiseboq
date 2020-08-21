@@ -128,7 +128,10 @@ class Controller extends Base {
             this.request.session.save(async () => {
     				  let quoteData = RequestHelper.createInputs({
        		      'Quote.status': 1,
-       		      'Quote.Listing.qid': null
+       		      'Quote.Listing.qid': null,
+       		      'Quote.Auction.qid': null,
+       		      'Quote.Auction.sid': this.request.session.sid,
+       		      'Quote.Auction.Substitute.aid': null
        		    });
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote);
