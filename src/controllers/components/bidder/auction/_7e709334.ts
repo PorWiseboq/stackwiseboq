@@ -604,6 +604,7 @@ class Controller extends Base {
 		ValidationHelper.registerInput('d30aa93b', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'd30aa93b' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['sid'];
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 

@@ -410,7 +410,7 @@ class Rectangle_cad06e8d extends Base {
                                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ราคารวมทั้งหมด")
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
-                                        input.internal-fsb-element.col-12(type="hidden", value="123", internal-fsb-guid="d30aa93b")
+                                        input.internal-fsb-element.col-12(type="hidden", value="", internal-fsb-guid="d30aa93b")
                                         input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="a5b102c4")
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, type="button", onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
