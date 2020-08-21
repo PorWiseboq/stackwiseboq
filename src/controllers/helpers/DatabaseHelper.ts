@@ -684,19 +684,19 @@ const DatabaseHelper = {
 		    	case SourceType.PrioritizedWorker:
 		    		if (!VolatileMemoryClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    	case SourceType.Document:
 		    		if (!DocumentDatabaseClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    	case SourceType.VolatileMemory:
 		    		if (!PrioritizedWorkerClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    }
@@ -838,19 +838,19 @@ const DatabaseHelper = {
 		    	case SourceType.PrioritizedWorker:
 		    		if (!VolatileMemoryClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    	case SourceType.Document:
 		    		if (!DocumentDatabaseClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    	case SourceType.VolatileMemory:
 		    		if (!PrioritizedWorkerClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    }
@@ -984,19 +984,19 @@ const DatabaseHelper = {
 		    	case SourceType.PrioritizedWorker:
 		    		if (!VolatileMemoryClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    	case SourceType.Document:
 		    		if (!DocumentDatabaseClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    	case SourceType.VolatileMemory:
 		    		if (!PrioritizedWorkerClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    }
@@ -1070,19 +1070,19 @@ const DatabaseHelper = {
 	        	case SourceType.PrioritizedWorker:
 	        		if (!VolatileMemoryClient) throw new Error("There was an error trying to obtain a connection (not found).");
 	        		
-	        		throw new Error("NotImplementedError");
+	        		throw new Error("Not Implemented Error");
 	        		
 	        		break;
 	        	case SourceType.Document:
 	        		if (!DocumentDatabaseClient) throw new Error("There was an error trying to obtain a connection (not found).");
 	        		
-	        		throw new Error("NotImplementedError");
+	        		throw new Error("Not Implemented Error");
 	        		
 	        		break;
 	        	case SourceType.VolatileMemory:
 	        		if (!PrioritizedWorkerClient) throw new Error("There was an error trying to obtain a connection (not found).");
 	        		
-	        		throw new Error("NotImplementedError");
+	        		throw new Error("Not Implemented Error");
 	        		
 	        		break;
 	        }
@@ -1195,19 +1195,19 @@ const DatabaseHelper = {
 		    	case SourceType.PrioritizedWorker:
 		    		if (!VolatileMemoryClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    	case SourceType.Document:
 		    		if (!DocumentDatabaseClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    	case SourceType.VolatileMemory:
 		    		if (!PrioritizedWorkerClient) throw new Error("There was an error trying to obtain a connection (not found).");
 		    		
-		    		throw new Error("NotImplementedError");
+		    		throw new Error("Not Implemented Error");
 		    		
 		    		break;
 		    }
@@ -1336,19 +1336,19 @@ const DatabaseHelper = {
 					case SourceType.PrioritizedWorker:
 						if (!VolatileMemoryClient) throw new Error("There was an error trying to obtain a connection (not found).");
 						
-						throw new Error("NotImplementedError");
+						throw new Error("Not Implemented Error");
 						
 						break;
 					case SourceType.Document:
 						if (!DocumentDatabaseClient) throw new Error("There was an error trying to obtain a connection (not found).");
 						
-						throw new Error("NotImplementedError");
+						throw new Error("Not Implemented Error");
 						
 						break;
 					case SourceType.VolatileMemory:
 						if (!PrioritizedWorkerClient) throw new Error("There was an error trying to obtain a connection (not found).");
 						
-						throw new Error("NotImplementedError");
+						throw new Error("Not Implemented Error");
 						
 						break;
 				}

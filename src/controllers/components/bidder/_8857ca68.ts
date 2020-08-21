@@ -125,7 +125,7 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       } */
-      reject(new Error("NotImplementedError"));
+      reject(new Error("Not Implemented Error"));
     });
   }
   
@@ -136,7 +136,7 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       } */
-      reject(new Error("NotImplementedError"));
+      reject(new Error("Not Implemented Error"));
     });
   }
   
@@ -147,7 +147,7 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       } */
-      reject(new Error("NotImplementedError"));
+      reject(new Error("Not Implemented Error"));
     });
   }
   
@@ -160,7 +160,7 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       } */
-      reject(new Error("NotImplementedError"));
+      reject(new Error("Not Implemented Error"));
     });
   }
   
@@ -173,7 +173,7 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       } */
-      reject(new Error("NotImplementedError"));
+      reject(new Error("Not Implemented Error"));
     });
     return ;
   }
@@ -186,7 +186,7 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       } */
-      reject(new Error("NotImplementedError"));
+      reject(new Error("Not Implemented Error"));
     });
   }
   
@@ -198,7 +198,7 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       } */
-      reject(new Error("NotImplementedError"));
+      reject(new Error("Not Implemented Error"));
     });
   }
   
@@ -210,7 +210,7 @@ class Controller extends Base {
       } catch(error) {
         reject(error);
       } */
-      reject(new Error("NotImplementedError"));
+      reject(new Error("Not Implemented Error"));
     });
   }
 
