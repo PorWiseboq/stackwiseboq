@@ -15053,14 +15053,15 @@
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Auction</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c5da1008\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"auto\" data-column-type=\"primary\" data-title-name=\"aid\">",
-      "                                        <div class=\"internal-fsb-title\">aid</div>",
-      "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"68234865\" internal-fsb-name=\"RelationalColumn 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"sid\" data-field-type=\"number\" data-required=\"true\">",
+      "",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"68234865\" internal-fsb-name=\"RelationalColumn 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"sid\" data-field-type=\"number\" data-required=\"true\" data-column-type=\"primary\">",
       "                                        <div class=\"internal-fsb-title\">sid</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"60e8e7d7\" internal-fsb-name=\"RelationalColumn 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"qid\" data-field-type=\"number\" data-required=\"true\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"60e8e7d7\" internal-fsb-name=\"RelationalColumn 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"qid\" data-field-type=\"number\" data-required=\"true\" data-column-type=\"primary\">",
       "                                        <div class=\"internal-fsb-title\">qid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c5da1008\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"auto\" data-title-name=\"aid\">",
+      "                                        <div class=\"internal-fsb-title\">aid</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"cb042d65\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"price\" data-field-type=\"number\" data-required=\"true\">",
       "                                        <div class=\"internal-fsb-title\">price</div>",
@@ -15112,7 +15113,7 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"eb17109d\" internal-fsb-name=\"Connection 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 1226px; top: 315px; width: 10px; min-height: 20px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Substitute\" data-target-entity-name=\"aid\"></div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"eb17109d\" internal-fsb-name=\"Connection 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 1226px; top: 335px; width: 10px; min-height: 20px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Substitute\" data-target-entity-name=\"aid\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"618a3aa1\" internal-fsb-name=\"Connection 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 1244px; top: 447px; width: 150px;\" data-source-group-name=\"Substitute\" data-source-entity-name=\"lid\" data-target-group-name=\"Listing\" data-target-entity-name=\"lid\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"b84d6e06\" internal-fsb-name=\"Connection 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 913px; top: 253px; width: 150px;\" data-source-group-name=\"Store\" data-source-entity-name=\"sid\" data-target-group-name=\"Auction\" data-target-entity-name=\"sid\"></div>",
       "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"4bdcc412\" internal-fsb-name=\"RelationalTable 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 1148px; top: 94px; width: 225px; min-height: 179px;\" data-title-name=\"Store\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-source-group=\"\" data-rendering-condition-source-entity=\"\" data-rendering-condition-relation-matching-constant-value=\"\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"\">",
@@ -15188,7 +15189,7 @@
       "                        </div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"aa052b1e\" internal-fsb-name=\"Connection 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 598px; top: 242px; width: 150px;\" data-source-group-name=\"Payment\" data-source-entity-name=\"aid\" data-target-group-name=\"Card\" data-target-entity-name=\"aid\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"049a9d39\" internal-fsb-name=\"Connection 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 599px; top: 324px; width: 150px;\" data-source-group-name=\"Payment\" data-source-entity-name=\"aid\" data-target-group-name=\"Transfer\" data-target-entity-name=\"aid\" data-title-name=\"\"></div>",
-      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"22b0dab6\" internal-fsb-name=\"Connection 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 900px; top: 300px; width: 150px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Payment\" data-target-entity-name=\"aid\"></div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"22b0dab6\" internal-fsb-name=\"Connection 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 897px; top: 326px; width: 150px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Payment\" data-target-entity-name=\"aid\"></div>",
       "                    </div>",
       "                </div>",
       "            </div>",
@@ -16386,17 +16387,6 @@
         "group": "Auction",
         "guid": "702b06a8",
         "keys": {
-          "aid": {
-            "name": "aid",
-            "guid": "c5da1008",
-            "fieldType": "auto",
-            "required": false,
-            "unique": false,
-            "modifyingPermission": null,
-            "retrievingPermission": null
-          }
-        },
-        "columns": {
           "sid": {
             "name": "sid",
             "guid": "68234865",
@@ -16411,6 +16401,17 @@
             "guid": "60e8e7d7",
             "fieldType": "number",
             "required": true,
+            "unique": false,
+            "modifyingPermission": null,
+            "retrievingPermission": null
+          }
+        },
+        "columns": {
+          "aid": {
+            "name": "aid",
+            "guid": "c5da1008",
+            "fieldType": "auto",
+            "required": false,
             "unique": false,
             "modifyingPermission": null,
             "retrievingPermission": null
