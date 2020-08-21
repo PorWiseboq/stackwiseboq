@@ -302,7 +302,6 @@ class Controller extends Base {
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
   	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
   	let data: Input[] = [];
   	let input: Input = null;
@@ -347,6 +346,7 @@ class Controller extends Base {
 	  
 	  // Auto[MergingEnd]--->
 	  
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]
