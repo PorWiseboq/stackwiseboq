@@ -12455,7 +12455,7 @@
         "                                    </div>",
         "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0816dd23\" internal-fsb-name=\"FlowLayout 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-top: 20px\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-primary\" internal-fsb-guid=\"e6d44b49\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"update\" internal-fsb-data-controls=\" d66b23a4 e27d4c3b 8bcca5bc 3a931201 37473e1c 9d2bb91e c085ee08 eca33837 e07e83cb 3a91a437 903420db 8ce0a253 72928a9c\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
+        "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-primary\" internal-fsb-guid=\"e6d44b49\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-wizard-type=\"navigate\" internal-fsb-data-controls=\" d66b23a4 e27d4c3b 8bcca5bc 3a931201 37473e1c 9d2bb91e c085ee08 eca33837 e07e83cb 3a91a437 903420db 8ce0a253 72928a9c\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
         "    // Handle the event of onButtonSubmitting (Button 1) here:",
         "    // ",
@@ -16982,7 +16982,7 @@
     "c3da32d7": "6da8af3b5f7ce95683e05e02ec5b3800686d2485",
     "8a4a42e4": "d9c8598d6973d698e0d1d2633698cb15ed7f804e",
     "473d370d": "dbf4fa3c5f4c91da0e8dc1dfc83ad827f7b5689a",
-    "ea2e6d53": "ebbe9b0a71234f2672a53d0252cabc348c2a885e",
+    "ea2e6d53": "21f3b37bdc31dea87c5a703a60d5129567e838e4",
     "5488072c": "2eb012998fdd36555e945671058ac87dc3365ea9"
   },
   "frontEndComponentsBlobSHADict": {
@@ -16996,7 +16996,7 @@
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
     "Project.Controls.Rectangle_cad06e8d": "393aaa14ace4ad1683ae02c57d8c1178a6fc5acf",
     "Project.Controls.FlowLayout_56ca37d0": "e864582dec141e7bdeed8bd285c49946bd67b83a",
-    "Project.Controls.FlowLayout_cbb338d5": "3f5e4847c033ea6eac7f26aaf8f852b4020d4488",
+    "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "c4f2a72bc5fd30224a61b7402ee95d6ae9958513",
     "Project.Controls.FlowLayout_c6ba5b53": "93ba488b30f0e54a8907d3350e89c13da55413d9"
   },
