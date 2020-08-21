@@ -4713,9 +4713,6 @@
         "      let rows = super.getDataFromNotation(notation, true);",
         "      let substitute = super.getDataFromNotation(`Quote[${this.state.selectedIndex}].Auction.Substitute`, true);",
         "      ",
-        "      console.log('rows', rows);",
-        "      console.log('substitute', substitute);",
-        "      ",
         "      for (let row of rows) {",
         "      \trow.relations['Substitute'] = {",
         "      \t  source: null,",
@@ -4723,8 +4720,6 @@
         "      \t  rows: substitute.filter(_row => _row.keys['lid'] == row.keys['lid'])",
         "      \t};",
         "      }",
-        "      ",
-        "      console.log(rows);",
         "      ",
         "      return rows;",
         "    } else {",
@@ -5988,11 +5983,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "c6ba5b53",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "64a6ac8c",
+          "24731127",
           0,
-          4,
+          1,
           null
         ]
       },
@@ -17020,7 +17015,7 @@
     "Project.Controls.FlowLayout_b2020622": "9c56bfb2cb96429f916a9aff93fec08ff23ae236",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "5a6c35c98687ca3c9a78b204dd49d6afdc49ac15",
+    "Project.Controls.Rectangle_cad06e8d": "654532395f4cd4e6fd276783fdbae7b11e9ebad3",
     "Project.Controls.FlowLayout_56ca37d0": "e864582dec141e7bdeed8bd285c49946bd67b83a",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "c4f2a72bc5fd30224a61b7402ee95d6ae9958513",

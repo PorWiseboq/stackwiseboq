@@ -106,9 +106,6 @@ class Rectangle_cad06e8d extends Base {
       let rows = super.getDataFromNotation(notation, true);
       let substitute = super.getDataFromNotation(`Quote[${this.state.selectedIndex}].Auction.Substitute`, true);
       
-      console.log('rows', rows);
-      console.log('substitute', substitute);
-      
       for (let row of rows) {
       	row.relations['Substitute'] = {
       	  source: null,
@@ -116,8 +113,6 @@ class Rectangle_cad06e8d extends Base {
       	  rows: substitute.filter(_row => _row.keys['lid'] == row.keys['lid'])
       	};
       }
-      
-      console.log(rows);
       
       return rows;
     } else {
