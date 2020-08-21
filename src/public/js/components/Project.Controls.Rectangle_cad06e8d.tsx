@@ -110,7 +110,11 @@ class Rectangle_cad06e8d extends Base {
       console.log('substitute', substitute);
       
       for (let row of rows) {
-      	row.relations['Substitute'] = substitute.filter(_row => _row.keys['lid'] == row.keys['lid']);
+      	row.relations['Substitute'] = {
+      	  source: null,
+      	  group: 'Substitute',
+      	  rows: substitute.filter(_row => _row.keys['lid'] == row.keys['lid'])
+      	};
       }
       
       console.log(rows);

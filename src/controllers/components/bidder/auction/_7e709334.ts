@@ -27,6 +27,7 @@ import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationH
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
