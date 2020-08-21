@@ -105,6 +105,7 @@ const DatabaseHelper = {
     
     switch (action) {
       case ActionType.Insert:
+      case ActionType.Upsert:
         for (const key in schema.columns) {
           if (schema.columns.hasOwnProperty(key)) {
             if (schema.columns[key].fieldType != FieldType.AutoNumber && schema.columns[key].required) {
@@ -249,6 +250,25 @@ const DatabaseHelper = {
 			          }
 			        }
 			        break;
+			      case ActionType.Upsert:
+		          if (schema.keys[key].fieldType != FieldType.AutoNumber && (row.keys[key] === undefined || row.keys[key] === null)) {
+		            throw new Error(`There was an error preparing data for manipulation (required the value of a key ${schema.group}.${key} for manipulate ${schema.group}).`);
+		          } else {
+		            switch (schema.keys[key].fieldType) {
+		              case FieldType.Number:
+		                if (isNaN(parseFloat(row.keys[key].toString())))
+		                  throw new Error(`There was an error preparing data for manipulation (the value of ${schema.group}.${key} isn\'t a number).`);
+		                row.keys[key] = parseFloat(row.keys[key].toString());
+		                break;
+		              case FieldType.Boolean:
+		                row.keys[key] = (row.keys[key].toString() === "true" || row.keys[key].toString() === "1");
+		                break;
+		              case FieldType.String:
+		                row.keys[key] = row.keys[key].toString();
+		                break;
+		            }
+		          }
+			        break;
 			      case ActionType.Update:
 			      case ActionType.Delete:
 		          if (row.keys[key] === undefined || row.keys[key] === null) {
@@ -299,6 +319,27 @@ const DatabaseHelper = {
 				          }
 			          }
 			        }
+			        break;
+			      case ActionType.Upsert:
+		          if (schema.columns[key].fieldType != FieldType.AutoNumber && schema.columns[key].required && (row.columns[key] === undefined || row.columns[key] === null)) {
+		            throw new Error(`There was an error preparing data for manipulation (required the value of a column ${schema.group}.${key} for manipulate ${schema.group}).`);
+		          } else {
+		          	if (row.columns[key]) {
+			            switch (schema.columns[key].fieldType) {
+			              case FieldType.Number:
+			                if (isNaN(parseFloat(row.columns[key].toString())))
+			                  throw new Error(`There was an error preparing data for manipulation (the value of ${schema.group}.${key} isn\'t a number).`);
+			                row.columns[key] = parseFloat(row.columns[key].toString());
+			                break;
+			              case FieldType.Boolean:
+			                row.columns[key] = (row.columns[key].toString() === "true" || row.columns[key].toString() === "1");
+			                break;
+			              case FieldType.String:
+			                row.columns[key] = row.columns[key].toString();
+			                break;
+			            }
+			          }
+		          }
 			        break;
 			      case ActionType.Update:
 			        if (schema.columns[key].required) {
@@ -666,6 +707,35 @@ const DatabaseHelper = {
 		  }
 		});
 	},
+	upsert: async (data: Input[], baseSchema: DataTableSchema, crossRelationUpsert: boolean=false, session: any=null): Promise<HierarchicalDataRow[]> => {
+		return new Promise(async (resolve, reject) => {
+  		const transaction = await CreateTransaction({});
+  		
+		  try {
+  			const list = DatabaseHelper.prepareData(data, ActionType.Upsert, baseSchema, crossRelationUpsert);
+	  		const results = [];
+  		  
+  		  for (const key in list) {
+  		  	if (list.hasOwnProperty(key)) {
+	  		  	const input = list[key];
+	  		  	const schema = ProjectConfigurationHelper.getDataSchema().tables[key];
+	  		  	
+	  		  	await DatabaseHelper.performRecursiveUpsert(input, schema, results, transaction, crossRelationUpsert, session);
+	  		  }
+  		  }
+	      
+      	if (transaction) await transaction.commit();
+		  	
+	  		resolve(results);
+      } catch(error) {
+      	console.log(error);
+      	
+      	if (transaction) await transaction.rollback();
+      	
+        reject(error);
+      }
+    });
+	},
 	performRecursiveUpsert: async (input: HierarchicalDataTable, schema: DataTableSchema, results: HierarchicalDataRow[], transaction: any, session: any=null) => {
 		return new Promise(async (resolve, reject) => {
 		  try {
@@ -701,7 +771,7 @@ const DatabaseHelper = {
 							  }
 							}
 							
-							if (await !PermissionHelper.allowActionOnTable(ActionType.Update, schema, hash, session)) throw new Error(`You have no permission to upsert any row in ${schema.group}.`);
+							if (await !PermissionHelper.allowActionOnTable(ActionType.Upsert, schema, hash, session)) throw new Error(`You have no permission to upsert any row in ${schema.group}.`);
 							
 						  const result = {
 						    keys: {},
