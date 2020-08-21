@@ -104,17 +104,16 @@ class Rectangle_cad06e8d extends Base {
       notation = notation.replace('#i', this.state.selectedIndex.toString());
       
       let rows = super.getDataFromNotation(notation, true);
-      let auction = super.getDataFromNotation(`Quote[${this.state.selectedIndex}].Auction`, false);
+      let substitute = super.getDataFromNotation(`Quote[${this.state.selectedIndex}].Auction.Substitute`, true);
       
-      for (let row in rows) {
-        if (auction) {
-          row.relations['Auction'] = CodeHelper.clone(auction);
-          if (row.relations['Auction'].relations['Substitute']) {
-            row.relations['Auction'].relations['Substitute'].rows =
-              row.relations['Auction'].relations['Substitute'].rows.filter(_row => _row.keys['lid'] == row.keys['lid']);
-          }
-        }
+      console.log('rows', rows);
+      console.log('substitute', substitute);
+      
+      for (let row of rows) {
+      	row.relations['Substitute'] = substitute.filter(_row => _row.keys['lid'] == row.keys['lid']);
       }
+      
+      console.log(rows);
       
       return rows;
     } else {
@@ -425,7 +424,7 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
-                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ราคารวมทั้งหมด")
+                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ราคารวมทั้งหมด", defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
                                         input.internal-fsb-element.col-12(type="hidden", value="", internal-fsb-guid="d30aa93b")
