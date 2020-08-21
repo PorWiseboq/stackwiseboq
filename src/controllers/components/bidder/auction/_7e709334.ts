@@ -200,20 +200,16 @@ class Controller extends Base {
         reject(error);
       }
     });
-    return ;
   }
   
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow update action of any button on the page. */
-      /* try {
+    	try {
         resolve(await DatabaseHelper.upsert(data, schema, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
-    return ;
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {

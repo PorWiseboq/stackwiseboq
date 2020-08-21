@@ -326,7 +326,6 @@ class Controller extends Base {
         reject(error);
       }
     });
-    return ;
   }
   
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
@@ -339,7 +338,6 @@ class Controller extends Base {
       } */
       reject(new Error("Not Implemented Error"));
     });
-    return ;
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
