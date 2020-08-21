@@ -707,12 +707,12 @@ const DatabaseHelper = {
 		  }
 		});
 	},
-	upsert: async (data: Input[], baseSchema: DataTableSchema, crossRelationUpsert: boolean=false, session: any=null): Promise<HierarchicalDataRow[]> => {
+	upsert: async (data: Input[], baseSchema: DataTableSchema, session: any=null): Promise<HierarchicalDataRow[]> => {
 		return new Promise(async (resolve, reject) => {
   		const transaction = await CreateTransaction({});
   		
 		  try {
-  			const list = DatabaseHelper.prepareData(data, ActionType.Upsert, baseSchema, crossRelationUpsert);
+  			const list = DatabaseHelper.prepareData(data, ActionType.Upsert, baseSchema, true);
 	  		const results = [];
   		  
   		  for (const key in list) {
@@ -720,7 +720,7 @@ const DatabaseHelper = {
 	  		  	const input = list[key];
 	  		  	const schema = ProjectConfigurationHelper.getDataSchema().tables[key];
 	  		  	
-	  		  	await DatabaseHelper.performRecursiveUpsert(input, schema, results, transaction, crossRelationUpsert, session);
+	  		  	await DatabaseHelper.performRecursiveUpsert(input, schema, results, transaction, session);
 	  		  }
   		  }
 	      

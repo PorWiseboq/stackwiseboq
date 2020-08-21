@@ -120,6 +120,10 @@ class Base {
  		throw new Error("Not Implemented Error");
   }
   
+  protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
+ 		throw new Error("Not Implemented Error");
+  }
+  
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		throw new Error("Not Implemented Error");
   }
