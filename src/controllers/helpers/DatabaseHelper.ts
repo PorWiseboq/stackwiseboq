@@ -18,6 +18,7 @@ enum SourceType {
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
