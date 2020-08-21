@@ -5169,6 +5169,9 @@
         "  //",
         "  protected initialize(): void {",
         "    this.state.group = Math.random().toString();",
+        "    ",
+        "    const value = this.getDataFromNotation('Substitute.type', false);",
+        "    this.state.selectedValue = (value == null) ? -1 : value;",
         "  }",
         "  ",
         "  protected componentDidMount(): void {",
@@ -5985,11 +5988,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
-          "24731127",
+          "64a6ac8c",
           0,
-          1,
+          4,
           null
         ]
       },
@@ -17021,7 +17024,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "e864582dec141e7bdeed8bd285c49946bd67b83a",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "c4f2a72bc5fd30224a61b7402ee95d6ae9958513",
-    "Project.Controls.FlowLayout_c6ba5b53": "f2d9840f77e373e3073defff33327da343a49212"
+    "Project.Controls.FlowLayout_c6ba5b53": "0e69b0ca901f0c065904d35f397ed8fd4eb2c771"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "9564ac25a5fc6ae3eb64179b6ada966a12642acc",

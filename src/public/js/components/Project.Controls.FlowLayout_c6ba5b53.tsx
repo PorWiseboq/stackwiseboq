@@ -74,6 +74,9 @@ class FlowLayout_c6ba5b53 extends Base {
   //
   protected initialize(): void {
     this.state.group = Math.random().toString();
+    
+    const value = this.getDataFromNotation('Substitute.type', false);
+    this.state.selectedValue = (value == null) ? -1 : value;
   }
   
   protected componentDidMount(): void {
