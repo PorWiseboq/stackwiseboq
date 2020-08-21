@@ -41,6 +41,9 @@ class Base {
       case ActionType.Update:
         RenderHelper.json(this.response, await this.update(data, schema));
         break;
+      case ActionType.Upsert:
+        RenderHelper.json(this.response, await this.upsert(data, schema));
+        break;
       case ActionType.Delete:
         RenderHelper.json(this.response, await this.remove(data, schema));
         break;
