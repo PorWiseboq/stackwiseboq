@@ -100,9 +100,27 @@ class Rectangle_cad06e8d extends Base {
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
-    notation = notation.replace('#i', this.state.selectedIndex.toString());
-    
-    return super.getDataFromNotation(notation, inArray);
+    if (notation == 'Quote[#i].Listing') {
+      notation = notation.replace('#i', this.state.selectedIndex.toString());
+      
+      let rows = super.getDataFromNotation(notation, true);
+      let auction = super.getDataFromNotation(`Quote[${this.state.selectedIndex}].Auction`, false);
+      
+      for (let row in rows) {
+        if (auction) {
+          row.relations['Auction'] = CodeHelper.clone(auction);
+          if (row.relations['Auction'].relations['Substitute']) {
+            row.relations['Auction'].relations['Substitute'].rows =
+              row.relations['Auction'].relations['Substitute'].rows.filter(_row => _row.keys['lid'] == row.keys['lid']);
+          }
+        }
+      }
+      
+      return rows;
+    } else {
+      notation = notation.replace('#i', this.state.selectedIndex.toString());
+      return super.getDataFromNotation(notation, inArray);
+    }
   }
   
   private getDisplayOf(quoteType: QuoteType, active: boolean) {
