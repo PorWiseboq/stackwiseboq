@@ -10,6 +10,7 @@ import passport from "passport";
 import bluebird from "bluebird";
 import cors from "cors";
 import fs from "fs";
+import {NotificationHelper} from "./controllers/helpers/NotificationHelper.js";
 
 // Create Express server
 const app = express();
@@ -26,6 +27,8 @@ if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1
   };
   
   https.createServer(options, app).listen(443);
+  
+  NotificationHelper.createIO(https);
 }
 
 if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
