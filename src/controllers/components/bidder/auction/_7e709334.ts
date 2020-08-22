@@ -229,7 +229,8 @@ class Controller extends Base {
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
     	try {
-        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));
+        let options = RequestHelper.getOptions(this.pageId, this.request);
+        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
       } catch(error) {
         reject(error);
       }
