@@ -27,6 +27,7 @@ import {ProjectConfigurationHelper} from "../../../helpers/ProjectConfigurationH
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -47,6 +48,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -369,7 +371,7 @@ class Controller extends Base {
       try {
       	await this.checkForBOQCRUDRestriction(data);
       	
-   		  await DatabaseHelper.update(data, schema);
+   		  await DatabaseHelper.upsert(data, schema, this.request.session);
    		  resolve('/buyer/auction/waiting');
       } catch(error) {
         reject(error);
@@ -386,16 +388,16 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("65e04a88", "9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "d910ad00", "delete", ["41bdc9b3"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "1bb72b1a", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "011ad9dc", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "88297439", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "a7592071", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("65e04a88", "9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "d910ad00", "delete", ["41bdc9b3"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "1bb72b1a", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "011ad9dc", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "88297439", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "a7592071", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('5a972a57', "relational", "Quote", "title");
 		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "คุณต้องตั้งชื่อรายการ");
     for (let i=-1; i<128; i++) {
