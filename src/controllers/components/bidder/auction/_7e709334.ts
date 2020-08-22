@@ -136,7 +136,7 @@ class Controller extends Base {
        		      'Quote.Auction.Substitute.aid': null
        		    });
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
-       		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote);
+       		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
        		    
      		      resolve(quoteDataset);
     			  });
