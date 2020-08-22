@@ -385,7 +385,7 @@ class Controller extends Base {
    		  NotificationHelper.notifyUpdates(
    		    ActionType.Upsert,
    		    schema,
-   		    await DatabaseHelper.update(data, schema, this.request.session)
+   		    await DatabaseHelper.update(data, schema, false, this.request.session)
    		  );
    		  
    		  resolve('/buyer/auction/waiting');
