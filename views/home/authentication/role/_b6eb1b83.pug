@@ -107,8 +107,8 @@ html
           return Controller;
       }());
       var controller = new Controller();
-      DataManipulationHelper.register("85ebe32c", "navigate", ["02987944", "56385616"], { initClass: null, submitCrossType: null });
-      DataManipulationHelper.register("9e104782", "navigate", ["899069eb", "56385616"], { initClass: null, submitCrossType: null });
+      DataManipulationHelper.register("85ebe32c", "navigate", ["02987944", "56385616"], { initClass: null, submitCrossType: null, enabledRealTimeUpdate: false });
+      DataManipulationHelper.register("9e104782", "navigate", ["899069eb", "56385616"], { initClass: null, submitCrossType: null, enabledRealTimeUpdate: false });
       
     script(type="text/javascript").
       window.data = !{JSON.stringify(data)};
@@ -116,6 +116,7 @@ html
     script(type="text/javascript" src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js")
     script(type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js")
     script(type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
+    script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js")
     script(type="text/javascript" src="/js/Site.bundle.js")
 
 //- <--- Auto[Generating:V1]
