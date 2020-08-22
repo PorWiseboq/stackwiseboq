@@ -16,6 +16,7 @@ import {Base} from '../../Base.js';
 // 
 import {DataManipulationHelper} from '../../../helpers/DataManipulationHelper.js';
 import {ProjectConfigurationHelper} from "../../../helpers/ProjectConfigurationHelper.js";
+import {NotificationHelper} from "../../../helpers/NotificationHelper.js";
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -381,7 +382,12 @@ class Controller extends Base {
       try {
       	await this.checkForBOQCRUDRestriction(data);
       	
-   		  await DatabaseHelper.upsert(data, schema, this.request.session);
+   		  NotificationHelper.notifyUpdates(
+   		    ActionType.Upsert,
+   		    schema
+   		    await DatabaseHelper.update(data, schema, this.request.session)
+   		  );
+   		  
    		  resolve('/buyer/auction/waiting');
       } catch(error) {
         reject(error);
