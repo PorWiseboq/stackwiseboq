@@ -27,6 +27,7 @@ import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationH
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -47,6 +48,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -270,8 +272,8 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("b6eb1b83", "85ebe32c", "navigate", ["02987944","56385616"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("b6eb1b83", "9e104782", "navigate", ["899069eb","56385616"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("b6eb1b83", "85ebe32c", "navigate", ["02987944","56385616"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("b6eb1b83", "9e104782", "navigate", ["899069eb","56385616"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('02987944', "relational", "User", "role");
 		ValidationHelper.registerInput('02987944', "buyer", false, undefined);
     for (let i=-1; i<128; i++) {
