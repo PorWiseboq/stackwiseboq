@@ -84,31 +84,31 @@ const NotificationHelper = {
   	socket.on('update', binded[notificationURI]['update'] = (message: any) => {
   		if (message.id == identity) {
         for (let result of message.results) {
+        	let found = null;
+        	
         	for (let row of table.rows) {
-        		let found = true;
-        		
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = false;
+                  found = row;
                   break;
                 }
               }
             }
-            
-            if (found) {
-            	for (let key in result.keys) {
-	              if (result.keys.hasOwnProperty(key)) {
-	                row.keys[key] = result.keys[key];
-	              }
-	            }
-            	for (let key in result.columns) {
-	              if (result.columns.hasOwnProperty(key)) {
-	                row.columns[key] = result.columns[key];
-	              }
-	            }
+          }
+          
+          if (found) {
+          	for (let key in result.keys) {
+              if (result.keys.hasOwnProperty(key)) {
+                found.keys[key] = result.keys[key];
+              }
             }
-        	}
+          	for (let key in result.columns) {
+              if (result.columns.hasOwnProperty(key)) {
+                found.columns[key] = result.columns[key];
+              }
+            }
+          }
         }
         NotificationHelper.notifyTableUpdates(message);
   		}
@@ -116,33 +116,33 @@ const NotificationHelper = {
   	socket.on('upsert', binded[notificationURI]['update'] = (message: any) => {
   		if (message.id == identity) {
         for (let result of message.results) {
+        	let found = null;
+        	
         	for (let row of table.rows) {
-        		let found = true;
-        		
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = false;
+                  found = row;
                   break;
                 }
               }
             }
-            
-            if (found) {
-            	for (let key in result.keys) {
-	              if (result.keys.hasOwnProperty(key)) {
-	                row.keys[key] = result.keys[key];
-	              }
-	            }
-            	for (let key in result.columns) {
-	              if (result.columns.hasOwnProperty(key)) {
-	                row.columns[key] = result.columns[key];
-	              }
-	            }
-            } else {
-            	table.rows.push(result);
+          }
+          
+          if (found) {
+          	for (let key in result.keys) {
+              if (result.keys.hasOwnProperty(key)) {
+                found.keys[key] = result.keys[key];
+              }
             }
-        	}
+          	for (let key in result.columns) {
+              if (result.columns.hasOwnProperty(key)) {
+                found.columns[key] = result.columns[key];
+              }
+            }
+          } else {
+          	table.rows.push(result);
+          }
         }
         NotificationHelper.notifyTableUpdates(message);
   		}

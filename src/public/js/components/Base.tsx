@@ -102,62 +102,62 @@ class Base extends React.Component {
         break;
       case 'update':
         for (let result of results) {
-        	for (let row of data) {
-        		let found = true;
+        	let found = null;
         		
+        	for (let row of data) {
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = false;
+                  found = row;
                   break;
                 }
               }
             }
+          }
             
-            if (found) {
-            	for (let key in result.keys) {
-	              if (result.keys.hasOwnProperty(key)) {
-	                row.keys[key] = result.keys[key];
-	              }
-	            }
-            	for (let key in result.columns) {
-	              if (result.columns.hasOwnProperty(key)) {
-	                row.columns[key] = result.columns[key];
-	              }
-	            }
+          if (found) {
+          	for (let key in result.keys) {
+              if (result.keys.hasOwnProperty(key)) {
+                found.keys[key] = result.keys[key];
+              }
             }
-        	}
-        }
+          	for (let key in result.columns) {
+              if (result.columns.hasOwnProperty(key)) {
+                found.columns[key] = result.columns[key];
+              }
+            }
+          }
+      	}
         break;
       case 'upsert':
         for (let result of results) {
+        	let found = null;
+        	
         	for (let row of data) {
-        		let found = true;
-        		
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = false;
+                  found = row;
                   break;
                 }
               }
             }
-            
-            if (found) {
-            	for (let key in result.keys) {
-	              if (result.keys.hasOwnProperty(key)) {
-	                row.keys[key] = result.keys[key];
-	              }
-	            }
-            	for (let key in result.columns) {
-	              if (result.columns.hasOwnProperty(key)) {
-	                row.columns[key] = result.columns[key];
-	              }
-	            }
-            } else {
-            	data.push(result);
+          }
+          
+          if (found) {
+          	for (let key in result.keys) {
+              if (result.keys.hasOwnProperty(key)) {
+                found.keys[key] = result.keys[key];
+              }
             }
-        	}
+          	for (let key in result.columns) {
+              if (result.columns.hasOwnProperty(key)) {
+                found.columns[key] = result.columns[key];
+              }
+            }
+          } else {
+          	data.push(result);
+          }
         }
         break;
       case 'delete':
