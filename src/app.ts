@@ -10,10 +10,11 @@ import passport from "passport";
 import bluebird from "bluebird";
 import cors from "cors";
 import fs from "fs";
-import {NotificationHelper} from "./controllers/helpers/NotificationHelper.js";
+import * as SocketIO from "socket.io";
 
 // Create Express server
 const app = express();
+let socket = null;
 
 if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
   const https = require("https");
@@ -26,9 +27,15 @@ if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1
       cert: sslcert
   };
   
-  https.createServer(options, app).listen(443);
-  
-  NotificationHelper.createIO(https);
+  const server = https.createServer(options, app).listen(443);
+	
+	socket = SocketIO.listen(server);
+} else {
+	const http = require("http");
+	
+  const server = http.createServer(app).listen(process.env.PORT || 8000);
+	
+	socket = SocketIO.listen(server);
 }
 
 if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
@@ -83,7 +90,7 @@ if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
 // Cache configuration
 // 
 app.use(
-    express.static(path.join(__dirname, "public"), { maxAge: 3600000 })
+    express.static(path.join(__dirname, "public"), { maxAge: 0 })
 );
 
 // For Endpoint Testing of StackBlend Editor
@@ -114,4 +121,4 @@ try {
 	endpoint.addRecentError(error);
 }
 
-export default app;
+export {app, socket};

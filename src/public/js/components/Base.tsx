@@ -92,6 +92,8 @@ class Base extends React.Component {
     let data = this.getDataFromNotation(notation);
     let {action, options} = DataManipulationHelper.getInfo(guid);
     
+    if (data == null) return;
+    
     switch (action) {
       case 'insert':
         for (let result of results) {

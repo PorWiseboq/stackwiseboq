@@ -5,14 +5,13 @@ import {CodeHelper} from "./CodeHelper.js";
 import {DataTableSchema} from "./SchemaHelper.js";
 import {ActionType, HierarchicalDataRow} from "./DatabaseHelper";
 import {Md5} from "md5-typescript";
-import socketio from "socket.io";
 
 const notificationInfos = {};
-let socket = null;
+let socket: any = null;
 
 const NotificationHelper = {
-	createIO: (https: any) => {
-		socket = socketio(https);
+	init: (_socket: any) => {
+		socket = _socket;
 	},
   getTableUpdatingIdentity: (schema: DataTableSchema, query: any): string => {
   	notificationInfos[schema.group] = notificationInfos[schema.group] || {};
@@ -23,14 +22,14 @@ const NotificationHelper = {
   	for (const key in query) {
   		if (query.hasOwnProperty(key)) {
   			sortedCombinationKeys.push(key);
-  			sortedCustomQueryValues.push(key + ':' + query[key]);
+  			sortedCustomQueryValues.push(key + ":" + query[key]);
   		}
   	}
   	
   	sortedCombinationKeys.sort();
   	sortedCustomQueryValues.sort();
   	
-  	const serverTableUpdatingIdentity = sortedCombinationKeys.join('+');
+  	const serverTableUpdatingIdentity = sortedCombinationKeys.join("+");
   	const md5OfServerTableUpdatingIdentity = Md5.init(serverTableUpdatingIdentity);
   	
   	notificationInfos[schema.group][md5OfServerTableUpdatingIdentity] = notificationInfos[schema.group][md5OfServerTableUpdatingIdentity] || {
@@ -41,7 +40,7 @@ const NotificationHelper = {
   	const clientTableUpdatingIdentity = [schema.group, ...sortedCustomQueryValues].join();
   	const md5OfClientTableUpdatingIdentity = Md5.init(clientTableUpdatingIdentity);
   	
-  	notificationInfos[schema.group][md5OfServerTableUpdatingIdentity]['combinations'][md5OfClientTableUpdatingIdentity] = true;
+  	notificationInfos[schema.group][md5OfServerTableUpdatingIdentity]["combinations"][md5OfClientTableUpdatingIdentity] = true;
   	
   	return md5OfClientTableUpdatingIdentity;
   },
@@ -60,10 +59,10 @@ const NotificationHelper = {
   				
   				for (const key of keys) {
   					if (schema.keys[key]) {
-  						sortedCustomQueryValues.push(key + ':' + clonedResult.keys[key]);
+  						sortedCustomQueryValues.push(key + ":" + clonedResult.keys[key]);
   					}
   					if (schema.columns[key]) {
-  						sortedCustomQueryValues.push(key + ':' + clonedResult.columns[key]);
+  						sortedCustomQueryValues.push(key + ":" + clonedResult.columns[key]);
   					}
   				}
   				
@@ -88,7 +87,7 @@ const NotificationHelper = {
   				const md5OfClientTableUpdatingIdentity = Md5.init(clientTableUpdatingIdentity);
   				
   				if (combinations[md5OfClientTableUpdatingIdentity]) {
-  					identities[md5OfClientTableUpdatingIdentity] = identities[md5OfClientTableUpdatingIdentity] || {};
+  					identities[md5OfClientTableUpdatingIdentity] = identities[md5OfClientTableUpdatingIdentity] || [];
   					identities[md5OfClientTableUpdatingIdentity].push(clonedResult);
   				}
   			}
@@ -106,7 +105,7 @@ const NotificationHelper = {
   		case ActionType.Insert:
   			for (const identity in identities) {
   				if (identities.hasOwnProperty(identity)) {
-		  			socket.emit('insert', {
+		  			socket.emit("insert", {
 		  				id: identity,
 		  				results: identities[identity]
 		  			});
@@ -116,7 +115,7 @@ const NotificationHelper = {
   		case ActionType.Update:
   			for (const identity in identities) {
 	  			if (identities.hasOwnProperty(identity)) {
-		  			socket.emit('update', {
+		  			socket.emit("update", {
 		  				id: identity,
 		  				results: identities[identity]
 		  			});
@@ -126,7 +125,7 @@ const NotificationHelper = {
   		case ActionType.Upsert:
   			for (const identity in identities) {
 	  			if (identities.hasOwnProperty(identity)) {
-		  			socket.emit('upsert', {
+		  			socket.emit("upsert", {
 		  				id: identity,
 		  				results: identities[identity]
 		  			});
@@ -136,7 +135,7 @@ const NotificationHelper = {
   		case ActionType.Delete:
   			for (const identity in identities) {
 	  			if (identities.hasOwnProperty(identity)) {
-		  			socket.emit('delete', {
+		  			socket.emit("delete", {
 		  				id: identity,
 		  				results: identities[identity]
 		  			});

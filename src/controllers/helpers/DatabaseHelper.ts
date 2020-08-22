@@ -465,7 +465,7 @@ const DatabaseHelper = {
             	if (_hash[index]) continue;
             	_hash[index] = true;
             
-            	let forwarding = {
+            	const forwarding = {
                 target: _schema.source,
                 group: _currentGroup,
                 name: _currentName,
@@ -1028,7 +1028,7 @@ const DatabaseHelper = {
 		  }
 		});
   },
-	retrieve: async (data: Input[], baseSchema: DataTableSchema, session: any=null, notifyUpdates: boolean=false, boolean=false): Promise<{[Identifier: string]: HierarchicalDataTable}> => {
+	retrieve: async (data: Input[], baseSchema: DataTableSchema, session: any=null, notifyUpdates: boolean=false): Promise<{[Identifier: string]: HierarchicalDataTable}> => {
 		return new Promise(async (resolve, reject) => {
 		  try {
 		  	if (data != null) {
