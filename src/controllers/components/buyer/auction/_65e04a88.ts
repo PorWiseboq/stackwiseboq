@@ -384,7 +384,7 @@ class Controller extends Base {
       	
    		  NotificationHelper.notifyUpdates(
    		    ActionType.Upsert,
-   		    schema
+   		    schema,
    		    await DatabaseHelper.update(data, schema, this.request.session)
    		  );
    		  
