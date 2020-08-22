@@ -84,13 +84,13 @@ const NotificationHelper = {
   	socket.on('update', binded[notificationURI]['update'] = (message: any) => {
   		if (message.id == identity) {
         for (let result of message.results) {
-        	let found = true;
+        	let found = null;
         	
         	for (let row of table.rows) {
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = false;
+                  found = row;
                   break;
                 }
               }
@@ -100,12 +100,12 @@ const NotificationHelper = {
           if (found) {
           	for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
-                row.keys[key] = result.keys[key];
+                found.keys[key] = result.keys[key];
               }
             }
           	for (let key in result.columns) {
               if (result.columns.hasOwnProperty(key)) {
-                row.columns[key] = result.columns[key];
+                found.columns[key] = result.columns[key];
               }
             }
           }
@@ -116,13 +116,13 @@ const NotificationHelper = {
   	socket.on('upsert', binded[notificationURI]['update'] = (message: any) => {
   		if (message.id == identity) {
         for (let result of message.results) {
-        	let found = true;
+        	let found = null;
         	
         	for (let row of table.rows) {
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = false;
+                  found = row;
                   break;
                 }
               }
@@ -132,12 +132,12 @@ const NotificationHelper = {
           if (found) {
           	for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
-                row.keys[key] = result.keys[key];
+                found.keys[key] = result.keys[key];
               }
             }
           	for (let key in result.columns) {
               if (result.columns.hasOwnProperty(key)) {
-                row.columns[key] = result.columns[key];
+                found.columns[key] = result.columns[key];
               }
             }
           } else {
