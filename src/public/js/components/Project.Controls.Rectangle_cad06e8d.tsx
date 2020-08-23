@@ -77,10 +77,10 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7","93ab7a0b","4c781bd8","23ea1ac1","3d0c6a9e"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
     DataManipulationHelper.register("833e4eb9", "retrieve", ["d24ed774","6d57beb9","80a8e675","2e3b6ded","005ec895"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
     DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261","c192b978","7a572ba4","783a0919","aa14b104"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
-    DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i].Listing"});
-    DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i].Listing"});
-    DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i].Listing"});
-    DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i].Listing"});
+    DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
+    DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
+    DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
+    DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
