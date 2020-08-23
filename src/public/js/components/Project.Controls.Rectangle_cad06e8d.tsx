@@ -131,7 +131,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 1) here:
     // 
-    this.setState({quoteType: QuoteType.AUCTIONING});
+    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0});
     
   }
 
@@ -139,7 +139,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 2) here:
     // 
-    this.setState({quoteType: QuoteType.OFFERING});
+    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0});
     
   }
 
@@ -147,7 +147,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 3) here:
     // 
-    this.setState({quoteType: QuoteType.CHATTING});
+    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0});
     
   }
 
@@ -155,7 +155,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
-    this.setState({quoteType: QuoteType.PAID});
+    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0});
     
   }
 
