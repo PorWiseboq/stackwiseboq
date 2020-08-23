@@ -130,7 +130,6 @@ class Controller extends Base {
             this.request.session.save(async () => {
     				  let quoteData = RequestHelper.createInputs({
        		      'Quote.status': 1,
-       		      'Quote.Listing.qid': null,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
        		      'Quote.Auction.Substitute.aid': null
@@ -138,6 +137,15 @@ class Controller extends Base {
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
        		    
+       		    let listingData = RequestHelper.createInputs({
+       		      'Listing.qid': (quoteData['Quote'].rows.length == 0) ? null : quoteData['Quote'].rows[0].keys['qid']
+       		    });
+       		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
+       		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
+       		    
+       		    if (quoteData['Quote'].rows.length != 0) {
+       		      quoteData['Quote'].rows[0].relations['Listing'] = listingDataset['Listing'];
+       		    }
      		      resolve(quoteDataset);
     			  });
           }
@@ -230,7 +238,24 @@ class Controller extends Base {
     return new Promise(async (resolve, reject) => {
     	try {
         let options = RequestHelper.getOptions(this.pageId, this.request);
-        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
+        
+        if (schema.group == 'Quote') {
+          let quoteData = await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate);
+          
+          let listingData = RequestHelper.createInputs({
+   		      'Listing.qid': (quoteData['Quote'].rows.length == 0) ? null : quoteData['Quote'].rows[0].keys['qid']
+   		    });
+   		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
+   		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
+   		    
+   		    if (quoteData['Quote'].rows.length != 0) {
+   		      quoteData['Quote'].rows[0].relations['Listing'] = listingDataset['Listing'];
+   		    }
+          
+          resolve(quoteData);
+        } else {
+          resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
+        }
       } catch(error) {
         reject(error);
       }
@@ -279,16 +304,6 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('0856c24b', "relational", "Quote.Listing", "qid");
-		ValidationHelper.registerInput('0856c24b', "Hidden 1", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '0856c24b' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 1 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
 		RequestHelper.registerInput('1921d1d6', "relational", "Quote.Auction", "qid");
 		ValidationHelper.registerInput('1921d1d6', "Hidden 5", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -324,16 +339,6 @@ class Controller extends Base {
 		ValidationHelper.registerInput('4cade2e7', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '4cade2e7' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('93ab7a0b', "relational", "Quote.Listing", "qid");
-		ValidationHelper.registerInput('93ab7a0b', "Hidden 2", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '93ab7a0b' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
@@ -381,16 +386,6 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('6d57beb9', "relational", "Quote.Listing", "qid");
-		ValidationHelper.registerInput('6d57beb9', "Hidden 3", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '6d57beb9' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 3 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
 		RequestHelper.registerInput('80a8e675', "relational", "Quote.Auction", "qid");
 		ValidationHelper.registerInput('80a8e675', "Hidden 9", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -426,16 +421,6 @@ class Controller extends Base {
 		ValidationHelper.registerInput('d1920261', "Hidden 4", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'd1920261' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 4 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('c192b978', "relational", "Quote.Listing", "qid");
-		ValidationHelper.registerInput('c192b978', "Hidden 4", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'c192b978' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 4 here:
       // 
