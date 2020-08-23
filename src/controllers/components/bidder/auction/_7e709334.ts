@@ -138,13 +138,13 @@ class Controller extends Base {
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
        		    
        		    let listingData = RequestHelper.createInputs({
-       		      'Listing.qid': (quoteData['Quote'].rows.length == 0) ? null : quoteData['Quote'].rows[0].keys['qid']
+       		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
        		    });
        		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
        		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
        		    
-       		    if (quoteData['Quote'].rows.length != 0) {
-       		      quoteData['Quote'].rows[0].relations['Listing'] = listingDataset['Listing'];
+       		    if (quoteDataset['Quote'].rows.length != 0) {
+       		      quoteDataset['Quote'].rows[0].relations['Listing'] = listingDataset['Listing'];
        		    }
      		      resolve(quoteDataset);
     			  });
@@ -240,19 +240,19 @@ class Controller extends Base {
         let options = RequestHelper.getOptions(this.pageId, this.request);
         
         if (schema.group == 'Quote') {
-          let quoteData = await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate);
+          let quoteDataset = await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate);
           
           let listingData = RequestHelper.createInputs({
-   		      'Listing.qid': (quoteData['Quote'].rows.length == 0) ? null : quoteData['Quote'].rows[0].keys['qid']
+   		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
    		    });
    		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
    		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
    		    
-   		    if (quoteData['Quote'].rows.length != 0) {
-   		      quoteData['Quote'].rows[0].relations['Listing'] = listingDataset['Listing'];
+   		    if (quoteDataset['Quote'].rows.length != 0) {
+   		      quoteDataset['Quote'].rows[0].relations['Listing'] = listingDataset['Listing'];
    		    }
           
-          resolve(quoteData);
+          resolve(quoteDataset);
         } else {
           resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
         }
