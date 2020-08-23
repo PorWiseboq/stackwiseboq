@@ -143,8 +143,16 @@ class Controller extends Base {
        		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
        		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
        		    
-       		    if (quoteDataset['Quote'].rows.length != 0) {
-       		      quoteDataset['Quote'].rows[0].relations['Listing'] = listingDataset['Listing'];
+       		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
+       		      if (i == 0) {
+         		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
+         		    } else {
+         		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
+         		        source: SourceType.Relational,
+                  	group: 'Listing',
+                    rows: []
+         		      };
+         		    }
        		    }
      		      resolve(quoteDataset);
     			  });
@@ -248,8 +256,16 @@ class Controller extends Base {
    		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
    		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
    		    
-   		    if (quoteDataset['Quote'].rows.length != 0) {
-   		      quoteDataset['Quote'].rows[0].relations['Listing'] = listingDataset['Listing'];
+   		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
+   		      if (i == 0) {
+     		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
+     		    } else {
+     		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
+     		        source: SourceType.Relational,
+              	group: 'Listing',
+                rows: []
+     		      };
+     		    }
    		    }
           
           resolve(quoteDataset);
