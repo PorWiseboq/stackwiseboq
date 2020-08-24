@@ -97,7 +97,7 @@ const NotificationHelper = {
   	
   	return md5OfClientTableUpdatingIdentity;
   },
-  getUniqueListOfIdentities: (schema: DataTableSchema, results: HierarchicalDataRow[]): {[Identifier: string]: {listeners: string; results: HierarchicalDataRow[]}} => {
+  getUniqueListOfIdentities: (schema: DataTableSchema, results: HierarchicalDataRow[]): {[Identifier: string]: {listeners: any; results: HierarchicalDataRow[]}} => {
   	const notificationInfo = notificationInfos[schema.group] || {};
   	const identities = {};
   	
