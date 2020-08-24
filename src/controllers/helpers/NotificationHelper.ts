@@ -10,13 +10,14 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
 const notificationInfos = {};
+const sessionLookupTable = {};
 
 if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
   dotenv.config();
 }
 
 socket.sockets.on("connection", (socket) => {
-	const req = {headers: socket.handshake.headers};
+	const req: any = {headers: socket.handshake.headers};
 	const parser = cookieParser(process.env.SESSION_SECRET);
 	
 	parser(req, {}, () => {});
@@ -37,7 +38,7 @@ socket.sockets.on("connection", (socket) => {
 					  	if (combinations.hasOwnProperty(md5OfClientTableUpdatingIdentity)) {
 			  				const combinationInfo = combinations[md5OfClientTableUpdatingIdentity];
 			  				
-			  				if (!combinationInfo.hasOwnProperty(sessionId)) {
+			  				if (combinationInfo.hasOwnProperty(sessionId)) {
 						  		combinationInfo[sessionId] = socket;
 						  	}
 					  	}
@@ -49,9 +50,11 @@ socket.sockets.on("connection", (socket) => {
   }
   
   setSocket(socket);
+	sessionLookupTable[sessionId] = socket;
   
   socket.on("disconnect", (socket) => {
   	setSocket(null);
+  	sessionLookupTable[sessionId] = null;
   });
 });
 
