@@ -87,10 +87,11 @@ const NotificationHelper = {
         	let found = null;
         	
         	for (let row of table.rows) {
+        		found = row;
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = row;
+                  found = null;
                   break;
                 }
               }
@@ -119,10 +120,11 @@ const NotificationHelper = {
         	let found = null;
         	
         	for (let row of table.rows) {
+        		found = row;
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = row;
+                  found = null;
                   break;
                 }
               }

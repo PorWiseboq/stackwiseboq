@@ -105,10 +105,11 @@ class Base extends React.Component {
         	let found = null;
         		
         	for (let row of data) {
+        		found = row;
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = row;
+                	found = null;
                   break;
                 }
               }
@@ -134,10 +135,11 @@ class Base extends React.Component {
         	let found = null;
         	
         	for (let row of data) {
+        		found = row;
         		for (let key in result.keys) {
               if (result.keys.hasOwnProperty(key)) {
                 if (row.keys[key] != result.keys[key]) {
-                  found = row;
+                	found = null;
                   break;
                 }
               }
