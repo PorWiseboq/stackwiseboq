@@ -10,6 +10,7 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
 const notificationInfos = {};
+const sessionLookupTable = {};
 const reverseLookupTable = {};
 
 if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
@@ -23,6 +24,9 @@ socket.sockets.on("connection", (socket) => {
 	parser(req, {}, () => {});
 	
   const sessionId = req.signedCookies['connect.sid'];
+	if (!sessionId) return;
+	
+	sessionLookupTable[socket.id] = sessionId;
   
 	if (reverseLookupTable.hasOwnProperty(sessionId)) {
 		for (const combinationInfo of reverseLookupTable[sessionId]) {
@@ -75,7 +79,7 @@ const NotificationHelper = {
   	const combinationInfo = combinations[md5OfClientTableUpdatingIdentity];
   	
   	if (!combinationInfo.hasOwnProperty(session.id)) {
-  		combinationInfo[session.id] = null;
+  		combinationInfo[session.id] = sessionLookupTable[session.id] || null;
   		
   		reverseLookupTable[session.id] = reverseLookupTable[session.id] || [];
   		reverseLookupTable[session.id].push(combinationInfo);
