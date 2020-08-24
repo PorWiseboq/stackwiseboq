@@ -10,8 +10,6 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
 const notificationInfos = {};
-const sessionLookupTable = {};
-const reverseLookupTable = {};
 
 if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
   dotenv.config();
@@ -25,21 +23,36 @@ socket.sockets.on("connection", (socket) => {
 	
   const sessionId = req.signedCookies['connect.sid'];
 	if (!sessionId) return;
-	
-	sessionLookupTable[socket.id] = sessionId;
   
-	if (reverseLookupTable.hasOwnProperty(sessionId)) {
-		for (const combinationInfo of reverseLookupTable[sessionId]) {
-			combinationInfo[sessionId] = socket.id;
-		}
-		
-		socket.on("disconnect", (socket) => {
-			for (const combinationInfo of reverseLookupTable[sessionId]) {
-				delete combinationInfo[sessionId];
-			}
-			delete reverseLookupTable[sessionId];
-		});
-	}
+  const setSocket = (socket: any) => {
+  	for (const group in notificationInfos) {
+	  	if (notificationInfos.hasOwnProperty(group)) {
+	  		const notificationInfo = notificationInfos[group];
+	  		
+	  		for (const md5OfServerTableUpdatingIdentity in notificationInfo) {
+			  	if (notificationInfo.hasOwnProperty(md5OfServerTableUpdatingIdentity)) {
+	  				const combinations = notificationInfo[md5OfServerTableUpdatingIdentity].combinations;
+	  				
+	  				for (const md5OfClientTableUpdatingIdentity in combinations) {
+					  	if (combinations.hasOwnProperty(md5OfClientTableUpdatingIdentity)) {
+			  				const combinationInfo = combinations[md5OfClientTableUpdatingIdentity];
+			  				
+			  				if (!combinationInfo.hasOwnProperty(sessionId)) {
+						  		combinationInfo[sessionId] = socket;
+						  	}
+					  	}
+					  }
+			  	}
+			  }
+	  	}
+	  }
+  }
+  
+  setSocket(socket);
+  
+  socket.on("disconnect", (socket) => {
+  	setSocket(null);
+  });
 });
 
 const NotificationHelper = {
@@ -80,9 +93,6 @@ const NotificationHelper = {
   	
   	if (!combinationInfo.hasOwnProperty(session.id)) {
   		combinationInfo[session.id] = sessionLookupTable[session.id] || null;
-  		
-  		reverseLookupTable[session.id] = reverseLookupTable[session.id] || [];
-  		reverseLookupTable[session.id].push(combinationInfo);
   	}
   	
   	return md5OfClientTableUpdatingIdentity;
@@ -142,6 +152,8 @@ const NotificationHelper = {
   						if (combinationInfo.hasOwnProperty(sessionId)) {
   							if (combinationInfo[sessionId] != null) {
   								identitiesInfo.listeners.push(combinationInfo[sessionId]);
+  							} else {
+  								// [TODO]: delayed transmits (delay / race condition)
   							}
   						}
   					}
@@ -162,9 +174,8 @@ const NotificationHelper = {
   		case ActionType.Insert:
   			for (const identity in identities) {
   				if (identities.hasOwnProperty(identity)) {
-  					for (const socketId of identities[identity].listeners) {
-  						socket.sockets.sockets[socketId] && socket.sockets.sockets[socketId]
-  							.emit("insert_" + identity, {
+  					for (const socket of identities[identity].listeners) {
+  						socket.emit("insert_" + identity, {
 			  				id: identity,
 			  				results: identities[identity].results
 			  			});
@@ -175,9 +186,8 @@ const NotificationHelper = {
   		case ActionType.Update:
   			for (const identity in identities) {
 	  			if (identities.hasOwnProperty(identity)) {
-	  				for (const socketId of identities[identity].listeners) {
-  						socket.sockets.sockets[socketId] && socket.sockets.sockets[socketId]
-  							.emit("update_" + identity, {
+	  				for (const socket of identities[identity].listeners) {
+  						socket.emit("update_" + identity, {
 			  				id: identity,
 			  				results: identities[identity].results
 			  			});
@@ -188,9 +198,8 @@ const NotificationHelper = {
   		case ActionType.Upsert:
   			for (const identity in identities) {
 	  			if (identities.hasOwnProperty(identity)) {
-		  			for (const socketId of identities[identity].listeners) {
-  						socket.sockets.sockets[socketId] && socket.sockets.sockets[socketId]
-  							.emit("upsert_" + identity, {
+		  			for (const socket of identities[identity].listeners) {
+  						socket.emit("upsert_" + identity, {
 			  				id: identity,
 			  				results: identities[identity].results
 		  				});
@@ -201,9 +210,8 @@ const NotificationHelper = {
   		case ActionType.Delete:
   			for (const identity in identities) {
 	  			if (identities.hasOwnProperty(identity)) {
-		  			for (const socketId of identities[identity].listeners) {
-  						socket.sockets.sockets[socketId] && socket.sockets.sockets[socketId]
-  							.emit("delete_" + identity, {
+		  			for (const socket of identities[identity].listeners) {
+  						socket.emit("delete_" + identity, {
 			  				id: identity,
 			  				results: identities[identity].results
 		  				});
