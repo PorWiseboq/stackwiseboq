@@ -83,7 +83,7 @@ const NotificationHelper = {
         NotificationHelper.notifyTableUpdates(message);
   		}
     });
-  	socket.on('delete' + identity, bindedFunctions[notificationURI]['delete'] = (message: any) => {
+  	socket.on('delete_' + identity, bindedFunctions[notificationURI]['delete'] = (message: any) => {
   		if (message.id == identity) {
   			for (let result of message.results) {
           let collection = table.rows.filter((row) => {
@@ -102,7 +102,7 @@ const NotificationHelper = {
         NotificationHelper.notifyTableUpdates(message);
   		}
     });
-  	socket.on('update' + identity, bindedFunctions[notificationURI]['update'] = (message: any) => {
+  	socket.on('update_' + identity, bindedFunctions[notificationURI]['update'] = (message: any) => {
   		if (message.id == identity) {
         for (let result of message.results) {
         	let found = null;
@@ -136,7 +136,7 @@ const NotificationHelper = {
         NotificationHelper.notifyTableUpdates(message);
   		}
     });
-  	socket.on('upsert' + identity, bindedFunctions[notificationURI]['upsert'] = (message: any) => {
+  	socket.on('upsert_' + identity, bindedFunctions[notificationURI]['upsert'] = (message: any) => {
   		if (message.id == identity) {
         for (let result of message.results) {
         	let found = null;
