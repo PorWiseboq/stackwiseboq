@@ -16,10 +16,6 @@ import dotenv from "dotenv";
 
 const MongoStore = mongo(session);
 
-if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
-  dotenv.config();
-}
-
 // Create Express server
 const app = express();
 let socket = null;
@@ -47,8 +43,8 @@ if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1
 }
 
 if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
-	app.use(secure);
-	app.enable("trust proxy");
+	// app.use(secure);
+	// app.enable("trust proxy");
 }
 
 if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
