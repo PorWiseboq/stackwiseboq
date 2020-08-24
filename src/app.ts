@@ -64,7 +64,7 @@ if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
     store: new MongoStore({
         url: process.env[process.env.DOCUMENT_DATABASE_KEY],
         autoReconnect: true
-    })
+    }),
     cookie: { secure: true }
   }));
 } else {
@@ -75,7 +75,7 @@ if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
     store: new MongoStore({
 				url: process.env[process.env.DOCUMENT_DATABASE_KEY],
 				autoReconnect: true
-    })
+    }),
     cookie: {}
   }));
 }
