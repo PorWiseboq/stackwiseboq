@@ -3,12 +3,12 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../../../../helpers/ValidationHelper.js';
-import {RequestHelper} from '../../../../helpers/RequestHelper.js';
-import {RenderHelper} from '../../../../helpers/RenderHelper.js';
-import {DataTableSchema} from '../../../../helpers/SchemaHelper.js';
-import {Base} from '../../../Base.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../../../../helpers/DatabaseHelper.js";
+import {ValidationInfo, ValidationHelper} from "../../../../helpers/ValidationHelper.js";
+import {RequestHelper} from "../../../../helpers/RequestHelper.js";
+import {RenderHelper} from "../../../../helpers/RenderHelper.js";
+import {DataTableSchema} from "../../../../helpers/SchemaHelper.js";
+import {Base} from "../../../Base.js";
 
 // <---Auto[Import]
 
@@ -69,7 +69,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    let [action, schema, data] = this.initialize(request);
+	    const [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -227,8 +227,8 @@ class Controller extends Base {
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	let data: Input[] = [];
+  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	const data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
@@ -237,50 +237,50 @@ class Controller extends Base {
     RequestHelper.registerSubmit("473d370d", "bdcbb907", null, [], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false});
     RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false});
-		RequestHelper.registerInput('bc041e39', undefined, undefined, undefined);
-		ValidationHelper.registerInput('bc041e39', "Radio 1", false, undefined);
+		RequestHelper.registerInput("bc041e39", undefined, undefined, undefined);
+		ValidationHelper.registerInput("bc041e39", "Radio 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'bc041e39' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "bc041e39" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Radio 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('1411ca4c', undefined, undefined, undefined);
-		ValidationHelper.registerInput('1411ca4c', "Checkbox 1", false, undefined);
+		RequestHelper.registerInput("1411ca4c", undefined, undefined, undefined);
+		ValidationHelper.registerInput("1411ca4c", "Checkbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '1411ca4c' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "1411ca4c" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Checkbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('c6cd6a36', undefined, undefined, undefined);
-		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", false, undefined);
+		RequestHelper.registerInput("c6cd6a36", undefined, undefined, undefined);
+		ValidationHelper.registerInput("c6cd6a36", "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "c6cd6a36" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('0c59a0a4', undefined, undefined, undefined);
-		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", false, undefined);
+		RequestHelper.registerInput("0c59a0a4", undefined, undefined, undefined);
+		ValidationHelper.registerInput("0c59a0a4", "Textbox 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '0c59a0a4' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "0c59a0a4" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('5cab012e', undefined, undefined, undefined);
-		ValidationHelper.registerInput('5cab012e', "Textbox 3", false, undefined);
+		RequestHelper.registerInput("5cab012e", undefined, undefined, undefined);
+		ValidationHelper.registerInput("5cab012e", "Textbox 3", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "5cab012e" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
@@ -292,7 +292,7 @@ class Controller extends Base {
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]
