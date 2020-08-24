@@ -47,10 +47,12 @@ if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1
 }
 
 if (["staging", "production"].indexOf(process.env.NODE_ENV) != -1) {
-	// Use Flexible SSL on Cloudflare instead.
-	//
-	// app.use(secure);
-	// app.enable("trust proxy");
+	app.use(secure);
+	app.enable("trust proxy");
+}
+
+if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
+  dotenv.config();
 }
 
 // Express configuration
