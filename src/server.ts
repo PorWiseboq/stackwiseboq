@@ -20,4 +20,4 @@ app.use(errorHandler());
   console.log("  Press CTRL-C to stop\n");
 });*/ 
 
-export default server;
+//export default server;
