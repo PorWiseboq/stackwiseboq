@@ -5186,7 +5186,7 @@
         "  ",
         "  private refresh(): void {",
         "    const value = this.getDataFromNotation('Substitute.type', false);",
-        "    this.state.type = (value == null) ? -1 : value;",
+        "    this.state.type = (value == null) ? -1 : Math.min(value, this.props.type);",
         "    ",
         "    this.state.title = this.getDataFromNotation('Substitute.title', false) || &quot;&quot;;",
         "    this.state.size = this.getDataFromNotation('Substitute.size', false) || &quot;&quot;;",
@@ -17060,7 +17060,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "c4f2a72bc5fd30224a61b7402ee95d6ae9958513",
-    "Project.Controls.FlowLayout_c6ba5b53": "534fb81a2f17ddf793cf1da151fa05a938412b27"
+    "Project.Controls.FlowLayout_c6ba5b53": "c9e4fcc65089a130d28966e52019b7c6edb0195b"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "9564ac25a5fc6ae3eb64179b6ada966a12642acc",

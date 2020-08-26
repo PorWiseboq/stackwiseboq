@@ -90,7 +90,7 @@ class FlowLayout_c6ba5b53 extends Base {
   
   private refresh(): void {
     const value = this.getDataFromNotation('Substitute.type', false);
-    this.state.type = (value == null) ? -1 : value;
+    this.state.type = (value == null) ? -1 : Math.min(value, this.props.type);
     
     this.state.title = this.getDataFromNotation('Substitute.title', false) || "";
     this.state.size = this.getDataFromNotation('Substitute.size', false) || "";
