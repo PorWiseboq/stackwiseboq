@@ -4685,6 +4685,7 @@
         "",
         "",
         "",
+        "",
         "            <div class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"cad06e8d\" internal-fsb-name=\"Application\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column; height: 100vh; display: flex; background: linear-gradient(15deg, rgba(153, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%); -fsb-background-type: linear; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px\" internal-fsb-react-mode=\"Document\" internal-fsb-react-code-import=\"",
         "",
         "// Import additional modules here:",
@@ -5178,17 +5179,17 @@
         "  protected initialize(): void {",
         "    this.state.group = Math.random().toString();",
         "    ",
-        "    this.refresh();",
+        "    this.refresh(this.props);",
         "  }",
         "  ",
         "  protected componentWillReceiveProps(nextProps): void {",
-        "    this.refresh();",
+        "    this.refresh(nextProps);",
         "  }",
         "  ",
-        "  private refresh(): void {",
+        "  private refresh(props): void {",
         "    const value = this.getDataFromNotation('Substitute.type', false);",
-        "    this.state.type = (value == null) ? -1 : Math.min(value, this.props.type);",
-        "    this.state.error = (value == null) ? false : Math.min(value, this.props.type) !== value;",
+        "    this.state.error = (value == null) ? false : Math.min(value, props.type) !== value;",
+        "    this.state.type = (this.state.error || value == null) ? -1 : Math.min(value, props.type);",
         "    ",
         "    this.state.title = this.getDataFromNotation('Substitute.title', false) || &quot;&quot;;",
         "    this.state.size = this.getDataFromNotation('Substitute.size', false) || &quot;&quot;;",
@@ -6029,11 +6030,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
-          "24731127",
+          "64a6ac8c",
           0,
-          1,
+          4,
           null
         ]
       },
@@ -6401,7 +6402,7 @@
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><label class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"a60b855b\" internal-fsb-name=\"Label 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89\" internal-fsb-guid=\"b6c9ad89\" internal-fsb-name=\"Radio 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Radio\" internal-fsb-reusable-preset-name=\"quote_box_input\" style=\"-fsb-empty\" internal-fsb-react-data=\"Quote.substitute\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้\"><input type=\"radio\" class=\"\" name=\"substitute\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"substitute\" value=\"0\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-self-b6c9ad89\" internal-fsb-guid=\"b6c9ad89\" internal-fsb-name=\"Radio 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Radio\" internal-fsb-reusable-preset-name=\"quote_box_input\" style=\"-fsb-empty\" internal-fsb-react-data=\"Quote.substitute\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้\"><input type=\"radio\" class=\"\" name=\"substitute\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"substitute\" value=\"2\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-0 -fsb-self-b5cd72c0\" internal-fsb-guid=\"b5cd72c0\" internal-fsb-name=\"TextElement 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"quote_box_input_title\">ทดแทน</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2 -fsb-self-8050ab15\" internal-fsb-guid=\"8050ab15\" internal-fsb-name=\"TextElement 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"quote_box_input_subtitle\">สินค้าทดแทนใช้งานได้เหมือนกันแต่ประหยัดกว่า</div>",
         "                                                        </div>",
@@ -6417,7 +6418,7 @@
         "                                                </label><label class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"eee57414\" internal-fsb-name=\"Label 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div class=\"internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0\" internal-fsb-guid=\"cc34eced\" internal-fsb-name=\"Radio 5\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"Quote.substitute\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" name=\"substitute\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"substitute\" value=\"2\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
+        "                                                            <div class=\"internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0\" internal-fsb-guid=\"cc34eced\" internal-fsb-name=\"Radio 5\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"Quote.substitute\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" name=\"substitute\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"substitute\" value=\"0\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"127c0175\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">เจาะจง</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2 -fsb-preset-8050ab15\" internal-fsb-guid=\"8e3dd80d\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8050ab15\">เจาะจงตามที่ระบุเท่านั้น</div>",
         "                                                        </div>",
@@ -7194,11 +7195,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0e75306a",
+        "selectingElementGUID": "cc34eced",
         "currentCursorWalkPath": [
-          "e01619d3",
+          "eee57414",
           0,
-          8,
+          1,
           null
         ]
       },
@@ -17055,14 +17056,14 @@
     "Project.Common.RoleSelector": "615abff14f96063ffe172781bf1ea0d658a7ef11",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_41288a78": "ae829f8af8146f9defa86fad25abea615b1b63ac",
-    "Project.Controls.FlowLayout_b2020622": "016c8aacc7f790673d0b67aae508e623268dc47f",
+    "Project.Controls.FlowLayout_b2020622": "8c2ba3d19f115b0af416d0fe73bf056f8e83b47f",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "c10889889017e2eea27ac4ed981668e5b8ea400e",
+    "Project.Controls.Rectangle_cad06e8d": "d92684dc7cbfc1df267a7d2813aa76b947996070",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "c4f2a72bc5fd30224a61b7402ee95d6ae9958513",
-    "Project.Controls.FlowLayout_c6ba5b53": "1cc94b3ecec8f73ef2e3561a6c8bc50a9a33d32a"
+    "Project.Controls.FlowLayout_c6ba5b53": "8ffc3081ed03e0e5359a5fb4ede7ae49783a27bd"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "9564ac25a5fc6ae3eb64179b6ada966a12642acc",

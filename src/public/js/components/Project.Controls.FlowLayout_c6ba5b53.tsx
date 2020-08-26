@@ -82,17 +82,17 @@ class FlowLayout_c6ba5b53 extends Base {
   protected initialize(): void {
     this.state.group = Math.random().toString();
     
-    this.refresh();
+    this.refresh(this.props);
   }
   
   protected componentWillReceiveProps(nextProps): void {
-    this.refresh();
+    this.refresh(nextProps);
   }
   
-  private refresh(): void {
+  private refresh(props): void {
     const value = this.getDataFromNotation('Substitute.type', false);
-    this.state.type = (value == null) ? -1 : Math.min(value, this.props.type);
-    this.state.error = (value == null) ? false : Math.min(value, this.props.type) !== value;
+    this.state.error = (value == null) ? false : Math.min(value, props.type) !== value;
+    this.state.type = (this.state.error || value == null) ? -1 : Math.min(value, props.type);
     
     this.state.title = this.getDataFromNotation('Substitute.title', false) || "";
     this.state.size = this.getDataFromNotation('Substitute.size', false) || "";
