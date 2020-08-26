@@ -1,7 +1,6 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-
 // Auto[Import]--->
 import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
@@ -43,7 +42,11 @@ interface IProps extends IAutoBaseProps {
   
 }
 interface IState extends IAutoBaseState {
-  selectedValue: number;
+  type: number;
+  error: boolean;
+  title: string;
+  size: string;
+  quantity: string;
   group: string;
 }
 
@@ -51,7 +54,10 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  selectedValue: -1
+  type: -1,
+  title: "",
+  size: "",
+  quantity: ""
 });
 
 // Auto[ClassBegin]--->
@@ -76,8 +82,23 @@ class FlowLayout_c6ba5b53 extends Base {
   protected initialize(): void {
     this.state.group = Math.random().toString();
     
+    this.refresh(this.props);
+  }
+  
+  protected componentWillReceiveProps(nextProps): void {
+    this.refresh(nextProps);
+  }
+  
+  private refresh(props): void {
     const value = this.getDataFromNotation('Substitute.type', false);
-    this.state.selectedValue = (value == null) ? -1 : value;
+    this.state.error = (value == null) ? false : Math.min(value, props.type) !== value;
+    this.state.type = (this.state.error || value == null) ? -1 : Math.min(value, props.type);
+    
+    this.state.title = this.getDataFromNotation('Substitute.title', false) || "";
+    this.state.size = this.getDataFromNotation('Substitute.size', false) || "";
+    this.state.quantity = this.getDataFromNotation('Substitute.quantity', false) || "";
+    
+    this.forceUpdate();
   }
   
   protected componentDidMount(): void {
@@ -93,49 +114,63 @@ class FlowLayout_c6ba5b53 extends Base {
     return super.getDataFromNotation(notation, inArray);
   }
   
-  
-  
   // Auto[Merging]--->
   protected onRadioClick_1832b944(event: Event) {
 
     // Handle the event of onRadioClick (Radio 5) here:
     // 
-    this.setState({
-      selectedValue: 0
-    });
+    this.setState({type: 0});
     
   }
-
 
   protected onRadioClick_b91e2739(event: Event) {
 
     // Handle the event of onRadioClick (Radio 4) here:
     // 
-    this.setState({
-      selectedValue: 1
-    });
+    this.setState({type: 1});
     
   }
-
 
   protected onRadioClick_03aab0e5(event: Event) {
 
     // Handle the event of onRadioClick (Radio 3) here:
     // 
-    this.setState({
-      selectedValue: 2
-    });
+    this.setState({type: 2});
     
   }
-
 
   protected onRadioClick_957c1568(event: Event) {
 
     // Handle the event of onRadioClick (Radio 6) here:
     // 
-    this.setState({
-      selectedValue: 3
-    });
+    this.setState({type: 3});
+    
+  }
+
+  protected onTextboxChange_9c338431(event: Event) {
+
+    // Handle the event of onTextboxChange (Name) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    this.setState({title: element.value});
+    
+  }
+
+  protected onTextboxChange_d913e6a1(event: Event) {
+
+    // Handle the event of onTextboxChange (Size) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    this.setState({size: element.value});
+    
+  }
+
+  protected onTextboxChange_c22ec668(event: Event) {
+
+    // Handle the event of onTextboxChange (Quantity) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    this.setState({quantity: element.value});
     
   }
   // <---Auto[Merging]
@@ -143,7 +178,7 @@ class FlowLayout_c6ba5b53 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 -fsb-self-c6ba5b53 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="c6ba5b53")
+      div(style=Object.assign({background: (()=>{return (this.state.error) ? 'rgb(255, 172, 172)' : '';})(), borderTopColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderRightColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderBottomColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderLeftColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})()}, this.props.forward && this.props.forward.styles || {}), type=this.getDataFromNotation('Quote[#i].substitute', false), className="internal-fsb-element col-12 -fsb-self-c6ba5b53 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="c6ba5b53")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             .internal-fsb-element.col-4.offset-0.-fsb-self-65ec89d1(internal-fsb-guid="65ec89d1")
@@ -159,39 +194,39 @@ class FlowLayout_c6ba5b53 extends Base {
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, onClick=this.onRadioClick_1832b944.bind(this), internal-fsb-guid="1832b944")
-                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="0", name=this.state.group, defaultChecked=this.getDataFromNotation("Substitute.type") == '0')
+                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="0", name=this.state.group, checked=this.state.type == 0, defaultChecked=this.getDataFromNotation("Substitute.type") == '0')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="b80041d3")
                           | เจาะจง
-                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}, internal-fsb-guid="eb192633")
+                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px', display: (()=>{return (this.props.type >= 1) ? 'block' : 'none';})()}, internal-fsb-guid="eb192633")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, onClick=this.onRadioClick_b91e2739.bind(this), internal-fsb-guid="b91e2739")
-                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="1", name=this.state.group, defaultChecked=this.getDataFromNotation("Substitute.type") == '1')
+                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="1", name=this.state.group, checked=this.state.type == 1, defaultChecked=this.getDataFromNotation("Substitute.type") == '1')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="58266972")
                           | เทียบเท่า
-                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}, internal-fsb-guid="2cb33325")
+                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px', display: (()=>{return (this.props.type >= 2) ? 'block' : 'none';})()}, internal-fsb-guid="2cb33325")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, onClick=this.onRadioClick_03aab0e5.bind(this), internal-fsb-guid="03aab0e5")
-                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="2", name=this.state.group, defaultChecked=this.getDataFromNotation("Substitute.type") == '2')
+                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="2", name=this.state.group, checked=this.state.type == 2, defaultChecked=this.getDataFromNotation("Substitute.type") == '2')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="5c2b0578")
                           | ทดแทน
                   label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}, internal-fsb-guid="c1c5b10b")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, onClick=this.onRadioClick_957c1568.bind(this), internal-fsb-guid="957c1568")
-                          input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="3", name=this.state.group, defaultChecked=this.getDataFromNotation("Substitute.type") == '3')
+                          input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="3", name=this.state.group, checked=this.state.type == 3, defaultChecked=this.getDataFromNotation("Substitute.type") == '3')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="a3b9410d")
                           | ไม่มี
-            .internal-fsb-element.col-5.offset-0(style={display: (()=>{return (this.state.selectedValue == 1 || this.state.selectedValue == 2) ? 'block' : 'none';})()}, internal-fsb-guid="483390a6")
+            .internal-fsb-element.col-5.offset-0(style={display: (()=>{return (this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="483390a6")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="9c338431")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, type="text", placeholder="เปลี่ยนวัสดุเป็น", defaultValue=this.getDataFromNotation("Substitute.title"))
-                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="d913e6a1")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, type="text", placeholder="เปลี่ยนขนาดเป็น", defaultValue=this.getDataFromNotation("Substitute.size"))
-                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c22ec668")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, type="text", placeholder="เปลี่ยนปริมาณเป็น", defaultValue=this.getDataFromNotation("Substitute.quantity"))
+                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, onChange=this.onTextboxChange_9c338431.bind(this), internal-fsb-guid="9c338431")
+                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, type="text", placeholder="เปลี่ยนวัสดุเป็น", value=this.state.title)
+                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), internal-fsb-guid="d913e6a1")
+                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.size)
+                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, onChange=this.onTextboxChange_c22ec668.bind(this), internal-fsb-guid="c22ec668")
+                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity)
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("lid"), internal-fsb-guid="ae7e2437")
     `
   }
@@ -202,7 +237,6 @@ DeclarationHelper.declare('Document', 'Controls.FlowLayout_c6ba5b53', FlowLayout
 // Export variables here:
 //
 export {IProps, IState, DefaultProps, DefaultState};
-
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.

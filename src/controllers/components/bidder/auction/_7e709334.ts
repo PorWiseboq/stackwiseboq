@@ -1,7 +1,6 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-
 // Auto[Import]--->
 import {Request, Response} from "express";
 import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../helpers/DatabaseHelper.js';
@@ -17,7 +16,7 @@ import {Base} from '../../Base.js';
 // 
 import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
-
+import {RelationalDatabaseClient} from '../../../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -45,7 +44,6 @@ enum ValidationInfo {
 // Declare private static variables here:
 //
 
-
 // Auto[Interface]--->
 /*interface HierarchicalDataTable {
 	source: SourceType;
@@ -70,7 +68,6 @@ interface Input {
 
 // Declare or extend interfaces here:
 //
-
 
 // Auto[ClassBegin]--->
 class Controller extends Base {
@@ -158,7 +155,11 @@ class Controller extends Base {
          		      };
          		    }
        		    }
-     		      resolve(quoteDataset);
+       		    
+       		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+       		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
+       		    
+     		      resolve(Object.assign({}, quoteDataset, rankDataset));
     			  });
           }
         }
@@ -227,7 +228,104 @@ class Controller extends Base {
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
     	try {
-        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));
+    	  let results = await DatabaseHelper.upsert(data, schema, this.request.session);
+    	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+        
+        if (schema && schema.group == 'Auction' && results.length != 0) {
+          RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
+FROM Auction INNER JOIN Substitute ON Auction.aid = Substitute.aid
+WHERE Auction.qid = ?
+GROUP BY Auction.aid
+HAVING SUM(Substitute.type) = 0
+ORDER BY Auction.price ASC`, [results[0].keys['qid']], async (error, results, fields) => {
+            let wholeSetRankInput = [];
+            let wholeSetRankCount = 0;
+            
+            for (const result of results) {
+              wholeSetRankInput = [...wholeSetRankInput, ...[{
+                target: SourceType.Relational,
+                group: 'Rank',
+                name: 'aid',
+                value: result['aid'],
+                guid: `[${wholeSetRankCount}]`,
+                validation: null
+              }, {
+                target: SourceType.Relational,
+                group: 'Rank',
+                name: 'qid',
+                value: result['qid'],
+                guid: `[${wholeSetRankCount}]`,
+                validation: null
+              }, {
+                target: SourceType.Relational,
+                group: 'Rank',
+                name: 'price',
+                value: result['price'],
+                guid: `[${wholeSetRankCount}]`,
+                validation: null
+              }, {
+                target: SourceType.Relational,
+                group: 'Rank',
+                name: 'rank',
+                value: wholeSetRankCount + 1,
+                guid: `[${wholeSetRankCount}]`,
+                validation: null
+              }]];
+              wholeSetRankCount++;
+            }
+            
+            await DatabaseHelper.upsert(wholeSetRankInput, rank, this.request.session);
+  
+            RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
+FROM Auction INNER JOIN Substitute ON Auction.aid = Substitute.aid
+WHERE Auction.qid = ?
+GROUP BY Auction.aid
+HAVING SUM(Substitute.type) != 0
+ORDER BY Auction.price ASC`, [results[0].keys['qid']], async (error, results, fields) => {
+              let partialSetRankInput = [];
+              let partialSetRankCount = 0;
+              
+              for (const result of results) {
+                partialSetRankInput = [...partialSetRankInput, ...[{
+                  target: SourceType.Relational,
+                  group: 'Rank',
+                  name: 'aid',
+                  value: result['aid'],
+                  guid: `[${partialSetRankCount}]`,
+                  validation: null
+                }, {
+                  target: SourceType.Relational,
+                  group: 'Rank',
+                  name: 'qid',
+                  value: result['qid'],
+                  guid: `[${partialSetRankCount}]`,
+                  validation: null
+                }, {
+                  target: SourceType.Relational,
+                  group: 'Rank',
+                  name: 'price',
+                  value: result['price'],
+                  guid: `[${partialSetRankCount}]`,
+                  validation: null
+                }, {
+                  target: SourceType.Relational,
+                  group: 'Rank',
+                  name: 'rank',
+                  value: partialSetRankCount + 1,
+                  guid: `[${partialSetRankCount}]`,
+                  validation: null
+                }]];
+                partialSetRankCount++;
+              }
+              
+              await DatabaseHelper.upsert(partialSetRankInput, rank, this.request.session);
+              
+              resolve(results);
+        		});
+      		});
+        } else {
+          resolve(results);
+        }
       } catch(error) {
         reject(error);
       }
@@ -294,8 +392,6 @@ class Controller extends Base {
     });
   }
   
-  
- 	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
@@ -678,7 +774,6 @@ class Controller extends Base {
 // Export variables here:
 //
 export default Controller;
-
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
