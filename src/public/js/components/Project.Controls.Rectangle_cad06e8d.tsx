@@ -1,7 +1,6 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-
 // Auto[Import]--->
 import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
@@ -127,8 +126,6 @@ class Rectangle_cad06e8d extends Base {
     else return (this.state.quoteType === quoteType) ? 'none' : 'block';
   }
   
-  
-  
   // Auto[Merging]--->
   protected onButtonSuccess_4a579143(event: Event) {
 
@@ -138,7 +135,6 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-
   protected onButtonSuccess_c05b11c1(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 2) here:
@@ -146,7 +142,6 @@ class Rectangle_cad06e8d extends Base {
     this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0});
     
   }
-
 
   protected onButtonSuccess_833e4eb9(event: Event) {
 
@@ -156,7 +151,6 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-
   protected onButtonSuccess_e9c9b721(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 4) here:
@@ -164,7 +158,6 @@ class Rectangle_cad06e8d extends Base {
     this.setState({quoteType: QuoteType.PAID, selectedIndex: 0});
     
   }
-
 
   protected onButtonSuccess_e76846ad(event: Event) {
 
@@ -177,7 +170,6 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-
   protected onButtonSuccess_802159d0(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 6) here:
@@ -189,7 +181,6 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-
   protected onButtonSuccess_8cbc5b17(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 7) here:
@@ -200,7 +191,6 @@ class Rectangle_cad06e8d extends Base {
     this.forceUpdate();
     
   }
-
 
   protected onButtonSuccess_323ba37c(event: Event) {
 
@@ -511,8 +501,6 @@ DeclarationHelper.declare('Document', 'Controls.Rectangle_cad06e8d', Rectangle_c
 // Export variables here:
 //
 export {IProps, IState, DefaultProps, DefaultState};
-
-
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
