@@ -11,7 +11,7 @@ if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1
   dotenv.config();
 }
 
-if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
+if (["development", "staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
   const https = require("https");
   
   // Development SSL
