@@ -28,7 +28,7 @@ if (["staging", "production"].indexOf(process.env.NODE_ENV) == -1) {
 	const http = require("http");
 	
 	// [TODO] Replace and configure production SSL
-  server = http.createServer(app).listen(process.env.PORT || 8000);
+  server = http.createServer(app).listen(app.get("port"));
 	socket = SocketIO.listen(server);
 }
 
