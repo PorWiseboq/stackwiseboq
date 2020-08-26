@@ -27,6 +27,7 @@ import crypto from 'crypto';
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -47,6 +48,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -320,8 +322,8 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("d1e3b3b3", "e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("d1e3b3b3", "da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("d1e3b3b3", "e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("d1e3b3b3", "da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('74d75b70', "relational", "User", "email");
 		ValidationHelper.registerInput('74d75b70', "Textbox 1", true, "คุณจำเป็นต้องกรอกที่อยู่อีเมล์");
     for (let i=-1; i<128; i++) {
