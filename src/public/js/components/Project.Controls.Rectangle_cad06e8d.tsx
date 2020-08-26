@@ -97,14 +97,61 @@ class Rectangle_cad06e8d extends Base {
   protected componentWillUnmount(): void {
   }
   
+  private getTitle(i: number): string {
+    return this.getDataFromNotation('Quote[' + i + '].title');
+  }
+  
+  private getSubtitle(i: number): string {
+    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
+    const rank = this.getDataFromNotation('Rank');
+    
+    if (!auction || auction.length == 0) return '';
+    else {
+      const aid = auction[0].columns['aid'];
+      let r = null;
+      
+      for (let item of rank) {
+        if (item.keys['aid'] == aid) {
+          r = item.columns['rank'];
+          break;
+        }
+      }
+      
+      if (r == null) return 'ยังไม่ถูกจัดอันดับ';
+      else if (r > 10) return 'ราคาแพงเกินไป';
+      else return `อันดับที่ ${r} / 10`;
+    }
+  }
+  
+  private getTag(i: number): string {
+    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
+    const listing = this.getDataFromNotation('Quote[' + i + '].Listing');
+    
+    if (!auction || auction.length == 0) return 'ใหม่';
+    else {
+      let specific = true;
+      
+      for (const item of listing) {
+        if (!item.relations['Substitute'] ||
+          item.relations['Substitute'].rows.length == 0 ||
+          item.relations['Substitute'].rows[0].columns['type'] != 0) {
+          specific = false;
+          break;
+        }
+      }
+      
+      return (specific) ? 'เสนอครบ' : 'เสนอไม่ครบ';
+    }
+  }
+  
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
-    if (notation == 'Quote[#i].Listing') {
-      notation = notation.replace('#i', this.state.selectedIndex.toString());
-      
+    notation = notation.replace('#i', this.state.selectedIndex.toString());
+    
+    if (notation.match(/Quote\[[0-9]+\].Listing/)) {
       let rows = super.getDataFromNotation(notation, true);
-      let substitute = super.getDataFromNotation(`Quote[${this.state.selectedIndex}].Auction.Substitute`, true);
+      let substitute = super.getDataFromNotation(`${notation.split('.')[0]}.Auction.Substitute`, true);
       
       for (let row of rows) {
       	row.relations['Substitute'] = {
@@ -116,7 +163,6 @@ class Rectangle_cad06e8d extends Base {
       
       return rows;
     } else {
-      notation = notation.replace('#i', this.state.selectedIndex.toString());
       return super.getDataFromNotation(notation, inArray);
     }
   }
@@ -354,11 +400,12 @@ class Rectangle_cad06e8d extends Base {
                                       .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''}, internal-fsb-guid="5a671a7d")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}, internal-fsb-guid="49a6327a")
+                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="49a6327a")
+                                              | #{this.getTitle(i)}
                                             .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="4aee31ab")
-                                              | อันดับที่ 5 / 10
+                                              | #{this.getSubtitle(i)}
                                             .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(internal-fsb-guid="3bec5885")
-                                              | เสนอครบ
+                                              | #{this.getTag(i)}
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}, internal-fsb-guid="24d70384")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
