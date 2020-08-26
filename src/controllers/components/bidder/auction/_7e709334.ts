@@ -154,7 +154,11 @@ class Controller extends Base {
          		      };
          		    }
        		    }
-     		      resolve(quoteDataset);
+       		    
+       		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+       		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
+       		    
+     		      resolve(Object.assign({}, quoteDataset, ));
     			  });
           }
         }
