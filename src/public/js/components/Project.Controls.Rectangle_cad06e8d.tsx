@@ -132,7 +132,7 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
-  private getSubtitle(i: number): string {
+  private getSubtitle(i: number): any {
     const rank = this.getRank(i);
     
     if (rank == -1) return '';
