@@ -1,7 +1,6 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-
 // Auto[Import]--->
 import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
@@ -98,14 +97,80 @@ class Rectangle_cad06e8d extends Base {
   protected componentWillUnmount(): void {
   }
   
+  private getAuctionStatusDetail(i: number): string {
+    const rank = this.getRank(i);
+    const tag = this.getTag(i);
+    
+    if (rank == -1) return 'งานประมูลนี้ทางร้านค้ายังไม่เคยเคาะประมูลมาก่อน';
+    if (rank == null) return 'งานประมูลของคุณยังไม่ได้ถูกจัดอันดับ โปรดกรุณารอสักครู่...';
+    if (rank > 10) return 'งานประมูลนี้ทางร้านค้าเคยเคาะประมูลแล้วแต่พบว่าราคาแพงเกินไปจนหลุด 10 อันดับแรก';
+    
+    return `ตอนนี้คุณอยู่อันดับที่ ${rank} / 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่${tag}`;
+  }
+  
+  private getTitle(i: number): string {
+    return this.getDataFromNotation('Quote[' + i + '].title');
+  }
+  
+  private getRank(i: number): string {
+    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
+    const rank = this.getDataFromNotation('Rank');
+    
+    if (!auction || auction.length == 0) return -1;
+    else {
+      const aid = auction[0].columns['aid'];
+      let r = null;
+      
+      for (let item of rank) {
+        if (item.keys['aid'] == aid) {
+          r = item.columns['rank'];
+          break;
+        }
+      }
+      
+      return r;
+    }
+  }
+  
+  private getSubtitle(i: number): string {
+    const rank = this.getRank(i);
+    
+    if (rank == -1) return '';
+    if (rank == null) return 'ยังไม่ถูกจัดอันดับ';
+    if (rank > 10) return 'ราคาแพงเกินไป';
+    
+    return `อันดับที่ ${rank} / 10`;
+  }
+  
+  private getTag(i: number): string {
+    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
+    const listing = this.getDataFromNotation('Quote[' + i + '].Listing');
+    
+    if (!auction || auction.length == 0) return 'ใหม่';
+    else {
+      let specific = true;
+      
+      for (const item of listing) {
+        if (!item.relations['Substitute'] ||
+          item.relations['Substitute'].rows.length == 0 ||
+          item.relations['Substitute'].rows[0].columns['type'] != 0) {
+          specific = false;
+          break;
+        }
+      }
+      
+      return (specific) ? 'เสนอครบ' : 'เสนอไม่ครบ';
+    }
+  }
+  
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
-    if (notation == 'Quote[#i].Listing') {
-      notation = notation.replace('#i', this.state.selectedIndex.toString());
-      
+    notation = notation.replace('#i', this.state.selectedIndex.toString());
+    
+    if (notation.match(/Quote\[[0-9]+\].Listing/)) {
       let rows = super.getDataFromNotation(notation, true);
-      let substitute = super.getDataFromNotation(`Quote[${this.state.selectedIndex}].Auction.Substitute`, true);
+      let substitute = super.getDataFromNotation(`${notation.split('.')[0]}.Auction.Substitute`, true);
       
       for (let row of rows) {
       	row.relations['Substitute'] = {
@@ -117,7 +182,6 @@ class Rectangle_cad06e8d extends Base {
       
       return rows;
     } else {
-      notation = notation.replace('#i', this.state.selectedIndex.toString());
       return super.getDataFromNotation(notation, inArray);
     }
   }
@@ -126,8 +190,6 @@ class Rectangle_cad06e8d extends Base {
     if (active) return (this.state.quoteType === quoteType) ? 'block' : 'none';
     else return (this.state.quoteType === quoteType) ? 'none' : 'block';
   }
-  
-  
   
   // Auto[Merging]--->
   protected onButtonSuccess_4a579143(event: Event) {
@@ -138,7 +200,6 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-
   protected onButtonSuccess_c05b11c1(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 2) here:
@@ -146,7 +207,6 @@ class Rectangle_cad06e8d extends Base {
     this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0});
     
   }
-
 
   protected onButtonSuccess_833e4eb9(event: Event) {
 
@@ -156,7 +216,6 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-
   protected onButtonSuccess_e9c9b721(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 4) here:
@@ -164,7 +223,6 @@ class Rectangle_cad06e8d extends Base {
     this.setState({quoteType: QuoteType.PAID, selectedIndex: 0});
     
   }
-
 
   protected onButtonSuccess_e76846ad(event: Event) {
 
@@ -177,7 +235,6 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-
   protected onButtonSuccess_802159d0(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 6) here:
@@ -189,7 +246,6 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-
   protected onButtonSuccess_8cbc5b17(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 7) here:
@@ -200,7 +256,6 @@ class Rectangle_cad06e8d extends Base {
     this.forceUpdate();
     
   }
-
 
   protected onButtonSuccess_323ba37c(event: Event) {
 
@@ -364,11 +419,12 @@ class Rectangle_cad06e8d extends Base {
                                       .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''}, internal-fsb-guid="5a671a7d")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}, internal-fsb-guid="49a6327a")
+                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="49a6327a")
+                                              | #{this.getTitle(i)}
                                             .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="4aee31ab")
-                                              | อันดับที่ 5 / 10
+                                              | #{this.getSubtitle(i)}
                                             .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(internal-fsb-guid="3bec5885")
-                                              | เสนอครบ
+                                              | #{this.getTag(i)}
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}, internal-fsb-guid="24d70384")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -422,10 +478,10 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].title"))}, internal-fsb-guid="8c2aa238")
                                         .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="7484ac1e")
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
-                                          | ตอนนี้คุณอยู่อันดับที่ 5 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอครบ
+                                          | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
-                                          _Project_Controls_FlowLayout_c6ba5b53_(key="item_" + i, row=data)
+                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
@@ -511,8 +567,6 @@ DeclarationHelper.declare('Document', 'Controls.Rectangle_cad06e8d', Rectangle_c
 // Export variables here:
 //
 export {IProps, IState, DefaultProps, DefaultState};
-
-
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.

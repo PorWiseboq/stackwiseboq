@@ -3,18 +3,18 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "./../helpers/DatabaseHelper.js";
-import {ValidationInfo, ValidationHelper} from "./../helpers/ValidationHelper.js";
-import {RequestHelper} from "./../helpers/RequestHelper.js";
-import {RenderHelper} from "./../helpers/RenderHelper.js";
-import {DataTableSchema} from "./../helpers/SchemaHelper.js";
-import {Base} from "./Base.js";
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from './../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from './../helpers/ValidationHelper.js';
+import {RequestHelper} from './../helpers/RequestHelper.js';
+import {RenderHelper} from './../helpers/RenderHelper.js';
+import {DataTableSchema} from './../helpers/SchemaHelper.js';
+import {Base} from './Base.js';
 
 // <---Auto[Import]
 
 // Import additional modules here:
 // 
-import {RelationalDatabaseClient} from "../helpers/ConnectionHelper.js";
+import {RelationalDatabaseClient} from '../helpers/ConnectionHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -72,7 +72,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    const [action, schema, data] = this.initialize(request);
+	    let [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -114,19 +114,19 @@ class Controller extends Base {
  		return new Promise((resolve, reject) => {
  		  try {
    		  if (this.request.session.uid) {
-   		    RelationalDatabaseClient.query("SELECT * FROM User WHERE id = ?", [parseInt(this.request.session.uid)], (function(error, results, fields) {
+   		    RelationalDatabaseClient.query('SELECT * FROM User WHERE id = ?', [parseInt(this.request.session.uid)], (function(error, results, fields) {
             if (error) {
               resolve(null);
             } else if (results.length > 0) {
               resolve({
                 User: {
          		      source: null,
-         		      group: "User",
+         		      group: 'User',
          		      rows: [{
          		        keys: {},
            		      columns: {
            		        email: {
-           		          name: "email",
+           		          name: 'email',
            		          value: results[0].email
            		        }
            		      },
@@ -142,13 +142,13 @@ class Controller extends Base {
    		    resolve({
    		      User: {
      		      source: null,
-     		      group: "User",
+     		      group: 'User',
      		      rows: [{
      		        keys: {},
        		      columns: {
        		        email: {
-       		          name: "email",
-       		          value: "ยังไม่ได้เข้าสู่ระบบ"
+       		          name: 'email',
+       		          value: 'ยังไม่ได้เข้าสู่ระบบ'
        		        }
        		      },
        		      relations: {}
@@ -271,9 +271,9 @@ class Controller extends Base {
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	const data: Input[] = [];
-  	const input: Input = null;
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	let data: Input[] = [];
+  	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
@@ -283,7 +283,7 @@ class Controller extends Base {
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]

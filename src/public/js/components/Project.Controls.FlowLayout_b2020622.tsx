@@ -75,12 +75,12 @@ class FlowLayout_b2020622 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false});
-    DataManipulationHelper.register("1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false});
-    DataManipulationHelper.register("d910ad00", "delete", ["41bdc9b3"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false});
-    DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false});
-    DataManipulationHelper.register("67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false});
-    DataManipulationHelper.register("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false});
+    DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("d910ad00", "delete", ["41bdc9b3"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
@@ -418,7 +418,7 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-2.offset-0.-fsb-self-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="b6c9ad89")
-                                input(type="radio", name="substitute", value="0", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.substitute") == '0')
+                                input(type="radio", name="substitute", value="2", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.substitute") == '2')
                               .internal-fsb-element.col-10.offset-0.-fsb-self-b5cd72c0(internal-fsb-guid="b5cd72c0")
                                 | ทดแทน
                               .internal-fsb-element.col-10.offset-2.-fsb-self-8050ab15(internal-fsb-guid="8050ab15")
@@ -436,7 +436,7 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="cc34eced")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="substitute", value="2", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.substitute") == '2')
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="substitute", value="0", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.substitute") == '0')
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="127c0175")
                                 | เจาะจง
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-8050ab15(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="8e3dd80d")

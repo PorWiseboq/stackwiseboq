@@ -67,8 +67,8 @@ class LoginControl extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, submitCrossType: null});
-    DataManipulationHelper.register("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, submitCrossType: null});
+    DataManipulationHelper.register("e968c824", "navigate", ["74d75b70","74b67c1e"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("da229546", "navigate", ["74d75b70","74b67c1e","d40a4961"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
