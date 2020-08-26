@@ -172,7 +172,7 @@
     ],
     "popups": [],
     "editingPageID": "7e709334",
-    "currentMode": "site",
+    "currentMode": "data",
     "editingComponentID": "d22b95d9"
   },
   "sites": {
@@ -4711,14 +4711,43 @@
         "  protected componentWillUnmount(): void {",
         "  }",
         "  ",
+        "  private getTitle(i: number): string {",
+        "    return this.getDataFromNotation('Quote[' + i + '].title');",
+        "  }",
+        "  ",
+        "  private getSubtitle(i: number): string {",
+        "    return 'subtitle';",
+        "  }",
+        "  ",
+        "  private getTag(i: number): string {",
+        "    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');",
+        "    const listing = this.getDataFromNotation('Quote[' + i + '].Listing');",
+        "    ",
+        "    if (!auction || auction.length == 0) return 'ใหม่';",
+        "    else {",
+        "      let specific = true;",
+        "      ",
+        "      for (const item of listing) {",
+        "        if (!item.relations['Substitute'] ||",
+        "          item.relations['Substitute'].rows.length == 0 ||",
+        "          item.relations['Substitute'].rows[0].columns['type'] != 0) {",
+        "          specific = false;",
+        "          break;",
+        "        }",
+        "      }",
+        "      ",
+        "      return (specific) ? 'เสนอครบ' : 'เสนอไม่ครบ';",
+        "    }",
+        "  }",
+        "  ",
         "  // Providing data array base on dot notation:",
         "  // ",
         "  protected getDataFromNotation(notation: string, inArray: boolean=false): any {",
-        "    if (notation == 'Quote[#i].Listing') {",
-        "      notation = notation.replace('#i', this.state.selectedIndex.toString());",
-        "      ",
+        "    notation = notation.replace('#i', this.state.selectedIndex.toString());",
+        "    ",
+        "    if (notation.match(/Quote\\[[0-9]+\\].Listing/)) {",
         "      let rows = super.getDataFromNotation(notation, true);",
-        "      let substitute = super.getDataFromNotation(`Quote[${this.state.selectedIndex}].Auction.Substitute`, true);",
+        "      let substitute = super.getDataFromNotation(`${notation.split('.')[0]}.Auction.Substitute`, true);",
         "      ",
         "      for (let row of rows) {",
         "      \trow.relations['Substitute'] = {",
@@ -4730,7 +4759,6 @@
         "      ",
         "      return rows;",
         "    } else {",
-        "      notation = notation.replace('#i', this.state.selectedIndex.toString());",
         "      return super.getDataFromNotation(notation, inArray);",
         "    }",
         "  }",
@@ -5044,9 +5072,9 @@
         "",
         "",
         "",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-49a6327a\" internal-fsb-guid=\"49a6327a\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_title\" internal-fsb-react-data=\"title\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\">ชื่อรายการ</div>",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-7 offset-0 -fsb-self-4aee31ab\" internal-fsb-guid=\"4aee31ab\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_subtitle\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\">อันดับที่ 5 / 10</div>",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0 -fsb-self-3bec5885\" internal-fsb-guid=\"3bec5885\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_tag\">เสนอครบ</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-49a6327a\" internal-fsb-guid=\"49a6327a\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_title\" internal-fsb-react-data=\"\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\">#{this.getTitle(i)}</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-7 offset-0 -fsb-self-4aee31ab\" internal-fsb-guid=\"4aee31ab\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_subtitle\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\">#{this.getSubtitle(i)}</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0 -fsb-self-3bec5885\" internal-fsb-guid=\"3bec5885\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_tag\">#{this.getTag(i)}</div>",
         "                                                                                </div>",
         "                                                                            </div>",
         "                                                                        </div>",
@@ -6030,11 +6058,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "c6ba5b53",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "64a6ac8c",
+          "24731127",
           0,
-          4,
+          1,
           null
         ]
       },
@@ -15254,6 +15282,27 @@
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"aa052b1e\" internal-fsb-name=\"Connection 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 598px; top: 242px; width: 150px;\" data-source-group-name=\"Payment\" data-source-entity-name=\"aid\" data-target-group-name=\"Card\" data-target-entity-name=\"aid\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"049a9d39\" internal-fsb-name=\"Connection 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 599px; top: 324px; width: 150px;\" data-source-group-name=\"Payment\" data-source-entity-name=\"aid\" data-target-group-name=\"Transfer\" data-target-entity-name=\"aid\" data-title-name=\"\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"22b0dab6\" internal-fsb-name=\"Connection 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 897px; top: 326px; width: 150px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Payment\" data-target-entity-name=\"aid\"></div>",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"d9ee31b8\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 960px; top: 652px; width: 225px; min-height: 201px;\" data-title-name=\"Rank\">",
+      "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Rank</div>",
+      "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+      "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"20eee7c9\" internal-fsb-name=\"RelationalColumn 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"aid\" data-column-type=\"primary\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">aid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"5c7333db\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"sid\" data-column-type=\"primary\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">sid</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ec60ad02\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"rank\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">rank</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a6806d1e\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"price\" data-field-type=\"number\" data-required=\"true\">",
+      "                                        <div class=\"internal-fsb-title\">price</div>",
+      "                                    </div>",
+      "                                </div>",
+      "                            </div>",
+      "                        </div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"62022389\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 830px; top: 606px; width: 150px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Rank\" data-target-entity-name=\"aid\"></div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"1575b75d\" internal-fsb-name=\"Connection 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 849px; top: 647px; width: 150px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"sid\" data-target-group-name=\"Rank\" data-target-entity-name=\"sid\"></div>",
       "                    </div>",
       "                </div>",
       "            </div>",
@@ -16576,6 +16625,14 @@
             "sourceEntity": "aid",
             "targetGroup": "Payment",
             "targetEntity": "aid"
+          },
+          "Rank": {
+            "name": null,
+            "guid": "1575b75d",
+            "sourceGroup": "Auction",
+            "sourceEntity": "sid",
+            "targetGroup": "Rank",
+            "targetEntity": "sid"
           }
         },
         "modifyingPermission": {
@@ -16986,6 +17043,63 @@
           "sessionMatchingSessionName": null,
           "sessionMatchingConstantValue": null
         }
+      },
+      "Rank": {
+        "source": "relational",
+        "group": "Rank",
+        "guid": "d9ee31b8",
+        "keys": {
+          "aid": {
+            "name": "aid",
+            "guid": "20eee7c9",
+            "fieldType": "number",
+            "required": true,
+            "unique": false,
+            "modifyingPermission": null,
+            "retrievingPermission": null
+          },
+          "sid": {
+            "name": "sid",
+            "guid": "5c7333db",
+            "fieldType": "number",
+            "required": true,
+            "unique": false,
+            "modifyingPermission": null,
+            "retrievingPermission": null
+          }
+        },
+        "columns": {
+          "rank": {
+            "name": "rank",
+            "guid": "ec60ad02",
+            "fieldType": "number",
+            "required": true,
+            "unique": false,
+            "modifyingPermission": null,
+            "retrievingPermission": null
+          },
+          "price": {
+            "name": "price",
+            "guid": "a6806d1e",
+            "fieldType": "number",
+            "required": true,
+            "unique": false,
+            "modifyingPermission": null,
+            "retrievingPermission": null
+          }
+        },
+        "relations": {
+          "Auction": {
+            "name": null,
+            "guid": "1575b75d",
+            "sourceGroup": "Rank",
+            "sourceEntity": "sid",
+            "targetGroup": "Auction",
+            "targetEntity": "sid"
+          }
+        },
+        "modifyingPermission": null,
+        "retrievingPermission": null
       }
     }
   },
@@ -17039,7 +17153,7 @@
     "8857ca68": "40d6a28f10e700f7a69c024fcacf5afee054cb78",
     "b140e86b": "db4bc02b0694e197c96dc07718c4f9fa35d9d501",
     "b6eb1b83": "24daedd3e9612a676b94d22f2bffa5740ee63c77",
-    "7e709334": "ea207be5d31f301e59c2b4ea8095528d20a97183",
+    "7e709334": "93c0cb4e51d62b788d05b5d2470b9dd15f23d060",
     "65e04a88": "3e1949f9135b282df74b72b3235140b34ecd5ae2",
     "9d37c390": "05cfb41e320bb7bd69a703a092899f30bfb87000",
     "6ce794ec": "bf07d1d4801bc801224ffe53f1099aa38f833fa4",
@@ -17072,7 +17186,7 @@
     "8857ca68": "a07f047e5785124a0835ba6f25148dbd9c3e04c3",
     "b6eb1b83": "33811b41f01ca13400905df99cdc437cc94d3773",
     "65e04a88": "91e604b11570d5546d4f07fed066153ef84098df",
-    "7e709334": "0ed03fcdcf19fb32216851a90ec0c85196851c8b",
+    "7e709334": "fdb367b5bdb071c0e6a7d351857827e79d75b1b6",
     "6ce794ec": "91628718c4ba22807e9adfa5fa1905692868c087",
     "9d37c390": "04ac0b4c5908468fb8c985168241223f90d43d85",
     "bbc7dba3": "0a8cad1a06c53532774df1bf1c3f599a1eb6ae1f",
