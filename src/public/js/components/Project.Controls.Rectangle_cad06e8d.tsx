@@ -112,7 +112,7 @@ class Rectangle_cad06e8d extends Base {
     return this.getDataFromNotation('Quote[' + i + '].title');
   }
   
-  private getRank(i: number): string {
+  private getRank(i: number): any {
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
     const rank = this.getDataFromNotation('Rank');
     
@@ -132,7 +132,7 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
-  private getSubtitle(i: number): any {
+  private getSubtitle(i: number): string {
     const rank = this.getRank(i);
     
     if (rank == -1) return '';
