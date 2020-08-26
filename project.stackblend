@@ -5154,6 +5154,7 @@
         "}",
         "interface IState extends IAutoBaseState {",
         "  type: number;",
+        "  error: boolean;",
         "  title: string;",
         "  size: string;",
         "  quantity: string;",
@@ -5187,6 +5188,7 @@
         "  private refresh(): void {",
         "    const value = this.getDataFromNotation('Substitute.type', false);",
         "    this.state.type = (value == null) ? -1 : Math.min(value, this.props.type);",
+        "    this.state.error = (value == null) ? false : Math.min(value, this.props.type) !== value;",
         "    ",
         "    this.state.title = this.getDataFromNotation('Substitute.title', false) || &quot;&quot;;",
         "    this.state.size = this.getDataFromNotation('Substitute.size', false) || &quot;&quot;;",
@@ -5208,7 +5210,7 @@
         "    return super.getDataFromNotation(notation, inArray);",
         "  }",
         "  ",
-        "  \" type=\"{this.getDataFromNotation('Quote[#i].substitute', false)}\">",
+        "  \" type=\"{this.getDataFromNotation('Quote[#i].substitute', false)}\" internal-fsb-react-style-background-color=\"CODE[return (this.state.error) ? 'rgb(255, 172, 172)' : '';]\" internal-fsb-react-style-border-top-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-right-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-bottom-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-left-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\">",
         "                                                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                            <div class=\"internal-fsb-element col-4 offset-0 -fsb-self-65ec89d1\" internal-fsb-guid=\"65ec89d1\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"quote_box_review_detail\">",
@@ -6027,11 +6029,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "c6ba5b53",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "64a6ac8c",
+          "24731127",
           0,
-          4,
+          1,
           null
         ]
       },
@@ -17060,7 +17062,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "c4f2a72bc5fd30224a61b7402ee95d6ae9958513",
-    "Project.Controls.FlowLayout_c6ba5b53": "c9e4fcc65089a130d28966e52019b7c6edb0195b"
+    "Project.Controls.FlowLayout_c6ba5b53": "1cc94b3ecec8f73ef2e3561a6c8bc50a9a33d32a"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "9564ac25a5fc6ae3eb64179b6ada966a12642acc",

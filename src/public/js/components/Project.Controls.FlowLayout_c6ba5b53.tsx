@@ -43,6 +43,7 @@ interface IProps extends IAutoBaseProps {
 }
 interface IState extends IAutoBaseState {
   type: number;
+  error: boolean;
   title: string;
   size: string;
   quantity: string;
@@ -91,6 +92,7 @@ class FlowLayout_c6ba5b53 extends Base {
   private refresh(): void {
     const value = this.getDataFromNotation('Substitute.type', false);
     this.state.type = (value == null) ? -1 : Math.min(value, this.props.type);
+    this.state.error = (value == null) ? false : Math.min(value, this.props.type) !== value;
     
     this.state.title = this.getDataFromNotation('Substitute.title', false) || "";
     this.state.size = this.getDataFromNotation('Substitute.size', false) || "";
@@ -176,7 +178,7 @@ class FlowLayout_c6ba5b53 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), type=this.getDataFromNotation('Quote[#i].substitute', false), className="internal-fsb-element col-12 -fsb-self-c6ba5b53 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="c6ba5b53")
+      div(style=Object.assign({background: (()=>{return (this.state.error) ? 'rgb(255, 172, 172)' : '';})(), borderTopColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderRightColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderBottomColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderLeftColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})()}, this.props.forward && this.props.forward.styles || {}), type=this.getDataFromNotation('Quote[#i].substitute', false), className="internal-fsb-element col-12 -fsb-self-c6ba5b53 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="c6ba5b53")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             .internal-fsb-element.col-4.offset-0.-fsb-self-65ec89d1(internal-fsb-guid="65ec89d1")
