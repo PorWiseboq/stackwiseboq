@@ -147,16 +147,13 @@ class Rectangle_cad06e8d extends Base {
   private getTag(i: number): string {
     const substitute = this.getDataFromNotation('Quote[' + i + '].substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
-    const listing = this.getDataFromNotation('Quote[' + i + '].Listing');
     
     if (!auction || auction.length == 0) return 'ใหม่';
     else {
       let specific = true;
       
-      for (const item of listing) {
-        if (!item.relations['Substitute'] ||
-          item.relations['Substitute'].rows.length == 0 ||
-          item.relations['Substitute'].rows[0].columns['type'] == 3) {
+      for (const item of auction[0].relations['Substitute'].rows) {
+        if (item.columns['type'] == 3) {
           specific = false;
           break;
         }
@@ -169,14 +166,11 @@ class Rectangle_cad06e8d extends Base {
   private hasError(i: number): string {
     const substitute = this.getDataFromNotation('Quote[' + i + '].substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
-    const listing = this.getDataFromNotation('Quote[' + i + '].Listing');
     
     if (!auction || auction.length == 0) return false;
     else {
-      for (const item of listing) {
-        if (!item.relations['Substitute'] ||
-          item.relations['Substitute'].rows.length == 0 ||
-          (item.relations['Substitute'].rows[0].columns['type'] > substitute && item.relations['Substitute'].rows[0].columns['type'] != 3)) {
+      for (const item of auction[0].relations['Substitute'].rows) {
+        if (item.columns['type'] > substitute && item.columns['type'] != 3) {
           return true;
         }
       }
