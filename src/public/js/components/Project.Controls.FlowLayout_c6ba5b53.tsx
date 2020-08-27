@@ -86,9 +86,15 @@ class FlowLayout_c6ba5b53 extends Base {
   }
   
   protected componentWillReceiveProps(nextProps): void {
-    if (nextProps.row && this.getDataFromNotation('lid', false) == nextProps.row.keys['lid']) return;
-    
-    this.refresh(nextProps);
+    if (nextProps.row && this.getDataFromNotation('lid', false) == nextProps.row.keys['lid']) {
+      const value = this.getDataFromNotation('Substitute.type', false);
+      this.state.error = (value == null) ? false : Math.min(value, nextProps.type) !== value;
+      if (this.state.error) this.state.type = -1;
+      
+      this.forceUpdate();
+    } else {
+      this.refresh(nextProps);
+    }
   }
   
   private refresh(props): void {

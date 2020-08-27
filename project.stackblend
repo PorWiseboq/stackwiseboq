@@ -5294,9 +5294,15 @@
         "  }",
         "  ",
         "  protected componentWillReceiveProps(nextProps): void {",
-        "    if (nextProps.row &amp;&amp; this.getDataFromNotation('lid', false) == nextProps.row.keys['lid']) return;",
-        "    ",
-        "    this.refresh(nextProps);",
+        "    if (nextProps.row &amp;&amp; this.getDataFromNotation('lid', false) == nextProps.row.keys['lid']) {",
+        "      const value = this.getDataFromNotation('Substitute.type', false);",
+        "      this.state.error = (value == null) ? false : Math.min(value, nextProps.type) !== value;",
+        "      if (this.state.error) this.state.type = -1;",
+        "      ",
+        "      this.forceUpdate();",
+        "    } else {",
+        "      this.refresh(nextProps);",
+        "    }",
         "  }",
         "  ",
         "  private refresh(props): void {",
@@ -6168,11 +6174,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "7a572ba4",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
-          "9a5131da",
+          "64a6ac8c",
           0,
-          3,
+          4,
           null
         ]
       },
@@ -17305,7 +17311,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
-    "Project.Controls.FlowLayout_c6ba5b53": "3d29e1ec1fbfa9548874b30281a63acc6ba21103"
+    "Project.Controls.FlowLayout_c6ba5b53": "b91ae992db7e69561229735a61f741c66a6a5dd2"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "47331f9b173e049fc58764ea6c4a36f4222cb57f",
