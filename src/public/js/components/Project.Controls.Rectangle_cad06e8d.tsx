@@ -553,6 +553,8 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="7484ac1e")
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
+                                        .internal-fsb-element.col-12(style={'color': 'rgba(255, 0, 0, 1)', 'textAlign': 'center', 'marginBottom': '15px', display: (()=>{return (this.hasError(this.state.selectedIndex)) ? 'block' : 'none';})()}, internal-fsb-guid="22cb5230")
+                                          | มีบางรายการที่คุณต้องแก้เพื่อให้ผ่านงานประมูลราคา
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
                                           _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, key="item_" + i, row=data)
