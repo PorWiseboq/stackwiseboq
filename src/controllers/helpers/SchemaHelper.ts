@@ -198,6 +198,8 @@ const SchemaHelper = {
     return notations;
   },
 	verifyNotations: (tree: any, data: DataSchema) => {
+		return;
+		
 	  const notations = SchemaHelper.findAllPossibleNotations(tree || {});
 	  for (const notation of notations) {
 	    const splited = notation.split(".");
