@@ -235,10 +235,12 @@ class Controller extends Base {
           const qid = upsertResults[0].keys['qid'];
           
           RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
-FROM Auction INNER JOIN Substitute ON Auction.aid = Substitute.aid
+FROM Auction
+INNER JOIN Substitute ON Auction.aid = Substitute.aid
+INNER JOIN Quote ON Auction.qid = Quote.qid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
-HAVING SUM(Substitute.type) = 0
+HAVING SUM(Substitute.type) <= COUNT(Substitute.type) * MAX(Quote.substitute)
 ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             let wholeSetRankInput = [];
             let wholeSetRankCount = 0;
@@ -279,10 +281,12 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             await DatabaseHelper.upsert(wholeSetRankInput, rank, this.request.session);
   
             RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
-FROM Auction INNER JOIN Substitute ON Auction.aid = Substitute.aid
+FROM Auction
+INNER JOIN Substitute ON Auction.aid = Substitute.aid
+INNER JOIN Quote ON Auction.qid = Quote.qid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
-HAVING SUM(Substitute.type) != 0
+HAVING SUM(Substitute.type) > COUNT(Substitute.type) * MAX(Quote.substitute)
 ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
               let partialSetRankInput = [];
               let partialSetRankCount = 0;
