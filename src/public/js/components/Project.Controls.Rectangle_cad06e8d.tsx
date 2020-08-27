@@ -145,6 +145,7 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getTag(i: number): string {
+    const substitute = this.getDataFromNotation('Quote[' + i + '].substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
     const listing = this.getDataFromNotation('Quote[' + i + '].Listing');
     
@@ -155,13 +156,32 @@ class Rectangle_cad06e8d extends Base {
       for (const item of listing) {
         if (!item.relations['Substitute'] ||
           item.relations['Substitute'].rows.length == 0 ||
-          item.relations['Substitute'].rows[0].columns['type'] != 0) {
+          item.relations['Substitute'].rows[0].columns['type'] == 3) {
           specific = false;
           break;
         }
       }
       
       return (specific) ? 'เสนอครบ' : 'เสนอไม่ครบ';
+    }
+  }
+  
+  private hasError(i: number): string {
+    const substitute = this.getDataFromNotation('Quote[' + i + '].substitute');
+    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
+    const listing = this.getDataFromNotation('Quote[' + i + '].Listing');
+    
+    if (!auction || auction.length == 0) return false;
+    else {
+      for (const item of listing) {
+        if (!item.relations['Substitute'] ||
+          item.relations['Substitute'].rows.length == 0 ||
+          (item.relations['Substitute'].rows[0].columns['type'] > substitute && item.relations['Substitute'].rows[0].columns['type'] != 3)) {
+          return true;
+        }
+      }
+      
+      return false;
     }
   }
   
@@ -472,16 +492,16 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, type="button", onSubmitting=this.onButtonSubmitting_e76846ad.bind(this), data-index=i + '', onSuccess=this.onButtonSuccess_e76846ad.bind(this), onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="e76846ad")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : ((this.hasError(i)) ? 'rgb(255, 172, 172)' : '');})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})(), borderTopColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderRightColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderBottomColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderLeftColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})()}, key="item_" + i, type="button", onSubmitting=this.onButtonSubmitting_e76846ad.bind(this), data-index=i + '', onSuccess=this.onButtonSuccess_e76846ad.bind(this), onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="e76846ad")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="31c75169")
                                       .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''}, internal-fsb-guid="5a671a7d")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="49a6327a")
+                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? 'rgb(255, 0, 0)' : '');})()}, internal-fsb-guid="49a6327a")
                                               | #{this.getTitle(i)}
-                                            .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="4aee31ab")
+                                            .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? 'rgb(255, 0, 0)' : '');})()}, internal-fsb-guid="4aee31ab")
                                               | #{this.getSubtitle(i)}
-                                            .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(internal-fsb-guid="3bec5885")
+                                            .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(style={background: (()=>{return (this.hasError(i) ? 'rgb(255, 0, 0)' : '');})()}, internal-fsb-guid="3bec5885")
                                               | #{this.getTag(i)}
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}, internal-fsb-guid="24d70384")
                               .container-fluid
