@@ -179,6 +179,20 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
+  private isMatchedRank(i: number): boolean {
+    if (i < 0 || i >= this.getDataFromNotation('Quote[#i].Rank').length) return false;
+    
+    return this.getDataFromNotation('Quote[#i].Auction.aid') == this.getDataFromNotation('Quote[#i].Rank')[i].keys['aid'];
+  }
+  
+  private getRankDetail(i: number): string {
+    if (this.isMatchedRank(i - 1) || this.isMatchedRank(i) || this.isMatchedRank(i + 1)) {
+      return this.getDataFromNotation('Quote[#i].Rank')[i].columns['price'].toString() + ' บาท';
+    } else {
+      return '';
+    }
+  }
+  
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
@@ -195,6 +209,15 @@ class Rectangle_cad06e8d extends Base {
       	  rows: substitute.filter(_row => _row.keys['lid'] == row.keys['lid'])
       	};
       }
+      
+      return rows;
+    } else if (notation.match(/Quote\[[0-9]+\].Rank/)) {
+      const qid = this.getDataFromNotation('Quote[' + this.state.selectedIndex.toString() + '].qid');
+      const rows = this.getDataFromNotation('Rank').filter(rank => rank.columns['qid'] == qid);
+      
+      rows.sort((a, b) => {
+        return (a.columns['rank'] < b.columns['rank']) ? -1 : 1;
+      });
       
       return rows;
     } else {
@@ -551,6 +574,18 @@ class Rectangle_cad06e8d extends Base {
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                         .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].title"))}, internal-fsb-guid="8c2aa238")
                                         .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="7484ac1e")
+                                        .internal-fsb-element.internal-fsb-allow-cursor.col-12(style={'display': 'flex', 'justifyContent': 'space-around', 'WebkitJustifyContent': 'space-around', 'marginBottom': '15px'}, internal-fsb-guid="9ee30bae")
+                                          .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(252, 3, 3, 0)'}, internal-fsb-guid="96698691")
+                                            each data, i in this.getDataFromNotation("Quote[#i].Rank", true)
+                                              .internal-fsb-element(style={'width': '100px', 'display': 'inline-block'}, key="item_" + i, internal-fsb-guid="3317ca5e")
+                                                .container-fluid
+                                                  .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                    .internal-fsb-element.col-12(style={display: (()=>{return (this.isMatchedRank(i)) ? 'block' : 'none';})(), padding: '0px'}, internal-fsb-guid="21d1c3ed")
+                                                      img(style={'display': 'block', 'width': '80px', 'height': '80px', 'marginLeft': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
+                                                    .internal-fsb-element.col-12(style={display: (()=>{return (this.isMatchedRank(i)) ? 'none' : 'block';})(), padding: '0px'}, internal-fsb-guid="cccea251")
+                                                      img(style={'display': 'block', 'width': '80px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '80px', 'marginLeft': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
+                                                    .internal-fsb-element.col-12(style={'fontSize': '12px', 'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontWeight': 'bold', 'color': (()=>{return (this.isMatchedRank(i)) ? 'rgb(22, 98, 250)' : '';})() || 'rgba(217, 217, 217, 1)', 'marginTop': '5px'}, internal-fsb-guid="5022e90e")
+                                                      | #{this.getRankDetail(i)}
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
                                         .internal-fsb-element.col-12(style={'color': 'rgba(255, 0, 0, 1)', 'textAlign': 'center', 'marginBottom': '15px', display: (()=>{return (this.hasError(this.state.selectedIndex)) ? 'block' : 'none';})()}, internal-fsb-guid="22cb5230")
