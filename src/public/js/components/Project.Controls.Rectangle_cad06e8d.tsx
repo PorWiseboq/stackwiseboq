@@ -145,23 +145,51 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getTag(i: number): string {
+    const substitute = this.getDataFromNotation('Quote[' + i + '].substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
-    const listing = this.getDataFromNotation('Quote[' + i + '].Listing');
     
     if (!auction || auction.length == 0) return 'ใหม่';
     else {
       let specific = true;
       
-      for (const item of listing) {
-        if (!item.relations['Substitute'] ||
-          item.relations['Substitute'].rows.length == 0 ||
-          item.relations['Substitute'].rows[0].columns['type'] != 0) {
+      for (const item of auction[0].relations['Substitute'].rows) {
+        if (item.columns['type'] == 3) {
           specific = false;
           break;
         }
       }
       
       return (specific) ? 'เสนอครบ' : 'เสนอไม่ครบ';
+    }
+  }
+  
+  private hasError(i: number): string {
+    const substitute = this.getDataFromNotation('Quote[' + i + '].substitute');
+    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
+    
+    if (!auction || auction.length == 0) return false;
+    else {
+      for (const item of auction[0].relations['Substitute'].rows) {
+        if (item.columns['type'] > substitute && item.columns['type'] != 3) {
+          return true;
+        }
+      }
+      
+      return false;
+    }
+  }
+  
+  private isMatchedRank(i: number): boolean {
+    if (i < 0 || i >= this.getDataFromNotation('Quote[#i].Rank').length) return false;
+    
+    return this.getDataFromNotation('Quote[#i].Auction.aid') == this.getDataFromNotation('Quote[#i].Rank')[i].keys['aid'];
+  }
+  
+  private getRankDetail(i: number): string {
+    if (this.isMatchedRank(i - 1) || this.isMatchedRank(i) || this.isMatchedRank(i + 1)) {
+      return this.getDataFromNotation('Quote[#i].Rank')[i].columns['price'].toString() + ' บาท';
+    } else {
+      return '';
     }
   }
   
@@ -181,6 +209,15 @@ class Rectangle_cad06e8d extends Base {
       	  rows: substitute.filter(_row => _row.keys['lid'] == row.keys['lid'])
       	};
       }
+      
+      return rows;
+    } else if (notation.match(/Quote\[[0-9]+\].Rank/)) {
+      const qid = this.getDataFromNotation('Quote[' + this.state.selectedIndex.toString() + '].qid');
+      const rows = this.getDataFromNotation('Rank').filter(rank => rank.columns['qid'] == qid);
+      
+      rows.sort((a, b) => {
+        return (a.columns['rank'] < b.columns['rank']) ? -1 : 1;
+      });
       
       return rows;
     } else {
@@ -300,6 +337,7 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSubmitting (Bid) here:
     // 
     this.state.submitting = true;
+    this.forceUpdate();
     
   }
 
@@ -308,6 +346,7 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSubmitted (Bid) here:
     // 
     this.state.submitting = false;
+    this.forceUpdate();
     
   }
 
@@ -472,16 +511,16 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, type="button", onSubmitting=this.onButtonSubmitting_e76846ad.bind(this), data-index=i + '', onSuccess=this.onButtonSuccess_e76846ad.bind(this), onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="e76846ad")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : ((this.hasError(i)) ? 'rgb(255, 172, 172)' : '');})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})(), borderTopColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderRightColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderBottomColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderLeftColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})()}, key="item_" + i, type="button", onSubmitting=this.onButtonSubmitting_e76846ad.bind(this), data-index=i + '', onSuccess=this.onButtonSuccess_e76846ad.bind(this), onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="e76846ad")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="31c75169")
                                       .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''}, internal-fsb-guid="5a671a7d")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="49a6327a")
+                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? 'rgb(255, 0, 0)' : '');})()}, internal-fsb-guid="49a6327a")
                                               | #{this.getTitle(i)}
-                                            .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="4aee31ab")
+                                            .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? 'rgb(255, 0, 0)' : '');})()}, internal-fsb-guid="4aee31ab")
                                               | #{this.getSubtitle(i)}
-                                            .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(internal-fsb-guid="3bec5885")
+                                            .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(style={background: (()=>{return (this.hasError(i) ? 'rgb(255, 0, 0)' : '');})()}, internal-fsb-guid="3bec5885")
                                               | #{this.getTag(i)}
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}, internal-fsb-guid="24d70384")
                               .container-fluid
@@ -535,11 +574,25 @@ class Rectangle_cad06e8d extends Base {
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                         .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].title"))}, internal-fsb-guid="8c2aa238")
                                         .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="7484ac1e")
+                                        .internal-fsb-element.internal-fsb-allow-cursor.col-12(style={'display': 'flex', 'justifyContent': 'space-around', 'WebkitJustifyContent': 'space-around', 'marginBottom': '15px'}, internal-fsb-guid="9ee30bae")
+                                          .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(252, 3, 3, 0)'}, internal-fsb-guid="96698691")
+                                            each data, i in this.getDataFromNotation("Quote[#i].Rank", true)
+                                              .internal-fsb-element(style={'width': '100px', 'display': 'inline-block'}, key="item_" + i, internal-fsb-guid="3317ca5e")
+                                                .container-fluid
+                                                  .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                    .internal-fsb-element.col-12(style={display: (()=>{return (this.isMatchedRank(i)) ? 'block' : 'none';})(), padding: '0px'}, internal-fsb-guid="21d1c3ed")
+                                                      img(style={'display': 'block', 'width': '80px', 'height': '80px', 'marginLeft': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
+                                                    .internal-fsb-element.col-12(style={display: (()=>{return (this.isMatchedRank(i)) ? 'none' : 'block';})(), padding: '0px'}, internal-fsb-guid="cccea251")
+                                                      img(style={'display': 'block', 'width': '80px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '80px', 'marginLeft': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
+                                                    .internal-fsb-element.col-12(style={'fontSize': '12px', 'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontWeight': 'bold', 'color': (()=>{return (this.isMatchedRank(i)) ? 'rgb(22, 98, 250)' : '';})() || 'rgba(217, 217, 217, 1)', 'marginTop': '5px'}, internal-fsb-guid="5022e90e")
+                                                      | #{this.getRankDetail(i)}
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
+                                        .internal-fsb-element.col-12(style={'color': 'rgba(255, 0, 0, 1)', 'textAlign': 'center', 'marginBottom': '15px', display: (()=>{return (this.hasError(this.state.selectedIndex)) ? 'block' : 'none';})()}, internal-fsb-guid="22cb5230")
+                                          | มีบางรายการที่คุณต้องแก้เพื่อให้ผ่านงานประมูลราคา
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
-                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), key="item_" + i, row=data)
+                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
