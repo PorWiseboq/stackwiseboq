@@ -314,6 +314,7 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSubmitting (Bid) here:
     // 
     this.state.submitting = true;
+    this.forceUpdate();
     
   }
 
@@ -322,6 +323,7 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSubmitted (Bid) here:
     // 
     this.state.submitting = false;
+    this.forceUpdate();
     
   }
 
@@ -553,7 +555,7 @@ class Rectangle_cad06e8d extends Base {
                                           | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
-                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), key="item_" + i, row=data)
+                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")

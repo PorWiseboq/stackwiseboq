@@ -5308,6 +5308,8 @@
         "  }",
         "  ",
         "  protected componentWillReceiveProps(nextProps): void {",
+        "    if (nextProps.submitting) return;",
+        "    ",
         "    this.refresh(nextProps);",
         "  }",
         "  ",
@@ -5336,7 +5338,7 @@
         "    return super.getDataFromNotation(notation, inArray);",
         "  }",
         "  ",
-        "  \" type=\"{this.getDataFromNotation('Quote[#i].substitute', false)}\" internal-fsb-react-style-background-color=\"CODE[return (this.state.error) ? 'rgb(255, 172, 172)' : '';]\" internal-fsb-react-style-border-top-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-right-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-bottom-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-left-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\">",
+        "  \" type=\"{this.getDataFromNotation('Quote[#i].substitute', false)}\" internal-fsb-react-style-background-color=\"CODE[return (this.state.error) ? 'rgb(255, 172, 172)' : '';]\" internal-fsb-react-style-border-top-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-right-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-bottom-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-left-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" submitting=\"{this.state.submitting}\">",
         "                                                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                            <div class=\"internal-fsb-element col-4 offset-0 -fsb-self-65ec89d1\" internal-fsb-guid=\"65ec89d1\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"quote_box_review_detail\">",
@@ -5472,12 +5474,14 @@
         "    // Handle the event of onButtonSubmitting (Bid) here:",
         "    // ",
         "    this.state.submitting = true;",
+        "    this.forceUpdate();",
         "    ",
         "    \" internal-fsb-react-code-onfsbsubmitted=\"",
         "",
         "    // Handle the event of onButtonSubmitted (Bid) here:",
         "    // ",
         "    this.state.submitting = false;",
+        "    this.forceUpdate();",
         "    ",
         "    \">",
         "                                                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"9868a6d5-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เคาะ</div>",
@@ -6180,11 +6184,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
-          "24731127",
+          "64a6ac8c",
           0,
-          1,
+          4,
           null
         ]
       },
@@ -17313,11 +17317,11 @@
     "Project.Controls.FlowLayout_b2020622": "8c2ba3d19f115b0af416d0fe73bf056f8e83b47f",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "d3b19e2d08561cfd0c7c2ebc1d721907982df8b3",
+    "Project.Controls.Rectangle_cad06e8d": "1a9889e6261ece4fbda400008bb18d310d59b1e9",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
-    "Project.Controls.FlowLayout_c6ba5b53": "e678ce85cc9b08222fae7f8c8af4e08c63db66cd"
+    "Project.Controls.FlowLayout_c6ba5b53": "07e1577a93399172dd953246beec00d6ab20ab65"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "47331f9b173e049fc58764ea6c4a36f4222cb57f",
