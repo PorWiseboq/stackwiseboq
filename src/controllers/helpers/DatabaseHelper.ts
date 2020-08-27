@@ -1064,8 +1064,7 @@ const DatabaseHelper = {
 	  					  const row = {
 	    				    keys: {},
 	    				    columns: {},
-	    				    relations: {},
-							  	notification: (notifyUpdates) ? NotificationHelper.getTableUpdatingIdentity(baseSchema, {}, session) : null
+	    				    relations: {}
 	    				  };
 	  				  
 	  					  for (const key in baseSchema.columns) {
