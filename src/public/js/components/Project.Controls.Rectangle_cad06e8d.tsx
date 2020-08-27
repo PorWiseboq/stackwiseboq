@@ -315,9 +315,10 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Bid) here:
     // 
+    const customEvent = event as CustomEvent;
     const rows = this.getDataFromNotation('Quote[#i].Auction');
-    if (rows && event.detail.results.results[0]) {
-      rows[0] = event.detail.results.results[0];
+    if (rows && customEvent.detail.results.results[0]) {
+      rows[0] = customEvent.detail.results.results[0];
     }
     this.forceUpdate();
     

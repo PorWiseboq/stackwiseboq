@@ -5422,9 +5422,10 @@
         "",
         "    // Handle the event of onButtonSuccess (Bid) here:",
         "    // ",
+        "    const customEvent = event as CustomEvent;",
         "    const rows = this.getDataFromNotation('Quote[#i].Auction');",
-        "    if (rows &amp;&amp; event.detail.results.results[0]) {",
-        "      rows[0] = event.detail.results.results[0];",
+        "    if (rows &amp;&amp; customEvent.detail.results.results[0]) {",
+        "      rows[0] = customEvent.detail.results.results[0];",
         "    }",
         "    this.forceUpdate();",
         "    ",
@@ -6143,11 +6144,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "c6ba5b53",
+        "selectingElementGUID": "9868a6d5",
         "currentCursorWalkPath": [
           "64a6ac8c",
           0,
-          4,
+          10,
           null
         ]
       },
@@ -17276,7 +17277,7 @@
     "Project.Controls.FlowLayout_b2020622": "8c2ba3d19f115b0af416d0fe73bf056f8e83b47f",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "e6e9287a592952554de992d275e7163f71b8c21f",
+    "Project.Controls.Rectangle_cad06e8d": "7dd1e7bb4eaf310d67b97daf2b5d2467de9d3a3b",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
