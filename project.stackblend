@@ -5315,8 +5315,8 @@
         "  ",
         "  private refresh(props): void {",
         "    const value = this.getDataFromNotation('Substitute.type', false);",
-        "    this.state.error = (value == null) ? false : Math.min(value, props.type) !== value;",
-        "    this.state.type = (this.state.error || value == null) ? -1 : Math.min(value, props.type);",
+        "    this.state.error = (value == null) ? false : (Math.min(value, props.type) !== value &amp;&amp; value !== 3);",
+        "    this.state.type = (this.state.error || value == null) ? -1 : value;",
         "    ",
         "    this.state.title = this.getDataFromNotation('Substitute.title', false) || &quot;&quot;;",
         "    this.state.size = this.getDataFromNotation('Substitute.size', false) || &quot;&quot;;",
@@ -17321,7 +17321,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
-    "Project.Controls.FlowLayout_c6ba5b53": "07e1577a93399172dd953246beec00d6ab20ab65"
+    "Project.Controls.FlowLayout_c6ba5b53": "8268dbe33bebb75f2041c645a275b4f36f434d20"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "47331f9b173e049fc58764ea6c4a36f4222cb57f",
