@@ -189,7 +189,7 @@ class Rectangle_cad06e8d extends Base {
     if (this.isMatchedRank(i - 1) || this.isMatchedRank(i) || this.isMatchedRank(i + 1)) {
       return this.getDataFromNotation('Quote[#i].Rank')[i].columns['price'].toString() + ' บาท';
     } else {
-      return '';
+      return `อันดับที่ ${i + 1}`;
     }
   }
   
