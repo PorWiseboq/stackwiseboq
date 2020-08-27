@@ -163,7 +163,7 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
-  private hasError(i: number): string {
+  private hasError(i: number): boolean {
     const substitute = this.getDataFromNotation('Quote[' + i + '].substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
     
