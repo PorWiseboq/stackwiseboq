@@ -353,8 +353,8 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
         
         if (schema.group == 'Quote') {
           let quoteDataset = await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate);
-          
-          let listingData = RequestHelper.createInputs({
+   		    
+   		    let listingData = RequestHelper.createInputs({
    		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
    		    });
    		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
@@ -371,8 +371,11 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
      		      };
      		    }
    		    }
-          
-          resolve(quoteDataset);
+       		    
+   		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+   		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
+   		    
+ 		      resolve(Object.assign({}, quoteDataset, rankDataset));
         } else {
           resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
         }
