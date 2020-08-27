@@ -50,6 +50,7 @@ interface IProps extends IAutoBaseProps {
 interface IState extends IAutoBaseState {
   quoteType: QuoteType;
   selectedIndex: number;
+  submitting: boolean;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -57,7 +58,8 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
   quoteType: QuoteType.AUCTIONING,
-  selectedIndex: 0
+  selectedIndex: 0,
+  submitting: false
 });
 
 // Auto[ClassBegin]--->
@@ -224,18 +226,39 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
+  protected onButtonSubmitting_e76846ad(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 5) here:
+    // 
+    
+  }
+
   protected onButtonSuccess_e76846ad(event: Event) {
+
+    if (this.state.submitting) return EventHelper.cancel(event);
 
     // Handle the event of onButtonSuccess (Button 5) here:
     // 
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    
+    const price = ReactDOM.findDOMNode(this.refs.price);
+    const auction = this.getDataFromNotation('Quote[#i].Auction');
+    
+    if (auction && auction.length != 0) {
+      price.value = auction[0].columns['price'];
+    } else {
+      price.value = '';
+    }
+    
     this.forceUpdate();
     
   }
 
   protected onButtonSuccess_802159d0(event: Event) {
+
+    if (this.state.submitting) return EventHelper.cancel(event);
 
     // Handle the event of onButtonSuccess (Button 6) here:
     // 
@@ -248,6 +271,8 @@ class Rectangle_cad06e8d extends Base {
 
   protected onButtonSuccess_8cbc5b17(event: Event) {
 
+    if (this.state.submitting) return EventHelper.cancel(event);
+
     // Handle the event of onButtonSuccess (Button 7) here:
     // 
     let element = EventHelper.getOriginalElement(event);
@@ -259,12 +284,44 @@ class Rectangle_cad06e8d extends Base {
 
   protected onButtonSuccess_323ba37c(event: Event) {
 
+    if (this.state.submitting) return EventHelper.cancel(event);
+
     // Handle the event of onButtonSuccess (Button 8) here:
     // 
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
     this.forceUpdate();
+    
+  }
+
+  protected onButtonSubmitting_9868a6d5(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Bid) here:
+    // 
+    this.state.submitting = true;
+    
+  }
+
+  protected onButtonSubmitted_9868a6d5(event: Event) {
+
+    // Handle the event of onButtonSubmitted (Bid) here:
+    // 
+    this.state.submitting = false;
+    
+  }
+
+  protected onButtonSuccess_9868a6d5(event: Event) {
+
+    // Handle the event of onButtonSuccess (Bid) here:
+    // 
+    const rows = this.getDataFromNotation('Quote[#i].Auction');
+    if (rows && event.detail.results.results[0]) {
+      rows[0] = event.detail.results.results[0];
+    }
+    this.forceUpdate();
+    
+    alert('คุณเคาะประมูลเสร็จเรียบร้อยแล้ว');
     
   }
   // <---Auto[Merging]
@@ -414,7 +471,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, type="button", data-index=i + '', onSuccess=this.onButtonSuccess_e76846ad.bind(this), onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="e76846ad")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, type="button", onSubmitting=this.onButtonSubmitting_e76846ad.bind(this), data-index=i + '', onSuccess=this.onButtonSuccess_e76846ad.bind(this), onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="e76846ad")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="31c75169")
                                       .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''}, internal-fsb-guid="5a671a7d")
                                         .container-fluid
@@ -485,12 +542,12 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
-                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ราคารวมทั้งหมด", defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))
+                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="price", type="text", placeholder="ราคารวมทั้งหมด", defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
                                         input.internal-fsb-element.col-12(type="hidden", value="", internal-fsb-guid="d30aa93b")
                                         input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="a5b102c4")
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, type="button", onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), internal-fsb-guid="9868a6d5")
+                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, type="button", onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
                             .internal-fsb-element(style={display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}, internal-fsb-guid="51201e78")

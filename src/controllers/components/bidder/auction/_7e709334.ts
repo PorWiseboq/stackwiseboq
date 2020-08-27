@@ -228,16 +228,18 @@ class Controller extends Base {
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
     	try {
-    	  let results = await DatabaseHelper.upsert(data, schema, this.request.session);
+    	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
     	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
         
-        if (schema && schema.group == 'Auction' && results.length != 0) {
+        if (schema && schema.group == 'Auction' && upsertResults.length != 0) {
+          const qid = upsertResults[0].keys['qid'];
+          
           RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
 FROM Auction INNER JOIN Substitute ON Auction.aid = Substitute.aid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
 HAVING SUM(Substitute.type) = 0
-ORDER BY Auction.price ASC`, [results[0].keys['qid']], async (error, results, fields) => {
+ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             let wholeSetRankInput = [];
             let wholeSetRankCount = 0;
             
@@ -281,7 +283,7 @@ FROM Auction INNER JOIN Substitute ON Auction.aid = Substitute.aid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
 HAVING SUM(Substitute.type) != 0
-ORDER BY Auction.price ASC`, [results[0].keys['qid']], async (error, results, fields) => {
+ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
               let partialSetRankInput = [];
               let partialSetRankCount = 0;
               
@@ -320,11 +322,11 @@ ORDER BY Auction.price ASC`, [results[0].keys['qid']], async (error, results, fi
               
               await DatabaseHelper.upsert(partialSetRankInput, rank, this.request.session);
               
-              resolve(results);
+              resolve(upsertResults);
         		});
       		});
         } else {
-          resolve(results);
+          resolve(upsertResults);
         }
       } catch(error) {
         reject(error);

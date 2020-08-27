@@ -1064,8 +1064,7 @@ const DatabaseHelper = {
 	  					  const row = {
 	    				    keys: {},
 	    				    columns: {},
-	    				    relations: {},
-							  	notification: (notifyUpdates) ? NotificationHelper.getTableUpdatingIdentity(baseSchema, {}, session) : null
+	    				    relations: {}
 	    				  };
 	  				  
 	  					  for (const key in baseSchema.columns) {
@@ -1096,7 +1095,8 @@ const DatabaseHelper = {
 	  					results[baseSchema.group] = {
 	  					  source: baseSchema.source,
 	  					  group: baseSchema.group,
-	  					  rows: rows
+	  					  rows: rows,
+							  notification: (notifyUpdates) ? NotificationHelper.getTableUpdatingIdentity(baseSchema, {}, session) : null
 	  					};
 	        		
 	        		break;
