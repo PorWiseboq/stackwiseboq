@@ -434,6 +434,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     
       // Override data parsing and manipulation of Hidden 5 here:
       // 
+      if (input) input.value = null;
       
       if (input != null) data.push(input);
     }
@@ -475,6 +476,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     
       // Override data parsing and manipulation of Hidden 7 here:
       // 
+      if (input) input.value = null;
       
       if (input != null) data.push(input);
     }
@@ -516,6 +518,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     
       // Override data parsing and manipulation of Hidden 9 here:
       // 
+      if (input) input.value = null;
       
       if (input != null) data.push(input);
     }
@@ -557,6 +560,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     
       // Override data parsing and manipulation of Hidden 11 here:
       // 
+      if (input) input.value = null;
       
       if (input != null) data.push(input);
     }
