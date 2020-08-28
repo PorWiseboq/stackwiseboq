@@ -193,6 +193,10 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
+  private onPriceChanged(price: number) {
+    console.log(this, price);
+  }
+  
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
@@ -641,7 +645,7 @@ class Rectangle_cad06e8d extends Base {
                                           | มีบางรายการที่คุณต้องแก้เพื่อให้ผ่านงานประมูลราคา
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
-                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, key="item_" + i, row=data)
+                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, onpricechanged=this.onPriceChanged.bind([this, i]), key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
@@ -678,10 +682,6 @@ class Rectangle_cad06e8d extends Base {
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                       .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'}, internal-fsb-guid="00758360")
                                                         | สินค้าเทียบเคียง: ทดแทน
-                                                      .internal-fsb-element.col-7.offset-0(style={padding: '0px'}, internal-fsb-guid="1382e4c9")
-                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, type="text", placeholder="ราคาต่อหน่วย")
-                                                      .internal-fsb-element.col-5.offset-0(style={'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px'}, internal-fsb-guid="530bacd3")
-                                                        | บาท
                                                 .internal-fsb-element.col-5.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'}, internal-fsb-guid="176a4c29")
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor

@@ -680,6 +680,16 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('1382e4c9', "relational", "Auction.Substitute", "price");
+		ValidationHelper.registerInput('1382e4c9', "Price", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Price here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('9c338431', "relational", "Auction.Substitute", "title");
 		ValidationHelper.registerInput('9c338431', "Name", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -747,16 +757,6 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
       input = RequestHelper.getInput(this.pageId, request, 'a5b102c4' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('1382e4c9', "relational", "Substitute", "price");
-		ValidationHelper.registerInput('1382e4c9', "Price", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Price here:
       // 
       
       if (input != null) data.push(input);
