@@ -410,7 +410,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
       } */
       reject(new Error("Not Implemented Error"));
     });
-  } 
+  }
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {

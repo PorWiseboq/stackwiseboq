@@ -256,7 +256,7 @@ class FlowLayout_c6ba5b53 extends Base {
                     input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.size, data-com.agilebits.onepassword.initial-value=this.state.size, disabled=this.props.submitting)
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c22ec668")
                     input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity, data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=this.props.submitting)
-            input.internal-fsb-element.col-12(internal-fsb-guid="ae7e2437")
+            input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("lid"), internal-fsb-guid="ae7e2437")
     `
   }
 }
