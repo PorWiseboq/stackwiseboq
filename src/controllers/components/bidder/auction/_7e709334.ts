@@ -233,8 +233,14 @@ class Controller extends Base {
    		    let auction = SchemaHelper.getDataTableSchemaFromNotation('Auction', ProjectConfigurationHelper.getDataSchema());
    		    let auctionDataset = await DatabaseHelper.retrieve(auctionData, auction, this.request.session, true);
    		    
-          let priceData = data.filter(input => input.name == 'price');
-          if (auctionDataset['Auction'].rows.length != 0 && priceData[0].value + 100 > auctionDataset['Auction'].rows[0].columns['price']) {
+          let priceData = data.filter(input => input.name == 'price' && input.group == 'Auction');
+          let price = parseFloat(priceData[0].value);
+          
+          if (isNaN(price)) {
+            throw new Error('กรุณากรอกราคาต่อหน่วยให้ครบ');
+          }
+          
+          if (auctionDataset['Auction'].rows.length != 0 && (price + 100) > auctionDataset['Auction'].rows[0].columns['price']) {
             throw new Error('กรุณาเสนอราคาใหม่ที่ต่ำกว่าราคาเดิมอย่างน้อย 100 บาท');
           }
           
@@ -430,7 +436,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "8cbc5b17", "retrieve", ["e8656190"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
 		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);

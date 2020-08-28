@@ -51,6 +51,7 @@ interface IState extends IAutoBaseState {
   quoteType: QuoteType;
   selectedIndex: number;
   submitting: boolean;
+  itemPrices: number[];
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -59,7 +60,8 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
 let DefaultState = Object.assign({}, DefaultBaseState, {
   quoteType: QuoteType.AUCTIONING,
   selectedIndex: 0,
-  submitting: false
+  submitting: false,
+  itemPrices: []
 });
 
 // Auto[ClassBegin]--->
@@ -83,7 +85,7 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
-    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
@@ -194,7 +196,20 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private onPriceChanged(price: number) {
-    console.log(this, price);
+    const $this = this[0];
+    $this.state.itemPrices[this[1]] = price;
+    
+    const count = $this.getDataFromNotation('Quote[#i].Listing').length;
+    let sum = 0;
+    for (let i=0; i<count; i++) {
+      sum += $this.state.itemPrices[i];
+    }
+    
+    const element = ReactDOM.findDOMNode($this.refs.price);
+    if (element) {
+      if (isNaN(sum)) element.value = "กรุณากรอกราคาต่อหน่วยให้ครบ";
+      else element.value = sum.toString();
+    }
   }
   
   // Providing data array base on dot notation:

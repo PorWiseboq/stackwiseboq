@@ -47,6 +47,7 @@ interface IState extends IAutoBaseState {
   title: string;
   size: string;
   quantity: string;
+  price: string;
   group: string;
 }
 
@@ -57,7 +58,8 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   type: -1,
   title: "",
   size: "",
-  quantity: ""
+  quantity: "",
+  price: ""
 });
 
 // Auto[ClassBegin]--->
@@ -89,6 +91,7 @@ class FlowLayout_c6ba5b53 extends Base {
     if (nextProps.submitting) return;
     
     this.refresh(nextProps);
+    this.updatePrice();
   }
   
   private refresh(props): void {
@@ -99,12 +102,14 @@ class FlowLayout_c6ba5b53 extends Base {
     this.state.title = this.getDataFromNotation('Substitute.title', false) || "";
     this.state.size = this.getDataFromNotation('Substitute.size', false) || "";
     this.state.quantity = this.getDataFromNotation('Substitute.quantity', false) || "";
+    this.state.price = this.getDataFromNotation('Substitute.price', false) || "";
     
     this.forceUpdate();
   }
   
   protected componentDidMount(): void {
   	this.register();
+    this.updatePrice();
   }
   
   protected componentWillUnmount(): void {
@@ -114,6 +119,23 @@ class FlowLayout_c6ba5b53 extends Base {
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
     return super.getDataFromNotation(notation, inArray);
+  }
+  
+  private updatePrice() {
+    const price = ReactDOM.findDOMNode(this.refs.price);
+    const value = parseFloat(price.value);
+    
+    let type = -1;
+    if (ReactDOM.findDOMNode(this.refs.radType0).checked) type = 0;
+    else if (ReactDOM.findDOMNode(this.refs.radType1).checked) type = 1;
+    else if (ReactDOM.findDOMNode(this.refs.radType2).checked) type = 2;
+    else if (ReactDOM.findDOMNode(this.refs.radType3).checked) type = 3;
+    
+    const title = (type == 1 || type == 2) ? ReactDOM.findDOMNode(this.refs.quantity).value : this.getDataFromNotation('quantity').toString();
+    const quantity =  parseFloat(title);
+    
+    if (type == 3) this.props.onpricechanged(0);
+    else this.props.onpricechanged(value * quantity);
   }
   
   // Auto[Merging]--->
@@ -153,19 +175,7 @@ class FlowLayout_c6ba5b53 extends Base {
 
     // Handle the event of onTextboxKeyUp (Price) here:
     // 
-    const element = EventHelper.getCurrentElement(event);
-    const value = parseInt(element.value);
-    
-    let type = -1;
-    if (ReactDOM.findDOMNode(this.refs.radType0).getAttribute('checked') == 'true') type = 0;
-    else if (ReactDOM.findDOMNode(this.refs.radType1).getAttribute('checked') == 'true') type = 1;
-    else if (ReactDOM.findDOMNode(this.refs.radType2).getAttribute('checked') == 'true') type = 2;
-    else if (ReactDOM.findDOMNode(this.refs.radType3).getAttribute('checked') == 'true') type = 3;
-    
-    const title = (type == 1 || type == 2) ? ReactDOM.findDOMNode(this.refs.quantity).value : this.getDataFromNotation('quantity');
-    const quantity =  parseInt(title);
-    
-    this.props.onpricechanged(value * quantity);
+    this.updatePrice();
     
   }
 
@@ -184,6 +194,14 @@ class FlowLayout_c6ba5b53 extends Base {
     // 
     const element = EventHelper.getCurrentElement(event);
     this.setState({size: element.value});
+    
+  }
+
+  protected onTextboxKeyUp_c22ec668(event: Event) {
+
+    // Handle the event of onTextboxKeyUp (Quantity) here:
+    // 
+    this.updatePrice();
     
   }
 
@@ -244,7 +262,7 @@ class FlowLayout_c6ba5b53 extends Base {
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.col-7.offset-0(style={padding: '0px'}, internal-fsb-guid="1382e4c9")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, onKeyUp=this.onTextboxKeyUp_1382e4c9.bind(this), type="text", placeholder="ราคาต่อหน่วย", defaultValue=this.getDataFromNotation("Substitute.price"))
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="price", onKeyUp=this.onTextboxKeyUp_1382e4c9.bind(this), type="text", placeholder="ราคาต่อหน่วย", disabled=this.props.submitting, defaultValue=this.getDataFromNotation("Substitute.price"))
                         .internal-fsb-element.col-5.offset-0(style={'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px', 'fontSize': '13px'}, internal-fsb-guid="530bacd3")
                           | บาท
             .internal-fsb-element.col-5.offset-0(style={display: (()=>{return (this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="483390a6")
@@ -255,7 +273,7 @@ class FlowLayout_c6ba5b53 extends Base {
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="d913e6a1")
                     input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.size, data-com.agilebits.onepassword.initial-value=this.state.size, disabled=this.props.submitting)
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c22ec668")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity, data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=this.props.submitting)
+                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), onKeyUp=this.onTextboxKeyUp_c22ec668.bind(this), type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity, data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=this.props.submitting)
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("lid"), internal-fsb-guid="ae7e2437")
     `
   }
