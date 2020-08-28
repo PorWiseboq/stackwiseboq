@@ -5481,6 +5481,7 @@
         "    // Handle the event of onRadioClick (Radio 5) here:",
         "    // ",
         "    this.setState({type: 0});",
+        "    this.updatePrice();",
         "    ",
         "    \" internal-fsb-react-id=\"radType0\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"0\" name=\"{this.state.group}\" checked=\"{this.state.type == 0}\" data-com.agilebits.onepassword.initial-value=\"0\" disabled=\"this.props.submitting\"></div>",
         "                                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"b80041d3\" internal-fsb-name=\"TextElement 31\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">เจาะจง</div>",
@@ -5494,6 +5495,7 @@
         "    // Handle the event of onRadioClick (Radio 4) here:",
         "    // ",
         "    this.setState({type: 1});",
+        "    this.updatePrice();",
         "    ",
         "    \" internal-fsb-react-id=\"radType1\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"1\" name=\"{this.state.group}\" checked=\"{this.state.type == 1}\" data-com.agilebits.onepassword.initial-value=\"1\" disabled=\"this.props.submitting\"></div>",
         "                                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"58266972\" internal-fsb-name=\"TextElement 30\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">เทียบเท่า</div>",
@@ -5507,6 +5509,7 @@
         "    // Handle the event of onRadioClick (Radio 3) here:",
         "    // ",
         "    this.setState({type: 2});",
+        "    this.updatePrice();",
         "    ",
         "    \" internal-fsb-react-id=\"radType2\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; padding-left: 0px; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"2\" name=\"{this.state.group}\" checked=\"{this.state.type == 2}\" data-com.agilebits.onepassword.initial-value=\"2\" disabled=\"this.props.submitting\"></div>",
         "                                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"5c2b0578\" internal-fsb-name=\"TextElement 29\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">ทดแทน</div>",
@@ -5520,6 +5523,7 @@
         "    // Handle the event of onRadioClick (Radio 6) here:",
         "    // ",
         "    this.setState({type: 3});",
+        "    this.updatePrice();",
         "    ",
         "    \" internal-fsb-react-id=\"radType3\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"type\" value=\"3\" name=\"{this.state.group}\" checked=\"{this.state.type == 3}\" data-com.agilebits.onepassword.initial-value=\"3\" disabled=\"this.props.submitting\"></div>",
         "                                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"a3b9410d\" internal-fsb-name=\"TextElement 32\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">ไม่มี</div>",
@@ -6330,9 +6334,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "957c1568",
         "currentCursorWalkPath": [
-          "24731127",
+          "c1c5b10b",
           0,
           1,
           null
@@ -17468,7 +17472,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
-    "Project.Controls.FlowLayout_c6ba5b53": "9d60539315b964aa8846f253c0ec1efb1ada148e"
+    "Project.Controls.FlowLayout_c6ba5b53": "b6cf316c2862ec87ea0071b5937b8c821e933fae"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "47331f9b173e049fc58764ea6c4a36f4222cb57f",

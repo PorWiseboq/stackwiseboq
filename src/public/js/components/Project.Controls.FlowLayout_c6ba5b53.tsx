@@ -145,6 +145,7 @@ class FlowLayout_c6ba5b53 extends Base {
     // Handle the event of onRadioClick (Radio 5) here:
     // 
     this.setState({type: 0});
+    this.updatePrice();
     
   }
 
@@ -153,6 +154,7 @@ class FlowLayout_c6ba5b53 extends Base {
     // Handle the event of onRadioClick (Radio 4) here:
     // 
     this.setState({type: 1});
+    this.updatePrice();
     
   }
 
@@ -161,6 +163,7 @@ class FlowLayout_c6ba5b53 extends Base {
     // Handle the event of onRadioClick (Radio 3) here:
     // 
     this.setState({type: 2});
+    this.updatePrice();
     
   }
 
@@ -169,6 +172,7 @@ class FlowLayout_c6ba5b53 extends Base {
     // Handle the event of onRadioClick (Radio 6) here:
     // 
     this.setState({type: 3});
+    this.updatePrice();
     
   }
 
