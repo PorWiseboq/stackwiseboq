@@ -5298,8 +5298,8 @@
         "                                                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"3317ca5e\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"Quote[#i].Rank\" style=\"width: 100px; display: inline-block\">",
         "                                                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"21d1c3ed\" internal-fsb-name=\"Active\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return (this.isMatchedRank(i)) ? 'block' : 'none';]\"><img style=\"display: block; width: 80px; -fsb-for-children: true; height: 80px; margin-left: 10px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png\"></div>",
-        "                                                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"cccea251\" internal-fsb-name=\"Inactive\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return (this.isMatchedRank(i)) ? 'none' : 'block';]\"><img style=\"display: block; width: 80px; -fsb-for-children: true; opacity: 0.5; -webkit-opacity: 0.5; height: 80px; margin-left: 10px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png\"></div>",
+        "                                                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"21d1c3ed\" internal-fsb-name=\"Active\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return (this.isMatchedRank(i)) ? 'block' : 'none';]\"><img style=\"display: block; width: 80px; -fsb-for-children: true; height: 80px; margin-left: 10px; margin-right: 10px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png\"></div>",
+        "                                                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"cccea251\" internal-fsb-name=\"Inactive\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return (this.isMatchedRank(i)) ? 'none' : 'block';]\"><img style=\"display: block; width: 60px; -fsb-for-children: true; opacity: 0.5; -webkit-opacity: 0.5; margin-left: 20px; height: 60px; margin-top: 10px; margin-bottom: 10px; margin-right: 20px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png\"></div>",
         "                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"5022e90e\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-size: 12px; text-align: center; padding-left: 0px; padding-right: 0px; font-weight: bold; color: rgba(217, 217, 217, 1); margin-top: 5px\" internal-fsb-react-style-color=\"CODE[return (this.isMatchedRank(i)) ? 'rgb(22, 98, 250)' : '';]\">#{this.getRankDetail(i)}</div>",
         "                                                                                                </div>",
         "                                                                                            </div>",
@@ -6222,11 +6222,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "cccea251",
         "currentCursorWalkPath": [
-          "24731127",
+          "3317ca5e",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -17356,7 +17356,7 @@
     "Project.Controls.FlowLayout_b2020622": "8c2ba3d19f115b0af416d0fe73bf056f8e83b47f",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "8ef5d180ada3619f23581f74dc2e92150f985017",
+    "Project.Controls.Rectangle_cad06e8d": "4def7ae9c1cf8cfbdb81978acc44eb7cc617f77d",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",

@@ -581,9 +581,9 @@ class Rectangle_cad06e8d extends Base {
                                                 .container-fluid
                                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                     .internal-fsb-element.col-12(style={display: (()=>{return (this.isMatchedRank(i)) ? 'block' : 'none';})(), padding: '0px'}, internal-fsb-guid="21d1c3ed")
-                                                      img(style={'display': 'block', 'width': '80px', 'height': '80px', 'marginLeft': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
+                                                      img(style={'display': 'block', 'width': '80px', 'height': '80px', 'marginLeft': '10px', 'marginRight': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
                                                     .internal-fsb-element.col-12(style={display: (()=>{return (this.isMatchedRank(i)) ? 'none' : 'block';})(), padding: '0px'}, internal-fsb-guid="cccea251")
-                                                      img(style={'display': 'block', 'width': '80px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '80px', 'marginLeft': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
+                                                      img(style={'display': 'block', 'width': '60px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'marginLeft': '20px', 'height': '60px', 'marginTop': '10px', 'marginBottom': '10px', 'marginRight': '20px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
                                                     .internal-fsb-element.col-12(style={'fontSize': '12px', 'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontWeight': 'bold', 'color': (()=>{return (this.isMatchedRank(i)) ? 'rgb(22, 98, 250)' : '';})() || 'rgba(217, 217, 217, 1)', 'marginTop': '5px'}, internal-fsb-guid="5022e90e")
                                                       | #{this.getRankDetail(i)}
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
