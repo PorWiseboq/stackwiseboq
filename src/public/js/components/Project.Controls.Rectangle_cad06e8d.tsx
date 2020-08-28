@@ -263,7 +263,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 1) here:
     // 
-    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0});
+    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0, hasSubmitted: false});
     
   }
 
@@ -279,7 +279,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 2) here:
     // 
-    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0});
+    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0, hasSubmitted: false});
     
   }
 
@@ -295,7 +295,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 3) here:
     // 
-    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0});
+    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0, hasSubmitted: false});
     
   }
 
@@ -311,7 +311,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
-    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0});
+    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0, hasSubmitted: false});
     
   }
 
@@ -360,6 +360,8 @@ class Rectangle_cad06e8d extends Base {
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    this.state.hasSubmitted = false;
+    
     this.forceUpdate();
     
   }
@@ -379,6 +381,8 @@ class Rectangle_cad06e8d extends Base {
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    this.state.hasSubmitted = false;
+    
     this.forceUpdate();
     
   }
@@ -398,6 +402,8 @@ class Rectangle_cad06e8d extends Base {
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    this.state.hasSubmitted = false;
+    
     this.forceUpdate();
     
   }
