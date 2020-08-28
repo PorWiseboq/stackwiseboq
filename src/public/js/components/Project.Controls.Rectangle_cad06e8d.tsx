@@ -51,6 +51,8 @@ interface IState extends IAutoBaseState {
   quoteType: QuoteType;
   selectedIndex: number;
   submitting: boolean;
+  hasSubmitted: boolean;
+  itemPrices: number[];
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -59,7 +61,9 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
 let DefaultState = Object.assign({}, DefaultBaseState, {
   quoteType: QuoteType.AUCTIONING,
   selectedIndex: 0,
-  submitting: false
+  submitting: false,
+  hasSubmitted: false,
+  itemPrices: []
 });
 
 // Auto[ClassBegin]--->
@@ -83,7 +87,7 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("8cbc5b17", "retrieve", ["e8656190"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
-    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
@@ -193,6 +197,22 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
+  private onPriceChanged(index: number, price: number) {
+    this.state.itemPrices[index] = price;
+    
+    const count = this.getDataFromNotation('Quote[#i].Listing').length;
+    let sum = 0;
+    for (let i=0; i<count; i++) {
+      sum += this.state.itemPrices[i];
+    }
+    
+    const element = ReactDOM.findDOMNode(this.refs.price);
+    if (element) {
+      if (isNaN(sum)) element.value = "กรุณากรอกราคาต่อหน่วยให้ครบ";
+      else element.value = sum.toString();
+    }
+  }
+  
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
@@ -231,11 +251,27 @@ class Rectangle_cad06e8d extends Base {
   }
   
   // Auto[Merging]--->
+  protected onButtonSubmitting_4a579143(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 1) here:
+    // 
+    if (this.state.submitting) return EventHelper.cancel(event);
+    
+  }
+
   protected onButtonSuccess_4a579143(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 1) here:
     // 
-    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0});
+    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0, hasSubmitted: false});
+    
+  }
+
+  protected onButtonSubmitting_c05b11c1(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 2) here:
+    // 
+    if (this.state.submitting) return EventHelper.cancel(event);
     
   }
 
@@ -243,7 +279,15 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 2) here:
     // 
-    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0});
+    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0, hasSubmitted: false});
+    
+  }
+
+  protected onButtonSubmitting_833e4eb9(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 3) here:
+    // 
+    if (this.state.submitting) return EventHelper.cancel(event);
     
   }
 
@@ -251,7 +295,15 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 3) here:
     // 
-    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0});
+    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0, hasSubmitted: false});
+    
+  }
+
+  protected onButtonSubmitting_e9c9b721(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 4) here:
+    // 
+    if (this.state.submitting) return EventHelper.cancel(event);
     
   }
 
@@ -259,7 +311,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
-    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0});
+    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0, hasSubmitted: false});
     
   }
 
@@ -267,18 +319,18 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSubmitting (Button 5) here:
     // 
+    if (this.state.submitting) return EventHelper.cancel(event);
     
   }
 
   protected onButtonSuccess_e76846ad(event: Event) {
-
-    if (this.state.submitting) return EventHelper.cancel(event);
 
     // Handle the event of onButtonSuccess (Button 5) here:
     // 
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    this.state.hasSubmitted = false;
     
     const price = ReactDOM.findDOMNode(this.refs.price);
     const auction = this.getDataFromNotation('Quote[#i].Auction');
@@ -293,41 +345,65 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
-  protected onButtonSuccess_802159d0(event: Event) {
+  protected onButtonSubmitting_802159d0(event: Event) {
 
+    // Handle the event of onButtonSubmitting (Button 6) here:
+    // 
     if (this.state.submitting) return EventHelper.cancel(event);
+    
+  }
+
+  protected onButtonSuccess_802159d0(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 6) here:
     // 
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    this.state.hasSubmitted = false;
+    
     this.forceUpdate();
     
   }
 
-  protected onButtonSuccess_8cbc5b17(event: Event) {
+  protected onButtonSubmitting_8cbc5b17(event: Event) {
 
+    // Handle the event of onButtonSubmitting (Button 7) here:
+    // 
     if (this.state.submitting) return EventHelper.cancel(event);
+    
+  }
+
+  protected onButtonSuccess_8cbc5b17(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 7) here:
     // 
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    this.state.hasSubmitted = false;
+    
     this.forceUpdate();
     
   }
 
-  protected onButtonSuccess_323ba37c(event: Event) {
+  protected onButtonSubmitting_323ba37c(event: Event) {
 
+    // Handle the event of onButtonSubmitting (Button 8) here:
+    // 
     if (this.state.submitting) return EventHelper.cancel(event);
+    
+  }
+
+  protected onButtonSuccess_323ba37c(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 8) here:
     // 
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    this.state.hasSubmitted = false;
+    
     this.forceUpdate();
     
   }
@@ -337,6 +413,7 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSubmitting (Bid) here:
     // 
     this.state.submitting = true;
+    this.state.hasSubmitted = true;
     this.forceUpdate();
     
   }
@@ -388,7 +465,7 @@ class Rectangle_cad06e8d extends Base {
                       .internal-fsb-element.col-12(style={'marginBottom': '10px', 'marginTop': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="ca80140b")
                         .container-fluid
                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                            Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}, type="button", onSuccess=this.onButtonSuccess_4a579143.bind(this), onClick=((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this), internal-fsb-guid="4a579143")
+                            Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, false);})()}, onClick=((event) => { window.internalFsbSubmit('4a579143', 'Quote', event, ((results) => { this.manipulate('4a579143', 'Quote', results); }).bind(this)); }).bind(this), type="button", onSubmitting=this.onButtonSubmitting_4a579143.bind(this), onSuccess=this.onButtonSuccess_4a579143.bind(this), internal-fsb-guid="4a579143")
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="04b90b11")
                                 img(style={'display': 'block', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'width': '40px', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bid-inactive.png")
                             input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="1ae8405a")
@@ -404,7 +481,7 @@ class Rectangle_cad06e8d extends Base {
                       .internal-fsb-element.col-12(style={'marginBottom': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="7b54582d")
                         .container-fluid
                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                            Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}, type="button", onSuccess=this.onButtonSuccess_c05b11c1.bind(this), onClick=((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this), internal-fsb-guid="c05b11c1")
+                            Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, false);})()}, onClick=((event) => { window.internalFsbSubmit('c05b11c1', 'Quote', event, ((results) => { this.manipulate('c05b11c1', 'Quote', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_c05b11c1.bind(this), onSubmitting=this.onButtonSubmitting_c05b11c1.bind(this), internal-fsb-guid="c05b11c1")
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="b6ec8d55")
                                 img(style={'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/bidded-inactive.png")
                             input.internal-fsb-element(type="hidden", value="2", internal-fsb-guid="4cade2e7")
@@ -420,7 +497,7 @@ class Rectangle_cad06e8d extends Base {
                       .internal-fsb-element.col-12(style={'marginBottom': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="12a672c3")
                         .container-fluid
                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                            Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}, type="button", onSuccess=this.onButtonSuccess_833e4eb9.bind(this), onClick=((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this), internal-fsb-guid="833e4eb9")
+                            Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, false);})()}, onClick=((event) => { window.internalFsbSubmit('833e4eb9', 'Quote', event, ((results) => { this.manipulate('833e4eb9', 'Quote', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_833e4eb9.bind(this), onSubmitting=this.onButtonSubmitting_833e4eb9.bind(this), internal-fsb-guid="833e4eb9")
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="4bac7ab7")
                                 img(style={'display': 'block', 'width': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '40px', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/chat-inactive.png")
                             input.internal-fsb-element(type="hidden", value="3", internal-fsb-guid="d24ed774")
@@ -436,7 +513,7 @@ class Rectangle_cad06e8d extends Base {
                       .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="9a5131da")
                         .container-fluid
                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                            Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}, type="button", onSuccess=this.onButtonSuccess_e9c9b721.bind(this), onClick=((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this), internal-fsb-guid="e9c9b721")
+                            Button.internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, false);})()}, onClick=((event) => { window.internalFsbSubmit('e9c9b721', 'Quote', event, ((results) => { this.manipulate('e9c9b721', 'Quote', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_e9c9b721.bind(this), onSubmitting=this.onButtonSubmitting_e9c9b721.bind(this), internal-fsb-guid="e9c9b721")
                               .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="6b7e8340")
                                 img(style={'display': 'block', 'width': '40px', 'height': '40px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'cursor': 'pointer'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-inactive.png")
                             input.internal-fsb-element(type="hidden", value="4", internal-fsb-guid="d1920261")
@@ -511,7 +588,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : ((this.hasError(i)) ? 'rgb(255, 172, 172)' : '');})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})(), borderTopColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderRightColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderBottomColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderLeftColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})()}, key="item_" + i, type="button", onSubmitting=this.onButtonSubmitting_e76846ad.bind(this), data-index=i + '', onSuccess=this.onButtonSuccess_e76846ad.bind(this), onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="e76846ad")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e76846ad(style={background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : ((this.hasError(i)) ? 'rgb(255, 172, 172)' : '');})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})(), borderTopColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderRightColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderBottomColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})(), borderLeftColor: (()=>{return (this.hasError(i)) ? 'rgb(255, 0, 0)' : '';})()}, key="item_" + i, onClick=((event) => { window.internalFsbSubmit('e76846ad', 'Listing', event, ((results) => { this.manipulate('e76846ad', 'Listing', results); }).bind(this)); }).bind(this), type="button", data-index=i + '', onSubmitting=this.onButtonSubmitting_e76846ad.bind(this), onSuccess=this.onButtonSuccess_e76846ad.bind(this), internal-fsb-guid="e76846ad")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="31c75169")
                                       .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''}, internal-fsb-guid="5a671a7d")
                                         .container-fluid
@@ -526,7 +603,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, type="button", onSuccess=this.onButtonSuccess_802159d0.bind(this), onClick=((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="802159d0")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, onClick=((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_802159d0.bind(this), onSubmitting=this.onButtonSubmitting_802159d0.bind(this), internal-fsb-guid="802159d0")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="72aecc3a")
                                       .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': 'rgba(214, 237, 255, 0)'}, internal-fsb-guid="704100b7")
                                         .container-fluid
@@ -540,7 +617,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, type="button", onSuccess=this.onButtonSuccess_8cbc5b17.bind(this), onClick=((event) => { window.internalFsbSubmit('8cbc5b17', 'Listing', event, ((results) => { this.manipulate('8cbc5b17', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="8cbc5b17")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, onClick=((event) => { window.internalFsbSubmit('8cbc5b17', 'Listing', event, ((results) => { this.manipulate('8cbc5b17', 'Listing', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_8cbc5b17.bind(this), onSubmitting=this.onButtonSubmitting_8cbc5b17.bind(this), internal-fsb-guid="8cbc5b17")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="e8656190")
                                       .internal-fsb-element(style={'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'}, internal-fsb-guid="1e5c65cc")
                                         .container-fluid
@@ -554,7 +631,7 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, type="button", onSuccess=this.onButtonSuccess_323ba37c.bind(this), onClick=((event) => { window.internalFsbSubmit('323ba37c', 'Listing', event, ((results) => { this.manipulate('323ba37c', 'Listing', results); }).bind(this)); }).bind(this), internal-fsb-guid="323ba37c")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, onClick=((event) => { window.internalFsbSubmit('323ba37c', 'Listing', event, ((results) => { this.manipulate('323ba37c', 'Listing', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_323ba37c.bind(this), onSubmitting=this.onButtonSubmitting_323ba37c.bind(this), internal-fsb-guid="323ba37c")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="95270ad9")
                                       .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': (()=>{return (this.state.selectedIndex == i) ? '#007bf' : '';})() || 'rgba(214, 237, 255, 0)'}, internal-fsb-guid="6bdca277")
                                         .container-fluid
@@ -581,9 +658,9 @@ class Rectangle_cad06e8d extends Base {
                                                 .container-fluid
                                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                     .internal-fsb-element.col-12(style={display: (()=>{return (this.isMatchedRank(i)) ? 'block' : 'none';})(), padding: '0px'}, internal-fsb-guid="21d1c3ed")
-                                                      img(style={'display': 'block', 'width': '80px', 'height': '80px', 'marginLeft': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
+                                                      img(style={'display': 'block', 'width': '80px', 'height': '80px', 'marginLeft': '10px', 'marginRight': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
                                                     .internal-fsb-element.col-12(style={display: (()=>{return (this.isMatchedRank(i)) ? 'none' : 'block';})(), padding: '0px'}, internal-fsb-guid="cccea251")
-                                                      img(style={'display': 'block', 'width': '80px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'height': '80px', 'marginLeft': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
+                                                      img(style={'display': 'block', 'width': '60px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'marginLeft': '20px', 'height': '60px', 'marginTop': '10px', 'marginBottom': '10px', 'marginRight': '20px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
                                                     .internal-fsb-element.col-12(style={'fontSize': '12px', 'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontWeight': 'bold', 'color': (()=>{return (this.isMatchedRank(i)) ? 'rgb(22, 98, 250)' : '';})() || 'rgba(217, 217, 217, 1)', 'marginTop': '5px'}, internal-fsb-guid="5022e90e")
                                                       | #{this.getRankDetail(i)}
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
@@ -592,16 +669,16 @@ class Rectangle_cad06e8d extends Base {
                                           | มีบางรายการที่คุณต้องแก้เพื่อให้ผ่านงานประมูลราคา
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
-                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, key="item_" + i, row=data)
+                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, onpricechanged=this.onPriceChanged.bind(this), index=i, hassubmitted=this.state.hasSubmitted, key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
-                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="price", type="text", placeholder="ราคารวมทั้งหมด", defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))
+                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="price", type="text", placeholder="ราคารวมทั้งหมด", disabled=true, defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
                                         input.internal-fsb-element.col-12(type="hidden", value="", internal-fsb-guid="d30aa93b")
                                         input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="a5b102c4")
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, type="button", onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), internal-fsb-guid="9868a6d5")
+                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
                             .internal-fsb-element(style={display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}, internal-fsb-guid="51201e78")
@@ -629,10 +706,6 @@ class Rectangle_cad06e8d extends Base {
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                       .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'}, internal-fsb-guid="00758360")
                                                         | สินค้าเทียบเคียง: ทดแทน
-                                                      .internal-fsb-element.col-7.offset-0(style={padding: '0px'}, internal-fsb-guid="1382e4c9")
-                                                        input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, type="text", placeholder="ราคาต่อหน่วย")
-                                                      .internal-fsb-element.col-5.offset-0(style={'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px'}, internal-fsb-guid="530bacd3")
-                                                        | บาท
                                                 .internal-fsb-element.col-5.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'}, internal-fsb-guid="176a4c29")
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor

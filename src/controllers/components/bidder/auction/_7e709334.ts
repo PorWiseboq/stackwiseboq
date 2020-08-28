@@ -88,6 +88,7 @@ class Controller extends Base {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
+ 		
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -228,10 +229,29 @@ class Controller extends Base {
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
     	try {
-    	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
-    	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
-        
-        if (schema && schema.group == 'Auction' && upsertResults.length != 0) {
+        if (schema && schema.group == 'Auction') {
+          let auctionData = data.filter(input => input.name == 'qid' || input.name == 'sid');
+   		    let auction = SchemaHelper.getDataTableSchemaFromNotation('Auction', ProjectConfigurationHelper.getDataSchema());
+   		    let auctionDataset = await DatabaseHelper.retrieve(auctionData, auction, this.request.session, true);
+   		    
+          let priceData = data.filter(input => input.name == 'price' && input.group == 'Auction');
+          let price = parseFloat(priceData[0].value);
+          
+          if (isNaN(price)) {
+            throw new Error('กรุณากรอกราคาต่อหน่วยให้ครบ');
+          }
+          
+          if (price <= 0) {
+            throw new Error('กรุณาเสนอราคาที่สูงกว่าศูนย์บาท');
+          }
+          
+          if (auctionDataset['Auction'].rows.length != 0 && (price + 100) > auctionDataset['Auction'].rows[0].columns['price']) {
+            throw new Error('กรุณาเสนอราคาใหม่ที่ต่ำกว่าราคาเดิมอย่างน้อย 100 บาท');
+          }
+          
+      	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
+      	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+          
           const qid = upsertResults[0].keys['qid'];
           
           RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
@@ -330,6 +350,8 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
         		});
       		});
         } else {
+      	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
+      	  
           resolve(upsertResults);
         }
       } catch(error) {
@@ -419,7 +441,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "8cbc5b17", "retrieve", ["e8656190"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
 		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);
@@ -669,6 +691,16 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('1382e4c9', "relational", "Auction.Substitute", "price");
+		ValidationHelper.registerInput('1382e4c9', "Price", false, "");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Price here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('9c338431', "relational", "Auction.Substitute", "title");
 		ValidationHelper.registerInput('9c338431', "Name", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -736,16 +768,6 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
       input = RequestHelper.getInput(this.pageId, request, 'a5b102c4' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('1382e4c9', "relational", "Substitute", "price");
-		ValidationHelper.registerInput('1382e4c9', "Price", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Price here:
       // 
       
       if (input != null) data.push(input);
