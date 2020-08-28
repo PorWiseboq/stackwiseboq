@@ -446,7 +446,7 @@ class Rectangle_cad06e8d extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'flexDirection': 'column', 'WebkitFlexDirection': 'column', 'MsFlexDirection': 'column', 'height': '100vh', 'display': 'flex', 'background': 'linear-gradient(15deg, rgba(153, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%)', 'FsbBackgroundType': 'linear', 'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '0px', 'paddingBottom': '0px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element internal-fsb-allow-cursor col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="cad06e8d")
+      div(style=Object.assign({'flexDirection': 'column', 'WebkitFlexDirection': 'column', 'MsFlexDirection': 'column', 'height': '100vh', 'display': 'flex', 'background': 'linear-gradient(15deg, rgba(153, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%)', 'FsbBackgroundType': 'linear', 'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '0px', 'paddingBottom': '0px', 'width': '100vw'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element internal-fsb-allow-cursor col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="cad06e8d")
         .internal-fsb-element(style={'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1)'}, internal-fsb-guid="6a56a9be")
           .container-fluid
             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor(style={'display': 'block'})
@@ -455,11 +455,11 @@ class Rectangle_cad06e8d extends Base {
               Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary(style={'paddingLeft': '15px', 'paddingRight': '15px', 'float': 'right', 'fontSize': '14px', 'marginTop': '10px', 'marginRight': '10px'}, type="button", internal-fsb-guid="108bb2b9")
                 .internal-fsb-element(internal-fsb-guid="108bb2b9-text")
                   | ออกจากระบบ
-        .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'flexGrow': '1', 'WebkitFlexGrow': '1', 'width': '100%'}, internal-fsb-guid="a30c3884")
-          .internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'table', 'height': '100%', 'width': '100%'}, internal-fsb-guid="9b826999")
-            .internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'table-row', 'height': '100%'}, internal-fsb-guid="e2254eb7")
-              .internal-fsb-element.internal-fsb-allow-cursor(style={'borderRightColor': 'rgba(255, 255, 255, 1)', 'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1.0)', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'display': 'table-cell', 'verticalAlign': 'top', 'width': '1px'}, internal-fsb-guid="712e9de1")
-                .internal-fsb-element(style={'fontSize': '11px', 'flexShrink': '1', 'WebkitFlexShrink': '1', 'cursor': 'default'}, internal-fsb-guid="74e4253b")
+        .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'flexGrow': '1', 'WebkitFlexGrow': '1', 'position': 'relative'}, internal-fsb-guid="a30c3884")
+          .internal-fsb-element.internal-fsb-allow-cursor(style={'height': '100%', 'width': '100%', 'position': 'absolute', 'top': '0px', 'left': '0px', 'right': '0px', 'bottom': '0px'}, internal-fsb-guid="9b826999")
+            .internal-fsb-element.internal-fsb-allow-cursor(style={'height': '100%', 'width': '100%', 'position': 'relative', 'display': 'flex', 'flexDirection': 'row', 'WebkitFlexDirection': 'row', 'MsFlexDirection': 'row'}, internal-fsb-guid="e2254eb7")
+              .internal-fsb-element.internal-fsb-allow-cursor(style={'borderRightColor': 'rgba(255, 255, 255, 1)', 'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1.0)', 'verticalAlign': 'top', 'position': 'relative', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'flexGrow': '0', 'flexShrink': '0', 'flexBasis': '60px', 'WebkitFlexBasis': '60px'}, internal-fsb-guid="712e9de1")
+                .internal-fsb-element(style={'fontSize': '11px', 'cursor': 'default'}, internal-fsb-guid="74e4253b")
                   .container-fluid
                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                       .internal-fsb-element.col-12(style={'marginBottom': '10px', 'marginTop': '10px', 'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="ca80140b")
@@ -526,8 +526,8 @@ class Rectangle_cad06e8d extends Base {
                               img(style={'display': 'block', 'width': '40px', 'height': '40px', 'marginTop': '5px', 'marginRight': '5px', 'marginBottom': '5px', 'marginLeft': '5px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/sold-active.png")
                             .internal-fsb-element.col-12(style={'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}, internal-fsb-guid="b4775a3d")
                               | จ่ายเงินแล้ว
-              .internal-fsb-element.internal-fsb-allow-cursor(style={'borderRightColor': 'rgba(22, 98, 250, 1)', 'background': 'rgba(255, 255, 255, 1)', 'display': 'table-cell'}, internal-fsb-guid="3e557242")
-                .internal-fsb-element(style={'width': '100%', 'height': '100%', 'display': 'flex', 'top': '0px', 'left': '0px', 'flexDirection': 'column', 'WebkitFlexDirection': 'column', 'MsFlexDirection': 'column', 'borderBottomColor': 'rgba(22, 98, 250, 1)'}, internal-fsb-guid="b3410868")
+              .internal-fsb-element.internal-fsb-allow-cursor(style={'borderRightColor': 'rgba(22, 98, 250, 1)', 'background': 'rgba(255, 255, 255, 1)', 'flexGrow': '1', 'WebkitFlexGrow': '1'}, internal-fsb-guid="3e557242")
+                .internal-fsb-element(style={'width': '100%', 'height': '100%', 'borderBottomColor': 'rgba(22, 98, 250, 1)', 'position': 'relative', 'display': 'flex', 'flexDirection': 'column', 'WebkitFlexDirection': 'column', 'MsFlexDirection': 'column'}, internal-fsb-guid="b3410868")
                   .internal-fsb-element(style={'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(22, 98, 250, 1)', 'borderBottomWidth': '2px', 'paddingTop': '10px', 'paddingBottom': '10px'}, internal-fsb-guid="4069ed4d")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -579,10 +579,10 @@ class Rectangle_cad06e8d extends Base {
                                       | จ่ายเงินแล้ว
                                     .internal-fsb-element.-fsb-preset-4839e353.col-12.offset-0(style={'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="8d41bdab")
                                       | งานประมูลราคาวัสดุก่อสร้างที่ลูกค้าจ่ายเงินเรียบร้อยแล้วและรอทาง WiseBOQ โอนเงินไปให้ร้านค้าเพื่อทำการจัดส่งสินค้าต่อไป
-                  .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 1)', 'flexGrow': '1', 'WebkitFlexGrow': '1'}, internal-fsb-guid="ddec7e5c")
-                    .internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'table', 'height': '100%', 'width': '100%'}, internal-fsb-guid="71616aa2")
-                      .internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'table-row'}, internal-fsb-guid="2dbce05c")
-                        .internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'table-cell', 'borderRightWidth': '2px', 'width': '200px', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'position': 'relative'}, internal-fsb-guid="03a20d7c")
+                  .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 1)', 'flexGrow': '1', 'WebkitFlexGrow': '1', 'position': 'relative'}, internal-fsb-guid="ddec7e5c")
+                    .internal-fsb-element.internal-fsb-allow-cursor(style={'height': '100%', 'width': '100%', 'position': 'absolute', 'top': '0px', 'left': '0px', 'bottom': '0px', 'right': '0px'}, internal-fsb-guid="71616aa2")
+                      .internal-fsb-element.internal-fsb-allow-cursor(style={'width': '100%', 'height': '100%', 'position': 'relative', 'display': 'flex'}, internal-fsb-guid="2dbce05c")
+                        .internal-fsb-element.internal-fsb-allow-cursor(style={'borderRightWidth': '2px', 'width': '200px', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'position': 'relative'}, internal-fsb-guid="03a20d7c")
                           .internal-fsb-element.internal-fsb-allow-cursor(style={'borderRightColor': 'rgba(22, 98, 250, 1)', 'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'top': '0px', 'left': '0px', 'bottom': '0px', 'right': '0px', 'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="394c4745")
                             .internal-fsb-element(style={display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}, internal-fsb-guid="c3d853d0")
                               .container-fluid
@@ -641,7 +641,7 @@ class Rectangle_cad06e8d extends Base {
                                               | 55,000 บาท
                                             .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'}, internal-fsb-guid="9ec45baa")
                                               | บัตรเครดิต
-                        .internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'table-cell', 'position': 'relative'}, internal-fsb-guid="154b7137")
+                        .internal-fsb-element.internal-fsb-allow-cursor(style={'position': 'relative', 'flexGrow': '1', 'WebkitFlexGrow': '1'}, internal-fsb-guid="154b7137")
                           .internal-fsb-element.internal-fsb-allow-cursor(style={'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'left': '0px', 'top': '0px', 'right': '0px', 'bottom': '0px', 'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="ed65b978")
                             .internal-fsb-element(style={display: (()=>{return this.getDisplayOf(QuoteType.AUCTIONING, true);})()}, internal-fsb-guid="ae9a328e")
                               .container-fluid
