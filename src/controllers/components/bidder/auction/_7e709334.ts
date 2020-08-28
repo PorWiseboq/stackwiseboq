@@ -241,6 +241,10 @@ class Controller extends Base {
             throw new Error('กรุณากรอกราคาต่อหน่วยให้ครบ');
           }
           
+          if (price <= 0) {
+            throw new Error('กรุณาเสนอราคาที่สูงกว่าศูนย์บาท');
+          }
+          
           if (auctionDataset['Auction'].rows.length != 0 && (price + 100) > auctionDataset['Auction'].rows[0].columns['price']) {
             throw new Error('กรุณาเสนอราคาใหม่ที่ต่ำกว่าราคาเดิมอย่างน้อย 100 บาท');
           }
