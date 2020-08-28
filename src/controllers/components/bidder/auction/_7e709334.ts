@@ -228,10 +228,19 @@ class Controller extends Base {
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
     	try {
-    	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
-    	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
-        
-        if (schema && schema.group == 'Auction' && upsertResults.length != 0) {
+        if (schema && schema.group == 'Auction') {
+          let auctionData = data.filter(input => input.name == 'qid' || input.name == 'sid');
+   		    let auction = SchemaHelper.getDataTableSchemaFromNotation('Auction', ProjectConfigurationHelper.getDataSchema());
+   		    let auctionDataset = await DatabaseHelper.retrieve(auctionData, auction, this.request.session, true);
+   		    
+          let priceData = data.filter(input => input.name == 'price');
+          if (auctionDataset['Auction'].rows.length != 0 && priceData[0].value + 100 > auctionDataset['Auction'].rows[0].columns['price']) {
+            throw new Error('กรุณาเสนอราคาใหม่ที่ต่ำกว่าราคาเดิมอย่างน้อย 100 บาท');
+          }
+          
+      	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
+      	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+          
           const qid = upsertResults[0].keys['qid'];
           
           RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
@@ -330,6 +339,8 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
         		});
       		});
         } else {
+      	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
+      	  
           resolve(upsertResults);
         }
       } catch(error) {
