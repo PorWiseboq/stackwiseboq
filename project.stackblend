@@ -5412,7 +5412,7 @@
         "  // ",
         "  protected getDataFromNotation(notation: string, inArray: boolean=false): any {",
         "    return super.getDataFromNotation(notation, inArray);",
-        "  }",
+        "  } ",
         "  ",
         "  \" type=\"{this.getDataFromNotation('Quote[#i].substitute', false)}\" internal-fsb-react-style-background-color=\"CODE[return (this.state.error) ? 'rgb(255, 172, 172)' : '';]\" internal-fsb-react-style-border-top-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-right-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-bottom-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-left-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" submitting=\"{this.state.submitting}\" onpricechanged=\"{this.onPriceChanged.bind([this, i])}\">",
         "                                                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -6288,7 +6288,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a30c3884",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
           "64a6ac8c",
           0,
@@ -17427,7 +17427,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
-    "Project.Controls.FlowLayout_c6ba5b53": "ffd834e484b43782d7e5e5fecd0c26fdc1b2fcd9"
+    "Project.Controls.FlowLayout_c6ba5b53": "c90c1e8d720c657f71273416ddf4e22f6e424b65"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "47331f9b173e049fc58764ea6c4a36f4222cb57f",
