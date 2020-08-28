@@ -51,6 +51,7 @@ interface IState extends IAutoBaseState {
   quoteType: QuoteType;
   selectedIndex: number;
   submitting: boolean;
+  hasSubmitted: boolean;
   itemPrices: number[];
 }
 
@@ -61,6 +62,7 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   quoteType: QuoteType.AUCTIONING,
   selectedIndex: 0,
   submitting: false,
+  hasSubmitted: false,
   itemPrices: []
 });
 
@@ -195,17 +197,16 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
-  private onPriceChanged(price: number) {
-    const $this = this[0];
-    $this.state.itemPrices[this[1]] = price;
+  private onPriceChanged(index: number, price: number) {
+    this.state.itemPrices[index] = price;
     
-    const count = $this.getDataFromNotation('Quote[#i].Listing').length;
+    const count = this.getDataFromNotation('Quote[#i].Listing').length;
     let sum = 0;
     for (let i=0; i<count; i++) {
-      sum += $this.state.itemPrices[i];
+      sum += this.state.itemPrices[i];
     }
     
-    const element = ReactDOM.findDOMNode($this.refs.price);
+    const element = ReactDOM.findDOMNode(this.refs.price);
     if (element) {
       if (isNaN(sum)) element.value = "กรุณากรอกราคาต่อหน่วยให้ครบ";
       else element.value = sum.toString();
@@ -329,6 +330,7 @@ class Rectangle_cad06e8d extends Base {
     let element = EventHelper.getOriginalElement(event);
     
     this.state.selectedIndex = parseInt(element.getAttribute('data-index'));
+    this.state.hasSubmitted = false;
     
     const price = ReactDOM.findDOMNode(this.refs.price);
     const auction = this.getDataFromNotation('Quote[#i].Auction');
@@ -405,6 +407,7 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSubmitting (Bid) here:
     // 
     this.state.submitting = true;
+    this.state.hasSubmitted = true;
     this.forceUpdate();
     
   }
@@ -660,7 +663,7 @@ class Rectangle_cad06e8d extends Base {
                                           | มีบางรายการที่คุณต้องแก้เพื่อให้ผ่านงานประมูลราคา
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
-                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, onpricechanged=this.onPriceChanged.bind([this, i]), key="item_" + i, row=data)
+                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, onpricechanged=this.onPriceChanged.bind(this), index=i, hassubmitted=this.state.hasSubmitted, key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")

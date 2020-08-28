@@ -88,6 +88,7 @@ class Controller extends Base {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
+ 		
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -687,7 +688,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('1382e4c9', "relational", "Auction.Substitute", "price");
-		ValidationHelper.registerInput('1382e4c9', "Price", false, undefined);
+		ValidationHelper.registerInput('1382e4c9', "Price", false, "");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
     
