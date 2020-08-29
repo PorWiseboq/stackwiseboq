@@ -246,13 +246,13 @@ class Rectangle_cad06e8d extends Base {
     if (fullmode) {
       if (remaining) {
         if (remaining == '00:00:00') {
-          remaining = 'งานประมูลนี้หมดเวลาแล้ว';
+          return 'งานประมูลนี้หมดเวลาแล้ว';
         } else {
           const splited = remaining.split(':');
-          remaining = `คุณเหลือเวลาอีก ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
+          return `คุณเหลือเวลาอีก ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
         }
       } else {
-        remaining = '';
+        return '';
       }
     } else {
       return remaining;
