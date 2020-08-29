@@ -5328,7 +5328,6 @@
         "                                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-49a6327a col-9 offset-0\" internal-fsb-guid=\"53d42bea\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 49a6327a\" internal-fsb-react-data=\"title\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? '#e65100' : '');]\">#{this.getTitle(i)}</div>",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-3 offset-0\" internal-fsb-guid=\"c33726a8\" internal-fsb-name=\"Remaining\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 0px; padding-right: 0px; text-align: center; font-size: 10px; line-height: 19px; vertical-align: middle; color: rgba(22, 98, 250, 1)\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');]\">#{this.state.remainingTimes[i]}</div>",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-4aee31ab col-7\" internal-fsb-guid=\"3945ba95\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4aee31ab\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');]\">#{this.getSubtitle(i)}</div>",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-3bec5885 col-5\" internal-fsb-guid=\"c78396c8\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 3bec5885\">#{this.getTag(i)}</div>",
         "                                                                                </div>",
@@ -6434,11 +6433,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a9a3406a",
+        "selectingElementGUID": "53d42bea",
         "currentCursorWalkPath": [
-          "176a4c29",
+          "704100b7",
           0,
-          4,
+          1,
           null
         ]
       },
@@ -17592,7 +17591,7 @@
     "Project.Controls.FlowLayout_b2020622": "e235eead3435de31ff5d1db423a97f0a8c9970d4",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "3ca23f63a58d01f48c0aea3f98e41ba59e26e285",
+    "Project.Controls.Rectangle_cad06e8d": "aff6c1a8968b3a5e0b11170c17b4325be5576562",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",

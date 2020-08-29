@@ -684,8 +684,6 @@ class Rectangle_cad06e8d extends Base {
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                             .internal-fsb-element.-fsb-preset-49a6327a.col-9.offset-0(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? '#e65100' : '');})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}, internal-fsb-guid="53d42bea")
-                                            .internal-fsb-element.col-3.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'center', 'fontSize': '10px', 'lineHeight': '19px', 'verticalAlign': 'middle', 'color': (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');})() || 'rgba(22, 98, 250, 1)'}, internal-fsb-guid="c33726a8")
-                                              | #{this.state.remainingTimes[i]}
                                             .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');})()}, internal-fsb-guid="3945ba95")
                                               | #{this.getSubtitle(i)}
                                             .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'}, internal-fsb-guid="c78396c8")
