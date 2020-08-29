@@ -53,6 +53,7 @@ interface IState extends IAutoBaseState {
   submitting: boolean;
   hasSubmitted: boolean;
   itemPrices: number[];
+  remainingTimes: string[];
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -63,7 +64,8 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   selectedIndex: 0,
   submitting: false,
   hasSubmitted: false,
-  itemPrices: []
+  itemPrices: [],
+  remainingTimes: []
 });
 
 // Auto[ClassBegin]--->
@@ -94,6 +96,14 @@ class Rectangle_cad06e8d extends Base {
   // Declare class variables and functions here:
   //
   protected initialize(): void {
+    window.setInterval((() => {
+      const total = this.getDataFromNotation('Quote').length;
+      const remainingTimes = this.state.remainingTimes;
+      for (let i=0; i<total; i++) {
+        remainingTimes[i] = this.getRemainingTime(i);
+      }
+      this.setState({remainingTimes: remainingTimes});
+    }).bind(this), 1000);
   }
   
   protected componentDidMount(): void {
@@ -197,6 +207,44 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
+  private getRemainingTime(i: number): string {
+    if (i == 1) debugger;
+    
+    const createdAt = this.getDataFromNotation('Quote[' + i + '].createdAt');
+    const hoursChecked = this.getDataFromNotation('Quote[' + i + '].hoursChecked');
+    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote[' + i + '].hours')) : 24;
+    
+    if (isNaN(auctionHours)) auctionHours = 24;
+    
+    const remaining = Math.max(0, new Date(createdAt).getTime() + auctionHours * 60 * 60 * 1000 - new Date().getTime());
+    let seconds = remaining / 1000;
+    let minutes = seconds / 60;
+    let hours = minutes / 60;
+    
+    seconds = Math.floor(seconds) % 60;
+    minutes = Math.floor(minutes) % 60;
+    hours = Math.floor(hours);
+    
+    let _seconds = '';
+    let _minutes = '';
+    let _hours = '';
+    
+    if (seconds < 10) _seconds = '0' + seconds;
+    else _seconds = seconds.toString();
+    
+    if (minutes < 10) _minutes = '0' + minutes;
+    else _minutes = minutes.toString();
+    
+    if (hours < 10) _hours = '0' + hours;
+    else _hours = hours.toString();
+    
+    return `${_hours}:${_minutes}:${_seconds}`;
+  }
+  
+  private getRemainingTimeDisplay(i: number): string {
+    return (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '00:00';
+  }
+  
   private onPriceChanged(index: number, price: number) {
     this.state.itemPrices[index] = price;
     
@@ -263,7 +311,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 1) here:
     // 
-    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0, hasSubmitted: false});
+    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0, hasSubmitted: false, remainingTimes: []});
     
   }
 
@@ -279,7 +327,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 2) here:
     // 
-    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0, hasSubmitted: false});
+    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0, hasSubmitted: false, remainingTimes: []});
     
   }
 
@@ -295,7 +343,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 3) here:
     // 
-    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0, hasSubmitted: false});
+    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0, hasSubmitted: false, remainingTimes: []});
     
   }
 
@@ -311,7 +359,7 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
-    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0, hasSubmitted: false});
+    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0, hasSubmitted: false, remainingTimes: []});
     
   }
 
@@ -581,8 +629,10 @@ class Rectangle_cad06e8d extends Base {
                                       .internal-fsb-element.-fsb-self-5a671a7d(style={'background': 'rgba(214, 237, 255, 0)', 'borderTopColor': 'rgba(77, 195, 250, 1)', 'borderLeftColor': 'rgba(77, 195, 250, 1)', 'borderRightColor': 'rgba(77, 195, 250, 1)', 'borderBottomColor': 'rgba(77, 195, 250, 1)', 'FsbReusableName': '', 'FsbReusableId': '5a671a7d', 'FsbInheritedPresets': ''}, internal-fsb-guid="5a671a7d")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                            .internal-fsb-element.col-12.-fsb-self-49a6327a(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? '#e65100' : '');})()}, internal-fsb-guid="49a6327a")
+                                            .internal-fsb-element.-fsb-self-49a6327a.col-9.offset-0(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? '#e65100' : '');})()}, internal-fsb-guid="49a6327a")
                                               | #{this.getTitle(i)}
+                                            .internal-fsb-element.col-3.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'center', 'fontSize': '10px', 'color': (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');})() || 'rgba(22, 98, 250, 1)', 'lineHeight': '19px', 'verticalAlign': 'middle'}, internal-fsb-guid="e267eda5")
+                                              | #{this.state.remainingTimes[i]}
                                             .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');})()}, internal-fsb-guid="4aee31ab")
                                               | #{this.getSubtitle(i)}
                                             .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(style={background: (()=>{return (this.hasError(i) ? '#e65100' : '');})()}, internal-fsb-guid="3bec5885")
