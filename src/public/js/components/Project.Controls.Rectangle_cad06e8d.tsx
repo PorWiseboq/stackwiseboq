@@ -324,7 +324,7 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getSubstituteTypeDisplay(i: number) {
-    const type = this.getDataFromNotation('Quote[#i].Listing.Auction.Substitute.type');
+    const type = this.getDataFromNotation('Quote[#i].Listing.Substitute.type');
     
     switch (type) {
       case 0:
@@ -818,9 +818,9 @@ class Rectangle_cad06e8d extends Base {
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                       .internal-fsb-element.col-3.offset-0(style={'fontWeight': 'bold', 'marginBottom': '5px'}, internal-fsb-guid="b840c1c0")
                                                         | เปลี่ยนวัสดุเป็น:
-                                                      .internal-fsb-element.col-9.offset-0(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.title"))}, internal-fsb-guid="8656cea5")
-                                                      .internal-fsb-element.col-9.offset-3(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.size"))}, internal-fsb-guid="ed22bc9a")
-                                                      .internal-fsb-element.col-9.offset-3(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.quantity"))}, internal-fsb-guid="a9a3406a")
+                                                      .internal-fsb-element.col-9.offset-0(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Substitute.title"))}, internal-fsb-guid="8656cea5")
+                                                      .internal-fsb-element.col-9.offset-3(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Substitute.size"))}, internal-fsb-guid="ed22bc9a")
+                                                      .internal-fsb-element.col-9.offset-3(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Substitute.quantity"))}, internal-fsb-guid="a9a3406a")
                                   .internal-fsb-element.-fsb-preset-1715aae1.col-12.offset-0(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="5428078e")
                                     | คุณเสนอราคาที่ #{this.getDataFromNotation('Quote[#i].Auction.price')} บาท
                                   Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px'}, type="button", internal-fsb-guid="d3e31c36")
