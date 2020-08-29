@@ -259,6 +259,10 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
+  private getFormEnabledState() {
+    return this.props.submitting || (this.getRemainingTimeDisplay(this.state.selectedIndex) == '00:00:00');
+  }
+  
   private onPriceChanged(index: number, price: number) {
     this.state.itemPrices[index] = price;
     
@@ -723,7 +727,7 @@ class Rectangle_cad06e8d extends Base {
                                           | มีบางรายการที่คุณต้องแก้เพื่อให้ผ่านงานประมูลราคา
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
-                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), submitting=this.state.submitting, onpricechanged=this.onPriceChanged.bind(this), index=i, hassubmitted=this.state.hasSubmitted, key="item_" + i, row=data)
+                                          _Project_Controls_FlowLayout_c6ba5b53_(type=this.getDataFromNotation('Quote[#i].substitute', false), onpricechanged=this.onPriceChanged.bind(this), index=i, hassubmitted=this.state.hasSubmitted, enabled=this.getFormEnabledState(), key="item_" + i, row=data)
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
@@ -732,7 +736,7 @@ class Rectangle_cad06e8d extends Base {
                                           | บาท
                                         input.internal-fsb-element.col-12(type="hidden", value="", internal-fsb-guid="d30aa93b")
                                         input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="a5b102c4")
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), internal-fsb-guid="9868a6d5")
+                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=this.getFormEnabledState(), onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
                             .internal-fsb-element(style={display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}, internal-fsb-guid="51201e78")
