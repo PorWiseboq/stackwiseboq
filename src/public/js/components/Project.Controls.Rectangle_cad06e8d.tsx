@@ -217,20 +217,25 @@ class Rectangle_cad06e8d extends Base {
     if (isNaN(auctionHours)) auctionHours = 24;
     
     const remaining = Math.max(0, new Date(createdAt).getTime() + auctionHours * 60 * 60 * 1000 - new Date().getTime());
-    const seconds = remaining / 1000;
-    const minutes = seconds / 60;
-    const hours = minutes / 60;
+    let seconds = remaining / 1000;
+    let minutes = seconds / 60;
+    let hours = minutes / 60;
     
-    let _seconds = Math.floor(seconds) % 60;
-    if (_seconds < 10) _seconds = '0' + _seconds;
+    seconds = Math.floor(seconds) % 60;
+    minutes = Math.floor(minutes) % 60;
+    hours = Math.floor(hours);
+    
+    let _seconds = '';
+    let _minutes = '';
+    let _hours = '';
+    
+    if (seconds < 10) _seconds = '0' + seconds;
     else _seconds = _seconds.toString();
     
-    let _minutes = Math.floor(minutes) % 60;
-    if (_minutes < 10) _minutes = '0' + _minutes;
+    if (minutes < 10) _minutes = '0' + minutes;
     else _minutes = _minutes.toString();
     
-    let _hours = Math.floor(hours);
-    if (_hours < 10) _hours = '0' + _hours;
+    if (hours < 10) _hours = '0' + hours;
     else _hours = _hours.toString();
     
     return `${_hours}:${_minutes}:${_seconds}`;
