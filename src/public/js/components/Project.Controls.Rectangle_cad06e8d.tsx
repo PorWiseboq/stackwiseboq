@@ -120,10 +120,10 @@ class Rectangle_cad06e8d extends Base {
     let remaining = this.getRemainingTimeDisplay(i);
     if (remaining) {
       if (remaining == '00:00:00') {
-        remaining = '\nงานประมูลนี้หมดเวลาแล้ว';
+        remaining = '<br/>งานประมูลนี้หมดเวลาแล้ว';
       } else {
         const splited = remaining.split(':');
-        remaining = `\nคุณเหลือเวลาอีก ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
+        remaining = `<br/>คุณเหลือเวลาอีก ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
       }
     } else {
       remaining = '';
@@ -254,7 +254,7 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getRemainingTimeDisplay(i: number): string {
-    return (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '00:00';
+    return (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '00:00:00';
   }
   
   private onPriceChanged(index: number, price: number) {
