@@ -242,7 +242,7 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getRemainingTimeDisplay(i: number, fullmode: boolean=false): string {
-    let remaining = (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '00:00:00';
+    let remaining = (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '';
     if (fullmode) {
       if (remaining) {
         if (remaining == '00:00:00') {
