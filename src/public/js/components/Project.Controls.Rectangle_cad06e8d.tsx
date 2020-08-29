@@ -323,6 +323,21 @@ class Rectangle_cad06e8d extends Base {
     else return (this.state.quoteType === quoteType) ? 'none' : 'block';
   }
   
+  private getSubstituteTypeDisplay(i: number) {
+    const type = this.getDataFromNotation('Quote[#i].Listing.Auction.Substitute.type');
+    
+    switch (type) {
+      case 0:
+        return 'เจาะจง';
+      case 1:
+        return 'เทียบเท่า';
+      case 2:
+        return 'ทดแทน';
+      default:
+        return 'ไม่มี';
+    }
+  }
+  
   // Auto[Merging]--->
   protected onButtonSubmitting_4a579143(event: Event) {
 
@@ -797,7 +812,7 @@ class Rectangle_cad06e8d extends Base {
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                       .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'}, internal-fsb-guid="00758360")
-                                                        | สินค้าเทียบเคียง: ทดแทน
+                                                        | สินค้าเทียบเคียง: #{this.getSubstituteTypeDisplay(i)}
                                                 .internal-fsb-element.col-5.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'}, internal-fsb-guid="176a4c29")
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
