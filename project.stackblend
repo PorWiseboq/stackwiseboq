@@ -4930,7 +4930,7 @@
         "  }",
         "  ",
         "  private getSubstituteTypeDisplay(i: number) {",
-        "    const type = this.getDataFromNotation('Quote[#i].Listing.Auction.Substitute.type');",
+        "    const type = this.getDataFromNotation('Quote[#i].Listing.Substitute.type');",
         "    ",
         "    switch (type) {",
         "      case 0:",
@@ -5790,9 +5790,9 @@
         "                                                                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-3 offset-0\" internal-fsb-guid=\"b840c1c0\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; margin-bottom: 5px\" internal-fsb-react-data=\"\">เปลี่ยนวัสดุเป็น:</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"8656cea5\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Auction.Substitute.title\" style=\"\">ชื่อวัสดุใหม่</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-3\" internal-fsb-guid=\"ed22bc9a\" internal-fsb-name=\"Size\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Auction.Substitute.size\" style=\"\">ขนาดใหม่</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-3\" internal-fsb-guid=\"a9a3406a\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Auction.Substitute.quantity\" style=\"\">ปริมาณใหม่</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"8656cea5\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Substitute.title\" style=\"\">ชื่อวัสดุใหม่</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-3\" internal-fsb-guid=\"ed22bc9a\" internal-fsb-name=\"Size\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Substitute.size\" style=\"\">ขนาดใหม่</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-3\" internal-fsb-guid=\"a9a3406a\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Substitute.quantity\" style=\"\">ปริมาณใหม่</div>",
         "                                                                                                    </div>",
         "                                                                                                </div>",
         "                                                                                            </div>",
@@ -6448,11 +6448,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "9b826999",
+        "selectingElementGUID": "a9a3406a",
         "currentCursorWalkPath": [
-          "24731127",
+          "176a4c29",
           0,
-          1,
+          4,
           null
         ]
       },
@@ -6476,16 +6476,12 @@
             "size": {},
             "quantity": {},
             "Substitute": {
-              "type": {}
+              "type": {},
+              "title": {},
+              "size": {},
+              "quantity": {}
             },
-            "lid": {},
-            "Auction": {
-              "Substitute": {
-                "title": {},
-                "size": {},
-                "quantity": {}
-              }
-            }
+            "lid": {}
           },
           "Auction": {
             "price": {}
@@ -17606,7 +17602,7 @@
     "Project.Controls.FlowLayout_b2020622": "e235eead3435de31ff5d1db423a97f0a8c9970d4",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "5d07c2a2a0b34e54feea238cc82b211b0e3d6bc1",
+    "Project.Controls.Rectangle_cad06e8d": "aa79362195b30d9ed776dda038bc370fb7219483",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
