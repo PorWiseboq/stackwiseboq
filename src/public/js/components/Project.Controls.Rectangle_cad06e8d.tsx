@@ -97,13 +97,9 @@ class Rectangle_cad06e8d extends Base {
   //
   protected initialize(): void {
     window.setInterval((() => {
-      const total = this.getDataFromNotation('Quote').length;
-      const remainingTimes = this.state.remainingTimes;
-      for (let i=0; i<total; i++) {
-        remainingTimes[i] = this.getRemainingTime(i);
-      }
-      this.setState({remainingTimes: remainingTimes});
+      this.refreshRemainingTime(false);
     }).bind(this), 1000);
+    this.refreshRemainingTime(true);
   }
   
   protected componentDidMount(): void {
@@ -205,6 +201,19 @@ class Rectangle_cad06e8d extends Base {
     } else {
       return `อันดับที่ ${i + 1}`;
     }
+  }
+  
+  private refreshRemainingTime(refresh: boolean) {
+    if (refresh) {
+      this.state.remainingTimes = [];
+    }
+    
+    const total = this.getDataFromNotation('Quote').length;
+    const remainingTimes = this.state.remainingTimes;
+    for (let i=0; i<total; i++) {
+      remainingTimes[i] = this.getRemainingTime(i);
+    }
+    this.setState({remainingTimes: remainingTimes});
   }
   
   private getRemainingTime(i: number): string {
@@ -329,7 +338,8 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 1) here:
     // 
-    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0, hasSubmitted: false, remainingTimes: []});
+    this.setState({quoteType: QuoteType.AUCTIONING, selectedIndex: 0, hasSubmitted: false});
+    this.refreshRemainingTime(true);
     
   }
 
@@ -345,7 +355,8 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 2) here:
     // 
-    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0, hasSubmitted: false, remainingTimes: []});
+    this.setState({quoteType: QuoteType.OFFERING, selectedIndex: 0, hasSubmitted: false});
+    this.refreshRemainingTime(true);
     
   }
 
@@ -361,7 +372,8 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 3) here:
     // 
-    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0, hasSubmitted: false, remainingTimes: []});
+    this.setState({quoteType: QuoteType.CHATTING, selectedIndex: 0, hasSubmitted: false});
+    this.refreshRemainingTime(true);
     
   }
 
@@ -377,7 +389,8 @@ class Rectangle_cad06e8d extends Base {
 
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
-    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0, hasSubmitted: false, remainingTimes: []});
+    this.setState({quoteType: QuoteType.PAID, selectedIndex: 0, hasSubmitted: false});
+    this.refreshRemainingTime(true);
     
   }
 
