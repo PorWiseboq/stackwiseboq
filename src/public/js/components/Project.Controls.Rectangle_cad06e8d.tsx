@@ -615,7 +615,7 @@ class Rectangle_cad06e8d extends Base {
                                     .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'textAlign': 'left', 'FsbInheritedPresets': '7a279686'}, internal-fsb-guid="2434192c")
                                       | เคาะประมูล
                                     .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'textAlign': 'left'}, internal-fsb-guid="49d55ce2")
-                                      | หน้านี้จะแสดงงานประมูลวัสดุก่อสร้างทั้งหมดที่คุณสามารถเคาะราคาได้
+                                      | หน้านี้จะแสดงงานประมูลวัสดุก่อสร้างทั้งหมดที่คุณสามารถเคาะราคาได้ กรุณาระบุราคาของแต่ละรายการก่อนที่เวลาจะหมด
                         .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.OFFERING, true);})()}, internal-fsb-guid="0d656c9d")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -627,7 +627,7 @@ class Rectangle_cad06e8d extends Base {
                                     .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'textAlign': 'left', 'FsbInheritedPresets': '7a279686'}, internal-fsb-guid="cad0c464")
                                       | ประมูลผ่าน
                                     .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'textAlign': 'left'}, internal-fsb-guid="4bb72418")
-                                      | งานประมูลราคาวัสดุก่อสร้างซึ่งผ่านงานประมูลที่รอลูกค้าเลือกซื้อ กรุณาระบุราคาของแต่ละรายการภายใน 24 ชั่วโมง
+                                      | งานประมูลราคาวัสดุก่อสร้างซึ่งผ่านงานประมูล กำลังรอลูกค้าตัดสินใจเลือกซื้ออยู่
                         .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}, internal-fsb-guid="ba43b015")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -639,7 +639,7 @@ class Rectangle_cad06e8d extends Base {
                                     .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'textAlign': 'left', 'FsbInheritedPresets': '7a279686'}, internal-fsb-guid="53985b74")
                                       | คุยกับลูกค้า
                                     .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'textAlign': 'left'}, internal-fsb-guid="9a4086b9")
-                                      | ระบบปฏิสัมพันธ์กับลูกค้าผ่านการพูดคุยกันผ่านข้อความเพื่อตอบคำถามก่อนที่ลูกค้าจะตัดสินใจซื้อ
+                                      | ระบบปฏิสัมพันธ์กับลูกค้าผ่านการพูดคุยกันผ่านข้อความเพื่อตอบคำถามก่อนที่ลูกค้าจะตัดสินใจเลือกซื้อ
                         .internal-fsb-element.col-12(style={display: (()=>{return this.getDisplayOf(QuoteType.PAID, true);})()}, internal-fsb-guid="2d35d6ec")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
