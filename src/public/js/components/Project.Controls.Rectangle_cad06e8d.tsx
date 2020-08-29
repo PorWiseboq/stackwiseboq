@@ -646,7 +646,7 @@ class Rectangle_cad06e8d extends Base {
                                             .internal-fsb-element.-fsb-self-49a6327a.col-9.offset-0(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? '#e65100' : '');})()}, internal-fsb-guid="49a6327a")
                                               | #{this.getTitle(i)}
                                             .internal-fsb-element.col-3.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'center', 'fontSize': '10px', 'color': (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');})() || 'rgba(22, 98, 250, 1)', 'lineHeight': '19px', 'verticalAlign': 'middle'}, internal-fsb-guid="e267eda5")
-                                              | #{this.state.remainingTimes[I], false}
+                                              | #{this.state.remainingTimes[i]}
                                             .internal-fsb-element.col-7.offset-0.-fsb-self-4aee31ab(style={color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');})()}, internal-fsb-guid="4aee31ab")
                                               | #{this.getSubtitle(i)}
                                             .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(style={background: (()=>{return (this.hasError(i) ? '#e65100' : '');})()}, internal-fsb-guid="3bec5885")
@@ -718,7 +718,7 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
                                         .internal-fsb-element.col-12(style={'color': 'rgba(22, 98, 250, 1)', 'textAlign': 'center', 'marginBottom': '10px'}, internal-fsb-guid="76197d74")
-                                          | #{this.state.remainingTimes[I], true}
+                                          | #{this.getRemainingTimeDisplay(this.state.selectedIndex, i)}
                                         .internal-fsb-element.col-12(style={'color': 'rgba(255, 0, 0, 1)', 'textAlign': 'center', 'marginBottom': '15px', display: (()=>{return (this.hasError(this.state.selectedIndex)) ? 'block' : 'none';})()}, internal-fsb-guid="22cb5230")
                                           | มีบางรายการที่คุณต้องแก้เพื่อให้ผ่านงานประมูลราคา
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
