@@ -5454,7 +5454,7 @@
         "    else this.props.onpricechanged(this.props.index, value * quantity);",
         "  }",
         "  ",
-        "  \" type=\"{this.getDataFromNotation('Quote[#i].substitute', false)}\" internal-fsb-react-style-background-color=\"CODE[return (this.state.error) ? 'rgb(255, 172, 172)' : '';]\" internal-fsb-react-style-border-top-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-right-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-bottom-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" internal-fsb-react-style-border-left-color=\"CODE[return (this.state.error) ? 'rgb(255, 0, 0)' : '';]\" submitting=\"{this.state.submitting}\" onpricechanged=\"{this.onPriceChanged.bind(this)}\" index=\"{i}\" hassubmitted=\"{this.state.hasSubmitted}\">",
+        "  \" type=\"{this.getDataFromNotation('Quote[#i].substitute', false)}\" internal-fsb-react-style-background-color=\"CODE[return (this.state.error) ? '#007BFF' : '';]\" internal-fsb-react-style-border-top-color=\"CODE[return (this.state.error) ? '#e65100' : '';]\" internal-fsb-react-style-border-right-color=\"CODE[return (this.state.error) ? '#e65100' : '';]\" internal-fsb-react-style-border-bottom-color=\"CODE[return (this.state.error) ? '#e65100' : '';]\" internal-fsb-react-style-border-left-color=\"CODE[return (this.state.error) ? '#e65100' : '';]\" submitting=\"{this.state.submitting}\" onpricechanged=\"{this.onPriceChanged.bind(this)}\" index=\"{i}\" hassubmitted=\"{this.state.hasSubmitted}\">",
         "                                                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                            <div class=\"internal-fsb-element col-4 offset-0 -fsb-self-65ec89d1\" internal-fsb-guid=\"65ec89d1\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"quote_box_review_detail\">",
@@ -6352,11 +6352,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "3bec5885",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
-          "5a671a7d",
+          "64a6ac8c",
           0,
-          3,
+          6,
           null
         ]
       },
@@ -17490,7 +17490,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
-    "Project.Controls.FlowLayout_c6ba5b53": "7ff738139d9f386b063ccd2885d8273f0d13e3f0"
+    "Project.Controls.FlowLayout_c6ba5b53": "bf4ba30c7f271e3cd3cbb46128b795dfdc314483"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "47331f9b173e049fc58764ea6c4a36f4222cb57f",

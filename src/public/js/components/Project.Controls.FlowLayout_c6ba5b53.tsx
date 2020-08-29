@@ -230,7 +230,7 @@ class FlowLayout_c6ba5b53 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({background: (()=>{return (this.state.error) ? 'rgb(255, 172, 172)' : '';})(), borderTopColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderRightColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderBottomColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})(), borderLeftColor: (()=>{return (this.state.error) ? 'rgb(255, 0, 0)' : '';})()}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 -fsb-self-c6ba5b53 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="c6ba5b53")
+      div(style=Object.assign({background: (()=>{return (this.state.error) ? '#007BFF' : '';})(), borderTopColor: (()=>{return (this.state.error) ? '#e65100' : '';})(), borderRightColor: (()=>{return (this.state.error) ? '#e65100' : '';})(), borderBottomColor: (()=>{return (this.state.error) ? '#e65100' : '';})(), borderLeftColor: (()=>{return (this.state.error) ? '#e65100' : '';})()}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 -fsb-self-c6ba5b53 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="c6ba5b53")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             .internal-fsb-element.col-4.offset-0.-fsb-self-65ec89d1(internal-fsb-guid="65ec89d1")
