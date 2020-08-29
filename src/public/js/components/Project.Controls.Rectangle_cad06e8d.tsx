@@ -118,7 +118,7 @@ class Rectangle_cad06e8d extends Base {
     const tag = this.getTag(i);
     
     if (rank == -1) return 'งานประมูลนี้ทางร้านค้ายังไม่เคยเคาะประมูลมาก่อน';
-    if (rank == null) return 'งานประมูลของคุณยังไม่ได้ถูกจัดอันดับ โปรดกรุณารอสักครู่...';
+    if (rank == null) return 'งานประมูลของคุณยังไม่ได้ถูกจัดอันดับ... โปรดกรุณารอสักครู่';
     if (rank > 10) return 'งานประมูลนี้ทางร้านค้าเคยเคาะประมูลแล้วแต่พบว่าราคาแพงเกินไปจนหลุด 10 อันดับแรก';
     
     return `ตอนนี้คุณอยู่อันดับที่ ${rank} / 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่${tag}`;
@@ -241,8 +241,22 @@ class Rectangle_cad06e8d extends Base {
     return `${_hours}:${_minutes}:${_seconds}`;
   }
   
-  private getRemainingTimeDisplay(i: number): string {
-    return (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '00:00';
+  private getRemainingTimeDisplay(i: number, fullmode: boolean=false): string {
+    let remaining = (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '00:00:00';
+    if (fullmode) {
+      if (remaining) {
+        if (remaining == '00:00:00') {
+          return 'งานประมูลนี้หมดเวลาแล้ว';
+        } else {
+          const splited = remaining.split(':');
+          return `คุณเหลือเวลาอีก ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
+        }
+      } else {
+        return '';
+      }
+    } else {
+      return remaining;
+    }
   }
   
   private onPriceChanged(index: number, price: number) {
@@ -703,6 +717,8 @@ class Rectangle_cad06e8d extends Base {
                                                       | #{this.getRankDetail(i)}
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
+                                        .internal-fsb-element.col-12(style={'color': 'rgba(22, 98, 250, 1)', 'textAlign': 'center', 'marginBottom': '10px'}, internal-fsb-guid="76197d74")
+                                          | #{this.getRemainingTimeDisplay(this.state.selectedIndex, true)}
                                         .internal-fsb-element.col-12(style={'color': 'rgba(255, 0, 0, 1)', 'textAlign': 'center', 'marginBottom': '15px', display: (()=>{return (this.hasError(this.state.selectedIndex)) ? 'block' : 'none';})()}, internal-fsb-guid="22cb5230")
                                           | มีบางรายการที่คุณต้องแก้เพื่อให้ผ่านงานประมูลราคา
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
