@@ -5739,11 +5739,11 @@
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"39ca61d5\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].description\">รายละเอียดโดยย่อ</div>",
         "                                                                                <div class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"3bc4945a\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"margin-bottom: 15px; display: flex; justify-content: space-around; -webkit-justify-content: space-around\">",
         "                                                                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"ed182a21\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"\">",
-        "                                                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"b16bc14a\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"width: 100px\" internal-fsb-react-data=\"Quote[#i].Rank\">",
+        "                                                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"b16bc14a\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"width: 100px; display: inline-block\" internal-fsb-react-data=\"Quote[#i].Rank\">",
         "                                                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                                    <div class=\"internal-fsb-element\" internal-fsb-guid=\"82836507\" internal-fsb-name=\"Image 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 80px; min-height: 100px; -fsb-for-children: true; margin-left: 10px; margin-right: 10px; height: 80px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png\"></div>",
-        "                                                                                                    <div class=\"internal-fsb-element\" internal-fsb-guid=\"98b1615a\" internal-fsb-name=\"Image 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 60px; -fsb-for-children: true; height: 60px; margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png\"></div>",
+        "                                                                                                    <div class=\"internal-fsb-element\" internal-fsb-guid=\"82836507\" internal-fsb-name=\"Image 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return (this.isMatchedRank(i)) ? 'block' : 'none';]\"><img style=\"display: block; width: 80px; -fsb-for-children: true; margin-left: 10px; margin-right: 10px; height: 80px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png\"></div>",
+        "                                                                                                    <div class=\"internal-fsb-element\" internal-fsb-guid=\"98b1615a\" internal-fsb-name=\"Image 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\" internal-fsb-react-style-display=\"CODE[return (this.isMatchedRank(i)) ? 'none' : 'block';]\"><img style=\"display: block; width: 60px; -fsb-for-children: true; height: 60px; margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png\"></div>",
         "                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9be68c4e\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 0px; padding-right: 0px; margin-top: 5px; font-size: 12px; text-align: center; color: rgba(217, 217, 217, 1); font-weight: bold\">#{this.getRankDetail(i)}</div>",
         "                                                                                                </div>",
         "                                                                                            </div>",
@@ -6434,11 +6434,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b16bc14a",
+        "selectingElementGUID": "82836507",
         "currentCursorWalkPath": [
-          "7b15e8a1",
+          "b16bc14a",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -17592,7 +17592,7 @@
     "Project.Controls.FlowLayout_b2020622": "e235eead3435de31ff5d1db423a97f0a8c9970d4",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "f33b79f32ea4612bb033859d3ea9c0fa41ed6e18",
+    "Project.Controls.Rectangle_cad06e8d": "869e510fc9c917a99ea18021600c795369e8e150",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",

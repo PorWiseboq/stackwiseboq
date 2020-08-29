@@ -774,12 +774,12 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.internal-fsb-allow-cursor.col-12(style={'marginBottom': '15px', 'display': 'flex', 'justifyContent': 'space-around', 'WebkitJustifyContent': 'space-around'}, internal-fsb-guid="3bc4945a")
                                           .internal-fsb-element.internal-fsb-allow-cursor(internal-fsb-guid="ed182a21")
                                             each data, i in this.getDataFromNotation("Quote[#i].Rank", true)
-                                              .internal-fsb-element(style={'width': '100px'}, key="item_" + i, internal-fsb-guid="b16bc14a")
+                                              .internal-fsb-element(style={'width': '100px', 'display': 'inline-block'}, key="item_" + i, internal-fsb-guid="b16bc14a")
                                                 .container-fluid
                                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                    .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="82836507")
-                                                      img(style={'display': 'block', 'width': '80px', 'minHeight': '100px', 'marginLeft': '10px', 'marginRight': '10px', 'height': '80px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
-                                                    .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="98b1615a")
+                                                    .internal-fsb-element(style={display: (()=>{return (this.isMatchedRank(i)) ? 'block' : 'none';})(), padding: '0px'}, internal-fsb-guid="82836507")
+                                                      img(style={'display': 'block', 'width': '80px', 'marginLeft': '10px', 'marginRight': '10px', 'height': '80px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
+                                                    .internal-fsb-element(style={display: (()=>{return (this.isMatchedRank(i)) ? 'none' : 'block';})(), padding: '0px'}, internal-fsb-guid="98b1615a")
                                                       img(style={'display': 'block', 'width': '60px', 'height': '60px', 'marginLeft': '20px', 'marginRight': '20px', 'marginTop': '10px', 'marginBottom': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
                                                     .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '5px', 'fontSize': '12px', 'textAlign': 'center', 'color': 'rgba(217, 217, 217, 1)', 'fontWeight': 'bold'}, internal-fsb-guid="9be68c4e")
                                                       | #{this.getRankDetail(i)}
