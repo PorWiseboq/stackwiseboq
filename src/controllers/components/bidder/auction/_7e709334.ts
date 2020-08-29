@@ -378,7 +378,14 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
         let options = RequestHelper.getOptions(this.pageId, this.request);
         
         if (schema.group == 'Quote') {
-          let quoteDataset = await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate);
+				  let quoteData = RequestHelper.createInputs({
+   		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
+   		      'Quote.Auction.qid': null,
+   		      'Quote.Auction.sid': this.request.session.sid,
+   		      'Quote.Auction.Substitute.aid': null
+   		    });
+   		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+   		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
    		    
    		    let listingData = RequestHelper.createInputs({
    		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
@@ -433,10 +440,10 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
 	  
 	  // Auto[Merging]--->
     RequestHelper.registerSubmit("7e709334", "108bb2b9", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a","0856c24b","1921d1d6","747dbd6e","b7956268"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
-    RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7","93ab7a0b","4c781bd8","23ea1ac1","3d0c6a9e"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
-    RequestHelper.registerSubmit("7e709334", "833e4eb9", "retrieve", ["d24ed774","6d57beb9","80a8e675","2e3b6ded","005ec895"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
-    RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261","c192b978","7a572ba4","783a0919","aa14b104"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
+    RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
+    RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
+    RequestHelper.registerSubmit("7e709334", "833e4eb9", "retrieve", ["d24ed774","6d57beb9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
+    RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261","c192b978"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "8cbc5b17", "retrieve", ["e8656190"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
@@ -453,76 +460,12 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('1921d1d6', "relational", "Quote.Auction", "qid");
-		ValidationHelper.registerInput('1921d1d6', "Hidden 5", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '1921d1d6' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 5 here:
-      // 
-      if (input) input.value = null;
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('b7956268', "relational", "Quote.Auction", "sid");
-		ValidationHelper.registerInput('b7956268', "Hidden 13", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'b7956268' + ((i == -1) ? '' : '[' + i + ']'));
-      if (input) input.value = request.session['sid'];
-    
-      // Override data parsing and manipulation of Hidden 13 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('747dbd6e', "relational", "Quote.Auction.Substitute", "aid");
-		ValidationHelper.registerInput('747dbd6e', "Hidden 6", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '747dbd6e' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 6 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
 		RequestHelper.registerInput('4cade2e7', "relational", "Quote", "status");
 		ValidationHelper.registerInput('4cade2e7', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '4cade2e7' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('4c781bd8', "relational", "Quote.Auction", "qid");
-		ValidationHelper.registerInput('4c781bd8', "Hidden 7", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '4c781bd8' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 7 here:
-      // 
-      if (input) input.value = null;
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('3d0c6a9e', "relational", "Quote.Auction", "sid");
-		ValidationHelper.registerInput('3d0c6a9e', "Hidden 14", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '3d0c6a9e' + ((i == -1) ? '' : '[' + i + ']'));
-      if (input) input.value = request.session['sid'];
-    
-      // Override data parsing and manipulation of Hidden 14 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('23ea1ac1', "relational", "Quote.Auction.Substitute", "aid");
-		ValidationHelper.registerInput('23ea1ac1', "Hidden 8", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '23ea1ac1' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 8 here:
       // 
       
       if (input != null) data.push(input);
@@ -537,76 +480,12 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('80a8e675', "relational", "Quote.Auction", "qid");
-		ValidationHelper.registerInput('80a8e675', "Hidden 9", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '80a8e675' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 9 here:
-      // 
-      if (input) input.value = null;
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('005ec895', "relational", "Quote.Auction", "sid");
-		ValidationHelper.registerInput('005ec895', "Hidden 15", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '005ec895' + ((i == -1) ? '' : '[' + i + ']'));
-      if (input) input.value = request.session['sid'];
-    
-      // Override data parsing and manipulation of Hidden 15 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('2e3b6ded', "relational", "Quote.Auction.Substitute", "aid");
-		ValidationHelper.registerInput('2e3b6ded', "Hidden 10", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '2e3b6ded' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 10 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
 		RequestHelper.registerInput('d1920261', "relational", "Quote", "status");
 		ValidationHelper.registerInput('d1920261', "Hidden 4", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'd1920261' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 4 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('7a572ba4', "relational", "Quote.Auction", "qid");
-		ValidationHelper.registerInput('7a572ba4', "Hidden 11", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '7a572ba4' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 11 here:
-      // 
-      if (input) input.value = null;
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('aa14b104', "relational", "Quote.Auction", "sid");
-		ValidationHelper.registerInput('aa14b104', "Hidden 16", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'aa14b104' + ((i == -1) ? '' : '[' + i + ']'));
-      if (input) input.value = request.session['sid'];
-    
-      // Override data parsing and manipulation of Hidden 16 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('783a0919', "relational", "Quote.Auction.Substitute", "aid");
-		ValidationHelper.registerInput('783a0919', "Hidden 12", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '783a0919' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 12 here:
       // 
       
       if (input != null) data.push(input);
