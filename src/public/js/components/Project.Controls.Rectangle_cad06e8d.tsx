@@ -217,8 +217,6 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getRemainingTime(i: number): string {
-    if (i == 1) debugger;
-    
     const createdAt = this.getDataFromNotation('Quote[' + i + '].createdAt');
     const hoursChecked = this.getDataFromNotation('Quote[' + i + '].hoursChecked');
     let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote[' + i + '].hours')) : 24;
@@ -293,7 +291,7 @@ class Rectangle_cad06e8d extends Base {
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
     notation = notation.replace('#i', this.state.selectedIndex.toString());
     
-    if (notation.match(/Quote\[[0-9]+\].Listing/)) {
+    if (notation.match(/^Quote\[[0-9]+\].Listing$/)) {
       let rows = super.getDataFromNotation(notation, true);
       let substitute = super.getDataFromNotation(`${notation.split('.')[0]}.Auction.Substitute`, true);
       
@@ -306,7 +304,7 @@ class Rectangle_cad06e8d extends Base {
       }
       
       return rows;
-    } else if (notation.match(/Quote\[[0-9]+\].Rank/)) {
+    } else if (notation.match(/^Quote\[[0-9]+\].Rank$/)) {
       const qid = this.getDataFromNotation('Quote[' + this.state.selectedIndex.toString() + '].qid');
       const rows = this.getDataFromNotation('Rank').filter(rank => rank.columns['qid'] == qid);
       
@@ -680,16 +678,18 @@ class Rectangle_cad06e8d extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : '';})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, key="item_" + i, onClick=((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_802159d0.bind(this), onSubmitting=this.onButtonSubmitting_802159d0.bind(this), internal-fsb-guid="802159d0")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : ((this.hasError(i)) ? '#ffe0b2' : '');})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})(), borderTopColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderRightColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderBottomColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderLeftColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})()}, key="item_" + i, onClick=((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this), type="button", data-index=i + '', onSuccess=this.onButtonSuccess_802159d0.bind(this), onSubmitting=this.onButtonSubmitting_802159d0.bind(this), internal-fsb-guid="802159d0")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="72aecc3a")
                                       .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': 'rgba(214, 237, 255, 0)'}, internal-fsb-guid="704100b7")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                            .internal-fsb-element.col-12.-fsb-preset-49a6327a(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}, internal-fsb-guid="53d42bea")
-                                            .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="3945ba95")
-                                              | อันดับที่ 2 / 10
+                                            .internal-fsb-element.-fsb-preset-49a6327a.col-9.offset-0(style={'FsbInheritedPresets': '49a6327a', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? '#e65100' : '');})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}, internal-fsb-guid="53d42bea")
+                                            .internal-fsb-element.col-3.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'center', 'fontSize': '10px', 'lineHeight': '19px', 'verticalAlign': 'middle', 'color': (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');})() || 'rgba(22, 98, 250, 1)'}, internal-fsb-guid="c33726a8")
+                                              | #{this.state.remainingTimes[i]}
+                                            .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');})()}, internal-fsb-guid="3945ba95")
+                                              | #{this.getSubtitle(i)}
                                             .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'}, internal-fsb-guid="c78396c8")
-                                              | เสนอไม่ครบ
+                                              | #{this.getTag(i)}
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getDisplayOf(QuoteType.CHATTING, true);})()}, internal-fsb-guid="0250cb01")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -740,6 +740,9 @@ class Rectangle_cad06e8d extends Base {
                                                       img(style={'display': 'block', 'width': '60px', 'opacity': '0.5', 'WebkitOpacity': '0.5', 'marginLeft': '20px', 'height': '60px', 'marginTop': '10px', 'marginBottom': '10px', 'marginRight': '20px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
                                                     .internal-fsb-element.col-12(style={'fontSize': '12px', 'textAlign': 'center', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontWeight': 'bold', 'color': (()=>{return (this.isMatchedRank(i)) ? 'rgb(22, 98, 250)' : '';})() || 'rgba(217, 217, 217, 1)', 'marginTop': '5px'}, internal-fsb-guid="5022e90e")
                                                       | #{this.getRankDetail(i)}
+                                        .internal-fsb-element.col-12(internal-fsb-guid="0a39ec74")
+                                          .container-fluid
+                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                         .internal-fsb-element.col-12.-fsb-self-1715aae1(internal-fsb-guid="1715aae1")
                                           | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
                                         .internal-fsb-element.col-12(style={'color': 'rgba(22, 98, 250, 1)', 'textAlign': 'center', 'marginBottom': '15px'}, internal-fsb-guid="76197d74")
@@ -766,20 +769,32 @@ class Rectangle_cad06e8d extends Base {
                                   .internal-fsb-element.col-12(internal-fsb-guid="7b15e8a1")
                                     .container-fluid
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                        .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.title"))}, internal-fsb-guid="c7226b52")
-                                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.description"))}, internal-fsb-guid="39ca61d5")
-                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="e1b315be")
-                                          | คุณอยู่อันดับที่ 2 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอไม่ครบ
-                                        each data, i in this.getDataFromNotation("Listing", true)
+                                        .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].title"))}, internal-fsb-guid="c7226b52")
+                                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="39ca61d5")
+                                        .internal-fsb-element.internal-fsb-allow-cursor.col-12(style={'marginBottom': '15px', 'display': 'flex', 'justifyContent': 'space-around', 'WebkitJustifyContent': 'space-around'}, internal-fsb-guid="3bc4945a")
+                                          .internal-fsb-element.internal-fsb-allow-cursor(internal-fsb-guid="ed182a21")
+                                            each data, i in this.getDataFromNotation("Quote[#i].Rank", true)
+                                              .internal-fsb-element(style={'width': '100px'}, key="item_" + i, internal-fsb-guid="b16bc14a")
+                                                .container-fluid
+                                                  .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                    .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="82836507")
+                                                      img(style={'display': 'block', 'width': '80px', 'minHeight': '100px', 'marginLeft': '10px', 'marginRight': '10px', 'height': '80px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
+                                                    .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="98b1615a")
+                                                      img(style={'display': 'block', 'width': '60px', 'height': '60px', 'marginLeft': '20px', 'marginRight': '20px', 'marginTop': '10px', 'marginBottom': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
+                                                    .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '5px', 'fontSize': '12px', 'textAlign': 'center', 'color': 'rgba(217, 217, 217, 1)', 'fontWeight': 'bold'}, internal-fsb-guid="9be68c4e")
+                                                      | #{this.getRankDetail(i)}
+                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'bottom': '15px'}, internal-fsb-guid="e1b315be")
+                                          | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
+                                        each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           .internal-fsb-element.col-12.-fsb-preset-c6ba5b53(style={'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'}, key="item_" + i, internal-fsb-guid="ce9a10c5")
                                             .container-fluid
                                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                 .internal-fsb-element.col-4.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'}, internal-fsb-guid="19ce03e8")
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].title"))}, internal-fsb-guid="07673d1a")
-                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].size"))}, internal-fsb-guid="19d0b023")
-                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Listing[" + i + "].quantity"))}, internal-fsb-guid="bd0d3bad")
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].title"))}, internal-fsb-guid="07673d1a")
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].size"))}, internal-fsb-guid="19d0b023")
+                                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].quantity"))}, internal-fsb-guid="bd0d3bad")
                                                 .internal-fsb-element.-fsb-preset-65ec89d1.col-3.offset-0(style={'FsbInheritedPresets': '65ec89d1'}, internal-fsb-guid="9ecd9ed0")
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -788,14 +803,11 @@ class Rectangle_cad06e8d extends Base {
                                                 .internal-fsb-element.col-5.offset-0.-fsb-preset-65ec89d1(style={'FsbInheritedPresets': '65ec89d1'}, internal-fsb-guid="176a4c29")
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                      .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'}, internal-fsb-guid="b840c1c0")
+                                                      .internal-fsb-element.col-3.offset-0(style={'fontWeight': 'bold', 'marginBottom': '5px'}, internal-fsb-guid="b840c1c0")
                                                         | เปลี่ยนวัสดุเป็น:
-                                                      .internal-fsb-element.col-12(internal-fsb-guid="8656cea5")
-                                                        | ชื่อวัสดุใหม่
-                                                      .internal-fsb-element.col-12(internal-fsb-guid="ed22bc9a")
-                                                        | ขนาดใหม่
-                                                      .internal-fsb-element.col-12(internal-fsb-guid="a9a3406a")
-                                                        | ปริมาณใหม่
+                                                      .internal-fsb-element.col-9.offset-0(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.title"))}, internal-fsb-guid="8656cea5")
+                                                      .internal-fsb-element.col-9.offset-3(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.size"))}, internal-fsb-guid="ed22bc9a")
+                                                      .internal-fsb-element.col-9.offset-3(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.quantity"))}, internal-fsb-guid="a9a3406a")
                                   .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="53e2a8cc")
                                     | กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด
                                   .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="e68b9c07")
@@ -807,7 +819,7 @@ class Rectangle_cad06e8d extends Base {
                                   .internal-fsb-element.col-2.offset-0(internal-fsb-guid="3c910e36")
                                     | บาท
                                   .internal-fsb-element.-fsb-preset-1715aae1.col-12.offset-0(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="5428078e")
-                                    | คุณเสนอราคาที่ 125,000 บาท
+                                    | คุณเสนอราคาที่ #{this.getDataFromNotation('Quote[#i].Auction.price')} บาท
                                   Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px'}, type="button", internal-fsb-guid="d3e31c36")
                                     .internal-fsb-element(internal-fsb-guid="d3e31c36-text")
                                       | ยกเลิก

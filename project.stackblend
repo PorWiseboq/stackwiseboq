@@ -4676,7 +4676,7 @@
         "fonts": {}
       },
       "body": [
-        "<body class=\"internal-fsb-element col-12\" internal-fsb-guid=\"24731127\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; margin-bottom: 5px; -fsb-inherited-presets: ; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; overflow-x: hidden; -ms-overflow-x: hidden; overflow-y: hidden; -ms-overflow-y: hidden; width: 100%; height: 100%\">",
+        "<body class=\"internal-fsb-element col-12\" internal-fsb-guid=\"24731127\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; margin-bottom: 5px; -fsb-inherited-presets: ; padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px; overflow-x: hidden; -ms-overflow-x: hidden; overflow-y: hidden; -ms-overflow-y: hidden; width: 100%; height: 100%\" internal-fsb-react-data=\"Quote[#i].Auction.price\">",
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\" internal-fsb-event-no-propagate=\"1\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
@@ -4823,8 +4823,6 @@
         "  }",
         "  ",
         "  private getRemainingTime(i: number): string {",
-        "    if (i == 1) debugger;",
-        "    ",
         "    const createdAt = this.getDataFromNotation('Quote[' + i + '].createdAt');",
         "    const hoursChecked = this.getDataFromNotation('Quote[' + i + '].hoursChecked');",
         "    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote[' + i + '].hours')) : 24;",
@@ -4899,7 +4897,7 @@
         "  protected getDataFromNotation(notation: string, inArray: boolean=false): any {",
         "    notation = notation.replace('#i', this.state.selectedIndex.toString());",
         "    ",
-        "    if (notation.match(/Quote\\[[0-9]+\\].Listing/)) {",
+        "    if (notation.match(/^Quote\\[[0-9]+\\].Listing$/)) {",
         "      let rows = super.getDataFromNotation(notation, true);",
         "      let substitute = super.getDataFromNotation(`${notation.split('.')[0]}.Auction.Substitute`, true);",
         "      ",
@@ -4912,7 +4910,7 @@
         "      }",
         "      ",
         "      return rows;",
-        "    } else if (notation.match(/Quote\\[[0-9]+\\].Rank/)) {",
+        "    } else if (notation.match(/^Quote\\[[0-9]+\\].Rank$/)) {",
         "      const qid = this.getDataFromNotation('Quote[' + this.state.selectedIndex.toString() + '].qid');",
         "      const rows = this.getDataFromNotation('Rank').filter(rank => rank.columns['qid'] == qid);",
         "      ",
@@ -5308,7 +5306,7 @@
         "                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
         "",
-        "                                                                    <button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor -fsb-preset-e76846ad\" internal-fsb-guid=\"802159d0\" internal-fsb-name=\"Button 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"-fsb-inherited-presets: e76846ad\" internal-fsb-react-data=\"Quote\" internal-fsb-data-controls=\" 72aecc3a\" internal-fsb-data-wizard-type=\"retrieve\" internal-fsb-react-style-background-color=\"CODE[return (this.state.selectedIndex == i) ? '#007BFF' : '';]\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "                                                                    <button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor -fsb-preset-e76846ad\" internal-fsb-guid=\"802159d0\" internal-fsb-name=\"Button 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"-fsb-inherited-presets: e76846ad\" internal-fsb-react-data=\"Quote\" internal-fsb-data-controls=\" 72aecc3a\" internal-fsb-data-wizard-type=\"retrieve\" internal-fsb-react-style-background-color=\"CODE[return (this.state.selectedIndex == i) ? '#007BFF' : ((this.hasError(i)) ? '#ffe0b2' : '');]\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
         "    // Handle the event of onButtonSuccess (Button 6) here:",
         "    // ",
@@ -5325,13 +5323,14 @@
         "    // ",
         "    if (this.state.submitting) return EventHelper.cancel(event);",
         "    ",
-        "    \"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"72aecc3a\" internal-fsb-name=\"Hidden 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"qid\">",
+        "    \" internal-fsb-react-style-border-top-color=\"CODE[return (this.hasError(i)) ? '#e65100' : '';]\" internal-fsb-react-style-border-right-color=\"CODE[return (this.hasError(i)) ? '#e65100' : '';]\" internal-fsb-react-style-border-bottom-color=\"CODE[return (this.hasError(i)) ? '#e65100' : '';]\" internal-fsb-react-style-border-left-color=\"CODE[return (this.hasError(i)) ? '#e65100' : '';]\" data-index=\"{i + ''}\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"72aecc3a\" internal-fsb-name=\"Hidden 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"qid\">",
         "                                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"704100b7\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: ; background: rgba(214, 237, 255, 0)\" internal-fsb-react-data=\"\">",
         "                                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-49a6327a\" internal-fsb-guid=\"53d42bea\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 49a6327a\" internal-fsb-react-data=\"title\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\">ชื่อรายการ</div>",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-4aee31ab col-7\" internal-fsb-guid=\"3945ba95\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4aee31ab\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\">อันดับที่ 2 / 10</div>",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-3bec5885 col-5\" internal-fsb-guid=\"c78396c8\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 3bec5885\">เสนอไม่ครบ</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-49a6327a col-9 offset-0\" internal-fsb-guid=\"53d42bea\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 49a6327a\" internal-fsb-react-data=\"title\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? '#e65100' : '');]\">#{this.getTitle(i)}</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-3 offset-0\" internal-fsb-guid=\"c33726a8\" internal-fsb-name=\"Remaining\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 0px; padding-right: 0px; text-align: center; font-size: 10px; line-height: 19px; vertical-align: middle; color: rgba(22, 98, 250, 1)\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');]\">#{this.state.remainingTimes[i]}</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-4aee31ab col-7\" internal-fsb-guid=\"3945ba95\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4aee31ab\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');]\">#{this.getSubtitle(i)}</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-3bec5885 col-5\" internal-fsb-guid=\"c78396c8\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 3bec5885\">#{this.getTag(i)}</div>",
         "                                                                                </div>",
         "                                                                            </div>",
         "                                                                        </div>",
@@ -5419,7 +5418,7 @@
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"7484ac1e\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].description\">รายละเอียดโดยย่อ</div>",
         "",
         "",
-        "                                                                                <div class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"9ee30bae\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"display: flex; justify-content: space-around; -webkit-justify-content: space-around; margin-bottom: 15px\">",
+        "                                                                                <div class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"9ee30bae\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"display: flex; justify-content: space-around; -webkit-justify-content: space-around; margin-bottom: 15px\" internal-fsb-react-data=\"\">",
         "                                                                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"96698691\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"background: rgba(252, 3, 3, 0)\">",
         "                                                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"3317ca5e\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"Quote[#i].Rank\" style=\"width: 100px; display: inline-block\">",
         "                                                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -5430,6 +5429,11 @@
         "                                                                                                </div>",
         "                                                                                            </div>",
         "                                                                                        </div>",
+        "                                                                                    </div>",
+        "                                                                                </div>",
+        "                                                                                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0a39ec74\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
+        "                                                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"></div>",
         "                                                                                    </div>",
         "                                                                                </div>",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-self-1715aae1\" internal-fsb-guid=\"1715aae1\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"quote_box_notice\">#{this.getAuctionStatusDetail(this.state.selectedIndex)}</div>",
@@ -5731,10 +5735,23 @@
         "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"7b15e8a1\" internal-fsb-name=\"Inner\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
         "                                                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"c7226b52\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote.title\">ชื่อรายการ</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"39ca61d5\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote.description\">รายละเอียดโดยย่อ</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1715aae1\" internal-fsb-guid=\"e1b315be\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\">คุณอยู่อันดับที่ 2 จาก 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่เสนอไม่ครบ</div>",
-        "                                                                                <div class=\"internal-fsb-element col-12 -fsb-preset-c6ba5b53\" internal-fsb-guid=\"ce9a10c5\" internal-fsb-name=\"List\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: c6ba5b53; background: rgba(217, 217, 217, 1); border-left-color: rgba(128, 128, 128, 1); border-right-color: rgba(128, 128, 128, 1); border-top-color: rgba(128, 128, 128, 1); border-bottom-color: rgba(128, 128, 128, 1)\" internal-fsb-react-data=\"Listing\">",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"c7226b52\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].title\">ชื่อรายการ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"39ca61d5\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].description\">รายละเอียดโดยย่อ</div>",
+        "                                                                                <div class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"3bc4945a\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"margin-bottom: 15px; display: flex; justify-content: space-around; -webkit-justify-content: space-around\">",
+        "                                                                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"ed182a21\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"\">",
+        "                                                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"b16bc14a\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"width: 100px\" internal-fsb-react-data=\"Quote[#i].Rank\">",
+        "                                                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "                                                                                                    <div class=\"internal-fsb-element\" internal-fsb-guid=\"82836507\" internal-fsb-name=\"Image 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 80px; min-height: 100px; -fsb-for-children: true; margin-left: 10px; margin-right: 10px; height: 80px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png\"></div>",
+        "                                                                                                    <div class=\"internal-fsb-element\" internal-fsb-guid=\"98b1615a\" internal-fsb-name=\"Image 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 60px; -fsb-for-children: true; height: 60px; margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png\"></div>",
+        "                                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9be68c4e\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 0px; padding-right: 0px; margin-top: 5px; font-size: 12px; text-align: center; color: rgba(217, 217, 217, 1); font-weight: bold\">#{this.getRankDetail(i)}</div>",
+        "                                                                                                </div>",
+        "                                                                                            </div>",
+        "                                                                                        </div>",
+        "                                                                                    </div>",
+        "                                                                                </div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1715aae1\" internal-fsb-guid=\"e1b315be\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1; bottom: 15px\">#{this.getAuctionStatusDetail(this.state.selectedIndex)}</div>",
+        "                                                                                <div class=\"internal-fsb-element col-12 -fsb-preset-c6ba5b53\" internal-fsb-guid=\"ce9a10c5\" internal-fsb-name=\"List\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: c6ba5b53; background: rgba(217, 217, 217, 1); border-left-color: rgba(128, 128, 128, 1); border-right-color: rgba(128, 128, 128, 1); border-top-color: rgba(128, 128, 128, 1); border-bottom-color: rgba(128, 128, 128, 1)\" internal-fsb-react-data=\"Quote[#i].Listing\">",
         "                                                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                            <div class=\"internal-fsb-element col-4 offset-0 -fsb-preset-65ec89d1\" internal-fsb-guid=\"19ce03e8\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 65ec89d1\">",
@@ -5758,10 +5775,10 @@
         "                                                                                            <div class=\"internal-fsb-element col-5 offset-0 -fsb-preset-65ec89d1\" internal-fsb-guid=\"176a4c29\" internal-fsb-name=\"Substitute\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 65ec89d1\">",
         "                                                                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b840c1c0\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; margin-bottom: 5px\">เปลี่ยนวัสดุเป็น:</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8656cea5\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">ชื่อวัสดุใหม่</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ed22bc9a\" internal-fsb-name=\"Size\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">ขนาดใหม่</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a9a3406a\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\">ปริมาณใหม่</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-3 offset-0\" internal-fsb-guid=\"b840c1c0\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; margin-bottom: 5px\" internal-fsb-react-data=\"\">เปลี่ยนวัสดุเป็น:</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"8656cea5\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Auction.Substitute.title\" style=\"\">ชื่อวัสดุใหม่</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-3\" internal-fsb-guid=\"ed22bc9a\" internal-fsb-name=\"Size\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Auction.Substitute.size\" style=\"\">ขนาดใหม่</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-3\" internal-fsb-guid=\"a9a3406a\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Auction.Substitute.quantity\" style=\"\">ปริมาณใหม่</div>",
         "                                                                                                    </div>",
         "                                                                                                </div>",
         "                                                                                            </div>",
@@ -5780,7 +5797,7 @@
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"95c77e1a\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-bottom: 5px\">บาท</div>",
         "                                                                    <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"dde4302b\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" placeholder=\"ส่วนลด\" disabled=\"true\" class=\"form-control form-control-sm \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"discount\"></div>",
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"3c910e36\" internal-fsb-name=\"TextElement 38\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">บาท</div>",
-        "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0\" internal-fsb-guid=\"5428078e\" internal-fsb-name=\"TextElement 27\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\">คุณเสนอราคาที่ 125,000 บาท</div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm \" internal-fsb-guid=\"d3e31c36\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\">",
+        "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-1715aae1 col-12 offset-0\" internal-fsb-guid=\"5428078e\" internal-fsb-name=\"TextElement 27\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\">คุณเสนอราคาที่ #{this.getDataFromNotation('Quote[#i].Auction.price')} บาท</div><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm \" internal-fsb-guid=\"d3e31c36\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\">",
         "                                                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"d3e31c36-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ยกเลิก</div>",
         "                                                                    </button>",
         "                                                                </div>",
@@ -6417,11 +6434,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e9c9b721",
+        "selectingElementGUID": "b16bc14a",
         "currentCursorWalkPath": [
-          "9a5131da",
+          "7b15e8a1",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -6434,8 +6451,7 @@
       "notations": {
         "Quote": {
           "qid": {},
-          "title": {},
-          "description": {}
+          "title": {}
         },
         "Quote[#i]": {
           "title": {},
@@ -6448,17 +6464,19 @@
             "Substitute": {
               "type": {}
             },
-            "lid": {}
+            "lid": {},
+            "Auction": {
+              "Substitute": {
+                "title": {},
+                "size": {},
+                "quantity": {}
+              }
+            }
           },
           "Auction": {
             "price": {}
           },
           "qid": {}
-        },
-        "Listing": {
-          "title": {},
-          "size": {},
-          "quantity": {}
         }
       }
     },
@@ -17574,7 +17592,7 @@
     "Project.Controls.FlowLayout_b2020622": "e235eead3435de31ff5d1db423a97f0a8c9970d4",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "5b41ea9b4793f01eaead20949376ba52f4411ede",
+    "Project.Controls.Rectangle_cad06e8d": "f33b79f32ea4612bb033859d3ea9c0fa41ed6e18",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
