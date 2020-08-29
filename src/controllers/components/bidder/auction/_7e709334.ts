@@ -657,26 +657,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('e68b9c07', "relational", "Auction", "deliverCost");
-		ValidationHelper.registerInput('e68b9c07', "Textbox 3", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'e68b9c07' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Textbox 3 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('dde4302b', "relational", "Auction", "discount");
-		ValidationHelper.registerInput('dde4302b', "Textbox 2", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'dde4302b' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Textbox 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
 
 	  // <---Auto[Merging]
 	  

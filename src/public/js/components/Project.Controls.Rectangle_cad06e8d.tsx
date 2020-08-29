@@ -781,7 +781,7 @@ class Rectangle_cad06e8d extends Base {
                                                       img(style={'display': 'block', 'width': '80px', 'marginLeft': '10px', 'marginRight': '10px', 'height': '80px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-active.png")
                                                     .internal-fsb-element(style={display: (()=>{return (this.isMatchedRank(i)) ? 'none' : 'block';})(), padding: '0px'}, internal-fsb-guid="98b1615a")
                                                       img(style={'display': 'block', 'width': '60px', 'height': '60px', 'marginLeft': '20px', 'marginRight': '20px', 'marginTop': '10px', 'marginBottom': '10px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/rank-inactive.png")
-                                                    .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '5px', 'fontSize': '12px', 'textAlign': 'center', 'color': 'rgba(217, 217, 217, 1)', 'fontWeight': 'bold'}, internal-fsb-guid="9be68c4e")
+                                                    .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '5px', 'fontSize': '12px', 'textAlign': 'center', 'color': (()=>{return (this.isMatchedRank(i)) ? 'rgb(22, 98, 250)' : '';})() || 'rgba(217, 217, 217, 1)', 'fontWeight': 'bold'}, internal-fsb-guid="9be68c4e")
                                                       | #{this.getRankDetail(i)}
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'bottom': '15px'}, internal-fsb-guid="e1b315be")
                                           | #{this.getAuctionStatusDetail(this.state.selectedIndex)}
@@ -808,16 +808,6 @@ class Rectangle_cad06e8d extends Base {
                                                       .internal-fsb-element.col-9.offset-0(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.title"))}, internal-fsb-guid="8656cea5")
                                                       .internal-fsb-element.col-9.offset-3(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.size"))}, internal-fsb-guid="ed22bc9a")
                                                       .internal-fsb-element.col-9.offset-3(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Listing[" + i + "].Auction.Substitute.quantity"))}, internal-fsb-guid="a9a3406a")
-                                  .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="53e2a8cc")
-                                    | กรุณาระบุราคาต่อหน่วยทั้งหมดเพื่อคำนวณส่วนลด
-                                  .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="e68b9c07")
-                                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px'}, type="text", placeholder="ค่าขนส่ง (ถ้ามี)")
-                                  .internal-fsb-element.col-2.offset-0(style={'marginBottom': '5px'}, internal-fsb-guid="95c77e1a")
-                                    | บาท
-                                  .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="dde4302b")
-                                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ส่วนลด", disabled=true)
-                                  .internal-fsb-element.col-2.offset-0(internal-fsb-guid="3c910e36")
-                                    | บาท
                                   .internal-fsb-element.-fsb-preset-1715aae1.col-12.offset-0(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="5428078e")
                                     | คุณเสนอราคาที่ #{this.getDataFromNotation('Quote[#i].Auction.price')} บาท
                                   Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px'}, type="button", internal-fsb-guid="d3e31c36")
