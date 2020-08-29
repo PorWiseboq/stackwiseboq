@@ -230,13 +230,13 @@ class Rectangle_cad06e8d extends Base {
     let _hours = '';
     
     if (seconds < 10) _seconds = '0' + seconds;
-    else _seconds = _seconds.toString();
+    else _seconds = seconds.toString();
     
     if (minutes < 10) _minutes = '0' + minutes;
-    else _minutes = _minutes.toString();
+    else _minutes = minutes.toString();
     
     if (hours < 10) _hours = '0' + hours;
-    else _hours = _hours.toString();
+    else _hours = hours.toString();
     
     return `${_hours}:${_minutes}:${_seconds}`;
   }
