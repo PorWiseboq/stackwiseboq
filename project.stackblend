@@ -4848,7 +4848,7 @@
         "  }",
         "  ",
         "  private getRemainingTimeDisplay(i: number, fullmode: boolean=false): string {",
-        "    let remaining = (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '00:00:00';",
+        "    let remaining = (this.state.remainingTimes[i] !== undefined) ? this.state.remainingTimes[i] : '';",
         "    if (fullmode) {",
         "      if (remaining) {",
         "        if (remaining == '00:00:00') {",
@@ -6396,11 +6396,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "76197d74",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "64a6ac8c",
+          "24731127",
           0,
-          5,
+          1,
           null
         ]
       },
@@ -17553,7 +17553,7 @@
     "Project.Controls.FlowLayout_b2020622": "e235eead3435de31ff5d1db423a97f0a8c9970d4",
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
-    "Project.Controls.Rectangle_cad06e8d": "5d9052c569ce41080c995f2dfb7d672c38b52b4f",
+    "Project.Controls.Rectangle_cad06e8d": "877cadbedab52035d70ac87b07c2ead73bbf4c9e",
     "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
