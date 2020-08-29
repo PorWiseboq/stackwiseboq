@@ -120,7 +120,7 @@ class Controller extends Base {
           this.response.redirect('/authentication');
         } else {
           RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status 1`, [], async (_error, _results, _fields) => {
+WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
             let schemata = ProjectConfigurationHelper.getDataSchema();
             let inputs = RequestHelper.createInputs({
               'Store.oid': this.request.session.uid
@@ -379,7 +379,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     return new Promise(async (resolve, reject) => {
     	try {
     	  RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status 1`, [], async (_error, _results, _fields) => {
+WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
           let options = RequestHelper.getOptions(this.pageId, this.request);
           
           if (schema.group == 'Quote') {
