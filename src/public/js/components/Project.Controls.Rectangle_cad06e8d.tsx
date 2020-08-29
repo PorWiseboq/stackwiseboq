@@ -53,7 +53,7 @@ interface IState extends IAutoBaseState {
   submitting: boolean;
   hasSubmitted: boolean;
   itemPrices: number[];
-  remainingTimes: number[];
+  remainingTimes: string[];
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
