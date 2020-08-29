@@ -117,11 +117,23 @@ class Rectangle_cad06e8d extends Base {
     const rank = this.getRank(i);
     const tag = this.getTag(i);
     
-    if (rank == -1) return 'งานประมูลนี้ทางร้านค้ายังไม่เคยเคาะประมูลมาก่อน';
-    if (rank == null) return 'งานประมูลของคุณยังไม่ได้ถูกจัดอันดับ โปรดกรุณารอสักครู่...';
-    if (rank > 10) return 'งานประมูลนี้ทางร้านค้าเคยเคาะประมูลแล้วแต่พบว่าราคาแพงเกินไปจนหลุด 10 อันดับแรก';
+    let remaining = this.getRemainingTimeDisplay(i);
+    if (remaining) {
+      if (remaining == '00:00:00') {
+        remaining = '\nงานประมูลนี้หมดเวลาแล้ว';
+      } else {
+        const splited = remaining.split(':');
+        remaining = `\nคุณเหลือเวลาอีก ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
+      }
+    } else {
+      remaining = '';
+    }
     
-    return `ตอนนี้คุณอยู่อันดับที่ ${rank} / 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่${tag}`;
+    if (rank == -1) return 'งานประมูลนี้ทางร้านค้ายังไม่เคยเคาะประมูลมาก่อน' + remaining;
+    if (rank == null) return 'งานประมูลของคุณยังไม่ได้ถูกจัดอันดับ... โปรดกรุณารอสักครู่' + remaining;
+    if (rank > 10) return 'งานประมูลนี้ทางร้านค้าเคยเคาะประมูลแล้วแต่พบว่าราคาแพงเกินไปจนหลุด 10 อันดับแรก' + remaining;
+    
+    return `ตอนนี้คุณอยู่อันดับที่ ${rank} / 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่${tag}${remaining}`;
   }
   
   private getTitle(i: number): string {
