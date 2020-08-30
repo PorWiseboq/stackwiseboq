@@ -202,13 +202,13 @@ class FlowLayout_a23ed480 extends Base {
                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                       .internal-fsb-element.offset--10.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="bc041e39")
                                         input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="complete")
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="94372513")
+                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold'}, internal-fsb-guid="94372513")
                                         | ##{i + 1} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.name')}
-                                      .internal-fsb-element.col-10.offset-2.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="d5ecb95b")
+                                      .internal-fsb-element.col-10.offset-2.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'fontSize': '11px', 'color': 'rgba(128, 128, 128, 1)'}, internal-fsb-guid="d5ecb95b")
                                         | ตำบล#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.subDistrict')} อำเภอ#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.district')} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.province')}
                                       .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-2(style={'FsbInheritedPresets': 'b5cd72c0', 'marginBottom': '5px'}, internal-fsb-guid="22bd4142")
                                         | ราคารวม #{this.getDataFromNotation('Quote[0].Auction[' + i + '].price')} บาท
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="89106a70")
+                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'fontSize': '11px'}, internal-fsb-guid="89106a70")
                                         div
                                           | รายการสินค้าที่เปลี่ยน: #{this.getListOfChangeMerchandise(0, i)}
                                       .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'display': 'none'}, internal-fsb-guid="ec8c24ab")
@@ -229,15 +229,15 @@ class FlowLayout_a23ed480 extends Base {
                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                       .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="1411ca4c")
                                         input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="checkbox")
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="60a42697")
+                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold'}, internal-fsb-guid="60a42697")
                                         | ##{i + 1} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.name')}
-                                      .internal-fsb-element.col-10.offset-2.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="9e41cae9")
+                                      .internal-fsb-element.col-10.offset-2.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'fontSize': '11px', 'color': 'rgba(128, 128, 128, 1)'}, internal-fsb-guid="9e41cae9")
                                         | ตำบล#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.subDistrict')} อำเภอ#{this.getDataFromNotation('Quote[0].Auction[' + i + '].district')} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].province')}
                                       .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-2(style={'FsbInheritedPresets': 'b5cd72c0', 'marginBottom': '5px'}, internal-fsb-guid="9491a176")
                                         | ราคารวม #{this.getDataFromNotation('Quote[1].Auction[' + i + '].price')} บาท
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="a87a2cdb")
+                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'fontSize': '11px'}, internal-fsb-guid="a87a2cdb")
                                         | รายการสินค้าที่เปลี่ยน: #{this.getListOfChangeMerchandise(1, i)}
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="4d1e5aaa")
+                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'fontSize': '11px'}, internal-fsb-guid="4d1e5aaa")
                                         | รายการสินค้าที่ไม่มี: #{this.getListOfUnavailableMerchandise(1, i)}
                                       .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'display': 'none'}, internal-fsb-guid="5123ace7")
                                         | โปรโมชั่นพิเศษ: คิดส่วนลดในครั้งถัดไป 10%
