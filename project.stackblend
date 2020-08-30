@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "8a4a42e4",
+    "editingPageID": "5488072c",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -11931,7 +11931,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "1c20dd17",
+        "selectingElementGUID": "db81898d",
         "currentCursorWalkPath": [
           "db6e5207",
           0,
@@ -14347,10 +14347,11 @@
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-1715aae1,",
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-1715aae1 {",
         "            text-align: center;",
-        "            margin-bottom: 10px;",
         "            margin-top: 10px;",
         "            -fsb-reusable-name: quote_box_notice;",
-        "            -fsb-reusable-id: 1715aae1",
+        "            -fsb-reusable-id: 1715aae1;",
+        "            color: rgba(22, 98, 250, 1);",
+        "            margin-bottom: 5px",
         "        }",
         "",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-b5cd72c0,",
@@ -14739,11 +14740,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "ab3a1c6e",
+        "selectingElementGUID": "41537ae8",
         "currentCursorWalkPath": [
-          "41537ae8",
+          "0",
           0,
-          3,
+          2,
           null
         ]
       },
@@ -15768,11 +15769,11 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"b5b183de\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"; left: 42px; top: 60px; width: 225px; min-height: 496px\" data-title-name=\"User\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-source-group=\"User\" data-rendering-condition-source-entity=\"id\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"b5b183de\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"; left: 42px; top: 60px; width: 225px; min-height: 496px\" data-title-name=\"User\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-source-group=\"User\" data-rendering-condition-source-entity=\"id\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\" data-lock-mode=\"relation\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">User</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-      "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"c2b27b9c\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"id\" data-field-type=\"auto\" data-column-type=\"primary\" style=\"\" data-rendering-condition-source-group=\"\" data-rendering-condition-source-entity=\"\" data-rendering-condition-relation-matching-session-name=\"\" data-rendering-condition-mode=\"block\" data-lock-mode=\"always\">",
+      "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"c2b27b9c\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"id\" data-field-type=\"auto\" data-column-type=\"primary\" style=\"\" data-rendering-condition-source-group=\"\" data-rendering-condition-source-entity=\"\" data-rendering-condition-relation-matching-session-name=\"\" data-rendering-condition-mode=\"block\">",
       "                                        <div class=\"internal-fsb-title\">id</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"eb9e433d\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"email\" data-required=\"true\" data-unique=\"true\" style=\"\" data-rendering-condition-mode=\"block\" data-rendering-condition-source-group=\"\" data-rendering-condition-source-entity=\"\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"\" data-lock-mode=\"always\">",
@@ -16771,16 +16772,7 @@
             "fieldType": "auto",
             "required": false,
             "unique": false,
-            "modifyingPermission": {
-              "mode": "always",
-              "relationModeSourceGroup": null,
-              "relationModeSourceEntity": null,
-              "relationMatchingMode": null,
-              "relationMatchingConstantValue": null,
-              "relationMatchingSessionName": null,
-              "sessionMatchingSessionName": null,
-              "sessionMatchingConstantValue": null
-            },
+            "modifyingPermission": null,
             "retrievingPermission": {
               "mode": "block",
               "relationModeSourceGroup": "",
@@ -18118,7 +18110,7 @@
     "Project.Controls.FlowLayout_d58ae925": "08069359059fe3640b3f9c76eb6d29129f02048b",
     "Project.Controls.FlowLayout_d64677b8": "20ae2a5cb10c9351d9ba39d6b5b77ce99092923e",
     "Project.Controls.Rectangle_cad06e8d": "c8f56f491a7a40efdaa29b8800be079b48b3a24c",
-    "Project.Controls.FlowLayout_56ca37d0": "2624ae1fca1451322a1a29be1e22ff11f935f0de",
+    "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
     "Project.Controls.FlowLayout_c6ba5b53": "ca4b84d8fd7e6a13b9eed630874a0d8a00a456ca",
@@ -18140,7 +18132,7 @@
     "8a4a42e4": "f5cfcc256d7b1bebc9737642e338cde053964ad6",
     "473d370d": "5baeea0d906ed48ac6f8130c3bea8f5c48d38808",
     "ea2e6d53": "1c298b988d1821d1a1e78a9170f3bd6cab7bd62f",
-    "5488072c": "9985740f1ca2f743a31041ec47a65d96709c78ce"
+    "5488072c": "1f2478519b683133b16f0d9e0bf9425ede291072"
   },
   "currentPersistingFiles": [
     "src/controllers/components/index.ts",

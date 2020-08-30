@@ -65,7 +65,7 @@ class FlowLayout_56ca37d0 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false});
+    DataManipulationHelper.register("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
@@ -135,7 +135,7 @@ class FlowLayout_56ca37d0 extends Base {
             .internal-fsb-element.col-12(style={'paddingTop': '20px'}, internal-fsb-guid="75c0d8ce")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  Button.internal-fsb-element.internal-fsb-allow-cursor.col-6.offset-3.btn.btn-primary(type="button", onSubmitting=this.onButtonSubmitting_68130617.bind(this), onSubmitted=this.onButtonSubmitted_68130617.bind(this), disabled=this.state.disabled, onClick=((event) => { window.internalFsbSubmit('68130617', 'User', event, ((results) => { this.manipulate('68130617', 'User', results); }).bind(this)); }).bind(this), internal-fsb-guid="68130617")
+                  Button.internal-fsb-element.internal-fsb-allow-cursor.col-6.offset-3.btn.btn-primary(onClick=((event) => { window.internalFsbSubmit('68130617', 'User', event, ((results) => { this.manipulate('68130617', 'User', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.disabled, onSubmitting=this.onButtonSubmitting_68130617.bind(this), onSubmitted=this.onButtonSubmitted_68130617.bind(this), internal-fsb-guid="68130617")
                     .internal-fsb-element(internal-fsb-guid="68130617-text")
                       | บันทึก
                   input.internal-fsb-element.col-12(type="hidden", value="123", internal-fsb-guid="bd78c5c4")
