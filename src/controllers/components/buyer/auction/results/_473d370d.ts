@@ -284,6 +284,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("473d370d", "bdcbb907", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "3d97109b", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('bc041e39', "relational", "Auction", "aid");
 		ValidationHelper.registerInput('bc041e39', "Radio 1", false, undefined);
     for (let i=-1; i<128; i++) {
