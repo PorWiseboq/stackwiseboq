@@ -14,9 +14,9 @@ import {Base} from '../../Base.js';
 
 // Import additional modules here:
 // 
-import {DataManipulationHelper} from '../../../helpers/DataManipulationHelper.js';
-import {ProjectConfigurationHelper} from "../../../helpers/ProjectConfigurationHelper.js";
-import {NotificationHelper} from "../../../helpers/NotificationHelper.js";
+import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
+import {RelationalDatabaseClient} from '../../../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {

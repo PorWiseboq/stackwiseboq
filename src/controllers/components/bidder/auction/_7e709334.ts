@@ -121,49 +121,53 @@ class Controller extends Base {
         } else {
           RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
 WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
-            let schemata = ProjectConfigurationHelper.getDataSchema();
-            let inputs = RequestHelper.createInputs({
-              'Store.oid': this.request.session.uid
-            });
-            let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
-            
-            if (results['Store'].rows.length == 0) {
-              this.response.redirect('/authentication/role/bidder');
-            } else {
-              this.request.session.sid = results['Store'].rows[0].keys['sid'];
-              this.request.session.save(async () => {
-      				  let quoteData = RequestHelper.createInputs({
-         		      'Quote.status': 1,
-         		      'Quote.Auction.qid': null,
-         		      'Quote.Auction.sid': this.request.session.sid,
-         		      'Quote.Auction.Substitute.aid': null
-         		    });
-         		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
-         		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-         		    
-         		    let listingData = RequestHelper.createInputs({
-         		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
-         		    });
-         		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
-         		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
-         		    
-         		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
-         		      if (i == 0) {
-           		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
-           		    } else {
-           		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
-           		        source: SourceType.Relational,
-                    	group: 'Listing',
-                      rows: []
-           		      };
+            try {
+              let schemata = ProjectConfigurationHelper.getDataSchema();
+              let inputs = RequestHelper.createInputs({
+                'Store.oid': this.request.session.uid
+              });
+              let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+              
+              if (results['Store'].rows.length == 0) {
+                this.response.redirect('/authentication/role/bidder');
+              } else {
+                this.request.session.sid = results['Store'].rows[0].keys['sid'];
+                this.request.session.save(async () => {
+        				  let quoteData = RequestHelper.createInputs({
+           		      'Quote.status': 1,
+           		      'Quote.Auction.qid': null,
+           		      'Quote.Auction.sid': this.request.session.sid,
+           		      'Quote.Auction.Substitute.aid': null
+           		    });
+           		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+           		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+           		    
+           		    let listingData = RequestHelper.createInputs({
+           		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
+           		    });
+           		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
+           		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
+           		    
+           		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
+           		      if (i == 0) {
+             		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
+             		    } else {
+             		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
+             		        source: SourceType.Relational,
+                      	group: 'Listing',
+                        rows: []
+             		      };
+             		    }
            		    }
-         		    }
-         		    
-         		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
-         		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
-         		    
-       		      resolve(Object.assign({}, quoteDataset, rankDataset));
-      			  });
+           		    
+           		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+           		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
+           		    
+         		      resolve(Object.assign({}, quoteDataset, rankDataset));
+        			  });
+              }
+            } catch (error) {
+              reject(error);
             }
           });
         }
@@ -380,42 +384,46 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     	try {
     	  RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
 WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
-          let options = RequestHelper.getOptions(this.pageId, this.request);
-          
-          if (schema.group == 'Quote') {
-  				  let quoteData = RequestHelper.createInputs({
-     		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
-     		      'Quote.Auction.qid': null,
-     		      'Quote.Auction.sid': this.request.session.sid,
-     		      'Quote.Auction.Substitute.aid': null
-     		    });
-     		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
-     		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-     		    
-     		    let listingData = RequestHelper.createInputs({
-     		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
-     		    });
-     		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
-     		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
-     		    
-     		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
-     		      if (i == 0) {
-       		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
-       		    } else {
-       		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
-       		        source: SourceType.Relational,
-                	group: 'Listing',
-                  rows: []
-       		      };
+          try {
+            let options = RequestHelper.getOptions(this.pageId, this.request);
+            
+            if (schema.group == 'Quote') {
+    				  let quoteData = RequestHelper.createInputs({
+       		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
+       		      'Quote.Auction.qid': null,
+       		      'Quote.Auction.sid': this.request.session.sid,
+       		      'Quote.Auction.Substitute.aid': null
+       		    });
+       		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+       		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+       		    
+       		    let listingData = RequestHelper.createInputs({
+       		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
+       		    });
+       		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
+       		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
+       		    
+       		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
+       		      if (i == 0) {
+         		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
+         		    } else {
+         		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
+         		        source: SourceType.Relational,
+                  	group: 'Listing',
+                    rows: []
+         		      };
+         		    }
        		    }
-     		    }
-         		    
-     		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
-     		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
-     		    
-   		      resolve(Object.assign({}, quoteDataset, rankDataset));
-          } else {
-            resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
+           		    
+       		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+       		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
+       		    
+     		      resolve(Object.assign({}, quoteDataset, rankDataset));
+            } else {
+              resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
+            }
+          } catch(error) {
+            reject(error);
           }
         });
       } catch(error) {

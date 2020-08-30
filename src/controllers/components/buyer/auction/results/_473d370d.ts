@@ -14,6 +14,9 @@ import {Base} from '../../../Base.js';
 
 // Import additional modules here:
 // 
+import {SchemaHelper} from '../../../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../../../helpers/ProjectConfigurationHelper.js';
+import {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -111,12 +114,29 @@ class Controller extends Base {
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-      /* try {
-        resolve(await super.get(data));
+      try {
+        RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
+WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+          try {
+            let quoteData = RequestHelper.createInputs({
+     		      'Quote.uid': this.request.session.uid,
+     		      'Quote.status': 2,
+     		      'Quote.Listing.qid': null,
+     		      'Quote.Auction.qid': null,
+     		      'Quote.Auction.Store.sid': null,
+     		      'Quote.Auction.Substitute.aid': null
+     		    });
+     		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+     		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+     		    
+            resolve(quoteDataset);
+          } catch(error) {
+            reject(error);
+          }
+        });
       } catch(error) {
         reject(error);
-      } */
-      resolve({});
+      }
     });
   }
   
