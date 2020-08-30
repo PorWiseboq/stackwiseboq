@@ -49,6 +49,8 @@ interface IState extends IAutoBaseState {
   quantity: string;
   price: string;
   group: string;
+  qid: number;
+  quotetype: any;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -59,7 +61,9 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   title: "",
   size: "",
   quantity: "",
-  price: ""
+  price: "",
+  qid: -1,
+  quotetype: null
 });
 
 // Auto[ClassBegin]--->
@@ -97,14 +101,15 @@ class FlowLayout_c6ba5b53 extends Base {
   
   private refresh(props): void {
     const value = this.getDataFromNotation('Substitute.type', false);
-    this.state.error = (value == null) ? false : (Math.min(value, props.type) !== value && value !== 3);
-    this.state.type = (this.state.error || value == null) ? -1 : value;
-    
-    this.state.title = this.getDataFromNotation('Substitute.title', false) || "";
-    this.state.size = this.getDataFromNotation('Substitute.size', false) || "";
-    this.state.quantity = this.getDataFromNotation('Substitute.quantity', false) || "";
-    this.state.price = this.getDataFromNotation('Substitute.price', false) || "";
-    
+    const error = (value == null) ? false : (Math.min(value, props.type) !== value && value !== 3);
+    this.setState({
+      error: error,
+      type: (error || value == null) ? -1 : value,
+      title: this.getDataFromNotation('Substitute.title', false) || "",
+      size: this.getDataFromNotation('Substitute.size', false) || "",
+      quantity: this.getDataFromNotation('Substitute.quantity', false) || "",
+      price: this.getDataFromNotation('Substitute.price', false) || ""
+    });
     this.forceUpdate();
   }
   

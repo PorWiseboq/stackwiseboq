@@ -100,7 +100,7 @@ class RoleSelector extends Base {
                     img(style={'display': 'block', 'width': '100%', 'marginTop': '15px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/home-repair.png")
                   .internal-fsb-element.col-12.-fsb-self-5d1104e1(internal-fsb-guid="5d1104e1")
                     | ไม่ว่าคุณจะเป็นผู้รับเหมาก่อสร้าง หรือเจ้าของบ้านที่สร้างเอง เราจะช่วยสืบราคาวัสดุก่อสร้าง จากร้านค้าทั่วประเทศ และนำมาเรียงลำดับจาก ต่ำสุด ไปยัง สูงสุด โดยลูกค้าสามารถเลือกราคาที่ต้องการและสั่งซื้อได้ทันที
-                  a.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-info.col-10.offset-1.-fsb-self-856191b9(href="/authentication", internal-fsb-guid="856191b9")
+                  a.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-info.-fsb-self-856191b9.col-10.offset-1(href="/authentication", internal-fsb-guid="856191b9")
                     .internal-fsb-element(internal-fsb-guid="856191b9-text")
                       | เริ่มต้นใช้งาน
                   a.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-info.col-10.offset-1.-fsb-preset-856191b9(style={'FsbInheritedPresets': '856191b9', display: this.state.buyerDisplayStyle}, href="/buyer", internal-fsb-guid="9328819e")

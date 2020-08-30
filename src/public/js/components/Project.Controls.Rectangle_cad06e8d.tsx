@@ -551,7 +551,7 @@ class Rectangle_cad06e8d extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'flexDirection': 'column', 'WebkitFlexDirection': 'column', 'MsFlexDirection': 'column', 'height': '100vh', 'display': 'flex', 'background': 'linear-gradient(15deg, rgba(153, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%)', 'FsbBackgroundType': 'linear', 'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '0px', 'paddingBottom': '0px', 'width': '100vw'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element internal-fsb-allow-cursor col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="cad06e8d")
+      div(style=Object.assign({'flexDirection': 'column', 'WebkitFlexDirection': 'column', 'MsFlexDirection': 'column', 'height': '100vh', 'display': 'flex', 'background': 'linear-gradient(15deg, rgba(153, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%)', 'FsbBackgroundType': 'linear', 'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '0px', 'paddingBottom': '0px', 'width': '100vw', 'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'hidden', 'MsOverflowY': 'hidden'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element internal-fsb-allow-cursor col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="cad06e8d")
         .internal-fsb-element(style={'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1)'}, internal-fsb-guid="6a56a9be")
           .container-fluid
             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor(style={'display': 'block'})
@@ -563,7 +563,7 @@ class Rectangle_cad06e8d extends Base {
         .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'flexGrow': '1', 'WebkitFlexGrow': '1', 'position': 'relative'}, internal-fsb-guid="a30c3884")
           .internal-fsb-element.internal-fsb-allow-cursor(style={'height': '100%', 'width': '100%', 'position': 'absolute', 'top': '0px', 'left': '0px', 'right': '0px', 'bottom': '0px'}, internal-fsb-guid="9b826999")
             .internal-fsb-element.internal-fsb-allow-cursor(style={'height': '100%', 'width': '100%', 'position': 'relative', 'display': 'flex', 'flexDirection': 'row', 'WebkitFlexDirection': 'row', 'MsFlexDirection': 'row'}, internal-fsb-guid="e2254eb7")
-              .internal-fsb-element.internal-fsb-allow-cursor(style={'borderRightColor': 'rgba(255, 255, 255, 1)', 'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1.0)', 'verticalAlign': 'top', 'position': 'relative', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'flexGrow': '0', 'flexShrink': '0', 'flexBasis': '60px', 'WebkitFlexBasis': '60px'}, internal-fsb-guid="712e9de1")
+              .internal-fsb-element.internal-fsb-allow-cursor(style={'borderRightColor': 'rgba(255, 255, 255, 1)', 'background': 'rgba(255, 255, 255, 0)', 'color': 'rgba(255, 255, 255, 1.0)', 'verticalAlign': 'top', 'position': 'relative', 'overflowY': 'hidden', 'MsOverflowY': 'hidden', 'flexGrow': '0', 'flexShrink': '0', 'flexBasis': '60px', 'WebkitFlexBasis': '60px', 'overflowX': 'hidden', 'MsOverflowX': 'hidden'}, internal-fsb-guid="712e9de1")
                 .internal-fsb-element(style={'fontSize': '11px', 'cursor': 'default'}, internal-fsb-guid="74e4253b")
                   .container-fluid
                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
