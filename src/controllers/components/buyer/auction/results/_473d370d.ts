@@ -136,11 +136,15 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
      		      return auction.relations['Substitute'].rows.every((substitute) => {
      		        return substitute.columns['type'] != 3;
      		      });
+     		    }).sort((a, b) => {
+     		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
      		    });
      		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
      		      return auction.relations['Substitute'].rows.some((substitute) => {
      		        return substitute.columns['type'] == 3;
      		      });
+     		    }).sort((a, b) => {
+     		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
      		    });
      		    
      		    let results = {
