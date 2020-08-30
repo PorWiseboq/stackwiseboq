@@ -42,6 +42,7 @@ interface IProps extends IAutoBaseProps {
   
 }
 interface IState extends IAutoBaseState {
+  recentType: number;
   type: number;
   error: boolean;
   title: string;
@@ -49,21 +50,18 @@ interface IState extends IAutoBaseState {
   quantity: string;
   price: string;
   group: string;
-  qid: number;
-  quotetype: any;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
+  recentType: -1,
   type: -1,
   title: "",
   size: "",
   quantity: "",
-  price: "",
-  qid: -1,
-  quotetype: null
+  price: ""
 });
 
 // Auto[ClassBegin]--->
@@ -92,11 +90,14 @@ class FlowLayout_c6ba5b53 extends Base {
   }
   
   protected componentWillReceiveProps(nextProps): void {
-    if (nextProps.submitting) return;
-    if (nextProps.hassubmitted) return;
+    const skip = (this.getDataFromNotation('Substitute.type', false) != this.state.recentType);
     
-    this.refresh(nextProps);
-    this.updatePrice();
+    if (!skip && (nextProps.submitting || nextProps.isformready)) {
+      this.forceUpdate();
+    } else {
+      this.refresh(nextProps);
+      this.updatePrice();
+    }
   }
   
   private refresh(props): void {
@@ -104,6 +105,7 @@ class FlowLayout_c6ba5b53 extends Base {
     const error = (value == null) ? false : (Math.min(value, props.type) !== value && value !== 3);
     this.setState({
       error: error,
+      recentType: value,
       type: (error || value == null) ? -1 : value,
       title: this.getDataFromNotation('Substitute.title', false) || "",
       size: this.getDataFromNotation('Substitute.size', false) || "",
@@ -251,46 +253,46 @@ class FlowLayout_c6ba5b53 extends Base {
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="1832b944")
-                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType0", onClick=this.onRadioClick_1832b944.bind(this), type="radio", value="0", name=this.state.group, checked=this.state.type == 0, data-com.agilebits.onepassword.initial-value="0", disabled=this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '0')
+                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType0", onClick=this.onRadioClick_1832b944.bind(this), type="radio", value="0", name=this.state.group, checked=this.state.type == 0, data-com.agilebits.onepassword.initial-value="0", disabled=!this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '0')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="b80041d3")
                           | เจาะจง
                   label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px', display: (()=>{return (this.props.type >= 1) ? 'block' : 'none';})()}, internal-fsb-guid="eb192633")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="b91e2739")
-                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType1", onClick=this.onRadioClick_b91e2739.bind(this), type="radio", value="1", name=this.state.group, checked=this.state.type == 1, data-com.agilebits.onepassword.initial-value="1", disabled=this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '1')
+                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType1", onClick=this.onRadioClick_b91e2739.bind(this), type="radio", value="1", name=this.state.group, checked=this.state.type == 1, data-com.agilebits.onepassword.initial-value="1", disabled=!this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '1')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="58266972")
                           | เทียบเท่า
                   label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px', display: (()=>{return (this.props.type >= 2) ? 'block' : 'none';})()}, internal-fsb-guid="2cb33325")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="03aab0e5")
-                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType2", onClick=this.onRadioClick_03aab0e5.bind(this), type="radio", value="2", name=this.state.group, checked=this.state.type == 2, data-com.agilebits.onepassword.initial-value="2", disabled=this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '2')
+                          input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType2", onClick=this.onRadioClick_03aab0e5.bind(this), type="radio", value="2", name=this.state.group, checked=this.state.type == 2, data-com.agilebits.onepassword.initial-value="2", disabled=!this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '2')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="5c2b0578")
                           | ทดแทน
                   label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}, internal-fsb-guid="c1c5b10b")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="957c1568")
-                          input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType3", onClick=this.onRadioClick_957c1568.bind(this), type="radio", value="3", name=this.state.group, checked=this.state.type == 3, data-com.agilebits.onepassword.initial-value="3", disabled=this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '3')
+                          input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType3", onClick=this.onRadioClick_957c1568.bind(this), type="radio", value="3", name=this.state.group, checked=this.state.type == 3, data-com.agilebits.onepassword.initial-value="3", disabled=!this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '3')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="a3b9410d")
                           | ไม่มี
                   .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.state.type == 0 || this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="45b20175")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.col-7.offset-0(style={padding: '0px'}, internal-fsb-guid="1382e4c9")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="price", onChange=this.onTextboxChange_1382e4c9.bind(this), type="text", placeholder="ราคาต่อหน่วย", disabled=this.props.enabled, value=this.state.price, data-com.agilebits.onepassword.initial-value=this.state.price)
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="price", onChange=this.onTextboxChange_1382e4c9.bind(this), type="text", placeholder="ราคาต่อหน่วย", disabled=!this.props.enabled, value=this.state.price, data-com.agilebits.onepassword.initial-value=this.state.price)
                         .internal-fsb-element.col-5.offset-0(style={'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px', 'fontSize': '13px'}, internal-fsb-guid="530bacd3")
                           | บาท
             .internal-fsb-element.col-5.offset-0.-fsb-self-483390a6(style={'FsbReusableName': '', 'FsbReusableId': '483390a6', display: (()=>{return (this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="483390a6")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="9c338431")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_9c338431.bind(this), type="text", placeholder="เปลี่ยนวัสดุเป็น", value=this.state.title, data-com.agilebits.onepassword.initial-value=this.state.title, disabled=this.props.enabled)
+                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_9c338431.bind(this), type="text", placeholder="เปลี่ยนวัสดุเป็น", value=this.state.title, data-com.agilebits.onepassword.initial-value=this.state.title, disabled=!this.props.enabled)
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="d913e6a1")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.size, data-com.agilebits.onepassword.initial-value=this.state.size, disabled=this.props.enabled)
+                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.size, data-com.agilebits.onepassword.initial-value=this.state.size, disabled=!this.props.enabled)
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c22ec668")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity, data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=this.props.enabled)
+                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity, data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=!this.props.enabled)
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("lid"), internal-fsb-guid="ae7e2437")
     `
   }
