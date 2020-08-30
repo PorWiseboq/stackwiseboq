@@ -26,6 +26,7 @@ import {ProjectConfigurationHelper} from "../../../../helpers/ProjectConfigurati
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -46,6 +47,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -118,11 +120,19 @@ class Controller extends Base {
         } else {
           let schemata = ProjectConfigurationHelper.getDataSchema();
           let inputs = RequestHelper.createInputs({
-            'Quote.status': 1
+            'Quote.uid': this.request.session.uid
           });
           let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session);
           
-     	    resolve(results);
+          if (results['Quote'].rows.length != 0) {
+            if (results['Quote'].rows[0].columns['status'] == 2) {
+              this.response.redirect('/buyer/auction/results');
+            } else {
+              resolve(results);
+            }
+          } else {
+            this.response.redirect('/buyer/auction');
+          }
         }
       } catch(error) {
         reject(error);

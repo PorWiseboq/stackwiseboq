@@ -214,36 +214,40 @@ class Controller extends Base {
        		  });
        		  let datasetA = await DatabaseHelper.retrieve(data, null);
        		  
-       		  if (datasetA['Quote'].rows.length != 0) {
-    	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
-    	   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
-    	   		    
-    	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = this.convertDateToString(date);
-    	   		  } else {
-    	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
-    	   		  }
-    	 		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
-    	 		      datasetA['Quote'].rows[0].columns['hours'] = null;
-    	 		    }
-    	 		  }
-       		  
-       		  let datasetB;
-       		  if (DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)) {
-       		    data = RequestHelper.createInputs({
-         		    'Listing.qid': DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)
-         		  });
-         		  datasetB = await DatabaseHelper.retrieve(data, null);
+       		  if (datasetA['Quote'].rows.length != 0 && datasetA['Quote'].rows[0].columns['status'] == 2) {
+       		    this.response.redirect('/buyer/auction/waiting');
        		  } else {
-       		    datasetB = {
-       		      Listing: {
-       		        source: SourceType.Relational,
-                	group: 'Listing',
-                  rows: []
-       		      }
-       		    };
+         		  if (datasetA['Quote'].rows.length != 0) {
+      	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
+      	   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
+      	   		    
+      	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = this.convertDateToString(date);
+      	   		  } else {
+      	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
+      	   		  }
+      	 		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
+      	 		      datasetA['Quote'].rows[0].columns['hours'] = null;
+      	 		    }
+      	 		  }
+         		  
+         		  let datasetB;
+         		  if (DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)) {
+         		    data = RequestHelper.createInputs({
+           		    'Listing.qid': DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)
+           		  });
+           		  datasetB = await DatabaseHelper.retrieve(data, null);
+         		  } else {
+         		    datasetB = {
+         		      Listing: {
+         		        source: SourceType.Relational,
+                  	group: 'Listing',
+                    rows: []
+         		      }
+         		    };
+         		  }
+         		  
+         		  resolve(Object.assign({}, datasetA, datasetB));
        		  }
-       		  
-       		  resolve(Object.assign({}, datasetA, datasetB));
           }
      		} else {
      		  this.response.redirect('/authentication');
