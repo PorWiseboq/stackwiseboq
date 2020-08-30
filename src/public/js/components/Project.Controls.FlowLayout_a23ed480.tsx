@@ -15,7 +15,7 @@ enum Step {
   SELECTION,
   PAYMENT,
   PAID
-}
+};
 
 // Auto[Declare]--->
 
@@ -244,7 +244,7 @@ class FlowLayout_a23ed480 extends Base {
             Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, type="button", onClick=this.onButtonClick_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
               .internal-fsb-element(internal-fsb-guid="bdcbb907-text")
                 | ถัดไป: เลือกวิธีการจ่ายเงิน
-            .internal-fsb-element.col-10.offset-1.-fsb-preset-180079a2(style={'FsbInheritedPresets': '180079a2', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'none' : 'block';})()}, internal-fsb-guid="41288a78")
+            .internal-fsb-element.col-10.offset-1.-fsb-preset-180079a2(style={'FsbInheritedPresets': '180079a2', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, internal-fsb-guid="41288a78")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686'}, internal-fsb-guid="b0e94808")
@@ -297,9 +297,22 @@ class FlowLayout_a23ed480 extends Base {
             Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-2(style={'marginTop': '15px', 'marginLeft': '10px', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, type="button", onClick=this.onButtonClick_3d97109b.bind(this), internal-fsb-guid="3d97109b")
               .internal-fsb-element(internal-fsb-guid="3d97109b-text")
                 | จ่ายผ่านบัตร
-            .internal-fsb-element.col-12.-fsb-preset-180079a2(style={'FsbInheritedPresets': '180079a2'}, internal-fsb-guid="084a0c00")
+            .internal-fsb-element.-fsb-preset-180079a2.col-10.offset-1(style={'FsbInheritedPresets': '180079a2', display: (()=>{return (this.state.step == Step.PAID) ? 'block' : 'none';})()}, internal-fsb-guid="084a0c00")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                  .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686'}, internal-fsb-guid="b7b1b09d")
+                    | จ่ายเงินเรียบร้อยแล้ว
+                  .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="907bd1cd")
+                    | ทางเรากำลังรออนุมัติการจ่ายเงิน กรุณารอทางเราติดต่อกลับผ่านทางโทรศัพท์
+                  .internal-fsb-element.col-12(style={'position': 'relative'}, internal-fsb-guid="4541551d")
+                    .container-fluid
+                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                        .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: "<div class=\"loader\"></div><style type=\"text/css\">.loader,\n.loader:after {\n  border-radius: 50%;\n  width: 200px;\n  height: 200px;\n}\n.loader {\n  margin: 60px auto;\n  font-size: 10px;\n  position: relative;\n  text-indent: -9999em;\n  border-top: 1.1em solid rgba(0,199,253, 0.2);\n  border-right: 1.1em solid rgba(0,199,253, 0.2);\n  border-bottom: 1.1em solid rgba(0,199,253, 0.2);\n  border-left: 1.1em solid #00c7fd;\n  -webkit-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-animation: load8 1.1s infinite linear;\n  animation: load8 1.1s infinite linear;\n}\n@-webkit-keyframes load8 {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n@keyframes load8 {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}</style> "}, internal-fsb-guid="407dc97d")
+                        .internal-fsb-element.col-12(style={'position': 'absolute', 'top': '0px', 'left': '0px', 'right': '0px'}, internal-fsb-guid="bbc12ce1")
+                          .container-fluid
+                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                              .internal-fsb-element.offset-0(style={'fontSize': '13px', 'color': 'rgba(22, 98, 250, 1)', 'top': '152px', 'width': '160px', 'left': '50%', 'marginLeft': '-80px', 'textAlign': 'center'}, internal-fsb-guid="cac28984")
+                                | กำลังรออนุมัติการจ่ายเงิน
     `
   }
 }
