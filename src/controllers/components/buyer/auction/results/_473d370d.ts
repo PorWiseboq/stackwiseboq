@@ -14,6 +14,7 @@ import {Base} from '../../../Base.js';
 
 // Import additional modules here:
 // 
+import {CodeHelper} from '../../../../helpers/CodeHelper.js';
 import {SchemaHelper} from '../../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../../helpers/ProjectConfigurationHelper.js';
 import {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'
@@ -128,9 +129,32 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
      		      'Quote.Auction.Substitute.aid': null
      		    });
      		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
-     		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+     		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+     		    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);
      		    
-            resolve(quoteDataset);
+     		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
+     		      return auction.relations['Substitute'].rows.every((substitute) => {
+     		        return substitute.columns['type'] != 3;
+     		      });
+     		    });
+     		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
+     		      return auction.relations['Substitute'].rows.some((substitute) => {
+     		        return substitute.columns['type'] == 3;
+     		      });
+     		    });
+     		    
+     		    let results = {
+     		      Quote: {
+       		      source: SourceType.Relational,
+              	group: 'Quote',
+                rows: [
+                  quoteDatasetA['Quote'].rows[0],
+                  quoteDatasetB['Quote'].rows[0]
+                ]
+     		      }
+     		    };
+     		    
+            resolve(results);
           } catch(error) {
             reject(error);
           }
