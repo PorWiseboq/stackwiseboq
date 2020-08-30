@@ -124,6 +124,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
      		      'Quote.Listing.qid': null,
      		      'Quote.Auction.qid': null,
      		      'Quote.Auction.Store.sid': null,
+     		      'Quote.Auction.Store.User.id': null,
      		      'Quote.Auction.Substitute.aid': null
      		    });
      		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
