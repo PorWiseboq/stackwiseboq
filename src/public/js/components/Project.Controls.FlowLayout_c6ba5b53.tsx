@@ -103,15 +103,15 @@ class FlowLayout_c6ba5b53 extends Base {
   private refresh(props): void {
     const value = this.getDataFromNotation('Substitute.type', false);
     const error = (value == null) ? false : (Math.min(value, props.type) !== value && value !== 3);
-    this.setState({
-      error: error,
-      recentType: value,
-      type: (error || value == null) ? -1 : value,
-      title: this.getDataFromNotation('Substitute.title', false) || "",
-      size: this.getDataFromNotation('Substitute.size', false) || "",
-      quantity: this.getDataFromNotation('Substitute.quantity', false) || "",
-      price: this.getDataFromNotation('Substitute.price', false) || ""
-    });
+    
+    this.state.error = error;
+    this.state.recentType = value;
+    this.state.type = (error || value == null) ? -1 : value;
+    this.state.title = this.getDataFromNotation('Substitute.title', false) || "";
+    this.state.size = this.getDataFromNotation('Substitute.size', false) || "";
+    this.state.quantity = this.getDataFromNotation('Substitute.quantity', false) || "";
+    this.state.price = this.getDataFromNotation('Substitute.price', false) || "";
+    
     this.forceUpdate();
   }
   
