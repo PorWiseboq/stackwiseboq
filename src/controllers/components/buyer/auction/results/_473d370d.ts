@@ -239,7 +239,7 @@ class Controller extends Base {
     RequestHelper.registerSubmit("473d370d", "bdcbb907", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-		RequestHelper.registerInput('bc041e39', undefined, undefined, undefined);
+		RequestHelper.registerInput('bc041e39', "relational", "Auction", "aid");
 		ValidationHelper.registerInput('bc041e39', "Radio 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'bc041e39' + ((i == -1) ? '' : '[' + i + ']'));
@@ -249,7 +249,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('1411ca4c', undefined, undefined, undefined);
+		RequestHelper.registerInput('1411ca4c', "relational", "Auction", "aid");
 		ValidationHelper.registerInput('1411ca4c', "Checkbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '1411ca4c' + ((i == -1) ? '' : '[' + i + ']'));
@@ -259,7 +259,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('c6cd6a36', undefined, undefined, undefined);
+		RequestHelper.registerInput('c6cd6a36', "relational", "Auction.Payment.Transfer", "time");
 		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
@@ -269,7 +269,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('0c59a0a4', undefined, undefined, undefined);
+		RequestHelper.registerInput('0c59a0a4', "relational", "Auction.Payment.Transfer", "transferrer");
 		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '0c59a0a4' + ((i == -1) ? '' : '[' + i + ']'));
@@ -279,7 +279,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('5cab012e', undefined, undefined, undefined);
+		RequestHelper.registerInput('5cab012e', "relational", "Auction.Payment.Transfer", "origin");
 		ValidationHelper.registerInput('5cab012e', "Textbox 3", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));

@@ -171,7 +171,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "8a4a42e4",
+    "editingPageID": "473d370d",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -11997,7 +11997,7 @@
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><label class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"0a1d7749\" internal-fsb-name=\"Label 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div class=\"internal-fsb-element offset--10 -fsb-preset-b6c9ad89 col-2 offset-0\" internal-fsb-guid=\"bc041e39\" internal-fsb-name=\"Radio 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\"></div>",
+        "                                                            <div class=\"internal-fsb-element offset--10 -fsb-preset-b6c9ad89 col-2 offset-0\" internal-fsb-guid=\"bc041e39\" internal-fsb-name=\"Radio 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"aid\"></div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"94372513\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">#1 ร้านทดสอบหนึ่งสองสาม</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2 -fsb-preset-4839e353\" internal-fsb-guid=\"d5ecb95b\" internal-fsb-name=\"TextElement 24\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353\">อำเภอเมือง เชียงใหม่ (5 กม.)</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-2\" internal-fsb-guid=\"22bd4142\" internal-fsb-name=\"TextElement 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0; margin-bottom: 5px\">ราคารวม 25,000 บาท</div>",
@@ -12021,7 +12021,7 @@
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
-        "                                                            <div class=\"internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0\" internal-fsb-guid=\"1411ca4c\" internal-fsb-name=\"Checkbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Checkbox\"><input type=\"checkbox\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\"></div>",
+        "                                                            <div class=\"internal-fsb-element -fsb-preset-b6c9ad89 col-2 offset-0\" internal-fsb-guid=\"1411ca4c\" internal-fsb-name=\"Checkbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Checkbox\"><input type=\"checkbox\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"aid\"></div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-0\" internal-fsb-guid=\"60a42697\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">#1 ร้านทดสอบสี่ห้าหก</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2 -fsb-preset-4839e353\" internal-fsb-guid=\"9e41cae9\" internal-fsb-name=\"TextElement 25\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353\">อำเภอเมือง ลำพูน (14 กม.)</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-b5cd72c0 col-10 offset-2\" internal-fsb-guid=\"9491a176\" internal-fsb-name=\"TextElement 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0; margin-bottom: 5px\">ราคารวม 15,000 บาท</div>",
@@ -12166,9 +12166,9 @@
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"782d3986\" internal-fsb-name=\"TextElement 20\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: b5cd72c0; font-weight: bold; margin-bottom: 5px; font-size: 14px\">โปรดดำเนินการผ่านธนาคาร</div>",
         "",
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"5eeaed97\" internal-fsb-name=\"TextElement 23\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0; text-align: center; margin-bottom: 15px\">คุณอาจเปิดหน้านี้ทิ้งไว้หรือเข้าสู่ระบบเพื่อกลับเข้ามายังหน้านี้ในภายหลังได้เช่นกัน</div>",
-        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"c6cd6a36\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 5px\" class=\"form-control form-control-sm \" placeholder=\"วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm\"></div>",
-        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"0c59a0a4\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อผู้ที่ได้ทำการโอน\"></div>",
-        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"5cab012e\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อธนาคารและสาขาต้นทาง\"></div>",
+        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"c6cd6a36\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 5px\" class=\"form-control form-control-sm \" placeholder=\"วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Payment.Transfer\" internal-fsb-data-source-column=\"time\"></div>",
+        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"0c59a0a4\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อผู้ที่ได้ทำการโอน\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Payment.Transfer\" internal-fsb-data-source-column=\"transferrer\"></div>",
+        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"5cab012e\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อธนาคารและสาขาต้นทาง\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Payment.Transfer\" internal-fsb-data-source-column=\"origin\"></div>",
         "                                            </div>",
         "                                        </div>",
         "                                    </div>",
@@ -12875,11 +12875,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "ee5d6390",
+        "selectingElementGUID": "5cab012e",
         "currentCursorWalkPath": [
-          "0",
+          "a3c6554b",
           0,
-          6,
+          5,
           null
         ]
       },
@@ -17708,7 +17708,7 @@
     "bbc7dba3": "b13eedaa0642c700254bc3cd38162ca4b6c1164c",
     "c3da32d7": "6da8af3b5f7ce95683e05e02ec5b3800686d2485",
     "8a4a42e4": "240ef722d778bfff3afd64834117ee44691ae010",
-    "473d370d": "453260a96412cc5de6aa9b8eccefb3e5932488d9",
+    "473d370d": "8a3ed1a4e8377d2947c2c697aa232dc15aa09cf3",
     "ea2e6d53": "21f3b37bdc31dea87c5a703a60d5129567e838e4",
     "5488072c": "d44858a85cfa7de0f31a67f19bc1eed6dcd60c91"
   },
