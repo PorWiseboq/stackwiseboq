@@ -15788,10 +15788,10 @@
       "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"498bda3b\" internal-fsb-name=\"RelationalColumn 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"facebookSecretToken\" style=\"\" data-rendering-condition-mode=\"block\" data-lock-mode=\"always\">",
       "                                        <div class=\"internal-fsb-title\">facebookSecretToken</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"67b05a14\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-required=\"true\" data-title-name=\"firstName\" style=\"\" data-rendering-condition-mode=\"block\" data-rendering-condition-source-group=\"\" data-rendering-condition-relation-matching-constant-value=\"\" data-rendering-condition-source-entity=\"\" data-rendering-condition-relation-matching-session-name=\"\">",
+      "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"67b05a14\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-required=\"true\" data-title-name=\"firstName\" style=\"\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"User\" data-rendering-condition-relation-matching-constant-value=\"\" data-rendering-condition-source-entity=\"id\" data-rendering-condition-relation-matching-session-name=\"uid\" data-rendering-condition-matching-mode=\"session\">",
       "                                        <div class=\"internal-fsb-title\">firstName</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"45b2e2d5\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"lastName\" data-required=\"true\" style=\"\" data-rendering-condition-mode=\"block\" data-rendering-condition-source-group=\"\" data-rendering-condition-source-entity=\"\" data-rendering-condition-relation-matching-session-name=\"\" data-rendering-condition-relation-matching-constant-value=\"\">",
+      "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"45b2e2d5\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"lastName\" data-required=\"true\" style=\"\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"User\" data-rendering-condition-source-entity=\"id\" data-rendering-condition-relation-matching-session-name=\"uid\" data-rendering-condition-relation-matching-constant-value=\"\" data-rendering-condition-matching-mode=\"session\">",
       "                                        <div class=\"internal-fsb-title\">lastName</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"474c9a08\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-required=\"true\" data-title-name=\"contactNumber\" style=\"\" data-rendering-condition-mode=\"block\" data-rendering-condition-source-group=\"\" data-rendering-condition-source-entity=\"\" data-rendering-condition-relation-matching-session-name=\"\">",
@@ -16902,12 +16902,12 @@
             "unique": false,
             "modifyingPermission": null,
             "retrievingPermission": {
-              "mode": "block",
-              "relationModeSourceGroup": "",
-              "relationModeSourceEntity": "",
-              "relationMatchingMode": null,
+              "mode": "relation",
+              "relationModeSourceGroup": "User",
+              "relationModeSourceEntity": "id",
+              "relationMatchingMode": "session",
               "relationMatchingConstantValue": "",
-              "relationMatchingSessionName": "",
+              "relationMatchingSessionName": "uid",
               "sessionMatchingSessionName": null,
               "sessionMatchingConstantValue": null
             }
@@ -16920,12 +16920,12 @@
             "unique": false,
             "modifyingPermission": null,
             "retrievingPermission": {
-              "mode": "block",
-              "relationModeSourceGroup": "",
-              "relationModeSourceEntity": "",
-              "relationMatchingMode": null,
+              "mode": "relation",
+              "relationModeSourceGroup": "User",
+              "relationModeSourceEntity": "id",
+              "relationMatchingMode": "session",
               "relationMatchingConstantValue": "",
-              "relationMatchingSessionName": "",
+              "relationMatchingSessionName": "uid",
               "sessionMatchingSessionName": null,
               "sessionMatchingConstantValue": null
             }
