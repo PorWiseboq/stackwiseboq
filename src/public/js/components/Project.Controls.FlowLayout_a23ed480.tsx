@@ -194,24 +194,24 @@ class FlowLayout_a23ed480 extends Base {
                         .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'textAlign': 'center'}, internal-fsb-guid="9e116c4b")
                           | ครบทุกรายการสินค้าตามที่คุณได้ระบุไว้
                         each data, i in this.getDataFromNotation("Quote[0].Auction", true)
-                          .internal-fsb-element.col-12(key="item_" + i, internal-fsb-guid="839d87a6")
+                          .internal-fsb-element.col-12(style={'background': 'rgba(250, 250, 250, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'paddingTop': '10px', 'paddingBottom': '10px', 'marginBottom': '7px'}, key="item_" + i, internal-fsb-guid="839d87a6")
                             .container-fluid
                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                 label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="0a1d7749")
                                   .container-fluid
                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                      .internal-fsb-element.offset--10.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="bc041e39")
+                                      .internal-fsb-element.offset--10.-fsb-preset-b6c9ad89.offset-0.col-1(style={padding: '0px'}, internal-fsb-guid="bc041e39")
                                         input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="complete")
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold'}, internal-fsb-guid="94372513")
+                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'fontSize': '14px'}, internal-fsb-guid="94372513")
                                         | ##{i + 1} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.name')}
-                                      .internal-fsb-element.col-10.offset-2.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'fontSize': '11px', 'color': 'rgba(128, 128, 128, 1)'}, internal-fsb-guid="d5ecb95b")
+                                      .internal-fsb-element.col-10.-fsb-preset-4839e353.offset-1(style={'FsbInheritedPresets': '4839e353', 'color': 'rgba(128, 128, 128, 1)'}, internal-fsb-guid="d5ecb95b")
                                         | ตำบล#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.subDistrict')} อำเภอ#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.district')} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.province')}
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-2(style={'FsbInheritedPresets': 'b5cd72c0', 'marginBottom': '5px'}, internal-fsb-guid="22bd4142")
+                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-1(style={'FsbInheritedPresets': 'b5cd72c0', 'marginBottom': '5px'}, internal-fsb-guid="22bd4142")
                                         | ราคารวม #{this.getDataFromNotation('Quote[0].Auction[' + i + '].price')} บาท
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'fontSize': '11px'}, internal-fsb-guid="89106a70")
+                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="89106a70")
                                         div
                                           | รายการสินค้าที่เปลี่ยน: #{this.getListOfChangeMerchandise(0, i)}
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'display': 'none'}, internal-fsb-guid="ec8c24ab")
+                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15', 'display': 'none'}, internal-fsb-guid="ec8c24ab")
                                         | โปรโมชั่นพิเศษ: คิดส่วนลดในครั้งถัดไป 12.5%
                   .internal-fsb-element.col-6.offset-0.-fsb-preset-b6c9ad89(style={'FsbInheritedPresets': 'b6c9ad89', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(22, 98, 250, 1)', 'borderLeftWidth': '1px'}, internal-fsb-guid="35d94303")
                     .container-fluid
@@ -221,25 +221,25 @@ class FlowLayout_a23ed480 extends Base {
                         .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'textAlign': 'center'}, internal-fsb-guid="740014ae")
                           | มีเฉพาะบางรายการสินค้าตามที่คุณได้ระบุไว้
                         each data, i in this.getDataFromNotation("Quote[1].Auction", true)
-                          .internal-fsb-element.col-12(key="item_" + i, internal-fsb-guid="33eb2aa3")
+                          .internal-fsb-element.col-12(style={'background': 'rgba(252, 252, 252, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'paddingTop': '10px', 'paddingBottom': '10px', 'marginBottom': '7px'}, key="item_" + i, internal-fsb-guid="33eb2aa3")
                             .container-fluid
                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                 label.internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="9db8b3b2")
                                   .container-fluid
                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                      .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="1411ca4c")
+                                      .internal-fsb-element.-fsb-preset-b6c9ad89.offset-0.col-1(style={padding: '0px'}, internal-fsb-guid="1411ca4c")
                                         input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="checkbox")
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold'}, internal-fsb-guid="60a42697")
+                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'fontSize': '14px'}, internal-fsb-guid="60a42697")
                                         | ##{i + 1} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.name')}
-                                      .internal-fsb-element.col-10.offset-2.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'fontSize': '11px', 'color': 'rgba(128, 128, 128, 1)'}, internal-fsb-guid="9e41cae9")
+                                      .internal-fsb-element.col-10.-fsb-preset-4839e353.offset-1(style={'FsbInheritedPresets': '4839e353', 'color': 'rgba(128, 128, 128, 1)'}, internal-fsb-guid="9e41cae9")
                                         | ตำบล#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.subDistrict')} อำเภอ#{this.getDataFromNotation('Quote[0].Auction[' + i + '].district')} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].province')}
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-2(style={'FsbInheritedPresets': 'b5cd72c0', 'marginBottom': '5px'}, internal-fsb-guid="9491a176")
+                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-1(style={'FsbInheritedPresets': 'b5cd72c0', 'marginBottom': '5px'}, internal-fsb-guid="9491a176")
                                         | ราคารวม #{this.getDataFromNotation('Quote[1].Auction[' + i + '].price')} บาท
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'fontSize': '11px'}, internal-fsb-guid="a87a2cdb")
+                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="a87a2cdb")
                                         | รายการสินค้าที่เปลี่ยน: #{this.getListOfChangeMerchandise(1, i)}
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'fontSize': '11px'}, internal-fsb-guid="4d1e5aaa")
+                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="4d1e5aaa")
                                         | รายการสินค้าที่ไม่มี: #{this.getListOfUnavailableMerchandise(1, i)}
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-2(style={'FsbInheritedPresets': '8050ab15', 'display': 'none'}, internal-fsb-guid="5123ace7")
+                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15', 'display': 'none'}, internal-fsb-guid="5123ace7")
                                         | โปรโมชั่นพิเศษ: คิดส่วนลดในครั้งถัดไป 10%
             Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, type="button", onClick=this.onButtonClick_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
               .internal-fsb-element(internal-fsb-guid="bdcbb907-text")
