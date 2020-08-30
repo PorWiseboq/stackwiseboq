@@ -14,6 +14,10 @@ import {Base} from '../../../Base.js';
 
 // Import additional modules here:
 // 
+import {CodeHelper} from '../../../../helpers/CodeHelper.js';
+import {SchemaHelper} from '../../../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../../../helpers/ProjectConfigurationHelper.js';
+import {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -25,6 +29,7 @@ import {Base} from '../../../Base.js';
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -45,6 +50,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -109,12 +115,53 @@ class Controller extends Base {
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-      /* try {
-        resolve(await super.get(data));
+      try {
+        RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
+WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+          try {
+            let quoteData = RequestHelper.createInputs({
+     		      'Quote.uid': this.request.session.uid,
+     		      'Quote.status': 2,
+     		      'Quote.Listing.qid': null,
+     		      'Quote.Auction.qid': null,
+     		      'Quote.Auction.Store.sid': null,
+     		      'Quote.Auction.Store.User.id': null,
+     		      'Quote.Auction.Substitute.aid': null
+     		    });
+     		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+     		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+     		    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);
+     		    
+     		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
+     		      return auction.relations['Substitute'].rows.every((substitute) => {
+     		        return substitute.columns['type'] != 3;
+     		      });
+     		    });
+     		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
+     		      return auction.relations['Substitute'].rows.some((substitute) => {
+     		        return substitute.columns['type'] == 3;
+     		      });
+     		    });
+     		    
+     		    let results = {
+     		      Quote: {
+       		      source: SourceType.Relational,
+              	group: 'Quote',
+                rows: [
+                  quoteDatasetA['Quote'].rows[0],
+                  quoteDatasetB['Quote'].rows[0]
+                ]
+     		      }
+     		    };
+     		    
+            resolve(results);
+          } catch(error) {
+            reject(error);
+          }
+        });
       } catch(error) {
         reject(error);
-      } */
-      resolve({});
+      }
     });
   }
   
@@ -234,10 +281,11 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("473d370d", "bdcbb907", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false});
-		RequestHelper.registerInput('bc041e39', undefined, undefined, undefined);
+    RequestHelper.registerSubmit("473d370d", "bdcbb907", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "3d97109b", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+		RequestHelper.registerInput('bc041e39', "relational", "Auction", "aid");
 		ValidationHelper.registerInput('bc041e39', "Radio 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'bc041e39' + ((i == -1) ? '' : '[' + i + ']'));
@@ -247,7 +295,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('1411ca4c', undefined, undefined, undefined);
+		RequestHelper.registerInput('1411ca4c', "relational", "Auction", "aid");
 		ValidationHelper.registerInput('1411ca4c', "Checkbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '1411ca4c' + ((i == -1) ? '' : '[' + i + ']'));
@@ -257,7 +305,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('c6cd6a36', undefined, undefined, undefined);
+		RequestHelper.registerInput('c6cd6a36', "relational", "Auction.Payment.Transfer", "time");
 		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
@@ -267,7 +315,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('0c59a0a4', undefined, undefined, undefined);
+		RequestHelper.registerInput('0c59a0a4', "relational", "Auction.Payment.Transfer", "transferrer");
 		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '0c59a0a4' + ((i == -1) ? '' : '[' + i + ']'));
@@ -277,7 +325,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('5cab012e', undefined, undefined, undefined);
+		RequestHelper.registerInput('5cab012e', "relational", "Auction.Payment.Transfer", "origin");
 		ValidationHelper.registerInput('5cab012e', "Textbox 3", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));

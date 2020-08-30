@@ -277,7 +277,7 @@ class FlowLayout_c6ba5b53 extends Base {
                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="price", onChange=this.onTextboxChange_1382e4c9.bind(this), type="text", placeholder="ราคาต่อหน่วย", disabled=this.props.enabled, value=this.state.price, data-com.agilebits.onepassword.initial-value=this.state.price)
                         .internal-fsb-element.col-5.offset-0(style={'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px', 'fontSize': '13px'}, internal-fsb-guid="530bacd3")
                           | บาท
-            .internal-fsb-element.col-5.offset-0(style={display: (()=>{return (this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="483390a6")
+            .internal-fsb-element.col-5.offset-0.-fsb-self-483390a6(style={'FsbReusableName': '', 'FsbReusableId': '483390a6', display: (()=>{return (this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="483390a6")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="9c338431")

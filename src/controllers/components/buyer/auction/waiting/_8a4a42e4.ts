@@ -26,6 +26,7 @@ import {ProjectConfigurationHelper} from "../../../../helpers/ProjectConfigurati
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -46,6 +47,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -116,13 +118,28 @@ class Controller extends Base {
         
      	    resolve(null);
         } else {
-          let schemata = ProjectConfigurationHelper.getDataSchema();
-          let inputs = RequestHelper.createInputs({
-            'Quote.status': 1
+          RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
+  WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+            try {
+              let schemata = ProjectConfigurationHelper.getDataSchema();
+              let inputs = RequestHelper.createInputs({
+                'Quote.uid': this.request.session.uid
+              });
+              let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session);
+              
+              if (results['Quote'].rows.length != 0) {
+                if (results['Quote'].rows[0].columns['status'] == 2) {
+                  this.response.redirect('/buyer/auction/results');
+                } else {
+                  resolve(results);
+                }
+              } else {
+                this.response.redirect('/buyer/auction');
+              }
+            } catch(error) {
+              reject(error);
+            }
           });
-          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session);
-          
-     	    resolve(results);
         }
       } catch(error) {
         reject(error);
