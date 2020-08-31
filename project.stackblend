@@ -5547,15 +5547,15 @@
         "  private refresh(props): void {",
         "    const value = this.getDataFromNotation('Substitute.type', false);",
         "    const error = (value == null) ? false : (Math.min(value, props.type) !== value &amp;&amp; value !== 3);",
-        "    this.setState({",
-        "      error: error,",
-        "      recentType: value,",
-        "      type: (error || value == null) ? -1 : value,",
-        "      title: this.getDataFromNotation('Substitute.title', false) || &quot;&quot;,",
-        "      size: this.getDataFromNotation('Substitute.size', false) || &quot;&quot;,",
-        "      quantity: this.getDataFromNotation('Substitute.quantity', false) || &quot;&quot;,",
-        "      price: this.getDataFromNotation('Substitute.price', false) || &quot;&quot;",
-        "    });",
+        "    ",
+        "    this.state.error = error;",
+        "    this.state.recentType = value;",
+        "    this.state.type = (error || value == null) ? -1 : value;",
+        "    this.state.title = this.getDataFromNotation('Substitute.title', false) || &quot;&quot;;",
+        "    this.state.size = this.getDataFromNotation('Substitute.size', false) || &quot;&quot;;",
+        "    this.state.quantity = this.getDataFromNotation('Substitute.quantity', false) || &quot;&quot;;",
+        "    this.state.price = this.getDataFromNotation('Substitute.price', false) || &quot;&quot;;",
+        "    ",
         "    this.forceUpdate();",
         "  }",
         "  ",
@@ -6502,11 +6502,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "c6ba5b53",
         "currentCursorWalkPath": [
-          "24731127",
+          "64a6ac8c",
           0,
-          1,
+          8,
           null
         ]
       },
@@ -18150,7 +18150,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
-    "Project.Controls.FlowLayout_c6ba5b53": "14bc017a9aef55e5048e302bc63247f54499f2e4",
+    "Project.Controls.FlowLayout_c6ba5b53": "d4c5f90886a9c455d859db02d927329525142b3d",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "c1292d1504e4a063bcdc1ccee1f6741d3442998c"
   },
