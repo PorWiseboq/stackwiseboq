@@ -9334,7 +9334,7 @@
         "  // Declare class variables and functions here:",
         "  //",
         "  protected initialize(): void {",
-        "    this.state.inserted = (this.getDataFromNotation('Blog').length != 0);",
+        "    this.state.inserted = (this.props.data != null);",
         "  }",
         "  ",
         "  protected componentDidMount(): void {",
@@ -10071,11 +10071,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "c3c4e405",
+        "selectingElementGUID": "d58ae925",
         "currentCursorWalkPath": [
-          "3537bdb3",
+          "0",
           0,
-          11,
+          3,
           null
         ]
       },
@@ -18536,7 +18536,7 @@
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "e235eead3435de31ff5d1db423a97f0a8c9970d4",
-    "Project.Controls.FlowLayout_d58ae925": "419a9aedf7045ee5af630af55bf7811d8b806137",
+    "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
     "Project.Controls.Rectangle_cad06e8d": "3db4100d5eb68ba22ecfbd56f64d5965bcec3b21",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",

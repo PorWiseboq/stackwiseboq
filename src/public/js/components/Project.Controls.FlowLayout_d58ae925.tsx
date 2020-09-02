@@ -73,7 +73,7 @@ class FlowLayout_d58ae925 extends Base {
   // Declare class variables and functions here:
   //
   protected initialize(): void {
-    this.state.inserted = (this.getDataFromNotation('Blog').length != 0);
+    this.state.inserted = (this.props.data != null);
   }
   
   protected componentDidMount(): void {
