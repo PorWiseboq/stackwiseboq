@@ -87,16 +87,6 @@ class FlowLayout_d58ae925 extends Base {
   }
   
   // Auto[Merging]--->
-  protected onButtonSuccess_c3c4e405(event: Event) {
-
-    // Handle the event of onButtonSuccess (Button 1) here:
-    // 
-    this.setState({inserted: true});
-    
-    const element = ReactDOM.findDOMNode(this.refs.bid);
-    element.value = event.detail.results.results[0].keys['bid'];
-    
-  }
   // <---Auto[Merging]
   
   // Auto[ClassEnd]--->
@@ -128,7 +118,7 @@ class FlowLayout_d58ae925 extends Base {
                     | ที่อยู่ของรูปภาพ
                   .internal-fsb-element.col-10.offset-0(style={padding: '0px'}, internal-fsb-guid="3dcb582a")
                     input.form-control(style={'display': 'block', 'width': '100%', 'marginBottom': '10px'}, type="text", defaultValue=this.getDataFromNotation("Blog.image"))
-                  Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.col-4.offset-5(style={'marginTop': '10px', display: (()=>{return (this.state.inserted) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('c3c4e405', 'Blog', event, ((results) => { this.manipulate('c3c4e405', 'Blog', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_c3c4e405.bind(this), internal-fsb-guid="c3c4e405")
+                  Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.col-4.offset-5(style={'marginTop': '10px', display: (()=>{return (this.state.inserted) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('c3c4e405', 'Blog', event, ((results) => { this.manipulate('c3c4e405', 'Blog', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="c3c4e405")
                     .internal-fsb-element(internal-fsb-guid="c3c4e405-text")
                       | สร้าง
                   Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.col-4.offset-5(style={'marginTop': '10px', display: (()=>{return (this.state.inserted) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('2258be6b', 'Blog', event, ((results) => { this.manipulate('2258be6b', 'Blog', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="2258be6b")
