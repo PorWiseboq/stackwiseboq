@@ -52,7 +52,7 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
 });
 
 // Auto[ClassBegin]--->
-class FlowLayout_d64677b8 extends Base {
+class FlowLayout_84b618a7 extends Base {
   state: IState = null;
   protected static defaultProps: IProps = DefaultProps;
   
@@ -92,21 +92,23 @@ class FlowLayout_d64677b8 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="d64677b8")
+      div(style=Object.assign({'paddingRight': '0px', 'paddingLeft': '0px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="84b618a7")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             each data, i in this.getDataFromNotation("Blog", true)
-              .internal-fsb-element.col-12(key="item_" + i, internal-fsb-guid="0dc16d9d")
+              .internal-fsb-element.col-12.col-sm-6.col-md-4.col-lg-3(style={'paddingTop': '10px', 'position': 'relative', 'paddingLeft': '5px', 'paddingRight': '5px'}, key="item_" + i, internal-fsb-guid="776bcb63")
                 .container-fluid
                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].bid"))}, internal-fsb-guid="628375e3")
-                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].title"))}, internal-fsb-guid="d531620d")
-                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].description"))}, internal-fsb-guid="8e81c57d")
-                    .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].keywords"))}, internal-fsb-guid="701c71d4")
+                    .internal-fsb-element.offset-0.col-12(style={'background': 'rgba(10, 157, 255, 1)', 'color': 'rgba(252, 252, 252, 1)', 'paddingRight': '0px', 'minHeight': '150px', 'paddingLeft': '0px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px'}, internal-fsb-guid="4baede68")
+                      .container-fluid
+                        .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                          a.internal-fsb-element.internal-fsb-allow-cursor.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '10px', 'paddingBottom': '10px', 'textDecorationLine': 'none', 'WebkitTextDecorationLine': 'none', 'MozTextDecorationLine': 'none', 'position': 'absolute', 'minHeight': '150px'}, href=this.getDataFromNotation('Blog[' + i + '].link'), internal-fsb-guid="42c96b54")
+                            .internal-fsb-element.col-12(style={'fontSize': '16px', 'color': 'rgba(255, 255, 255, 1)'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].title"))}, internal-fsb-guid="48b959d1")
+                            .internal-fsb-element.col-12(style={'fontWeight': 'normal', 'fontSize': '14px', 'color': 'rgba(252, 252, 252, 0.75)', 'marginTop': '5px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Blog[" + i + "].description"))}, internal-fsb-guid="63635277")
     `
   }
 }
-DeclarationHelper.declare('Document', 'Controls.FlowLayout_d64677b8', FlowLayout_d64677b8);
+DeclarationHelper.declare('Site', 'Controls.FlowLayout_84b618a7', FlowLayout_84b618a7);
 // <---Auto[ClassEnd]
 
 // Export variables here:

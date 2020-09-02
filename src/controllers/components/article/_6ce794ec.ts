@@ -14,6 +14,7 @@ import {Base} from '../Base.js';
 
 // Import additional modules here:
 // 
+import {ProjectConfigurationHelper} from '../../helpers/ProjectConfigurationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -115,7 +116,7 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
-   		  this.results = await DatabaseHelper.retrieve([{
+   		  const article = await DatabaseHelper.retrieve([{
    		    target: SourceType.Relational,
           group: "Blog",
           name: "bid",
@@ -124,11 +125,30 @@ class Controller extends Base {
     		  premise: null,
           validation: null
    		  }], null);
+   		  this.results = article;
    		  
-   		  if (this.results['Blog'].rows.length == 0) {
+   		  if (article['Blog'].rows.length == 0) {
    		    this.response.redirect('/error/404');
    		  } else {
-     		  resolve(this.results);
+   		    const showdown = require('showdown');
+   		    const converter = new showdown.Converter();
+   		    article['Blog'].rows[0].columns['body'] = converter.makeHtml(article['Blog'].rows[0].columns['body']);
+   		    
+   		    const others = await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']);
+   		    others['Blog'].rows =  others['Blog'].rows.filter(row => row.keys['bid'] != article['Blog'].rows[0].keys['bid']);
+   		    
+   		    for (let row of others['Blog'].rows) {
+   		      row.columns['body'] = null;
+   		      row.columns['link'] = `/article/${row.keys['bid']}/${row.columns['title'].replace(/[\/ ]+/g, '+')}`;
+   		    }
+   		    
+     		  resolve(Object.assign({
+     		    Article: {
+       		    source: SourceType.Relational,
+            	group: 'Article',
+              rows: article['Blog'].rows
+     		    }
+     		  }, others));
    		  }
  		  } catch(error) {
  		    reject(error);
