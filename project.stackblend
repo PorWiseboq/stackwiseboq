@@ -176,7 +176,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "6ce794ec",
+    "editingPageID": "index",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -254,6 +254,14 @@
         "                                    </a>",
         "                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor -fsb-preset-57595ad9\" internal-fsb-guid=\"48d1ac00\" internal-fsb-name=\"splitter\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"-fsb-inherited-presets: 57595ad9\"></div>",
         "",
+        "                                    <div class=\"internal-fsb-element\" internal-fsb-guid=\"e0b80487\" internal-fsb-name=\"Image 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 20px; -fsb-for-children: true; margin-right: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/thumb-up.png\"></div><a class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"8b664de6\" internal-fsb-name=\"Link 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/blog/all\">",
+        "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"8b664de6-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">บทความ</div>",
+        "                                    </a>",
+        "                                    <div class=\"internal-fsb-element -fsb-preset-57595ad9\" internal-fsb-guid=\"d45a4b5c\" internal-fsb-name=\"splitter\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 57595ad9\">",
+        "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"></div>",
+        "                                        </div>",
+        "                                    </div>",
         "                                    <div class=\"internal-fsb-element\" internal-fsb-guid=\"530a1666\" internal-fsb-name=\"Image 8\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 20px; -fsb-for-children: true; margin-right: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png\"></div><a class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"24c1dbd3\" internal-fsb-name=\"Link 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/authentication\">",
         "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"24c1dbd3-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เข้าสู่ระบบ</div>",
         "                                    </a>",
@@ -961,7 +969,33 @@
         "            border-top-style: solid;",
         "            border-top-color: rgba(22, 98, 250, 1)",
         "        }",
+        "",
+        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-16768789,",
+        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-preset-16768789,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-self-16768789,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-preset-16768789,",
+        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-self-16768789,",
+        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-preset-16768789,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-16768789,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-16768789 {",
+        "            margin-top: 30px;",
+        "            font-size: 24px;",
+        "            border-bottom-width: 1px;",
+        "            border-bottom-color: rgba(22, 98, 250, 1);",
+        "            border-bottom-style: solid;",
+        "            padding-left: 0px;",
+        "            padding-right: 0px;",
+        "            -fsb-reusable-name: blog_title;",
+        "            -fsb-reusable-id: 16768789;",
+        "            color: rgba(22, 98, 250, 1)",
+        "        }",
         "    </style>",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -1817,11 +1851,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "570decac",
+        "selectingElementGUID": "8b664de6",
         "currentCursorWalkPath": [
-          "570decac",
+          "1136ae7c",
           0,
-          2,
+          7,
           null
         ]
       },
@@ -15989,7 +16023,7 @@
         "                        </a>",
         "                        <div class=\"internal-fsb-element internal-fsb-allow-cursor -fsb-preset-57595ad9\" internal-fsb-guid=\"48d1ac00\" internal-fsb-name=\"splitter\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"-fsb-inherited-presets: 57595ad9\"></div>",
         "",
-        "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"530a1666\" internal-fsb-name=\"Image 8\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 20px; -fsb-for-children: true; margin-right: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png\"></div><a class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"24c1dbd3\" internal-fsb-name=\"Link 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/authentication\">",
+        "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"e0b80487\" internal-fsb-name=\"Image 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 20px; -fsb-for-children: true; margin-right: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/thumb-up.png\"></div><a class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"8b664de6\" internal-fsb-name=\"Link 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/blog/all\"><div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"8b664de6-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">บทความ</div></a><div class=\"internal-fsb-element -fsb-preset-57595ad9\" internal-fsb-guid=\"d45a4b5c\" internal-fsb-name=\"splitter\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 57595ad9\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"></div></div></div><div class=\"internal-fsb-element\" internal-fsb-guid=\"530a1666\" internal-fsb-name=\"Image 8\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 20px; -fsb-for-children: true; margin-right: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png\"></div><a class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"24c1dbd3\" internal-fsb-name=\"Link 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/authentication\">",
         "                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"24c1dbd3-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เข้าสู่ระบบ</div>",
         "                        </a>",
         "                    </div>",
@@ -16096,7 +16130,10 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ]
+      ],
+      "id": "570decac",
+      "name": "Role Navigator",
+      "state": "update"
     },
     "00ce1665": {
       "namespace": "Project.Common",
@@ -16127,10 +16164,7 @@
       "klass": "FlowLayout_84b618a7",
       "html": [
         "<div class=\"internal-fsb-element col-10 offset-1\" internal-fsb-guid=\"84b618a7\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 30px; padding-right: 0px; padding-left: 0px; margin-bottom: 20px\" internal-fsb-react-mode=\"Site\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><div class=\"internal-fsb-element col-12 col-sm-6 col-md-4 col-lg-3\" internal-fsb-guid=\"776bcb63\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"Blog\" style=\"padding-top: 10px; position: relative; padding-left: 5px; padding-right: 5px\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><div class=\"internal-fsb-element offset-0 col-12\" internal-fsb-guid=\"4baede68\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"background: rgba(10, 157, 255, 1); color: rgba(252, 252, 252, 1); padding-right: 0px; min-height: 150px; padding-left: 0px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\" internal-fsb-react-data=\"\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><a class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"42c96b54\" internal-fsb-name=\"Link 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"padding-left: 0px; padding-right: 0px; padding-top: 10px; padding-bottom: 10px; text-decoration-line: none; -webkit-text-decoration-line: none; -moz-text-decoration-line: none; position: absolute; min-height: 150px\" href=\"{this.getDataFromNotation('Blog[' + i + '].link')}\"><div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"48b959d1\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\" style=\"font-size: 16px; color: rgba(255, 255, 255, 1)\">ABC</div><div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"63635277\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"description\" style=\"font-weight: normal; font-size: 14px; color: rgba(252, 252, 252, 0.75); margin-top: 5px\">ABC</div></a></div></div></div></div></div></div></div></div></div>"
-      ],
-      "id": "84b618a7",
-      "name": "FlowLayout 1",
-      "state": "create"
+      ]
     }
   },
   "popups": {},
@@ -18493,7 +18527,7 @@
     "5488072c": "d44858a85cfa7de0f31a67f19bc1eed6dcd60c91"
   },
   "frontEndComponentsBlobSHADict": {
-    "Project.Common.NavigationBar": "c8e3e7d0557e3d7d81e42467ea24b0ccecf5e14f",
+    "Project.Common.NavigationBar": "b7111f3ab75f942e0a0c529c46a5613504077841",
     "Project.Common.Header": "7fda1bd94a8a20636fb311de5136406c81ee2be9",
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
@@ -18510,7 +18544,7 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "47331f9b173e049fc58764ea6c4a36f4222cb57f",
-    "index": "0ef80f897bdcef9e8dc75095902c6b53a341ff71",
+    "index": "1b343198a81f204aeb8ea6e23e0c35762e90c737",
     "b140e86b": "a52ac017ef6f0cd8b2a1c7886e9c740dc8973cc2",
     "8857ca68": "a07f047e5785124a0835ba6f25148dbd9c3e04c3",
     "b6eb1b83": "33811b41f01ca13400905df99cdc437cc94d3773",

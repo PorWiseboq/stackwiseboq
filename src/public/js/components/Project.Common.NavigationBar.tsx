@@ -106,6 +106,14 @@ class NavigationBar extends Base {
                     .internal-fsb-element(internal-fsb-guid="7001d8c4-text")
                       | สำหรับร้านค้าวัสดุก่อสร้าง
                   .internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-57595ad9(style={'FsbInheritedPresets': '57595ad9'}, internal-fsb-guid="48d1ac00")
+                  .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="e0b80487")
+                    img(style={'display': 'block', 'width': '20px', 'marginRight': '5px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/thumb-up.png")
+                  a.internal-fsb-element.internal-fsb-allow-cursor(href="/blog/all", internal-fsb-guid="8b664de6")
+                    .internal-fsb-element(internal-fsb-guid="8b664de6-text")
+                      | บทความ
+                  .internal-fsb-element.-fsb-preset-57595ad9(style={'FsbInheritedPresets': '57595ad9'}, internal-fsb-guid="d45a4b5c")
+                    .container-fluid
+                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element(style={padding: '0px'}, internal-fsb-guid="530a1666")
                     img(style={'display': 'block', 'width': '20px', 'marginRight': '5px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png")
                   a.internal-fsb-element.internal-fsb-allow-cursor(href="/authentication", internal-fsb-guid="24c1dbd3")
