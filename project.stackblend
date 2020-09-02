@@ -176,7 +176,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "9d37c390",
+    "editingPageID": "c3da32d7",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -10809,6 +10809,14 @@
         "                                    </a>",
         "                                    <div class=\"-fsb-preset-57595ad9 internal-fsb-inheriting-element\" internal-fsb-name=\"splitter\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-inherited-presets: 57595ad9\"></div>",
         "",
+        "                                    <div class=\"internal-fsb-inheriting-element\" internal-fsb-name=\"Image 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\"><img style=\"display: block; width: 20px; -fsb-for-children: true; margin-right: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/thumb-up.png\"></div><a class=\"internal-fsb-inheriting-element\" internal-fsb-name=\"Link 3\" internal-fsb-event-no-propagate=\"1\" href=\"/blog/all\">",
+        "                                        <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">บทความ</div>",
+        "                                    </a>",
+        "                                    <div class=\"-fsb-preset-57595ad9 internal-fsb-inheriting-element\" internal-fsb-name=\"splitter\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-inherited-presets: 57595ad9\">",
+        "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                            <div class=\"row internal-fsb-strict-layout\"></div>",
+        "                                        </div>",
+        "                                    </div>",
         "                                    <div class=\"internal-fsb-inheriting-element\" internal-fsb-name=\"Image 8\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\"><img style=\"display: block; width: 20px; -fsb-for-children: true; margin-right: 5px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/padlock.png\"></div><a class=\"internal-fsb-inheriting-element\" internal-fsb-name=\"Link 7\" internal-fsb-event-no-propagate=\"1\" href=\"/authentication\">",
         "                                        <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">เข้าสู่ระบบ</div>",
         "                                    </a>",
@@ -10818,14 +10826,14 @@
         "                    </div>",
         "                </div>",
         "            </div>",
-        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-1 -fsb-preset-16768789\" internal-fsb-guid=\"02715708\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 16768789\">รายการบล็อกทั้งหมด</div>",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-1 -fsb-preset-16768789\" internal-fsb-guid=\"02715708\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 16768789\">รายการบทความทั้งหมด</div>",
         "            <div class=\"col-10 offset-1 internal-fsb-element  \" internal-fsb-guid=\"e82a737e\" internal-fsb-name=\"FlowLayout 1 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 30px; padding-right: 0px; padding-left: 0px; margin-bottom: 20px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"84b618a7\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" style=\"padding-top: 10px; position: relative; padding-left: 5px; padding-right: 5px\">",
         "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                <div class=\"row internal-fsb-strict-layout\">",
-        "                                    <div class=\"offset-0 col-12 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" style=\"background: rgba(10, 157, 255, 1); color: rgba(252, 252, 252, 1); padding-right: 0px; min-height: 150px; padding-left: 0px\">",
+        "                                    <div class=\"offset-0 col-12 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" style=\"background: rgba(10, 157, 255, 1); color: rgba(252, 252, 252, 1); padding-right: 0px; min-height: 150px; padding-left: 0px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout\"><a class=\"col-12 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 2\" internal-fsb-event-no-propagate=\"1\" style=\"padding-left: 0px; padding-right: 0px; padding-top: 10px; padding-bottom: 10px; text-decoration-line: none; -webkit-text-decoration-line: none; -moz-text-decoration-line: none; position: absolute; min-height: 150px\" href=\"{this.getDataFromNotation('Blog[' + i + '].link')}\">",
         "                                                    <div contenteditable=\"true\" class=\"col-12 internal-fsb-inheriting-element\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" style=\"font-size: 16px; color: rgba(255, 255, 255, 1)\">ABC</div>",
@@ -11473,7 +11481,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e82a737e",
+        "selectingElementGUID": "02715708",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -16168,7 +16176,10 @@
       "klass": "FlowLayout_84b618a7",
       "html": [
         "<div class=\"internal-fsb-element col-10 offset-1\" internal-fsb-guid=\"84b618a7\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 30px; padding-right: 0px; padding-left: 0px; margin-bottom: 20px\" internal-fsb-react-mode=\"Site\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><div class=\"internal-fsb-element col-12 col-sm-6 col-md-4 col-lg-3\" internal-fsb-guid=\"776bcb63\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"Blog\" style=\"padding-top: 10px; position: relative; padding-left: 5px; padding-right: 5px\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><div class=\"internal-fsb-element offset-0 col-12\" internal-fsb-guid=\"4baede68\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"background: rgba(10, 157, 255, 1); color: rgba(252, 252, 252, 1); padding-right: 0px; min-height: 150px; padding-left: 0px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\" internal-fsb-react-data=\"\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><a class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"42c96b54\" internal-fsb-name=\"Link 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"padding-left: 0px; padding-right: 0px; padding-top: 10px; padding-bottom: 10px; text-decoration-line: none; -webkit-text-decoration-line: none; -moz-text-decoration-line: none; position: absolute; min-height: 150px\" href=\"{this.getDataFromNotation('Blog[' + i + '].link')}\"><div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"48b959d1\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\" style=\"font-size: 16px; color: rgba(255, 255, 255, 1)\">ABC</div><div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"63635277\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"description\" style=\"font-weight: normal; font-size: 14px; color: rgba(252, 252, 252, 0.75); margin-top: 5px\">ABC</div></a></div></div></div></div></div></div></div></div></div>"
-      ]
+      ],
+      "id": "84b618a7",
+      "name": "FlowLayout 1",
+      "state": "create"
     }
   },
   "popups": {},
@@ -18557,7 +18568,7 @@
     "6ce794ec": "f7d1673640ebb54bfd8c6590c514d7690846f04e",
     "9d37c390": "495fad11295ad01e1854b9a2df14f7a4d8872276",
     "bbc7dba3": "0a8cad1a06c53532774df1bf1c3f599a1eb6ae1f",
-    "c3da32d7": "10cd3ef1c5939cce64ba329cdf0ad533adac055a",
+    "c3da32d7": "3cbc9a3047534374f07413d43fc14d1196842252",
     "8a4a42e4": "5556484144320699020a2ce4d4fd3f77ee629b02",
     "473d370d": "30e645fb94dd76cc072bd8e23bf8636c4f0e8348",
     "ea2e6d53": "1c298b988d1821d1a1e78a9170f3bd6cab7bd62f",
