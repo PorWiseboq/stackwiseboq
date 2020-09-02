@@ -57,6 +57,7 @@
         "pug": "^2.0.4",
         "redis": "^3.0.2",
         "sequelize": "^6.3.3",
+        "showdown": "^1.9.1",
         "sidekiq": "^1.1.1",
         "socket.io": "^2.3.0",
         "winston": "^3.2.1"
