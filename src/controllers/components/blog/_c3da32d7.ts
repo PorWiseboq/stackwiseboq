@@ -26,6 +26,7 @@ import {ProjectConfigurationHelper} from '../../helpers/ProjectConfigurationHelp
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -46,6 +47,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -110,12 +112,18 @@ class Controller extends Base {
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-      /* try {
-        resolve(await super.get(data));
+      try {
+        const blogs = await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']);
+ 		    
+ 		    for (let row of blogs['Blog'].rows) {
+ 		      row.columns['body'] = null;
+ 		      row.columns['link'] = `/article/${row.keys['bid']}/${row.columns['title'].replace(/[\/ ]+/g, '+')}`;
+ 		    }
+ 		    
+   		  resolve(blogs);
       } catch(error) {
         reject(error);
-      } */
-      resolve({});
+      }
     });
   }
   

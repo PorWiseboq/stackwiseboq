@@ -25,6 +25,7 @@ import {Base} from '../../Base.js';
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -45,6 +46,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -139,11 +141,11 @@ class Controller extends Base {
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-      /* try {
+      /*try {
         resolve(await super.post(data));
       } catch(error) {
         reject(error);
-      } */
+      }*/
       reject(new Error("Not Implemented Error"));
     });
   }
@@ -172,8 +174,7 @@ class Controller extends Base {
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow insert action of any button on the page. */
-      /* try {
+    	/* try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
@@ -185,20 +186,18 @@ class Controller extends Base {
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow update action of any button on the page. */
-      /* try {
+    	try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow update action of any button on the page. */
+      /* Uncomment to allow upsert action of any button on the page. */
       /* try {
         resolve(await DatabaseHelper.upsert(data, schema, this.request.session));
       } catch(error) {
@@ -234,13 +233,13 @@ class Controller extends Base {
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow navigate action of any button on the page. */
-      /* try {
-        resolve('/');
+    	try {
+        const results = await DatabaseHelper.insert(data, schema, false, this.request.session);
+        
+        resolve(`/blog/admin/${results[0].keys['bid']}`);
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
@@ -253,8 +252,8 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("9d37c390", "10714c4a", "insert", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null, crossRelationUpsert: false});
-    RequestHelper.registerSubmit("9d37c390", "2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null, crossRelationUpsert: false});
+    RequestHelper.registerSubmit("9d37c390", "c3c4e405", "navigate", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("9d37c390", "2258be6b", "update", ["d064b129","a0641238","1d258b94","9ba2b637","3dcb582a","50cb1c1b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('d064b129', "relational", "Blog", "title");
 		ValidationHelper.registerInput('d064b129', "Textbox 2", true, "ต้องมีหัวข้อเรื่อง");
     for (let i=-1; i<128; i++) {
