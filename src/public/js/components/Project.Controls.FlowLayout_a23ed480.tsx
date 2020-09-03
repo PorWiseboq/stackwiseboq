@@ -249,7 +249,7 @@ class FlowLayout_a23ed480 extends Base {
                               .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingBottom': '10px'}, internal-fsb-guid="65beb763")
                                 .container-fluid
                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'paddingBottom': '5px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'paddingTop': '5px'}, internal-fsb-guid="d40e3b62")
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'paddingBottom': '5px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'paddingTop': '5px', 'color': 'rgba(22, 98, 250, 1)'}, internal-fsb-guid="d40e3b62")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
                                       input(style={'display': 'block'}, type="checkbox")
