@@ -101,7 +101,7 @@ class FlowLayout_c6ba5b53 extends Base {
   }
   
   private refresh(props): void {
-    const type = this.getDataFromNotation('type', false);
+    const type = this.getDataFromNotation('substitute', false);
     const value = this.getDataFromNotation('Substitute.type', false);
     const error = (value == null) ? false : (Math.min(value, type) !== value && value !== 3);
     

@@ -229,13 +229,13 @@ class Rectangle_cad06e8d extends Base {
   // Private function of state recognizing
   //
   private hasError(i: number): boolean {
-    const substitute = this.getDataFromNotation('Quote[' + i + '].Listing.substitute');
-    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
+    const listing = this.getDataFromNotation('Quote[' + i + '].Listing');
     
-    if (!auction || auction.length == 0) return false;
+    if (!listing || listing.length == 0) return false;
     else {
-      for (const item of auction[0].relations['Substitute'].rows) {
-        if (item.columns['type'] > substitute && item.columns['type'] != 3) {
+      for (const row of listing) {
+        if (!row.relations['Substitute'] || row.relations['Substitute'].rows.length == 0) continue;
+        if (row.columns['substitute'] < row.relations['Substitute'].rows[0].columns['type'] && row.relations['Substitute'].rows[0].columns['type'] != 3) {
           return true;
         }
       }
