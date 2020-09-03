@@ -101,8 +101,9 @@ class FlowLayout_c6ba5b53 extends Base {
   }
   
   private refresh(props): void {
+    const type = this.getDataFromNotation('type', false);
     const value = this.getDataFromNotation('Substitute.type', false);
-    const error = (value == null) ? false : (Math.min(value, props.type) !== value && value !== 3);
+    const error = (value == null) ? false : (Math.min(value, type) !== value && value !== 3);
     
     this.state.error = error;
     this.state.recentType = value;
@@ -240,43 +241,47 @@ class FlowLayout_c6ba5b53 extends Base {
       div(style=Object.assign({background: (()=>{return (this.state.error) ? '#ffe0b2' : '';})(), borderTopColor: (()=>{return (this.state.error) ? '#e65100' : '';})(), borderRightColor: (()=>{return (this.state.error) ? '#e65100' : '';})(), borderBottomColor: (()=>{return (this.state.error) ? '#e65100' : '';})(), borderLeftColor: (()=>{return (this.state.error) ? '#e65100' : '';})()}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 -fsb-self-c6ba5b53 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="c6ba5b53")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-            .internal-fsb-element.col-4.offset-0.-fsb-self-65ec89d1(internal-fsb-guid="65ec89d1")
+            .internal-fsb-element.-fsb-self-65ec89d1.col-4.offset-0(internal-fsb-guid="65ec89d1")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("title"))}, internal-fsb-guid="a818c946")
-                  .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("size"))}, internal-fsb-guid="eccb7c51")
-                  .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("quantity"))}, internal-fsb-guid="0e3365eb")
-            .internal-fsb-element.col-3.offset-0(internal-fsb-guid="e5e63918")
+                  .internal-fsb-element.col-12.offset-0(style={'fontWeight': 'bold', 'fontSize': '14px', 'borderBottomWidth': '1px', 'borderBottomColor': 'rgba(77, 195, 250, 0.25)', 'borderBottomStyle': 'solid', 'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '5px', 'color': 'rgba(69, 69, 69, 1)'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("title"))}, internal-fsb-guid="a818c946")
+                  .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(69, 69, 69, 1)'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("size"))}, internal-fsb-guid="eccb7c51")
+                  .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(69, 69, 69, 1)'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("quantity"))}, internal-fsb-guid="0e3365eb")
+                  .internal-fsb-element.col-12(style={'color': 'rgba(128, 128, 128, 1)', 'fontSize': '12px', 'background': 'rgba(217, 217, 217, 0)', 'marginTop': '10px', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("note"))}, internal-fsb-guid="696ae6ee")
+            .internal-fsb-element.col-2.offset-0(style={'background': 'rgba(252, 252, 252, 0.2)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(255, 255, 255, 0.5)', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(255, 255, 255, 0.25)', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(255, 255, 255, 0.25)', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(255, 255, 255, 0.25)', 'borderTopWidth': '1px', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px', 'borderRightWidth': '1px'}, internal-fsb-guid="e5e63918")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}, internal-fsb-guid="b42d4545")
+                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '0px'}, internal-fsb-guid="b42d4545")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="1832b944")
                           input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType0", onClick=this.onRadioClick_1832b944.bind(this), type="radio", value="0", name=this.state.group, checked=this.state.type == 0, data-com.agilebits.onepassword.initial-value="0", disabled=!this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '0')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="b80041d3")
                           | เจาะจง
-                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px', display: (()=>{return (this.props.type >= 1) ? 'block' : 'none';})()}, internal-fsb-guid="eb192633")
+                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '0px', display: (()=>{return (this.getDataFromNotation('substitute', false) >= 1) ? 'block' : 'none';})()}, internal-fsb-guid="eb192633")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="b91e2739")
                           input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType1", onClick=this.onRadioClick_b91e2739.bind(this), type="radio", value="1", name=this.state.group, checked=this.state.type == 1, data-com.agilebits.onepassword.initial-value="1", disabled=!this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '1')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="58266972")
                           | เทียบเท่า
-                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px', display: (()=>{return (this.props.type >= 2) ? 'block' : 'none';})()}, internal-fsb-guid="2cb33325")
+                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '0px', display: (()=>{return (this.getDataFromNotation('substitute', false) >= 2) ? 'block' : 'none';})()}, internal-fsb-guid="2cb33325")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="03aab0e5")
                           input(style={'display': 'block', 'paddingLeft': '0px', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType2", onClick=this.onRadioClick_03aab0e5.bind(this), type="radio", value="2", name=this.state.group, checked=this.state.type == 2, data-com.agilebits.onepassword.initial-value="2", disabled=!this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '2')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="5c2b0578")
                           | ทดแทน
-                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '3px'}, internal-fsb-guid="c1c5b10b")
+                  label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '0px'}, internal-fsb-guid="c1c5b10b")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="957c1568")
                           input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, ref="radType3", onClick=this.onRadioClick_957c1568.bind(this), type="radio", value="3", name=this.state.group, checked=this.state.type == 3, data-com.agilebits.onepassword.initial-value="3", disabled=!this.props.enabled, defaultChecked=this.getDataFromNotation("Substitute.type") == '3')
                         .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="a3b9410d")
                           | ไม่มี
+            .internal-fsb-element.col-2.offset-0(internal-fsb-guid="1a33d835")
+              .container-fluid
+                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.state.type == 0 || this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="45b20175")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -284,15 +289,21 @@ class FlowLayout_c6ba5b53 extends Base {
                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="price", onChange=this.onTextboxChange_1382e4c9.bind(this), type="text", placeholder="ราคาต่อหน่วย", disabled=!this.props.enabled, value=this.state.price, data-com.agilebits.onepassword.initial-value=this.state.price)
                         .internal-fsb-element.col-5.offset-0(style={'paddingTop': '4px', 'textAlign': 'left', 'paddingLeft': '5px', 'fontSize': '13px'}, internal-fsb-guid="530bacd3")
                           | บาท
-            .internal-fsb-element.col-5.offset-0.-fsb-self-483390a6(style={'FsbReusableName': '', 'FsbReusableId': '483390a6', display: (()=>{return (this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="483390a6")
+            .internal-fsb-element.-fsb-self-483390a6.col-4(style={'FsbReusableName': '', 'FsbReusableId': '483390a6', display: (()=>{return (this.state.type == 1 || this.state.type == 2) ? 'block' : 'none';})()}, internal-fsb-guid="483390a6")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="9c338431")
                     input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_9c338431.bind(this), type="text", placeholder="เปลี่ยนวัสดุเป็น", value=this.state.title, data-com.agilebits.onepassword.initial-value=this.state.title, disabled=!this.props.enabled)
-                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="d913e6a1")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.size, data-com.agilebits.onepassword.initial-value=this.state.size, disabled=!this.props.enabled)
-                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c22ec668")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity, data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=!this.props.enabled)
+                  .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '2px'}, internal-fsb-guid="06d40ba3")
+                    .container-fluid
+                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="d913e6a1")
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.size, data-com.agilebits.onepassword.initial-value=this.state.size, disabled=!this.props.enabled)
+                  .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '2px', 'paddingRight': '0px'}, internal-fsb-guid="a241ded8")
+                    .container-fluid
+                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c22ec668")
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity, data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=!this.props.enabled)
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("lid"), internal-fsb-guid="ae7e2437")
     `
   }
