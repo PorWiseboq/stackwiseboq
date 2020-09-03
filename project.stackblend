@@ -16460,7 +16460,7 @@
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"16ce3b3e\" internal-fsb-name=\"RelationalColumn 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"boolean\" data-title-name=\"cancelled\">",
       "                                        <div class=\"internal-fsb-title\">cancelled</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"aa0d9d47\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"createdAt\" data-lock-mode=\"always\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"aa0d9d47\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"createdAt\" data-lock-mode=\"always\" data-field-type=\"datetime\">",
       "                                        <div class=\"internal-fsb-title\">createdAt</div>",
       "                                    </div>",
       "                                </div>",
@@ -17844,7 +17844,7 @@
           "createdAt": {
             "name": "createdAt",
             "guid": "aa0d9d47",
-            "fieldType": null,
+            "fieldType": "datetime",
             "required": false,
             "unique": false,
             "modifyingPermission": {
