@@ -268,7 +268,7 @@ INNER JOIN Listing ON Listing.lid = Substitute.lid
 INNER JOIN Quote ON Auction.qid = Quote.qid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
-HAVING Substitute.type <= Listing.substitute
+HAVING Max(Substitute.type) <= Max(Listing.substitute)
 ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             let wholeSetRankInput = [];
             let wholeSetRankCount = 0;
@@ -315,7 +315,7 @@ INNER JOIN Listing ON Listing.lid = Substitute.lid
 INNER JOIN Quote ON Auction.qid = Quote.qid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
-HAVING Substitute.type > Listing.substitute
+HAVING Max(Substitute.type) > Max(Listing.substitute)
 ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
               let partialSetRankInput = [];
               let partialSetRankCount = 0;
