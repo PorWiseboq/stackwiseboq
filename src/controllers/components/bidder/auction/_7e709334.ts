@@ -664,7 +664,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('8d1ec385', undefined, undefined, undefined);
+		RequestHelper.registerInput('8d1ec385', "relational", "Message", "message");
 		ValidationHelper.registerInput('8d1ec385', "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '8d1ec385' + ((i == -1) ? '' : '[' + i + ']'));

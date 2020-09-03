@@ -6021,7 +6021,7 @@
         "                                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"25678294\" internal-fsb-name=\"FlowLayout 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 5px; padding-right: 5px; border-top-width: 1px; border-top-color: rgba(212, 212, 212, 1); border-top-style: solid; padding-top: 8px; padding-bottom: 8px\">",
         "                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                    <div class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"8d1ec385\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; -fsb-inherited-presets: \" class=\"form-control form-control-sm \" placeholder=\"ข้อความ\" rows=\"1\"></textarea></div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b16eadbb\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"aid\" value=\"{this.getDataFromNotation('Quote[#i].Auction.aid')}\" required=\"true\" internal-fsb-data-validation-message=\"คุณต้องเคาะประมูลราคาก่อนที่จะสามารถคุยกับลูกค้าได้\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"208c3d23\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"type\" value=\"0\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-3 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"c788d322\" internal-fsb-name=\"Button 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-controls=\" b16eadbb 208c3d23\" internal-fsb-data-wizard-type=\"insert\">",
+        "                                                    <div class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"8d1ec385\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; -fsb-inherited-presets: \" class=\"form-control form-control-sm \" placeholder=\"ข้อความ\" rows=\"1\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"message\"></textarea></div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b16eadbb\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"aid\" value=\"{this.getDataFromNotation('Quote[#i].Auction.aid')}\" required=\"true\" internal-fsb-data-validation-message=\"คุณต้องเคาะประมูลราคาก่อนที่จะสามารถคุยกับลูกค้าได้\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"208c3d23\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"type\" value=\"0\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-3 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"c788d322\" internal-fsb-name=\"Button 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-controls=\" b16eadbb 208c3d23\" internal-fsb-data-wizard-type=\"insert\">",
         "                                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"c788d322-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ส่ง</div>",
         "                                                    </button>",
         "                                                </div>",
@@ -6676,9 +6676,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "4a579143",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "ca80140b",
+          "24731127",
           0,
           1,
           null
@@ -16905,7 +16905,7 @@
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"62022389\" internal-fsb-name=\"Connection 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 830px; top: 606px; width: 150px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Rank\" data-target-entity-name=\"aid\"></div>",
       "",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"8878b045\" internal-fsb-name=\"Connection 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 777px; top: 614px; width: 150px;\" data-source-group-name=\"Quote\" data-source-entity-name=\"qid\" data-target-group-name=\"Rank\" data-target-entity-name=\"qid\"></div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"294e2e6a\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 1569px; top: 335px; width: 150px;\" data-title-name=\"Message\" data-rendering-condition-mode=\"relation\" data-lock-source-group=\"Store\" data-lock-mode=\"relation\" data-lock-source-entity=\"oid\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-source-group=\"Store\" data-rendering-condition-source-entity=\"oid\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"294e2e6a\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 1569px; top: 335px; width: 150px;\" data-title-name=\"Message\" data-lock-source-group=\"Store\" data-lock-source-entity=\"oid\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-source-group=\"Store\" data-rendering-condition-source-entity=\"oid\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Message</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -18947,26 +18947,8 @@
             "targetEntity": "aid"
           }
         },
-        "modifyingPermission": {
-          "mode": "relation",
-          "relationModeSourceGroup": "Store",
-          "relationModeSourceEntity": "oid",
-          "relationMatchingMode": "session",
-          "relationMatchingConstantValue": null,
-          "relationMatchingSessionName": "uid",
-          "sessionMatchingSessionName": null,
-          "sessionMatchingConstantValue": null
-        },
-        "retrievingPermission": {
-          "mode": "relation",
-          "relationModeSourceGroup": "Store",
-          "relationModeSourceEntity": "oid",
-          "relationMatchingMode": "session",
-          "relationMatchingConstantValue": null,
-          "relationMatchingSessionName": "uid",
-          "sessionMatchingSessionName": null,
-          "sessionMatchingConstantValue": null
-        }
+        "modifyingPermission": null,
+        "retrievingPermission": null
       }
     }
   },
@@ -19022,7 +19004,7 @@
     "8857ca68": "40d6a28f10e700f7a69c024fcacf5afee054cb78",
     "b140e86b": "db4bc02b0694e197c96dc07718c4f9fa35d9d501",
     "b6eb1b83": "24daedd3e9612a676b94d22f2bffa5740ee63c77",
-    "7e709334": "b6689eedf31d4cb804275fda71ce7d4997c8696b",
+    "7e709334": "ef9dc367dff33f3a12d2bfbf1819f8d485e714e7",
     "65e04a88": "13205c1857404eec1ba588ff621a52bb0a644a84",
     "9d37c390": "0531bd8ecb6d6e9cb4abe4c4c31425a4c399f983",
     "6ce794ec": "f0a134512eca9c10d2ba1f358371bf76e54c06e8",
