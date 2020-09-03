@@ -160,16 +160,20 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
              		    }
            		    }
            		    
-           		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
-           		    let messageData = RequestHelper.createInputs({
-           		      'Message.aid': (quoteDataset['Quote'].rows.length == 0 || quoteDataset['Quote'].rows[0].relations['Auction'].rows.length == 0) ? -1 : quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']
-           		    });
-           		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
+           		    if (quoteDataset['Quote'].rows.length != 0) {
+             		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
+             		    let messageData = RequestHelper.createInputs({
+             		      'Message.aid': (quoteDataset['Quote'].rows.length == 0 || quoteDataset['Quote'].rows[0].relations['Auction'].rows.length == 0) ? -1 : quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']
+             		    });
+             		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
+             		    
+             		    quoteDataset['Quote'].rows[0].relations['Message'] = messageDataset['Message'];
+           		    }
            		    
            		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
            		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
            		    
-           		    resolve(Object.assign({}, quoteDataset, rankDataset, messageDataset));
+           		    resolve(Object.assign({}, quoteDataset, rankDataset));
         			  });
               }
             } catch (error) {
@@ -218,13 +222,12 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-      /*try {
+      try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      }*/
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
@@ -405,12 +408,16 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		    }); 
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-           		    
-       		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
-       		    let messageData = RequestHelper.createInputs({
-       		      'Message.aid': (quoteDataset['Quote'].rows.length == 0 || quoteDataset['Quote'].rows[0].relations['Auction'].rows.length == 0) ? -1 : quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']
-       		    });
-       		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
+           		
+       		    if (quoteDataset['Quote'].rows.length != 0) {
+         		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
+         		    let messageData = RequestHelper.createInputs({
+         		      'Message.aid': (quoteDataset['Quote'].rows.length == 0 || quoteDataset['Quote'].rows[0].relations['Auction'].rows.length == 0) ? -1 : quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']
+         		    });
+         		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
+         		    
+         		    quoteDataset['Quote'].rows[0].relations['Message'] = messageDataset['Message'];
+       		    }
            		    
        		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
        		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
@@ -462,7 +469,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "2b2a0681", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
 		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
