@@ -394,28 +394,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
-       		      'Quote.Auction.Substitute.aid': null
+       		      'Quote.Auction.Substitute.aid': null,
+       		      'Quote.Listing.qid': null
        		    });
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-       		    
-       		    let listingData = RequestHelper.createInputs({
-       		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
-       		    });
-       		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
-       		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
-       		    
-       		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
-       		      if (i == 0) {
-         		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
-         		    } else {
-         		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
-         		        source: SourceType.Relational,
-                  	group: 'Listing',
-                    rows: []
-         		      };
-         		    }
-       		    }
            		    
        		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
        		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
