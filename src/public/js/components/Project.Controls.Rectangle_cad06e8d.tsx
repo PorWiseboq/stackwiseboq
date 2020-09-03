@@ -829,6 +829,8 @@ class Rectangle_cad06e8d extends Base {
                                                       | #{this.getRankSequenceTag(i)}
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'bottom': '15px'}, internal-fsb-guid="e1b315be")
                                           | #{this.getAuctionSummary(this.state.selectedIndex)}
+                                        .internal-fsb-element.col-12(style={'marginBottom': '15px', 'textAlign': 'center', 'color': 'rgba(255, 0, 0, 1)', display: (()=>{return (this.hasError(this.state.selectedIndex)) ? 'block' : 'none';})()}, internal-fsb-guid="cbb50d4a")
+                                          | มีบางรายการที่ไม่ผ่านเกณฑ์ และจะถูกแสดงในหน้าผลการสืบราคาของลูกค้าด้วยสีแดง
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           .internal-fsb-element.col-12.-fsb-preset-c6ba5b53(style={'FsbInheritedPresets': 'c6ba5b53', 'background': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(128, 128, 128, 1)', 'borderRightColor': 'rgba(128, 128, 128, 1)', 'borderTopColor': 'rgba(128, 128, 128, 1)', 'borderBottomColor': 'rgba(128, 128, 128, 1)'}, key="item_" + i, internal-fsb-guid="ce9a10c5")
                                             .container-fluid

@@ -5904,6 +5904,7 @@
         "                                                                                    </div>",
         "                                                                                </div>",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1715aae1\" internal-fsb-guid=\"e1b315be\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1; bottom: 15px\">#{this.getAuctionSummary(this.state.selectedIndex)}</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"cbb50d4a\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-bottom: 15px; text-align: center; color: rgba(255, 0, 0, 1)\" internal-fsb-react-style-display=\"CODE[return (this.hasError(this.state.selectedIndex)) ? 'block' : 'none';]\">มีบางรายการที่ไม่ผ่านเกณฑ์ และจะถูกแสดงในหน้าผลการสืบราคาของลูกค้าด้วยสีแดง</div>",
         "                                                                                <div class=\"internal-fsb-element col-12 -fsb-preset-c6ba5b53\" internal-fsb-guid=\"ce9a10c5\" internal-fsb-name=\"List\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: c6ba5b53; background: rgba(217, 217, 217, 1); border-left-color: rgba(128, 128, 128, 1); border-right-color: rgba(128, 128, 128, 1); border-top-color: rgba(128, 128, 128, 1); border-bottom-color: rgba(128, 128, 128, 1)\" internal-fsb-react-data=\"Quote[#i].Listing\">",
         "                                                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -6617,11 +6618,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "c6ba5b53",
+        "selectingElementGUID": "cbb50d4a",
         "currentCursorWalkPath": [
-          "64a6ac8c",
+          "7b15e8a1",
           0,
-          8,
+          5,
           null
         ]
       },
@@ -18787,7 +18788,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "d9f1fb761ed996a058f9e2851b824c7c9c3d1049",
+    "Project.Controls.Rectangle_cad06e8d": "0f9a069ee63868df37c056087d2e21e0148d8555",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
