@@ -77,7 +77,7 @@ class FlowLayout_b2020622 extends Base {
     DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("d910ad00", "delete", ["41bdc9b3"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
-    DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1","b6c9ad89","a0b78888","cc34eced","e92d687b"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
@@ -391,21 +391,21 @@ class FlowLayout_b2020622 extends Base {
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                             .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="64889385")
-                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", required=true, value="2", disabled=true, defaultChecked=this.getDataFromNotation("Listing[" + i + "].substitute") == '2')
+                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", required=true, value="2", disabled=true, checked=this.getDataFromNotation("Listing[" + i + "].substitute") == 2, defaultChecked=this.getDataFromNotation("Listing[" + i + "].substitute") == '2')
                                             .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="b5647b4a")
                                               | ทดแทน
                                       label.internal-fsb-element.col-12(style={'marginBottom': '0px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="6d8b313c")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                             .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="a4de3955")
-                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="1", required=true, disabled=true, defaultChecked=this.getDataFromNotation("Listing[" + i + "].substitute") == '1')
+                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="1", required=true, disabled=true, checked=this.getDataFromNotation("Listing[" + i + "].substitute") == 1, defaultChecked=this.getDataFromNotation("Listing[" + i + "].substitute") == '1')
                                             .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="05a06e83")
                                               | เทียบเท่า
                                       label.internal-fsb-element.col-12(style={'marginBottom': '0px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="13258ce6")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                             .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="be210963")
-                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="0", required=true, disabled=true, defaultChecked=this.getDataFromNotation("Listing[" + i + "].substitute") == '0')
+                                              input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", value="0", required=true, disabled=true, checked=this.getDataFromNotation("Listing[" + i + "].substitute") == 0, defaultChecked=this.getDataFromNotation("Listing[" + i + "].substitute") == '0')
                                             .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="3ecc6508")
                                               | เจาะจง
                                 .internal-fsb-element.col-3.offset-0(style={padding: '0px'}, internal-fsb-guid="ace9aa55")
