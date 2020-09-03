@@ -264,10 +264,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
           RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
 FROM Auction
 INNER JOIN Substitute ON Auction.aid = Substitute.aid
+INNER JOIN Listing ON Listing.lid = Substitute.lid
 INNER JOIN Quote ON Auction.qid = Quote.qid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
-HAVING SUM(Substitute.type) <= COUNT(Substitute.type) * MAX(Quote.substitute)
+HAVING Substitute.type <= Listing.substitute
 ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             let wholeSetRankInput = [];
             let wholeSetRankCount = 0;
@@ -310,10 +311,11 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
 FROM Auction
 INNER JOIN Substitute ON Auction.aid = Substitute.aid
+INNER JOIN Listing ON Listing.lid = Substitute.lid
 INNER JOIN Quote ON Auction.qid = Quote.qid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
-HAVING SUM(Substitute.type) > COUNT(Substitute.type) * MAX(Quote.substitute)
+HAVING Substitute.type > Listing.substitute
 ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
               let partialSetRankInput = [];
               let partialSetRankCount = 0;
