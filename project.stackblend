@@ -12787,17 +12787,17 @@
         "                                            <div class=\"internal-fsb-element\" internal-fsb-guid=\"ba180c3c\" internal-fsb-name=\"Auction\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"width: 120px; display: inline-block; border-right-width: 1px; border-right-color: rgba(0, 53, 117, 1); border-right-style: solid; padding-left: 0px; padding-right: 0px; border-top-color: rgba(0, 53, 117, 1)\" internal-fsb-react-data=\"Quote[0].Listing.Auction\">",
         "                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"ce8a654a\" internal-fsb-name=\"Store\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Store.name\" style=\"border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(0, 53, 117, 1); font-weight: bold; text-align: center; -fsb-inherited-presets: 13b0cd97; padding-top: 5px; padding-bottom: 5px\">ABC</div>",
+        "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"ce8a654a\" internal-fsb-name=\"Store\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Store.name\" style=\"border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(0, 53, 117, 1); font-weight: bold; text-align: center; -fsb-inherited-presets: 13b0cd97; padding-top: 5px; padding-bottom: 5px; padding-left: 0px; padding-right: 0px\">ABC</div>",
         "                                                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8d3daac0\" internal-fsb-name=\"Listing\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"Substitute\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"4741d7c7\" internal-fsb-name=\"FlowLayout 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-bottom-style: solid; border-bottom-color: rgba(0, 53, 117, 1); border-bottom-width: 1px; padding-left: 0px; padding-right: 0px; height: 65px; padding-top: 3px\">",
         "                                                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"1eae4292\" internal-fsb-name=\"TextElement 15\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\" style=\"font-weight: bold; -fsb-inherited-presets: 13b0cd97\">ABC</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-6 -fsb-preset-13b0cd97\" internal-fsb-guid=\"b5026407\" internal-fsb-name=\"TextElement 16\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"size\" style=\"-fsb-inherited-presets: 13b0cd97\">ABC</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-6 -fsb-preset-13b0cd97\" internal-fsb-guid=\"8dca02ed\" internal-fsb-name=\"TextElement 17\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"quantity\" style=\"-fsb-inherited-presets: 13b0cd97\">ABC</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"d58e0636\" internal-fsb-name=\"TextElement 19\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"\" style=\"text-align: center; -fsb-inherited-presets: 13b0cd97\">#{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].Substitute.price')} บาท</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"1eae4292\" internal-fsb-name=\"TextElement 15\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\" style=\"font-weight: bold; -fsb-inherited-presets: 13b0cd97; padding-left: 2px; padding-right: 2px\">ABC</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-6 -fsb-preset-13b0cd97\" internal-fsb-guid=\"b5026407\" internal-fsb-name=\"TextElement 16\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"size\" style=\"-fsb-inherited-presets: 13b0cd97; padding-left: 2px; padding-right: 0px\">ABC</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-6 -fsb-preset-13b0cd97\" internal-fsb-guid=\"8dca02ed\" internal-fsb-name=\"TextElement 17\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"quantity\" style=\"-fsb-inherited-presets: 13b0cd97; padding-left: 2px; padding-right: 0px\">ABC</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"d58e0636\" internal-fsb-name=\"TextElement 19\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"\" style=\"text-align: center; -fsb-inherited-presets: 13b0cd97; padding-left: 2px; padding-right: 2px\">#{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].Substitute.price')} บาท</div>",
         "                                                                            </div>",
         "                                                                        </div>",
         "                                                                    </div>",
@@ -12807,7 +12807,7 @@
         "                                                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"65beb763\" internal-fsb-name=\"Summary\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px; padding-bottom: 10px\" internal-fsb-react-data=\"\">",
         "                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"d40e3b62\" internal-fsb-name=\"TextElement 24\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; padding-bottom: 5px; -fsb-inherited-presets: 13b0cd97; text-align: center; padding-top: 5px; color: rgba(22, 98, 250, 1)\">#{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท</div>",
+        "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"d40e3b62\" internal-fsb-name=\"TextElement 24\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; padding-bottom: 5px; -fsb-inherited-presets: 13b0cd97; text-align: center; padding-top: 5px; color: rgba(22, 98, 250, 1); padding-left: 2px; padding-right: 2px\">#{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท</div>",
         "",
         "                                                                    <div class=\"internal-fsb-element offset-5\" internal-fsb-guid=\"6e068626\" internal-fsb-name=\"Checkbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Checkbox\"><input type=\"checkbox\" style=\"display: block; -fsb-for-children: true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"bought\" class=\"\"></div>",
         "                                                                </div>",
@@ -13850,11 +13850,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a23ed480",
+        "selectingElementGUID": "d40e3b62",
         "currentCursorWalkPath": [
-          "8173e6a3",
+          "a23ed480",
           0,
-          4,
+          7,
           null
         ]
       },
@@ -18864,7 +18864,7 @@
     "Project.Common.LoginControl": "5307216e47c9b4579a2a4f7ae576d7d4bc06ab54",
     "Project.Controls.FlowLayout_c6ba5b53": "9714fe2552a84ebd3fc551dfa02d8b30def41495",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "0f506cfd0bb644025502556cc50d21cf7bb3056a",
+    "Project.Controls.FlowLayout_a23ed480": "a81c05c0dc29be526fb0a053f472ddf90eb3df27",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786"
   },
   "viewBlobSHADict": {
