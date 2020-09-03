@@ -207,48 +207,52 @@ class FlowLayout_a23ed480 extends Base {
                     | ผลการประมูลราคาวัสดุก่อสร้าง
                   .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="b864ab8e")
                     | ข้างล่างนี้คือผลการประมูล กรุณาเลือกร้านค้าที่คุณพอใจมากที่สุด เพื่อชำระเงินในขั้นถัดไป
-                  .internal-fsb-element.col-6.col-sm-5.col-md-4.col-lg-3(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="0ed4d727")
+                  .internal-fsb-element.col-6.col-sm-5.col-md-4.col-lg-3(style={'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', 'borderRightColor': 'rgba(0, 53, 117, 1)', 'borderLeftColor': 'rgba(0, 53, 117, 1)', 'borderTopColor': 'rgba(0, 53, 117, 1)', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderRightWidth': '1px', 'borderRightStyle': 'solid'}, internal-fsb-guid="0ed4d727")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-12(style={'width': '200px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="d223c869")
+                        .internal-fsb-element.col-12(style={'width': '200px', 'paddingLeft': '0px', 'paddingRight': '0px', 'borderBottomWidth': '1px', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderBottomStyle': 'solid', 'borderLeftColor': 'rgba(0, 53, 117, 1)', 'borderLeftStyle': 'solid', 'borderLeftWidth': '1px', 'borderTopColor': 'rgba(0, 53, 117, 1)', 'borderTopStyle': 'solid', 'borderTopWidth': '1px', 'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="d223c869")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                              .internal-fsb-element.col-12(internal-fsb-guid="59979477")
+                              .internal-fsb-element.col-12(style={'fontWeight': 'bold'}, internal-fsb-guid="59979477")
                                 | รายการสินค้า
                         each data, i in this.getDataFromNotation("Quote[0].Listing", true)
-                          .internal-fsb-element.col-12(style={'width': '200px', 'paddingLeft': '0px', 'paddingRight': '0px'}, key="item_" + i, internal-fsb-guid="11eb0e55")
+                          .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'borderBottomWidth': '1px', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'height': '65px', 'paddingTop': '3px', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(0, 53, 117, 1)', 'borderLeftWidth': '1px'}, key="item_" + i, internal-fsb-guid="11eb0e55")
                             .container-fluid
                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                .internal-fsb-element.offset-0.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].title"))}, internal-fsb-guid="9d162b51")
-                                .internal-fsb-element.offset-0.col-6(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].size"))}, internal-fsb-guid="13b0cd97")
-                                .internal-fsb-element.offset-0.col-6(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].quantity"))}, internal-fsb-guid="57421653")
-                                .internal-fsb-element.col-12(internal-fsb-guid="36bd9004")
-                                  | ราคา
-                        .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="94e22e23")
+                                .internal-fsb-element.offset-0.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].title"))}, internal-fsb-guid="9d162b51")
+                                .internal-fsb-element.offset-0.col-6.-fsb-self-13b0cd97(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].size"))}, internal-fsb-guid="13b0cd97")
+                                .internal-fsb-element.offset-0.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].quantity"))}, internal-fsb-guid="57421653")
+                        .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="94e22e23")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                              .internal-fsb-element.col-12(internal-fsb-guid="83de46b7")
+                              .internal-fsb-element.col-12(style={'paddingBottom': '5px', 'paddingTop': '5px'}, internal-fsb-guid="83de46b7")
                                 | ราคารวม
-                  .internal-fsb-element.internal-fsb-allow-cursor.col-6.col-sm-7.col-md-8.col-lg-9(style={'overflowX': 'auto', 'MsOverflowX': 'auto', 'overflowY': 'hidden', 'MsOverflowY': 'hidden', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="56392ad7")
+                  .internal-fsb-element.internal-fsb-allow-cursor.col-6.col-sm-7.col-md-8.col-lg-9(style={'overflowX': 'auto', 'MsOverflowX': 'auto', 'overflowY': 'hidden', 'MsOverflowY': 'hidden', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', 'borderTopColor': 'rgba(0, 53, 117, 1)', 'borderRightColor': 'rgba(0, 53, 117, 1)', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderBottomStyle': 'solid', 'borderBottomWidth': '1px', 'borderRightStyle': 'solid', 'borderTopStyle': 'solid', 'borderRightWidth': '1px', 'borderTopWidth': '1px'}, internal-fsb-guid="56392ad7")
                     .internal-fsb-element(style={'display': 'block', 'whiteSpace': 'nowrap'}, internal-fsb-guid="ebeaa554")
                       each data, i in this.getDataFromNotation("Quote[0].Listing.Auction", true)
-                        .internal-fsb-element(style={'width': '200px', 'display': 'inline-block'}, key="item_" + i, internal-fsb-guid="ba180c3c")
+                        .internal-fsb-element(style={'width': '120px', 'display': 'inline-block', 'borderRightWidth': '1px', 'borderRightColor': 'rgba(0, 53, 117, 1)', 'borderRightStyle': 'solid', 'paddingLeft': '0px', 'paddingRight': '0px', 'borderTopColor': 'rgba(0, 53, 117, 1)'}, key="item_" + i, internal-fsb-guid="ba180c3c")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                              .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Store.name"))}, internal-fsb-guid="ce8a654a")
+                              .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'borderBottomWidth': '1px', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'fontWeight': 'bold', 'textAlign': 'center', 'FsbInheritedPresets': '13b0cd97', 'paddingTop': '5px', 'paddingBottom': '5px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Store.name"))}, internal-fsb-guid="ce8a654a")
                               each data, j in this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute", true)
                                 .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, key="item_" + j, internal-fsb-guid="8d3daac0")
                                   .container-fluid
                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].title"))}, internal-fsb-guid="1eae4292")
-                                      .internal-fsb-element.col-6(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].size"))}, internal-fsb-guid="b5026407")
-                                      .internal-fsb-element.col-6(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].quantity"))}, internal-fsb-guid="8dca02ed")
-                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].price"))}, internal-fsb-guid="d58e0636")
-                              .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="65beb763")
+                                      .internal-fsb-element.col-12(style={'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderBottomWidth': '1px', 'paddingLeft': '0px', 'paddingRight': '0px', 'height': '65px', 'paddingTop': '3px'}, internal-fsb-guid="4741d7c7")
+                                        .container-fluid
+                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                            .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].title"))}, internal-fsb-guid="1eae4292")
+                                            .internal-fsb-element.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].size"))}, internal-fsb-guid="b5026407")
+                                            .internal-fsb-element.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].quantity"))}, internal-fsb-guid="8dca02ed")
+                                            .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'textAlign': 'center', 'FsbInheritedPresets': '13b0cd97'}, internal-fsb-guid="d58e0636")
+                                              | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].Substitute.price')} บาท
+                              .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingBottom': '10px'}, internal-fsb-guid="65beb763")
                                 .container-fluid
                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                    .internal-fsb-element.col-12(internal-fsb-guid="d40e3b62")
-                                      | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')}
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'paddingBottom': '5px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'paddingTop': '5px'}, internal-fsb-guid="d40e3b62")
+                                      | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท
+                                    .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
+                                      input(style={'display': 'block'}, type="checkbox")
             Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, type="button", onClick=this.onButtonClick_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
               .internal-fsb-element(internal-fsb-guid="bdcbb907-text")
                 | ถัดไป: เลือกวิธีการจ่ายเงิน
@@ -296,6 +300,9 @@ class FlowLayout_a23ed480 extends Base {
                         .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'textAlign': 'center', 'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="9b4e1a4c")
                           | กรุณาเลือกประเภทบัตรเครดิต กรอกหมายเลขบัตร วันหมดอายุ พร้อมทั้งหมายเลข cvv ที่อยู่หลังบัตร
                         .internal-fsb-element.col-10.offset-1(dangerouslySetInnerHTML={__html: "<style type=\"text/css\">\n.StripeElement {\n  box-sizing: border-box;\n\n  height: 40px;\n\n  padding: 10px 12px;\n\n  border: 1px solid transparent;\n  border-radius: 4px;\n  background-color: white;\n\n  box-shadow: 0 1px 3px 0 #e6ebf1;\n  -webkit-transition: box-shadow 150ms ease;\n  transition: box-shadow 150ms ease;\n}\n\n.StripeElement--focus {\n  box-shadow: 0 1px 3px 0 #cfd7df;\n}\n\n.StripeElement--invalid {\n  border-color: #fa755a;\n}\n\n.StripeElement--webkit-autofill {\n  background-color: #fefde5 !important;\n}\n</style>\n<form action=\"/charge\" method=\"post\" id=\"payment-form\">\n  <div class=\"form-row\">\n    <div id=\"card-element\">\n      <!-- A Stripe Element will be inserted here. -->\n    </div>\n    <!-- Used to display form errors. -->\n    <div id=\"card-errors\" role=\"alert\"></div>\n  </div>\n</form>"}, internal-fsb-guid="a1407abd")
+                        .internal-fsb-element.col-12(internal-fsb-guid="26a1c7b0")
+                          .container-fluid
+                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-2.offset-3(style={'marginTop': '15px', 'marginRight': '10px', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, type="button", onClick=this.onButtonClick_c1c0694d.bind(this), internal-fsb-guid="c1c0694d")
               .internal-fsb-element(internal-fsb-guid="c1c0694d-text")
                 | ย้อนกลับ
