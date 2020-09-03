@@ -289,20 +289,10 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "3d97109b", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-		RequestHelper.registerInput('bc041e39', "relational", "Auction", "aid");
-		ValidationHelper.registerInput('bc041e39', "Radio 1", false, undefined);
+		RequestHelper.registerInput('6e068626', "relational", "Auction", "bought");
+		ValidationHelper.registerInput('6e068626', "Checkbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'bc041e39' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Radio 1 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('1411ca4c', "relational", "Auction", "aid");
-		ValidationHelper.registerInput('1411ca4c', "Checkbox 1", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '1411ca4c' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, '6e068626' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Checkbox 1 here:
       // 

@@ -264,10 +264,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
           RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
 FROM Auction
 INNER JOIN Substitute ON Auction.aid = Substitute.aid
+INNER JOIN Listing ON Listing.lid = Substitute.lid
 INNER JOIN Quote ON Auction.qid = Quote.qid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
-HAVING SUM(Substitute.type) <= COUNT(Substitute.type) * MAX(Quote.substitute)
+HAVING Max(Substitute.type) <= Max(Listing.substitute)
 ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             let wholeSetRankInput = [];
             let wholeSetRankCount = 0;
@@ -310,10 +311,11 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
 FROM Auction
 INNER JOIN Substitute ON Auction.aid = Substitute.aid
+INNER JOIN Listing ON Listing.lid = Substitute.lid
 INNER JOIN Quote ON Auction.qid = Quote.qid
 WHERE Auction.qid = ?
 GROUP BY Auction.aid
-HAVING SUM(Substitute.type) > COUNT(Substitute.type) * MAX(Quote.substitute)
+HAVING Max(Substitute.type) > Max(Listing.substitute)
 ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
               let partialSetRankInput = [];
               let partialSetRankCount = 0;
@@ -392,28 +394,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
-       		      'Quote.Auction.Substitute.aid': null
-       		    });
+       		      'Quote.Auction.Substitute.aid': null,
+       		      'Quote.Listing.qid': null
+       		    }); 
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-       		    
-       		    let listingData = RequestHelper.createInputs({
-       		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
-       		    });
-       		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
-       		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
-       		    
-       		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
-       		      if (i == 0) {
-         		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
-         		    } else {
-         		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
-         		        source: SourceType.Relational,
-                  	group: 'Listing',
-                    rows: []
-         		      };
-         		    }
-       		    }
            		    
        		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
        		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
