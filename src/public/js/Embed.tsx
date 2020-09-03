@@ -1,6 +1,7 @@
 import {DataManipulationHelper} from './helpers/DataManipulationHelper.js';
 
 declare let window: any;
+declare let $: any;
 
 (() => {
 	// Auto Height Layout
@@ -32,3 +33,11 @@ declare let window: any;
   window.addEventListener('update', update);
   window.DataManipulationHelper = DataManipulationHelper;
 })();
+
+window.addEventListener('load', (event) => {
+	$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+});
+
+document.write(`<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>`);
