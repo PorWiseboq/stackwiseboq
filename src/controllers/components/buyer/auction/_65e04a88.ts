@@ -512,6 +512,46 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('64889385', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('64889385', "Radio 1", true, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '64889385' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('a4de3955', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('a4de3955', "Radio 2", true, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'a4de3955' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('be210963', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('be210963', "Radio 3", true, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'be210963' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('ace9aa55', "relational", "Listing", "note");
+		ValidationHelper.registerInput('ace9aa55', "Textbox 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'ace9aa55' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('eda631c1', "relational", "Listing", "qid");
 		ValidationHelper.registerInput('eda631c1', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -552,7 +592,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('b6c9ad89', "relational", "Quote", "substitute");
+		RequestHelper.registerInput('b6c9ad89', "relational", "Listing", "substitute");
 		ValidationHelper.registerInput('b6c9ad89', "Radio 3", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'b6c9ad89' + ((i == -1) ? '' : '[' + i + ']'));
@@ -562,7 +602,7 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('a0b78888', "relational", "Quote", "substitute");
+		RequestHelper.registerInput('a0b78888', "relational", "Listing", "substitute");
 		ValidationHelper.registerInput('a0b78888', "Radio 4", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'a0b78888' + ((i == -1) ? '' : '[' + i + ']'));
@@ -572,12 +612,22 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('cc34eced', "relational", "Quote", "substitute");
+		RequestHelper.registerInput('cc34eced', "relational", "Listing", "substitute");
 		ValidationHelper.registerInput('cc34eced', "Radio 5", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'cc34eced' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 5 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('e92d687b', "relational", "Listing", "note");
+		ValidationHelper.registerInput('e92d687b', "Textbox 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'e92d687b' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
