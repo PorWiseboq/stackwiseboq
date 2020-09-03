@@ -128,7 +128,28 @@ class FlowLayout_a23ed480 extends Base {
   // Providing data array base on dot notation:
   // 
   protected getDataFromNotation(notation: string, inArray: boolean=false): any {
-    return super.getDataFromNotation(notation, inArray);
+    if (notation.match(/^Quote\[[0-9]+\].Listing$/)) {
+      let rows = super.getDataFromNotation(notation, true);
+      let _auctions = super.getDataFromNotation(`${notation.split('.')[0]}.Auction`, true);
+      
+      for (let row of rows) {
+        let auctions = CodeHelper.clone(_auctions);
+        
+        for (let auction of auctions) {
+          auction.relations['Substitute'].rows = auction.relations['Substitute'].rows.filter(substitute => substitute.keys['lid'] == row.keys['lid']);
+        }
+      
+      	row.relations['Auction'] = {
+      	  source: null,
+      	  group: 'Auction',
+      	  rows: auctions
+      	};
+      }
+      
+      return rows;
+    } else {
+      return super.getDataFromNotation(notation, inArray);
+    }
   }
   
   // Auto[Merging]--->
@@ -186,61 +207,48 @@ class FlowLayout_a23ed480 extends Base {
                     | ผลการประมูลราคาวัสดุก่อสร้าง
                   .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="b864ab8e")
                     | ข้างล่างนี้คือผลการประมูล กรุณาเลือกร้านค้าที่คุณพอใจมากที่สุด เพื่อชำระเงินในขั้นถัดไป
-                  .internal-fsb-element.col-6.offset-0.-fsb-preset-b6c9ad89(style={'FsbInheritedPresets': 'b6c9ad89', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(22, 98, 250, 1)', 'borderRightWidth': '1px'}, internal-fsb-guid="5037e0c4")
+                  .internal-fsb-element.col-6.col-sm-5.col-md-4.col-lg-3(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="0ed4d727")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.-fsb-preset-7a279686.col-12.offset-0(style={'FsbInheritedPresets': '7a279686', 'textAlign': 'center'}, internal-fsb-guid="28d79e4e")
-                          | ร้านค้าที่เสนอครบ
-                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'textAlign': 'center'}, internal-fsb-guid="9e116c4b")
-                          | ครบทุกรายการสินค้าตามที่คุณได้ระบุไว้
-                        each data, i in this.getDataFromNotation("Quote[0].Auction", true)
-                          .internal-fsb-element.col-12(style={'background': 'rgba(250, 250, 250, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'paddingTop': '5px', 'paddingBottom': '5px', 'marginBottom': '7px', 'borderTopColor': 'rgba(217, 217, 217, 1)', 'borderTopStyle': 'solid', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(217, 217, 217, 1)', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(217, 217, 217, 1)', 'borderLeftColor': 'rgba(217, 217, 217, 1)', 'borderLeftStyle': 'solid', 'borderLeftWidth': '1px', 'borderRightWidth': '1px', 'borderTopWidth': '1px', 'borderBottomWidth': '1px'}, key="item_" + i, internal-fsb-guid="839d87a6")
+                        .internal-fsb-element.col-12(style={'width': '200px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="d223c869")
+                          .container-fluid
+                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                              .internal-fsb-element.col-12(internal-fsb-guid="59979477")
+                                | รายการสินค้า
+                        each data, i in this.getDataFromNotation("Quote[0].Listing", true)
+                          .internal-fsb-element.col-12(style={'width': '200px', 'paddingLeft': '0px', 'paddingRight': '0px'}, key="item_" + i, internal-fsb-guid="11eb0e55")
                             .container-fluid
                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                label.internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="0a1d7749")
+                                .internal-fsb-element.offset-0.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].title"))}, internal-fsb-guid="9d162b51")
+                                .internal-fsb-element.offset-0.col-6(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].size"))}, internal-fsb-guid="13b0cd97")
+                                .internal-fsb-element.offset-0.col-6(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].quantity"))}, internal-fsb-guid="57421653")
+                                .internal-fsb-element.col-12(internal-fsb-guid="36bd9004")
+                                  | ราคา
+                        .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="94e22e23")
+                          .container-fluid
+                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                              .internal-fsb-element.col-12(internal-fsb-guid="83de46b7")
+                                | ราคารวม
+                  .internal-fsb-element.internal-fsb-allow-cursor.col-6.col-sm-7.col-md-8.col-lg-9(style={'overflowX': 'auto', 'MsOverflowX': 'auto', 'overflowY': 'hidden', 'MsOverflowY': 'hidden', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="56392ad7")
+                    .internal-fsb-element(style={'display': 'block', 'whiteSpace': 'nowrap'}, internal-fsb-guid="ebeaa554")
+                      each data, i in this.getDataFromNotation("Quote[0].Listing.Auction", true)
+                        .internal-fsb-element(style={'width': '200px', 'display': 'inline-block'}, key="item_" + i, internal-fsb-guid="ba180c3c")
+                          .container-fluid
+                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                              .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Store.name"))}, internal-fsb-guid="ce8a654a")
+                              each data, j in this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute", true)
+                                .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, key="item_" + j, internal-fsb-guid="8d3daac0")
                                   .container-fluid
                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                      .internal-fsb-element.offset--10.-fsb-preset-b6c9ad89.offset-0.col-1(style={padding: '0px'}, internal-fsb-guid="bc041e39")
-                                        input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="complete")
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'fontSize': '14px'}, internal-fsb-guid="94372513")
-                                        | ##{i + 1} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.name')}
-                                      .internal-fsb-element.col-10.-fsb-preset-4839e353.offset-1(style={'FsbInheritedPresets': '4839e353', 'color': 'rgba(128, 128, 128, 1)'}, internal-fsb-guid="d5ecb95b")
-                                        | ตำบล#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.subDistrict')} อำเภอ#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.district')} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.province')}
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-1(style={'FsbInheritedPresets': 'b5cd72c0', 'marginBottom': '5px'}, internal-fsb-guid="22bd4142")
-                                        | ราคารวม #{this.getDataFromNotation('Quote[0].Auction[' + i + '].price')} บาท
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="89106a70")
-                                        div
-                                          | รายการสินค้าที่เปลี่ยน: #{this.getListOfChangeMerchandise(0, i)}
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15', 'display': 'none'}, internal-fsb-guid="ec8c24ab")
-                                        | โปรโมชั่นพิเศษ: คิดส่วนลดในครั้งถัดไป 12.5%
-                  .internal-fsb-element.col-6.offset-0.-fsb-preset-b6c9ad89(style={'FsbInheritedPresets': 'b6c9ad89', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(22, 98, 250, 1)', 'borderLeftWidth': '1px'}, internal-fsb-guid="35d94303")
-                    .container-fluid
-                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'textAlign': 'center'}, internal-fsb-guid="32d5d986")
-                          | ร้านค้าที่เสนอไม่ครบ
-                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'textAlign': 'center'}, internal-fsb-guid="740014ae")
-                          | มีเฉพาะบางรายการสินค้าตามที่คุณได้ระบุไว้
-                        each data, i in this.getDataFromNotation("Quote[1].Auction", true)
-                          .internal-fsb-element.col-12(style={'background': 'rgba(252, 252, 252, 1)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'paddingTop': '5px', 'paddingBottom': '5px', 'marginBottom': '7px', 'borderLeftWidth': '1px', 'borderTopWidth': '1px', 'borderRightWidth': '1px', 'borderBottomWidth': '1px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(217, 217, 217, 1)', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(217, 217, 217, 1)', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(217, 217, 217, 1)', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(217, 217, 217, 1)'}, key="item_" + i, internal-fsb-guid="33eb2aa3")
-                            .container-fluid
-                              .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                label.internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="9db8b3b2")
-                                  .container-fluid
-                                    .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                      .internal-fsb-element.-fsb-preset-b6c9ad89.offset-0.col-1(style={padding: '0px'}, internal-fsb-guid="1411ca4c")
-                                        input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="checkbox")
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-0(style={'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'fontSize': '14px'}, internal-fsb-guid="60a42697")
-                                        | ##{i + 1} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.name')}
-                                      .internal-fsb-element.col-10.-fsb-preset-4839e353.offset-1(style={'FsbInheritedPresets': '4839e353', 'color': 'rgba(128, 128, 128, 1)'}, internal-fsb-guid="9e41cae9")
-                                        | ตำบล#{this.getDataFromNotation('Quote[0].Auction[' + i + '].Store.User.subDistrict')} อำเภอ#{this.getDataFromNotation('Quote[0].Auction[' + i + '].district')} #{this.getDataFromNotation('Quote[0].Auction[' + i + '].province')}
-                                      .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-1(style={'FsbInheritedPresets': 'b5cd72c0', 'marginBottom': '5px'}, internal-fsb-guid="9491a176")
-                                        | ราคารวม #{this.getDataFromNotation('Quote[1].Auction[' + i + '].price')} บาท
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="a87a2cdb")
-                                        | รายการสินค้าที่เปลี่ยน: #{this.getListOfChangeMerchandise(1, i)}
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15'}, internal-fsb-guid="4d1e5aaa")
-                                        | รายการสินค้าที่ไม่มี: #{this.getListOfUnavailableMerchandise(1, i)}
-                                      .internal-fsb-element.-fsb-preset-8050ab15.col-10.offset-1(style={'FsbInheritedPresets': '8050ab15', 'display': 'none'}, internal-fsb-guid="5123ace7")
-                                        | โปรโมชั่นพิเศษ: คิดส่วนลดในครั้งถัดไป 10%
+                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].title"))}, internal-fsb-guid="1eae4292")
+                                      .internal-fsb-element.col-6(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].size"))}, internal-fsb-guid="b5026407")
+                                      .internal-fsb-element.col-6(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].quantity"))}, internal-fsb-guid="8dca02ed")
+                                      .internal-fsb-element.col-12(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing.Auction[" + i + "].Substitute[" + j + "].price"))}, internal-fsb-guid="d58e0636")
+                              .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="65beb763")
+                                .container-fluid
+                                  .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                    .internal-fsb-element.col-12(internal-fsb-guid="d40e3b62")
+                                      | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')}
             Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, type="button", onClick=this.onButtonClick_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
               .internal-fsb-element(internal-fsb-guid="bdcbb907-text")
                 | ถัดไป: เลือกวิธีการจ่ายเงิน
