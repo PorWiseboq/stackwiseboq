@@ -125,10 +125,10 @@ class Controller extends Base {
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        const json = request.body;
+        const json = this.request.body;
         let results: any = null;
         
-        for (let event of events) {
+        for (let event of json.events) {
           switch (event.type) {
             case 'message':
               if (event.source.type == 'user') {
@@ -166,7 +166,7 @@ class Controller extends Base {
                     }]
          		      }, 'application/json');
                 } else {
-                  if (data['Quote'].rows[0].relations['Auction'].rows == 0) {
+                  if (data['Quote'].rows[0].relations['Auction'].rows.length == 0) {
                     await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
            		        replyToken: event.replyToken,
            		        messages: [{
@@ -185,8 +185,8 @@ class Controller extends Base {
                         "actions": data['Quote'].rows[0].relations['Auction'].rows.map((auction) => {
                           return {
                             "type": "postback",
-                            "label": auction.relations['Store'].columns['name'],
-                            "data": auction.relations['Store'].keys['sid']
+                            "label": auction.relations['Store'].rows[0].columns['name'],
+                            "data": auction.relations['Store'].rows[0].keys['sid']
                           }
                         })
                       }
