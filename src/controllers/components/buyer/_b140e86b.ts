@@ -182,10 +182,12 @@ class Controller extends Base {
                       "template": {
                         "type": "buttons",
                         "text": "กรุณาเลือกว่าจะติดต่อกับร้านค้าไหน:",
-                        "actions": data['Quote'].rows[0].relations['Auction'].rows.map(auction => {
-                          "type": "postback",
-                          "label": auction.relations['Store'].columns['name'],
-                          "data": auction.relations['Store'].keys['sid']
+                        "actions": data['Quote'].rows[0].relations['Auction'].rows.map((auction) => {
+                          return {
+                            "type": "postback",
+                            "label": auction.relations['Store'].columns['name'],
+                            "data": auction.relations['Store'].keys['sid']
+                          }
                         })
                       }
                     }]
