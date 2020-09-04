@@ -3,21 +3,21 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../../../../helpers/ValidationHelper.js';
-import {RequestHelper} from '../../../../helpers/RequestHelper.js';
-import {RenderHelper} from '../../../../helpers/RenderHelper.js';
-import {DataTableSchema} from '../../../../helpers/SchemaHelper.js';
-import {Base} from '../../../Base.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../../../../helpers/DatabaseHelper.js";
+import {ValidationInfo, ValidationHelper} from "../../../../helpers/ValidationHelper.js";
+import {RequestHelper} from "../../../../helpers/RequestHelper.js";
+import {RenderHelper} from "../../../../helpers/RenderHelper.js";
+import {DataTableSchema} from "../../../../helpers/SchemaHelper.js";
+import {Base} from "../../../Base.js";
 
 // <---Auto[Import]
 
 // Import additional modules here:
 // 
-import {CodeHelper} from '../../../../helpers/CodeHelper.js';
-import {SchemaHelper} from '../../../../helpers/SchemaHelper.js';
-import {ProjectConfigurationHelper} from '../../../../helpers/ProjectConfigurationHelper.js';
-import {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'
+import {CodeHelper} from "../../../../helpers/CodeHelper.js";
+import {SchemaHelper} from "../../../../helpers/SchemaHelper.js";
+import {ProjectConfigurationHelper} from "../../../../helpers/ProjectConfigurationHelper.js";
+import {RelationalDatabaseClient} from "../../../../helpers/ConnectionHelper.js";
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -75,7 +75,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    let [action, schema, data] = this.initialize(request);
+	    const [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -119,41 +119,41 @@ class Controller extends Base {
         RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
 WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
           try {
-            let quoteData = RequestHelper.createInputs({
-     		      'Quote.uid': this.request.session.uid,
-     		      'Quote.status': 2,
-     		      'Quote.Listing.qid': null,
-     		      'Quote.Auction.qid': null,
-     		      'Quote.Auction.Store.sid': null,
-     		      'Quote.Auction.Store.User.id': null,
-     		      'Quote.Auction.Substitute.aid': null
+            const quoteData = RequestHelper.createInputs({
+     		      "Quote.uid": this.request.session.uid,
+     		      "Quote.status": 2,
+     		      "Quote.Listing.qid": null,
+     		      "Quote.Auction.qid": null,
+     		      "Quote.Auction.Store.sid": null,
+     		      "Quote.Auction.Store.User.id": null,
+     		      "Quote.Auction.Substitute.aid": null
      		    });
-     		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
-     		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-     		    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);
+     		    const quote = SchemaHelper.getDataTableSchemaFromNotation("Quote", ProjectConfigurationHelper.getDataSchema());
+     		    const quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+     		    const quoteDatasetB = CodeHelper.clone(quoteDatasetA);
      		    
-     		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
-     		      return auction.relations['Substitute'].rows.every((substitute) => {
-     		        return substitute.columns['type'] != 3;
+     		    quoteDatasetA["Quote"].rows[0].relations["Auction"].rows = quoteDatasetA["Quote"].rows[0].relations["Auction"].rows.filter((auction) => {
+     		      return auction.relations["Substitute"].rows.every((substitute) => {
+     		        return substitute.columns["type"] != 3;
      		      });
      		    }).sort((a, b) => {
-     		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
+     		      return (a.columns["price"] < b.columns["price"]) ? -1 : 1;
      		    });
-     		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
-     		      return auction.relations['Substitute'].rows.some((substitute) => {
-     		        return substitute.columns['type'] == 3;
+     		    quoteDatasetB["Quote"].rows[0].relations["Auction"].rows = quoteDatasetB["Quote"].rows[0].relations["Auction"].rows.filter((auction) => {
+     		      return auction.relations["Substitute"].rows.some((substitute) => {
+     		        return substitute.columns["type"] == 3;
      		      });
      		    }).sort((a, b) => {
-     		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
+     		      return (a.columns["price"] < b.columns["price"]) ? -1 : 1;
      		    });
      		    
-     		    let results = {
+     		    const results = {
      		      Quote: {
        		      source: SourceType.Relational,
-              	group: 'Quote',
+              	group: "Quote",
                 rows: [
-                  quoteDatasetA['Quote'].rows[0],
-                  quoteDatasetB['Quote'].rows[0]
+                  quoteDatasetA["Quote"].rows[0],
+                  quoteDatasetB["Quote"].rows[0]
                 ]
      		      }
      		    };
@@ -278,8 +278,8 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	let data: Input[] = [];
+  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	const data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
@@ -289,40 +289,40 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "3d97109b", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-		RequestHelper.registerInput('6e068626', "relational", "Auction", "bought");
-		ValidationHelper.registerInput('6e068626', "Checkbox 1", false, undefined);
+		RequestHelper.registerInput("6e068626", "relational", "Auction", "bought");
+		ValidationHelper.registerInput("6e068626", "Checkbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '6e068626' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "6e068626" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Checkbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('c6cd6a36', "relational", "Auction.Payment.Transfer", "time");
-		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", false, undefined);
+		RequestHelper.registerInput("c6cd6a36", "relational", "Auction.Payment.Transfer", "time");
+		ValidationHelper.registerInput("c6cd6a36", "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "c6cd6a36" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('0c59a0a4', "relational", "Auction.Payment.Transfer", "transferrer");
-		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", false, undefined);
+		RequestHelper.registerInput("0c59a0a4", "relational", "Auction.Payment.Transfer", "transferrer");
+		ValidationHelper.registerInput("0c59a0a4", "Textbox 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '0c59a0a4' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "0c59a0a4" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('5cab012e', "relational", "Auction.Payment.Transfer", "origin");
-		ValidationHelper.registerInput('5cab012e', "Textbox 3", false, undefined);
+		RequestHelper.registerInput("5cab012e", "relational", "Auction.Payment.Transfer", "origin");
+		ValidationHelper.registerInput("5cab012e", "Textbox 3", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "5cab012e" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
@@ -334,7 +334,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]

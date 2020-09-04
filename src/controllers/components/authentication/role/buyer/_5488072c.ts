@@ -3,12 +3,12 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../../../../helpers/ValidationHelper.js';
-import {RequestHelper} from '../../../../helpers/RequestHelper.js';
-import {RenderHelper} from '../../../../helpers/RenderHelper.js';
-import {DataTableSchema} from '../../../../helpers/SchemaHelper.js';
-import {Base} from '../../../Base.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../../../../helpers/DatabaseHelper.js";
+import {ValidationInfo, ValidationHelper} from "../../../../helpers/ValidationHelper.js";
+import {RequestHelper} from "../../../../helpers/RequestHelper.js";
+import {RenderHelper} from "../../../../helpers/RenderHelper.js";
+import {DataTableSchema} from "../../../../helpers/SchemaHelper.js";
+import {Base} from "../../../Base.js";
 
 // <---Auto[Import]
 
@@ -72,7 +72,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    let [action, schema, data] = this.initialize(request);
+	    const [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -114,16 +114,16 @@ class Controller extends Base {
  		return new Promise(async (resolve, reject) => {
  		  try {
      		if (!this.request.session || !this.request.session.uid) {
-          this.response.redirect('/authentication');
+          this.response.redirect("/authentication");
         } else {
-          let schemata = ProjectConfigurationHelper.getDataSchema();
-          let inputs = RequestHelper.createInputs({
-            'User.id': this.request.session.uid
+          const schemata = ProjectConfigurationHelper.getDataSchema();
+          const inputs = RequestHelper.createInputs({
+            "User.id": this.request.session.uid
           });
-          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['User'], this.request.session);
+          const results = await DatabaseHelper.retrieve(inputs, schemata.tables["User"], this.request.session);
           
-          if (results['User'].rows[0].columns['firstName'] && results['User'].rows[0].columns['lastName']) {
-            this.response.redirect('/buyer/auction');
+          if (results["User"].rows[0].columns["firstName"] && results["User"].rows[0].columns["lastName"]) {
+            this.response.redirect("/buyer/auction");
           }
         }
         
@@ -234,7 +234,7 @@ class Controller extends Base {
  		  try {
  		    await DatabaseHelper.update(data, schema, true, this.request.session);
  		    
- 		    resolve('/buyer/auction');
+ 		    resolve("/buyer/auction");
  		  } catch(error) {
  		    reject(error);
  		  }
@@ -243,48 +243,48 @@ class Controller extends Base {
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	let data: Input[] = [];
+  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	const data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
     RequestHelper.registerSubmit("5488072c", "68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-		RequestHelper.registerInput('ab3a1c6e', "relational", "User", "firstName");
-		ValidationHelper.registerInput('ab3a1c6e', "Textbox 5", true, "กรุณาระบุชื่อ");
+		RequestHelper.registerInput("ab3a1c6e", "relational", "User", "firstName");
+		ValidationHelper.registerInput("ab3a1c6e", "Textbox 5", true, "กรุณาระบุชื่อ");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'ab3a1c6e' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "ab3a1c6e" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 5 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('340b9ddb', "relational", "User", "lastName");
-		ValidationHelper.registerInput('340b9ddb', "Textbox 6", true, "กรุณาระบุนามสกุล");
+		RequestHelper.registerInput("340b9ddb", "relational", "User", "lastName");
+		ValidationHelper.registerInput("340b9ddb", "Textbox 6", true, "กรุณาระบุนามสกุล");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '340b9ddb' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "340b9ddb" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 6 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('30d60c48', "relational", "User", "contactNumber");
-		ValidationHelper.registerInput('30d60c48', "Textbox 7", true, "กรุณาระบุหมายเลขโทรศัพท์");
+		RequestHelper.registerInput("30d60c48", "relational", "User", "contactNumber");
+		ValidationHelper.registerInput("30d60c48", "Textbox 7", true, "กรุณาระบุหมายเลขโทรศัพท์");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '30d60c48' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "30d60c48" + ((i == -1) ? "" : "[" + i + "]"));
     
       // Override data parsing and manipulation of Textbox 7 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('bd78c5c4', "relational", "User", "id");
-		ValidationHelper.registerInput('bd78c5c4', "Hidden 2", false, undefined);
+		RequestHelper.registerInput("bd78c5c4", "relational", "User", "id");
+		ValidationHelper.registerInput("bd78c5c4", "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'bd78c5c4' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, "bd78c5c4" + ((i == -1) ? "" : "[" + i + "]"));
     
     // Override data parsing and manipulation of Hidden 2 here:
     // 
@@ -297,7 +297,7 @@ class Controller extends Base {
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]

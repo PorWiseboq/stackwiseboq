@@ -3,20 +3,20 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../../helpers/ValidationHelper.js';
-import {RequestHelper} from '../../helpers/RequestHelper.js';
-import {RenderHelper} from '../../helpers/RenderHelper.js';
-import {DataTableSchema} from '../../helpers/SchemaHelper.js';
-import {Base} from '../Base.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../../helpers/DatabaseHelper.js";
+import {ValidationInfo, ValidationHelper} from "../../helpers/ValidationHelper.js";
+import {RequestHelper} from "../../helpers/RequestHelper.js";
+import {RenderHelper} from "../../helpers/RenderHelper.js";
+import {DataTableSchema} from "../../helpers/SchemaHelper.js";
+import {Base} from "../Base.js";
 
 // <---Auto[Import]
 
 // Import additional modules here:
 // 
-import {SchemaHelper} from '../../helpers/SchemaHelper.js';
-import {ProjectConfigurationHelper} from '../../helpers/ProjectConfigurationHelper.js';
-import got from 'got';
+import {SchemaHelper} from "../../helpers/SchemaHelper.js";
+import {ProjectConfigurationHelper} from "../../helpers/ProjectConfigurationHelper.js";
+import got from "got";
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -74,7 +74,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    let [action, schema, data] = this.initialize(request);
+	    const [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -129,25 +129,25 @@ class Controller extends Base {
         const json = this.request.body;
         let results: any = null;
         
-        for (let event of json.events) {
+        for (const event of json.events) {
           switch (event.type) {
-            case 'message':
-              if (event.source.type == 'user') {
+            case "message":
+              if (event.source.type == "user") {
                 results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-         		      'User.lineID': event.source.userId
-         		    }), ProjectConfigurationHelper.getDataSchema().tables['User']);
+         		      "User.lineID": event.source.userId
+         		    }), ProjectConfigurationHelper.getDataSchema().tables["User"]);
               }
               
-              if (results && results['User'].rows.length != 0) {
-                let data = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-         		      'Quote.uid': results['User'].rows[0].keys['id'],
-         		      'Quote.filled': null,
-         		      'Quote.Auction.qid': null,
-         		      'Quote.Auction.Store.sid': null
-         		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote']);
+              if (results && results["User"].rows.length != 0) {
+                const data = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+         		      "Quote.uid": results["User"].rows[0].keys["id"],
+         		      "Quote.filled": null,
+         		      "Quote.Auction.qid": null,
+         		      "Quote.Auction.Store.sid": null
+         		    }), ProjectConfigurationHelper.getDataSchema().tables["Quote"]);
                 
-                if (data['Quote'].rows.length == 0) {
-                  await got.post('https://api.line.me/v2/bot/message/reply', {json: {
+                if (data["Quote"].rows.length == 0) {
+                  await got.post("https://api.line.me/v2/bot/message/reply", {json: {
          		        replyToken: event.replyToken,
          		        messages: [{
                       "type": "template",
@@ -165,70 +165,70 @@ class Controller extends Base {
                         }]
                       }
                     }]
-         		      }, responseType: 'json'});
+         		      }, responseType: "json"});
                 } else {
-                  if (data['Quote'].rows[0].relations['Auction'].rows.length == 0) {
-                    await got.post('https://api.line.me/v2/bot/message/reply', {json: {
+                  if (data["Quote"].rows[0].relations["Auction"].rows.length == 0) {
+                    await got.post("https://api.line.me/v2/bot/message/reply", {json: {
            		        replyToken: event.replyToken,
            		        messages: [{
-         		            'type': 'text',
-         		            'text': 'ตอนนี้ยังไม่มีร้านค้าใดยื่นเสนอราคา'
+         		            "type": "text",
+         		            "text": "ตอนนี้ยังไม่มีร้านค้าใดยื่นเสนอราคา"
          		          }]
-           		      }, responseType: 'json'});
+           		      }, responseType: "json"});
                   }
-                  await got.post('https://api.line.me/v2/bot/message/reply', {json: {
+                  await got.post("https://api.line.me/v2/bot/message/reply", {json: {
          		        replyToken: event.replyToken,
          		        messages: [{
                       "type": "template",
                       "template": {
                         "type": "buttons",
                         "text": "กรุณาเลือกว่าจะติดต่อกับร้านค้าไหน:",
-                        "actions": data['Quote'].rows[0].relations['Auction'].rows.map((auction) => {
+                        "actions": data["Quote"].rows[0].relations["Auction"].rows.map((auction) => {
                           return {
                             "type": "postback",
-                            "label": auction.relations['Store'].rows[0].columns['name'],
-                            "data": auction.relations['Store'].rows[0].keys['sid']
-                          }
+                            "label": auction.relations["Store"].rows[0].columns["name"],
+                            "data": auction.relations["Store"].rows[0].keys["sid"]
+                          };
                         })
                       }
                     }]
-         		      }, responseType: 'json'});
+         		      }, responseType: "json"});
                 }
               } else {
                 if (event.message.text.length != 6) {
-                  await got.post('https://api.line.me/v2/bot/message/reply', {json: {
+                  await got.post("https://api.line.me/v2/bot/message/reply", {json: {
          		        replyToken: event.replyToken,
          		        messages: [{
-       		            'type': 'text',
-       		            'text': 'กรุณาพิมพ์หมายเลขอ้างอิง 6 หลัก:'
+       		            "type": "text",
+       		            "text": "กรุณาพิมพ์หมายเลขอ้างอิง 6 หลัก:"
        		          }]
-         		      }, responseType: 'json'});
+         		      }, responseType: "json"});
                 } else {
                   results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-           		      'User.refID': event.message.text.toUpperCase()
-           		    }), ProjectConfigurationHelper.getDataSchema().tables['User']);
+           		      "User.refID": event.message.text.toUpperCase()
+           		    }), ProjectConfigurationHelper.getDataSchema().tables["User"]);
            		    
-           		    if (results && results['User'].rows.length != 0) {
+           		    if (results && results["User"].rows.length != 0) {
            		      results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-             		      'User.id': results['User'].rows[0].keys['id'],
-             		      'User.lineID': event.source.userId
-             		    }), ProjectConfigurationHelper.getDataSchema().tables['User']);
+             		      "User.id": results["User"].rows[0].keys["id"],
+             		      "User.lineID": event.source.userId
+             		    }), ProjectConfigurationHelper.getDataSchema().tables["User"]);
              		    
-             		    await got.post('https://api.line.me/v2/bot/message/reply', {json: {
+             		    await got.post("https://api.line.me/v2/bot/message/reply", {json: {
            		        replyToken: event.replyToken,
            		        messages: [{
-         		            'type': 'text',
-         		            'text': 'ลงทะเบียนเสร็จเรียบร้อยแล้ว'
+         		            "type": "text",
+         		            "text": "ลงทะเบียนเสร็จเรียบร้อยแล้ว"
          		          }]
-           		      }, responseType: 'json'});
+           		      }, responseType: "json"});
            		    } else {
-           		      await got.post('https://api.line.me/v2/bot/message/reply', {json: {
+           		      await got.post("https://api.line.me/v2/bot/message/reply", {json: {
            		        replyToken: event.replyToken,
            		        messages: [{
-         		            'type': 'text',
-         		            'text': 'ไม่พบหมายเลขอ้างอิงดังกล่าว กรุณาพิมพ์ใหม่อีกครั้ง:'
+         		            "type": "text",
+         		            "text": "ไม่พบหมายเลขอ้างอิงดังกล่าว กรุณาพิมพ์ใหม่อีกครั้ง:"
          		          }]
-           		      }, responseType: 'json'});
+           		      }, responseType: "json"});
            		    }
                 }
               }
@@ -341,9 +341,9 @@ class Controller extends Base {
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	let data: Input[] = [];
-  	let input: Input = null;
+  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	const data: Input[] = [];
+  	const input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
@@ -353,7 +353,7 @@ class Controller extends Base {
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]

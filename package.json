@@ -27,6 +27,7 @@
         "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
     },
     "dependencies": {
+        "@line/bot-sdk": "^7.0.0",
         "@types/socket.io": "^2.1.11",
         "async": "^3.1.0",
         "bcrypt-nodejs": "^0.0.3",
@@ -44,7 +45,6 @@
         "express-session": "^1.16.2",
         "express-validator": "^6.2.0",
         "fbgraph": "^1.4.4",
-        "got": "^10.6.0",
         "lodash": "^4.17.15",
         "lusca": "^1.6.1",
         "md5-typescript": "^1.0.5",

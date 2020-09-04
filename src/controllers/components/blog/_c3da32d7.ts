@@ -3,18 +3,18 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../../helpers/ValidationHelper.js';
-import {RequestHelper} from '../../helpers/RequestHelper.js';
-import {RenderHelper} from '../../helpers/RenderHelper.js';
-import {DataTableSchema} from '../../helpers/SchemaHelper.js';
-import {Base} from '../Base.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../../helpers/DatabaseHelper.js";
+import {ValidationInfo, ValidationHelper} from "../../helpers/ValidationHelper.js";
+import {RequestHelper} from "../../helpers/RequestHelper.js";
+import {RenderHelper} from "../../helpers/RenderHelper.js";
+import {DataTableSchema} from "../../helpers/SchemaHelper.js";
+import {Base} from "../Base.js";
 
 // <---Auto[Import]
 
 // Import additional modules here:
 // 
-import {ProjectConfigurationHelper} from '../../helpers/ProjectConfigurationHelper.js';
+import {ProjectConfigurationHelper} from "../../helpers/ProjectConfigurationHelper.js";
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -72,7 +72,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    let [action, schema, data] = this.initialize(request);
+	    const [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -113,11 +113,11 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        const blogs = await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables['Blog']);
+        const blogs = await DatabaseHelper.retrieve(null, ProjectConfigurationHelper.getDataSchema().tables["Blog"]);
  		    
- 		    for (let row of blogs['Blog'].rows) {
- 		      row.columns['body'] = null;
- 		      row.columns['link'] = `/article/${row.keys['bid']}/${row.columns['title'].replace(/[\/ ]+/g, '+')}`;
+ 		    for (const row of blogs["Blog"].rows) {
+ 		      row.columns["body"] = null;
+ 		      row.columns["link"] = `/article/${row.keys["bid"]}/${row.columns["title"].replace(/[\/ ]+/g, "+")}`;
  		    }
  		    
    		  resolve(blogs);
@@ -236,9 +236,9 @@ class Controller extends Base {
 
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	let data: Input[] = [];
-  	let input: Input = null;
+  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	const data: Input[] = [];
+  	const input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
@@ -248,7 +248,7 @@ class Controller extends Base {
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]
