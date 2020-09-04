@@ -14,9 +14,13 @@ import {Base} from "../Base.js";
 
 // Import additional modules here:
 // 
-import {SchemaHelper} from "../../helpers/SchemaHelper.js";
-import {ProjectConfigurationHelper} from "../../helpers/ProjectConfigurationHelper.js";
-import got from "got";
+import {SchemaHelper} from '../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../helpers/ProjectConfigurationHelper.js';
+import line from '@line/bot-sdk';
+
+const client = new line.Client({
+  channelAccessToken: '4874e1491d737db97a3756fbf1e3c0d9'
+});
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -146,39 +150,31 @@ class Controller extends Base {
          		      "Quote.Auction.Store.sid": null
          		    }), ProjectConfigurationHelper.getDataSchema().tables["Quote"]);
                 
-                if (data["Quote"].rows.length == 0) {
-                  await got.post("https://api.line.me/v2/bot/message/reply", {json: {
-         		        replyToken: event.replyToken,
-         		        messages: [{
-                      "type": "template",
-                      "template": {
-                        "type": "buttons",
-                        "text": "กรุณาเลือกสิ่งที่คุณต้องการจะทำ:",
-                        "actions": [{
-                          "type": "uri",
-                          "label": "สืบราคาวัสดุก่อสร้าง",
-                          "uri": "https://www.wiseboq.com/buyer/auction"
-                        }, {
-                          "type": "uri",
-                          "label": "อ่านบทความ",
-                          "uri": "https://www.wiseboq.com/blog/all"
-                        }]
-                      }
-                    }]
-         		      }, responseType: "json"});
+                if (data['Quote'].rows.length == 0) {
+                  await client.replyMessage(event.replyToken, {
+                    "type": "template",
+                    "template": {
+                      "type": "buttons",
+                      "text": "กรุณาเลือกสิ่งที่คุณต้องการจะทำ:",
+                      "actions": [{
+                        "type": "uri",
+                        "label": "สืบราคาวัสดุก่อสร้าง",
+                        "uri": "https://www.wiseboq.com/buyer/auction"
+                      }, {
+                        "type": "uri",
+                        "label": "อ่านบทความ",
+                        "uri": "https://www.wiseboq.com/blog/all"
+                      }]
+                    }
+                  });
                 } else {
-                  if (data["Quote"].rows[0].relations["Auction"].rows.length == 0) {
-                    await got.post("https://api.line.me/v2/bot/message/reply", {json: {
-           		        replyToken: event.replyToken,
-           		        messages: [{
-         		            "type": "text",
-         		            "text": "ตอนนี้ยังไม่มีร้านค้าใดยื่นเสนอราคา"
-         		          }]
-           		      }, responseType: "json"});
-                  }
-                  await got.post("https://api.line.me/v2/bot/message/reply", {json: {
-         		        replyToken: event.replyToken,
-         		        messages: [{
+                  if (data['Quote'].rows[0].relations['Auction'].rows.length == 0) {
+                    await client.replyMessage(event.replyToken, {
+       		            'type': 'text',
+       		            'text': 'ตอนนี้ยังไม่มีร้านค้าใดยื่นเสนอราคา'
+       		          });
+                  } else {
+                    await client.replyMessage(event.replyToken, {
                       "type": "template",
                       "template": {
                         "type": "buttons",
@@ -191,18 +187,15 @@ class Controller extends Base {
                           };
                         })
                       }
-                    }]
-         		      }, responseType: "json"});
+                    });
+                  }
                 }
               } else {
                 if (event.message.text.length != 6) {
-                  await got.post("https://api.line.me/v2/bot/message/reply", {json: {
-         		        replyToken: event.replyToken,
-         		        messages: [{
-       		            "type": "text",
-       		            "text": "กรุณาพิมพ์หมายเลขอ้างอิง 6 หลัก:"
-       		          }]
-         		      }, responseType: "json"});
+                  await client.replyMessage(event.replyToken, {
+     		            'type': 'text',
+     		            'text': 'กรุณาพิมพ์หมายเลขอ้างอิง 6 หลัก:'
+         		      });
                 } else {
                   results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      "User.refID": event.message.text.toUpperCase()
@@ -214,21 +207,15 @@ class Controller extends Base {
              		      "User.lineID": event.source.userId
              		    }), ProjectConfigurationHelper.getDataSchema().tables["User"]);
              		    
-             		    await got.post("https://api.line.me/v2/bot/message/reply", {json: {
-           		        replyToken: event.replyToken,
-           		        messages: [{
-         		            "type": "text",
-         		            "text": "ลงทะเบียนเสร็จเรียบร้อยแล้ว"
-         		          }]
-           		      }, responseType: "json"});
+             		    await client.replyMessage(event.replyToken, {
+       		            'type': 'text',
+       		            'text': 'ลงทะเบียนเสร็จเรียบร้อยแล้ว'
+           		      });
            		    } else {
-           		      await got.post("https://api.line.me/v2/bot/message/reply", {json: {
-           		        replyToken: event.replyToken,
-           		        messages: [{
-         		            "type": "text",
-         		            "text": "ไม่พบหมายเลขอ้างอิงดังกล่าว กรุณาพิมพ์ใหม่อีกครั้ง:"
-         		          }]
-           		      }, responseType: "json"});
+           		      await client.replyMessage(event.replyToken, {
+       		            'type': 'text',
+       		            'text': 'ไม่พบหมายเลขอ้างอิงดังกล่าว กรุณาพิมพ์ใหม่อีกครั้ง:'
+           		      });
            		    }
                 }
               }
