@@ -16312,7 +16312,7 @@
         "                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                        <div class=\"internal-fsb-element col-9 col-sm-10 col-md-11\" internal-fsb-guid=\"4522d52e\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาพิมพ์ข้อความ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"message\" required=\"true\" placeholder=\"ข้อความ\"></div>",
-        "                                        <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d09070d8\" internal-fsb-name=\"Hidden 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"type\" value=\"1\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a4147a38\" internal-fsb-name=\"Hidden 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"aid\" required=\"true\" value=\"{this.getDataFromNotation(&quot;Quote[#i].Auction.aid&quot;)}\" internal-fsb-data-validation-message=\"เหมือนห้องนี้จะถูกระงับบริการ\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-3 col-sm-2 col-md-1 btn btn-primary btn-sm\" internal-fsb-guid=\"a403abac\" internal-fsb-name=\"Button 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" internal-fsb-data-wizard-type=\"insert\" internal-fsb-data-controls=\" 4522d52e a4147a38 d09070d8\">",
+        "                                        <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d09070d8\" internal-fsb-name=\"Hidden 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"type\" value=\"1\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a4147a38\" internal-fsb-name=\"Hidden 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"aid\" required=\"true\" value=\"{this.getDataFromNotation(&quot;Quote.Auction.aid&quot;)}\" internal-fsb-data-validation-message=\"เหมือนห้องนี้จะถูกระงับบริการ\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-3 col-sm-2 col-md-1 btn btn-primary btn-sm\" internal-fsb-guid=\"a403abac\" internal-fsb-name=\"Button 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" internal-fsb-data-wizard-type=\"insert\" internal-fsb-data-controls=\" 4522d52e a4147a38 d09070d8\">",
         "                                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a403abac-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ส่ง</div>",
         "                                        </button>",
         "                                    </div>",
@@ -16964,11 +16964,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d1e0142d",
+        "selectingElementGUID": "9b681ceb",
         "currentCursorWalkPath": [
           "56e4cc4e",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -19856,7 +19856,7 @@
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "e5c0815deb62b26f907e0f772c40fa6ec3c8a5d3",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
-    "Project.Controls.Rectangle_a8055802": "1edd15114bfdacd2e180c1027a0f6694845aef6d"
+    "Project.Controls.Rectangle_a8055802": "992db3b90740d343c749d27092e326d797d80bdd"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "6f3f7d76fa68adb9a44a5632c9a816ccb98c5870",

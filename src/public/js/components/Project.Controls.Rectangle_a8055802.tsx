@@ -111,7 +111,7 @@ class Rectangle_a8055802 extends Base {
                     .internal-fsb-element.col-9.col-sm-10.col-md-11(style={padding: '0px'}, internal-fsb-guid="4522d52e")
                       input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", required=true, placeholder="ข้อความ")
                     input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="d09070d8")
-                    input.internal-fsb-element.col-12(type="hidden", required=true, value=this.getDataFromNotation("Quote[#i].Auction.aid"), internal-fsb-guid="a4147a38")
+                    input.internal-fsb-element.col-12(type="hidden", required=true, value=this.getDataFromNotation("Quote.Auction.aid"), internal-fsb-guid="a4147a38")
                     Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.col-sm-2.col-md-1.btn.btn-primary.btn-sm(onClick=((event) => { window.internalFsbSubmit('a403abac', 'Message', event, ((results) => { this.manipulate('a403abac', 'Message', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="a403abac")
                       .internal-fsb-element(internal-fsb-guid="a403abac-text")
                         | ส่ง
