@@ -137,7 +137,7 @@ class Controller extends Base {
         for (let event of json.events) {
           switch (event.type) {
             case 'postback':
-              if (event.postback.data == list) {
+              if (event.postback.data == 'list') {
                 if (event.source.userId) {
                   results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'User.lineID': event.source.userId
@@ -151,9 +151,9 @@ class Controller extends Base {
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.Store.sid': null
            		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
-         		    
-                  let actions = quoteDataset['Quote'].rows[0].relations['Auction'].rows.map((auction) => {
-                    return {
+                  
+                  for (const auction of quoteDataset['Quote'].rows[0].relations['Auction'].rows) {
+                    await client.replyMessage(event.replyToken, {
                       "type": "template",
                       "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
                       "template": {
@@ -165,11 +165,7 @@ class Controller extends Base {
                           "data": "s" + auction.relations['Store'].rows[0].keys['sid'].toString()
                         }]
                       }
-                    }
-                  });
-                  
-                  for (const action of actions) {
-                    await client.replyMessage(event.replyToken, action);
+                    });
                   }
                 }
                 break;
