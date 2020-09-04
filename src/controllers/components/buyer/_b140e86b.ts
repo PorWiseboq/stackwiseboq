@@ -236,15 +236,9 @@ class Controller extends Base {
            		      });
                   }
                 }
-                break;
               }
+              break;
             case 'message':
-              if (event.source.userId) {
-                results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-         		      'User.lineID': event.source.userId
-         		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
-              }
-              
               if (results && results['User'].rows.length != 0) {
                 await client.replyMessage(event.replyToken, {
                   "type": "template",
