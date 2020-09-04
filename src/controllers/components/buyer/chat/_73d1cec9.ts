@@ -111,7 +111,25 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        resolve(await super.get(data));
+        let userDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+ 		      'User.refID': this.request.params.refID
+ 		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
+     		
+     		if (userDataset['User'].rows.length == 0) {
+     		  this.response.redirect('/');
+     		  resolve({});
+     		} else {
+  			  let quoteData = RequestHelper.createInputs({
+   		      'Quote.filled': null,
+   		      'Quote.uid': userDataset['User'].rows[0].keys['id'],
+   		      'Quote.Auction.aid': this.request.params.aid,
+   		      'Quote.Auction.Message.aid': null
+   		    });
+   		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+   		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+   		    
+   		    resolve(quoteDataset);
+     		}
       } catch(error) {
         reject(error);
       }

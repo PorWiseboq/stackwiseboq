@@ -139,7 +139,7 @@
         "description": null,
         "keywords": null,
         "image": null,
-        "path": "/buyer/chat/:aid",
+        "path": "/buyer/chat/:refID/:aid",
         "state": "update"
       },
       {
@@ -6661,9 +6661,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "8d1ec385",
+        "selectingElementGUID": "4e60b6c9",
         "currentCursorWalkPath": [
-          "25678294",
+          "4996502e",
           0,
           1,
           null
@@ -9900,8 +9900,8 @@
         "            color: rgba(69, 69, 69, 1);",
         "            background: rgba(255, 255, 255, 0);",
         "            padding-top: 5px;",
-        "            padding-left: 5px;",
-        "            padding-right: 5px;",
+        "            padding-left: 15px;",
+        "            padding-right: 15px;",
         "            padding-bottom: 5px;",
         "            -fsb-reusable-name: quote_box_review_detail;",
         "            -fsb-reusable-id: 65ec89d1",
@@ -9936,21 +9936,20 @@
         "            font-size: 13px",
         "        }",
         "",
-        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-8050ab15,",
-        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-preset-8050ab15,",
-        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-self-8050ab15,",
-        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-preset-8050ab15,",
-        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-self-8050ab15,",
-        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-preset-8050ab15,",
-        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-8050ab15,",
-        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-8050ab15 {",
+        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-e51ca172,",
+        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-preset-e51ca172,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-self-e51ca172,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-preset-e51ca172,",
+        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-self-e51ca172,",
+        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-preset-e51ca172,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-e51ca172,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-e51ca172 {",
         "            -fsb-inherited-presets: ;",
         "            -fsb-reusable-name: quote_box_input_subtitle;",
-        "            -fsb-reusable-id: 8050ab15;",
-        "            font-size: 12px;",
+        "            -fsb-reusable-id: e51ca172;",
         "            color: rgba(128, 128, 128, 1);",
-        "            line-height: 16px;",
-        "            padding-top: 5px",
+        "            font-size: 13px;",
+        "            margin-top: 5px",
         "        }",
         "",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-b6c9ad89> :first-child,",
@@ -10304,6 +10303,23 @@
         "            margin-bottom: 15px;",
         "            border-top-style: solid;",
         "            border-top-color: rgba(22, 98, 250, 1)",
+        "        }",
+        "",
+        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-13b0cd97,",
+        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-preset-13b0cd97,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-self-13b0cd97,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-preset-13b0cd97,",
+        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-self-13b0cd97,",
+        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-preset-13b0cd97,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-13b0cd97,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-13b0cd97 {",
+        "            white-space: nowrap;",
+        "            text-overflow: ellipsis;",
+        "            -ms-text-overflow: ellipsis;",
+        "            overflow-x: hidden;",
+        "            -ms-overflow-x: hidden;",
+        "            -fsb-reusable-name: ellipsis_;",
+        "            -fsb-reusable-id: 13b0cd97",
         "        }",
         "",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-16768789,",
@@ -16267,7 +16283,7 @@
       "description": null,
       "keywords": null,
       "image": null,
-      "path": "/buyer/chat/:aid",
+      "path": "/buyer/chat/:refID/:aid",
       "state": "update",
       "head": {
         "fonts": {}
@@ -16276,14 +16292,15 @@
         "<body class=\"\">",
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
-        "            <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"a8055802\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"width: 100vw; height: 100vh; display: flex; flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column\">",
+        "            <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"a8055802\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"width: 100vw; height: 100vh; display: flex; flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column\" internal-fsb-react-mode=\"Document\">",
         "                <div class=\"internal-fsb-element\" internal-fsb-guid=\"41dc9cbd\" internal-fsb-name=\"Rectangle 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"flex-grow: 1; -webkit-flex-grow: 1; overflow-y: auto; -ms-overflow-y: auto; padding-bottom: 10px\">",
-        "                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"56e4cc4e\" internal-fsb-name=\"FlowLayout 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"font-size: 12px; padding-right: 15px; padding-bottom: 7px; padding-left: 15px\">",
+        "                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8d6713e1\" internal-fsb-name=\"TextElement 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; color: rgba(128, 128, 128, 1); margin-top: 7px; margin-bottom: 7px; font-size: 13px\">ไม่มีข้อความถัดจากนี้</div>",
+        "                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"56e4cc4e\" internal-fsb-name=\"FlowLayout 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"font-size: 12px; padding-right: 15px; padding-bottom: 7px; padding-left: 15px\" internal-fsb-react-data=\"Quote.Auction.Message\">",
         "                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8d6713e1\" internal-fsb-name=\"TextElement 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; color: rgba(128, 128, 128, 1); margin-top: 7px; margin-bottom: 7px\">ไม่มีข้อความถัดจากนี้</div>",
-        "                                <div contenteditable=\"true\" class=\"internal-fsb-element col-10\" internal-fsb-guid=\"9b681ceb\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(214, 237, 255, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\">ABC</div>",
-        "                                <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"d1e0142d\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(237, 237, 237, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\">ABC</div>",
+        "",
+        "                                <div contenteditable=\"true\" class=\"internal-fsb-element col-10\" internal-fsb-guid=\"9b681ceb\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(214, 237, 255, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\" internal-fsb-react-data=\"message\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 0) ? 'block' : 'none';]\">ABC</div>",
+        "                                <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"d1e0142d\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(237, 237, 237, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\" internal-fsb-react-data=\"message\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 1) ? 'block' : 'none';]\">ABC</div>",
         "                            </div>",
         "                        </div>",
         "                    </div>",
@@ -16947,16 +16964,29 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a8055802",
+        "selectingElementGUID": "d1e0142d",
         "currentCursorWalkPath": [
-          "be5e6825",
+          "56e4cc4e",
           0,
-          4,
+          2,
           null
         ]
       },
-      "extensions": {},
-      "notations": {}
+      "extensions": {
+        "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\n\n",
+        "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
+        "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
+        "internal-fsb-data-code-body": "\n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        let userDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({\n \t\t      'User.refID': this.request.params.refID\n \t\t    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});\n     \t\t\n     \t\tif (userDataset['User'].rows.length == 0) {\n     \t\t  this.response.redirect('/');\n     \t\t  resolve({});\n     \t\t} else {\n  \t\t\t  let quoteData = RequestHelper.createInputs({\n   \t\t      'Quote.filled': null,\n   \t\t      'Quote.uid': userDataset['User'].rows[0].keys['id'],\n   \t\t      'Quote.Auction.aid': this.request.params.aid,\n   \t\t      'Quote.Auction.Message.aid': null\n   \t\t    });\n   \t\t    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());\n   \t\t    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);\n   \t\t    \n   \t\t    resolve(quoteDataset);\n     \t\t}\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n      try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tthrow new Error(\"Not Implemented Error\");\n        // resolve('/');\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n \t\n  "
+      },
+      "notations": {
+        "Quote": {
+          "Auction": {
+            "Message": {
+              "message": {}
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -19809,7 +19839,7 @@
     "473d370d": "4223fd324552b5c65707bec8e31ea193fe329237",
     "ea2e6d53": "21f3b37bdc31dea87c5a703a60d5129567e838e4",
     "5488072c": "d44858a85cfa7de0f31a67f19bc1eed6dcd60c91",
-    "73d1cec9": "a97abb85cd82b961549892f815e600c82fb8a4b4"
+    "73d1cec9": "8a00458de27d39e00c94fd45923601b3a871fc45"
   },
   "frontEndComponentsBlobSHADict": {
     "Project.Common.NavigationBar": "b7111f3ab75f942e0a0c529c46a5613504077841",
@@ -19825,7 +19855,8 @@
     "Project.Controls.FlowLayout_c6ba5b53": "9714fe2552a84ebd3fc551dfa02d8b30def41495",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "e5c0815deb62b26f907e0f772c40fa6ec3c8a5d3",
-    "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786"
+    "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
+    "Project.Controls.Rectangle_a8055802": "1edd15114bfdacd2e180c1027a0f6694845aef6d"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "6f3f7d76fa68adb9a44a5632c9a816ccb98c5870",
@@ -19836,14 +19867,14 @@
     "65e04a88": "2a36865c8ee33ec392748aef9b72c1751c934e43",
     "7e709334": "4592e35510f0b365811f327910600179634a29ed",
     "6ce794ec": "f7d1673640ebb54bfd8c6590c514d7690846f04e",
-    "9d37c390": "495fad11295ad01e1854b9a2df14f7a4d8872276",
+    "9d37c390": "7aa7a2cd5ed1178142426b05a51e172d5eac6b18",
     "bbc7dba3": "267b2631d09f1a4e0ea12a41e9a1fc1271fa0e9f",
     "c3da32d7": "63e75e4cb0655e8a6c3e1e624e5d43d7117b11e8",
     "8a4a42e4": "48cc7d0cb85f87be53fdcbc59a23b86133379574",
     "473d370d": "f15e9e87ae47cf93c91cacc90f2963f37ee4a01a",
     "ea2e6d53": "1c298b988d1821d1a1e78a9170f3bd6cab7bd62f",
     "5488072c": "1f2478519b683133b16f0d9e0bf9425ede291072",
-    "73d1cec9": "acd9003f78bb82cfb0c3711131f46208f3546a80"
+    "73d1cec9": "914e5384057fe252261ea40ccdca8586db22f945"
   },
   "currentPersistingFiles": [
     "src/controllers/components/index.ts",
@@ -19876,6 +19907,7 @@
     "src/public/js/components/Project.Controls.FlowLayout_db81898d.tsx",
     "src/public/js/components/Project.Controls.FlowLayout_a23ed480.tsx",
     "src/public/js/components/Project.Controls.FlowLayout_84b618a7.tsx",
+    "src/public/js/components/Project.Controls.Rectangle_a8055802.tsx",
     "views/home/authentication/_d1e3b3b3.pug",
     "views/home/index.pug",
     "views/home/buyer/_b140e86b.pug",
