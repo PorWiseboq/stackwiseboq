@@ -198,15 +198,17 @@ class Controller extends Base {
                     }
                   }
                   
-                  await client.replyMessage(event.replyToken, {
-     		            'type': 'text',
-     		            'text': `รายการต่อไปนี้คือร้านค้าทั้งหมดที่กำลังติดต่ออยู่:\n\n${list.join('\n')}`
-         		      });
-         		      
-         		      await client.replyMessage(event.replyToken, {
-     		            'type': 'text',
-     		            'text': `กรุณาพิมพ์รหัสร้านค้าที่ขึ้นต้นด้วย s เพื่อเปิดห้องสนทนา:`
-         		      });
+                  if (list.length != 0) {
+                    await client.replyMessage(event.replyToken, {
+       		            'type': 'text',
+       		            'text': `รายการต่อไปนี้คือร้านค้าทั้งหมดที่กำลังติดต่ออยู่:\n\n${list.join('\n')}\n\nกรุณาพิมพ์รหัสร้านค้าที่ขึ้นต้นด้วย s เพื่อเปิดห้องสนทนา:`
+           		      });
+                  } else {
+                    await client.replyMessage(event.replyToken, {
+       		            'type': 'text',
+       		            'text': `ยังไม่มีร้านค้าใดๆ เสนอราคาและโปรดกรุณาสอบถามใหม่อีกครั้ง`
+           		      });
+                  }
                 } else if (event.postback.data == 'status') {
                   let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'Quote.uid': results['User'].rows[0].keys['id'],
@@ -221,18 +223,18 @@ class Controller extends Base {
            		      if (quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
                       await client.replyMessage(event.replyToken, {
          		            'type': 'text',
-         		            'text': `ตอนนี้มีร้านค้าที่ร่วมยื่นราคา ${quoteDataset['Quote'].rows[0].relations['Auction'].rows.length} ร้านค้า... และพบว่า${time}`
+         		            'text': `ตอนนี้มีร้านค้าที่ร่วมเสนอราคาเป็นจำนวนทั้งสิ้น ${quoteDataset['Quote'].rows[0].relations['Auction'].rows.length} ร้านค้า... และพบว่า${time}`
              		      });
            		      } else {
              		      await client.replyMessage(event.replyToken, {
          		            'type': 'text',
-         		            'text': `ตอนนี้ยังไม่มีร้านค้าใดยื่นราคา... และพบว่า${time}`
+         		            'text': `ตอนนี้ยังไม่มีร้านค้าใดเสนอราคา... และพบว่า${time}`
              		      });
            		      }
                   } else {
                     await client.replyMessage(event.replyToken, {
        		            'type': 'text',
-       		            'text': `คุณยังไม่มีรายการสืบราคาหรือ ว่าการสืบราคาดังกล่าวถูกยกเลิก หรือจ่ายเงินเรียบร้อยแล้ว`
+       		            'text': `คุณยังไม่มีรายการสืบราคา ณ ปัจจุบัน หรือว่าการสืบราคาดังกล่าวได้เสร็จสิ้นเป็นที่เรียบร้อยแล้ว`
            		      });
                   }
                 }
@@ -245,7 +247,7 @@ class Controller extends Base {
                   "altText": "คุณต้องการที่จะทำอะไร?",
                   "template": {
                     "type": "buttons",
-                    "text": "คุณต้องการที่จะทำอะไร?",
+                    "text": "สวัสดี... คุณต้องการที่จะทำอะไร?",
                     "actions": [{
                       "type": "uri",
                       "label": "สืบราคาวัสดุก่อสร้าง",
@@ -282,17 +284,12 @@ class Controller extends Base {
              		      'User.lineID': event.source.userId
              		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], false, {'uid': results['User'].rows[0].keys['id']});
              		    
-             		    await client.replyMessage(event.replyToken, {
-       		            'type': 'text',
-       		            'text': 'ลงทะเบียนเสร็จเรียบร้อยแล้ว'
-           		      });
-           		      
            		      await client.replyMessage(event.replyToken, {
                       "type": "template",
                       "altText": "คุณต้องการที่จะทำอะไร?",
                       "template": {
                         "type": "buttons",
-                        "text": "คุณต้องการที่จะทำอะไร?",
+                        "text": "ลงทะเบียนเสร็จเรียบร้อยแล้ว... คุณต้องการที่จะทำอะไร?",
                         "actions": [{
                           "type": "uri",
                           "label": "สืบราคาวัสดุก่อสร้าง",
