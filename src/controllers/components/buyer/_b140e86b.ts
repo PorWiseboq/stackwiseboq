@@ -14,6 +14,8 @@ import {Base} from '../Base.js';
 
 // Import additional modules here:
 // 
+import {SchemaHelper} from '../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../helpers/ProjectConfigurationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -122,12 +124,119 @@ class Controller extends Base {
   
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-      /* try {
-        resolve(await super.post(data));
+      try {
+        const json = request.body;
+        let results: any = null;
+        
+        for (let event of events) {
+          switch (event.type) {
+            case 'message':
+              if (event.source.type == 'user') {
+                results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+         		      'User.lineID': event.source.userId
+         		    }), ProjectConfigurationHelper.getDataSchema().tables['User']);
+              }
+              
+              if (results && results['User'].rows.length != 0) {
+                let data = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+         		      'Quote.uid': results['User'].rows[0].keys['id'],
+         		      'Quote.filled': null,
+         		      'Quote.Auction.qid': null,
+         		      'Quote.Auction.Store.sid': null
+         		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote']);
+                
+                if (data['Quote'].rows.length == 0) {
+                  await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+         		        replyToken: event.replyToken,
+         		        messages: [{
+                      "type": "template",
+                      "template": {
+                        "type": "buttons",
+                        "text": "กรุณาเลือกสิ่งที่คุณต้องการจะทำ:",
+                        "actions": [{
+                          "type": "uri",
+                          "label": "สืบราคาวัสดุก่อสร้าง",
+                          "uri": "https://www.wiseboq.com/buyer/auction"
+                        }, {
+                          "type": "uri",
+                          "label": "อ่านบทความ",
+                          "uri": "https://www.wiseboq.com/blog/all"
+                        }]
+                      }
+                    }]
+         		      }, 'application/json');
+                } else {
+                  if (data['Quote'].rows[0].relations['Auction'].rows == 0) {
+                    await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+           		        replyToken: event.replyToken,
+           		        messages: [{
+         		            'type': 'text',
+         		            'text': 'ตอนนี้ยังไม่มีร้านค้าใดยื่นเสนอราคา'
+         		          }]
+           		      }, 'application/json');
+                  }
+                  await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+         		        replyToken: event.replyToken,
+         		        messages: [{
+                      "type": "template",
+                      "template": {
+                        "type": "buttons",
+                        "text": "กรุณาเลือกว่าจะติดต่อกับร้านค้าไหน:",
+                        "actions": data['Quote'].rows[0].relations['Auction'].rows.map(auction => {
+                          "type": "postback",
+                          "label": auction.relations['Store'].columns['name'],
+                          "data": auction.relations['Store'].keys['sid']
+                        })
+                      }
+                    }]
+         		      }, 'application/json');
+                }
+              } else {
+                if (event.message.text.length != 6) {
+                  await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+         		        replyToken: event.replyToken,
+         		        messages: [{
+       		            'type': 'text',
+       		            'text': 'กรุณาพิมพ์หมายเลขอ้างอิง 6 หลัก:'
+       		          }]
+         		      }, 'application/json');
+                } else {
+                  results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+           		      'User.refID': event.message.text.toUpperCase()
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['User']);
+           		    
+           		    if (results && results['User'].rows.length != 0) {
+           		      results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+             		      'User.id': results['User'].rows[0].keys['id'],
+             		      'User.lineID': event.source.userId
+             		    }), ProjectConfigurationHelper.getDataSchema().tables['User']);
+             		    
+             		    await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+           		        replyToken: event.replyToken,
+           		        messages: [{
+         		            'type': 'text',
+         		            'text': 'ลงทะเบียนเสร็จเรียบร้อยแล้ว'
+         		          }]
+           		      }, 'application/json');
+           		    } else {
+           		      await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+           		        replyToken: event.replyToken,
+           		        messages: [{
+         		            'type': 'text',
+         		            'text': 'ไม่พบหมายเลขอ้างอิงดังกล่าว กรุณาพิมพ์ใหม่อีกครั้ง:'
+         		          }]
+           		      }, 'application/json');
+           		    }
+                }
+              }
+              break;
+          }
+        }
+        
+        resolve({});
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   

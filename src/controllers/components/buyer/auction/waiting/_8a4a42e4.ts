@@ -128,7 +128,7 @@ class Controller extends Base {
                 'Quote.uid': this.request.session.uid,
                 'Quote.User.id': null
               });
-              let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session);
+              let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session, true);
               
               if (results['Quote'].rows.length != 0) {
                 if (results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] == null) {
