@@ -128,6 +128,45 @@ class Controller extends Base {
     });
   }
   
+  private getShortRemainingTime(createdAt: string, hoursChecked: boolean, auctionHours: number): string {
+    if (isNaN(auctionHours)) auctionHours = 24;
+    
+    const remaining = Math.max(0, new Date(createdAt).getTime() + ((hoursChecked && !isNaN(auctionHours)) ? auctionHours : 24) * 60 * 60 * 1000 - new Date().getTime());
+    let seconds = remaining / 1000;
+    let minutes = seconds / 60;
+    let hours = minutes / 60;
+    
+    seconds = Math.floor(seconds) % 60;
+    minutes = Math.floor(minutes) % 60;
+    hours = Math.floor(hours);
+    
+    let _seconds = '';
+    let _minutes = '';
+    let _hours = '';
+    
+    if (seconds < 10) _seconds = '0' + seconds;
+    else _seconds = seconds.toString();
+    
+    if (minutes < 10) _minutes = '0' + minutes;
+    else _minutes = minutes.toString();
+    
+    if (hours < 10) _hours = '0' + hours;
+    else _hours = hours.toString();
+    
+    return `${_hours}:${_minutes}:${_seconds}`;
+  }
+  
+  private getLongRemainingTime(createdAt: string, hoursChecked: boolean, auctionHours: number): string {
+    const remaining = this.getShortRemainingTime(createdAt, hoursChecked, auctionHours);
+    
+    if (remaining == '00:00:00') {
+      return 'การประมูลสิ้นสุดลงแล้ว';
+    } else {
+      const splited = remaining.split(':');
+      return `กำลังประมูล.. รออีกประมาณ ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
+    }
+  }
+  
   protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -135,16 +174,16 @@ class Controller extends Base {
         let results: any = null;
         
         for (let event of json.events) {
+          if (event.source.userId) {
+            results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+     		      'User.lineID': event.source.userId
+     		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
+          }
+          
           switch (event.type) {
             case 'postback':
-              if (event.postback.data == 'list') {
-                if (event.source.userId) {
-                  results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-           		      'User.lineID': event.source.userId
-           		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
-                }
-                
-                if (results && results['User'].rows.length != 0) {
+              if (results && results['User'].rows.length != 0) {
+                if (event.postback.data == 'list') {
                   let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'Quote.uid': results['User'].rows[0].keys['id'],
            		      'Quote.filled': null,
@@ -152,20 +191,49 @@ class Controller extends Base {
            		      'Quote.Auction.Store.sid': null
            		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
                   
-                  for (const auction of quoteDataset['Quote'].rows[0].relations['Auction'].rows) {
+                  let list = [];
+                  if (quoteDataset['Quote'].rows.length != 0) {
+                    for (const auction of quoteDataset['Quote'].rows[0].relations['Auction'].rows) {
+                      list.push(`รหัส s${auction.relations['Store'].rows[0].keys['sid']} ร้าน ${auction.relations['Store'].rows[0].columns['name']}`);
+                    }
+                  }
+                  
+                  await client.replyMessage(event.replyToken, {
+     		            'type': 'text',
+     		            'text': `รายการต่อไปนี้คือร้านค้าทั้งหมดที่กำลังติดต่ออยู่:\n\n${list.join('\n')}`
+         		      });
+         		      
+         		      await client.replyMessage(event.replyToken, {
+     		            'type': 'text',
+     		            'text': `กรุณาพิมพ์รหัสร้านค้าที่ขึ้นต้นด้วย s เพื่อเปิดห้องสนทนา:`
+         		      });
+                } else if (event.postback.data == 'status') {
+                  let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+           		      'Quote.uid': results['User'].rows[0].keys['id'],
+           		      'Quote.filled': null,
+           		      'Quote.Auction.qid': null,
+           		      'Quote.Auction.Store.sid': null
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
+           		    
+           		    if (quoteDataset['Quote'].rows.length != 0) {
+           		      const time = this.getLongRemainingTime(quoteDataset['Quote'].rows[0].columns['createdAt'], quoteDataset['Quote'].rows[0].columns['hourChecked'], quoteDataset['Quote'].rows[0].columns['hours']);
+           		      
+           		      if (quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
+                      await client.replyMessage(event.replyToken, {
+         		            'type': 'text',
+         		            'text': `ตอนนี้มีร้านค้าที่ร่วมยื่นราคา ${quoteDataset['Quote'].rows[0].relations['Auction'].rows.length} ร้านค้าและพบว่า${time}`
+             		      });
+           		      } else {
+             		      await client.replyMessage(event.replyToken, {
+         		            'type': 'text',
+         		            'text': `ตอนนี้ยังไม่มีร้านค้าใดยื่นราคาและพบว่า${time}`
+             		      });
+           		      }
+                  } else {
                     await client.replyMessage(event.replyToken, {
-                      "type": "template",
-                      "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
-                      "template": {
-                        "type": "buttons",
-                        "text": `ร้าน ${auction.relations['Store'].rows[0].columns['name']}`,
-                        "actions": [{
-                          "type": "postback",
-                          "label": "คุยกับตัวแทนของร้าน",
-                          "data": "s" + auction.relations['Store'].rows[0].keys['sid'].toString()
-                        }]
-                      }
-                    });
+       		            'type': 'text',
+       		            'text': `คุณยังไม่มีรายการสืบราคาหรือ ว่าการสืบราคาดังกล่าวถูกยกเลิก หรือจ่ายเงินเรียบร้อยแล้ว`
+           		      });
                   }
                 }
                 break;
@@ -178,74 +246,31 @@ class Controller extends Base {
               }
               
               if (results && results['User'].rows.length != 0) {
-                let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-         		      'Quote.uid': results['User'].rows[0].keys['id'],
-         		      'Quote.filled': null,
-         		      'Quote.Auction.qid': null,
-         		      'Quote.Auction.Store.sid': null
-         		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
-                
-                if (quoteDataset['Quote'].rows.length == 0) {
-                  await client.replyMessage(event.replyToken, {
-                    "type": "template",
-                    "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
-                    "template": {
-                      "type": "buttons",
-                      "text": "เนื่องจากตอนนี้คุณยังไม่มีรายการใดๆ ที่กำลังสืบราคาอยู่ กรุณาเลือกสิ่งอื่นๆ ที่ต้องการจะทำ",
-                      "actions": [{
-                        "type": "uri",
-                        "label": "สืบราคาวัสดุก่อสร้าง",
-                        "uri": "https://www.wiseboq.com/buyer/auction"
-                      }, {
-                        "type": "uri",
-                        "label": "อ่านบทความ",
-                        "uri": "https://www.wiseboq.com/blog/all"
-                      }, {
-                        "type": "postback",
-                        "label": "ขอสถานะล่าสุด",
-                        "data": "refresh"
-                      }]
-                    }
-                  });
-                } else {
-                  if (quoteDataset['Quote'].rows[0].relations['Auction'].rows.length == 0) {
-                    await client.replyMessage(event.replyToken, {
-                      "type": "template",
-                      "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
-                      "template": {
-                        "type": "buttons",
-                        "text": "เนื่องจากตอนนี้คุณมีรายการที่กำลังสืบราคาอยู่แต่ยังไม่มีร้านค้าใดยื่นเสนอราคา กรุณาเลือกสิ่งอื่นๆ ที่ต้องการจะทำ",
-                        "actions": [{
-                          "type": "uri",
-                          "label": "อ่านบทความ",
-                          "uri": "https://www.wiseboq.com/blog/all"
-                        }, {
-                          "type": "postback",
-                          "label": "ขอสถานะล่าสุด",
-                          "data": "refresh"
-                        }]
-                      }
-                    });
-                  } else {
-                    await client.replyMessage(event.replyToken, {
-                      "type": "template",
-                      "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
-                      "template": {
-                        "type": "buttons",
-                        "text": "เนื่องจากตอนนี้คุณมีรายการที่กำลังสืบราคาอยู่ กรุณาเลือกว่าจะติดต่อกับร้านค้าไหน",
-                        "actions": [{
-                          "type": "postback",
-                          "label": "แสดงรายชื่อร้านค้าทั้งหมด",
-                          "data": "list"
-                        }, {
-                          "type": "postback",
-                          "label": "ขอสถานะล่าสุด",
-                          "data": "refresh"
-                        }]
-                      }
-                    });
+                await client.replyMessage(event.replyToken, {
+                  "type": "template",
+                  "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
+                  "template": {
+                    "type": "buttons",
+                    "text": "เนื่องจากตอนนี้คุณยังไม่มีรายการใดๆ ที่กำลังสืบราคาอยู่ กรุณาเลือกสิ่งอื่นๆ ที่ต้องการจะทำ",
+                    "actions": [{
+                      "type": "uri",
+                      "label": "สืบราคาวัสดุก่อสร้างผ่านเว็บไซต์",
+                      "uri": "https://www.wiseboq.com/buyer/auction"
+                    }, {
+                      "type": "uri",
+                      "label": "อ่านบทความล่าสุด",
+                      "uri": "https://www.wiseboq.com/blog/all"
+                    }, {
+                      "type": "postback",
+                      "label": "ติดต่อร้านค้าวัสดุก่อสร้าง",
+                      "data": "list"
+                    }, {
+                      "type": "postback",
+                      "label": "ขอทราบสถานะล่าสุด",
+                      "data": "status"
+                    }]
                   }
-                }
+                });
               } else {
                 if (event.message.text.length != 6) {
                   await client.replyMessage(event.replyToken, {
