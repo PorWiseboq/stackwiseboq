@@ -242,31 +242,62 @@ class Controller extends Base {
               break;
             case 'message':
               if (results && results['User'].rows.length != 0) {
-                await client.replyMessage(event.replyToken, {
-                  "type": "template",
-                  "altText": "คุณต้องการที่จะทำอะไร?",
-                  "template": {
-                    "type": "buttons",
-                    "text": "สวัสดี... คุณต้องการที่จะทำอะไร?",
-                    "actions": [{
-                      "type": "uri",
-                      "label": "สืบราคาวัสดุก่อสร้าง",
-                      "uri": "https://www.wiseboq.com/buyer/auction"
-                    }, {
-                      "type": "uri",
-                      "label": "อ่านบทความล่าสุด",
-                      "uri": "https://www.wiseboq.com/blog/all"
-                    }, {
-                      "type": "postback",
-                      "label": "ติดต่อร้านค้าวัสดุก่อสร้าง",
-                      "data": "list"
-                    }, {
-                      "type": "postback",
-                      "label": "ขอทราบสถานะล่าสุด",
-                      "data": "status"
-                    }]
+                if (event.message.text.toLowerCase().trim()[0] == 's') {
+                  const sid = parseInt(event.message.text);
+                  const quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+           		      'Quote.uid': results['User'].rows[0].keys['id'],
+           		      'Quote.filled': null,
+           		      'Quote.Auction.sid': sid,
+           		      'Quote.Auction.Store.sid': sid
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
+                  
+                  if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
+                    await client.replyMessage(event.replyToken, {
+                      "type": "template",
+                      "altText": `ร้าน ${quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].relations['Store'].rows[0].columns['name']}`,
+                      "template": {
+                        "type": "buttons",
+                        "text": "",
+                        "actions": [{
+                          "type": "uri",
+                          "label": "เปิดห้องคุย",
+                          "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']}`
+                        }]
+                      }
+                    });
+                  } else {
+                    await client.replyMessage(event.replyToken, {
+       		            'type': 'text',
+       		            'text': `เหมือนว่าคุณจะพิมพ์รหัสนอกเหนือไปจากที่มี กรุณาลองดูอีกครั้ง`
+           		      });
                   }
-                });
+                } else {
+                  await client.replyMessage(event.replyToken, {
+                    "type": "template",
+                    "altText": "คุณต้องการที่จะทำอะไร?",
+                    "template": {
+                      "type": "buttons",
+                      "text": "สวัสดี... คุณต้องการที่จะทำอะไร?",
+                      "actions": [{
+                        "type": "uri",
+                        "label": "สืบราคาวัสดุก่อสร้าง",
+                        "uri": "https://www.wiseboq.com/buyer/auction"
+                      }, {
+                        "type": "uri",
+                        "label": "อ่านบทความล่าสุด",
+                        "uri": "https://www.wiseboq.com/blog/all"
+                      }, {
+                        "type": "postback",
+                        "label": "ติดต่อร้านค้าวัสดุก่อสร้าง",
+                        "data": "list"
+                      }, {
+                        "type": "postback",
+                        "label": "ขอทราบสถานะล่าสุด",
+                        "data": "status"
+                      }]
+                    }
+                  });
+                }
               } else {
                 if (event.message.text.length != 6) {
                   await client.replyMessage(event.replyToken, {

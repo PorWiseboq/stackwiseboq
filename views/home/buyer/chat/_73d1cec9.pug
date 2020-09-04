@@ -7,15 +7,15 @@ html
   head
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title.
-      #{headers && headers.title || 'Admin - เขียนบล็อก'}
+      #{headers && headers.title || 'คุยกับร้านค้า'}
     meta(name="description" content=headers && headers.description || '')
     meta(name="keywords" content=headers && headers.keywords || '')
     meta(http-equiv="content-language" content=headers && headers.language || 'en')
     meta(http-equiv="content-type" content=headers && headers.contentType || 'UTF-8')
     meta(name="revisit-after" content=headers && headers.revisitAfter || '7 days')
     meta(name="robots" content=headers && headers.robots || 'index, follow')
-    meta(property="og:title" content=headers && headers.title || 'Admin - เขียนบล็อก')
-    meta(property="og:url" content=headers && headers.linkUrl || '/blog/admin/:id')
+    meta(property="og:title" content=headers && headers.title || 'คุยกับร้านค้า')
+    meta(property="og:url" content=headers && headers.linkUrl || '/buyer/chat/:refID/:aid')
     meta(property="og:image" content=headers && headers.imageUrl || '')
     meta(property="og:type" content=headers && headers.itemType || 'website')
     meta(property="og:description" content=headers && headers.description || '')
@@ -28,11 +28,7 @@ html
     
     .container-fluid.internal-fsb-begin(internal-fsb-guid="0")
       .row.internal-fsb-strict-layout.internal-fsb-begin-layout
-        span(internal-fsb-init-class="Project.Common.NavigationBar" internal-fsb-init-forward="{'classes': 'col-12', 'styles': {}}")
-        .internal-fsb-element.col-10.offset-1.-fsb-preset-16768789(style={'font-weight': 'bold', 'margin-bottom': '10px', 'font-size': '18px', 'margin-top': '30px', '-fsb-inherited-presets': '16768789'}, internal-fsb-guid="3ad97347")
-          | เขียนบล็อก
-        span(internal-fsb-init-class="Project.Controls.FlowLayout_d58ae925")
-        span(internal-fsb-init-class="Project.Common.Footer" internal-fsb-init-forward="{'classes': 'col-10 offset-1', 'styles': {'margin-top': '30px'}}")
+        span(internal-fsb-init-class="Project.Controls.Rectangle_a8055802")
     script(type="text/javascript" src="/js/Embed.bundle.js")
     script(type="text/javascript").
       var Controller = /** @class */ (function () {

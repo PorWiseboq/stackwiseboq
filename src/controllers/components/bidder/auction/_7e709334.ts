@@ -642,7 +642,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('8d1ec385', "relational", "Message", "message");
-		ValidationHelper.registerInput('8d1ec385', "Textbox 1", false, undefined);
+		ValidationHelper.registerInput('8d1ec385', "Textbox 1", true, "กรุณาพิมพ์ข้อความ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '8d1ec385' + ((i == -1) ? '' : '[' + i + ']'));
     
