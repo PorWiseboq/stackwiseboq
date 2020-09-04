@@ -16,6 +16,7 @@ import Componentb140e86b from "./components/buyer/_b140e86b.js";
 import Component65e04a88 from "./components/buyer/auction/_65e04a88.js";
 import Component473d370d from "./components/buyer/auction/results/_473d370d.js";
 import Component8a4a42e4 from "./components/buyer/auction/waiting/_8a4a42e4.js";
+import Component73d1cec9 from "./components/buyer/chat/_73d1cec9.js";
 import Componentbbc7dba3 from "./components/error/_bbc7dba3.js";
 
 export const index = (req: Request, res: Response) => {
@@ -59,6 +60,9 @@ export const _473d370d = (req: Request, res: Response) => {
 }
 export const _8a4a42e4 = (req: Request, res: Response) => {
 	new Component8a4a42e4(req, res, "home/buyer/auction/waiting/_8a4a42e4");
+}
+export const _73d1cec9 = (req: Request, res: Response) => {
+	new Component73d1cec9(req, res, "home/buyer/chat/_73d1cec9");
 }
 export const _bbc7dba3 = (req: Request, res: Response) => {
 	new Componentbbc7dba3(req, res, "home/error/_bbc7dba3");
