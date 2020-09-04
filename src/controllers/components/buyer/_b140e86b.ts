@@ -16,6 +16,7 @@ import {Base} from '../Base.js';
 // 
 import {SchemaHelper} from '../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../helpers/ProjectConfigurationHelper.js';
+import got from 'got';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -146,7 +147,7 @@ class Controller extends Base {
          		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote']);
                 
                 if (data['Quote'].rows.length == 0) {
-                  await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+                  await got.post('https://api.line.me/v2/bot/message/reply', {json: {
          		        replyToken: event.replyToken,
          		        messages: [{
                       "type": "template",
@@ -164,18 +165,18 @@ class Controller extends Base {
                         }]
                       }
                     }]
-         		      }, 'application/json');
+         		      }, responseType: 'json'});
                 } else {
                   if (data['Quote'].rows[0].relations['Auction'].rows.length == 0) {
-                    await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+                    await got.post('https://api.line.me/v2/bot/message/reply', {json: {
            		        replyToken: event.replyToken,
            		        messages: [{
          		            'type': 'text',
          		            'text': 'ตอนนี้ยังไม่มีร้านค้าใดยื่นเสนอราคา'
          		          }]
-           		      }, 'application/json');
+           		      }, responseType: 'json'});
                   }
-                  await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+                  await got.post('https://api.line.me/v2/bot/message/reply', {json: {
          		        replyToken: event.replyToken,
          		        messages: [{
                       "type": "template",
@@ -191,17 +192,17 @@ class Controller extends Base {
                         })
                       }
                     }]
-         		      }, 'application/json');
+         		      }, responseType: 'json'});
                 }
               } else {
                 if (event.message.text.length != 6) {
-                  await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+                  await got.post('https://api.line.me/v2/bot/message/reply', {json: {
          		        replyToken: event.replyToken,
          		        messages: [{
        		            'type': 'text',
        		            'text': 'กรุณาพิมพ์หมายเลขอ้างอิง 6 หลัก:'
        		          }]
-         		      }, 'application/json');
+         		      }, responseType: 'json'});
                 } else {
                   results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'User.refID': event.message.text.toUpperCase()
@@ -213,21 +214,21 @@ class Controller extends Base {
              		      'User.lineID': event.source.userId
              		    }), ProjectConfigurationHelper.getDataSchema().tables['User']);
              		    
-             		    await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+             		    await got.post('https://api.line.me/v2/bot/message/reply', {json: {
            		        replyToken: event.replyToken,
            		        messages: [{
          		            'type': 'text',
          		            'text': 'ลงทะเบียนเสร็จเรียบร้อยแล้ว'
          		          }]
-           		      }, 'application/json');
+           		      }, responseType: 'json'});
            		    } else {
-           		      await RequestHelper.post('https://api.line.me/v2/bot/message/reply', {
+           		      await got.post('https://api.line.me/v2/bot/message/reply', {json: {
            		        replyToken: event.replyToken,
            		        messages: [{
          		            'type': 'text',
          		            'text': 'ไม่พบหมายเลขอ้างอิงดังกล่าว กรุณาพิมพ์ใหม่อีกครั้ง:'
          		          }]
-           		      }, 'application/json');
+           		      }, responseType: 'json'});
            		    }
                 }
               }
