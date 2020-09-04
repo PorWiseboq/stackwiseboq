@@ -242,13 +242,13 @@ class Controller extends Base {
               if (results && results['User'].rows.length != 0) {
                 await client.replyMessage(event.replyToken, {
                   "type": "template",
-                  "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
+                  "altText": "คุณต้องการที่จะทำอะไร?",
                   "template": {
                     "type": "buttons",
-                    "text": "เนื่องจากตอนนี้คุณยังไม่มีรายการใดๆ ที่กำลังสืบราคาอยู่ กรุณาเลือกสิ่งอื่นๆ ที่ต้องการจะทำ",
+                    "text": "คุณต้องการที่จะทำอะไร?",
                     "actions": [{
                       "type": "uri",
-                      "label": "สืบราคาวัสดุก่อสร้างผ่านเว็บไซต์",
+                      "label": "สืบราคาวัสดุก่อสร้าง",
                       "uri": "https://www.wiseboq.com/buyer/auction"
                     }, {
                       "type": "uri",
@@ -287,7 +287,31 @@ class Controller extends Base {
        		            'text': 'ลงทะเบียนเสร็จเรียบร้อยแล้ว'
            		      });
            		      
-           		      await this.post(data);
+           		      await client.replyMessage(event.replyToken, {
+                      "type": "template",
+                      "altText": "คุณต้องการที่จะทำอะไร?",
+                      "template": {
+                        "type": "buttons",
+                        "text": "คุณต้องการที่จะทำอะไร?",
+                        "actions": [{
+                          "type": "uri",
+                          "label": "สืบราคาวัสดุก่อสร้าง",
+                          "uri": "https://www.wiseboq.com/buyer/auction"
+                        }, {
+                          "type": "uri",
+                          "label": "อ่านบทความล่าสุด",
+                          "uri": "https://www.wiseboq.com/blog/all"
+                        }, {
+                          "type": "postback",
+                          "label": "ติดต่อร้านค้าวัสดุก่อสร้าง",
+                          "data": "list"
+                        }, {
+                          "type": "postback",
+                          "label": "ขอทราบสถานะล่าสุด",
+                          "data": "status"
+                        }]
+                      }
+                    });
            		    } else {
            		      await client.replyMessage(event.replyToken, {
        		            'type': 'text',
