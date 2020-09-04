@@ -16,6 +16,7 @@ import {Base} from '../../../Base.js';
 // 
 import {ProjectConfigurationHelper} from "../../../../helpers/ProjectConfigurationHelper.js";
 import {RelationalDatabaseClient} from "../../../../helpers/ConnectionHelper.js";
+import crypto from 'crypto';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -124,11 +125,25 @@ class Controller extends Base {
             try {
               let schemata = ProjectConfigurationHelper.getDataSchema();
               let inputs = RequestHelper.createInputs({
-                'Quote.uid': this.request.session.uid
+                'Quote.uid': this.request.session.uid,
+                'Quote.User.id': null
               });
               let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session);
               
               if (results['Quote'].rows.length != 0) {
+                if (results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] == null) {
+                  let md5Code = results['Quote'].rows[0].relations['User'].rows[0].keys['id'].toString();
+                  md5Code = crypto.createHash('md5').update(md5Code).digest('hex').substring(0, 6).toUpperCase();
+                  
+                  inputs = RequestHelper.createInputs({
+                    'User.id': this.request.session.uid,
+                    'User.refID': md5Code
+                  });
+                  await DatabaseHelper.update(inputs, schemata.tables['User'], false, this.request.session);
+                  
+                  results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] = md5Code;
+                }
+                
                 if (results['Quote'].rows[0].columns['status'] == 2) {
                   this.response.redirect('/buyer/auction/results');
                 } else {

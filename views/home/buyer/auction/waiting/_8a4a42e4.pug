@@ -42,6 +42,10 @@ html
                 | LINE
               .internal-fsb-element.col-4.offset-4(style={'margin-top': '15px', 'text-align': 'center', 'font-size': '13px', 'color': 'rgba(88, 181, 53, 1)', 'border-top-color': 'rgba(88, 181, 53, 1)', 'border-top-style': 'solid', 'border-left-color': 'rgba(88, 181, 53, 1)', 'border-left-style': 'solid', 'border-right-style': 'solid', 'border-right-color': 'rgba(88, 181, 53, 1)', 'border-bottom-style': 'solid', 'border-bottom-color': 'rgba(88, 181, 53, 1)', 'padding-top': '5px', 'padding-left': '10px', 'padding-right': '10px', 'padding-bottom': '5px', 'border-left-width': '1px', 'border-right-width': '1px', 'border-top-width': '1px', 'border-bottom-width': '1px'}, internal-fsb-guid="869435a7")
                 | กรุณาเตรียมใช้ LINE เพื่อโต้ตอบคำถามกับเจ้าของร้านค้าวัสดุก่อสร้างโดยสแกน QR Code ทางด้านบน
+              .internal-fsb-element.col-4.offset-4(style={'color': 'rgba(88, 181, 53, 1)', 'text-align': 'center', 'font-size': '14px', 'margin-top': '10px', 'font-weight': 'bold'}, internal-fsb-guid="98453007")
+                | หมายเลขอ้างอิง
+              .internal-fsb-element.col-4.offset-4(style={'text-align': 'center', 'color': 'rgba(88, 181, 53, 1)', 'margin-top': '5px', 'font-weight': 'bold'}, internal-fsb-guid="e783dd10")
+                | #{DataManipulationHelper.getDataFromNotation('Quote.User.refID')}
         span(internal-fsb-init-class="Project.Common.Footer" internal-fsb-init-forward="{'classes': 'col-10 offset-1', 'styles': {'margin-top': '30px'}}")
     script(type="text/javascript" src="/js/Embed.bundle.js")
     script(type="text/javascript").
