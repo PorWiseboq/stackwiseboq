@@ -3,20 +3,20 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../../../helpers/DatabaseHelper.js";
-import {ValidationInfo, ValidationHelper} from "../../../helpers/ValidationHelper.js";
-import {RequestHelper} from "../../../helpers/RequestHelper.js";
-import {RenderHelper} from "../../../helpers/RenderHelper.js";
-import {DataTableSchema} from "../../../helpers/SchemaHelper.js";
-import {Base} from "../../Base.js";
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../../../helpers/ValidationHelper.js';
+import {RequestHelper} from '../../../helpers/RequestHelper.js';
+import {RenderHelper} from '../../../helpers/RenderHelper.js';
+import {DataTableSchema} from '../../../helpers/SchemaHelper.js';
+import {Base} from '../../Base.js';
 
 // <---Auto[Import]
 
 // Import additional modules here:
 // 
-import {SchemaHelper} from "../../../helpers/SchemaHelper.js";
-import {ProjectConfigurationHelper} from "../../../helpers/ProjectConfigurationHelper.js";
-import {RelationalDatabaseClient} from "../../../helpers/ConnectionHelper.js";
+import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
+import {RelationalDatabaseClient} from '../../../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -74,7 +74,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    const [action, schema, data] = this.initialize(request);
+	    let [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -117,52 +117,52 @@ class Controller extends Base {
  		return new Promise(async (resolve, reject) => {
  		  try {
         if (!this.request.session || !this.request.session.uid) {
-          this.response.redirect("/authentication");
+          this.response.redirect('/authentication');
         } else {
           RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
 WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
             try {
-              const schemata = ProjectConfigurationHelper.getDataSchema();
-              const inputs = RequestHelper.createInputs({
-                "Store.oid": this.request.session.uid
+              let schemata = ProjectConfigurationHelper.getDataSchema();
+              let inputs = RequestHelper.createInputs({
+                'Store.oid': this.request.session.uid
               });
-              const results = await DatabaseHelper.retrieve(inputs, schemata.tables["Store"], this.request.session);
+              let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
               
-              if (results["Store"].rows.length == 0) {
-                this.response.redirect("/authentication/role/bidder");
+              if (results['Store'].rows.length == 0) {
+                this.response.redirect('/authentication/role/bidder');
               } else {
-                this.request.session.sid = results["Store"].rows[0].keys["sid"];
+                this.request.session.sid = results['Store'].rows[0].keys['sid'];
                 this.request.session.save(async () => {
-        				  const quoteData = RequestHelper.createInputs({
-           		      "Quote.status": 1,
-           		      "Quote.Auction.qid": null,
-           		      "Quote.Auction.sid": this.request.session.sid,
-           		      "Quote.Auction.Message.aid": null,
-           		      "Quote.Auction.Substitute.aid": null
+        				  let quoteData = RequestHelper.createInputs({
+           		      'Quote.status': 1,
+           		      'Quote.Auction.qid': null,
+           		      'Quote.Auction.sid': this.request.session.sid,
+           		      'Quote.Auction.Message.aid': null,
+           		      'Quote.Auction.Substitute.aid': null
            		    });
-           		    const quote = SchemaHelper.getDataTableSchemaFromNotation("Quote", ProjectConfigurationHelper.getDataSchema());
-           		    const quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+           		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+           		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
            		    
-           		    const listingData = RequestHelper.createInputs({
-           		      "Listing.qid": (quoteDataset["Quote"].rows.length == 0) ? null : quoteDataset["Quote"].rows[0].keys["qid"]
+           		    let listingData = RequestHelper.createInputs({
+           		      'Listing.qid': (quoteDataset['Quote'].rows.length == 0) ? null : quoteDataset['Quote'].rows[0].keys['qid']
            		    });
-           		    const listing = SchemaHelper.getDataTableSchemaFromNotation("Listing", ProjectConfigurationHelper.getDataSchema());
-           		    const listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
+           		    let listing = SchemaHelper.getDataTableSchemaFromNotation('Listing', ProjectConfigurationHelper.getDataSchema());
+           		    let listingDataset = await DatabaseHelper.retrieve(listingData, listing, this.request.session, true);
            		    
-           		    for (let i=0; i<quoteDataset["Quote"].rows.length; i++) {
+           		    for (let i=0; i<quoteDataset['Quote'].rows.length; i++) {
            		      if (i == 0) {
-             		      quoteDataset["Quote"].rows[i].relations["Listing"] = listingDataset["Listing"];
+             		      quoteDataset['Quote'].rows[i].relations['Listing'] = listingDataset['Listing'];
              		    } else {
-             		      quoteDataset["Quote"].rows[i].relations["Listing"] = {
+             		      quoteDataset['Quote'].rows[i].relations['Listing'] = {
              		        source: SourceType.Relational,
-                      	group: "Listing",
+                      	group: 'Listing',
                         rows: []
              		      };
              		    }
            		    }
            		    
-           		    const rank = SchemaHelper.getDataTableSchemaFromNotation("Rank", ProjectConfigurationHelper.getDataSchema());
-           		    const rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
+           		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+           		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
            		    
            		    resolve(Object.assign({}, quoteDataset, rankDataset));
         			  });
@@ -214,7 +214,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
       try {
-      	const options = RequestHelper.getOptions(this.pageId, this.request);
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
@@ -225,7 +225,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
     	try {
-      	const options = RequestHelper.getOptions(this.pageId, this.request);
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
@@ -236,40 +236,40 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
     	try {
-        if (schema && schema.group == "Auction") {
-          const auctionData = data.filter(input => input.name == "qid" || input.name == "sid");
-   		    const auction = SchemaHelper.getDataTableSchemaFromNotation("Auction", ProjectConfigurationHelper.getDataSchema());
-   		    const auctionDataset = await DatabaseHelper.retrieve(auctionData, auction, this.request.session, true);
+        if (schema && schema.group == 'Auction') {
+          let auctionData = data.filter(input => input.name == 'qid' || input.name == 'sid');
+   		    let auction = SchemaHelper.getDataTableSchemaFromNotation('Auction', ProjectConfigurationHelper.getDataSchema());
+   		    let auctionDataset = await DatabaseHelper.retrieve(auctionData, auction, this.request.session, true);
    		    
-          const priceData = data.filter(input => input.name == "price" && input.group == "Auction");
-          const price = parseFloat(priceData[0].value);
+          let priceData = data.filter(input => input.name == 'price' && input.group == 'Auction');
+          let price = parseFloat(priceData[0].value);
           
           if (isNaN(price)) {
-            throw new Error("กรุณากรอกราคาต่อหน่วยให้ครบ");
+            throw new Error('กรุณากรอกราคาต่อหน่วยให้ครบ');
           }
           
           if (price <= 0) {
-            throw new Error("กรุณาเสนอราคาที่สูงกว่าศูนย์บาท");
+            throw new Error('กรุณาเสนอราคาที่สูงกว่าศูนย์บาท');
           }
           
-          if (auctionDataset["Auction"].rows.length != 0 && (price + 100) > auctionDataset["Auction"].rows[0].columns["price"]) {
-            throw new Error("กรุณาเสนอราคาใหม่ที่ต่ำกว่าราคาเดิมอย่างน้อย 100 บาท");
+          if (auctionDataset['Auction'].rows.length != 0 && (price + 100) > auctionDataset['Auction'].rows[0].columns['price']) {
+            throw new Error('กรุณาเสนอราคาใหม่ที่ต่ำกว่าราคาเดิมอย่างน้อย 100 บาท');
           }
           
-      	  const upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
-      	  const rank = SchemaHelper.getDataTableSchemaFromNotation("Rank", ProjectConfigurationHelper.getDataSchema());
+      	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
+      	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
           
-   		    if (upsertResults["Auction"].rows.length != 0) {
-     		    const message = SchemaHelper.getDataTableSchemaFromNotation("Message", ProjectConfigurationHelper.getDataSchema());
-     		    const messageData = RequestHelper.createInputs({
-     		      "Message.aid": upsertResults["Auction"].rows[0].columns["aid"]
+   		    if (upsertResults['Auction'].rows.length != 0) {
+     		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
+     		    let messageData = RequestHelper.createInputs({
+     		      'Message.aid': upsertResults['Auction'].rows[0].columns['aid']
      		    });
-     		    const messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
+     		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
      		    
-     		    upsertResults["Auction"].rows[0].relations["Message"] = messageDataset["Message"];
+     		    upsertResults['Auction'].rows[0].relations['Message'] = messageDataset['Message'];
    		    }
           
-          const qid = upsertResults[0].keys["qid"];
+          const qid = upsertResults[0].keys['qid'];
           
           RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
 FROM Auction
@@ -286,29 +286,29 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
             for (const result of results) {
               wholeSetRankInput = [...wholeSetRankInput, ...[{
                 target: SourceType.Relational,
-                group: "Rank",
-                name: "aid",
-                value: result["aid"],
+                group: 'Rank',
+                name: 'aid',
+                value: result['aid'],
                 guid: `[${wholeSetRankCount}]`,
                 validation: null
               }, {
                 target: SourceType.Relational,
-                group: "Rank",
-                name: "qid",
-                value: result["qid"],
+                group: 'Rank',
+                name: 'qid',
+                value: result['qid'],
                 guid: `[${wholeSetRankCount}]`,
                 validation: null
               }, {
                 target: SourceType.Relational,
-                group: "Rank",
-                name: "price",
-                value: result["price"],
+                group: 'Rank',
+                name: 'price',
+                value: result['price'],
                 guid: `[${wholeSetRankCount}]`,
                 validation: null
               }, {
                 target: SourceType.Relational,
-                group: "Rank",
-                name: "rank",
+                group: 'Rank',
+                name: 'rank',
                 value: wholeSetRankCount + 1,
                 guid: `[${wholeSetRankCount}]`,
                 validation: null
@@ -333,29 +333,29 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
               for (const result of results) {
                 partialSetRankInput = [...partialSetRankInput, ...[{
                   target: SourceType.Relational,
-                  group: "Rank",
-                  name: "aid",
-                  value: result["aid"],
+                  group: 'Rank',
+                  name: 'aid',
+                  value: result['aid'],
                   guid: `[${partialSetRankCount}]`,
                   validation: null
                 }, {
                   target: SourceType.Relational,
-                  group: "Rank",
-                  name: "qid",
-                  value: result["qid"],
+                  group: 'Rank',
+                  name: 'qid',
+                  value: result['qid'],
                   guid: `[${partialSetRankCount}]`,
                   validation: null
                 }, {
                   target: SourceType.Relational,
-                  group: "Rank",
-                  name: "price",
-                  value: result["price"],
+                  group: 'Rank',
+                  name: 'price',
+                  value: result['price'],
                   guid: `[${partialSetRankCount}]`,
                   validation: null
                 }, {
                   target: SourceType.Relational,
-                  group: "Rank",
-                  name: "rank",
+                  group: 'Rank',
+                  name: 'rank',
                   value: partialSetRankCount + 1,
                   guid: `[${partialSetRankCount}]`,
                   validation: null
@@ -369,7 +369,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
         		});
       		});
         } else {
-      	  const upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
+      	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
       	  
           resolve(upsertResults);
         }
@@ -397,22 +397,22 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     	  RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
 WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
           try {
-            const options = RequestHelper.getOptions(this.pageId, this.request);
+            let options = RequestHelper.getOptions(this.pageId, this.request);
             
-            if (schema.group == "Quote") {
-    				  const quoteData = RequestHelper.createInputs({
-       		      "Quote.status": data.filter(item => item.name == "status")[0].value,
-       		      "Quote.Auction.qid": null,
-       		      "Quote.Auction.sid": this.request.session.sid,
-       		      "Quote.Auction.Message.aid": null,
-       		      "Quote.Auction.Substitute.aid": null,
-       		      "Quote.Listing.qid": null
+            if (schema.group == 'Quote') {
+    				  let quoteData = RequestHelper.createInputs({
+       		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
+       		      'Quote.Auction.qid': null,
+       		      'Quote.Auction.sid': this.request.session.sid,
+       		      'Quote.Auction.Message.aid': null,
+       		      'Quote.Auction.Substitute.aid': null,
+       		      'Quote.Listing.qid': null
        		    }); 
-       		    const quote = SchemaHelper.getDataTableSchemaFromNotation("Quote", ProjectConfigurationHelper.getDataSchema());
-       		    const quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+       		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+       		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
            		    
-       		    const rank = SchemaHelper.getDataTableSchemaFromNotation("Rank", ProjectConfigurationHelper.getDataSchema());
-       		    const rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
+       		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+       		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
        		    
      		      resolve(Object.assign({}, quoteDataset, rankDataset));
             } else {
@@ -442,8 +442,8 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	const data: Input[] = [];
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
@@ -460,211 +460,211 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "2b2a0681", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-		RequestHelper.registerInput("1ae8405a", "relational", "Quote", "status");
-		ValidationHelper.registerInput("1ae8405a", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
+		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "1ae8405a" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '1ae8405a' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("4cade2e7", "relational", "Quote", "status");
-		ValidationHelper.registerInput("4cade2e7", "Hidden 2", false, undefined);
+		RequestHelper.registerInput('4cade2e7', "relational", "Quote", "status");
+		ValidationHelper.registerInput('4cade2e7', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "4cade2e7" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '4cade2e7' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("d1920261", "relational", "Quote", "status");
-		ValidationHelper.registerInput("d1920261", "Hidden 4", false, undefined);
+		RequestHelper.registerInput('d1920261', "relational", "Quote", "status");
+		ValidationHelper.registerInput('d1920261', "Hidden 4", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "d1920261" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'd1920261' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 4 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("31c75169", "relational", "Listing", "qid");
-		ValidationHelper.registerInput("31c75169", "Hidden 5", false, undefined);
+		RequestHelper.registerInput('31c75169', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('31c75169', "Hidden 5", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "31c75169" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '31c75169' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 5 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("72aecc3a", "relational", "Listing", "qid");
-		ValidationHelper.registerInput("72aecc3a", "Hidden 6", false, undefined);
+		RequestHelper.registerInput('72aecc3a', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('72aecc3a', "Hidden 6", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "72aecc3a" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '72aecc3a' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 6 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("95270ad9", "relational", "Listing", "qid");
-		ValidationHelper.registerInput("95270ad9", "Hidden 8", false, undefined);
+		RequestHelper.registerInput('95270ad9', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('95270ad9', "Hidden 8", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "95270ad9" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '95270ad9' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 8 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("1832b944", "relational", "Auction.Substitute", "type");
-		ValidationHelper.registerInput("1832b944", "Radio 5", false, undefined);
+		RequestHelper.registerInput('1832b944', "relational", "Auction.Substitute", "type");
+		ValidationHelper.registerInput('1832b944', "Radio 5", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "1832b944" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '1832b944' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 5 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("b91e2739", "relational", "Auction.Substitute", "type");
-		ValidationHelper.registerInput("b91e2739", "Radio 4", false, undefined);
+		RequestHelper.registerInput('b91e2739', "relational", "Auction.Substitute", "type");
+		ValidationHelper.registerInput('b91e2739', "Radio 4", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "b91e2739" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'b91e2739' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 4 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("03aab0e5", "relational", "Auction.Substitute", "type");
-		ValidationHelper.registerInput("03aab0e5", "Radio 3", false, undefined);
+		RequestHelper.registerInput('03aab0e5', "relational", "Auction.Substitute", "type");
+		ValidationHelper.registerInput('03aab0e5', "Radio 3", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "03aab0e5" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '03aab0e5' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 3 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("957c1568", "relational", "Auction.Substitute", "type");
-		ValidationHelper.registerInput("957c1568", "Radio 6", false, undefined);
+		RequestHelper.registerInput('957c1568', "relational", "Auction.Substitute", "type");
+		ValidationHelper.registerInput('957c1568', "Radio 6", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "957c1568" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '957c1568' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 6 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("1382e4c9", "relational", "Auction.Substitute", "price");
-		ValidationHelper.registerInput("1382e4c9", "Price", false, "");
+		RequestHelper.registerInput('1382e4c9', "relational", "Auction.Substitute", "price");
+		ValidationHelper.registerInput('1382e4c9', "Price", false, "");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "1382e4c9" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Price here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("9c338431", "relational", "Auction.Substitute", "title");
-		ValidationHelper.registerInput("9c338431", "Name", false, undefined);
+		RequestHelper.registerInput('9c338431', "relational", "Auction.Substitute", "title");
+		ValidationHelper.registerInput('9c338431', "Name", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "9c338431" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '9c338431' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Name here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("d913e6a1", "relational", "Auction.Substitute", "size");
-		ValidationHelper.registerInput("d913e6a1", "Size", false, undefined);
+		RequestHelper.registerInput('d913e6a1', "relational", "Auction.Substitute", "size");
+		ValidationHelper.registerInput('d913e6a1', "Size", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "d913e6a1" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'd913e6a1' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Size here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("c22ec668", "relational", "Auction.Substitute", "quantity");
-		ValidationHelper.registerInput("c22ec668", "Quantity", false, undefined);
+		RequestHelper.registerInput('c22ec668', "relational", "Auction.Substitute", "quantity");
+		ValidationHelper.registerInput('c22ec668', "Quantity", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "c22ec668" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'c22ec668' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Quantity here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("ae7e2437", "relational", "Auction.Substitute", "lid");
-		ValidationHelper.registerInput("ae7e2437", "Hidden 3", false, undefined);
+		RequestHelper.registerInput('ae7e2437', "relational", "Auction.Substitute", "lid");
+		ValidationHelper.registerInput('ae7e2437', "Hidden 3", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "ae7e2437" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'ae7e2437' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 3 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("c03d6613", "relational", "Auction", "price");
-		ValidationHelper.registerInput("c03d6613", "Textbox 5", false, undefined);
+		RequestHelper.registerInput('c03d6613', "relational", "Auction", "price");
+		ValidationHelper.registerInput('c03d6613', "Textbox 5", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "c03d6613" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'c03d6613' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 5 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("d30aa93b", "relational", "Auction", "sid");
-		ValidationHelper.registerInput("d30aa93b", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('d30aa93b', "relational", "Auction", "sid");
+		ValidationHelper.registerInput('d30aa93b', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "d30aa93b" + ((i == -1) ? "" : "[" + i + "]"));
-      if (input) input.value = request.session["sid"];
+      input = RequestHelper.getInput(this.pageId, request, 'd30aa93b' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['sid'];
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("a5b102c4", "relational", "Auction", "qid");
-		ValidationHelper.registerInput("a5b102c4", "Hidden 2", false, undefined);
+		RequestHelper.registerInput('a5b102c4', "relational", "Auction", "qid");
+		ValidationHelper.registerInput('a5b102c4', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "a5b102c4" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'a5b102c4' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("8d1ec385", "relational", "Message", "message");
-		ValidationHelper.registerInput("8d1ec385", "Textbox 1", false, undefined);
+		RequestHelper.registerInput('8d1ec385', "relational", "Message", "message");
+		ValidationHelper.registerInput('8d1ec385', "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "8d1ec385" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '8d1ec385' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("b16eadbb", "relational", "Message", "aid");
-		ValidationHelper.registerInput("b16eadbb", "Hidden 1", true, "คุณต้องเคาะประมูลราคาก่อนที่จะสามารถคุยกับลูกค้าได้");
+		RequestHelper.registerInput('b16eadbb', "relational", "Message", "aid");
+		ValidationHelper.registerInput('b16eadbb', "Hidden 1", true, "คุณต้องเคาะประมูลราคาก่อนที่จะสามารถคุยกับลูกค้าได้");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "b16eadbb" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'b16eadbb' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("208c3d23", "relational", "Message", "type");
-		ValidationHelper.registerInput("208c3d23", "Hidden 2", false, undefined);
+		RequestHelper.registerInput('208c3d23', "relational", "Message", "type");
+		ValidationHelper.registerInput('208c3d23', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "208c3d23" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '208c3d23' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
@@ -676,7 +676,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]

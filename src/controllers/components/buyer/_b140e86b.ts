@@ -3,12 +3,12 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../../helpers/DatabaseHelper.js";
-import {ValidationInfo, ValidationHelper} from "../../helpers/ValidationHelper.js";
-import {RequestHelper} from "../../helpers/RequestHelper.js";
-import {RenderHelper} from "../../helpers/RenderHelper.js";
-import {DataTableSchema} from "../../helpers/SchemaHelper.js";
-import {Base} from "../Base.js";
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../../helpers/ValidationHelper.js';
+import {RequestHelper} from '../../helpers/RequestHelper.js';
+import {RenderHelper} from '../../helpers/RenderHelper.js';
+import {DataTableSchema} from '../../helpers/SchemaHelper.js';
+import {Base} from '../Base.js';
 
 // <---Auto[Import]
 
@@ -16,10 +16,11 @@ import {Base} from "../Base.js";
 // 
 import {SchemaHelper} from '../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../helpers/ProjectConfigurationHelper.js';
-import line from '@line/bot-sdk';
+import * as line from '@line/bot-sdk';
 
 const client = new line.Client({
-  channelAccessToken: '4874e1491d737db97a3756fbf1e3c0d9'
+  channelAccessToken: '1sIVgsH0LNlIMu2aiw5XThF4vstGl9PHNuj3YaO5zl4Rk+2ndA3pKKbVpPhdiUHtF1eABThT+9uW/84S63GJ4yz0AaouOhcansstmr/QGbnhVBCXEfajsZWjtjLt0uPwzT+/exYDRnSsBZnuzWi7UgdB04t89/1O/w1cDnyilFU=',
+  channelSecret: '4874e1491d737db97a3756fbf1e3c0d9'
 });
 
 // Auto[Declare]--->
@@ -78,7 +79,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    const [action, schema, data] = this.initialize(request);
+	    let [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -133,29 +134,31 @@ class Controller extends Base {
         const json = this.request.body;
         let results: any = null;
         
-        for (const event of json.events) {
+        for (let event of json.events) {
           switch (event.type) {
-            case "message":
-              if (event.source.type == "user") {
+            case 'postback':
+            case 'message':
+              if (event.source.userId) {
                 results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-         		      "User.lineID": event.source.userId
-         		    }), ProjectConfigurationHelper.getDataSchema().tables["User"]);
+         		      'User.lineID': event.source.userId
+         		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
               }
               
-              if (results && results["User"].rows.length != 0) {
-                const data = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-         		      "Quote.uid": results["User"].rows[0].keys["id"],
-         		      "Quote.filled": null,
-         		      "Quote.Auction.qid": null,
-         		      "Quote.Auction.Store.sid": null
-         		    }), ProjectConfigurationHelper.getDataSchema().tables["Quote"]);
+              if (results && results['User'].rows.length != 0) {
+                let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+         		      'Quote.uid': results['User'].rows[0].keys['id'],
+         		      'Quote.filled': null,
+         		      'Quote.Auction.qid': null,
+         		      'Quote.Auction.Store.sid': null
+         		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
                 
-                if (data['Quote'].rows.length == 0) {
+                if (quoteDataset['Quote'].rows.length == 0) {
                   await client.replyMessage(event.replyToken, {
                     "type": "template",
+                    "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
                     "template": {
                       "type": "buttons",
-                      "text": "กรุณาเลือกสิ่งที่คุณต้องการจะทำ:",
+                      "text": "เนื่องจากตอนนี้คุณยังไม่มีรายการใดๆ ที่กำลังสืบราคาอยู่ กรุณาเลือกสิ่งอื่นๆ ที่ต้องการจะทำ",
                       "actions": [{
                         "type": "uri",
                         "label": "สืบราคาวัสดุก่อสร้าง",
@@ -164,28 +167,53 @@ class Controller extends Base {
                         "type": "uri",
                         "label": "อ่านบทความ",
                         "uri": "https://www.wiseboq.com/blog/all"
+                      }, {
+                        "type": "postback",
+                        "label": "ขอสถานะล่าสุด",
+                        "data": "refresh"
                       }]
                     }
                   });
                 } else {
-                  if (data['Quote'].rows[0].relations['Auction'].rows.length == 0) {
-                    await client.replyMessage(event.replyToken, {
-       		            'type': 'text',
-       		            'text': 'ตอนนี้ยังไม่มีร้านค้าใดยื่นเสนอราคา'
-       		          });
-                  } else {
+                  if (quoteDataset['Quote'].rows[0].relations['Auction'].rows.length == 0) {
                     await client.replyMessage(event.replyToken, {
                       "type": "template",
+                      "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
                       "template": {
                         "type": "buttons",
-                        "text": "กรุณาเลือกว่าจะติดต่อกับร้านค้าไหน:",
-                        "actions": data["Quote"].rows[0].relations["Auction"].rows.map((auction) => {
-                          return {
-                            "type": "postback",
-                            "label": auction.relations["Store"].rows[0].columns["name"],
-                            "data": auction.relations["Store"].rows[0].keys["sid"]
-                          };
-                        })
+                        "text": "เนื่องจากตอนนี้คุณมีรายการที่กำลังสืบราคาอยู่แต่ยังไม่มีร้านค้าใดยื่นเสนอราคา กรุณาเลือกสิ่งอื่นๆ ที่ต้องการจะทำ",
+                        "actions": [{
+                          "type": "uri",
+                          "label": "อ่านบทความ",
+                          "uri": "https://www.wiseboq.com/blog/all"
+                        }, {
+                          "type": "postback",
+                          "label": "ขอสถานะล่าสุด",
+                          "data": "refresh"
+                        }]
+                      }
+                    });
+                  } else {
+                    let actions = quoteDataset['Quote'].rows[0].relations['Auction'].rows.map((auction) => {
+                      return {
+                        "type": "postback",
+                        "label": `คุยกับร้าน ${auction.relations['Store'].rows[0].columns['name']}`,
+                        "data": auction.relations['Store'].rows[0].keys['sid']
+                      }
+                    })
+                    actions.push({
+                      "type": "postback",
+                      "label": "ขอสถานะล่าสุด",
+                      "data": "refresh"
+                    });
+                        
+                    await client.replyMessage(event.replyToken, {
+                      "type": "template",
+                      "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
+                      "template": {
+                        "type": "buttons",
+                        "text": "เนื่องจากตอนนี้คุณมีรายการที่กำลังสืบราคาอยู่ กรุณาเลือกว่าจะติดต่อกับร้านค้าไหน",
+                        "actions": actions
                       }
                     });
                   }
@@ -198,19 +226,21 @@ class Controller extends Base {
          		      });
                 } else {
                   results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-           		      "User.refID": event.message.text.toUpperCase()
-           		    }), ProjectConfigurationHelper.getDataSchema().tables["User"]);
+           		      'User.refID': event.message.text.toUpperCase()
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
            		    
-           		    if (results && results["User"].rows.length != 0) {
-           		      results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-             		      "User.id": results["User"].rows[0].keys["id"],
-             		      "User.lineID": event.source.userId
-             		    }), ProjectConfigurationHelper.getDataSchema().tables["User"]);
+           		    if (results && results['User'].rows.length != 0) {
+           		      results = await DatabaseHelper.update(RequestHelper.createInputs({
+             		      'User.id': results['User'].rows[0].keys['id'],
+             		      'User.lineID': event.source.userId
+             		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], false, {'uid': results['User'].rows[0].keys['id']});
              		    
              		    await client.replyMessage(event.replyToken, {
        		            'type': 'text',
        		            'text': 'ลงทะเบียนเสร็จเรียบร้อยแล้ว'
            		      });
+           		      
+           		      await this.post(data);
            		    } else {
            		      await client.replyMessage(event.replyToken, {
        		            'type': 'text',
@@ -328,9 +358,9 @@ class Controller extends Base {
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	const data: Input[] = [];
-  	const input: Input = null;
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	let data: Input[] = [];
+  	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
 	  
@@ -340,7 +370,7 @@ class Controller extends Base {
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]

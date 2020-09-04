@@ -3,22 +3,22 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from "../../../helpers/DatabaseHelper.js";
-import {ValidationInfo, ValidationHelper} from "../../../helpers/ValidationHelper.js";
-import {RequestHelper} from "../../../helpers/RequestHelper.js";
-import {RenderHelper} from "../../../helpers/RenderHelper.js";
-import {DataTableSchema} from "../../../helpers/SchemaHelper.js";
-import {Base} from "../../Base.js";
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../../../helpers/ValidationHelper.js';
+import {RequestHelper} from '../../../helpers/RequestHelper.js';
+import {RenderHelper} from '../../../helpers/RenderHelper.js';
+import {DataTableSchema} from '../../../helpers/SchemaHelper.js';
+import {Base} from '../../Base.js';
 
 // <---Auto[Import]
 
 // Import additional modules here:
 // 
-import {SchemaHelper} from "../../../helpers/SchemaHelper.js";
-import {ProjectConfigurationHelper} from "../../../helpers/ProjectConfigurationHelper.js";
-import {RelationalDatabaseClient} from "../../../helpers/ConnectionHelper.js";
-import {DataManipulationHelper} from "../../../helpers/DataManipulationHelper.js";
-import {NotificationHelper} from "../../../helpers/NotificationHelper.js";
+import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
+import {RelationalDatabaseClient} from '../../../helpers/ConnectionHelper.js';
+import {DataManipulationHelper} from '../../../helpers/DataManipulationHelper.js';
+import {NotificationHelper} from '../../../helpers/NotificationHelper.js';
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -76,7 +76,7 @@ class Controller extends Base {
   constructor(request: Request, response: Response, template: string) {
   	super(request, response, template);
   	try {
-	    const [action, schema, data] = this.initialize(request);
+	    let [action, schema, data] = this.initialize(request);
 	    this.perform(action, schema, data);
    	} catch(error) {
 	  	RenderHelper.error(response, error);
@@ -100,18 +100,18 @@ class Controller extends Base {
  		
  		for (const item of data) {
         switch (item.validation.name) {
-            case "hoursChecked":
-                if (item.value == "true") {
+            case 'hoursChecked':
+                if (item.value == 'true') {
                     hoursChecked = true;
                 }
                 break;
-            case "deliverChecked":
-                if (item.value == "true") {
+            case 'deliverChecked':
+                if (item.value == 'true') {
                     deliverChecked = true;
                 }
                 break;
-            case "pickup":
-                if (item.value == "1") {
+            case 'pickup':
+                if (item.value == '1') {
                     pickup = true;
                 }
                 break;
@@ -120,7 +120,7 @@ class Controller extends Base {
  		
  		for (const item of data) {
         switch (item.validation.name) {
-            case "Hours":
+            case 'Hours':
                 if (hoursChecked) {
                     if (!item.value) {
                         throw new Error("กรุณาระบุจำนวนชั่วโมง");
@@ -135,17 +135,17 @@ class Controller extends Base {
                     this.hourInput = parseInt(item.value);
                 }
                 break;
-            case "DeliverAt":
+            case 'DeliverAt':
                 if (deliverChecked) {
                     if (!item.value) {
                         throw new Error("กรุณาระบุวันที่ต้องใช้สินค้า");
                     } else if (item.value && !item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/)) {
                         throw new Error("กรุณาระบุวันที่ให้ถูกต้อง (ddmmyyyy เช่น 15102563)");
                     } else {
-                        const matched = item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/);
-                        const day = parseInt(matched[1]);
-                        const month = parseInt(matched[2]);
-                        const year = parseInt(matched[3]) - 543;
+                        let matched = item.value.match(/^([0-2][0-9]|3[0-1])(0[0-9]|1[0-2])(25[0-9][0-9])$/);
+                        let day = parseInt(matched[1]);
+                        let month = parseInt(matched[2]);
+                        let year = parseInt(matched[3]) - 543;
                         
                         item.value = `${year}-${month}-${day}`;
                         
@@ -153,12 +153,12 @@ class Controller extends Base {
                     }
                 }
                 break;
-            case "Number":
+            case 'Number':
                 if (item.value && !item.value.match(/^(\+[0-9]+)?([0-9]{9,10})$/)) {
                     throw new Error("กรุณาระบุหมายเลขโทรศัพท์ให้ถูกต้อง");
                 }
                 break;
-            case "Address":
+            case 'Address':
                 if (!pickup && !item.value) {
                     throw new Error("กรุณาระบุที่อยู่สำหรับจัดส่งสินค้า");
                 }
@@ -190,59 +190,59 @@ class Controller extends Base {
   }
   
   private convertDateToString(date: any) {
-    const mm = date.getMonth() + 1;
-    const dd = date.getDate();
-    const yyyy = date.getFullYear() + 543;
+    var mm = date.getMonth() + 1;
+    var dd = date.getDate();
+    var yyyy = date.getFullYear() + 543;
     
-    return `${dd < 10 ? "0" : ""}${dd}${mm < 10 ? "0" : ""}${mm}${yyyy}`;
+    return `${dd < 10 ? '0' : ''}${dd}${mm < 10 ? '0' : ''}${mm}${yyyy}`
   }
   
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
      		if (this.request.session && this.request.session.uid) {
-     		  const schemata = ProjectConfigurationHelper.getDataSchema();
-          const inputs = RequestHelper.createInputs({
-            "User.id": this.request.session.uid
+     		  let schemata = ProjectConfigurationHelper.getDataSchema();
+          let inputs = RequestHelper.createInputs({
+            'User.id': this.request.session.uid
           });
-          const results = await DatabaseHelper.retrieve(inputs, schemata.tables["User"], this.request.session);
+          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['User'], this.request.session);
           
-          if (results["User"].rows.length == 0 || !results["User"].rows[0].columns["firstName"]) {
-            this.response.redirect("/authentication/role/buyer");
+          if (results['User'].rows.length == 0 || !results['User'].rows[0].columns['firstName']) {
+            this.response.redirect('/authentication/role/buyer');
           } else {
        		  data = RequestHelper.createInputs({
-       		    "Quote.uid": parseInt(this.request.session.uid),
-       		    "Quote.filled": null
+       		    'Quote.uid': parseInt(this.request.session.uid),
+       		    'Quote.filled': null
        		  });
-       		  const datasetA = await DatabaseHelper.retrieve(data, null);
+       		  let datasetA = await DatabaseHelper.retrieve(data, null);
        		  
-       		  if (datasetA["Quote"].rows.length != 0 && datasetA["Quote"].rows[0].columns["status"] == 2) {
-       		    this.response.redirect("/buyer/auction/waiting");
+       		  if (datasetA['Quote'].rows.length != 0 && datasetA['Quote'].rows[0].columns['status'] == 2) {
+       		    this.response.redirect('/buyer/auction/waiting');
        		  } else {
-         		  if (datasetA["Quote"].rows.length != 0) {
-      	   		  if (!isNaN(datasetA["Quote"].rows[0].columns["deliverAt"])) {
-      	   		    const date = new Date(datasetA["Quote"].rows[0].columns["deliverAt"]);
+         		  if (datasetA['Quote'].rows.length != 0) {
+      	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
+      	   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
       	   		    
-      	   		    datasetA["Quote"].rows[0].columns["deliverAt"] = this.convertDateToString(date);
+      	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = this.convertDateToString(date);
       	   		  } else {
-      	   		    datasetA["Quote"].rows[0].columns["deliverAt"] = null;
+      	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
       	   		  }
-      	 		    if (datasetA["Quote"].rows[0].columns["hours"] == "0") {
-      	 		      datasetA["Quote"].rows[0].columns["hours"] = null;
+      	 		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
+      	 		      datasetA['Quote'].rows[0].columns['hours'] = null;
       	 		    }
       	 		  }
          		  
          		  let datasetB;
-         		  if (DataManipulationHelper.getDataFromNotation("Quote.qid", datasetA)) {
+         		  if (DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)) {
          		    data = RequestHelper.createInputs({
-           		    "Listing.qid": DataManipulationHelper.getDataFromNotation("Quote.qid", datasetA)
+           		    'Listing.qid': DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)
            		  });
            		  datasetB = await DatabaseHelper.retrieve(data, null);
          		  } else {
          		    datasetB = {
          		      Listing: {
          		        source: SourceType.Relational,
-                  	group: "Listing",
+                  	group: 'Listing',
                     rows: []
          		      }
          		    };
@@ -252,7 +252,7 @@ class Controller extends Base {
        		  }
           }
      		} else {
-     		  this.response.redirect("/authentication");
+     		  this.response.redirect('/authentication');
      		}
  		  } catch(error) {
  		    reject(error);
@@ -294,21 +294,21 @@ class Controller extends Base {
   }
   
   private async checkForBOQCRUDRestriction(data: Input[]) {
-    const _data = RequestHelper.createInputs({
- 	    "Quote.uid": parseInt(this.request.session.uid),
- 	    "Quote.filled": null 
+    let _data = RequestHelper.createInputs({
+ 	    'Quote.uid': parseInt(this.request.session.uid),
+ 	    'Quote.filled': null 
  	  });
- 	  const dataset = await DatabaseHelper.retrieve(_data, null);
+ 	  let dataset = await DatabaseHelper.retrieve(_data, null);
  	  
- 	  if (dataset["Quote"].rows.length != 0) {
-   	  if (dataset["Quote"].rows[0].columns["status"] == 1 &&
-   	    data.filter(item => item.group == "Listing").length != 0) {
+ 	  if (dataset['Quote'].rows.length != 0) {
+   	  if (dataset['Quote'].rows[0].columns['status'] == 1 &&
+   	    data.filter(item => item.group == 'Listing').length != 0) {
    	    throw new Error("คุณไม่สามารถแก้ไขเพิ่มเติมรายการวัสดุก่อสร้างได้หลังจากเริ่มต้นงานประมูลไปแล้ว");
-   	  } else if (this.hourInput != null && this.hourInput < dataset["Quote"].rows[0].columns["hours"]) {
-   	    throw new Error(`กรุณาระบุจำนวนชั่วโมงตั้งแต่ ${dataset["Quote"].rows[0].columns["hours"]} ชั่วโมงเป็นต้นไป`);
+   	  } else if (this.hourInput != null && this.hourInput < dataset['Quote'].rows[0].columns['hours']) {
+   	    throw new Error(`กรุณาระบุจำนวนชั่วโมงตั้งแต่ ${dataset['Quote'].rows[0].columns['hours']} ชั่วโมงเป็นต้นไป`);
    	  } else if (this.dateInput != null) {
-   	    if (!isNaN(dataset["Quote"].rows[0].columns["deliverAt"])) {
-          const date = new Date(dataset["Quote"].rows[0].columns["deliverAt"]);
+   	    if (!isNaN(dataset['Quote'].rows[0].columns['deliverAt'])) {
+          let date = new Date(dataset['Quote'].rows[0].columns['deliverAt']);
           if (this.dateInput < date) {
             throw new Error(`กรุณาระบุวันที่ต้องใช้สินค้าตั้งแต่วันที่ ${this.convertDateToString(date)} หรือหลังจากนั้น`);
           }
@@ -326,7 +326,7 @@ class Controller extends Base {
       try {
       	await this.checkForBOQCRUDRestriction(data);
    		  
-      	const options = RequestHelper.getOptions(this.pageId, this.request);
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
@@ -339,7 +339,7 @@ class Controller extends Base {
       try {
       	await this.checkForBOQCRUDRestriction(data);
         
-      	const options = RequestHelper.getOptions(this.pageId, this.request);
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
@@ -394,7 +394,7 @@ class Controller extends Base {
    		    await DatabaseHelper.update(data, schema, false, this.request.session)
    		  );
    		  
-   		  resolve("/buyer/auction/waiting");
+   		  resolve('/buyer/auction/waiting');
       } catch(error) {
         reject(error);
       }
@@ -403,8 +403,8 @@ class Controller extends Base {
   
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
-  	const schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
-  	const data: Input[] = [];
+  	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
+  	let data: Input[] = [];
   	let input: Input = null;
   	
 	  // <---Auto[MergingBegin]
@@ -420,40 +420,40 @@ class Controller extends Base {
     RequestHelper.registerSubmit("65e04a88", "67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "a7592071", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-		RequestHelper.registerInput("5a972a57", "relational", "Quote", "title");
-		ValidationHelper.registerInput("5a972a57", "Textbox 4", true, "คุณต้องตั้งชื่อรายการ");
+		RequestHelper.registerInput('5a972a57', "relational", "Quote", "title");
+		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "คุณต้องตั้งชื่อรายการ");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "5a972a57" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '5a972a57' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 4 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("607d8ee2", "relational", "Quote", "description");
-		ValidationHelper.registerInput("607d8ee2", "Textbox 5", false, undefined);
+		RequestHelper.registerInput('607d8ee2', "relational", "Quote", "description");
+		ValidationHelper.registerInput('607d8ee2', "Textbox 5", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "607d8ee2" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '607d8ee2' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 5 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("5d34dc3b", "relational", "Quote", "qid");
-		ValidationHelper.registerInput("5d34dc3b", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('5d34dc3b', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('5d34dc3b', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "5d34dc3b" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '5d34dc3b' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("5752cb4d", "relational", "Quote", "uid");
-		ValidationHelper.registerInput("5752cb4d", "Hidden 2", false, undefined);
+		RequestHelper.registerInput('5752cb4d', "relational", "Quote", "uid");
+		ValidationHelper.registerInput('5752cb4d', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "5752cb4d" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '5752cb4d' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of Hidden 2 here:
     // 
@@ -461,281 +461,281 @@ class Controller extends Base {
     
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("2acce16d", "relational", "Quote", "status");
-		ValidationHelper.registerInput("2acce16d", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('2acce16d', "relational", "Quote", "status");
+		ValidationHelper.registerInput('2acce16d', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "2acce16d" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '2acce16d' + ((i == -1) ? '' : '[' + i + ']'));
     
     // Override data parsing and manipulation of Hidden 1 here:
     // 
-    if (input) input.value = "0";
+    if (input) input.value = '0';
     
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("41bdc9b3", "relational", "Listing", "lid");
-		ValidationHelper.registerInput("41bdc9b3", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
+		ValidationHelper.registerInput('41bdc9b3', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "41bdc9b3" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '41bdc9b3' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("2ce10e8e", "relational", "Listing", "title");
-		ValidationHelper.registerInput("2ce10e8e", "Textbox 1", false, undefined);
+		RequestHelper.registerInput('2ce10e8e', "relational", "Listing", "title");
+		ValidationHelper.registerInput('2ce10e8e', "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "2ce10e8e" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '2ce10e8e' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("0d2c5b71", "relational", "Listing", "size");
-		ValidationHelper.registerInput("0d2c5b71", "Textbox 2", false, undefined);
+		RequestHelper.registerInput('0d2c5b71', "relational", "Listing", "size");
+		ValidationHelper.registerInput('0d2c5b71', "Textbox 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "0d2c5b71" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '0d2c5b71' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("1cabb5c5", "relational", "Listing", "quantity");
-		ValidationHelper.registerInput("1cabb5c5", "Textbox 3", false, undefined);
+		RequestHelper.registerInput('1cabb5c5', "relational", "Listing", "quantity");
+		ValidationHelper.registerInput('1cabb5c5', "Textbox 3", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "1cabb5c5" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '1cabb5c5' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("64889385", "relational", "Listing", "substitute");
-		ValidationHelper.registerInput("64889385", "Radio 1", true, undefined);
+		RequestHelper.registerInput('64889385', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('64889385', "Radio 1", true, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "64889385" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '64889385' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("a4de3955", "relational", "Listing", "substitute");
-		ValidationHelper.registerInput("a4de3955", "Radio 2", true, undefined);
+		RequestHelper.registerInput('a4de3955', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('a4de3955', "Radio 2", true, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "a4de3955" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'a4de3955' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("be210963", "relational", "Listing", "substitute");
-		ValidationHelper.registerInput("be210963", "Radio 3", true, undefined);
+		RequestHelper.registerInput('be210963', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('be210963', "Radio 3", true, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "be210963" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'be210963' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 3 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("ace9aa55", "relational", "Listing", "note");
-		ValidationHelper.registerInput("ace9aa55", "Textbox 2", false, undefined);
+		RequestHelper.registerInput('ace9aa55', "relational", "Listing", "note");
+		ValidationHelper.registerInput('ace9aa55', "Textbox 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "ace9aa55" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'ace9aa55' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("eda631c1", "relational", "Listing", "qid");
-		ValidationHelper.registerInput("eda631c1", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('eda631c1', "relational", "Listing", "qid");
+		ValidationHelper.registerInput('eda631c1', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "eda631c1" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'eda631c1' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("54e20435", "relational", "Listing", "title");
-		ValidationHelper.registerInput("54e20435", "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ");
+		RequestHelper.registerInput('54e20435', "relational", "Listing", "title");
+		ValidationHelper.registerInput('54e20435', "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "54e20435" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '54e20435' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("31894d87", "relational", "Listing", "size");
-		ValidationHelper.registerInput("31894d87", "Textbox 2", true, "คุณต้องระบุขนาด");
+		RequestHelper.registerInput('31894d87', "relational", "Listing", "size");
+		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "31894d87" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '31894d87' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("b2321320", "relational", "Listing", "quantity");
-		ValidationHelper.registerInput("b2321320", "Textbox 3", true, "คุณต้องระบุจำนวน");
+		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
+		ValidationHelper.registerInput('b2321320', "Textbox 3", true, "คุณต้องระบุจำนวน");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "b2321320" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'b2321320' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("b6c9ad89", "relational", "Listing", "substitute");
-		ValidationHelper.registerInput("b6c9ad89", "Radio 3", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
+		RequestHelper.registerInput('b6c9ad89', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('b6c9ad89', "Radio 3", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "b6c9ad89" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'b6c9ad89' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 3 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("a0b78888", "relational", "Listing", "substitute");
-		ValidationHelper.registerInput("a0b78888", "Radio 4", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
+		RequestHelper.registerInput('a0b78888', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('a0b78888', "Radio 4", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "a0b78888" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'a0b78888' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 4 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("cc34eced", "relational", "Listing", "substitute");
-		ValidationHelper.registerInput("cc34eced", "Radio 5", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
+		RequestHelper.registerInput('cc34eced', "relational", "Listing", "substitute");
+		ValidationHelper.registerInput('cc34eced', "Radio 5", true, "คุณต้องเลือกวิธีในกรณีที่หาวัสดุดังกล่าวไม่ได้");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "cc34eced" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'cc34eced' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 5 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("e92d687b", "relational", "Listing", "note");
-		ValidationHelper.registerInput("e92d687b", "Textbox 1", false, undefined);
+		RequestHelper.registerInput('e92d687b', "relational", "Listing", "note");
+		ValidationHelper.registerInput('e92d687b', "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "e92d687b" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'e92d687b' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("9036c707", "relational", "Quote", "qid");
-		ValidationHelper.registerInput("9036c707", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('9036c707', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('9036c707', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "9036c707" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '9036c707' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("33408187", "relational", "Quote", "hoursChecked");
-		ValidationHelper.registerInput("33408187", "hoursChecked", false, undefined);
+		RequestHelper.registerInput('33408187', "relational", "Quote", "hoursChecked");
+		ValidationHelper.registerInput('33408187', "hoursChecked", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "33408187" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '33408187' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of hoursChecked here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("230ab296", "relational", "Quote", "hours");
-		ValidationHelper.registerInput("230ab296", "Hours", false, undefined);
+		RequestHelper.registerInput('230ab296', "relational", "Quote", "hours");
+		ValidationHelper.registerInput('230ab296', "Hours", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "230ab296" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '230ab296' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hours here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("babc9e30", "relational", "Quote", "deliverChecked");
-		ValidationHelper.registerInput("babc9e30", "deliverChecked", false, undefined);
+		RequestHelper.registerInput('babc9e30', "relational", "Quote", "deliverChecked");
+		ValidationHelper.registerInput('babc9e30', "deliverChecked", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "babc9e30" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'babc9e30' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of deliverChecked here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("9200d56a", "relational", "Quote", "deliverAt");
-		ValidationHelper.registerInput("9200d56a", "DeliverAt", false, undefined);
+		RequestHelper.registerInput('9200d56a', "relational", "Quote", "deliverAt");
+		ValidationHelper.registerInput('9200d56a', "DeliverAt", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "9200d56a" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '9200d56a' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of DeliverAt here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("12403b79", "relational", "Quote", "pickup");
-		ValidationHelper.registerInput("12403b79", "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
+		RequestHelper.registerInput('12403b79', "relational", "Quote", "pickup");
+		ValidationHelper.registerInput('12403b79', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "12403b79" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '12403b79' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of pickup here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("c3daa46d", "relational", "Quote", "number");
-		ValidationHelper.registerInput("c3daa46d", "Number", true, "คุณจำเป็นต้องระบุหมายเลขโทรศัพท์");
+		RequestHelper.registerInput('c3daa46d', "relational", "Quote", "number");
+		ValidationHelper.registerInput('c3daa46d', "Number", true, "คุณจำเป็นต้องระบุหมายเลขโทรศัพท์");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "c3daa46d" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'c3daa46d' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Number here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("0606ea02", "relational", "Quote", "pickup");
-		ValidationHelper.registerInput("0606ea02", "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
+		RequestHelper.registerInput('0606ea02', "relational", "Quote", "pickup");
+		ValidationHelper.registerInput('0606ea02', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "0606ea02" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '0606ea02' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of pickup here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("4a397863", "relational", "Quote", "address");
-		ValidationHelper.registerInput("4a397863", "Address", false, undefined);
+		RequestHelper.registerInput('4a397863', "relational", "Quote", "address");
+		ValidationHelper.registerInput('4a397863', "Address", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "4a397863" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '4a397863' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Address here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("147c9060", "relational", "Quote", "qid");
-		ValidationHelper.registerInput("147c9060", "Hidden 2", false, undefined);
+		RequestHelper.registerInput('147c9060', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('147c9060', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "147c9060" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, '147c9060' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput("ab790b53", "relational", "Quote", "status");
-		ValidationHelper.registerInput("ab790b53", "Hidden 1", false, undefined);
+		RequestHelper.registerInput('ab790b53', "relational", "Quote", "status");
+		ValidationHelper.registerInput('ab790b53', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, "ab790b53" + ((i == -1) ? "" : "[" + i + "]"));
+      input = RequestHelper.getInput(this.pageId, request, 'ab790b53' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
@@ -747,7 +747,7 @@ class Controller extends Base {
 	  
 	  // Auto[MergingEnd]--->
 	  
-  	const action: ActionType = RequestHelper.getAction(this.pageId, request);
+  	let action: ActionType = RequestHelper.getAction(this.pageId, request);
 	  return [action, schema, data];
 	}
   // <---Auto[MergingEnd]
