@@ -160,10 +160,10 @@ class Controller extends Base {
     const remaining = this.getShortRemainingTime(createdAt, hoursChecked, auctionHours);
     
     if (remaining == '00:00:00') {
-      return 'การประมูลสิ้นสุดลงแล้ว';
+      return 'การประมูลนี้สิ้นสุดลงแล้ว';
     } else {
       const splited = remaining.split(':');
-      return `กำลังประมูล.. รออีกประมาณ ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
+      return `กำลังประมูลอยู่.. ซึ่งต้องรออีกประมาณ ${parseInt(splited[0])} ชั่วโมง ${parseInt(splited[1])} นาที ${parseInt(splited[2])} วินาที`;
     }
   }
   
@@ -221,12 +221,12 @@ class Controller extends Base {
            		      if (quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
                       await client.replyMessage(event.replyToken, {
          		            'type': 'text',
-         		            'text': `ตอนนี้มีร้านค้าที่ร่วมยื่นราคา ${quoteDataset['Quote'].rows[0].relations['Auction'].rows.length} ร้านค้าและพบว่า${time}`
+         		            'text': `ตอนนี้มีร้านค้าที่ร่วมยื่นราคา ${quoteDataset['Quote'].rows[0].relations['Auction'].rows.length} ร้านค้า... และพบว่า${time}`
              		      });
            		      } else {
              		      await client.replyMessage(event.replyToken, {
          		            'type': 'text',
-         		            'text': `ตอนนี้ยังไม่มีร้านค้าใดยื่นราคาและพบว่า${time}`
+         		            'text': `ตอนนี้ยังไม่มีร้านค้าใดยื่นราคา... และพบว่า${time}`
              		      });
            		      }
                   } else {
