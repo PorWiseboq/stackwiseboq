@@ -87,6 +87,13 @@ class Rectangle_a8055802 extends Base {
   }
   
   // Auto[Merging]--->
+  protected onButtonSuccess_a403abac(event: Event) {
+
+    // Handle the event of onButtonSuccess (Button 4) here:
+    // 
+    ReactDOM.findDOMNode(this.refs.chatInput).value = '';
+    
+  }
   // <---Auto[Merging]
   
   // Auto[ClassEnd]--->
@@ -101,7 +108,7 @@ class Rectangle_a8055802 extends Base {
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-10(style={'background': 'rgba(214, 237, 255, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '7px', 'paddingRight': '7px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', display: (()=>{return (this.getDataFromNotation("Quote.Auction.Message[" + i + "].type") == 0) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.Auction.Message[" + i + "].message"))}, internal-fsb-guid="9b681ceb")
-                  .internal-fsb-element.col-10.offset-2(style={'background': 'rgba(237, 237, 237, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '7px', 'paddingRight': '7px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', display: (()=>{return (this.getDataFromNotation("Quote.Auction.Message[" + i + "].type") == 1) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.Auction.Message[" + i + "].message"))}, internal-fsb-guid="d1e0142d")
+                  .internal-fsb-element.col-10.offset-2(style={'background': 'rgba(237, 237, 237, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '7px', 'paddingRight': '7px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'textAlign': 'right', display: (()=>{return (this.getDataFromNotation("Quote.Auction.Message[" + i + "].type") == 1) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.Auction.Message[" + i + "].message"))}, internal-fsb-guid="d1e0142d")
         .internal-fsb-element.col-12(style={'borderTopStyle': 'solid', 'borderTopColor': 'rgba(212, 212, 212, 1)', 'borderTopWidth': '1px', 'flexGrow': '0', 'WebkitFlexGrow': '0', 'flexShrink': '0', 'WebkitFlexShrink': '0', 'flexBasis': '20px', 'WebkitFlexBasis': '20px', 'paddingTop': '8px', 'paddingBottom': '8px', 'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="91922b60")
           .container-fluid
             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -109,10 +116,10 @@ class Rectangle_a8055802 extends Base {
                 .container-fluid
                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                     .internal-fsb-element.col-9.col-sm-10.col-md-11(style={padding: '0px'}, internal-fsb-guid="4522d52e")
-                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", required=true, placeholder="ข้อความ")
+                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="chatInput", type="text", required=true, placeholder="ข้อความ")
                     input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="d09070d8")
                     input.internal-fsb-element.col-12(type="hidden", required=true, value=this.getDataFromNotation("Quote.Auction.aid"), internal-fsb-guid="a4147a38")
-                    Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.col-sm-2.col-md-1.btn.btn-primary.btn-sm(onClick=((event) => { window.internalFsbSubmit('a403abac', 'Message', event, ((results) => { this.manipulate('a403abac', 'Message', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="a403abac")
+                    Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.col-sm-2.col-md-1.btn.btn-primary.btn-sm(onClick=((event) => { window.internalFsbSubmit('a403abac', 'Message', event, ((results) => { this.manipulate('a403abac', 'Message', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_a403abac.bind(this), internal-fsb-guid="a403abac")
                       .internal-fsb-element(internal-fsb-guid="a403abac-text")
                         | ส่ง
     `

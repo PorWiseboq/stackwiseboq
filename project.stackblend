@@ -5998,7 +5998,7 @@
         "                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-10\" internal-fsb-guid=\"4e60b6c9\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 7px; padding-right: 7px; font-size: 13px; background: rgba(214, 237, 255, 1); padding-top: 5px; padding-bottom: 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\" internal-fsb-react-data=\"message\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote[#i].Auction.Message[&quot; + i + &quot;].type&quot;) == 1) ? 'block' : 'none';]\">ABC</div>",
-        "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"be9d8059\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-size: 13px; background: rgba(237, 237, 237, 1); padding-left: 7px; padding-right: 7px; padding-top: 5px; padding-bottom: 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\" internal-fsb-react-data=\"message\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote[#i].Auction.Message[&quot; + i + &quot;].type&quot;) == 0) ? 'block' : 'none';]\">ABC</div>",
+        "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"be9d8059\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-size: 13px; background: rgba(237, 237, 237, 1); padding-left: 7px; padding-right: 7px; padding-top: 5px; padding-bottom: 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; text-align: right\" internal-fsb-react-data=\"message\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote[#i].Auction.Message[&quot; + i + &quot;].type&quot;) == 0) ? 'block' : 'none';]\">ABC</div>",
         "                                                    </div>",
         "                                                </div>",
         "                                            </div>",
@@ -6006,7 +6006,13 @@
         "                                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"25678294\" internal-fsb-name=\"FlowLayout 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 5px; padding-right: 5px; border-top-width: 1px; border-top-color: rgba(212, 212, 212, 1); border-top-style: solid; padding-top: 8px; padding-bottom: 8px\">",
         "                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                    <div class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"8d1ec385\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"กรุณาพิมพ์ข้อความ\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; -fsb-inherited-presets: \" class=\"form-control form-control-sm \" placeholder=\"ข้อความ\" rows=\"1\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"message\" required=\"true\"></textarea></div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b16eadbb\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"aid\" value=\"{this.getDataFromNotation(&quot;Quote[#i].Auction.aid&quot;)}\" required=\"true\" internal-fsb-data-validation-message=\"คุณต้องเคาะประมูลราคาก่อนที่จะสามารถคุยกับลูกค้าได้\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"208c3d23\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"type\" value=\"0\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-3 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"c788d322\" internal-fsb-name=\"Button 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-controls=\" b16eadbb 208c3d23 8d1ec385\" internal-fsb-data-wizard-type=\"insert\">",
+        "                                                    <div class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"8d1ec385\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"กรุณาพิมพ์ข้อความ\" internal-fsb-react-id=\"chatInput\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; -fsb-inherited-presets: \" class=\"form-control form-control-sm \" placeholder=\"ข้อความ\" rows=\"1\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"message\" required=\"true\"></textarea></div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b16eadbb\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"aid\" value=\"{this.getDataFromNotation(&quot;Quote[#i].Auction.aid&quot;)}\" required=\"true\" internal-fsb-data-validation-message=\"คุณต้องเคาะประมูลราคาก่อนที่จะสามารถคุยกับลูกค้าได้\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"208c3d23\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"type\" value=\"0\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-3 offset-0 btn btn-primary btn-sm\" internal-fsb-guid=\"c788d322\" internal-fsb-name=\"Button 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" internal-fsb-data-controls=\" b16eadbb 208c3d23 8d1ec385\" internal-fsb-data-wizard-type=\"insert\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "",
+        "    // Handle the event of onButtonSuccess (Button 2) here:",
+        "    // ",
+        "    ReactDOM.findDOMNode(this.refs.chatInput).value = '';",
+        "    ",
+        "    \">",
         "                                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"c788d322-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ส่ง</div>",
         "                                                    </button>",
         "                                                </div>",
@@ -6661,11 +6667,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "4e60b6c9",
+        "selectingElementGUID": "c788d322",
         "currentCursorWalkPath": [
-          "4996502e",
+          "25678294",
           0,
-          1,
+          4,
           null
         ]
       },
@@ -16300,7 +16306,7 @@
         "                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
         "                                <div contenteditable=\"true\" class=\"internal-fsb-element col-10\" internal-fsb-guid=\"9b681ceb\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(214, 237, 255, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\" internal-fsb-react-data=\"message\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 0) ? 'block' : 'none';]\">ABC</div>",
-        "                                <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"d1e0142d\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(237, 237, 237, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\" internal-fsb-react-data=\"message\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 1) ? 'block' : 'none';]\">ABC</div>",
+        "                                <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"d1e0142d\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(237, 237, 237, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; text-align: right\" internal-fsb-react-data=\"message\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 1) ? 'block' : 'none';]\">ABC</div>",
         "                            </div>",
         "                        </div>",
         "                    </div>",
@@ -16311,8 +16317,14 @@
         "                            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"be5e6825\" internal-fsb-name=\"FlowLayout 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                        <div class=\"internal-fsb-element col-9 col-sm-10 col-md-11\" internal-fsb-guid=\"4522d52e\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาพิมพ์ข้อความ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"message\" required=\"true\" placeholder=\"ข้อความ\"></div>",
-        "                                        <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d09070d8\" internal-fsb-name=\"Hidden 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"type\" value=\"1\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a4147a38\" internal-fsb-name=\"Hidden 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"aid\" required=\"true\" value=\"{this.getDataFromNotation(&quot;Quote.Auction.aid&quot;)}\" internal-fsb-data-validation-message=\"เหมือนห้องนี้จะถูกระงับบริการ\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-3 col-sm-2 col-md-1 btn btn-primary btn-sm\" internal-fsb-guid=\"a403abac\" internal-fsb-name=\"Button 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" internal-fsb-data-wizard-type=\"insert\" internal-fsb-data-controls=\" 4522d52e a4147a38 d09070d8\">",
+        "                                        <div class=\"internal-fsb-element col-9 col-sm-10 col-md-11\" internal-fsb-guid=\"4522d52e\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาพิมพ์ข้อความ\" internal-fsb-react-id=\"chatInput\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"message\" required=\"true\" placeholder=\"ข้อความ\"></div>",
+        "                                        <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d09070d8\" internal-fsb-name=\"Hidden 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"type\" value=\"1\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a4147a38\" internal-fsb-name=\"Hidden 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"aid\" required=\"true\" value=\"{this.getDataFromNotation(&quot;Quote.Auction.aid&quot;)}\" internal-fsb-data-validation-message=\"เหมือนห้องนี้จะถูกระงับบริการ\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-3 col-sm-2 col-md-1 btn btn-primary btn-sm\" internal-fsb-guid=\"a403abac\" internal-fsb-name=\"Button 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" internal-fsb-data-wizard-type=\"insert\" internal-fsb-data-controls=\" 4522d52e a4147a38 d09070d8\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "",
+        "    // Handle the event of onButtonSuccess (Button 4) here:",
+        "    // ",
+        "    ReactDOM.findDOMNode(this.refs.chatInput).value = '';",
+        "    ",
+        "    \">",
         "                                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a403abac-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ส่ง</div>",
         "                                        </button>",
         "                                    </div>",
@@ -16964,9 +16976,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "9b681ceb",
+        "selectingElementGUID": "4522d52e",
         "currentCursorWalkPath": [
-          "56e4cc4e",
+          "be5e6825",
           0,
           1,
           null
@@ -19848,7 +19860,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "681593b59c69b402a76f0ff26f360b666543b779",
+    "Project.Controls.Rectangle_cad06e8d": "e87ac4f19c867c884fa43de89103447e11ca4efd",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
@@ -19856,7 +19868,7 @@
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "e5c0815deb62b26f907e0f772c40fa6ec3c8a5d3",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
-    "Project.Controls.Rectangle_a8055802": "992db3b90740d343c749d27092e326d797d80bdd"
+    "Project.Controls.Rectangle_a8055802": "5ee786d950624702f2a1ac58a257556def8acb4e"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "6f3f7d76fa68adb9a44a5632c9a816ccb98c5870",

@@ -538,6 +538,14 @@ class Rectangle_cad06e8d extends Base {
     this.forceUpdate();
     
   }
+
+  protected onButtonSuccess_c788d322(event: Event) {
+
+    // Handle the event of onButtonSuccess (Button 2) here:
+    // 
+    ReactDOM.findDOMNode(this.refs.chatInput).value = '';
+    
+  }
   // <---Auto[Merging]
   
   // Auto[ClassEnd]--->
@@ -823,15 +831,15 @@ class Rectangle_cad06e8d extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-10(style={'paddingLeft': '7px', 'paddingRight': '7px', 'fontSize': '13px', 'background': 'rgba(214, 237, 255, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', display: (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 1) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="4e60b6c9")
-                              .internal-fsb-element.col-10.offset-2(style={'fontSize': '13px', 'background': 'rgba(237, 237, 237, 1)', 'paddingLeft': '7px', 'paddingRight': '7px', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', display: (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 0) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="be9d8059")
+                              .internal-fsb-element.col-10.offset-2(style={'fontSize': '13px', 'background': 'rgba(237, 237, 237, 1)', 'paddingLeft': '7px', 'paddingRight': '7px', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'textAlign': 'right', display: (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 0) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="be9d8059")
                     .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'borderTopWidth': '1px', 'borderTopColor': 'rgba(212, 212, 212, 1)', 'borderTopStyle': 'solid', 'paddingTop': '8px', 'paddingBottom': '8px'}, internal-fsb-guid="25678294")
                       .container-fluid
                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                           .internal-fsb-element.col-9.offset-0(style={padding: '0px'}, internal-fsb-guid="8d1ec385")
-                            textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'FsbInheritedPresets': ''}, type="text", placeholder="ข้อความ", rows="1", required=true)
+                            textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'FsbInheritedPresets': ''}, ref="chatInput", type="text", placeholder="ข้อความ", rows="1", required=true)
                           input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.aid"), required=true, internal-fsb-guid="b16eadbb")
                           input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="208c3d23")
-                          Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0.btn.btn-primary.btn-sm(onClick=((event) => { window.internalFsbSubmit('c788d322', 'Message', event, ((results) => { this.manipulate('c788d322', 'Message', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="c788d322")
+                          Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0.btn.btn-primary.btn-sm(onClick=((event) => { window.internalFsbSubmit('c788d322', 'Message', event, ((results) => { this.manipulate('c788d322', 'Message', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_c788d322.bind(this), internal-fsb-guid="c788d322")
                             .internal-fsb-element(internal-fsb-guid="c788d322-text")
                               | ส่ง
     `
