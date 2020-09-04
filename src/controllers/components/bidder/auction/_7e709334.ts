@@ -137,6 +137,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
            		      'Quote.status': 1,
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.sid': this.request.session.sid,
+           		      'Quote.Auction.Message.aid': null,
            		      'Quote.Auction.Substitute.aid': null
            		    });
            		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
@@ -163,7 +164,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
            		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
            		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
            		    
-         		      resolve(Object.assign({}, quoteDataset, rankDataset));
+           		    resolve(Object.assign({}, quoteDataset, rankDataset));
         			  });
               }
             } catch (error) {
@@ -212,13 +213,12 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-      /*try {
+      try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      }*/
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
@@ -258,6 +258,16 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
           
       	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
       	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+          
+   		    if (upsertResults['Auction'].rows.length != 0) {
+     		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
+     		    let messageData = RequestHelper.createInputs({
+     		      'Message.aid': upsertResults['Auction'].rows[0].columns['aid']
+     		    });
+     		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
+     		    
+     		    upsertResults['Auction'].rows[0].relations['Message'] = messageDataset['Message'];
+   		    }
           
           const qid = upsertResults[0].keys['qid'];
           
@@ -394,6 +404,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
+       		      'Quote.Auction.Message.aid': null,
        		      'Quote.Auction.Substitute.aid': null,
        		      'Quote.Listing.qid': null
        		    }); 
@@ -441,14 +452,14 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("7e709334", "108bb2b9", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
-    RequestHelper.registerSubmit("7e709334", "833e4eb9", "retrieve", ["d24ed774","6d57beb9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261","c192b978"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "8cbc5b17", "retrieve", ["e8656190"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "2b2a0681", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
 		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -465,16 +476,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       input = RequestHelper.getInput(this.pageId, request, '4cade2e7' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('d24ed774', "relational", "Quote", "status");
-		ValidationHelper.registerInput('d24ed774', "Hidden 3", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'd24ed774' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 3 here:
       // 
       
       if (input != null) data.push(input);
@@ -505,16 +506,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       input = RequestHelper.getInput(this.pageId, request, '72aecc3a' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 6 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('e8656190', "relational", "Listing", "qid");
-		ValidationHelper.registerInput('e8656190', "Hidden 7", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'e8656190' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 7 here:
       // 
       
       if (input != null) data.push(input);
@@ -644,6 +635,36 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 		ValidationHelper.registerInput('a5b102c4', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'a5b102c4' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('8d1ec385', "relational", "Message", "message");
+		ValidationHelper.registerInput('8d1ec385', "Textbox 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '8d1ec385' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('b16eadbb', "relational", "Message", "aid");
+		ValidationHelper.registerInput('b16eadbb', "Hidden 1", true, "คุณต้องเคาะประมูลราคาก่อนที่จะสามารถคุยกับลูกค้าได้");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'b16eadbb' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('208c3d23', "relational", "Message", "type");
+		ValidationHelper.registerInput('208c3d23', "Hidden 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '208c3d23' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
