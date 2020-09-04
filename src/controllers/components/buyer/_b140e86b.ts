@@ -249,7 +249,7 @@ class Controller extends Base {
            		      'Quote.filled': null,
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.Store.sid': null
-           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {uid: results['User'].rows[0].keys['id']});
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
                   
                   if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction'] && quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
                     const auction = quoteDataset['Quote'].rows[0].relations['Auction'].rows.filter(row => row.keys['sid'] == sid);
