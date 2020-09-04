@@ -243,7 +243,7 @@ class Controller extends Base {
             case 'message':
               if (results && results['User'].rows.length != 0) {
                 if (event.message.text.toLowerCase().trim()[0] == 's') {
-                  const sid = parseInt(event.message.text);
+                  const sid = parseInt(event.message.text.toLowerCase().trim().split('s')[1]);
                   const quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'Quote.uid': results['User'].rows[0].keys['id'],
            		      'Quote.filled': null,
