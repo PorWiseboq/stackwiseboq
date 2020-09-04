@@ -250,7 +250,7 @@ class Controller extends Base {
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.sid': sid,
            		      'Quote.Auction.Store.sid': null
-           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {uid: results['User'].rows[0].keys['id']});
                   
                   if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction'] && quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
                     await client.replyMessage(event.replyToken, {
