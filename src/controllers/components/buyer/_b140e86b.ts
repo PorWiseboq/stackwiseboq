@@ -137,6 +137,39 @@ class Controller extends Base {
         for (let event of json.events) {
           switch (event.type) {
             case 'postback':
+              if (event.postback.data == 'list') {
+                if (event.source.userId) {
+                  results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+           		      'User.lineID': event.source.userId
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
+                }
+                
+                if (results && results['User'].rows.length != 0) {
+                  let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+           		      'Quote.uid': results['User'].rows[0].keys['id'],
+           		      'Quote.filled': null,
+           		      'Quote.Auction.qid': null,
+           		      'Quote.Auction.Store.sid': null
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
+                  
+                  for (const auction of quoteDataset['Quote'].rows[0].relations['Auction'].rows) {
+                    await client.replyMessage(event.replyToken, {
+                      "type": "template",
+                      "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
+                      "template": {
+                        "type": "buttons",
+                        "text": `ร้าน ${auction.relations['Store'].rows[0].columns['name']}`,
+                        "actions": [{
+                          "type": "postback",
+                          "label": "คุยกับตัวแทนของร้าน",
+                          "data": "s" + auction.relations['Store'].rows[0].keys['sid'].toString()
+                        }]
+                      }
+                    });
+                  }
+                }
+                break;
+              }
             case 'message':
               if (event.source.userId) {
                 results = await DatabaseHelper.retrieve(RequestHelper.createInputs({
@@ -194,26 +227,21 @@ class Controller extends Base {
                       }
                     });
                   } else {
-                    let actions = quoteDataset['Quote'].rows[0].relations['Auction'].rows.map((auction) => {
-                      return {
-                        "type": "postback",
-                        "label": `คุยกับร้าน ${auction.relations['Store'].rows[0].columns['name']}`,
-                        "data": auction.relations['Store'].rows[0].keys['sid']
-                      }
-                    })
-                    actions.push({
-                      "type": "postback",
-                      "label": "ขอสถานะล่าสุด",
-                      "data": "refresh"
-                    });
-                        
                     await client.replyMessage(event.replyToken, {
                       "type": "template",
                       "altText": "สิ่งที่คุณสามารถทำได้ในตอนนี้",
                       "template": {
                         "type": "buttons",
                         "text": "เนื่องจากตอนนี้คุณมีรายการที่กำลังสืบราคาอยู่ กรุณาเลือกว่าจะติดต่อกับร้านค้าไหน",
-                        "actions": actions
+                        "actions": [{
+                          "type": "postback",
+                          "label": "แสดงรายชื่อร้านค้าทั้งหมด",
+                          "data": "list"
+                        }, {
+                          "type": "postback",
+                          "label": "ขอสถานะล่าสุด",
+                          "data": "refresh"
+                        }]
                       }
                     });
                   }
