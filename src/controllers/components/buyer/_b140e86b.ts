@@ -287,6 +287,31 @@ class Controller extends Base {
        		            'text': 'ลงทะเบียนเสร็จเรียบร้อยแล้ว'
            		      });
            		      
+           		      await client.replyMessage(event.replyToken, {
+                      "type": "template",
+                      "altText": "คุณต้องการที่จะทำอะไร?",
+                      "template": {
+                        "type": "buttons",
+                        "text": "คุณต้องการที่จะทำอะไร?",
+                        "actions": [{
+                          "type": "uri",
+                          "label": "สืบราคาวัสดุก่อสร้าง",
+                          "uri": "https://www.wiseboq.com/buyer/auction"
+                        }, {
+                          "type": "uri",
+                          "label": "อ่านบทความล่าสุด",
+                          "uri": "https://www.wiseboq.com/blog/all"
+                        }, {
+                          "type": "postback",
+                          "label": "ติดต่อร้านค้าวัสดุก่อสร้าง",
+                          "data": "list"
+                        }, {
+                          "type": "postback",
+                          "label": "ขอทราบสถานะล่าสุด",
+                          "data": "status"
+                        }]
+                      }
+                    });
            		    } else {
            		      await client.replyMessage(event.replyToken, {
        		            'type': 'text',
