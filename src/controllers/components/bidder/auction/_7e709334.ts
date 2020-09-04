@@ -137,6 +137,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
            		      'Quote.status': 1,
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.sid': this.request.session.sid,
+           		      'Quote.Auction.Message.aid': null,
            		      'Quote.Auction.Substitute.aid': null
            		    });
            		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
@@ -158,16 +159,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
                         rows: []
              		      };
              		    }
-           		    }
-           		    
-           		    if (quoteDataset['Quote'].rows.length != 0) {
-             		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
-             		    let messageData = RequestHelper.createInputs({
-             		      'Message.aid': (quoteDataset['Quote'].rows.length == 0 || quoteDataset['Quote'].rows[0].relations['Auction'].rows.length == 0) ? -1 : quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']
-             		    });
-             		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
-             		    
-             		    quoteDataset['Quote'].rows[0].relations['Message'] = messageDataset['Message'];
            		    }
            		    
            		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
@@ -267,6 +258,16 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
           
       	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
       	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
+          
+   		    if (upsertResults['Auction'].rows.length != 0) {
+     		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
+     		    let messageData = RequestHelper.createInputs({
+     		      'Message.aid': upsertResults['Auction'].rows[0].columns['aid']
+     		    });
+     		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
+     		    
+     		    upsertResults['Auction'].rows[0].relations['Message'] = messageDataset['Message'];
+   		    }
           
           const qid = upsertResults[0].keys['qid'];
           
@@ -403,26 +404,17 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
+       		      'Quote.Auction.Message.aid': null,
        		      'Quote.Auction.Substitute.aid': null,
        		      'Quote.Listing.qid': null
        		    }); 
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-           		
-       		    if (quoteDataset['Quote'].rows.length != 0) {
-         		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
-         		    let messageData = RequestHelper.createInputs({
-         		      'Message.aid': (quoteDataset['Quote'].rows.length == 0 || quoteDataset['Quote'].rows[0].relations['Auction'].rows.length == 0) ? -1 : quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']
-         		    });
-         		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
-         		    
-         		    quoteDataset['Quote'].rows[0].relations['Message'] = messageDataset['Message'];
-       		    }
            		    
        		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
        		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
        		    
-     		      resolve(Object.assign({}, quoteDataset, rankDataset, messageDataset));
+     		      resolve(Object.assign({}, quoteDataset, rankDataset));
             } else {
               resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
             }
@@ -460,11 +452,9 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("7e709334", "108bb2b9", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
-    RequestHelper.registerSubmit("7e709334", "833e4eb9", "retrieve", ["d24ed774","6d57beb9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261","c192b978"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "8cbc5b17", "retrieve", ["e8656190"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
@@ -486,16 +476,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       input = RequestHelper.getInput(this.pageId, request, '4cade2e7' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('d24ed774', "relational", "Quote", "status");
-		ValidationHelper.registerInput('d24ed774', "Hidden 3", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'd24ed774' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 3 here:
       // 
       
       if (input != null) data.push(input);
@@ -526,16 +506,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       input = RequestHelper.getInput(this.pageId, request, '72aecc3a' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 6 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('e8656190', "relational", "Listing", "qid");
-		ValidationHelper.registerInput('e8656190', "Hidden 7", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'e8656190' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 7 here:
       // 
       
       if (input != null) data.push(input);
