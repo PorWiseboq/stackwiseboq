@@ -32,6 +32,8 @@ const route = (app: any) => {
  app.post("/buyer/auction/results", homeController._473d370d);
  app.get("/buyer/auction/waiting", homeController._8a4a42e4);
  app.post("/buyer/auction/waiting", homeController._8a4a42e4);
+ app.get("/buyer/chat/:refID/:aid", homeController._73d1cec9);
+ app.post("/buyer/chat/:refID/:aid", homeController._73d1cec9);
  app.get("/error/:code", homeController._bbc7dba3);
  app.post("/error/:code", homeController._bbc7dba3);
 }
