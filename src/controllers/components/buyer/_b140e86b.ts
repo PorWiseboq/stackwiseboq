@@ -248,24 +248,32 @@ class Controller extends Base {
            		      'Quote.uid': results['User'].rows[0].keys['id'],
            		      'Quote.filled': null,
            		      'Quote.Auction.qid': null,
-           		      'Quote.Auction.sid': sid,
            		      'Quote.Auction.Store.sid': null
            		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {uid: results['User'].rows[0].keys['id']});
                   
                   if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction'] && quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
-                    await client.replyMessage(event.replyToken, {
-                      "type": "template",
-                      "altText": `เปิดห้องคุย`,
-                      "template": {
-                        "type": "buttons",
-                        "text": `ร้าน ${quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].relations['Store'].rows[0].columns['name']}`,
-                        "actions": [{
-                          "type": "uri",
-                          "label": "เปิดห้องคุย",
-                          "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']}`
-                        }]
-                      }
-                    });
+                    const auction = quoteDataset['Quote'].rows[0].relations['Auction'].rows.filter(row => row.keys['sid'] == sid);
+                    
+                    if (auction.length != 0) {
+                      await client.replyMessage(event.replyToken, {
+                        "type": "template",
+                        "altText": `เปิดห้องคุย`,
+                        "template": {
+                          "type": "buttons",
+                          "text": `ร้าน ${auction[0].relations['Store'].rows[0].columns['name']}`,
+                          "actions": [{
+                            "type": "uri",
+                            "label": "เปิดห้องคุย",
+                            "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${auction[0].columns['aid']}`
+                          }]
+                        }
+                      });
+                    } else {
+                      await client.replyMessage(event.replyToken, {
+         		            'type': 'text',
+         		            'text': `เหมือนว่าคุณจะพิมพ์รหัสนอกเหนือไปจากที่มี กรุณาลองดูอีกครั้ง`
+             		      });
+                    }
                   } else {
                     await client.replyMessage(event.replyToken, {
        		            'type': 'text',
