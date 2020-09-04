@@ -247,17 +247,18 @@ class Controller extends Base {
                   const quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'Quote.uid': results['User'].rows[0].keys['id'],
            		      'Quote.filled': null,
+           		      'Quote.Auction.qid': null,
            		      'Quote.Auction.sid': sid,
-           		      'Quote.Auction.Store.sid': sid
-           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
+           		      'Quote.Auction.Store.sid': null
+           		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {uid: results['User'].rows[0].keys['id']});
                   
-                  if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
+                  if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction'] && quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
                     await client.replyMessage(event.replyToken, {
                       "type": "template",
-                      "altText": `ร้าน ${quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].relations['Store'].rows[0].columns['name']}`,
+                      "altText": `เปิดห้องคุย`,
                       "template": {
                         "type": "buttons",
-                        "text": "",
+                        "text": `ร้าน ${quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].relations['Store'].rows[0].columns['name']}`,
                         "actions": [{
                           "type": "uri",
                           "label": "เปิดห้องคุย",
