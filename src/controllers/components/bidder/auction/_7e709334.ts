@@ -231,12 +231,13 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
    		    if (messageDataset['Message'].rows.length == 1) {
    		      let auctionDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
      		      'Auction.aid': results[0].columns['aid'],
-     		      'Auction.Store.sid': null,
      		      'Auction.Quote.qid': null,
      		      'Auction.Quote.User.id': null
      		    }), ProjectConfigurationHelper.getDataSchema().tables['Auction'], {});
      		    let userDataset = auctionDataset['Auction'].rows[0].relations['Quote'].rows[0].relations;
-     		    let storeDataset = auctionDataset['Auction'].rows[0].relations;
+     		    let storeDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+     		      'Store.sid': auctionDataset['Auction'].rows[0].keys['sid']
+     		    }), ProjectConfigurationHelper.getDataSchema().tables['Store'], {});
      		    
      		    if (userDataset['User'].rows[0].columns['lineID']) {
      		      await client.pushMessage(userDataset['User'].rows[0].columns['lineID'], {
