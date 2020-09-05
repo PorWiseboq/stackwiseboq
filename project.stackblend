@@ -185,7 +185,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "7e709334",
+    "editingPageID": "73d1cec9",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -6078,10 +6078,10 @@
         "                                            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"4996502e\" internal-fsb-name=\"Message\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px; padding-bottom: 7px\" internal-fsb-react-data=\"Quote[#i].Message\">",
         "                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                        <div class=\"internal-fsb-element internal-fsb-allow-cursor col-10\" internal-fsb-guid=\"ab5366c6\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote[#i].Auction.Message[&quot; + i + &quot;].type&quot;) == 1) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex\">",
+        "                                                        <div class=\"internal-fsb-element internal-fsb-allow-cursor col-10\" internal-fsb-guid=\"ab5366c6\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote[#i].Message[&quot; + i + &quot;].type&quot;) == 1) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex\">",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element\" internal-fsb-guid=\"4e60b6c9\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 15px; padding-right: 15px; font-size: 13px; background: rgba(214, 237, 255, 1); padding-top: 5px; padding-bottom: 5px; border-radius: 20px 20px 20px 20px; -webkit-border-radius: 20px 20px 20px 20px\" internal-fsb-react-data=\"message\">ABC</div>",
         "                                                        </div>",
-        "                                                        <div class=\"internal-fsb-element internal-fsb-allow-cursor offset-2 col-10\" internal-fsb-guid=\"a7204427\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote[#i].Auction.Message[&quot; + i + &quot;].type&quot;) == 0) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex; flex-direction: row-reverse; -webkit-flex-direction: row-reverse; -ms-flex-direction: row-reverse\">",
+        "                                                        <div class=\"internal-fsb-element internal-fsb-allow-cursor offset-2 col-10\" internal-fsb-guid=\"a7204427\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote[#i].Message[&quot; + i + &quot;].type&quot;) == 0) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex; flex-direction: row-reverse; -webkit-flex-direction: row-reverse; -ms-flex-direction: row-reverse\">",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element\" internal-fsb-guid=\"be9d8059\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-size: 13px; background: rgba(237, 237, 237, 1); padding-left: 15px; padding-right: 15px; padding-top: 5px; padding-bottom: 5px; border-radius: 20px 20px 20px 20px; -webkit-border-radius: 20px 20px 20px 20px; text-align: right\" internal-fsb-react-data=\"message\">ABC</div>",
         "                                                        </div>",
         "                                                    </div>",
@@ -6753,11 +6753,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "c788d322",
+        "selectingElementGUID": "ab5366c6",
         "currentCursorWalkPath": [
-          "25678294",
+          "4996502e",
           0,
-          5,
+          1,
           null
         ]
       },
@@ -16484,10 +16484,10 @@
         "                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
-        "                                <div class=\"internal-fsb-element internal-fsb-allow-cursor col-10\" internal-fsb-guid=\"2a02217c\" internal-fsb-name=\"Rectangle 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 0) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex\">",
+        "                                <div class=\"internal-fsb-element internal-fsb-allow-cursor col-10\" internal-fsb-guid=\"2a02217c\" internal-fsb-name=\"Rectangle 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Message[&quot; + i + &quot;].type&quot;) == 0) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element\" internal-fsb-guid=\"9b681ceb\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(255, 255, 255, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; border-radius: 20px 20px 20px 20px; -webkit-border-radius: 20px 20px 20px 20px; font-size: 15px\" internal-fsb-react-data=\"message\">ABC</div>",
         "                                </div>",
-        "                                <div class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"702a908d\" internal-fsb-name=\"Rectangle 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 1) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex; flex-direction: row-reverse; -webkit-flex-direction: row-reverse; -ms-flex-direction: row-reverse\">",
+        "                                <div class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"702a908d\" internal-fsb-name=\"Rectangle 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Message[&quot; + i + &quot;].type&quot;) == 1) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex; flex-direction: row-reverse; -webkit-flex-direction: row-reverse; -ms-flex-direction: row-reverse\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element\" internal-fsb-guid=\"d1e0142d\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(68, 79, 102, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 15px; padding-right: 15px; border-radius: 20px 20px 20px 20px; -webkit-border-radius: 20px 20px 20px 20px; text-align: right; font-size: 15px; color: rgba(255, 255, 255, 1)\" internal-fsb-react-data=\"message\">ABC</div>",
         "                                </div>",
         "                            </div>",
@@ -17160,11 +17160,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a8055802",
+        "selectingElementGUID": "702a908d",
         "currentCursorWalkPath": [
-          "0",
+          "56e4cc4e",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -20083,7 +20083,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "aaeef3eba87b1f3e2f14c2c9c23cd1de2b047dca",
+    "Project.Controls.Rectangle_cad06e8d": "73a5c0eb2fc3d2c05a48e63bb1837f419fbe5b8f",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
@@ -20091,7 +20091,7 @@
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "e5c0815deb62b26f907e0f772c40fa6ec3c8a5d3",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
-    "Project.Controls.Rectangle_a8055802": "d64a3d2cd3d2873965ec72c17a416a4da5a1edbe"
+    "Project.Controls.Rectangle_a8055802": "f148c665d929597a4a6a71766c29101eb0d7bbc0"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "896d4a5979f716dc22e81ae474323db62e34507c",
