@@ -360,7 +360,7 @@ class Controller extends Base {
              		    if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Message']) {
              		      let store = {};
              		      for (const message of quoteDataset['Quote'].rows[0].relations['Message'].rows) {
-             		        store[message.relations['Store'].keys['sid'].toString()] = store[message.relations['Store'].columns['name'];
+             		        store[message.relations['Store'].keys['sid'].toString()] = message.relations['Store'].columns['name'];
              		      }
              		      
              		      for (const key in store) {
