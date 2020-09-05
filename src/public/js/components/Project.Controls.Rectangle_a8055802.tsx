@@ -105,6 +105,7 @@ class Rectangle_a8055802 extends Base {
     // Handle the event of onButtonSuccess (Button 4) here:
     // 
     ReactDOM.findDOMNode(this.refs.chatInput).value = '';
+    this.scrollToBottom(true);
     
   }
   // <---Auto[Merging]

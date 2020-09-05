@@ -392,6 +392,7 @@ class Rectangle_cad06e8d extends Base {
     }, 0);
     
     this.resetForm();
+    this.scrollToBottom(true);
     
   }
 
@@ -413,6 +414,7 @@ class Rectangle_cad06e8d extends Base {
     }, 0);
     
     this.resetForm();
+    this.scrollToBottom(true);
     
   }
 
@@ -434,6 +436,7 @@ class Rectangle_cad06e8d extends Base {
     }, 0);
     
     this.resetForm();
+    this.scrollToBottom(true);
     
   }
 
@@ -465,6 +468,7 @@ class Rectangle_cad06e8d extends Base {
     }
     
     this.forceUpdate();
+    this.scrollToBottom(true);
     
   }
 
@@ -487,6 +491,7 @@ class Rectangle_cad06e8d extends Base {
     this.resetForm();
     
     this.forceUpdate();
+    this.scrollToBottom(true);
     
   }
 
@@ -509,6 +514,7 @@ class Rectangle_cad06e8d extends Base {
     this.resetForm();
     
     this.forceUpdate();
+    this.scrollToBottom(true);
     
   }
 
@@ -559,6 +565,7 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onButtonSuccess (Button 2) here:
     // 
     ReactDOM.findDOMNode(this.refs.chatInput).value = '';
+    this.scrollToBottom(true);
     
   }
   // <---Auto[Merging]

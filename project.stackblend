@@ -185,7 +185,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "7e709334",
+    "editingPageID": "73d1cec9",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -5205,6 +5205,7 @@
         "    }, 0);",
         "    ",
         "    this.resetForm();",
+        "    this.scrollToBottom(true);",
         "    ",
         "    \" internal-fsb-data-wizard-real-time-update=\"true\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
@@ -5254,6 +5255,7 @@
         "    }, 0);",
         "    ",
         "    this.resetForm();",
+        "    this.scrollToBottom(true);",
         "    ",
         "    \" internal-fsb-data-wizard-real-time-update=\"true\" onfsbsubmitting=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
@@ -5302,6 +5304,7 @@
         "    }, 0);",
         "    ",
         "    this.resetForm();",
+        "    this.scrollToBottom(true);",
         "    ",
         "    \" internal-fsb-data-wizard-real-time-update=\"true\" onfsbsubmitting=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
@@ -5434,6 +5437,7 @@
         "    }",
         "    ",
         "    this.forceUpdate();",
+        "    this.scrollToBottom(true);",
         "    ",
         "    \" internal-fsb-data-wizard-retrieve-into=\"Quote[#i]\" internal-fsb-react-style-border-top-color=\"CODE[return (this.hasError(i)) ? '#e65100' : '';]\" internal-fsb-react-style-border-right-color=\"CODE[return (this.hasError(i)) ? '#e65100' : '';]\" internal-fsb-react-style-border-bottom-color=\"CODE[return (this.hasError(i)) ? '#e65100' : '';]\" internal-fsb-react-style-border-left-color=\"CODE[return (this.hasError(i)) ? '#e65100' : '';]\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"31c75169\" internal-fsb-name=\"Hidden 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Listing\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"qid\">",
         "                                                                        <div class=\"internal-fsb-element -fsb-self-5a671a7d\" internal-fsb-guid=\"5a671a7d\" internal-fsb-name=\"Item\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"\" style=\"background: rgba(214, 237, 255, 0); border-top-color: rgba(77, 195, 250, 1); border-left-color: rgba(77, 195, 250, 1); border-right-color: rgba(77, 195, 250, 1); border-bottom-color: rgba(77, 195, 250, 1); -fsb-reusable-name: ; -fsb-reusable-id: 5a671a7d; -fsb-inherited-presets: \">",
@@ -5468,6 +5472,7 @@
         "    this.resetForm();",
         "    ",
         "    this.forceUpdate();",
+        "    this.scrollToBottom(true);",
         "    ",
         "    \" internal-fsb-data-wizard-retrieve-into=\"Quote[#i]\" onfsbsubmitting=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
@@ -5509,6 +5514,7 @@
         "    this.resetForm();",
         "    ",
         "    this.forceUpdate();",
+        "    this.scrollToBottom(true);",
         "    ",
         "    \" internal-fsb-data-wizard-retrieve-into=\"Quote[#i]\" onfsbsubmitting=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
@@ -6035,6 +6041,7 @@
         "    // Handle the event of onButtonSuccess (Button 2) here:",
         "    // ",
         "    ReactDOM.findDOMNode(this.refs.chatInput).value = '';",
+        "    this.scrollToBottom(true);",
         "    ",
         "    \">",
         "                                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"c788d322-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ส่ง</div>",
@@ -6691,11 +6698,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a7204427",
+        "selectingElementGUID": "c788d322",
         "currentCursorWalkPath": [
-          "4996502e",
+          "25678294",
           0,
-          2,
+          4,
           null
         ]
       },
@@ -16389,6 +16396,7 @@
         "    // Handle the event of onButtonSuccess (Button 4) here:",
         "    // ",
         "    ReactDOM.findDOMNode(this.refs.chatInput).value = '';",
+        "    this.scrollToBottom(true);",
         "    ",
         "    \">",
         "                                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a403abac-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ส่ง</div>",
@@ -17042,11 +17050,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "702a908d",
+        "selectingElementGUID": "a403abac",
         "currentCursorWalkPath": [
-          "56e4cc4e",
+          "be5e6825",
           0,
-          2,
+          4,
           null
         ]
       },
@@ -19926,7 +19934,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "790514a60e41b94cfc4f0eecd218362c41daff2a",
+    "Project.Controls.Rectangle_cad06e8d": "c32f594d4aa512e5490d29f2af895e55bae111b7",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "c7c77be2cf75a3d4cb62d9d42db2c719f69f29b2",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
@@ -19934,7 +19942,7 @@
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "e5c0815deb62b26f907e0f772c40fa6ec3c8a5d3",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
-    "Project.Controls.Rectangle_a8055802": "0f94b4659384113fef7af00078fe83a5abaa6d94"
+    "Project.Controls.Rectangle_a8055802": "a9c3190f845084ada07c1d6548c5546cd5098d94"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "6f3f7d76fa68adb9a44a5632c9a816ccb98c5870",
