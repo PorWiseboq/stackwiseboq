@@ -91,8 +91,14 @@ class Controller extends Base {
   protected async accessories(data: Input[]): Promise<any> {
     return new Promise(async (resolve, reject) => {
       try {
+        let storeData = RequestHelper.createInputs({
+ 		      'Store.sid': this.request.params.sid
+ 		    });
+ 		    let store = SchemaHelper.getDataTableSchemaFromNotation('Store', ProjectConfigurationHelper.getDataSchema());
+ 		    let storeDataset = await DatabaseHelper.retrieve(storeData, store);
+   		    
         resolve({
-          title: null,
+          title: `คุยกับร้านค้า ${storeDataset['Store'].rows[0].columns['name']}`,
           description: null,
           keywords: null,
           language: null,
