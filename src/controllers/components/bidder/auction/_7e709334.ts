@@ -171,7 +171,13 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
            		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
            		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
            		    
-           		    resolve(Object.assign({}, quoteDataset, rankDataset));
+           		    let noticeData = RequestHelper.createInputs({
+           		      'Notice.sid': this.request.session.sid
+           		    });
+           		    let notice = SchemaHelper.getDataTableSchemaFromNotation('Notice', ProjectConfigurationHelper.getDataSchema());
+           		    let noticeDataset = await DatabaseHelper.retrieve(noticeData, notice, this.request.session, true);
+           		    
+           		    resolve(Object.assign({}, quoteDataset, rankDataset, noticeDataset));
         			  });
               }
             } catch (error) {
