@@ -122,6 +122,15 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
+  private getNoticeCount(i: number): number {
+    let count = 0;
+    for (const message of this.getDataFromNotation('Quote[' + i + '].Message')) {
+      if (message.columns['type'] == 0) count = 0;
+      else count++;
+    }
+    return count;
+  }
+  
   // Private function of text displaying
   //
   private getTitle(i: number): string {
@@ -691,11 +700,13 @@ class Rectangle_cad06e8d extends Base {
                                               | #{this.getSubtitle(i)}
                                             .internal-fsb-element.col-5.offset-0.-fsb-self-3bec5885(style={background: (()=>{return (this.hasError(i) ? '#e65100' : '');})()}, internal-fsb-guid="3bec5885")
                                               | #{this.getTag(i)}
+                                            .internal-fsb-element.-fsb-self-098de259(style={display: (()=>{return (this.getNoticeCount(i) != 0) ? 'block' : 'none';})()}, internal-fsb-guid="098de259")
+                                              | #{this.getNoticeCount(i)}
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getQuoteTypeDisplay(QuoteType.OFFERING, true);})()}, internal-fsb-guid="24d70384")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   each data, i in this.getDataFromNotation("Quote", true)
-                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : ((this.hasError(i)) ? '#ffe0b2' : '');})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})(), borderTopColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderRightColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderBottomColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderLeftColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})()}, key="item_" + i, onClick=((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this), type="button", data-index=i + '', onSuccess=this.onButtonSuccess_802159d0.bind(this), onSubmitting=this.onButtonSubmitting_802159d0.bind(this), internal-fsb-guid="802159d0")
+                                    Button.internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-e76846ad(style={'FsbInheritedPresets': 'e76846ad', 'position': 'relative', background: (()=>{return (this.state.selectedIndex == i) ? '#007BFF' : ((this.hasError(i)) ? '#ffe0b2' : '');})(), color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})(), borderTopColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderRightColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderBottomColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})(), borderLeftColor: (()=>{return (this.hasError(i)) ? '#e65100' : '';})()}, key="item_" + i, onClick=((event) => { window.internalFsbSubmit('802159d0', 'Listing', event, ((results) => { this.manipulate('802159d0', 'Listing', results); }).bind(this)); }).bind(this), type="button", data-index=i + '', onSuccess=this.onButtonSuccess_802159d0.bind(this), onSubmitting=this.onButtonSubmitting_802159d0.bind(this), internal-fsb-guid="802159d0")
                                       input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="72aecc3a")
                                       .internal-fsb-element(style={'FsbInheritedPresets': '', 'background': 'rgba(214, 237, 255, 0)'}, internal-fsb-guid="704100b7")
                                         .container-fluid
@@ -705,6 +716,8 @@ class Rectangle_cad06e8d extends Base {
                                               | #{this.getSubtitle(i)}
                                             .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'}, internal-fsb-guid="c78396c8")
                                               | #{this.getTag(i)}
+                                            .internal-fsb-element.-fsb-preset-098de259(style={'FsbInheritedPresets': '098de259', display: (()=>{return (this.getNoticeCount(i) != 0) ? 'block' : 'none';})()}, internal-fsb-guid="9544ebc1")
+                                              | #{this.getNoticeCount(i)}
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getQuoteTypeDisplay(QuoteType.CHATTING, true);})()}, internal-fsb-guid="0250cb01")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -722,6 +735,8 @@ class Rectangle_cad06e8d extends Base {
                                               | 55,000 บาท
                                             .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'}, internal-fsb-guid="9ec45baa")
                                               | บัตรเครดิต
+                                            .internal-fsb-element.-fsb-preset-098de259(style={'FsbInheritedPresets': '098de259', display: (()=>{return (this.getNoticeCount(i) != 0) ? 'block' : 'none';})()}, internal-fsb-guid="52b143be")
+                                              | #{this.getNoticeCount(i)}
                         .internal-fsb-element.internal-fsb-allow-cursor(style={'position': 'relative', 'flexGrow': '1', 'WebkitFlexGrow': '1'}, internal-fsb-guid="154b7137")
                           .internal-fsb-element.internal-fsb-allow-cursor(style={'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'left': '0px', 'top': '0px', 'right': '0px', 'bottom': '0px', 'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="ed65b978")
                             .internal-fsb-element(style={display: (()=>{return this.getQuoteTypeDisplay(QuoteType.AUCTIONING, true);})()}, internal-fsb-guid="ae9a328e")
