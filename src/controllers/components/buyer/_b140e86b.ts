@@ -264,7 +264,7 @@ class Controller extends Base {
                           "actions": [{
                             "type": "uri",
                             "label": "เปิดห้องคุย",
-                            "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${auction[0].columns['aid']}`
+                            "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${auction[0].columns['sid']}/${auction[0].columns['qid']}`
                           }]
                         }
                       });
@@ -353,24 +353,28 @@ class Controller extends Base {
                     let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
              		      'Quote.uid': results['User'].rows[0].keys['id'],
              		      'Quote.filled': null,
-             		      'Quote.Auction.qid': null,
-             		      'Quote.Auction.Store.sid': null,
-             		      'Quote.Auction.Message.aid': null
+             		      'Quote.Message.qid': null,
+             		      'Quote.Message.Store.sid': null
              		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
              		    
-             		    if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction']) {
-             		      for (const auction of quoteDataset['Quote'].rows[0].relations['Auction'].rows) {
-             		        if (auction.relations['Message'].rows.some(row => row.columns['type'] == 0)) {
+             		    if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Message']) {
+             		      let store = {};
+             		      for (const message of quoteDataset['Quote'].rows[0].relations['Message'].rows) {
+             		        store[message.relations['Store'].keys['sid'].toString()] = store[message.relations['Store'].columns['name'];
+             		      }
+             		      
+             		      for (const key in store) {
+             		        if (store.hasOwnProperty(key)) {
              		          await client.pushMessage(event.source.userId, {
                             "type": "template",
                             "altText": `เปิดห้องคุย`,
                             "template": {
                               "type": "buttons",
-                              "text": `ร้าน ${auction.relations['Store'].rows[0].columns['name']} ต้องการจะคุยด้วย`,
+                              "text": `ร้าน ${store[key]} ต้องการจะคุยด้วย`,
                               "actions": [{
                                 "type": "uri",
                                 "label": "เปิดห้องคุย",
-                                "uri": `https://staging.wiseboq.com/buyer/chat/${event.message.text.toUpperCase()}/${auction.columns['aid']}`
+                                "uri": `https://staging.wiseboq.com/buyer/chat/${event.message.text.toUpperCase()}/${key}/${quoteDataset['Quote'].rows[0].keys['qid']}`
                               }]
                             }
                           });
