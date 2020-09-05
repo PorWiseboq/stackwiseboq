@@ -185,7 +185,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "7e709334",
+    "editingPageID": "73d1cec9",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -6698,11 +6698,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "24731127",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "25678294",
+          "5775d3be",
           0,
-          4,
+          2,
           null
         ]
       },
@@ -16326,10 +16326,10 @@
         "fonts": {}
       },
       "body": [
-        "<body class=\"\">",
+        "<body class=\"\" style=\"background: rgba(40, 49, 69, 1)\">",
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
-        "            <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"a8055802\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"width: 100vw; height: 100vh; display: flex; flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column\" internal-fsb-react-mode=\"Document\" internal-fsb-react-code-body=\"",
+        "            <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"a8055802\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"width: 100vw; height: 100vh; display: flex; flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column; background: rgba(40, 49, 69, 1)\" internal-fsb-react-mode=\"Document\" internal-fsb-react-code-body=\"",
         "  ",
         "  // Declare class variables and functions here:",
         "  //",
@@ -16375,10 +16375,10 @@
         "                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
         "                                <div class=\"internal-fsb-element internal-fsb-allow-cursor col-10\" internal-fsb-guid=\"2a02217c\" internal-fsb-name=\"Rectangle 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 0) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex\">",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element\" internal-fsb-guid=\"9b681ceb\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(255, 255, 255, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; font-size: 13px\" internal-fsb-react-data=\"message\">ABC</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element\" internal-fsb-guid=\"9b681ceb\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(255, 255, 255, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; font-size: 15px\" internal-fsb-react-data=\"message\">ABC</div>",
         "                                </div>",
         "                                <div class=\"internal-fsb-element col-10 offset-2\" internal-fsb-guid=\"702a908d\" internal-fsb-name=\"Rectangle 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation(&quot;Quote.Auction.Message[&quot; + i + &quot;].type&quot;) == 1) ? 'flex' : 'none';]\" style=\"padding-left: 0px; padding-right: 0px; display: flex; flex-direction: row-reverse; -webkit-flex-direction: row-reverse; -ms-flex-direction: row-reverse\">",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element\" internal-fsb-guid=\"d1e0142d\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(40, 49, 69, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; text-align: right; font-size: 13px; color: rgba(255, 255, 255, 1)\" internal-fsb-react-data=\"message\">ABC</div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element\" internal-fsb-guid=\"d1e0142d\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"background: rgba(68, 79, 102, 1); padding-top: 5px; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; text-align: right; font-size: 15px; color: rgba(255, 255, 255, 1)\" internal-fsb-react-data=\"message\">ABC</div>",
         "                                </div>",
         "                            </div>",
         "                        </div>",
@@ -19942,7 +19942,7 @@
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "e5c0815deb62b26f907e0f772c40fa6ec3c8a5d3",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
-    "Project.Controls.Rectangle_a8055802": "afba9a4dcb4c2ab0040ec23a1b6f5e96d06ad6b1"
+    "Project.Controls.Rectangle_a8055802": "accf3b7404307cccfd263fc6da9eb97d514ae47d"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "896d4a5979f716dc22e81ae474323db62e34507c",
@@ -19960,7 +19960,7 @@
     "473d370d": "f15e9e87ae47cf93c91cacc90f2963f37ee4a01a",
     "ea2e6d53": "1c298b988d1821d1a1e78a9170f3bd6cab7bd62f",
     "5488072c": "1f2478519b683133b16f0d9e0bf9425ede291072",
-    "73d1cec9": "ee883d1e375e696dacef4d8bba91524faff98190"
+    "73d1cec9": "8cab7d4233ee93cef93f5d8c20205965174f56df"
   },
   "currentPersistingFiles": [
     "src/controllers/components/index.ts",
