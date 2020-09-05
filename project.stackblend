@@ -16363,10 +16363,10 @@
         "fonts": {}
       },
       "body": [
-        "<body class=\"\" style=\"background: rgba(40, 49, 69, 1); overflow-y: hidden; -ms-overflow-y: hidden; overflow-x: hidden; -ms-overflow-x: hidden\">",
+        "<body class=\"\" style=\"background: rgba(40, 49, 69, 1); overflow-y: hidden; -ms-overflow-y: hidden; overflow-x: hidden; -ms-overflow-x: hidden; position: relative\">",
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
-        "            <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"a8055802\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"width: 100vw; height: 100vh; display: flex; flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column; background: rgba(40, 49, 69, 1); overflow-y: hidden; -ms-overflow-y: hidden; overflow-x: hidden; -ms-overflow-x: hidden\" internal-fsb-react-mode=\"Document\" internal-fsb-react-code-body=\"",
+        "            <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"a8055802\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"width: 100vw; height: 100vh; display: flex; flex-direction: column; -webkit-flex-direction: column; -ms-flex-direction: column; background: rgba(40, 49, 69, 1); overflow-x: hidden; -ms-overflow-x: hidden; overflow-y: hidden; -ms-overflow-y: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px\" internal-fsb-react-mode=\"Document\" internal-fsb-react-code-body=\"",
         "  ",
         "  // Declare class variables and functions here:",
         "  //",
@@ -16421,10 +16421,10 @@
         "                        </div>",
         "                    </div>",
         "                </div>",
-        "                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"91922b60\" internal-fsb-name=\"FlowLayout 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-style: solid; border-top-color: rgba(212, 212, 212, 1); border-top-width: 1px; flex-grow: 0; -webkit-flex-grow: 0; flex-shrink: 0; -webkit-flex-shrink: 0; flex-basis: 20px; -webkit-flex-basis: 20px; padding-top: 8px; padding-bottom: 30px; padding-left: 5px; padding-right: 5px; background: rgba(40, 49, 69, 1); overflow-y: hidden; -ms-overflow-y: hidden; overflow-x: hidden; -ms-overflow-x: hidden\">",
+        "                <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"91922b60\" internal-fsb-name=\"FlowLayout 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-style: solid; border-top-color: rgba(212, 212, 212, 1); border-top-width: 1px; flex-grow: 0; -webkit-flex-grow: 0; flex-shrink: 0; -webkit-flex-shrink: 0; flex-basis: 20px; -webkit-flex-basis: 20px; padding-top: 8px; padding-bottom: 30px; padding-left: 5px; padding-right: 5px; background: rgba(40, 49, 69, 1)\">",
         "                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"be5e6825\" internal-fsb-name=\"FlowLayout 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px; overflow-y: hidden; -ms-overflow-y: hidden; overflow-x: hidden; -ms-overflow-x: hidden\">",
+        "                            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"be5e6825\" internal-fsb-name=\"FlowLayout 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                        <div class=\"internal-fsb-element col-9 col-sm-10 col-md-11\" internal-fsb-guid=\"4522d52e\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณาพิมพ์ข้อความ\" internal-fsb-react-id=\"chatInput\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; background: rgba(252, 252, 252, 0.15); color: rgba(255, 255, 255, 1); border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: none; border-radius: 20px 20px 20px 20px; -webkit-border-radius: 20px 20px 20px 20px\" class=\"form-control form-control-sm\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Message\" internal-fsb-data-source-column=\"message\" required=\"true\" placeholder=\"ข้อความ\"></div>",
@@ -17087,9 +17087,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "be5e6825",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
-          "91922b60",
+          "0",
           0,
           1,
           null
@@ -19979,7 +19979,7 @@
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "e5c0815deb62b26f907e0f772c40fa6ec3c8a5d3",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
-    "Project.Controls.Rectangle_a8055802": "79a82b3fcddcefd0c55c85c8a52f16af85d8aee3"
+    "Project.Controls.Rectangle_a8055802": "d293e5d7acc14f2ca706116d66d3c45abafe2646"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "896d4a5979f716dc22e81ae474323db62e34507c",
@@ -19997,7 +19997,7 @@
     "473d370d": "fb36592f1f591eac6a7d377cf2108483fd89c68d",
     "ea2e6d53": "85e251e084a9a75b22111e6500c5a96a78ad8386",
     "5488072c": "1f2478519b683133b16f0d9e0bf9425ede291072",
-    "73d1cec9": "fe25eed9f8c9be71be6561825329b05908780fc7"
+    "73d1cec9": "3f95159802a85c87cb0782370c73bc8135fe9c1a"
   },
   "currentPersistingFiles": [
     "src/controllers/components/index.ts",
