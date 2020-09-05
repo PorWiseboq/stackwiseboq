@@ -105,6 +105,18 @@ class Rectangle_cad06e8d extends Base {
   protected componentDidMount(): void {
   	this.register();
     this.resetForm();
+    this.scrollToBottom();
+  }
+  
+  protected componentDidUpdate(prevProps, prevState): void {
+    this.scrollToBottom();
+  }
+  
+  // Private function for chat
+  // 
+  private scrollToBottom(): void {
+    const scroll = ReactDOM.findDOMNode(this.refs.scroll);
+    $(scroll).animate({scrollTop: $(scroll).height()}, 500);
   }
   
   // Private function of text displaying
@@ -823,7 +835,7 @@ class Rectangle_cad06e8d extends Base {
               .internal-fsb-element.col-12(style={'background': 'rgba(255, 255, 255, 1)', 'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.state.expandingChat) ? 'block' : 'none';})()}, internal-fsb-guid="d124e365")
                 .container-fluid
                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                    .internal-fsb-element.col-12(style={'overflowY': 'scroll', 'MsOverflowY': 'scroll', 'maxHeight': '33vh', 'paddingBottom': '10px'}, internal-fsb-guid="5a07ab49")
+                    .internal-fsb-element.col-12(style={'overflowY': 'scroll', 'MsOverflowY': 'scroll', 'maxHeight': '33vh', 'paddingBottom': '10px'}, ref="scroll", internal-fsb-guid="5a07ab49")
                       .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(128, 128, 128, 1)', 'fontSize': '12px', 'marginTop': '7px', 'marginBottom': '7px'}, internal-fsb-guid="eb02b828")
                         | ไม่มีข้อความถัดจากนี้
                       each data, i in this.getDataFromNotation("Quote[#i].Auction.Message", true)
