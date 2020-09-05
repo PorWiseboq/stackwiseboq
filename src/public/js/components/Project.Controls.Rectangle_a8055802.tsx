@@ -76,7 +76,7 @@ class Rectangle_a8055802 extends Base {
   
   protected componentDidMount(): void {
   	this.register();
-  	this.scrollToBottom();
+  	this.scrollToBottom(true);
   }
   
   protected componentWillUnmount(): void {
@@ -86,9 +86,11 @@ class Rectangle_a8055802 extends Base {
     this.scrollToBottom();
   }
   
-  private scrollToBottom(): void {
-    const scroll = ReactDOM.findDOMNode(this.refs.scroll);
-    $(scroll).animate({scrollTop: $(scroll).height()}, 500);
+  private scrollToBottom(force: boolean=false): void {
+    const container = ReactDOM.findDOMNode(this.refs.scroll);
+    if (force || container.scrollTop + 50 > container.scrollHeight - container.offsetHeight) {
+      $(container).animate({scrollTop: container.scrollHeight - container.offsetHeight}, 500);
+    }
   }
   
   // Providing data array base on dot notation:
@@ -118,8 +120,10 @@ class Rectangle_a8055802 extends Base {
             .internal-fsb-element.col-12(style={'fontSize': '12px', 'paddingRight': '15px', 'paddingBottom': '7px', 'paddingLeft': '15px'}, key="item_" + i, internal-fsb-guid="56e4cc4e")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-10(style={'background': 'rgba(214, 237, 255, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '7px', 'paddingRight': '7px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', display: (()=>{return (this.getDataFromNotation("Quote.Auction.Message[" + i + "].type") == 0) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.Auction.Message[" + i + "].message"))}, internal-fsb-guid="9b681ceb")
-                  .internal-fsb-element.col-10.offset-2(style={'background': 'rgba(237, 237, 237, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '7px', 'paddingRight': '7px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'textAlign': 'right', display: (()=>{return (this.getDataFromNotation("Quote.Auction.Message[" + i + "].type") == 1) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.Auction.Message[" + i + "].message"))}, internal-fsb-guid="d1e0142d")
+                  .internal-fsb-element.internal-fsb-allow-cursor.col-10(style={'paddingLeft': '0px', 'paddingRight': '0px', 'display': (()=>{return (this.getDataFromNotation("Quote.Auction.Message[" + i + "].type") == 0) ? 'block' : 'none';})() || 'flex'}, internal-fsb-guid="2a02217c")
+                    .internal-fsb-element(style={'background': 'rgba(214, 237, 255, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '7px', 'paddingRight': '7px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'fontSize': '13px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.Auction.Message[" + i + "].message"))}, internal-fsb-guid="9b681ceb")
+                  .internal-fsb-element.col-10.offset-2(style={'paddingLeft': '0px', 'paddingRight': '0px', 'display': (()=>{return (this.getDataFromNotation("Quote.Auction.Message[" + i + "].type") == 1) ? 'block' : 'none';})() || 'flex', 'flexDirection': 'row-reverse', 'WebkitFlexDirection': 'row-reverse', 'MsFlexDirection': 'row-reverse'}, internal-fsb-guid="702a908d")
+                    .internal-fsb-element(style={'background': 'rgba(237, 237, 237, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '7px', 'paddingRight': '7px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'textAlign': 'right', 'fontSize': '13px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote.Auction.Message[" + i + "].message"))}, internal-fsb-guid="d1e0142d")
         .internal-fsb-element.col-12(style={'borderTopStyle': 'solid', 'borderTopColor': 'rgba(212, 212, 212, 1)', 'borderTopWidth': '1px', 'flexGrow': '0', 'WebkitFlexGrow': '0', 'flexShrink': '0', 'WebkitFlexShrink': '0', 'flexBasis': '20px', 'WebkitFlexBasis': '20px', 'paddingTop': '8px', 'paddingBottom': '8px', 'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="91922b60")
           .container-fluid
             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
