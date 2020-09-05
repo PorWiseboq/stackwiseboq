@@ -231,14 +231,13 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
    		    }), ProjectConfigurationHelper.getDataSchema().tables['Message'], {});
    		    
    		    if (messageDataset['Message'].rows.length == 1) {
-   		      let auctionDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-     		      'Auction.aid': results[0].columns['aid'],
-     		      'Auction.Quote.qid': null,
-     		      'Auction.Quote.User.id': null
-     		    }), ProjectConfigurationHelper.getDataSchema().tables['Auction'], {});
-     		    let userDataset = auctionDataset['Auction'].rows[0].relations['Quote'].rows[0].relations;
+   		      let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+     		      'Quote.qid': results[0].columns['qid'],
+     		      'Quote.User.id': null
+     		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
+     		    let userDataset = quoteDataset['Quote'].rows[0].relations;
      		    let storeDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-     		      'Store.sid': auctionDataset['Auction'].rows[0].keys['sid']
+     		      'Store.sid': results[0].columns['sid']
      		    }), ProjectConfigurationHelper.getDataSchema().tables['Store'], {});
      		    
      		    if (userDataset['User'].rows[0].columns['lineID']) {
@@ -251,7 +250,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
                   "actions": [{
                     "type": "uri",
                     "label": "เปิดห้องคุย",
-                    "uri": `https://staging.wiseboq.com/buyer/chat/${userDataset['User'].rows[0].columns['refID']}/${results[0].columns['aid']}`
+                    "uri": `https://staging.wiseboq.com/buyer/chat/${userDataset['User'].rows[0].columns['refID']}/${results[0].columns['sid']}/${results[0].columns['qid']}`
                   }]
                 }
               });
