@@ -226,7 +226,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
         
         if (schema.group == 'Message') {
           let messageDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
-   		      'Message.aid': results[0].columns['aid']
+   		      'Message.qid': results[0].columns['qid']
    		    }), ProjectConfigurationHelper.getDataSchema().tables['Message'], {});
    		    
    		    if (messageDataset['Message'].rows.length == 1) {
