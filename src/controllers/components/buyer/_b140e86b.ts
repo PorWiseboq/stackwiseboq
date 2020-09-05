@@ -366,7 +366,7 @@ class Controller extends Base {
                             "altText": `เปิดห้องคุย`,
                             "template": {
                               "type": "buttons",
-                              "text": `ร้าน ${storeDataset['Store'].rows[0].columns['name']} ต้องการจะคุยด้วย`,
+                              "text": `ร้าน ${auction.relations['Store'].rows[0].columns['name']} ต้องการจะคุยด้วย`,
                               "actions": [{
                                 "type": "uri",
                                 "label": "เปิดห้องคุย",
