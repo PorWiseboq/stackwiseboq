@@ -355,7 +355,7 @@ class Controller extends Base {
              		      'Quote.filled': null,
              		      'Quote.Auction.qid': null,
              		      'Quote.Auction.Store.sid': null,
-             		      'Quote.Auction.Message.sid': null
+             		      'Quote.Auction.Message.aid': null
              		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
              		    
              		    if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction']) {
