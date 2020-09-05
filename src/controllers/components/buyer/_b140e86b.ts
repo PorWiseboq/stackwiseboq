@@ -349,6 +349,34 @@ class Controller extends Base {
                         }]
                       }
                     });
+                    
+                    let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+             		      'Quote.uid': results['User'].rows[0].keys['id'],
+             		      'Quote.filled': null,
+             		      'Quote.Auction.qid': null,
+             		      'Quote.Auction.Store.sid': null,
+             		      'Quote.Auction.Message.sid': null
+             		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
+             		    
+             		    if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction']) {
+             		      for (const auction of quoteDataset['Quote'].rows[0].relations['Auction'].rows) {
+             		        if (auction.relations['Message'].rows.some(row => row.columns['type'] == 0)) {
+             		          await client.pushMessage(event.source.userId, {
+                            "type": "template",
+                            "altText": `เปิดห้องคุย`,
+                            "template": {
+                              "type": "buttons",
+                              "text": `ร้าน ${storeDataset['Store'].rows[0].columns['name']} ต้องการจะคุยด้วย`,
+                              "actions": [{
+                                "type": "uri",
+                                "label": "เปิดห้องคุย",
+                                "uri": `https://staging.wiseboq.com/buyer/chat/${event.message.text.toUpperCase()}/${auction.columns['aid']}`
+                              }]
+                            }
+                          });
+             		        }
+             		      }
+             		    }
            		    } else {
            		      await client.replyMessage(event.replyToken, {
        		            'type': 'text',
