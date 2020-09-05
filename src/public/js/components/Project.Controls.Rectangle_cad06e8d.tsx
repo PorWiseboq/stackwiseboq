@@ -32,6 +32,7 @@ let Project = $Project;
 
 // Declare private static variables here:
 //
+declare let $: any;
 
 // Auto[Interface]--->
 interface IAutoBaseProps extends IBaseProps {
@@ -105,7 +106,7 @@ class Rectangle_cad06e8d extends Base {
   protected componentDidMount(): void {
   	this.register();
     this.resetForm();
-    this.scrollToBottom();
+    this.scrollToBottom(true);
   }
   
   protected componentDidUpdate(prevProps, prevState): void {
@@ -114,9 +115,11 @@ class Rectangle_cad06e8d extends Base {
   
   // Private function for chat
   // 
-  private scrollToBottom(): void {
-    const scroll = ReactDOM.findDOMNode(this.refs.scroll);
-    $(scroll).animate({scrollTop: $(scroll).height()}, 500);
+  private scrollToBottom(force: boolean=false): void {
+    const container = ReactDOM.findDOMNode(this.refs.scroll);
+    if (force || container.scrollTop + 50 > container.scrollHeight - container.offsetHeight) {
+      $(container).animate({scrollTop: container.scrollHeight - container.offsetHeight}, 500);
+    }
   }
   
   // Private function of text displaying
@@ -842,8 +845,10 @@ class Rectangle_cad06e8d extends Base {
                         .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingBottom': '7px'}, key="item_" + i, internal-fsb-guid="4996502e")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                              .internal-fsb-element.col-10(style={'paddingLeft': '7px', 'paddingRight': '7px', 'fontSize': '13px', 'background': 'rgba(214, 237, 255, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', display: (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 1) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="4e60b6c9")
-                              .internal-fsb-element.col-10.offset-2(style={'fontSize': '13px', 'background': 'rgba(237, 237, 237, 1)', 'paddingLeft': '7px', 'paddingRight': '7px', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'textAlign': 'right', display: (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 0) ? 'block' : 'none';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="be9d8059")
+                              .internal-fsb-element.internal-fsb-allow-cursor.col-10(style={'paddingLeft': '0px', 'paddingRight': '0px', 'display': (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 1) ? 'block' : 'none';})() || 'flex'}, internal-fsb-guid="ab5366c6")
+                                .internal-fsb-element(style={'paddingLeft': '7px', 'paddingRight': '7px', 'fontSize': '13px', 'background': 'rgba(214, 237, 255, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="4e60b6c9")
+                              .internal-fsb-element.internal-fsb-allow-cursor.offset-2.col-10(style={'paddingLeft': '0px', 'paddingRight': '0px', 'display': (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 0) ? 'block' : 'none';})() || 'flex', 'flexDirection': 'row-reverse', 'WebkitFlexDirection': 'row-reverse', 'MsFlexDirection': 'row-reverse'}, internal-fsb-guid="a7204427")
+                                .internal-fsb-element(style={'fontSize': '13px', 'background': 'rgba(237, 237, 237, 1)', 'paddingLeft': '7px', 'paddingRight': '7px', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'textAlign': 'right'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="be9d8059")
                     .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'borderTopWidth': '1px', 'borderTopColor': 'rgba(212, 212, 212, 1)', 'borderTopStyle': 'solid', 'paddingTop': '8px', 'paddingBottom': '8px'}, internal-fsb-guid="25678294")
                       .container-fluid
                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
