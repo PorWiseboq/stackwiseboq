@@ -5514,7 +5514,7 @@
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-3 offset-0\" internal-fsb-guid=\"e267eda5\" internal-fsb-name=\"Remaining\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 0px; padding-right: 0px; text-align: center; font-size: 10px; color: rgba(22, 98, 250, 1); line-height: 19px; vertical-align: middle\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');]\">#{this.state.remainingTimes[i]}</div>",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-7 offset-0 -fsb-self-4aee31ab\" internal-fsb-guid=\"4aee31ab\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_subtitle\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');]\">#{this.getSubtitle(i)}</div>",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0 -fsb-self-3bec5885\" internal-fsb-guid=\"3bec5885\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"inbox_item_box_tag\" internal-fsb-react-style-background-color=\"CODE[return (this.hasError(i) ? '#e65100' : '');]\">#{this.getTag(i)}</div>",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-self-098de259\" internal-fsb-guid=\"098de259\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"notice\" internal-fsb-react-style-display=\"CODE[return (this.getNoticeCount(i) != 0) ? 'block' : 'none';]\" internal-fsb-react-style-object-position=\"CODE[return 'absolute !important';]\">#{this.getNoticeCount(i)}</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-self-098de259\" internal-fsb-guid=\"098de259\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-reusable-preset-name=\"notice\" internal-fsb-react-style-display=\"CODE[return (this.getNoticeCount(i) != 0) ? 'block' : 'none';]\" internal-fsb-react-style-position=\"CODE[return 'absolute !important';]\">#{this.getNoticeCount(i)}</div>",
         "                                                                                </div>",
         "                                                                            </div>",
         "                                                                        </div>",
@@ -5552,7 +5552,7 @@
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-49a6327a col-9 offset-0\" internal-fsb-guid=\"53d42bea\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 49a6327a\" internal-fsb-react-data=\"title\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : ((this.hasError(i)) ? '#e65100' : '');]\">#{this.getTitle(i)}</div>",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-4aee31ab col-7\" internal-fsb-guid=\"3945ba95\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4aee31ab\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : (this.hasError(i) ? '#e65100' : '');]\">#{this.getSubtitle(i)}</div>",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-3bec5885 col-5\" internal-fsb-guid=\"c78396c8\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 3bec5885\">#{this.getTag(i)}</div>",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-098de259\" internal-fsb-guid=\"9544ebc1\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 098de259\" internal-fsb-react-style-display=\"CODE[return (this.getNoticeCount(i) != 0) ? 'block' : 'none';]\" internal-fsb-react-style-object-position=\"CODE[return 'absolute !important';]\">#{this.getNoticeCount(i)}</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-098de259\" internal-fsb-guid=\"9544ebc1\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 098de259\" internal-fsb-react-style-display=\"CODE[return (this.getNoticeCount(i) != 0) ? 'block' : 'none';]\" internal-fsb-react-style-position=\"CODE[return 'absolute !important';]\">#{this.getNoticeCount(i)}</div>",
         "                                                                                </div>",
         "                                                                            </div>",
         "                                                                        </div>",
@@ -5595,7 +5595,7 @@
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-49a6327a\" internal-fsb-guid=\"1c822d56\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 49a6327a\" internal-fsb-react-data=\"title\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\">ชื่อรายการ</div>",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-4aee31ab col-7\" internal-fsb-guid=\"39506c79\" internal-fsb-name=\"Result\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4aee31ab\" internal-fsb-react-style-color=\"CODE[return (this.state.selectedIndex == i) ? '#FFFFFF' : '';]\">55,000 บาท</div>",
         "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-3bec5885 col-5\" internal-fsb-guid=\"9ec45baa\" internal-fsb-name=\"Type\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 3bec5885\">บัตรเครดิต</div>",
-        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-098de259\" internal-fsb-guid=\"52b143be\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 098de259\" internal-fsb-react-style-display=\"CODE[return (this.getNoticeCount(i) != 0) ? 'block' : 'none';]\" internal-fsb-react-style-object-position=\"CODE[return 'absolute !important';]\">#{this.getNoticeCount(i)}</div>",
+        "                                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-098de259\" internal-fsb-guid=\"52b143be\" internal-fsb-name=\"Notice\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 098de259\" internal-fsb-react-style-display=\"CODE[return (this.getNoticeCount(i) != 0) ? 'block' : 'none';]\" internal-fsb-react-style-position=\"CODE[return 'absolute !important';]\">#{this.getNoticeCount(i)}</div>",
         "                                                                                </div>",
         "                                                                            </div>",
         "                                                                        </div>",
@@ -6795,11 +6795,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "098de259",
+        "selectingElementGUID": "52b143be",
         "currentCursorWalkPath": [
-          "5a671a7d",
+          "6bdca277",
           0,
-          5,
+          4,
           null
         ]
       },
@@ -20126,7 +20126,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "c976741dfc7e8a28e003046f75962b4924bb50eb",
+    "Project.Controls.Rectangle_cad06e8d": "e680ac2c34b6c10dc13beadbfd02b76b752bfca6",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
