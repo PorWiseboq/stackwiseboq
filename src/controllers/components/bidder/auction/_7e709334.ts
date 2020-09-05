@@ -17,6 +17,12 @@ import {Base} from '../../Base.js';
 import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
 import {RelationalDatabaseClient} from '../../../helpers/ConnectionHelper.js'
+import * as line from '@line/bot-sdk';
+
+const client = new line.Client({
+  channelAccessToken: '1sIVgsH0LNlIMu2aiw5XThF4vstGl9PHNuj3YaO5zl4Rk+2ndA3pKKbVpPhdiUHtF1eABThT+9uW/84S63GJ4yz0AaouOhcansstmr/QGbnhVBCXEfajsZWjtjLt0uPwzT+/exYDRnSsBZnuzWi7UgdB04t89/1O/w1cDnyilFU=',
+  channelSecret: '4874e1491d737db97a3756fbf1e3c0d9'
+});
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -215,7 +221,42 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     return new Promise(async (resolve, reject) => {
       try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
-        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
+        let results = await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session);
+        
+        if (schema.group == 'Message') {
+          let messageDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+   		      'Message.aid': results[0].columns['aid']
+   		    }), ProjectConfigurationHelper.getDataSchema().tables['Message'], {});
+   		    
+   		    if (messageDataset['Message'].rows.length == 1) {
+   		      let auctionDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+     		      'Auction.aid': results[0].columns['aid'],
+     		      'Auction.Store.sid': null,
+     		      'Auction.Quote.qid': null,
+     		      'Auction.Quote.User.id': null
+     		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
+     		    let userDataset = auctionDataset['Auction'].rows[0].relations['Quote'].rows[0].relations;
+     		    let storeDataset = auctionDataset['Auction'].rows[0].relations;
+     		    
+     		    if (userDataset['User'].rows[0].columns['lineID']) {
+     		      await client.pushMessage(userDataset['User'].rows[0].columns['lineID'], {
+                "type": "template",
+                "altText": `เปิดห้องคุย`,
+                "template": {
+                  "type": "buttons",
+                  "text": `ร้าน ${storeDataset['Store'].rows[0].columns['name']} ต้องการจะคุยด้วย`,
+                  "actions": [{
+                    "type": "uri",
+                    "label": "เปิดห้องคุย",
+                    "uri": `https://staging.wiseboq.com/buyer/chat/${userDataset['User'].rows[0].columns['refID']}/${results[0].columns['aid']}`
+                  }]
+                }
+              });
+     		    }
+   		    }
+        }
+        
+        resolve(results);
       } catch(error) {
         reject(error);
       }
