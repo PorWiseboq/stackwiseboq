@@ -27,6 +27,7 @@ let Project = $Project;
 
 // Declare private static variables here:
 //
+declare let $: any;
 
 // Auto[Interface]--->
 interface IAutoBaseProps extends IBaseProps {
@@ -75,9 +76,19 @@ class Rectangle_a8055802 extends Base {
   
   protected componentDidMount(): void {
   	this.register();
+  	this.scrollToBottom();
   }
   
   protected componentWillUnmount(): void {
+  }
+  
+  protected componentDidUpdate(prevProps, prevState) {
+    this.scrollToBottom();
+  }
+  
+  private scrollToBottom(): void {
+    const scroll = ReactDOM.findDOMNode(this.refs.scroll);
+    $(scroll).animate({scrollTop: $(scroll).height()}, 500);
   }
   
   // Providing data array base on dot notation:
@@ -100,7 +111,7 @@ class Rectangle_a8055802 extends Base {
   protected render(): any {
     return pug `
       div(style=Object.assign({'width': '100vw', 'height': '100vh', 'display': 'flex', 'flexDirection': 'column', 'WebkitFlexDirection': 'column', 'MsFlexDirection': 'column'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element internal-fsb-allow-cursor " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="a8055802")
-        .internal-fsb-element(style={'flexGrow': '1', 'WebkitFlexGrow': '1', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'paddingBottom': '10px'}, internal-fsb-guid="41dc9cbd")
+        .internal-fsb-element(style={'flexGrow': '1', 'WebkitFlexGrow': '1', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'paddingBottom': '10px'}, ref="scroll", internal-fsb-guid="41dc9cbd")
           .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(128, 128, 128, 1)', 'marginTop': '7px', 'marginBottom': '7px', 'fontSize': '13px'}, internal-fsb-guid="8d6713e1")
             | ไม่มีข้อความถัดจากนี้
           each data, i in this.getDataFromNotation("Quote.Auction.Message", true)
