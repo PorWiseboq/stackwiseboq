@@ -143,8 +143,9 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
            		      'Quote.status': 1,
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.sid': this.request.session.sid,
-           		      'Quote.Auction.Message.aid': null,
-           		      'Quote.Auction.Substitute.aid': null
+           		      'Quote.Auction.Substitute.aid': null,
+           		      'Quote.Message.qid': null,
+           		      'Quote.Message.sid': this.request.session.sid
            		    });
            		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
            		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
@@ -304,11 +305,12 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
    		    if (upsertResults['Auction'].rows.length != 0) {
      		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
      		    let messageData = RequestHelper.createInputs({
-     		      'Message.aid': upsertResults['Auction'].rows[0].columns['aid']
+     		      'Message.qid': upsertResults['Auction'].rows[0].keys['qid'],
+     		      'Message.sid': this.request.session.sid
      		    });
      		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
      		    
-     		    upsertResults['Auction'].rows[0].relations['Message'] = messageDataset['Message'];
+     		    upsertResults['Message'] = messageDataset['Message'];
    		    }
           
           const qid = upsertResults[0].keys['qid'];
@@ -446,9 +448,10 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
-       		      'Quote.Auction.Message.aid': null,
        		      'Quote.Auction.Substitute.aid': null,
-       		      'Quote.Listing.qid': null
+       		      'Quote.Listing.qid': null,
+       		      'Quote.Message.qid': null,
+       		      'Quote.Message.sid': this.request.session.sid
        		    }); 
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
@@ -501,7 +504,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "2b2a0681", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
 		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -693,10 +696,21 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('b16eadbb', "relational", "Message", "aid");
-		ValidationHelper.registerInput('b16eadbb', "Hidden 1", true, "คุณต้องเคาะประมูลราคาก่อนที่จะสามารถคุยกับลูกค้าได้");
+		RequestHelper.registerInput('b16eadbb', "relational", "Message", "qid");
+		ValidationHelper.registerInput('b16eadbb', "Hidden 1", false, "");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'b16eadbb' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('a1a3c540', "relational", "Message", "sid");
+		ValidationHelper.registerInput('a1a3c540', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'a1a3c540' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['sid'];
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
