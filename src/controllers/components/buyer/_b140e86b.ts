@@ -264,7 +264,7 @@ class Controller extends Base {
                           "actions": [{
                             "type": "uri",
                             "label": "เปิดห้องคุย",
-                            "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${auction[0].columns['sid']}/${auction[0].columns['qid']}`
+                            "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${auction[0].keys['sid']}/${auction[0].keys['qid']}`
                           }]
                         }
                       });
