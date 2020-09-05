@@ -716,7 +716,7 @@ class Rectangle_cad06e8d extends Base {
                                               | #{this.getSubtitle(i)}
                                             .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'}, internal-fsb-guid="c78396c8")
                                               | #{this.getTag(i)}
-                                            .internal-fsb-element.-fsb-preset-098de259(style={'FsbInheritedPresets': '098de259', display: (()=>{return (this.getNoticeCount(i) != 0) ? 'block' : 'none';})()}, internal-fsb-guid="9544ebc1")
+                                            .internal-fsb-element.-fsb-preset-098de259(style={'FsbInheritedPresets': '098de259', 'position': 'absolute', display: (()=>{return (this.getNoticeCount(i) != 0) ? 'block' : 'none';})()}, internal-fsb-guid="9544ebc1")
                                               | #{this.getNoticeCount(i)}
                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getQuoteTypeDisplay(QuoteType.CHATTING, true);})()}, internal-fsb-guid="0250cb01")
                               .container-fluid
@@ -735,7 +735,7 @@ class Rectangle_cad06e8d extends Base {
                                               | 55,000 บาท
                                             .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'}, internal-fsb-guid="9ec45baa")
                                               | บัตรเครดิต
-                                            .internal-fsb-element.-fsb-preset-098de259(style={'FsbInheritedPresets': '098de259', display: (()=>{return (this.getNoticeCount(i) != 0) ? 'block' : 'none';})()}, internal-fsb-guid="52b143be")
+                                            .internal-fsb-element.-fsb-preset-098de259(style={'FsbInheritedPresets': '098de259', 'position': 'absolute', display: (()=>{return (this.getNoticeCount(i) != 0) ? 'block' : 'none';})()}, internal-fsb-guid="52b143be")
                                               | #{this.getNoticeCount(i)}
                         .internal-fsb-element.internal-fsb-allow-cursor(style={'position': 'relative', 'flexGrow': '1', 'WebkitFlexGrow': '1'}, internal-fsb-guid="154b7137")
                           .internal-fsb-element.internal-fsb-allow-cursor(style={'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'left': '0px', 'top': '0px', 'right': '0px', 'bottom': '0px', 'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="ed65b978")
