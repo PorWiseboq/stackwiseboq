@@ -50,7 +50,7 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  sid: window.location.href.split('/chat/')[1].split('/')[1]
+  sid: (window.location.href.split('/chat/')[1] || '').split('/')[1]
 });
 
 // Auto[ClassBegin]--->

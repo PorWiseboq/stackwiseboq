@@ -185,7 +185,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "b140e86b",
+    "editingPageID": "73d1cec9",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -16474,7 +16474,7 @@
         "  ",
         "});",
         "let DefaultState = Object.assign({}, DefaultBaseState, {",
-        "  sid: window.location.href.split('/chat/')[1].split('/')[1]",
+        "  sid: (window.location.href.split('/chat/')[1] || '').split('/')[1]",
         "});",
         "",
         "\">",
@@ -20091,7 +20091,7 @@
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "e5c0815deb62b26f907e0f772c40fa6ec3c8a5d3",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
-    "Project.Controls.Rectangle_a8055802": "63124e978ea75b821813e77260b53a1b0b0e02d8"
+    "Project.Controls.Rectangle_a8055802": "d64a3d2cd3d2873965ec72c17a416a4da5a1edbe"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "896d4a5979f716dc22e81ae474323db62e34507c",
