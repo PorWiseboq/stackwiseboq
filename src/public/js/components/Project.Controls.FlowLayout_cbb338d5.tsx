@@ -65,7 +65,7 @@ class FlowLayout_cbb338d5 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253","72928a9c"], {initClass: null, submitCrossType: "upsert"});
+    DataManipulationHelper.register("e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253","72928a9c"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
@@ -190,7 +190,7 @@ class FlowLayout_cbb338d5 extends Base {
             .internal-fsb-element.col-12(style={'paddingTop': '20px'}, internal-fsb-guid="0816dd23")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-primary(type="button", onSubmitting=this.onButtonSubmitting_e6d44b49.bind(this), onSubmitted=this.onButtonSubmitted_e6d44b49.bind(this), disabled=this.state.disabled, onClick=((event) => { window.internalFsbSubmit('e6d44b49', 'User', event, ((results) => { this.manipulate('e6d44b49', 'User', results); }).bind(this)); }).bind(this), internal-fsb-guid="e6d44b49")
+                  Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-primary(onClick=((event) => { window.internalFsbSubmit('e6d44b49', 'User', event, ((results) => { this.manipulate('e6d44b49', 'User', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.disabled, onSubmitting=this.onButtonSubmitting_e6d44b49.bind(this), onSubmitted=this.onButtonSubmitted_e6d44b49.bind(this), internal-fsb-guid="e6d44b49")
                     .internal-fsb-element(internal-fsb-guid="e6d44b49-text")
                       | บันทึก
                   input.internal-fsb-element.col-12(type="hidden", value="123", internal-fsb-guid="8ce0a253")
