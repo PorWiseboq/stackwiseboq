@@ -860,10 +860,10 @@ class Rectangle_cad06e8d extends Base {
                       .container-fluid
                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                           .internal-fsb-element.col-9.offset-0(style={padding: '0px'}, internal-fsb-guid="8d1ec385")
-                            textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'FsbInheritedPresets': ''}, ref="chatInput", type="text", placeholder="ข้อความ", rows="1", required=true)
+                            textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'FsbInheritedPresets': '', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, ref="chatInput", type="text", placeholder="ข้อความ", rows="1", required=true)
                           input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.aid"), required=true, internal-fsb-guid="b16eadbb")
                           input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="208c3d23")
-                          Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0.btn.btn-primary.btn-sm(onClick=((event) => { window.internalFsbSubmit('c788d322', 'Message', event, ((results) => { this.manipulate('c788d322', 'Message', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_c788d322.bind(this), internal-fsb-guid="c788d322")
+                          Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0.btn.btn-primary.btn-sm(style={'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, onClick=((event) => { window.internalFsbSubmit('c788d322', 'Message', event, ((results) => { this.manipulate('c788d322', 'Message', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_c788d322.bind(this), internal-fsb-guid="c788d322")
                             .internal-fsb-element(internal-fsb-guid="c788d322-text")
                               | ส่ง
     `
