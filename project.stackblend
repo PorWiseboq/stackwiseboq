@@ -185,7 +185,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "73d1cec9",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -6698,11 +6698,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "5a07ab49",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "d124e365",
+          "5775d3be",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -17050,7 +17050,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "41dc9cbd",
+        "selectingElementGUID": "56e4cc4e",
         "currentCursorWalkPath": [
           "91922b60",
           0,
@@ -19951,7 +19951,7 @@
     "8857ca68": "a07f047e5785124a0835ba6f25148dbd9c3e04c3",
     "b6eb1b83": "393acf8b511b75987e4b2968b0439ddec7bf1e85",
     "65e04a88": "2a36865c8ee33ec392748aef9b72c1751c934e43",
-    "7e709334": "4592e35510f0b365811f327910600179634a29ed",
+    "7e709334": "5776492895ef643fb6f06fd7c09104413b3ef159",
     "6ce794ec": "f7d1673640ebb54bfd8c6590c514d7690846f04e",
     "9d37c390": "7aa7a2cd5ed1178142426b05a51e172d5eac6b18",
     "bbc7dba3": "267b2631d09f1a4e0ea12a41e9a1fc1271fa0e9f",
@@ -19960,7 +19960,7 @@
     "473d370d": "f15e9e87ae47cf93c91cacc90f2963f37ee4a01a",
     "ea2e6d53": "1c298b988d1821d1a1e78a9170f3bd6cab7bd62f",
     "5488072c": "1f2478519b683133b16f0d9e0bf9425ede291072",
-    "73d1cec9": "914e5384057fe252261ea40ccdca8586db22f945"
+    "73d1cec9": "ee883d1e375e696dacef4d8bba91524faff98190"
   },
   "currentPersistingFiles": [
     "src/controllers/components/index.ts",
