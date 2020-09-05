@@ -243,28 +243,37 @@ class Controller extends Base {
             case 'message':
               if (results && results['User'].rows.length != 0) {
                 if (event.message.text.toLowerCase().trim()[0] == 's') {
-                  const sid = parseInt(event.message.text);
+                  const sid = parseInt(event.message.text.toLowerCase().trim().split('s')[1]);
                   const quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'Quote.uid': results['User'].rows[0].keys['id'],
            		      'Quote.filled': null,
-           		      'Quote.Auction.sid': sid,
-           		      'Quote.Auction.Store.sid': sid
+           		      'Quote.Auction.qid': null,
+           		      'Quote.Auction.Store.sid': null
            		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
                   
-                  if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
-                    await client.replyMessage(event.replyToken, {
-                      "type": "template",
-                      "altText": `ร้าน ${quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].relations['Store'].rows[0].columns['name']}`,
-                      "template": {
-                        "type": "buttons",
-                        "text": "",
-                        "actions": [{
-                          "type": "uri",
-                          "label": "เปิดห้องคุย",
-                          "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${quoteDataset['Quote'].rows[0].relations['Auction'].rows[0].columns['aid']}`
-                        }]
-                      }
-                    });
+                  if (quoteDataset['Quote'].rows.length != 0 && quoteDataset['Quote'].rows[0].relations['Auction'] && quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
+                    const auction = quoteDataset['Quote'].rows[0].relations['Auction'].rows.filter(row => row.keys['sid'] == sid);
+                    
+                    if (auction.length != 0) {
+                      await client.replyMessage(event.replyToken, {
+                        "type": "template",
+                        "altText": `เปิดห้องคุย`,
+                        "template": {
+                          "type": "buttons",
+                          "text": `ร้าน ${auction[0].relations['Store'].rows[0].columns['name']}`,
+                          "actions": [{
+                            "type": "uri",
+                            "label": "เปิดห้องคุย",
+                            "uri": `https://staging.wiseboq.com/buyer/chat/${results['User'].rows[0].columns['refID']}/${auction[0].columns['aid']}`
+                          }]
+                        }
+                      });
+                    } else {
+                      await client.replyMessage(event.replyToken, {
+         		            'type': 'text',
+         		            'text': `เหมือนว่าคุณจะพิมพ์รหัสนอกเหนือไปจากที่มี กรุณาลองดูอีกครั้ง`
+             		      });
+                    }
                   } else {
                     await client.replyMessage(event.replyToken, {
        		            'type': 'text',
