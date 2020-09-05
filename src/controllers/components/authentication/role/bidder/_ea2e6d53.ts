@@ -26,6 +26,7 @@ import {ProjectConfigurationHelper} from "../../../../helpers/ProjectConfigurati
 enum ActionType {
   Insert,
   Update,
+  Upsert,
   Delete,
   Retrieve,
   Popup,
@@ -46,6 +47,7 @@ enum ValidationInfo {
 	source: SourceType;
 	group: string;
   rows: HierarchicalDataRow[];
+  notification?: string;
 }
 interface HierarchicalDataRow {
   keys: {[Identifier: string]: any};
@@ -248,7 +250,7 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("ea2e6d53", "e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253","72928a9c"], {initClass: null, crossRelationUpsert: true});
+    RequestHelper.registerSubmit("ea2e6d53", "e6d44b49", "navigate", ["d66b23a4","e27d4c3b","8bcca5bc","3a931201","37473e1c","9d2bb91e","c085ee08","eca33837","e07e83cb","3a91a437","903420db","8ce0a253","72928a9c"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('d66b23a4', "relational", "User.Store", "name");
 		ValidationHelper.registerInput('d66b23a4', "Textbox 3", true, "กรุณาระบุชื่อร้านค้า");
     for (let i=-1; i<128; i++) {
