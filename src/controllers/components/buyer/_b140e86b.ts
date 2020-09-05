@@ -319,7 +319,7 @@ class Controller extends Base {
            		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], {});
            		    
            		    if (results && results['User'].rows.length != 0) {
-           		      results = await DatabaseHelper.update(RequestHelper.createInputs({
+           		      await DatabaseHelper.update(RequestHelper.createInputs({
              		      'User.id': results['User'].rows[0].keys['id'],
              		      'User.lineID': event.source.userId
              		    }), ProjectConfigurationHelper.getDataSchema().tables['User'], false, {'uid': results['User'].rows[0].keys['id']});
