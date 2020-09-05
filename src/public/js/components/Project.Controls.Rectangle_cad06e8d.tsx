@@ -90,7 +90,7 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
-    DataManipulationHelper.register("c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
@@ -848,20 +848,21 @@ class Rectangle_cad06e8d extends Base {
                     .internal-fsb-element.col-12(style={'overflowY': 'scroll', 'MsOverflowY': 'scroll', 'maxHeight': '33vh', 'paddingLeft': '7px', 'paddingRight': '7px'}, ref="scroll", internal-fsb-guid="5a07ab49")
                       .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(128, 128, 128, 1)', 'fontSize': '12px', 'marginTop': '7px', 'marginBottom': '7px'}, internal-fsb-guid="eb02b828")
                         | ไม่มีข้อความถัดจากนี้
-                      each data, i in this.getDataFromNotation("Quote[#i].Auction.Message", true)
+                      each data, i in this.getDataFromNotation("Quote[#i].Message", true)
                         .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingBottom': '7px'}, key="item_" + i, internal-fsb-guid="4996502e")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                              .internal-fsb-element.internal-fsb-allow-cursor.col-10(style={'paddingLeft': '0px', 'paddingRight': '0px', 'display': (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 1) ? 'flex' : 'none';})() || 'flex'}, internal-fsb-guid="ab5366c6")
-                                .internal-fsb-element(style={'paddingLeft': '15px', 'paddingRight': '15px', 'fontSize': '13px', 'background': 'rgba(214, 237, 255, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="4e60b6c9")
-                              .internal-fsb-element.internal-fsb-allow-cursor.offset-2.col-10(style={'paddingLeft': '0px', 'paddingRight': '0px', 'display': (()=>{return (this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].type") == 0) ? 'flex' : 'none';})() || 'flex', 'flexDirection': 'row-reverse', 'WebkitFlexDirection': 'row-reverse', 'MsFlexDirection': 'row-reverse'}, internal-fsb-guid="a7204427")
-                                .internal-fsb-element(style={'fontSize': '13px', 'background': 'rgba(237, 237, 237, 1)', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px', 'textAlign': 'right'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Auction.Message[" + i + "].message"))}, internal-fsb-guid="be9d8059")
+                              .internal-fsb-element.internal-fsb-allow-cursor.col-10(style={'paddingLeft': '0px', 'paddingRight': '0px', 'display': (()=>{return (this.getDataFromNotation("Quote[#i].Message[" + i + "].type") == 1) ? 'flex' : 'none';})() || 'flex'}, internal-fsb-guid="ab5366c6")
+                                .internal-fsb-element(style={'paddingLeft': '15px', 'paddingRight': '15px', 'fontSize': '13px', 'background': 'rgba(214, 237, 255, 1)', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Message[" + i + "].message"))}, internal-fsb-guid="4e60b6c9")
+                              .internal-fsb-element.internal-fsb-allow-cursor.offset-2.col-10(style={'paddingLeft': '0px', 'paddingRight': '0px', 'display': (()=>{return (this.getDataFromNotation("Quote[#i].Message[" + i + "].type") == 0) ? 'flex' : 'none';})() || 'flex', 'flexDirection': 'row-reverse', 'WebkitFlexDirection': 'row-reverse', 'MsFlexDirection': 'row-reverse'}, internal-fsb-guid="a7204427")
+                                .internal-fsb-element(style={'fontSize': '13px', 'background': 'rgba(237, 237, 237, 1)', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px', 'textAlign': 'right'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].Message[" + i + "].message"))}, internal-fsb-guid="be9d8059")
                     .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'borderTopWidth': '1px', 'borderTopColor': 'rgba(212, 212, 212, 1)', 'borderTopStyle': 'solid', 'paddingTop': '8px', 'paddingBottom': '8px'}, internal-fsb-guid="25678294")
                       .container-fluid
                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                           .internal-fsb-element.col-9.offset-0(style={padding: '0px'}, internal-fsb-guid="8d1ec385")
                             textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'FsbInheritedPresets': '', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, ref="chatInput", type="text", placeholder="ข้อความ", rows="1", required=true)
-                          input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.aid"), required=true, internal-fsb-guid="b16eadbb")
+                          input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="b16eadbb")
+                          input.internal-fsb-element.col-12(type="hidden", internal-fsb-guid="a1a3c540")
                           input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="208c3d23")
                           Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0.btn.btn-primary.btn-sm(style={'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, onClick=((event) => { window.internalFsbSubmit('c788d322', 'Message', event, ((results) => { this.manipulate('c788d322', 'Message', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_c788d322.bind(this), internal-fsb-guid="c788d322")
                             .internal-fsb-element(internal-fsb-guid="c788d322-text")
