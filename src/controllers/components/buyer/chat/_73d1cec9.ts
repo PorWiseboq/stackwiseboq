@@ -124,8 +124,8 @@ class Controller extends Base {
   			  let quoteData = RequestHelper.createInputs({
    		      'Quote.filled': null,
    		      'Quote.uid': userDataset['User'].rows[0].keys['id'],
-   		      'Quote.Auction.aid': this.request.params.aid,
-   		      'Quote.Auction.Message.aid': null
+   		      'Quote.Message.sid': this.request.params.sid,
+   		      'Quote.Message.qid': this.request.params.qid
    		    });
    		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
    		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
@@ -244,7 +244,7 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("73d1cec9", "a403abac", "insert", ["4522d52e","a4147a38","d09070d8"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("73d1cec9", "a403abac", "insert", ["4522d52e","a4147a38","d09070d8","7e11119e"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('4522d52e', "relational", "Message", "message");
 		ValidationHelper.registerInput('4522d52e', "Textbox 2", true, "กรุณาพิมพ์ข้อความ");
     for (let i=-1; i<128; i++) {
@@ -265,12 +265,22 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('a4147a38', "relational", "Message", "aid");
-		ValidationHelper.registerInput('a4147a38', "Hidden 6", true, "เหมือนห้องนี้จะถูกระงับบริการ");
+		RequestHelper.registerInput('a4147a38', "relational", "Message", "qid");
+		ValidationHelper.registerInput('a4147a38', "Hidden 6", false, "เหมือนห้องนี้จะถูกระงับบริการ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'a4147a38' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 6 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('7e11119e', "relational", "Message", "sid");
+		ValidationHelper.registerInput('7e11119e', "Hidden 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '7e11119e' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 2 here:
       // 
       
       if (input != null) data.push(input);
