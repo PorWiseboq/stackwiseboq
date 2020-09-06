@@ -16,6 +16,7 @@ import {Base} from '../../Base.js';
 //
 import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
+import {RelationalDatabaseClient} from '../../../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -182,6 +183,59 @@ class Controller extends Base {
       try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
+        
+        RelationalDatabaseClient.query(`(SELECT C.sid, 0 AS slot, C.total FROM
+	(SELECT A.sid, COUNT(B.type) AS total FROM
+		(SELECT store.sid, K.qid, K.status, MAX(K.createdAt) AS latest FROM store
+		LEFT JOIN (SELECT I.qid, I.sid, I.type, I.createdAt, J.status FROM message AS I
+			INNER JOIN quote AS J ON I.qid = J.qid
+			WHERE J.status = 1) AS K ON store.sid = K.sid AND K.type = 0
+		GROUP BY store.sid, K.qid) AS A
+	LEFT JOIN message AS B ON A.sid = B.sid AND B.type = 1 AND B.createdAt > A.latest
+	GROUP BY A.sid) AS C
+LEFT JOIN notice AS D ON C.sid = D.sid
+WHERE (D.notice0 IS NULL AND C.total != 0) OR (D.notice0 IS NOT NULL AND C.total != D.notice0))
+
+UNION
+
+(SELECT C.sid, 1 AS slot, C.total FROM
+	(SELECT A.sid, COUNT(B.type) AS total FROM
+		(SELECT store.sid, K.qid, K.status, MAX(K.createdAt) AS latest FROM store
+		LEFT JOIN (SELECT I.qid, I.sid, I.type, I.createdAt, J.status FROM message AS I
+			INNER JOIN quote AS J ON I.qid = J.qid
+			WHERE J.status = 2) AS K ON store.sid = K.sid AND K.type = 0
+		GROUP BY store.sid, K.qid) AS A
+	LEFT JOIN message AS B ON A.sid = B.sid AND B.type = 1 AND B.createdAt > A.latest
+	GROUP BY A.sid) AS C
+LEFT JOIN notice AS D ON C.sid = D.sid
+WHERE (D.notice1 IS NULL AND C.total != 0) OR (D.notice1 IS NOT NULL AND C.total != D.notice1))
+
+UNION
+
+(SELECT C.sid, 2 AS slot, C.total FROM
+	(SELECT A.sid, COUNT(B.type) AS total FROM
+		(SELECT store.sid, K.qid, K.status, MAX(K.createdAt) AS latest FROM store
+		LEFT JOIN (SELECT I.qid, I.sid, I.type, I.createdAt, J.status FROM message AS I
+			INNER JOIN quote AS J ON I.qid = J.qid
+			WHERE J.status = 3) AS K ON store.sid = K.sid AND K.type = 0
+		GROUP BY store.sid, K.qid) AS A
+	LEFT JOIN message AS B ON A.sid = B.sid AND B.type = 1 AND B.createdAt > A.latest
+	GROUP BY A.sid) AS C
+LEFT JOIN notice AS D ON C.sid = D.sid
+WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total != D.notice2))`, [], async (error, results, fields) => {
+          if (results.length != 0) {
+            let hash = {};
+            
+            for (let i=0; i<results.length; i++) {
+              hash['Notice.sid[' + i + ']'] = results[i]['sid'];
+              hash['Notice.notice' +results[i]['slot'] + '[' + i + ']'] = results[i]['total'];
+            }
+            
+            let messageData = RequestHelper.createInputs(hash);
+     		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
+     		    await DatabaseHelper.update(messageData, message);
+          }
+        });
       } catch(error) {
         reject(error);
       }
