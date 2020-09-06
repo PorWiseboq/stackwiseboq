@@ -123,7 +123,18 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getNoticeSum(i: number): number {
-    return this.getDataFromNotation('Notice.notice' + i) || 0;
+    if ((i == 0 && this.state.quoteType == QuoteType.AUCTIONING) ||
+      (i == 1 && this.state.quoteType == QuoteType.OFFERING) ||
+      (i == 2 && this.state.quoteType == QuoteType.PAID)) {
+      const length = this.getDataFromNotation('Quote').length;
+      let count = 0;
+      for (let i=0; i<length; i++) {
+        count += this.getNoticeCount(i);
+      }
+      return count;
+    } else {
+      return this.getDataFromNotation('Notice.notice' + i) || 0;
+    }
   }
   
   private getNoticeCount(i: number): number {
