@@ -573,6 +573,22 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
+  protected onButtonSubmitting_c788d322(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 2) here:
+    // 
+    this.setState({submitting: true});
+    
+  }
+
+  protected onButtonSubmitted_c788d322(event: Event) {
+
+    // Handle the event of onButtonSubmitted (Button 2) here:
+    // 
+    this.setState({submitting: false});
+    
+  }
+
   protected onButtonSuccess_c788d322(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 2) here:
@@ -885,11 +901,11 @@ class Rectangle_cad06e8d extends Base {
                       .container-fluid
                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                           .internal-fsb-element.col-9.offset-0(style={padding: '0px'}, internal-fsb-guid="8d1ec385")
-                            textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'FsbInheritedPresets': '', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, ref="chatInput", type="text", placeholder="ข้อความ", rows="1", required=true)
+                            textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'FsbInheritedPresets': '', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, ref="chatInput", type="text", placeholder="ข้อความ", rows="1", required=true, disabled=this.state.submitting)
                           input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="b16eadbb")
                           input.internal-fsb-element.col-12(type="hidden", internal-fsb-guid="a1a3c540")
                           input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="208c3d23")
-                          Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0.btn.btn-primary.btn-sm(style={'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, onClick=((event) => { window.internalFsbSubmit('c788d322', 'Message', event, ((results) => { this.manipulate('c788d322', 'Message', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_c788d322.bind(this), internal-fsb-guid="c788d322")
+                          Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0.btn.btn-primary.btn-sm(style={'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, onClick=((event) => { window.internalFsbSubmit('c788d322', 'Message', event, ((results) => { this.manipulate('c788d322', 'Message', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSuccess=this.onButtonSuccess_c788d322.bind(this), onSubmitting=this.onButtonSubmitting_c788d322.bind(this), onSubmitted=this.onButtonSubmitted_c788d322.bind(this), internal-fsb-guid="c788d322")
                             .internal-fsb-element(internal-fsb-guid="c788d322-text")
                               | ส่ง
     `
