@@ -44,13 +44,15 @@ interface IProps extends IAutoBaseProps {
 }
 interface IState extends IAutoBaseState {
   sid: number;
+  submitting: boolean;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
   
 });
 let DefaultState = Object.assign({}, DefaultBaseState, {
-  sid: (window.location.href.split('/chat/')[1] || '').split('/')[1]
+  sid: (window.location.href.split('/chat/')[1] || '').split('/')[1],
+  submitting: false
 });
 
 // Auto[ClassBegin]--->
@@ -101,6 +103,22 @@ class Rectangle_a8055802 extends Base {
   }
   
   // Auto[Merging]--->
+  protected onButtonSubmitting_a403abac(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 4) here:
+    // 
+    this.setState({submitting: true});
+    
+  }
+
+  protected onButtonSubmitted_a403abac(event: Event) {
+
+    // Handle the event of onButtonSubmitted (Button 4) here:
+    // 
+    this.setState({submitting: false});
+    
+  }
+
   protected onButtonSuccess_a403abac(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 4) here:
@@ -133,11 +151,11 @@ class Rectangle_a8055802 extends Base {
                 .container-fluid
                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                     .internal-fsb-element.col-9.col-sm-10.col-md-11(style={padding: '0px'}, internal-fsb-guid="4522d52e")
-                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'background': 'rgba(252, 252, 252, 0.15)', 'color': 'rgba(255, 255, 255, 1)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, ref="chatInput", type="text", required=true, placeholder="ข้อความ")
+                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'background': 'rgba(252, 252, 252, 0.15)', 'color': 'rgba(255, 255, 255, 1)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, ref="chatInput", type="text", required=true, placeholder="ข้อความ", disabled=this.state.submitting)
                     input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="d09070d8")
                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="a4147a38")
                     input.internal-fsb-element.col-12(type="hidden", value=this.state.sid, internal-fsb-guid="7e11119e")
-                    Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.col-sm-2.col-md-1.btn.btn-primary.btn-sm(style={'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, onClick=((event) => { window.internalFsbSubmit('a403abac', 'Message', event, ((results) => { this.manipulate('a403abac', 'Message', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_a403abac.bind(this), internal-fsb-guid="a403abac")
+                    Button.internal-fsb-element.internal-fsb-allow-cursor.col-3.col-sm-2.col-md-1.btn.btn-primary.btn-sm(style={'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, onClick=((event) => { window.internalFsbSubmit('a403abac', 'Message', event, ((results) => { this.manipulate('a403abac', 'Message', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSuccess=this.onButtonSuccess_a403abac.bind(this), onSubmitting=this.onButtonSubmitting_a403abac.bind(this), onSubmitted=this.onButtonSubmitted_a403abac.bind(this), internal-fsb-guid="a403abac")
                       .internal-fsb-element(internal-fsb-guid="a403abac-text")
                         | ส่ง
     `
