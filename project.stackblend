@@ -185,7 +185,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "73d1cec9",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "d22b95d9"
   },
@@ -5060,18 +5060,7 @@
         "  }",
         "  ",
         "  private getNoticeSum(i: number): number {",
-        "    if ((i == 0 &amp;&amp; this.state.quoteType == QuoteType.AUCTIONING) ||",
-        "      (i == 1 &amp;&amp; this.state.quoteType == QuoteType.OFFERING) ||",
-        "      (i == 2 &amp;&amp; this.state.quoteType == QuoteType.PAID)) {",
-        "      const length = this.getDataFromNotation('Quote').length;",
-        "      let count = 0;",
-        "      for (let i=0; i<length; i++) {",
-        "        count += this.getNoticeCount(i);",
-        "      }",
-        "      return count;",
-        "    } else {",
-        "      return this.getDataFromNotation('Notice.notice' + i) || 0;",
-        "    }",
+        "    return this.getDataFromNotation('Notice.notice' + i) || 0;",
         "  }",
         "  ",
         "  private getNoticeCount(i: number): number {",
@@ -6987,11 +6976,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "098de259",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "5a671a7d",
+          "24731127",
           0,
-          5,
+          1,
           null
         ]
       },
@@ -20608,7 +20597,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "d114718cdb3d98ea26211651affaa4c622943595",
+    "Project.Controls.Rectangle_cad06e8d": "cd7ce7723ab30628966b09c8efa2b9911b49e889",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
