@@ -312,7 +312,7 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
               
               let noticeData = RequestHelper.createInputs(hash);
        		    let notice = SchemaHelper.getDataTableSchemaFromNotation('Notice', ProjectConfigurationHelper.getDataSchema());
-       		    await DatabaseHelper.update(noticeData, notice);
+       		    await DatabaseHelper.upsert(noticeData, notice);
             }
           });
         }
