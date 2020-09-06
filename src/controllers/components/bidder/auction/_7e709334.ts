@@ -306,19 +306,13 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
               let hash = {};
               
               for (let i=0; i<results.length; i++) {
-                if (!hash['Notice.sid[' + i + ']']) {
-                  hash['Notice.notice0[' + i + ']'] = 0;
-                  hash['Notice.notice1[' + i + ']'] = 0;
-                  hash['Notice.notice2[' + i + ']'] = 0;
-                }
-                
                 hash['Notice.sid[' + i + ']'] = results[i]['sid'];
                 hash['Notice.notice' +results[i]['slot'] + '[' + i + ']'] = results[i]['total'];
               }
               
               let noticeData = RequestHelper.createInputs(hash);
        		    let notice = SchemaHelper.getDataTableSchemaFromNotation('Notice', ProjectConfigurationHelper.getDataSchema());
-       		    await DatabaseHelper.update(noticeData, notice);
+       		    await DatabaseHelper.upsert(noticeData, notice);
             }
           });
         }
