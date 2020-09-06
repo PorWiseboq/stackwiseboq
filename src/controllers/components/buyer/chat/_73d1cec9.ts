@@ -231,9 +231,9 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
               hash['Notice.notice' +results[i]['slot'] + '[' + i + ']'] = results[i]['total'];
             }
             
-            let messageData = RequestHelper.createInputs(hash);
-     		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
-     		    await DatabaseHelper.update(messageData, message);
+            let noticeData = RequestHelper.createInputs(hash);
+     		    let notice = SchemaHelper.getDataTableSchemaFromNotation('Notice', ProjectConfigurationHelper.getDataSchema());
+     		    await DatabaseHelper.update(noticeData, notice);
           }
         });
       } catch(error) {
