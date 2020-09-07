@@ -5145,11 +5145,7 @@
         "  }",
         "  ",
         "  private getRankSequenceTag(i: number): string {",
-        "    if (this.isSelfRank(i - 1) || this.isSelfRank(i) || this.isSelfRank(i + 1)) {",
-        "      return this.getDataFromNotation('Quote[#i].Rank')[i].columns['price'].toString() + ' บาท';",
-        "    } else {",
-        "      return `อันดับที่ ${i + 1}`;",
-        "    }",
+        "    return `อันดับที่ ${i + 1}`;",
         "  }",
         "  ",
         "  private getShortRemainingTime(i: number): string {",
@@ -18837,7 +18833,7 @@
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ec60ad02\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"rank\" data-field-type=\"number\" data-required=\"true\">",
       "                                        <div class=\"internal-fsb-title\">rank</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a6806d1e\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"price\" data-field-type=\"number\" data-required=\"true\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a6806d1e\" internal-fsb-name=\"RelationalColumn 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"price\" data-field-type=\"number\" data-required=\"true\" data-rendering-condition-mode=\"block\">",
       "                                        <div class=\"internal-fsb-title\">price</div>",
       "                                    </div>",
       "                                </div>",
@@ -20952,7 +20948,16 @@
             "required": true,
             "unique": false,
             "modifyingPermission": null,
-            "retrievingPermission": null
+            "retrievingPermission": {
+              "mode": "block",
+              "relationModeSourceGroup": null,
+              "relationModeSourceEntity": null,
+              "relationMatchingMode": null,
+              "relationMatchingConstantValue": null,
+              "relationMatchingSessionName": null,
+              "sessionMatchingSessionName": null,
+              "sessionMatchingConstantValue": null
+            }
           }
         },
         "relations": {
@@ -21191,7 +21196,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "755ec25c05d0d1182eceb63bab2bfc5b1855f9e1",
+    "Project.Controls.Rectangle_cad06e8d": "ae1ccbc7726523b379d7a1d5d74d661d6f4e195a",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
