@@ -372,7 +372,7 @@ class Rectangle_cad06e8d extends Base {
     }
     
     if (element) {
-      element.value = sum.toString();
+      element.value = sum.toFixed(2).toString();
     }
   }
   
