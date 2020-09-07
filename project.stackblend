@@ -6198,7 +6198,7 @@
         "      // ",
         "      ",
         "      \" internal-fsb-react-id=\"price\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" placeholder=\"ราคารวมทั้งหมด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"price\" disabled=\"true\"></div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"2b06dab6\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">บาท</div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d30aa93b\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" value=\"\" internal-fsb-data-value-source=\"session\" internal-fsb-data-session-name=\"sid\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a5b102c4\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"Quote[#i].qid\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4\" internal-fsb-guid=\"9868a6d5\" internal-fsb-name=\"Bid\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\" internal-fsb-data-wizard-type=\"upsert\" internal-fsb-data-wizard-cross-operation=\"upsert\" internal-fsb-data-controls=\" 1832b944 b91e2739 03aab0e5 957c1568 9c338431 c22ec668 d913e6a1 c03d6613 d30aa93b ae7e2437 a5b102c4 1382e4c9 9d1cc748 1e76478b 54c30d5c 05733be3\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"2b06dab6\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">บาท</div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d30aa93b\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" value=\"\" internal-fsb-data-value-source=\"session\" internal-fsb-data-session-name=\"sid\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a5b102c4\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"Quote[#i].qid\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4\" internal-fsb-guid=\"9868a6d5\" internal-fsb-name=\"Bid\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\" internal-fsb-data-wizard-type=\"upsert\" internal-fsb-data-wizard-cross-operation=\"upsert\" internal-fsb-data-controls=\" 1832b944 b91e2739 03aab0e5 957c1568 9c338431 c22ec668 d913e6a1 c03d6613 d30aa93b ae7e2437 a5b102c4 1382e4c9 9d1cc748 1e76478b 54c30d5c 05733be3 baa65b1b\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
         "    // Handle the event of onButtonSuccess (Bid) here:",
         "    // ",
@@ -7125,11 +7125,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "9868a6d5",
         "currentCursorWalkPath": [
-          "3231834e",
+          "64a6ac8c",
           0,
-          2,
+          15,
           null
         ]
       },
@@ -20889,7 +20889,7 @@
     "8857ca68": "566622387898785485cdf6521266e6433682a27e",
     "b140e86b": "e7606bf67068fc29a3b5cd40978893f7913eb5c0",
     "b6eb1b83": "24daedd3e9612a676b94d22f2bffa5740ee63c77",
-    "7e709334": "5c22a11c9ad4c9a7b251a7648430746d7344924e",
+    "7e709334": "d592c6d9585ddee0d80c0211960eb869ef794297",
     "65e04a88": "13205c1857404eec1ba588ff621a52bb0a644a84",
     "9d37c390": "0531bd8ecb6d6e9cb4abe4c4c31425a4c399f983",
     "6ce794ec": "f0a134512eca9c10d2ba1f358371bf76e54c06e8",
@@ -20908,7 +20908,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "5e3d4b664ee8661270b765282061d78f98feb8a3",
+    "Project.Controls.Rectangle_cad06e8d": "35617011312a3b4cdcf92db1c4b29052e2481199",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",

@@ -99,7 +99,7 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
-    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
