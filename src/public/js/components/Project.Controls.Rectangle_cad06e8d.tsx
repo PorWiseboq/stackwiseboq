@@ -391,7 +391,7 @@ class Rectangle_cad06e8d extends Base {
       this.state.vatType = this.getDataFromNotation('Quote[#i].Auction.vatType') || 0;
       this.state.promotion = this.getDataFromNotation('Quote[#i].Auction.promotion') || '';
       this.forceUpdate();
-    }).bind(this), 1000);
+    }).bind(this), 0);
   }
   
   // Providing data array base on dot notation:
