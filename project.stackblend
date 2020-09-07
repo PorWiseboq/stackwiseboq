@@ -5128,7 +5128,7 @@
         "    const address = this.getDataFromNotation('Quote[' + i + '].address');",
         "    ",
         "    let information = (pickup == 1) ? 'ลูกค้าแจ้งจะไปรับด้วยตนเอง' : ('ลูกค้าแจ้งให้นำสินค้าไปส่งที่ '  + address + ' ');",
-        "    information += (deliverChecked) ? ('ภายในวันที่ ' + (new Date(deliverAt)).toLocaleDateString() + ' โดยเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง') : 'แต่ลูกค้าไม่ได้ระบุเวลาส่งซึ่งเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง';",
+        "    information += (deliverChecked) ? ('ภายในวันที่ ' + (new Date(deliverAt)).toLocaleDateString() + ' โดยเราจะบอกเบอร์โทรศัพท์ลูกค้าให้ทราบทีหลัง') : 'แต่ลูกค้าไม่ได้ระบุเวลาส่งซึ่งเราจะบอกเบอร์โทรศัพท์ลูกค้าให้ทราบทีหลัง';",
         "    ",
         "    return information;",
         "  }",
@@ -7239,11 +7239,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "24731127",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "64a6ac8c",
+          "24731127",
           0,
-          15,
+          1,
           null
         ]
       },
@@ -21191,7 +21191,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "f4955c1642252591037756d36896d9d4fd6d3afc",
+    "Project.Controls.Rectangle_cad06e8d": "755ec25c05d0d1182eceb63bab2bfc5b1855f9e1",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
