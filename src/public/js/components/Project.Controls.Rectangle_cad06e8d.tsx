@@ -196,6 +196,16 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
+  private getDeliverInformation(i: number): string {
+    const deliverChecked = this.getDataFromNotation('Quote[' + i + '].deliverChecked');
+    const deliverAt = this.getDataFromNotation('Quote[' + i + '].deliverAt');
+    const pickup = this.getDataFromNotation('Quote[' + i + '].pickup');
+    const address = this.getDataFromNotation('Quote[' + i + '].address');
+    
+    let information = (pickup == 1) ? 'ลูกค้าแจ้งจะไปรับด้วยตนเอง' : ('ลูกค้าแจ้งให้นำสินค้าไปส่งที่ ' + address);
+    information += (deliverChecked) ? (' ก่อนวันที่ ' + deliverAt.toString() + 'โดยเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง') : ' แต่ลูกค้าไม่ได้ระบุเวลาส่งซึ่งเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง';
+  }
+  
   private getAuctionSummary(i: number): string {
     const rank = this.getRank(i);
     const tag = this.getTag(i);
@@ -895,6 +905,8 @@ class Rectangle_cad06e8d extends Base {
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                         .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].title"))}, internal-fsb-guid="8c2aa238")
                                         .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="7484ac1e")
+                                        .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="a1919892")
+                                          | #{this.getDeliverInformation(this.state.selectedIndex)}
                                         .internal-fsb-element.internal-fsb-allow-cursor.col-12(style={'display': 'flex', 'justifyContent': 'space-around', 'WebkitJustifyContent': 'space-around', 'marginBottom': '15px'}, internal-fsb-guid="9ee30bae")
                                           .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(252, 3, 3, 0)'}, internal-fsb-guid="96698691")
                                             each data, i in this.getDataFromNotation("Quote[#i].Rank", true)
