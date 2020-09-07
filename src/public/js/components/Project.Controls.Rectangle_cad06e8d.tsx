@@ -220,11 +220,7 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getRankSequenceTag(i: number): string {
-    if (this.isSelfRank(i - 1) || this.isSelfRank(i) || this.isSelfRank(i + 1)) {
-      return this.getDataFromNotation('Quote[#i].Rank')[i].columns['price'].toString() + ' บาท';
-    } else {
-      return `อันดับที่ ${i + 1}`;
-    }
+    return `อันดับที่ ${i + 1}`;
   }
   
   private getShortRemainingTime(i: number): string {
