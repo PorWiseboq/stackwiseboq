@@ -347,7 +347,7 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
           let price = parseFloat(priceData[0].value);
           
           if (isNaN(price)) {
-            throw new Error('กรุณากรอกราคาต่อหน่วยให้ครบ');
+            throw new Error('กรุณากรอกราคาต่อหน่วย ค่าขนส่งและส่วนลดให้ถูกต้อง');
           }
           
           if (price <= 0) {
