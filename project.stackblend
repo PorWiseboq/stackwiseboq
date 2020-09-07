@@ -5827,7 +5827,7 @@
         "                                                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"8c2aa238\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].title\">ชื่อรายการ</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"7484ac1e\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].description\">รายละเอียดโดยย่อ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"7484ac1e\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px; margin-bottom: 5px\" internal-fsb-react-data=\"Quote[#i].description\">รายละเอียดโดยย่อ</div>",
         "",
         "",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"a1919892\" internal-fsb-name=\"TextElement 38\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\">#{this.getDeliverInformation(this.state.selectedIndex)}</div>",
@@ -6283,7 +6283,8 @@
         "                                                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"c7226b52\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].title\">ชื่อรายการ</div>",
-        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"39ca61d5\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"Quote[#i].description\">รายละเอียดโดยย่อ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"39ca61d5\" internal-fsb-name=\"Description\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-left: 0px; padding-right: 0px; margin-bottom: 5px\" internal-fsb-react-data=\"Quote[#i].description\">รายละเอียดโดยย่อ</div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"95e443b3\" internal-fsb-name=\"TextElement 39\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 0px; padding-right: 0px; -fsb-inherited-presets: 4839e353\">#{this.getDeliverInformation(this.state.selectedIndex)}</div>",
         "                                                                                <div class=\"internal-fsb-element internal-fsb-allow-cursor col-12\" internal-fsb-guid=\"3bc4945a\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"margin-bottom: 15px; display: flex; justify-content: space-around; -webkit-justify-content: space-around\">",
         "                                                                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"ed182a21\" internal-fsb-name=\"Rectangle 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"\">",
         "                                                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"b16bc14a\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"width: 100px; display: inline-block\" internal-fsb-react-data=\"Quote[#i].Rank\">",
@@ -7225,11 +7226,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
-          "24731127",
+          "7b15e8a1",
           0,
-          1,
+          3,
           null
         ]
       },
@@ -21177,7 +21178,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "56598adcc0be727088a7683d6f48e64703d5a1b3",
+    "Project.Controls.Rectangle_cad06e8d": "4387aee0d074c5411ea9fd193e0086e8b1a23f21",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
