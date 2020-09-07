@@ -492,15 +492,19 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
             let options = RequestHelper.getOptions(this.pageId, this.request);
             
             if (schema.group == 'Quote') {
-    				  let quoteData = RequestHelper.createInputs({
-       		      'Quote.status': data.filter(item => item.name == 'status')[0].value,
+              const value = data.filter(item => item.name == 'status')[0].value;
+    				  let quoteData = RequestHelper.createInputs(Object.assign({}, {
+       		      'Quote.status': value,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
        		      'Quote.Auction.Substitute.aid': null,
        		      'Quote.Listing.qid': null,
        		      'Quote.Message.qid': null,
        		      'Quote.Message.sid': this.request.session.sid
-       		    }); 
+       		    }, (value + '' == '3') ? {
+       		      'Quote.Auction.Payment.aid': null,
+       		      'Quote.Auction.Payment.Transfer.aid': null
+       		    } : {})); 
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
            		    
@@ -545,7 +549,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("7e709334", "108bb2b9", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
-    RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["c192b978","d1920261"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
+    RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});

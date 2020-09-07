@@ -96,7 +96,7 @@ class Rectangle_cad06e8d extends Base {
   register() {
     DataManipulationHelper.register("4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
     DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
-    DataManipulationHelper.register("e9c9b721", "retrieve", ["c192b978","d1920261"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
+    DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
@@ -964,7 +964,7 @@ class Rectangle_cad06e8d extends Base {
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=!this.getFormEnabledState(), onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
-                            .internal-fsb-element(style={display: (()=>{return this.getQuoteTypeDisplay(QuoteType.OFFERING, true);})()}, internal-fsb-guid="51201e78")
+                            .internal-fsb-element(style={display: (()=>{return this.getQuoteTypeDisplay(QuoteType.OFFERING_OR_PAID, true);})()}, internal-fsb-guid="51201e78")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-12(internal-fsb-guid="7b15e8a1")
@@ -1040,6 +1040,23 @@ class Rectangle_cad06e8d extends Base {
                                           | #{this.getDataFromNotation('Quote[#i].Auction.promotion') || 'ไม่มี'}
                                   .internal-fsb-element.-fsb-preset-1715aae1.col-12.offset-0(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="5428078e")
                                     | คุณได้เสนอราคาไว้ที่ #{(this.getDataFromNotation('Quote[#i].Auction.price') || 0).toFixed(2)} บาท
+                                  .internal-fsb-element.offset-3.col-6(style={'marginTop': '15px', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', display: (()=>{return this.getQuoteTypeDisplay(QuoteType.PAID, true);})()}, internal-fsb-guid="4a9c1bd6")
+                                    .container-fluid
+                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                        .internal-fsb-element.col-5.offset-0(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="97c4a491")
+                                          | จากธนาคาร:
+                                        .internal-fsb-element.col-7.offset-0(internal-fsb-guid="c3413167")
+                                          | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.origin')}
+                                        .internal-fsb-element.col-5.offset-0(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="088400aa")
+                                          | ชื่อผู้โอน:
+                                        .internal-fsb-element.col-7.offset-0(internal-fsb-guid="2ac784b2")
+                                          | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.transferrer')}
+                                        .internal-fsb-element.col-5.offset-0(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="028ad007")
+                                          | เวลา:
+                                        .internal-fsb-element.col-7.offset-0(internal-fsb-guid="1566119e")
+                                          | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.time')}
+                                  .internal-fsb-element.-fsb-preset-1715aae1.col-12(style={'FsbInheritedPresets': '1715aae1', display: (()=>{return this.getQuoteTypeDisplay(QuoteType.PAID, true);})()}, internal-fsb-guid="36ed3d83")
+                                    | ทาง WiseBOQ กำลังเช็คยอดเงินโอนและกำลังโอนเงินให้ทางร้านค้า
                                   Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('d3e31c36', 'Auction', event, ((results) => { this.manipulate('d3e31c36', 'Auction', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="d3e31c36")
                                     .internal-fsb-element(internal-fsb-guid="d3e31c36-text")
                                       | ยกเลิก
