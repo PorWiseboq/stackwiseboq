@@ -56,7 +56,7 @@ interface IState extends IAutoBaseState {
   itemPrices: number[];
   remainingTimes: string[];
   expandingChat: boolean;
-  deliveryCost: string;
+  deliverCost: string;
   discount: string;
   vatType: number;
   promotion: string;
@@ -74,7 +74,7 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   itemPrices: [],
   remainingTimes: [],
   expandingChat: true,
-  deliveryCost: '',
+  deliverCost: '',
   discount: '',
   vatType: 0,
   promotion: ''
@@ -355,7 +355,7 @@ class Rectangle_cad06e8d extends Base {
       }
     }
     
-    if (this.state.deliveryCost) sum += parseFloat(this.state.deliveryCost);
+    if (this.state.deliverCost) sum += parseFloat(this.state.deliverCost);
     if (this.state.discount) sum -= parseFloat(this.state.discount);
     
     if (element) {
@@ -381,7 +381,7 @@ class Rectangle_cad06e8d extends Base {
   private resetForm() {
     this.setState({
       isFormReady: false,
-      deliveryCost: this.getDataFromNotation('Quote[#i].Auction.deliverCost') || '',
+      deliverCost: this.getDataFromNotation('Quote[#i].Auction.deliverCost') || '',
       discount: this.getDataFromNotation('Quote[#i].Auction.discount') || '',
       vatType: this.getDataFromNotation('Quote[#i].Auction.vatType') || 0,
       promotion: this.getDataFromNotation('Quote[#i].Auction.promotion') || ''
@@ -579,7 +579,7 @@ class Rectangle_cad06e8d extends Base {
     // 
     const element = EventHelper.getCurrentElement(event);
     
-    this.state.deliveryCost = element.value;
+    this.state.deliverCost = element.value;
     this.forceUpdate();
     
     this.updatePrice();
