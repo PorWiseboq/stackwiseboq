@@ -204,6 +204,8 @@ class Rectangle_cad06e8d extends Base {
     
     let information = (pickup == 1) ? 'ลูกค้าแจ้งจะไปรับด้วยตนเอง' : ('ลูกค้าแจ้งให้นำสินค้าไปส่งที่ ' + address);
     information += (deliverChecked) ? (' ก่อนวันที่ ' + deliverAt.toString() + 'โดยเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง') : ' แต่ลูกค้าไม่ได้ระบุเวลาส่งซึ่งเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง';
+    
+    return information;
   }
   
   private getAuctionSummary(i: number): string {
