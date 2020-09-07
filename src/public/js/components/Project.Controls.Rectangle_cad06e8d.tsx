@@ -1043,7 +1043,7 @@ class Rectangle_cad06e8d extends Base {
                                   .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return this.getQuoteTypeDisplay(QuoteType.PAID, true);})()}, internal-fsb-guid="782a46eb")
                                     .container-fluid
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                        .internal-fsb-element.offset-3.col-6(style={'marginTop': '15px', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px'}, internal-fsb-guid="4a9c1bd6")
+                                        .internal-fsb-element.offset-3.col-6(style={'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', 'marginTop': '5px'}, internal-fsb-guid="4a9c1bd6")
                                           .container-fluid
                                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                               .internal-fsb-element.col-5.offset-0(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="97c4a491")
@@ -1064,10 +1064,14 @@ class Rectangle_cad06e8d extends Base {
                                           | ทาง WiseBOQ ตรวจเช็คยอดเงินโอนเสร็จแล้วและกำลังโอนเงินให้ทางร้านค้า
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'display': (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 2) ? 'block' : 'none';})() || 'none'}, internal-fsb-guid="323e3062")
                                           | ทาง WiseBOQ โอนเงินให้ทางร้านค้าเรียบร้อยแล้ว
+                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'color': 'rgba(255, 0, 0, 1)', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 3) ? 'block' : 'none';})()}, internal-fsb-guid="9600723b")
+                                          | ทาง WiseBOQ ได้เช็คยอดเงินโอนแล้วพบว่าเกิดความผิดพลาด
+                                        .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(255, 0, 0, 1)', 'fontSize': '13px', 'fontWeight': 'bold', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 3) ? 'block' : 'none';})()}, internal-fsb-guid="8e502349")
+                                          | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.forwardingNote') || 'กรุณาติดต่อ WiseBOQ เพื่อสอบถามข้อมูลเพิ่มเติม'} 
                                         .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 2) ? 'block' : 'none';})()}, internal-fsb-guid="70267cd8")
                                           .container-fluid
                                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                              .internal-fsb-element.col-6.offset-3(style={'marginTop': '15px', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px'}, internal-fsb-guid="9c819cb9")
+                                              .internal-fsb-element.col-6.offset-3(style={'marginTop': '5px', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px'}, internal-fsb-guid="9c819cb9")
                                                 .container-fluid
                                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                     .internal-fsb-element.col-5(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="db073cac")
@@ -1082,6 +1086,14 @@ class Rectangle_cad06e8d extends Base {
                                                       | เวลา:
                                                     .internal-fsb-element.col-7(internal-fsb-guid="15d9bc67")
                                                       | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.forwardingTime')}
+                                                    .internal-fsb-element.col-5(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="39d33018")
+                                                      | จำนวนเงิน:
+                                                    .internal-fsb-element.col-7(internal-fsb-guid="e2ade77a")
+                                                      | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.forwardingAmount')} บาท
+                                                    .internal-fsb-element.col-5(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="05522248")
+                                                      | หมายเหตุ:
+                                                    .internal-fsb-element.col-7(internal-fsb-guid="9c0475b2")
+                                                      | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.forwardingNote') || 'ไม่มี'} 
                                   Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('d3e31c36', 'Auction', event, ((results) => { this.manipulate('d3e31c36', 'Auction', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="d3e31c36")
                                     .internal-fsb-element(internal-fsb-guid="d3e31c36-text")
                                       | ยกเลิก
