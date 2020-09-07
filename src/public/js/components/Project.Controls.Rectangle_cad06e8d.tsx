@@ -349,15 +349,20 @@ class Rectangle_cad06e8d extends Base {
     
     const element = ReactDOM.findDOMNode(this.refs.price);
     if (element) {
-      if (isNaN(sum)) element.value = "กรุณากรอกราคาต่อหน่วยให้ครบ";
-      return;
+      if (isNaN(sum)) {
+      	element.value = "กรุณากรอกราคาต่อหน่วยให้ครบ";
+      	return;
+      }
     }
     
     if (this.state.deliveryCost) sum += parseFloat(this.state.deliveryCost);
     if (this.state.discount) sum -= parseFloat(this.state.discount);
     
     if (element) {
-      if (isNaN(sum)) element.value = "กรุณากรอกค่าขนส่งและส่วนลดให้ถูกต้อง";
+      if (isNaN(sum)) {
+      	element.value = "กรุณากรอกค่าขนส่งและส่วนลดให้ถูกต้อง";
+      	return;
+      }
     }
     
     if (this.state.vatType == 0) {
