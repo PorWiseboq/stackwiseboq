@@ -56,6 +56,9 @@ interface IState extends IAutoBaseState {
   itemPrices: number[];
   remainingTimes: string[];
   expandingChat: boolean;
+  deliveryCost: string;
+  discount: string;
+  vatType: number;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -69,7 +72,10 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   isFormReady: false,
   itemPrices: [],
   remainingTimes: [],
-  expandingChat: true
+  expandingChat: true,
+  deliveryCost: '',
+  discount: '',
+  vatType: 0
 });
 
 // Auto[ClassBegin]--->
@@ -91,7 +97,7 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
-    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
@@ -329,6 +335,10 @@ class Rectangle_cad06e8d extends Base {
   private onPriceChanged(index: number, price: number) {
     this.state.itemPrices[index] = price;
     
+    this.updatePrice();
+  }
+  
+  private updatePrice() {
     const count = this.getDataFromNotation('Quote[#i].Listing').length;
     let sum = 0;
     for (let i=0; i<count; i++) {
@@ -338,14 +348,36 @@ class Rectangle_cad06e8d extends Base {
     const element = ReactDOM.findDOMNode(this.refs.price);
     if (element) {
       if (isNaN(sum)) element.value = "กรุณากรอกราคาต่อหน่วยให้ครบ";
-      else element.value = sum.toString();
+      return;
+    }
+    
+    if (this.state.deliveryCost) sum += parseFloat(this.state.deliveryCost);
+    if (this.state.discount) sum -= parseFloat(this.state.discount);
+    
+    if (element) {
+      if (isNaN(sum)) element.value = "กรุณากรอกค่าขนส่งและส่วนลดให้ถูกต้อง";
+    }
+    
+    if (this.state.vatType == '0') {
+      sum = sum / 1.07;
+    } else {
+      sum = sum * 1.07;
+    }
+    
+    if (element) {
+      element.value = sum.toString();
     }
   }
   
   // Private function of form ready state
   // 
   private resetForm() {
-    this.setState({isFormReady: false});
+    this.setState({
+      isFormReady: false,
+      deliveryCost: this.getDataFromNotation('Quote[#i].deliveryCost') || '',
+      discount: this.getDataFromNotation('Quote[#i].discount') || '',
+      vatType: this.getDataFromNotation('Quote[#i].vatType') || 0
+    });
     
     // [TODO]: workaround for update timing problem
     // 
@@ -530,6 +562,54 @@ class Rectangle_cad06e8d extends Base {
     
     this.forceUpdate();
     this.scrollToBottom(true);
+    
+  }
+
+  protected onTextboxChange_54c30d5c(event: Event) {
+
+    // Handle the event of onTextboxChange (Textbox 1) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.deliveryCost = element.value;
+    this.forceUpdate();
+    
+    this.updatePrice();
+    
+  }
+
+  protected onTextboxChange_05733be3(event: Event) {
+
+    // Handle the event of onTextboxChange (Textbox 2) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.discount = element.value;
+    this.forceUpdate();
+    
+    this.updatePrice();
+    
+  }
+
+  protected onRadioClick_9d1cc748(event: Event) {
+
+    // Handle the event of onRadioClick (Radio 1) here:
+    // 
+    this.state.vatType = 0;
+    this.forceUpdate();
+    
+    this.updatePrice();
+    
+  }
+
+  protected onRadioClick_1e76478b(event: Event) {
+
+    // Handle the event of onRadioClick (Radio 2) here:
+    // 
+    this.state.vatType = 1;
+    this.forceUpdate();
+    
+    this.updatePrice();
     
   }
 
@@ -799,7 +879,47 @@ class Rectangle_cad06e8d extends Base {
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
                                           _Project_Controls_FlowLayout_c6ba5b53_(onpricechanged=this.onPriceChanged.bind(this), index=i, enabled=this.getFormEnabledState(), isformready=this.state.isFormReady, key="item_" + i, row=data)
-                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1'}, internal-fsb-guid="da4a5daa")
+                                        .internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '10px'}, internal-fsb-guid="7800a559")
+                                          .container-fluid
+                                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                              .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="b24342e9")
+                                                .container-fluid
+                                                  .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                    .internal-fsb-element.col-3.offset-0(style={'fontSize': '14px', 'paddingTop': '5px', 'textAlign': 'right', 'paddingRight': '30px'}, internal-fsb-guid="8933226c")
+                                                      | ค่าขนส่ง
+                                                    .internal-fsb-element.col-6.offset-0(style={padding: '0px'}, internal-fsb-guid="54c30d5c")
+                                                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px'}, onChange=this.onTextboxChange_54c30d5c.bind(this), type="text", disabled=!this.props.enabled, value=this.state.deliverCost)
+                                                    .internal-fsb-element.col-2.offset-0(style={'fontSize': '14px', 'paddingTop': '5px'}, internal-fsb-guid="235c20be")
+                                                      | บาท
+                                              .internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="3c9b5cca")
+                                                .container-fluid
+                                                  .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                    .internal-fsb-element.col-3.offset-0(style={'fontSize': '14px', 'paddingTop': '5px', 'textAlign': 'right', 'paddingRight': '30px'}, internal-fsb-guid="5c476c10")
+                                                      | ส่วนลด
+                                                    .internal-fsb-element.col-6.offset-0(style={padding: '0px'}, internal-fsb-guid="05733be3")
+                                                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, onChange=this.onTextboxChange_05733be3.bind(this), type="text", disabled=!this.props.enabled, value=this.state.discount)
+                                                    .internal-fsb-element.col-2.offset-0(style={'fontSize': '14px', 'paddingTop': '5px'}, internal-fsb-guid="ee68a094")
+                                                      | บาท
+                                              .internal-fsb-element.col-12(style={'paddingTop': '15px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="c3d6d83e")
+                                                .container-fluid
+                                                  .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                    .internal-fsb-element.col-3.offset-0(style={'FsbInheritedPresets': '', 'fontSize': '14px', 'textAlign': 'right', 'paddingRight': '30px'}, internal-fsb-guid="ee46635c")
+                                                      | การคำนวณภาษี
+                                                    label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '2px'}, internal-fsb-guid="1bc65357")
+                                                      .container-fluid
+                                                        .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                          .internal-fsb-element.-fsb-preset-b6c9ad89.col-1.offset-0(style={padding: '0px'}, internal-fsb-guid="9d1cc748")
+                                                            input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_9d1cc748.bind(this), type="radio", disabled=!this.props.enabled, name="vat1", checked="true", value="0")
+                                                          .internal-fsb-element.-fsb-preset-b5cd72c0.col-11.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="ca6447e2")
+                                                            | Vat ใน
+                                                    label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '2px'}, internal-fsb-guid="d15e6502")
+                                                      .container-fluid
+                                                        .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                          .internal-fsb-element.-fsb-preset-b6c9ad89.col-1.offset-0(style={padding: '0px'}, internal-fsb-guid="1e76478b")
+                                                            input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_1e76478b.bind(this), type="radio", disabled=!this.props.enabled, name="vat1", checked=this.state.vatType == 1, value="1")
+                                                          .internal-fsb-element.-fsb-preset-b5cd72c0.col-11.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="08e399ae")
+                                                            | Vat นอก
+                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'fontWeight': 'bold'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
                                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="price", type="text", placeholder="ราคารวมทั้งหมด", disabled=true, defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))
