@@ -381,7 +381,7 @@ class Rectangle_cad06e8d extends Base {
   private resetForm() {
     this.setState({
       isFormReady: false,
-      deliveryCost: this.getDataFromNotation('Quote[#i].Auction.deliveryCost') || '',
+      deliveryCost: this.getDataFromNotation('Quote[#i].Auction.deliverCost') || '',
       discount: this.getDataFromNotation('Quote[#i].Auction.discount') || '',
       vatType: this.getDataFromNotation('Quote[#i].Auction.vatType') || 0,
       promotion: this.getDataFromNotation('Quote[#i].Auction.promotion') || ''

@@ -5308,7 +5308,7 @@
         "  private resetForm() {",
         "    this.setState({",
         "      isFormReady: false,",
-        "      deliveryCost: this.getDataFromNotation('Quote[#i].Auction.deliveryCost') || '',",
+        "      deliveryCost: this.getDataFromNotation('Quote[#i].Auction.deliverCost') || '',",
         "      discount: this.getDataFromNotation('Quote[#i].Auction.discount') || '',",
         "      vatType: this.getDataFromNotation('Quote[#i].Auction.vatType') || 0,",
         "      promotion: this.getDataFromNotation('Quote[#i].Auction.promotion') || ''",
@@ -7136,11 +7136,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a30c3884",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
           "24731127",
           0,
-          0,
+          1,
           null
         ]
       },
@@ -20919,7 +20919,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "f8eb47b72a2fc1974dbdd356d4111c3f6b7861c3",
+    "Project.Controls.Rectangle_cad06e8d": "75bdde7702b29d0f9dd3b25c8d57f948673dbbef",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
