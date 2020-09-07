@@ -128,7 +128,7 @@ class Rectangle_cad06e8d extends Base {
   private scrollToBottom(force: boolean=false): void {
     const container = ReactDOM.findDOMNode(this.refs.scroll);
     if (force || container.scrollTop + 50 > container.scrollHeight - container.offsetHeight) {
-      $(container).animate({scrollTop: container.scrollHeight - container.offsetHeight}, 500);
+      $(container).stop().animate({scrollTop: container.scrollHeight - container.offsetHeight}, 500);
     }
   }
   
