@@ -379,20 +379,18 @@ class Rectangle_cad06e8d extends Base {
   // Private function of form ready state
   // 
   private resetForm() {
-    this.setState({
-      isFormReady: false,
-      deliverCost: this.getDataFromNotation('Quote[#i].Auction.deliverCost') || '',
-      discount: this.getDataFromNotation('Quote[#i].Auction.discount') || '',
-      vatType: this.getDataFromNotation('Quote[#i].Auction.vatType') || 0,
-      promotion: this.getDataFromNotation('Quote[#i].Auction.promotion') || ''
-    });
+    this.state.isFormReady = false;
+    this.forceUpdate();
     
     // [TODO]: workaround for update timing problem
     // 
     window.setTimeout((() => {
-      this.setState({
-        isFormReady: true
-      });
+      this.state.isFormReady = true;
+      this.state.deliverCost = this.getDataFromNotation('Quote[#i].Auction.deliverCost') || '';
+      this.state.discount = this.getDataFromNotation('Quote[#i].Auction.discount') || '';
+      this.state.vatType = this.getDataFromNotation('Quote[#i].Auction.vatType') || 0;
+      this.state.promotion = this.getDataFromNotation('Quote[#i].Auction.promotion') || '';
+      this.forceUpdate();
     }).bind(this), 1000);
   }
   
