@@ -1107,7 +1107,7 @@ class Rectangle_cad06e8d extends Base {
                                                       | หมายเหตุ:
                                                     .internal-fsb-element.col-7(internal-fsb-guid="9c0475b2")
                                                       | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.forwardingNote') || 'ไม่มี'} 
-                                  .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0) ? 'block' : 'none';})()}, internal-fsb-guid="57b28be1")
+                                  .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0 || this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == null) ? 'block' : 'none';})()}, internal-fsb-guid="57b28be1")
                                     .container-fluid
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('d3e31c36', 'Auction', event, ((results) => { this.manipulate('d3e31c36', 'Auction', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="d3e31c36")
