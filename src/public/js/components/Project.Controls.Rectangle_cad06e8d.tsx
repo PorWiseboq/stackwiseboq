@@ -910,7 +910,7 @@ class Rectangle_cad06e8d extends Base {
                                           .container-fluid
                                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                               .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '5px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="7484ac1e")
-                                              .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '2px', 'paddingRight': '2px', 'background': 'rgba(255, 217, 0, 1)', 'paddingTop': '2px', 'paddingBottom': '2px'}, internal-fsb-guid="a1919892")
+                                              .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingRight': '5px', 'background': 'rgba(255, 223, 43, 1)', 'paddingTop': '2px', 'paddingBottom': '2px', 'paddingLeft': '5px', 'borderTopColor': 'rgba(255, 0, 0, 1)'}, internal-fsb-guid="a1919892")
                                                 | #{this.getDeliverInformation(this.state.selectedIndex)}
                                         .internal-fsb-element.internal-fsb-allow-cursor.col-12(style={'display': 'flex', 'justifyContent': 'space-around', 'WebkitJustifyContent': 'space-around', 'marginBottom': '15px'}, internal-fsb-guid="9ee30bae")
                                           .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(252, 3, 3, 0)'}, internal-fsb-guid="96698691")
@@ -1005,7 +1005,7 @@ class Rectangle_cad06e8d extends Base {
                                           .container-fluid
                                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                               .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '5px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[#i].description"))}, internal-fsb-guid="39ca61d5")
-                                              .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'paddingLeft': '2px', 'paddingRight': '2px', 'FsbInheritedPresets': '4839e353', 'background': 'rgba(255, 217, 0, 1)', 'paddingTop': '2px', 'paddingBottom': '2px'}, internal-fsb-guid="95e443b3")
+                                              .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'paddingLeft': '5px', 'paddingRight': '5px', 'FsbInheritedPresets': '4839e353', 'background': 'rgba(255, 223, 43, 1)', 'paddingTop': '2px', 'paddingBottom': '2px'}, internal-fsb-guid="95e443b3")
                                                 | #{this.getDeliverInformation(this.state.selectedIndex)}
                                         .internal-fsb-element.internal-fsb-allow-cursor.col-12(style={'marginBottom': '15px', 'display': 'flex', 'justifyContent': 'space-around', 'WebkitJustifyContent': 'space-around'}, internal-fsb-guid="3bc4945a")
                                           .internal-fsb-element.internal-fsb-allow-cursor(internal-fsb-guid="ed182a21")
