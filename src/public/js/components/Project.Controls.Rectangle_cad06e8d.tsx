@@ -360,7 +360,7 @@ class Rectangle_cad06e8d extends Base {
       if (isNaN(sum)) element.value = "กรุณากรอกค่าขนส่งและส่วนลดให้ถูกต้อง";
     }
     
-    if (this.state.vatType == '0') {
+    if (this.state.vatType == 0) {
       sum = sum / 1.07;
     } else {
       sum = sum * 1.07;
