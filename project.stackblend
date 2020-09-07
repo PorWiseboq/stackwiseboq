@@ -7160,11 +7160,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "36ed3d83",
+        "selectingElementGUID": "24731127",
         "currentCursorWalkPath": [
           "51201e78",
           0,
-          5,
+          11,
           null
         ]
       },
@@ -18608,7 +18608,7 @@
       "                        </div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"270a8b13\" internal-fsb-name=\"Connection 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 1074px; top: 82px; width: 150px;\" data-source-group-name=\"Store\" data-source-entity-name=\"sid\" data-target-group-name=\"Employee\" data-target-entity-name=\"sid\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"2ab63cd7\" internal-fsb-name=\"Connection 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 610px; top: 73px; width: 150px;\" data-source-group-name=\"User\" data-source-entity-name=\"id\" data-target-group-name=\"Employee\" data-target-entity-name=\"eid\"></div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"93036348\" internal-fsb-name=\"RelationalTable 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 651px; top: 284px; width: 150px;\" data-title-name=\"Payment\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"Employee\" data-rendering-condition-source-entity=\"eid\" data-rendering-condition-relation-matching-constant-value=\"\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"93036348\" internal-fsb-name=\"RelationalTable 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 651px; top: 284px; width: 150px;\" data-title-name=\"Payment\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"Store\" data-rendering-condition-source-entity=\"oid\" data-rendering-condition-relation-matching-constant-value=\"\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Payment</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -18623,7 +18623,7 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9629ac6c\" internal-fsb-name=\"RelationalTable 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 358px; top: 162px; width: 150px;\" data-title-name=\"Card\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"Employee\" data-rendering-condition-source-entity=\"eid\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9629ac6c\" internal-fsb-name=\"RelationalTable 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 358px; top: 162px; width: 150px;\" data-title-name=\"Card\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"Store\" data-rendering-condition-source-entity=\"oid\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Card</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -18636,7 +18636,7 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"312cb874\" internal-fsb-name=\"RelationalTable 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 360px; top: 350px; width: 150px;\" data-title-name=\"Transfer\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"Employee\" data-rendering-condition-source-entity=\"eid\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"312cb874\" internal-fsb-name=\"RelationalTable 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 360px; top: 350px; width: 150px;\" data-title-name=\"Transfer\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"Store\" data-rendering-condition-source-entity=\"oid\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Transfer</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -20524,8 +20524,8 @@
         },
         "retrievingPermission": {
           "mode": "relation",
-          "relationModeSourceGroup": "Employee",
-          "relationModeSourceEntity": "eid",
+          "relationModeSourceGroup": "Store",
+          "relationModeSourceEntity": "oid",
           "relationMatchingMode": "session",
           "relationMatchingConstantValue": "",
           "relationMatchingSessionName": "uid",
@@ -20581,8 +20581,8 @@
         },
         "retrievingPermission": {
           "mode": "relation",
-          "relationModeSourceGroup": "Employee",
-          "relationModeSourceEntity": "eid",
+          "relationModeSourceGroup": "Store",
+          "relationModeSourceEntity": "oid",
           "relationMatchingMode": "session",
           "relationMatchingConstantValue": null,
           "relationMatchingSessionName": "uid",
@@ -20656,8 +20656,8 @@
         },
         "retrievingPermission": {
           "mode": "relation",
-          "relationModeSourceGroup": "Employee",
-          "relationModeSourceEntity": "eid",
+          "relationModeSourceGroup": "Store",
+          "relationModeSourceEntity": "oid",
           "relationMatchingMode": "session",
           "relationMatchingConstantValue": null,
           "relationMatchingSessionName": "uid",
