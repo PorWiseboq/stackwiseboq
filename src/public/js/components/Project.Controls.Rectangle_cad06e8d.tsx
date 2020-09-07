@@ -59,6 +59,7 @@ interface IState extends IAutoBaseState {
   deliveryCost: string;
   discount: string;
   vatType: number;
+  promotion: string;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -75,7 +76,8 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   expandingChat: true,
   deliveryCost: '',
   discount: '',
-  vatType: 0
+  vatType: 0,
+  promotion: ''
 });
 
 // Auto[ClassBegin]--->
@@ -376,7 +378,8 @@ class Rectangle_cad06e8d extends Base {
       isFormReady: false,
       deliveryCost: this.getDataFromNotation('Quote[#i].deliveryCost') || '',
       discount: this.getDataFromNotation('Quote[#i].discount') || '',
-      vatType: this.getDataFromNotation('Quote[#i].vatType') || 0
+      vatType: this.getDataFromNotation('Quote[#i].vatType') || 0,
+      promotion: this.getDataFromNotation('Quote[#i].promotion') || ''
     });
     
     // [TODO]: workaround for update timing problem
@@ -879,7 +882,7 @@ class Rectangle_cad06e8d extends Base {
                                         each data, i in this.getDataFromNotation("Quote[#i].Listing", true)
                                           - const Project_Controls_FlowLayout_c6ba5b53_ = Project.Controls.FlowLayout_c6ba5b53;
                                           _Project_Controls_FlowLayout_c6ba5b53_(onpricechanged=this.onPriceChanged.bind(this), index=i, enabled=this.getFormEnabledState(), isformready=this.state.isFormReady, key="item_" + i, row=data)
-                                        .internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '10px'}, internal-fsb-guid="7800a559")
+                                        .internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '30px'}, internal-fsb-guid="7800a559")
                                           .container-fluid
                                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                               .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="b24342e9")
@@ -919,7 +922,14 @@ class Rectangle_cad06e8d extends Base {
                                                             input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_1e76478b.bind(this), type="radio", disabled=!this.props.enabled, name="vat1", checked=this.state.vatType == 1, value="1")
                                                           .internal-fsb-element.-fsb-preset-b5cd72c0.col-11.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="08e399ae")
                                                             | Vat นอก
-                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'fontWeight': 'bold'}, internal-fsb-guid="da4a5daa")
+                                              .internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="90c08e45")
+                                                .container-fluid
+                                                  .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                                    .internal-fsb-element.col-3.offset-0(style={'textAlign': 'right', 'fontSize': '14px', 'paddingRight': '30px', 'paddingTop': '5px'}, internal-fsb-guid="da006a4b")
+                                                      | โปรโมชั่นพิเศษ
+                                                    .internal-fsb-element.col-6.offset-0(style={padding: '0px'}, internal-fsb-guid="baa65b1b")
+                                                      textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", rows="2", value=this.state.promotion, disabled=!this.props.enabled)
+                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'fontWeight': 'bold', 'marginTop': '30px'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
                                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="price", type="text", placeholder="ราคารวมทั้งหมด", disabled=true, defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))

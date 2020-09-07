@@ -754,6 +754,16 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('baa65b1b', "relational", "Auction", "promotion");
+		ValidationHelper.registerInput('baa65b1b', "Textbox 3", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'baa65b1b' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('c03d6613', "relational", "Auction", "price");
 		ValidationHelper.registerInput('c03d6613', "Textbox 5", false, undefined);
     for (let i=-1; i<128; i++) {
