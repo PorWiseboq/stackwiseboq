@@ -202,8 +202,8 @@ class Rectangle_cad06e8d extends Base {
     const pickup = this.getDataFromNotation('Quote[' + i + '].pickup');
     const address = this.getDataFromNotation('Quote[' + i + '].address');
     
-    let information = (pickup == 1) ? 'ลูกค้าแจ้งจะไปรับด้วยตนเอง' : ('ลูกค้าแจ้งให้นำสินค้าไปส่งที่ ' + address);
-    information += (deliverChecked) ? (' ภายในวันที่ ' + (new Date(deliverAt)).toLocaleDateString() + ' โดยเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง') : ' แต่ลูกค้าไม่ได้ระบุเวลาส่งซึ่งเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง';
+    let information = (pickup == 1) ? 'ลูกค้าแจ้งจะไปรับด้วยตนเอง' : ('ลูกค้าแจ้งให้นำสินค้าไปส่งที่ '  + address + ' ');
+    information += (deliverChecked) ? ('ภายในวันที่ ' + (new Date(deliverAt)).toLocaleDateString() + ' โดยเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง') : 'แต่ลูกค้าไม่ได้ระบุเวลาส่งซึ่งเราจะแจ้งเบอร์โทรศัพท์ให้ทราบทีหลัง';
     
     return information;
   }
