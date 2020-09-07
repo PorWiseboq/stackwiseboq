@@ -347,7 +347,7 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
           let price = parseFloat(priceData[0].value);
           
           if (isNaN(price)) {
-            throw new Error('กรุณากรอกราคาต่อหน่วยให้ครบ');
+            throw new Error('กรุณากรอกราคาต่อหน่วย ค่าขนส่งและส่วนลดให้ถูกต้อง');
           }
           
           if (price <= 0) {
@@ -360,17 +360,6 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
           
       	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
       	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
-          
-   		    if (upsertResults['Auction'].rows.length != 0) {
-     		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
-     		    let messageData = RequestHelper.createInputs({
-     		      'Message.qid': upsertResults['Auction'].rows[0].keys['qid'],
-     		      'Message.sid': this.request.session.sid
-     		    });
-     		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
-     		    
-     		    upsertResults['Message'] = messageDataset['Message'];
-   		    }
           
           const qid = upsertResults[0].keys['qid'];
           
@@ -560,7 +549,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("7e709334", "e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "d3e31c36", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "2b2a0681", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
@@ -710,6 +699,56 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       input = RequestHelper.getInput(this.pageId, request, 'ae7e2437' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('54c30d5c', "relational", "Auction", "deliverCost");
+		ValidationHelper.registerInput('54c30d5c', "Textbox 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '54c30d5c' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('05733be3', "relational", "Auction", "discount");
+		ValidationHelper.registerInput('05733be3', "Textbox 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '05733be3' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('9d1cc748', "relational", "Auction", "vatType");
+		ValidationHelper.registerInput('9d1cc748', "Radio 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '9d1cc748' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('1e76478b', "relational", "Auction", "vatType");
+		ValidationHelper.registerInput('1e76478b', "Radio 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '1e76478b' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('baa65b1b', "relational", "Auction", "promotion");
+		ValidationHelper.registerInput('baa65b1b', "Textbox 3", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'baa65b1b' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 3 here:
       // 
       
       if (input != null) data.push(input);
