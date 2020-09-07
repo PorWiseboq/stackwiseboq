@@ -361,17 +361,6 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
       	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
       	  let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
           
-   		    if (upsertResults['Auction'].rows.length != 0) {
-     		    let message = SchemaHelper.getDataTableSchemaFromNotation('Message', ProjectConfigurationHelper.getDataSchema());
-     		    let messageData = RequestHelper.createInputs({
-     		      'Message.qid': upsertResults['Auction'].rows[0].keys['qid'],
-     		      'Message.sid': this.request.session.sid
-     		    });
-     		    let messageDataset = await DatabaseHelper.retrieve(messageData, message, this.request.session, true);
-     		    
-     		    upsertResults['Message'] = messageDataset['Message'];
-   		    }
-          
           const qid = upsertResults[0].keys['qid'];
           
           RelationalDatabaseClient.query(`SELECT Auction.aid, Auction.qid, Auction.price
