@@ -354,8 +354,8 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
             throw new Error('กรุณาเสนอราคาที่สูงกว่าศูนย์บาท');
           }
           
-          if (auctionDataset['Auction'].rows.length != 0 && (price + 100) > auctionDataset['Auction'].rows[0].columns['price']) {
-            throw new Error('กรุณาเสนอราคาใหม่ที่ต่ำกว่าราคาเดิมอย่างน้อย 100 บาท');
+          if (auctionDataset['Auction'].rows.length != 0 && price >= auctionDataset['Auction'].rows[0].columns['price']) {
+            throw new Error('กรุณาเสนอราคาใหม่ที่ต่ำกว่าราคาเดิม (' + auctionDataset['Auction'].rows[0].columns['price'].toFixed(2) + ' บาท)');
           }
           
       	  let upsertResults = await DatabaseHelper.upsert(data, schema, this.request.session);
