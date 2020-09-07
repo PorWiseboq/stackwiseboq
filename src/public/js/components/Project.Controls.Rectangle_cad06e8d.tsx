@@ -183,6 +183,19 @@ class Rectangle_cad06e8d extends Base {
     }
   }
   
+  private getTransferringStatus(i: number): string {
+    switch (this.getDataFromNotation('Quote[' + i + '].Auction.Payment.Transfer.status')) {
+      case 1:
+        return 'ลูกค้าแจ้งโอน';
+      case 2:
+        return 'โอนเสร็จแล้ว'
+      case 3:
+        return 'ไม่สำเร็จ';
+      default:
+        return 'รอลูกค้า';
+    }
+  }
+  
   private getAuctionSummary(i: number): string {
     const rank = this.getRank(i);
     const tag = this.getTag(i);
@@ -869,7 +882,7 @@ class Rectangle_cad06e8d extends Base {
                                             .internal-fsb-element.-fsb-preset-4aee31ab.col-7(style={'FsbInheritedPresets': '4aee31ab', color: (()=>{return (this.state.selectedIndex == i) ? '#FFFFFF' : '';})()}, internal-fsb-guid="39506c79")
                                               | #{this.getSubtitle(i)}
                                             .internal-fsb-element.-fsb-preset-3bec5885.col-5(style={'FsbInheritedPresets': '3bec5885'}, internal-fsb-guid="9ec45baa")
-                                              | โอนเงิน
+                                              | #{this.getTransferringStatus(i)}
                                             .internal-fsb-element.-fsb-preset-098de259(style={'FsbInheritedPresets': '098de259', display: (()=>{return (this.getNoticeCount(i) != 0) ? 'block' : 'none';})(), position: (()=>{return 'absolute';})()}, internal-fsb-guid="52b143be")
                                               | #{this.getNoticeCount(i)}
                         .internal-fsb-element.internal-fsb-allow-cursor(style={'position': 'relative', 'flexGrow': '1', 'WebkitFlexGrow': '1'}, internal-fsb-guid="154b7137")
