@@ -891,7 +891,7 @@ class Rectangle_cad06e8d extends Base {
                                                     .internal-fsb-element.col-3.offset-0(style={'fontSize': '14px', 'paddingTop': '5px', 'textAlign': 'right', 'paddingRight': '30px'}, internal-fsb-guid="8933226c")
                                                       | ค่าขนส่ง
                                                     .internal-fsb-element.col-6.offset-0(style={padding: '0px'}, internal-fsb-guid="54c30d5c")
-                                                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px'}, onChange=this.onTextboxChange_54c30d5c.bind(this), type="text", disabled=!this.props.enabled, value=this.state.deliverCost)
+                                                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px'}, onChange=this.onTextboxChange_54c30d5c.bind(this), type="text", disabled=!this.getFormEnabledState(), value=this.state.deliverCost)
                                                     .internal-fsb-element.col-2.offset-0(style={'fontSize': '14px', 'paddingTop': '5px'}, internal-fsb-guid="235c20be")
                                                       | บาท
                                               .internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="3c9b5cca")
@@ -900,7 +900,7 @@ class Rectangle_cad06e8d extends Base {
                                                     .internal-fsb-element.col-3.offset-0(style={'fontSize': '14px', 'paddingTop': '5px', 'textAlign': 'right', 'paddingRight': '30px'}, internal-fsb-guid="5c476c10")
                                                       | ส่วนลด
                                                     .internal-fsb-element.col-6.offset-0(style={padding: '0px'}, internal-fsb-guid="05733be3")
-                                                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, onChange=this.onTextboxChange_05733be3.bind(this), type="text", disabled=!this.props.enabled, value=this.state.discount)
+                                                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, onChange=this.onTextboxChange_05733be3.bind(this), type="text", disabled=!this.getFormEnabledState(), value=this.state.discount)
                                                     .internal-fsb-element.col-2.offset-0(style={'fontSize': '14px', 'paddingTop': '5px'}, internal-fsb-guid="ee68a094")
                                                       | บาท
                                               .internal-fsb-element.col-12(style={'paddingTop': '15px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="c3d6d83e")
@@ -912,14 +912,14 @@ class Rectangle_cad06e8d extends Base {
                                                       .container-fluid
                                                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                           .internal-fsb-element.-fsb-preset-b6c9ad89.col-1.offset-0(style={padding: '0px'}, internal-fsb-guid="9d1cc748")
-                                                            input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_9d1cc748.bind(this), type="radio", disabled=!this.props.enabled, name="vat1", checked="true", value="0")
+                                                            input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_9d1cc748.bind(this), type="radio", disabled=!this.getFormEnabledState(), name="vat1", checked="true", value="0")
                                                           .internal-fsb-element.-fsb-preset-b5cd72c0.col-11.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="ca6447e2")
                                                             | Vat ใน
                                                     label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '2px'}, internal-fsb-guid="d15e6502")
                                                       .container-fluid
                                                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                           .internal-fsb-element.-fsb-preset-b6c9ad89.col-1.offset-0(style={padding: '0px'}, internal-fsb-guid="1e76478b")
-                                                            input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_1e76478b.bind(this), type="radio", disabled=!this.props.enabled, name="vat1", checked=this.state.vatType == 1, value="1")
+                                                            input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_1e76478b.bind(this), type="radio", disabled=!this.getFormEnabledState(), name="vat1", checked=this.state.vatType == 1, value="1")
                                                           .internal-fsb-element.-fsb-preset-b5cd72c0.col-11.offset-0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="08e399ae")
                                                             | Vat นอก
                                               .internal-fsb-element.col-12.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="90c08e45")
@@ -928,7 +928,7 @@ class Rectangle_cad06e8d extends Base {
                                                     .internal-fsb-element.col-3.offset-0(style={'textAlign': 'right', 'fontSize': '14px', 'paddingRight': '30px', 'paddingTop': '5px'}, internal-fsb-guid="da006a4b")
                                                       | โปรโมชั่นพิเศษ
                                                     .internal-fsb-element.col-6.offset-0(style={padding: '0px'}, internal-fsb-guid="baa65b1b")
-                                                      textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", rows="2", value=this.state.promotion, disabled=!this.props.enabled)
+                                                      textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", rows="2", value=this.state.promotion, disabled=!this.getFormEnabledState())
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'fontWeight': 'bold', 'marginTop': '30px'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
