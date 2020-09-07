@@ -366,7 +366,7 @@ class Rectangle_cad06e8d extends Base {
     }
     
     if (this.state.vatType == 0) {
-      sum = sum / 1.07;
+      sum = sum;
     } else {
       sum = sum * 1.07;
     }
@@ -615,6 +615,19 @@ class Rectangle_cad06e8d extends Base {
     // Handle the event of onRadioClick (Radio 2) here:
     // 
     this.state.vatType = 1;
+    this.forceUpdate();
+    
+    this.updatePrice();
+    
+  }
+
+  protected onTextboxChange_baa65b1b(event: Event) {
+
+    // Handle the event of onTextboxChange (Textbox 3) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.promotion = element.value;
     this.forceUpdate();
     
     this.updatePrice();
@@ -933,7 +946,7 @@ class Rectangle_cad06e8d extends Base {
                                                     .internal-fsb-element.col-3.offset-0(style={'textAlign': 'right', 'fontSize': '14px', 'paddingRight': '30px', 'paddingTop': '5px'}, internal-fsb-guid="da006a4b")
                                                       | โปรโมชั่นพิเศษ
                                                     .internal-fsb-element.col-6.offset-0(style={padding: '0px'}, internal-fsb-guid="baa65b1b")
-                                                      textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", rows="2", value=this.state.promotion, disabled=!this.getFormEnabledState())
+                                                      textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, onChange=this.onTextboxChange_baa65b1b.bind(this), type="text", rows="2", value=this.state.promotion, disabled=!this.getFormEnabledState())
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'fontWeight': 'bold', 'marginTop': '30px'}, internal-fsb-guid="da4a5daa")
                                           | เสนอราคาใหม่ที่ราคา
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="c03d6613")
