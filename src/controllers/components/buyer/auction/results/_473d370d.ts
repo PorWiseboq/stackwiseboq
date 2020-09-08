@@ -134,31 +134,22 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
      		    
      		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
      		      return auction.relations['Substitute'].rows.every((substitute) => {
-     		        return substitute.columns['type'] != 3;
+     		        return substitute.columns['type'] <= quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
      		      });
      		    }).sort((a, b) => {
      		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
      		    });
      		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
      		      return auction.relations['Substitute'].rows.some((substitute) => {
-     		        return substitute.columns['type'] == 3;
+     		        return substitute.columns['type'] > quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
      		      });
      		    }).sort((a, b) => {
      		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
      		    });
      		    
-     		    let results = {
-     		      Quote: {
-       		      source: SourceType.Relational,
-              	group: 'Quote',
-                rows: [
-                  quoteDatasetA['Quote'].rows[0],
-                  quoteDatasetB['Quote'].rows[0]
-                ]
-     		      }
-     		    };
+     		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];
      		    
-            resolve(results);
+            resolve(quoteDatasetA);
           } catch(error) {
             reject(error);
           }

@@ -251,19 +251,21 @@ class FlowLayout_a23ed480 extends Base {
                         .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="94e22e23")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                              .internal-fsb-element.col-12(style={'paddingBottom': '5px', 'paddingTop': '5px'}, internal-fsb-guid="83de46b7")
+                              .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="83de46b7")
                                 div
                                   | ค่าขนส่ง
                                 div
-                              .internal-fsb-element.col-12(style={'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="4b04a001")
+                              .internal-fsb-element.col-12(internal-fsb-guid="4b04a001")
                                 | ส่วนลด
-                              .internal-fsb-element.col-12(style={'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="e3acab6b")
+                              .internal-fsb-element.col-12(style={'marginBottom': '20px'}, internal-fsb-guid="e3acab6b")
                                 | โปรโมชั่น
-                              .internal-fsb-element.col-12(style={'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="a92445c5")
+                              .internal-fsb-element.col-12(style={'marginBottom': '20px'}, internal-fsb-guid="a92445c5")
                                 div
                                   span(style={'fontFamily': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'})
                                     | ราคารวมภาษี
                                   br
+                              .internal-fsb-element.col-12(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="5eed917a")
+                                | เลือกซื้อ
                   .internal-fsb-element.internal-fsb-allow-cursor.col-6.col-sm-7.col-md-8.col-lg-9(style={'overflowX': 'auto', 'MsOverflowX': 'auto', 'overflowY': 'hidden', 'MsOverflowY': 'hidden', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', 'borderTopColor': 'rgba(0, 53, 117, 1)', 'borderRightColor': 'rgba(0, 53, 117, 1)', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderBottomStyle': 'solid', 'borderBottomWidth': '1px', 'borderRightStyle': 'solid', 'borderTopStyle': 'solid', 'borderRightWidth': '1px', 'borderTopWidth': '1px'}, internal-fsb-guid="56392ad7")
                     .internal-fsb-element(style={'display': 'block', 'whiteSpace': 'nowrap'}, internal-fsb-guid="ebeaa554")
                       each data, i in this.getDataFromNotation("Quote[0].Auction", true)
@@ -281,12 +283,14 @@ class FlowLayout_a23ed480 extends Base {
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return ([0].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="542d249d")
                                               .container-fluid
                                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'fontWeight': 'bold', 'textAlign': 'center', 'color': 'rgba(69, 69, 69, 1)'}, internal-fsb-guid="cbd47cb3")
+                                                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'fontWeight': 'bold', 'textAlign': 'center'}, internal-fsb-guid="cbd47cb3")
                                                     | เจาะจง
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return ([3].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="7848170c")
                                               .container-fluid
                                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center', 'fontWeight': 'bold', 'color': 'rgba(69, 69, 69, 1)'}, internal-fsb-guid="6b009c31")
+                                                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center', 'fontWeight': 'bold'}, internal-fsb-guid="6b009c31")
+                                                    div
+                                                      br
                                                     | ไม่มี
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return ([1, 2].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="6d820b70")
                                               .container-fluid
@@ -297,18 +301,18 @@ class FlowLayout_a23ed480 extends Base {
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'position': 'absolute', 'left': '0px', 'right': '0px', 'bottom': '0px', display: (()=>{return ([0,1,2].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="92eba465")
                                               .container-fluid
                                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'textAlign': 'center', 'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '5px', 'color': 'rgba(69, 69, 69, 1)', 'fontWeight': 'bold'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].price") + ' บาท', data-toggle="tooltip", data-placement="top", internal-fsb-guid="d58e0636")
+                                                  .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'textAlign': 'center', 'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '5px', 'fontWeight': 'bold'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].price") + ' บาท', data-toggle="tooltip", data-placement="top", internal-fsb-guid="d58e0636")
                                                     | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].Substitute.price')} บาท
                               .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingBottom': '10px'}, internal-fsb-guid="65beb763")
                                 .container-fluid
                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingTop': '5px', 'paddingLeft': '5px', 'paddingRight': '5px', 'paddingBottom': '5px', 'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center'}, internal-fsb-guid="215196e7")
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '5px', 'paddingRight': '5px', 'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'marginTop': '10px'}, internal-fsb-guid="215196e7")
                                       | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].deliverCost') || 0).toFixed(2)} บาท
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '2px', 'paddingRight': '2px', 'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center'}, internal-fsb-guid="981552b5")
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '2px', 'paddingRight': '2px', 'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center'}, internal-fsb-guid="981552b5")
                                       | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].discount') || 0).toFixed(2)} บาท
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingTop': '5px', 'paddingBottom': '5px', 'paddingLeft': '2px', 'paddingRight': '2px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center'}, title=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี', data-toggle="tooltip", data-placement="top", internal-fsb-guid="67979486")
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '2px', 'paddingRight': '2px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'marginBottom': '20px'}, title=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี', data-toggle="tooltip", data-placement="top", internal-fsb-guid="67979486")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี'}
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'paddingBottom': '5px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'paddingTop': '5px', 'color': 'rgba(22, 98, 250, 1)', 'paddingLeft': '2px', 'paddingRight': '2px'}, internal-fsb-guid="d40e3b62")
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'color': (()=>{return (this.isMerchandiseInError(i, j)) ? '#ff0000' : '';})() || 'rgba(22, 98, 250, 1)', 'paddingLeft': '2px', 'paddingRight': '2px', 'marginBottom': '20px'}, internal-fsb-guid="d40e3b62")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].aid"), internal-fsb-guid="c18d1ab2")
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
