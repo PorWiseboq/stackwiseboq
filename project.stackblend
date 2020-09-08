@@ -14259,7 +14259,7 @@
         "                                            </div>",
         "                                        </div>",
         "                                    </div>",
-        "                                    <input type=\"hidden\" class=\"internal-fsb-element\" internal-fsb-guid=\"dc7901c9\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"qid\" value=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].qid&quot;)}\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"0a5b0022\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"display: none\" internal-fsb-data-controls=\" dc7901c9\" internal-fsb-data-wizard-type=\"retrieve\" internal-fsb-react-id=\"refresh\">",
+        "                                    <input type=\"hidden\" class=\"internal-fsb-element\" internal-fsb-guid=\"dc7901c9\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"qid\" value=\"{this.getDataFromNotation(&quot;Quote[0].qid&quot;)}\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"0a5b0022\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"display: none\" internal-fsb-data-controls=\" dc7901c9\" internal-fsb-data-wizard-type=\"retrieve\" internal-fsb-react-id=\"refresh\">",
         "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"0a5b0022-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">Button</div>",
         "                                    </button>",
         "                                </div>",
@@ -14990,11 +14990,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a23ed480",
+        "selectingElementGUID": "dc7901c9",
         "currentCursorWalkPath": [
-          "0",
+          "084a0c00",
           0,
-          2,
+          4,
           null
         ]
       },
@@ -21402,7 +21402,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "9714fe2552a84ebd3fc551dfa02d8b30def41495",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "add2021624387f200c158ec761ddb4cac7353892",
+    "Project.Controls.FlowLayout_a23ed480": "50f95620416f467bba77caa21ecf554039a28617",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4"
   },

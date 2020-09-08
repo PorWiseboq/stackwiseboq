@@ -414,7 +414,7 @@ class FlowLayout_a23ed480 extends Base {
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.offset-0(style={'fontSize': '13px', 'color': 'rgba(22, 98, 250, 1)', 'top': '145px', 'width': '160px', 'left': '50%', 'marginLeft': '-80px', 'textAlign': 'center'}, internal-fsb-guid="cac28984")
                                 | ${this.getPaymentStatus()}
-                  input.internal-fsb-element(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].qid"), internal-fsb-guid="dc7901c9")
+                  input.internal-fsb-element(type="hidden", value=this.getDataFromNotation("Quote[0].qid"), internal-fsb-guid="dc7901c9")
                   Button.internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'none'}, ref="refresh", onClick=((event) => { window.internalFsbSubmit('0a5b0022', 'Quote', event, ((results) => { this.manipulate('0a5b0022', 'Quote', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="0a5b0022")
                     .internal-fsb-element(internal-fsb-guid="0a5b0022-text")
                       | Button
