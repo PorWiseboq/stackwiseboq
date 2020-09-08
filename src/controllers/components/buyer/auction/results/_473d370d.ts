@@ -174,7 +174,7 @@ GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].columns['qid']], async (_er
                   rows: [{
                     keys: {},
                     columns: {
-                      'status': _results[0]['status'] || 0
+                      'status': _results[0] && _results[0]['status'] || 0
                     },
                     relations: {}
                   }]
@@ -287,7 +287,7 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
             rows: [{
               keys: {},
               columns: {
-                'status': _results[0]['status'] || 0
+                'status': _results[0] && _results[0]['status'] || 0
               },
               relations: {}
             }]
