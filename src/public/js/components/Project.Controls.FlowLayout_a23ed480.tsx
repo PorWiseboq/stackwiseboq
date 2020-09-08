@@ -78,7 +78,7 @@ class FlowLayout_a23ed480 extends Base {
   // Declare class variables and functions here:
   //
   protected initialize(): void {
-    if (this.getDataFromNotation('Quote').columns['filled']) {
+    if (this.getDataFromNotation('Quote')[0].columns['filled'] == true) {
       this.state.step = Step.PAID;
     }
   }
@@ -210,9 +210,9 @@ class FlowLayout_a23ed480 extends Base {
     
   }
 
-  protected onButtonClick_d480ae4d(event: Event) {
+  protected onButtonSuccess_d480ae4d(event: Event) {
 
-    // Handle the event of onButtonClick (Button 5) here:
+    // Handle the event of onButtonSuccess (Button 5) here:
     // 
     this.setState({
       step: Step.PAID
@@ -386,10 +386,10 @@ class FlowLayout_a23ed480 extends Base {
             Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.offset-3.col-3(style={'marginTop': '15px', 'marginRight': '10px', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, type="button", onClick=this.onButtonClick_c1c0694d.bind(this), internal-fsb-guid="c1c0694d")
               .internal-fsb-element(internal-fsb-guid="c1c0694d-text")
                 | ย้อนกลับ
-            Button.internal-fsb-element.internal-fsb-allow-cursor.offset-0.btn.btn-primary.btn-sm.col-3(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('d480ae4d', 'Auction', event, ((results) => { this.manipulate('d480ae4d', 'Auction', results); }).bind(this)); }).bind(this), type="button", onClick=this.onButtonClick_d480ae4d.bind(this), internal-fsb-guid="d480ae4d")
+            Button.internal-fsb-element.internal-fsb-allow-cursor.offset-0.btn.btn-primary.btn-sm.col-3(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('d480ae4d', 'Auction', event, ((results) => { this.manipulate('d480ae4d', 'Auction', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_d480ae4d.bind(this), internal-fsb-guid="d480ae4d")
               .internal-fsb-element(internal-fsb-guid="d480ae4d-text")
                 | โอนเงินผ่านธนาคาร
-            Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-2(style={'marginTop': '15px', 'marginLeft': '10px', 'display': (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})() || 'none'}, type="button", onClick=this.onButtonClick_3d97109b.bind(this), internal-fsb-guid="3d97109b")
+            Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-2(style={'marginTop': '15px', 'marginLeft': '10px', 'display': 'none'}, type="button", onClick=this.onButtonClick_3d97109b.bind(this), internal-fsb-guid="3d97109b")
               .internal-fsb-element(internal-fsb-guid="3d97109b-text")
                 | จ่ายผ่านบัตร
             .internal-fsb-element.-fsb-preset-180079a2.col-10.offset-1(style={'FsbInheritedPresets': '180079a2', display: (()=>{return (this.state.step == Step.PAID) ? 'block' : 'none';})()}, internal-fsb-guid="084a0c00")

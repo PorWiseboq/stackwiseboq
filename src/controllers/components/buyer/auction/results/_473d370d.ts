@@ -89,6 +89,16 @@ class Controller extends Base {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
+ 		
+ 		for (const item of data) {
+      switch (item.validation.name) {
+        case 'transferringTime':
+          if (item.value && !item.value.match(/^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])(25[6-7][3-9]) ([0-1][0-9]|2[0-3])([0-5][0-9])$/)) {
+              throw new Error("กรุณาระบุวันและเวลาที่โอนสำเร็จให้ถูกต้องในรูปแบบ ddmmyyyy hhmm");
+          }
+          break;
+      }
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -116,44 +126,48 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
+        if (!this.request.session || !this.request.session.uid) {
+          this.response.redirect('/authentication');
+        } else {
+          RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
 WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
-          try {
-            let quoteData = RequestHelper.createInputs({
-     		      'Quote.uid': this.request.session.uid,
-     		      'Quote.status': 2,
-     		      'Quote.Listing.qid': null,
-     		      'Quote.Auction.qid': null,
-     		      'Quote.Auction.Store.sid': null,
-     		      'Quote.Auction.Store.User.id': null,
-     		      'Quote.Auction.Substitute.aid': null
-     		    });
-     		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
-     		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-     		    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);
-     		    
-     		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
-     		      return auction.relations['Substitute'].rows.every((substitute) => {
-     		        return substitute.columns['type'] <= quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
-     		      });
-     		    }).sort((a, b) => {
-     		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
-     		    });
-     		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
-     		      return auction.relations['Substitute'].rows.some((substitute) => {
-     		        return substitute.columns['type'] > quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
-     		      });
-     		    }).sort((a, b) => {
-     		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
-     		    });
-     		    
-     		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];
-     		    
-            resolve(quoteDatasetA);
-          } catch(error) {
-            reject(error);
-          }
-        });
+            try {
+              let quoteData = RequestHelper.createInputs({
+       		      'Quote.uid': this.request.session.uid,
+       		      'Quote.status': 2,
+       		      'Quote.Listing.qid': null,
+       		      'Quote.Auction.qid': null,
+       		      'Quote.Auction.Store.sid': null,
+       		      'Quote.Auction.Store.User.id': null,
+       		      'Quote.Auction.Substitute.aid': null
+       		    });
+       		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+       		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+       		    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);
+       		    
+       		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
+       		      return auction.relations['Substitute'].rows.every((substitute) => {
+       		        return substitute.columns['type'] <= quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
+       		      });
+       		    }).sort((a, b) => {
+       		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
+       		    });
+       		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
+       		      return auction.relations['Substitute'].rows.some((substitute) => {
+       		        return substitute.columns['type'] > quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
+       		      });
+       		    }).sort((a, b) => {
+       		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
+       		    });
+       		    
+       		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];
+       		    
+              resolve(quoteDatasetA);
+            } catch(error) {
+              reject(error);
+            }
+          });
+        }
       } catch(error) {
         reject(error);
       }
@@ -340,11 +354,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('c6cd6a36', "relational", "Auction.Payment.Transfer", "time");
-		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", true, "กรุณากรอกวันและเวลาที่โอนสำเร็จ");
+		ValidationHelper.registerInput('c6cd6a36', "transferringTime", true, "กรุณากรอกวันและเวลาที่โอนสำเร็จ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
     
-      // Override data parsing and manipulation of Textbox 1 here:
+      // Override data parsing and manipulation of transferringTime here:
       // 
       
       if (input != null) data.push(input);
