@@ -6422,7 +6422,7 @@
         "                                                                                                    </div>",
         "                                                                                                </div>",
         "                                                                                            </div>",
-        "                                                                                            <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-4839e353 col-4 offset-4\" internal-fsb-guid=\"e3a90426\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; text-align: center; background: rgba(255, 223, 43, 1); margin-top: 10px\">เบอร์โทรศัพท์ของลูกค้าคือ #{this.getDataFromNotation('Quote[#i].Auction.Payment.number')}</div>",
+        "                                                                                            <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-4839e353 col-4 offset-4\" internal-fsb-guid=\"e3a90426\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; text-align: center; background: rgba(255, 223, 43, 1); margin-top: 10px\">เบอร์โทรศัพท์ของลูกค้าคือ #{this.getDataFromNotation('Quote[#i].Auction.Payment.number')} กรุณาเตรียมสินค้าตามรายการและทำการจัดส่งให้เรียบร้อย</div>",
         "                                                                                        </div>",
         "                                                                                    </div>",
         "                                                                                </div>",
@@ -6477,7 +6477,8 @@
         "                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"5a07ab49\" internal-fsb-name=\"Container\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"overflow-y: scroll; -ms-overflow-y: scroll; max-height: 33vh; padding-left: 7px; padding-right: 7px\" internal-fsb-react-id=\"scroll\">",
-        "                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"eb02b828\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; color: rgba(128, 128, 128, 1); font-size: 12px; margin-top: 7px; margin-bottom: 7px\">ไม่มีข้อความถัดจากนี้</div>",
+        "                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"eb02b828\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; color: rgba(128, 128, 128, 1); font-size: 12px; margin-top: 7px; margin-bottom: 7px\">ไม่มีข้อความถัดจากนี้<div>และกรุณาอย่าถามเบอร์โทรศัพท์ของลูกค้า</div>",
+        "                                            </div>",
         "                                            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"4996502e\" internal-fsb-name=\"Message\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px; padding-bottom: 7px\" internal-fsb-react-data=\"Quote[#i].Message\">",
         "                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -7236,7 +7237,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e3a90426",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
           "70267cd8",
           0,
@@ -21209,7 +21210,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "6693a11a45e1fe24094c7cce2938e893be56f8c0",
+    "Project.Controls.Rectangle_cad06e8d": "e8b6a7566b4e3be3bdf6a8e5c7be44b9210a8e3b",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
