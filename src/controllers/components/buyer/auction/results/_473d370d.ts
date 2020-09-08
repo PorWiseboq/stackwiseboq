@@ -1,6 +1,7 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
+
 // Auto[Import]--->
 import {Request, Response} from "express";
 import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../../helpers/DatabaseHelper.js';
@@ -18,6 +19,7 @@ import {CodeHelper} from '../../../../helpers/CodeHelper.js';
 import {SchemaHelper} from '../../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../../helpers/ProjectConfigurationHelper.js';
 import {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'
+
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -45,6 +47,7 @@ enum ValidationInfo {
 // Declare private static variables here:
 //
 
+
 // Auto[Interface]--->
 /*interface HierarchicalDataTable {
 	source: SourceType;
@@ -69,6 +72,7 @@ interface Input {
 
 // Declare or extend interfaces here:
 //
+
 
 // Auto[ClassBegin]--->
 class Controller extends Base {
@@ -277,6 +281,8 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     });
   }
   
+  
+ 	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
@@ -286,9 +292,9 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("473d370d", "bdcbb907", "update", ["c18d1ab2","6e068626","62b11043"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "bdcbb907", "update", ["c18d1ab2","6e068626","939d2d75"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("473d370d", "d480ae4d", "upsert", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","62b11043","17983b03","775b58b9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "d480ae4d", "update", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","775b58b9","939d2d75","4b5256da","137c966d"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "3d97109b", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('c18d1ab2', "relational", "Auction", "sid");
 		ValidationHelper.registerInput('c18d1ab2', "Hidden 1", false, undefined);
@@ -300,12 +306,12 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('62b11043', "relational", "Auction", "qid");
-		ValidationHelper.registerInput('62b11043', "Hidden 4", false, undefined);
+		RequestHelper.registerInput('939d2d75', "relational", "Auction", "qid");
+		ValidationHelper.registerInput('939d2d75', "Hidden 9", false, undefined);
     for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '62b11043' + ((i == -1) ? '' : '[' + i + ']'));
+      input = RequestHelper.getInput(this.pageId, request, '939d2d75' + ((i == -1) ? '' : '[' + i + ']'));
     
-      // Override data parsing and manipulation of Hidden 4 here:
+      // Override data parsing and manipulation of Hidden 9 here:
       // 
       
       if (input != null) data.push(input);
@@ -330,6 +336,26 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('137c966d', "relational", "Auction.Payment", "aid");
+		ValidationHelper.registerInput('137c966d', "Hidden 10", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '137c966d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 10 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('4b5256da', "relational", "Auction.Payment.Transfer", "aid");
+		ValidationHelper.registerInput('4b5256da', "Hidden 11", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '4b5256da' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 11 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('775b58b9', "relational", "Auction.Payment.Transfer", "status");
 		ValidationHelper.registerInput('775b58b9', "Hidden 5", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -338,16 +364,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       // Override data parsing and manipulation of Hidden 5 here:
       // 
       if (input) input.value = 1;
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('17983b03', "relational", "Quote", "filled");
-		ValidationHelper.registerInput('17983b03', "Hidden 6", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '17983b03' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 6 here:
-      // 
       
       if (input != null) data.push(input);
     }
@@ -398,6 +414,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 // Export variables here:
 //
 export default Controller;
+
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.

@@ -1,6 +1,7 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
+
 // Auto[Import]--->
 import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
@@ -32,6 +33,7 @@ let Project = $Project;
 
 // Declare private static variables here:
 //
+
 
 // Auto[Interface]--->
 interface IAutoBaseProps extends IBaseProps {
@@ -70,8 +72,8 @@ class FlowLayout_a23ed480 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("bdcbb907", "update", ["c18d1ab2","6e068626","62b11043"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
-    DataManipulationHelper.register("d480ae4d", "upsert", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","62b11043","17983b03","775b58b9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("bdcbb907", "update", ["c18d1ab2","6e068626","939d2d75"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("d480ae4d", "update", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","775b58b9","939d2d75","4b5256da","137c966d"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
@@ -189,6 +191,8 @@ class FlowLayout_a23ed480 extends Base {
     }
   }
   
+  
+  
   // Auto[Merging]--->
   protected onButtonSuccess_bdcbb907(event: Event) {
 
@@ -200,6 +204,7 @@ class FlowLayout_a23ed480 extends Base {
     
   }
 
+
   protected onButtonClick_c1c0694d(event: Event) {
 
     // Handle the event of onButtonClick (Button 4) here:
@@ -210,6 +215,7 @@ class FlowLayout_a23ed480 extends Base {
     
   }
 
+
   protected onButtonSuccess_d480ae4d(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 5) here:
@@ -219,6 +225,7 @@ class FlowLayout_a23ed480 extends Base {
     });
     
   }
+
 
   protected onButtonClick_3d97109b(event: Event) {
 
@@ -327,7 +334,7 @@ class FlowLayout_a23ed480 extends Base {
                                     .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'color': (()=>{return (this.isMerchandiseInError(i, -1)) ? '#ff0000' : '';})() || 'rgba(22, 98, 250, 1)', 'paddingLeft': '2px', 'paddingRight': '2px', 'marginBottom': '20px'}, internal-fsb-guid="d40e3b62")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].sid"), internal-fsb-guid="c18d1ab2")
-                                    input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].qid"), internal-fsb-guid="62b11043")
+                                    input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].qid"), internal-fsb-guid="939d2d75")
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
                                       input(style={'display': 'block'}, type="checkbox", value="1", required=true, defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
             Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('bdcbb907', 'Auction', event, ((results) => { this.manipulate('bdcbb907', 'Auction', results); }).bind(this)); }).bind(this), type="button", onSuccess=this.onButtonSuccess_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
@@ -364,8 +371,9 @@ class FlowLayout_a23ed480 extends Base {
                               .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center', 'marginBottom': '15px'}, internal-fsb-guid="5eeaed97")
                                 | คุณอาจเปิดหน้านี้ทิ้งไว้หรือเข้าสู่ระบบเพื่อกลับเข้ามายังหน้านี้ในภายหลังได้เช่นกัน
                               input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="39c374d3")
+                              input.internal-fsb-element.col-12(type="hidden", value="123", internal-fsb-guid="137c966d")
+                              input.internal-fsb-element.col-12(type="hidden", value="123", internal-fsb-guid="4b5256da")
                               input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="775b58b9")
-                              input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="17983b03")
                               .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c6cd6a36")
                                 input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm", required=true)
                               .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="0c59a0a4")
@@ -417,6 +425,7 @@ DeclarationHelper.declare('Document', 'Controls.FlowLayout_a23ed480', FlowLayout
 // Export variables here:
 //
 export {IProps, IState, DefaultProps, DefaultState};
+
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
