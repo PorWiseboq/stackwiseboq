@@ -14014,7 +14014,7 @@
         "      ",
         "      \" value=\"1\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"17983b03\" internal-fsb-name=\"Hidden 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"filled\" value=\"1\">",
         "                                                            <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"c6cd6a36\" internal-fsb-name=\"transferringTime\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"กรุณากรอกวันและเวลาที่โอนสำเร็จ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 5px\" class=\"form-control form-control-sm \" placeholder=\"วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Payment.Transfer\" internal-fsb-data-source-column=\"time\" required=\"true\"></div>",
-        "                                                            <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"0c59a0a4\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณากรอกชื่อผู้ที่ได้ทำการโอน\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อผู้ที่ได้ทำการโอน\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Payment.Transfer\" internal-fsb-data-source-column=\"transferrer\" value=\"\" required=\"true\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"0c59a0a4\" internal-fsb-name=\"Textbox 2\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณากรอกชื่อผู้ที่ได้ทำการโอน\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อผู้ที่ได้ทำการโอน\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Payment.Transfer\" internal-fsb-data-source-column=\"transferrer\" required=\"true\"></div>",
         "                                                            <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"5cab012e\" internal-fsb-name=\"Textbox 3\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณากรอกชื่อธนาคารและสาขาต้นทาง\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 10px\" class=\"form-control form-control-sm \" placeholder=\"ชื่อธนาคารและสาขาต้นทาง\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Payment.Transfer\" internal-fsb-data-source-column=\"origin\" required=\"true\"></div>",
         "                                                        </div>",
         "                                                    </div>",
@@ -14983,11 +14983,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a23ed480",
+        "selectingElementGUID": "5cab012e",
         "currentCursorWalkPath": [
-          "0",
+          "a3c6554b",
           0,
-          2,
+          8,
           null
         ]
       },
@@ -21395,7 +21395,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "9714fe2552a84ebd3fc551dfa02d8b30def41495",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "4228164ce1965cd7a86f416f86a794024ccb38c0",
+    "Project.Controls.FlowLayout_a23ed480": "167c72b7627992db28ae74f2ae5c2cd2b3141058",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4"
   },
