@@ -214,7 +214,7 @@ class Controller extends Base {
        		    'Quote.uid': parseInt(this.request.session.uid),
        		    'Quote.filled': null
        		  });
-       		  let datasetA = await DatabaseHelper.retrieve(data, null);
+       		  let datasetA = await DatabaseHelper.retrieve(data, null, this.request.session);
        		  
        		  if (datasetA['Quote'].rows.length != 0 && datasetA['Quote'].rows[0].columns['status'] == 2) {
        		    this.response.redirect('/buyer/auction/waiting');
@@ -237,7 +237,7 @@ class Controller extends Base {
          		    data = RequestHelper.createInputs({
            		    'Listing.qid': DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)
            		  });
-           		  datasetB = await DatabaseHelper.retrieve(data, null);
+           		  datasetB = await DatabaseHelper.retrieve(data, null, this.request.session);
          		  } else {
          		    datasetB = {
          		      Listing: {
