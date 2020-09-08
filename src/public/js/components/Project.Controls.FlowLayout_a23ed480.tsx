@@ -144,11 +144,21 @@ class FlowLayout_a23ed480 extends Base {
   }
   
   private isMerchandiseInError(i: number, j: number): boolean {
-    const auction = this.getDataFromNotation(`Quote[0].Auction[${i}]`);
-    const listing = this.getDataFromNotation(`Quote[0].Listing[${j}]`);
-    const substitute = auction.relations['Substitute'].rows[j];
-    
-    return substitute.columns['type'] > listing.columns['substitute'];
+    if (j == -1) {
+      const listing = this.getDataFromNotation(`Quote[0].Listing`);
+      for (let k=0; k<listing.length; k++) {
+        if (this.isMerchandiseInError(i, k)) {
+          return true;
+        }
+      }
+      return false;
+    } else {
+      const auction = this.getDataFromNotation(`Quote[0].Auction[${i}]`);
+      const listing = this.getDataFromNotation(`Quote[0].Listing[${j}]`);
+      const substitute = auction.relations['Substitute'].rows[j];
+      
+      return substitute.columns['type'] > listing.columns['substitute'];
+    }
   }
   
   // Providing data array base on dot notation:
@@ -312,7 +322,7 @@ class FlowLayout_a23ed480 extends Base {
                                       | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].discount') || 0).toFixed(2)} บาท
                                     .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '2px', 'paddingRight': '2px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'marginBottom': '20px'}, title=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี', data-toggle="tooltip", data-placement="top", internal-fsb-guid="67979486")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี'}
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'color': (()=>{return (this.isMerchandiseInError(i, j)) ? '#ff0000' : '';})() || 'rgba(22, 98, 250, 1)', 'paddingLeft': '2px', 'paddingRight': '2px', 'marginBottom': '20px'}, internal-fsb-guid="d40e3b62")
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'color': (()=>{return (this.isMerchandiseInError(i, -1)) ? '#ff0000' : '';})() || 'rgba(22, 98, 250, 1)', 'paddingLeft': '2px', 'paddingRight': '2px', 'marginBottom': '20px'}, internal-fsb-guid="d40e3b62")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].aid"), internal-fsb-guid="c18d1ab2")
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
