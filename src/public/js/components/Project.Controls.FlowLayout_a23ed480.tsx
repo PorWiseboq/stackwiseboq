@@ -325,7 +325,7 @@ class FlowLayout_a23ed480 extends Base {
     let total = 0;
     
     for (const checkbox of checkboxes) {
-      total += parseInt(checkbox.attr('data-price'));
+      total += parseFloat(checkbox.attr('data-price').toString());
     }
     
     totalAmountInWord.innerHTML = convertFullMoney(total);
