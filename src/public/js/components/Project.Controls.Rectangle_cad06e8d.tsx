@@ -1125,7 +1125,7 @@ class Rectangle_cad06e8d extends Base {
                                                       | หมายเหตุ:
                                                     .internal-fsb-element.col-7(internal-fsb-guid="9c0475b2")
                                                       | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.forwardingNote') || 'ไม่มี'} 
-                                              .internal-fsb-element.col-6.offset-3.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'paddingTop': '2px', 'paddingBottom': '2px', 'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center', 'background': 'rgba(255, 223, 43, 1)', 'marginTop': '10px'}, internal-fsb-guid="e3a90426")
+                                              .internal-fsb-element.-fsb-preset-4839e353.col-4.offset-4(style={'FsbInheritedPresets': '4839e353', 'paddingTop': '2px', 'paddingBottom': '2px', 'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center', 'background': 'rgba(255, 223, 43, 1)', 'marginTop': '10px'}, internal-fsb-guid="e3a90426")
                                                 | เบอร์โทรศัพท์ของลูกค้าคือ #{this.getDataFromNotation('Quote[#i].Auction.Payment.number')}
                                   .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0 || this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == null) ? 'block' : 'none';})()}, internal-fsb-guid="57b28be1")
                                     .container-fluid
