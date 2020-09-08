@@ -321,11 +321,11 @@ class FlowLayout_a23ed480 extends Base {
     this.setState({submitting: true});
     
     const totalAmountInWord = ReactDOM.findDOMNode(this.refs.totalAmountInWord);
-    const checkboxes = $('data-price[checked]');
+    const checkboxes = $('[data-pricing]:checked').toArray();
     let total = 0;
     
     for (const checkbox of checkboxes) {
-      total += parseFloat(checkbox.getAttribute('data-price').toString());
+      total += parseFloat(checkbox.getAttribute('data-pricing').toString());
     }
     
     totalAmountInWord.innerHTML = convertFullMoney(total);
