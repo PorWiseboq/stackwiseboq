@@ -78,7 +78,7 @@ class FlowLayout_a23ed480 extends Base {
   // Declare class variables and functions here:
   //
   protected initialize(): void {
-    if (this.getDataFromNotation('Quote')[0].columns['filled'] == true) {
+    if (this.getDataFromNotation('Statuses.status') != 0) {
       this.state.step = Step.PAID;
     }
   }
@@ -129,7 +129,7 @@ class FlowLayout_a23ed480 extends Base {
     return results.join(', ') || 'ไม่มี';
   }
   
-  private getPaymentStatus(): void {
+  private getPaymentStatus(): string {
     if (this.getDataFromNotation('Statuses.status') == 3) {
       return 'เกิดความผิดพลาด.. กรุณารอทางเราประสานงานกลับไป';
     }
@@ -140,7 +140,7 @@ class FlowLayout_a23ed480 extends Base {
       return 'WiseBOQ กำลังตรวจสอบจำนวนเงินที่ได้รับจากการโอน';
     }
     else {
-      return 'ผู้ซื้อกำลังจัดการโอนเงินผ่านธนาคาร';
+      return 'ผู้ซื้อได้จัดการโอนเงินผ่านธนาคารเป็นที่เรียบร้อยแล้ว';
     }
   }
   

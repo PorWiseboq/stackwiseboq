@@ -162,17 +162,19 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		    
        		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];
        		    
-              resolve(Object.assign({}, quoteDatasetA, {
+       		    quoteDatasetA['Statuses'] = {
                 source: SourceType.Relational,
               	group: 'Statuses',
-                rows: [
-                  keys: {}
+                rows: [{
+                  keys: {},
                   columns: {
                     'status': 1
-                  }
+                  },
                   relations: {}
-                ]
-              }));
+                }]
+              };
+       		    
+              resolve(quoteDatasetA);
             } catch(error) {
               reject(error);
             }
