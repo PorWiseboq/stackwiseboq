@@ -162,19 +162,26 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		    
        		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];
        		    
-       		    quoteDatasetA['Statuses'] = {
-                source: SourceType.Relational,
-              	group: 'Statuses',
-                rows: [{
-                  keys: {},
-                  columns: {
-                    'status': 1
-                  },
-                  relations: {}
-                }]
-              };
-       		    
-              resolve(quoteDatasetA);
+       		    RelationalDatabaseClient.query(`SELECT MIN(Transfer.status) AS status FROM Quote
+INNER JOIN Auction ON Quote.qid = Auction.qid
+INNER JOIN Payment ON Auction.aid = Payment.aid
+INNER JOIN Transfer ON Payment.aid = Transfer.aid
+WHERE Auction.bought = 1 AND Quote.qid = 1171
+GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].columns['qid']], async (_error, _results, _fields) => {
+         		    quoteDatasetA['Statuses'] = {
+                  source: SourceType.Relational,
+                	group: 'Statuses',
+                  rows: [{
+                    keys: {},
+                    columns: {
+                      'status': _results['status'] || 0
+                    },
+                    relations: {}
+                  }]
+                };
+         		    
+                resolve(quoteDatasetA);
+              });
             } catch(error) {
               reject(error);
             }
@@ -267,13 +274,28 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow retrieve action of any button on the page. */
-      /* try {
-        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));
+      try {
+        RelationalDatabaseClient.query(`SELECT MIN(Transfer.status) AS status FROM Quote
+INNER JOIN Auction ON Quote.qid = Auction.qid
+INNER JOIN Payment ON Auction.aid = Payment.aid
+INNER JOIN Transfer ON Payment.aid = Transfer.aid
+WHERE Auction.bought = 1 AND Quote.qid = 1171
+GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields) => {
+          resolve({Statuses: {
+            source: SourceType.Relational,
+          	group: 'Statuses',
+            rows: [{
+              keys: {},
+              columns: {
+                'status': _results['status'] || 0
+              },
+              relations: {}
+            }]
+          }});
+        });
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
@@ -302,6 +324,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "d480ae4d", "update", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","775b58b9","939d2d75","4b5256da","137c966d"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "3d97109b", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "0a5b0022", "retrieve", ["dc7901c9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('c18d1ab2', "relational", "Auction", "sid");
 		ValidationHelper.registerInput('c18d1ab2', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
@@ -399,6 +422,16 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       input = RequestHelper.getInput(this.pageId, request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('dc7901c9', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('dc7901c9', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'dc7901c9' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
