@@ -1,7 +1,6 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-
 // Auto[Import]--->
 import {Request, Response} from "express";
 import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../../helpers/DatabaseHelper.js';
@@ -19,7 +18,6 @@ import {CodeHelper} from '../../../../helpers/CodeHelper.js';
 import {SchemaHelper} from '../../../../helpers/SchemaHelper.js';
 import {ProjectConfigurationHelper} from '../../../../helpers/ProjectConfigurationHelper.js';
 import {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'
-
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -47,7 +45,6 @@ enum ValidationInfo {
 // Declare private static variables here:
 //
 
-
 // Auto[Interface]--->
 /*interface HierarchicalDataTable {
 	source: SourceType;
@@ -72,7 +69,6 @@ interface Input {
 
 // Declare or extend interfaces here:
 //
-
 
 // Auto[ClassBegin]--->
 class Controller extends Base {
@@ -143,7 +139,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.Store.sid': null,
        		      'Quote.Auction.Store.User.id': null,
-       		      'Quote.Auction.Substitute.aid': null
+       		      'Quote.Auction.Substitute.aid': null 
        		    });
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
@@ -166,7 +162,17 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		    
        		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];
        		    
-              resolve(quoteDatasetA);
+              resolve(Object.assign({}, quoteDatasetA, {
+                source: SourceType.Relational,
+              	group: 'Statuses',
+                rows: [
+                  keys: {}
+                  columns: {
+                    'status': 1
+                  }
+                  relations: {}
+                ]
+              }));
             } catch(error) {
               reject(error);
             }
@@ -281,8 +287,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     });
   }
   
-  
- 	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
@@ -414,7 +418,6 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 // Export variables here:
 //
 export default Controller;
-
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.

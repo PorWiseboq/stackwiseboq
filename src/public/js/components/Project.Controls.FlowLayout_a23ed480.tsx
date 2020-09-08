@@ -1,7 +1,6 @@
 // Auto[Generating:V1]--->
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.
 
-
 // Auto[Import]--->
 import {Project as $Project, DeclarationHelper} from '../helpers/DeclarationHelper.js';
 import {CodeHelper} from '../helpers/CodeHelper.js';
@@ -33,7 +32,6 @@ let Project = $Project;
 
 // Declare private static variables here:
 //
-
 
 // Auto[Interface]--->
 interface IAutoBaseProps extends IBaseProps {
@@ -132,13 +130,13 @@ class FlowLayout_a23ed480 extends Base {
   }
   
   private getPaymentStatus(): void {
-    if (this.getDataFromNotation('Quote').some(quote => quote.relations['Auction'].rows.some(auction => auction.relations['Payment'] && auction.relations['Payment'].rows.some(payment => payment.relations['Transfer'].rows.some(transfer => transfer.columns['status'] == 3))))) {
+    if (this.getDataFromNotation('Statuses.status') == 3) {
       return 'เกิดความผิดพลาด.. กรุณารอทางเราประสานงานกลับไป';
     }
-    else if (this.getDataFromNotation('Quote').some(quote => quote.relations['Auction'].rows.some(auction => auction.relations['Payment'] && auction.relations['Payment'].rows.some(payment => payment.relations['Transfer'].rows.some(transfer => transfer.columns['status'] == 2))))) {
+    else if (this.getDataFromNotation('Statuses.status') == 2) {
       return 'ทางร้านค้าได้รับเงินเรียบร้อยและกำลังทำการจัดส่งสินค้า';
     }
-    else if (this.getDataFromNotation('Quote').some(quote => quote.relations['Auction'].rows.some(auction => auction.relations['Payment'] && auction.relations['Payment'].rows.some(payment => payment.relations['Transfer'].rows.some(transfer => transfer.columns['status'] == 1))))) {
+    else if (this.getDataFromNotation('Statuses.status') == 1) {
       return 'WiseBOQ กำลังตรวจสอบจำนวนเงินที่ได้รับจากการโอน';
     }
     else {
@@ -191,8 +189,6 @@ class FlowLayout_a23ed480 extends Base {
     }
   }
   
-  
-  
   // Auto[Merging]--->
   protected onButtonSuccess_bdcbb907(event: Event) {
 
@@ -204,7 +200,6 @@ class FlowLayout_a23ed480 extends Base {
     
   }
 
-
   protected onButtonClick_c1c0694d(event: Event) {
 
     // Handle the event of onButtonClick (Button 4) here:
@@ -215,7 +210,6 @@ class FlowLayout_a23ed480 extends Base {
     
   }
 
-
   protected onButtonSuccess_d480ae4d(event: Event) {
 
     // Handle the event of onButtonSuccess (Button 5) here:
@@ -225,7 +219,6 @@ class FlowLayout_a23ed480 extends Base {
     });
     
   }
-
 
   protected onButtonClick_3d97109b(event: Event) {
 
@@ -425,7 +418,6 @@ DeclarationHelper.declare('Document', 'Controls.FlowLayout_a23ed480', FlowLayout
 // Export variables here:
 //
 export {IProps, IState, DefaultProps, DefaultState};
-
 
 // <--- Auto[Generating:V1]
 // PLEASE DO NOT MODIFY BECAUSE YOUR CHANGES MAY BE LOST.

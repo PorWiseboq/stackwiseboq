@@ -13625,13 +13625,13 @@
         "  }",
         "  ",
         "  private getPaymentStatus(): void {",
-        "    if (this.getDataFromNotation('Quote').some(quote => quote.relations['Auction'].rows.some(auction => auction.relations['Payment'] &amp;&amp; auction.relations['Payment'].rows.some(payment => payment.relations['Transfer'].rows.some(transfer => transfer.columns['status'] == 3))))) {",
+        "    if (this.getDataFromNotation('Statuses.status') == 3) {",
         "      return 'เกิดความผิดพลาด.. กรุณารอทางเราประสานงานกลับไป';",
         "    }",
-        "    else if (this.getDataFromNotation('Quote').some(quote => quote.relations['Auction'].rows.some(auction => auction.relations['Payment'] &amp;&amp; auction.relations['Payment'].rows.some(payment => payment.relations['Transfer'].rows.some(transfer => transfer.columns['status'] == 2))))) {",
+        "    else if (this.getDataFromNotation('Statuses.status') == 2) {",
         "      return 'ทางร้านค้าได้รับเงินเรียบร้อยและกำลังทำการจัดส่งสินค้า';",
         "    }",
-        "    else if (this.getDataFromNotation('Quote').some(quote => quote.relations['Auction'].rows.some(auction => auction.relations['Payment'] &amp;&amp; auction.relations['Payment'].rows.some(payment => payment.relations['Transfer'].rows.some(transfer => transfer.columns['status'] == 1))))) {",
+        "    else if (this.getDataFromNotation('Statuses.status') == 1) {",
         "      return 'WiseBOQ กำลังตรวจสอบจำนวนเงินที่ได้รับจากการโอน';",
         "    }",
         "    else {",
@@ -14983,11 +14983,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "6e068626",
+        "selectingElementGUID": "d480ae4d",
         "currentCursorWalkPath": [
-          "65beb763",
+          "a23ed480",
           0,
-          7,
+          5,
           null
         ]
       },
@@ -14995,7 +14995,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n// \nimport {CodeHelper} from '../../../../helpers/CodeHelper.js';\nimport {SchemaHelper} from '../../../../helpers/SchemaHelper.js';\nimport {ProjectConfigurationHelper} from '../../../../helpers/ProjectConfigurationHelper.js';\nimport {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n \t\t\n \t\tfor (const item of data) {\n      switch (item.validation.name) {\n        case 'transferringTime':\n          if (item.value && !item.value.match(/^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])(25[6-7][3-9]) ([0-1][0-9]|2[0-3])([0-5][0-9])$/)) {\n              throw new Error(\"กรุณาระบุวันและเวลาที่โอนสำเร็จให้ถูกต้องในรูปแบบ ddmmyyyy hhmm\");\n          }\n          break;\n      }\n    }\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        if (!this.request.session || !this.request.session.uid) {\n          this.response.redirect('/authentication');\n        } else {\n          RelationalDatabaseClient.query(`UPDATE Quote SET status = 2\nWHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {\n            try {\n              let quoteData = RequestHelper.createInputs({\n       \t\t      'Quote.uid': this.request.session.uid,\n       \t\t      'Quote.status': 2,\n       \t\t      'Quote.Listing.qid': null,\n       \t\t      'Quote.Auction.qid': null,\n       \t\t      'Quote.Auction.Store.sid': null,\n       \t\t      'Quote.Auction.Store.User.id': null,\n       \t\t      'Quote.Auction.Substitute.aid': null\n       \t\t    });\n       \t\t    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());\n       \t\t    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);\n       \t\t    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);\n       \t\t    \n       \t\t    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {\n       \t\t      return auction.relations['Substitute'].rows.every((substitute) => {\n       \t\t        return substitute.columns['type'] <= quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];\n       \t\t      });\n       \t\t    }).sort((a, b) => {\n       \t\t      return (a.columns['price'] < b.columns['price']) ? -1 : 1;\n       \t\t    });\n       \t\t    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {\n       \t\t      return auction.relations['Substitute'].rows.some((substitute) => {\n       \t\t        return substitute.columns['type'] > quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];\n       \t\t      });\n       \t\t    }).sort((a, b) => {\n       \t\t      return (a.columns['price'] < b.columns['price']) ? -1 : 1;\n       \t\t    });\n       \t\t    \n       \t\t    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];\n       \t\t    \n              resolve(quoteDatasetA);\n            } catch(error) {\n              reject(error);\n            }\n          });\n        }\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow insert action of any button on the page. */\n      /* try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow delete action of any button on the page. */\n      /* try {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow retrieve action of any button on the page. */\n      /* try {\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow navigate action of any button on the page. */\n      /* try {\n        resolve('/');\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  "
+        "internal-fsb-data-code-body": "\n  \n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n \t\t\n \t\tfor (const item of data) {\n      switch (item.validation.name) {\n        case 'transferringTime':\n          if (item.value && !item.value.match(/^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])(25[6-7][3-9]) ([0-1][0-9]|2[0-3])([0-5][0-9])$/)) {\n              throw new Error(\"กรุณาระบุวันและเวลาที่โอนสำเร็จให้ถูกต้องในรูปแบบ ddmmyyyy hhmm\");\n          }\n          break;\n      }\n    }\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        if (!this.request.session || !this.request.session.uid) {\n          this.response.redirect('/authentication');\n        } else {\n          RelationalDatabaseClient.query(`UPDATE Quote SET status = 2\nWHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {\n            try {\n              let quoteData = RequestHelper.createInputs({\n       \t\t      'Quote.uid': this.request.session.uid,\n       \t\t      'Quote.status': 2,\n       \t\t      'Quote.Listing.qid': null,\n       \t\t      'Quote.Auction.qid': null,\n       \t\t      'Quote.Auction.Store.sid': null,\n       \t\t      'Quote.Auction.Store.User.id': null,\n       \t\t      'Quote.Auction.Substitute.aid': null \n       \t\t    });\n       \t\t    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());\n       \t\t    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);\n       \t\t    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);\n       \t\t    \n       \t\t    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {\n       \t\t      return auction.relations['Substitute'].rows.every((substitute) => {\n       \t\t        return substitute.columns['type'] <= quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];\n       \t\t      });\n       \t\t    }).sort((a, b) => {\n       \t\t      return (a.columns['price'] < b.columns['price']) ? -1 : 1;\n       \t\t    });\n       \t\t    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {\n       \t\t      return auction.relations['Substitute'].rows.some((substitute) => {\n       \t\t        return substitute.columns['type'] > quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];\n       \t\t      });\n       \t\t    }).sort((a, b) => {\n       \t\t      return (a.columns['price'] < b.columns['price']) ? -1 : 1;\n       \t\t    });\n       \t\t    \n       \t\t    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];\n       \t\t    \n              resolve(Object.assign({}, quoteDatasetA, {\n                source: SourceType.Relational,\n              \tgroup: 'Statuses',\n                rows: [\n                  keys: {}\n                  columns: {\n                    'status': 1\n                  }\n                  relations: {}\n                ]\n              }));\n            } catch(error) {\n              reject(error);\n            }\n          });\n        }\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow insert action of any button on the page. */\n      /* try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow delete action of any button on the page. */\n      /* try {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow retrieve action of any button on the page. */\n      /* try {\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \t/* Uncomment to allow navigate action of any button on the page. */\n      /* try {\n        resolve('/');\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  "
       },
       "notations": {
         "Quote[0]": {
@@ -21377,7 +21377,7 @@
     "bbc7dba3": "fad800d48eea12459718b2484a2575ce33c260f6",
     "c3da32d7": "6e1ffcb26eba703b5bd7fc6c0f82ff1d049bd7b4",
     "8a4a42e4": "4447e95a01c13f23af5f4deb2c89c16592043beb",
-    "473d370d": "0d935b7ad2996d6a8e306ecdf65ba123d0b11e4b",
+    "473d370d": "f0afd5fa5c0417bd5b20eca993288881a0f8fc98",
     "ea2e6d53": "68ad31d643709606930215281d16654a21e4204a",
     "5488072c": "d44858a85cfa7de0f31a67f19bc1eed6dcd60c91",
     "73d1cec9": "e4ec0156549571571a4ef1b5f98ca72a642d8315"
@@ -21395,7 +21395,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "9714fe2552a84ebd3fc551dfa02d8b30def41495",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "167c72b7627992db28ae74f2ae5c2cd2b3141058",
+    "Project.Controls.FlowLayout_a23ed480": "229ed403c4030867b2c0b4e1d479665efa347c7e",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4"
   },
@@ -21416,5 +21416,54 @@
     "ea2e6d53": "deef13f29e7653e487d266deaf697e2a982d907c",
     "5488072c": "1f2478519b683133b16f0d9e0bf9425ede291072",
     "73d1cec9": "50784dd08c5389d9f67748e99839fb706937c7a6"
-  }
+  },
+  "currentPersistingFiles": [
+    "src/controllers/components/index.ts",
+    "src/controllers/components/authentication/_d1e3b3b3.ts",
+    "src/controllers/components/bidder/_8857ca68.ts",
+    "src/controllers/components/buyer/_b140e86b.ts",
+    "src/controllers/components/authentication/role/_b6eb1b83.ts",
+    "src/controllers/components/bidder/auction/_7e709334.ts",
+    "src/controllers/components/buyer/auction/_65e04a88.ts",
+    "src/controllers/components/blog/admin/_9d37c390.ts",
+    "src/controllers/components/article/_6ce794ec.ts",
+    "src/controllers/components/error/_bbc7dba3.ts",
+    "src/controllers/components/blog/_c3da32d7.ts",
+    "src/controllers/components/buyer/auction/waiting/_8a4a42e4.ts",
+    "src/controllers/components/buyer/auction/results/_473d370d.ts",
+    "src/controllers/components/authentication/role/bidder/_ea2e6d53.ts",
+    "src/controllers/components/authentication/role/buyer/_5488072c.ts",
+    "src/controllers/components/buyer/chat/_73d1cec9.ts",
+    "src/public/js/components/Project.Common.NavigationBar.tsx",
+    "src/public/js/components/Project.Common.Header.tsx",
+    "src/public/js/components/Project.Common.RoleSelector.tsx",
+    "src/public/js/components/Project.Common.Footer.tsx",
+    "src/public/js/components/Project.Controls.FlowLayout_b2020622.tsx",
+    "src/public/js/components/Project.Controls.FlowLayout_d58ae925.tsx",
+    "src/public/js/components/Project.Controls.Rectangle_cad06e8d.tsx",
+    "src/public/js/components/Project.Controls.FlowLayout_56ca37d0.tsx",
+    "src/public/js/components/Project.Controls.FlowLayout_cbb338d5.tsx",
+    "src/public/js/components/Project.Common.LoginControl.tsx",
+    "src/public/js/components/Project.Controls.FlowLayout_c6ba5b53.tsx",
+    "src/public/js/components/Project.Controls.FlowLayout_db81898d.tsx",
+    "src/public/js/components/Project.Controls.FlowLayout_a23ed480.tsx",
+    "src/public/js/components/Project.Controls.FlowLayout_84b618a7.tsx",
+    "src/public/js/components/Project.Controls.Rectangle_a8055802.tsx",
+    "views/home/authentication/_d1e3b3b3.pug",
+    "views/home/index.pug",
+    "views/home/buyer/_b140e86b.pug",
+    "views/home/bidder/_8857ca68.pug",
+    "views/home/authentication/role/_b6eb1b83.pug",
+    "views/home/buyer/auction/_65e04a88.pug",
+    "views/home/bidder/auction/_7e709334.pug",
+    "views/home/article/_6ce794ec.pug",
+    "views/home/blog/admin/_9d37c390.pug",
+    "views/home/error/_bbc7dba3.pug",
+    "views/home/blog/_c3da32d7.pug",
+    "views/home/buyer/auction/waiting/_8a4a42e4.pug",
+    "views/home/buyer/auction/results/_473d370d.pug",
+    "views/home/authentication/role/bidder/_ea2e6d53.pug",
+    "views/home/authentication/role/buyer/_5488072c.pug",
+    "views/home/buyer/chat/_73d1cec9.pug"
+  ]
 }
