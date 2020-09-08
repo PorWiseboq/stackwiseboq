@@ -166,7 +166,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 INNER JOIN Auction ON Quote.qid = Auction.qid
 INNER JOIN Payment ON Auction.aid = Payment.aid
 INNER JOIN Transfer ON Payment.aid = Transfer.aid
-WHERE Auction.bought = 1 AND Quote.qid = 1171
+WHERE Auction.bought = 1 AND Quote.qid = ?
 GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].columns['qid']], async (_error, _results, _fields) => {
          		    quoteDatasetA['Statuses'] = {
                   source: SourceType.Relational,
@@ -174,7 +174,7 @@ GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].columns['qid']], async (_er
                   rows: [{
                     keys: {},
                     columns: {
-                      'status': _results['status'] || 0
+                      'status': _results[0]['status'] || 0
                     },
                     relations: {}
                   }]
@@ -279,7 +279,7 @@ GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].columns['qid']], async (_er
 INNER JOIN Auction ON Quote.qid = Auction.qid
 INNER JOIN Payment ON Auction.aid = Payment.aid
 INNER JOIN Transfer ON Payment.aid = Transfer.aid
-WHERE Auction.bought = 1 AND Quote.qid = 1171
+WHERE Auction.bought = 1 AND Quote.qid = ?
 GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields) => {
           resolve({Statuses: {
             source: SourceType.Relational,
@@ -287,7 +287,7 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
             rows: [{
               keys: {},
               columns: {
-                'status': _results['status'] || 0
+                'status': _results[0]['status'] || 0
               },
               relations: {}
             }]
