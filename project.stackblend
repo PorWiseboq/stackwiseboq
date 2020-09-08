@@ -6422,6 +6422,7 @@
         "                                                                                                    </div>",
         "                                                                                                </div>",
         "                                                                                            </div>",
+        "                                                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-3 -fsb-preset-4839e353\" internal-fsb-guid=\"e3a90426\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; text-align: center; background: rgba(255, 223, 43, 1); margin-top: 10px\">เบอร์โทรศัพท์ของลูกค้าคือ #{this.getDataFromNotation('Quote[#i].Auction.Payment.number')}</div>",
         "                                                                                        </div>",
         "                                                                                    </div>",
         "                                                                                </div>",
@@ -7235,11 +7236,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "a30c3884",
         "currentCursorWalkPath": [
-          "24731127",
+          "70267cd8",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -18763,6 +18764,9 @@
       "                                    </div>",
       "",
       "",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"6be0237e\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"number\">",
+      "                                        <div class=\"internal-fsb-title\">number</div>",
+      "                                    </div>",
       "                                </div>",
       "                            </div>",
       "                        </div>",
@@ -20654,6 +20658,15 @@
             "unique": true,
             "modifyingPermission": null,
             "retrievingPermission": null
+          },
+          "number": {
+            "name": "number",
+            "guid": "6be0237e",
+            "fieldType": null,
+            "required": false,
+            "unique": false,
+            "modifyingPermission": null,
+            "retrievingPermission": null
           }
         },
         "relations": {
@@ -21196,7 +21209,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "ae1ccbc7726523b379d7a1d5d74d661d6f4e195a",
+    "Project.Controls.Rectangle_cad06e8d": "6b3ed158c84a42103bcdf64a0dbf3c798c0e4a39",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
