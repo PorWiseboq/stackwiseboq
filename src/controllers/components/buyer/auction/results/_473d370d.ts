@@ -208,14 +208,12 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow update action of any button on the page. */
-      /* try {
+    	try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
@@ -276,11 +274,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("473d370d", "bdcbb907", "update", ["c18d1ab2","6e068626","39c374d3","c6cd6a36","0c59a0a4","5cab012e"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "bdcbb907", "update", ["c18d1ab2","6e068626","62b11043"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("473d370d", "d480ae4d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "d480ae4d", "upsert", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","62b11043","17983b03","775b58b9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "3d97109b", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-		RequestHelper.registerInput('c18d1ab2', "relational", "Auction", "aid");
+		RequestHelper.registerInput('c18d1ab2', "relational", "Auction", "sid");
 		ValidationHelper.registerInput('c18d1ab2', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'c18d1ab2' + ((i == -1) ? '' : '[' + i + ']'));
@@ -290,8 +288,18 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('62b11043', "relational", "Auction", "qid");
+		ValidationHelper.registerInput('62b11043', "Hidden 4", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '62b11043' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 4 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('6e068626', "relational", "Auction", "bought");
-		ValidationHelper.registerInput('6e068626', "Checkbox 1", false, undefined);
+		ValidationHelper.registerInput('6e068626', "Checkbox 1", true, "กรุณาเลือกรายการอย่างน้อยหนึ่ง");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '6e068626' + ((i == -1) ? '' : '[' + i + ']'));
     
@@ -300,7 +308,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('39c374d3', "relational", "Auction.Payment.gateway", "transfer");
+		RequestHelper.registerInput('39c374d3', "relational", "Auction.Payment", "gateway");
 		ValidationHelper.registerInput('39c374d3', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '39c374d3' + ((i == -1) ? '' : '[' + i + ']'));
@@ -310,8 +318,29 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('775b58b9', "relational", "Auction.Payment.Transfer", "status");
+		ValidationHelper.registerInput('775b58b9', "Hidden 5", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '775b58b9' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 5 here:
+      // 
+      if (input) input.value = 1;
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('17983b03', "relational", "Quote", "filled");
+		ValidationHelper.registerInput('17983b03', "Hidden 6", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '17983b03' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 6 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('c6cd6a36', "relational", "Auction.Payment.Transfer", "time");
-		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", false, undefined);
+		ValidationHelper.registerInput('c6cd6a36', "Textbox 1", true, "กรุณากรอกวันและเวลาที่โอนสำเร็จ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
     
@@ -321,7 +350,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('0c59a0a4', "relational", "Auction.Payment.Transfer", "transferrer");
-		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", false, undefined);
+		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", true, "กรุณากรอกชื่อผู้ที่ได้ทำการโอน");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '0c59a0a4' + ((i == -1) ? '' : '[' + i + ']'));
     
@@ -331,7 +360,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('5cab012e', "relational", "Auction.Payment.Transfer", "origin");
-		ValidationHelper.registerInput('5cab012e', "Textbox 3", false, undefined);
+		ValidationHelper.registerInput('5cab012e', "Textbox 3", true, "กรุณากรอกชื่อธนาคารและสาขาต้นทาง");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));
     
