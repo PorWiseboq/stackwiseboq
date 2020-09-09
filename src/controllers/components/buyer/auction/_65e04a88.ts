@@ -569,7 +569,7 @@ class Controller extends Base {
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('54e20435', "relational", "Listing", "title");
-		ValidationHelper.registerInput('54e20435', "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ");
+		ValidationHelper.registerInput('54e20435', "Textbox 1", true, "คุณต้องระบุชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียด");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '54e20435' + ((i == -1) ? '' : '[' + i + ']'));
     
@@ -579,7 +579,7 @@ class Controller extends Base {
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
-		ValidationHelper.registerInput('b2321320', "quantity", true, "คุณต้องระบุจำนวน");
+		ValidationHelper.registerInput('b2321320', "quantity", true, "คุณต้องระบุปริมาณ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'b2321320' + ((i == -1) ? '' : '[' + i + ']'));
     
@@ -589,7 +589,7 @@ class Controller extends Base {
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('31894d87', "relational", "Listing", "unit");
-		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
+		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุหน่วย");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '31894d87' + ((i == -1) ? '' : '[' + i + ']'));
     
