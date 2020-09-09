@@ -8,6 +8,7 @@ import Componentd1e3b3b3 from "./components/authentication/_d1e3b3b3.js";
 import Componentb6eb1b83 from "./components/authentication/role/_b6eb1b83.js";
 import Componentea2e6d53 from "./components/authentication/role/bidder/_ea2e6d53.js";
 import Component5488072c from "./components/authentication/role/buyer/_5488072c.js";
+import Component51a414a8 from "./components/authentication/role/buyer/_51a414a8.js";
 import Component8857ca68 from "./components/bidder/_8857ca68.js";
 import Component7e709334 from "./components/bidder/auction/_7e709334.js";
 import Componentc3da32d7 from "./components/blog/_c3da32d7.js";
@@ -18,6 +19,7 @@ import Component473d370d from "./components/buyer/auction/results/_473d370d.js";
 import Component8a4a42e4 from "./components/buyer/auction/waiting/_8a4a42e4.js";
 import Component73d1cec9 from "./components/buyer/chat/_73d1cec9.js";
 import Componentbbc7dba3 from "./components/error/_bbc7dba3.js";
+import Component5b199584 from "./components/admin/accounting/_5b199584.js";
 
 export const index = (req: Request, res: Response) => {
 	new Componentindex(req, res, "home/index");
@@ -36,6 +38,9 @@ export const _ea2e6d53 = (req: Request, res: Response) => {
 }
 export const _5488072c = (req: Request, res: Response) => {
 	new Component5488072c(req, res, "home/authentication/role/buyer/_5488072c");
+}
+export const _51a414a8 = (req: Request, res: Response) => {
+	new Component51a414a8(req, res, "home/authentication/role/buyer/_51a414a8");
 }
 export const _8857ca68 = (req: Request, res: Response) => {
 	new Component8857ca68(req, res, "home/bidder/_8857ca68");
@@ -66,6 +71,9 @@ export const _73d1cec9 = (req: Request, res: Response) => {
 }
 export const _bbc7dba3 = (req: Request, res: Response) => {
 	new Componentbbc7dba3(req, res, "home/error/_bbc7dba3");
+}
+export const _5b199584 = (req: Request, res: Response) => {
+	new Component5b199584(req, res, "home/admin/accounting/_5b199584");
 }
 
 // <--- Auto[Generating:V1]

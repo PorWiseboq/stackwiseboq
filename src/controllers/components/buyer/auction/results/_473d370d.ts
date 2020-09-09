@@ -99,6 +99,11 @@ class Controller extends Base {
           break;
       }
     }
+ 		
+ 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'buyer') {
+      this.response.redirect('/authentication');
+      throw new Error('Wrong Authentication');
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -126,67 +131,63 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        if (!this.request.session || !this.request.session.uid) {
-          this.response.redirect('/authentication');
-        } else {
-          RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
+        RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
 WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
-            try {
-              let quoteData = RequestHelper.createInputs({
-       		      'Quote.uid': this.request.session.uid,
-       		      'Quote.status': 2,
-       		      'Quote.Listing.qid': null,
-       		      'Quote.Auction.qid': null,
-       		      'Quote.Auction.Store.sid': null,
-       		      'Quote.Auction.Store.User.id': null,
-       		      'Quote.Auction.Substitute.aid': null 
-       		    });
-       		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
-       		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-       		    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);
-       		    
-       		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
-       		      return auction.relations['Substitute'].rows.every((substitute) => {
-       		        return substitute.columns['type'] <= quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
-       		      });
-       		    }).sort((a, b) => {
-       		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
-       		    });
-       		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
-       		      return auction.relations['Substitute'].rows.some((substitute) => {
-       		        return substitute.columns['type'] > quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
-       		      });
-       		    }).sort((a, b) => {
-       		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
-       		    });
-       		    
-       		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];
-       		    
-       		    RelationalDatabaseClient.query(`SELECT MIN(Transfer.status) AS status FROM Quote
+          try {
+            let quoteData = RequestHelper.createInputs({
+     		      'Quote.uid': this.request.session.uid,
+     		      'Quote.status': 2,
+     		      'Quote.Listing.qid': null,
+     		      'Quote.Auction.qid': null,
+     		      'Quote.Auction.Store.sid': null,
+     		      'Quote.Auction.Store.User.id': null,
+     		      'Quote.Auction.Substitute.aid': null 
+     		    });
+     		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
+     		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
+     		    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);
+     		    
+     		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
+     		      return auction.relations['Substitute'].rows.every((substitute) => {
+     		        return substitute.columns['type'] <= quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
+     		      });
+     		    }).sort((a, b) => {
+     		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
+     		    });
+     		    quoteDatasetB['Quote'].rows[0].relations['Auction'].rows = quoteDatasetB['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
+     		      return auction.relations['Substitute'].rows.some((substitute) => {
+     		        return substitute.columns['type'] > quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
+     		      });
+     		    }).sort((a, b) => {
+     		      return (a.columns['price'] < b.columns['price']) ? -1 : 1;
+     		    });
+     		    
+     		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = [...quoteDatasetA['Quote'].rows[0].relations['Auction'].rows, ...quoteDatasetB['Quote'].rows[0].relations['Auction'].rows];
+     		    
+     		    RelationalDatabaseClient.query(`SELECT MIN(Transfer.status) AS status FROM Quote
 INNER JOIN Auction ON Quote.qid = Auction.qid
 INNER JOIN Payment ON Auction.aid = Payment.aid
 INNER JOIN Transfer ON Payment.aid = Transfer.aid
 WHERE Auction.bought = 1 AND Quote.qid = ?
 GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].columns['qid']], async (_error, _results, _fields) => {
-         		    quoteDatasetA['Statuses'] = {
-                  source: SourceType.Relational,
-                	group: 'Statuses',
-                  rows: [{
-                    keys: {},
-                    columns: {
-                      'status': _results[0] && _results[0]['status'] || 0
-                    },
-                    relations: {}
-                  }]
-                };
-         		    
-                resolve(quoteDatasetA);
-              });
-            } catch(error) {
-              reject(error);
-            }
-          });
-        }
+       		    quoteDatasetA['Statuses'] = {
+                source: SourceType.Relational,
+              	group: 'Statuses',
+                rows: [{
+                  keys: {},
+                  columns: {
+                    'status': _results[0] && _results[0]['status'] || 0
+                  },
+                  relations: {}
+                }]
+              };
+       		    
+              resolve(quoteDatasetA);
+            });
+          } catch(error) {
+            reject(error);
+          }
+        });
       } catch(error) {
         reject(error);
       }
