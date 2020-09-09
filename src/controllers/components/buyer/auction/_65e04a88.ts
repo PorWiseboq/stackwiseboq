@@ -163,6 +163,11 @@ class Controller extends Base {
                     throw new Error("กรุณาระบุที่อยู่สำหรับจัดส่งสินค้า");
                 }
                 break;
+            case 'quantity':
+                if (item.value && isNaN(parseFloat(item.value))) {
+                    throw new Error("กรุณาระบุปริมาณเป็นตัวเลข");
+                }
+                break;
         }
     }
  		
@@ -574,11 +579,11 @@ class Controller extends Base {
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
-		ValidationHelper.registerInput('b2321320', "Textbox 3", true, "คุณต้องระบุจำนวน");
+		ValidationHelper.registerInput('b2321320', "quantity", true, "คุณต้องระบุจำนวน");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'b2321320' + ((i == -1) ? '' : '[' + i + ']'));
     
-      // Override data parsing and manipulation of Textbox 3 here:
+      // Override data parsing and manipulation of quantity here:
       // 
       
       if (input != null) data.push(input);

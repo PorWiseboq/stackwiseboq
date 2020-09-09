@@ -262,7 +262,7 @@ class FlowLayout_b2020622 extends Base {
       ReactDOM.findDOMNode(this.refs.radio2).checked != false ||
       ReactDOM.findDOMNode(this.refs.radio3).checked != false) {
       
-      if (confirm('เหมือนว่าคุณลืมกดปุ่มเพิ่มก่อนที่จะกดปุ่มถัดไป คุณต้องการกลับไปแก้ไขหรือไม่?')) {
+      if (confirm('เหมือนว่าคุณลืมกดปุ่มเพิ่มก่อนที่จะกดปุ่มถัดไป.. คุณต้องการกลับไปแก้ไขหรือไม่?')) {
         return EventHelper.cancel(event);
       } else {
         ReactDOM.findDOMNode(this.refs.title).value = '';
