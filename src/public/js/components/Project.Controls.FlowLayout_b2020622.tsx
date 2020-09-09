@@ -241,42 +241,6 @@ class FlowLayout_b2020622 extends Base {
     return EventHelper.cancel(event);
   }
 
-  protected onButtonClick_011ad9dc(event: Event) {
-
-    if (this.getDataFromNotation("Listing", true).length == 0) {
-      alert('กรุณาระบุรายการวัสดุก่อสร้างอย่างน้อยหนึ่งรายการ');
-      return EventHelper.cancel(event);
-    }
-
-    // Handle the event of onButtonClick (Button 5) here:
-    // 
-    if (ReactDOM.findDOMNode(this.refs.title).value != '' ||
-      ReactDOM.findDOMNode(this.refs.quantity).value != '' ||
-      ReactDOM.findDOMNode(this.refs.unit).value != '' ||
-      ReactDOM.findDOMNode(this.refs.note).value != '' ||
-      ReactDOM.findDOMNode(this.refs.radio1).checked != false ||
-      ReactDOM.findDOMNode(this.refs.radio2).checked != false ||
-      ReactDOM.findDOMNode(this.refs.radio3).checked != false) {
-      
-      if (confirm('เหมือนว่าคุณลืมกด "ปุ่มเพิ่ม" ก่อนที่จะกด "ปุ่มถัดไป"\nคุณต้องการกลับไปแก้ไขหรือไม่?')) {
-        return EventHelper.cancel(event);
-      } else {
-        ReactDOM.findDOMNode(this.refs.title).value = '';
-        ReactDOM.findDOMNode(this.refs.quantity).value = '';
-        ReactDOM.findDOMNode(this.refs.unit).value = '';
-        ReactDOM.findDOMNode(this.refs.note).value = '';
-        ReactDOM.findDOMNode(this.refs.radio1).checked = false;
-        ReactDOM.findDOMNode(this.refs.radio2).checked = false;
-        ReactDOM.findDOMNode(this.refs.radio3).checked = false;
-      }
-    }
-    
-    this.setState({
-      status: Status.DELIVERY
-    });
-    
-  }
-
   protected onButtonClick_88297439(event: Event) {
 
     // Handle the event of onButtonClick (Button 6) here:
@@ -368,14 +332,14 @@ class FlowLayout_b2020622 extends Base {
                   .internal-fsb-element.col-12.-fsb-self-7a279686(internal-fsb-guid="7a279686")
                     | ต้องการสืบราคา
                   .internal-fsb-element.col-12.-fsb-self-4839e353(internal-fsb-guid="4839e353")
-                    | กรุณาตั้งชื่อรายการและรายละเอียดโดยย่อ
+                    | กรุณาระบุชื่อโครงการและสถานที่ตั้งโครงการ
                   .internal-fsb-element.col-12(internal-fsb-guid="8b1a4a93")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="5a972a57")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ชื่อรายการ", required=true, disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.title"))
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ชื่อโครงการ", required=true, disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.title"))
                         .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="607d8ee2")
-                          textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", rows="3", placeholder="รายละเอียดโดยย่อ", disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.description"))
+                          textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", rows="3", placeholder="ระบุสถานที่ตั้งโครงการโดยละเอียด", disabled=this.state.disabled, required=true, defaultValue=this.getDataFromNotation("Quote.description"))
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="5d34dc3b")
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.uid"), internal-fsb-guid="5752cb4d")
                   input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="2acce16d")
@@ -495,9 +459,6 @@ class FlowLayout_b2020622 extends Base {
                   Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-2(style={'marginTop': '15px', 'marginRight': '10px'}, type="button", disabled=this.state.disabled, onSubmitting=this.onButtonSubmitting_1bb72b1a.bind(this), onClick=this.onButtonClick_1bb72b1a.bind(this), internal-fsb-guid="1bb72b1a")
                     .internal-fsb-element(internal-fsb-guid="1bb72b1a-text")
                       | ย้อนกลับ
-                  Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-0(style={'marginTop': '15px', 'marginLeft': '10px'}, type="button", disabled=this.state.disabled, onClick=this.onButtonClick_011ad9dc.bind(this), internal-fsb-guid="011ad9dc")
-                    .internal-fsb-element(internal-fsb-guid="011ad9dc-text")
-                      | ถัดไป: ระบุสินค้าเทียบเคียง
             .internal-fsb-element.-fsb-preset-180079a2.col-10.offset-1(style={'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.SUBSTITUTE);})()}, internal-fsb-guid="b1a8c59c")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
