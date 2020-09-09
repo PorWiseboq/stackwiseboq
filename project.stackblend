@@ -203,7 +203,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "7e709334",
+    "editingPageID": "65e04a88",
     "currentMode": "site",
     "editingComponentID": "84b618a7"
   },
@@ -7867,10 +7867,6 @@
         "",
         "    // Handle the event of onButtonClick (Button 5) here:",
         "    // ",
-        "    this.setState({",
-        "      status: Status.DELIVERY",
-        "    });",
-        "    ",
         "    if (ReactDOM.findDOMNode(this.refs.title).value != '' ||",
         "      ReactDOM.findDOMNode(this.refs.quantity).value != '' ||",
         "      ReactDOM.findDOMNode(this.refs.unit).value != '' ||",
@@ -7879,7 +7875,7 @@
         "      ReactDOM.findDOMNode(this.refs.radio2).checked != false ||",
         "      ReactDOM.findDOMNode(this.refs.radio3).checked != false) {",
         "      ",
-        "      if (confirm('เหมือนว่าคุณลืมกดปุ่มเพิ่มก่อนที่จะกดปุ่มถัดไป.. คุณต้องการกลับไปแก้ไขหรือไม่?')) {",
+        "      if (confirm('เหมือนว่าคุณลืมกด &quot;ปุ่มเพิ่ม&quot; ก่อนที่จะกด &quot;ปุ่มถัดไป&quot;\\nคุณต้องการกลับไปแก้ไขหรือไม่?')) {",
         "        return EventHelper.cancel(event);",
         "      } else {",
         "        ReactDOM.findDOMNode(this.refs.title).value = '';",
@@ -7891,6 +7887,10 @@
         "        ReactDOM.findDOMNode(this.refs.radio3).checked = false;",
         "      }",
         "    }",
+        "    ",
+        "    this.setState({",
+        "      status: Status.DELIVERY",
+        "    });",
         "    ",
         "    \" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
@@ -8796,11 +8796,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "31894d87",
+        "selectingElementGUID": "011ad9dc",
         "currentCursorWalkPath": [
-          "1ec20e1c",
+          "7600ca53",
           0,
-          1,
+          5,
           null
         ]
       },
@@ -23682,7 +23682,7 @@
     "Project.Common.Header": "7fda1bd94a8a20636fb311de5136406c81ee2be9",
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
-    "Project.Controls.FlowLayout_b2020622": "90ecd0d128711202b870c1f45b48b30c08d11932",
+    "Project.Controls.FlowLayout_b2020622": "256bbfe5a75694bc4d4c23bae20e5b72e9be742a",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
     "Project.Controls.Rectangle_cad06e8d": "e3ff84852f26f3af626ff08bf709a62abc7ace56",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
