@@ -509,7 +509,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
        		    } : {})); 
        		    let quote = SchemaHelper.getDataTableSchemaFromNotation('Quote', ProjectConfigurationHelper.getDataSchema());
        		    let quoteDataset = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
-           		    
+           	  
+           	  if (value == 2 || value == 3) {
+           	    quoteDataset['Quote'].rows = quoteDataset['Quote'].rows.filter(quote => quote.relations['Auction'] && quote.relations['Auction'].rows.length != 0 || false);
+           	  }
+           	  
        		    let rank = SchemaHelper.getDataTableSchemaFromNotation('Rank', ProjectConfigurationHelper.getDataSchema());
        		    let rankDataset = await DatabaseHelper.retrieve(null, rank, this.request.session, true);
        		    
