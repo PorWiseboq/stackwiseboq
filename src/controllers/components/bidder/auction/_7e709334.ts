@@ -99,6 +99,16 @@ class Controller extends Base {
       this.response.redirect('/authentication');
       throw new Error('Wrong Authentication');
     }
+    
+    for (const item of data) {
+        switch (item.validation.name) {
+            case 'quantity':
+                if (item.value && isNaN(parseFloat(item.value))) {
+                    throw new Error("กรุณาระบุปริมาณเป็นตัวเลข");
+                }
+                break;
+        }
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -685,11 +695,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('c22ec668', "relational", "Auction.Substitute", "quantity");
-		ValidationHelper.registerInput('c22ec668', "Quantity", false, undefined);
+		ValidationHelper.registerInput('c22ec668', "quantity", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'c22ec668' + ((i == -1) ? '' : '[' + i + ']'));
     
-      // Override data parsing and manipulation of Quantity here:
+      // Override data parsing and manipulation of quantity here:
       // 
       
       if (input != null) data.push(input);
