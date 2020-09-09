@@ -87,6 +87,11 @@ class Controller extends Base {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
+ 		
+ 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'admin') {
+      this.response.redirect('/authentication');
+      throw new Error('Wrong Authentication');
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {

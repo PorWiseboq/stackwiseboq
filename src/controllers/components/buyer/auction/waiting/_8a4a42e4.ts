@@ -88,6 +88,11 @@ class Controller extends Base {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
+ 		
+ 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'buyer') {
+      this.response.redirect('/authentication');
+      throw new Error('Wrong Authentication');
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -115,48 +120,42 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        if (!this.request.session || !this.request.session.uid) {
-          this.response.redirect('/authentication');
-        
-     	    resolve(null);
-        } else {
-          RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-  WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
-            try {
-              let schemata = ProjectConfigurationHelper.getDataSchema();
-              let inputs = RequestHelper.createInputs({
-                'Quote.uid': this.request.session.uid,
-                'Quote.User.id': null
-              });
-              let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session, true);
-              
-              if (results['Quote'].rows.length != 0) {
-                if (results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] == null) {
-                  let md5Code = results['Quote'].rows[0].relations['User'].rows[0].keys['id'].toString();
-                  md5Code = crypto.createHash('md5').update(md5Code).digest('hex').substring(0, 6).toUpperCase();
-                  
-                  inputs = RequestHelper.createInputs({
-                    'User.id': this.request.session.uid,
-                    'User.refID': md5Code
-                  });
-                  await DatabaseHelper.update(inputs, schemata.tables['User'], false, this.request.session);
-                  
-                  results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] = md5Code;
-                }
+        RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
+WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+          try {
+            let schemata = ProjectConfigurationHelper.getDataSchema();
+            let inputs = RequestHelper.createInputs({
+              'Quote.uid': this.request.session.uid,
+              'Quote.User.id': null
+            });
+            let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session, true);
+            
+            if (results['Quote'].rows.length != 0) {
+              if (results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] == null) {
+                let md5Code = results['Quote'].rows[0].relations['User'].rows[0].keys['id'].toString();
+                md5Code = crypto.createHash('md5').update(md5Code).digest('hex').substring(0, 6).toUpperCase();
                 
-                if (results['Quote'].rows[0].columns['status'] == 2) {
-                  this.response.redirect('/buyer/auction/results');
-                } else {
-                  resolve(results);
-                }
-              } else {
-                this.response.redirect('/buyer/auction');
+                inputs = RequestHelper.createInputs({
+                  'User.id': this.request.session.uid,
+                  'User.refID': md5Code
+                });
+                await DatabaseHelper.update(inputs, schemata.tables['User'], false, this.request.session);
+                
+                results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] = md5Code;
               }
-            } catch(error) {
-              reject(error);
+              
+              if (results['Quote'].rows[0].columns['status'] == 2) {
+                this.response.redirect('/buyer/auction/results');
+              } else {
+                resolve(results);
+              }
+            } else {
+              this.response.redirect('/buyer/auction');
             }
-          });
-        }
+          } catch(error) {
+            reject(error);
+          }
+        });
       } catch(error) {
         reject(error);
       }

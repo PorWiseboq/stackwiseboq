@@ -86,6 +86,11 @@ class Controller extends Base {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
+ 		
+ 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'bidder') {
+      this.response.redirect('/authentication');
+      throw new Error('Wrong Authentication');
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -113,18 +118,14 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        if (!this.request.session || !this.request.session.uid) {
-          this.response.redirect('/authentication');
-        } else {
-          let schemata = ProjectConfigurationHelper.getDataSchema();
-          let inputs = RequestHelper.createInputs({
-            'Store.oid': this.request.session.uid
-          });
-          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
-          
-          if (results['Store'].rows.length != 0) {
-            this.response.redirect('/bidder/auction');
-          }
+        let schemata = ProjectConfigurationHelper.getDataSchema();
+        let inputs = RequestHelper.createInputs({
+          'Store.oid': this.request.session.uid
+        });
+        let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+        
+        if (results['Store'].rows.length != 0) {
+          this.response.redirect('/bidder/auction');
         }
         
      	  resolve(null);
