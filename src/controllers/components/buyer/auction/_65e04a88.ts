@@ -299,7 +299,7 @@ class Controller extends Base {
  	    'Quote.uid': parseInt(this.request.session.uid),
  	    'Quote.filled': null 
  	  });
- 	  let dataset = await DatabaseHelper.retrieve(_data, null);
+ 	  let dataset = await DatabaseHelper.retrieve(_data, null, this.request.session);
  	  
  	  if (dataset['Quote'].rows.length != 0) {
    	  if (dataset['Quote'].rows[0].columns['status'] == 1 &&
