@@ -421,13 +421,12 @@ class Controller extends Base {
     RequestHelper.registerSubmit("65e04a88", "d910ad00", "delete", ["41bdc9b3"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1","b6c9ad89","a0b78888","cc34eced","e92d687b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "1bb72b1a", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("65e04a88", "011ad9dc", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "88297439", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "a7592071", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('5a972a57', "relational", "Quote", "title");
-		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "คุณต้องตั้งชื่อรายการ");
+		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "กรุณาระบุชื่อโครงการ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '5a972a57' + ((i == -1) ? '' : '[' + i + ']'));
     
@@ -437,7 +436,7 @@ class Controller extends Base {
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('607d8ee2', "relational", "Quote", "description");
-		ValidationHelper.registerInput('607d8ee2', "Textbox 5", false, undefined);
+		ValidationHelper.registerInput('607d8ee2', "Textbox 5", true, "กรุณาระบุสถานที่ตั้งโครงการ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '607d8ee2' + ((i == -1) ? '' : '[' + i + ']'));
     
