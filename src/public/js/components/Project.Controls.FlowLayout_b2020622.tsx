@@ -217,8 +217,8 @@ class FlowLayout_b2020622 extends Base {
     // Handle the event of onButtonSuccess (Button 1) here:
     // 
     ReactDOM.findDOMNode(this.refs.title).value = '';
-    ReactDOM.findDOMNode(this.refs.size).value = '';
     ReactDOM.findDOMNode(this.refs.quantity).value = '';
+    ReactDOM.findDOMNode(this.refs.unit).value = '';
     ReactDOM.findDOMNode(this.refs.note).value = '';
     ReactDOM.findDOMNode(this.refs.radio1).checked = false;
     ReactDOM.findDOMNode(this.refs.radio2).checked = false;
@@ -384,16 +384,16 @@ class FlowLayout_b2020622 extends Base {
                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                       .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="2ce10e8e")
                                         input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px'}, type="text", disabled=true, value=this.getDataFromNotation("Listing[" + i + "].title"), defaultValue=this.getDataFromNotation("Listing[" + i + "].title"))
-                                      .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '2px'}, internal-fsb-guid="b6088b15")
-                                        .container-fluid
-                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                            .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="0d2c5b71")
-                                              input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", disabled=true, value=this.getDataFromNotation("Listing[" + i + "].size"), defaultValue=this.getDataFromNotation("Listing[" + i + "].size"))
                                       .internal-fsb-element.col-6.offset-0(style={'paddingRight': '0px', 'paddingLeft': '2px'}, internal-fsb-guid="d06abc78")
                                         .container-fluid
                                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                             .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="1cabb5c5")
                                               input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", disabled=true, value=this.getDataFromNotation("Listing[" + i + "].quantity"), defaultValue=this.getDataFromNotation("Listing[" + i + "].quantity"))
+                                      .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '2px'}, internal-fsb-guid="b6088b15")
+                                        .container-fluid
+                                          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                            .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="0d2c5b71")
+                                              input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", disabled=true, value=this.getDataFromNotation("Listing[" + i + "].unit"), defaultValue=this.getDataFromNotation("Listing[" + i + "].unit"))
                                 .internal-fsb-element.col-2.offset-0(style={'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="58921b47")
                                   .container-fluid
                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -432,16 +432,16 @@ class FlowLayout_b2020622 extends Base {
                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                     .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="54e20435")
                                       input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px'}, ref="title", type="text", placeholder="วัสดุ", required=true, disabled=this.state.disabled)
-                                    .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '2px'}, internal-fsb-guid="1ec20e1c")
-                                      .container-fluid
-                                        .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                          .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="31894d87")
-                                            input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="size", type="text", placeholder="ขนาด", required=true, disabled=this.state.disabled)
                                     .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '2px', 'paddingRight': '0px'}, internal-fsb-guid="a36ad946")
                                       .container-fluid
                                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                           .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="b2321320")
                                             input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="quantity", type="text", placeholder="ปริมาณ", required=true, disabled=this.state.disabled)
+                                    .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '2px'}, internal-fsb-guid="1ec20e1c")
+                                      .container-fluid
+                                        .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                          .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="31894d87")
+                                            input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="unit", type="text", placeholder="หน่วย", required=true, disabled=this.state.disabled)
                               .internal-fsb-element.col-2.offset-0(style={'paddingLeft': '5px', 'paddingRight': '5px'}, internal-fsb-guid="82a1da21")
                                 .container-fluid
                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor

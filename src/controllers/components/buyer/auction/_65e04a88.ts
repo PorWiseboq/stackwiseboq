@@ -493,22 +493,22 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('0d2c5b71', "relational", "Listing", "size");
-		ValidationHelper.registerInput('0d2c5b71', "Textbox 2", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '0d2c5b71' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Textbox 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
 		RequestHelper.registerInput('1cabb5c5', "relational", "Listing", "quantity");
 		ValidationHelper.registerInput('1cabb5c5', "Textbox 3", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '1cabb5c5' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('0d2c5b71', "relational", "Listing", "unit");
+		ValidationHelper.registerInput('0d2c5b71', "Textbox 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '0d2c5b71' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);
@@ -573,22 +573,22 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('31894d87', "relational", "Listing", "size");
-		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '31894d87' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Textbox 2 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
 		RequestHelper.registerInput('b2321320', "relational", "Listing", "quantity");
 		ValidationHelper.registerInput('b2321320', "Textbox 3", true, "คุณต้องระบุจำนวน");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'b2321320' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('31894d87', "relational", "Listing", "unit");
+		ValidationHelper.registerInput('31894d87', "Textbox 2", true, "คุณต้องระบุขนาด");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '31894d87' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 2 here:
       // 
       
       if (input != null) data.push(input);

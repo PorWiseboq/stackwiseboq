@@ -46,8 +46,8 @@ interface IState extends IAutoBaseState {
   type: number;
   error: boolean;
   title: string;
-  size: string;
   quantity: string;
+  unit: string;
   price: string;
   group: string;
 }
@@ -59,8 +59,8 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   recentType: -1,
   type: -1,
   title: "",
-  size: "",
   quantity: "",
+  unit: "",
   price: ""
 });
 
@@ -109,8 +109,8 @@ class FlowLayout_c6ba5b53 extends Base {
     this.state.recentType = value;
     this.state.type = (error || value == null) ? -1 : value;
     this.state.title = this.getDataFromNotation('Substitute.title', false) || "";
-    this.state.size = this.getDataFromNotation('Substitute.size', false) || "";
     this.state.quantity = this.getDataFromNotation('Substitute.quantity', false) || "";
+    this.state.unit = this.getDataFromNotation('Substitute.unit', false) || "";
     this.state.price = this.getDataFromNotation('Substitute.price', false) || "";
     
     this.forceUpdate();
@@ -210,17 +210,6 @@ class FlowLayout_c6ba5b53 extends Base {
     
   }
 
-  protected onTextboxChange_d913e6a1(event: Event) {
-
-    // Handle the event of onTextboxChange (Size) here:
-    // 
-    const element = EventHelper.getCurrentElement(event);
-    
-    this.state.size = element.value;
-    this.forceUpdate();
-    
-  }
-
   protected onTextboxChange_c22ec668(event: Event) {
 
     // Handle the event of onTextboxChange (Quantity) here:
@@ -231,6 +220,17 @@ class FlowLayout_c6ba5b53 extends Base {
     this.forceUpdate();
     
     this.updatePrice();
+    
+  }
+
+  protected onTextboxChange_d913e6a1(event: Event) {
+
+    // Handle the event of onTextboxChange (Size) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.unit = element.value;
+    this.forceUpdate();
     
   }
   // <---Auto[Merging]
@@ -245,8 +245,8 @@ class FlowLayout_c6ba5b53 extends Base {
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-12.offset-0(style={'fontWeight': 'bold', 'fontSize': '14px', 'borderBottomWidth': '1px', 'borderBottomColor': 'rgba(77, 195, 250, 0.25)', 'borderBottomStyle': 'solid', 'paddingLeft': '0px', 'paddingRight': '0px', 'marginBottom': '5px', 'color': 'rgba(69, 69, 69, 1)'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("title"))}, internal-fsb-guid="a818c946")
-                  .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(69, 69, 69, 1)'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("size"))}, internal-fsb-guid="eccb7c51")
                   .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(69, 69, 69, 1)'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("quantity"))}, internal-fsb-guid="0e3365eb")
+                  .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(69, 69, 69, 1)'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("unit"))}, internal-fsb-guid="eccb7c51")
                   .internal-fsb-element.col-12(style={'color': 'rgba(128, 128, 128, 1)', 'fontSize': '12px', 'background': 'rgba(217, 217, 217, 0)', 'marginTop': '10px', 'paddingLeft': '0px', 'paddingRight': '0px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("note"))}, internal-fsb-guid="696ae6ee")
             .internal-fsb-element.col-2.offset-0(style={'background': 'rgba(252, 252, 252, 0.2)', 'borderRadius': '5px 5px 5px 5px', 'WebkitBorderRadius': '5px 5px 5px 5px', 'paddingTop': '5px', 'paddingBottom': '5px', 'borderTopStyle': 'solid', 'borderTopColor': 'rgba(255, 255, 255, 0.5)', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(255, 255, 255, 0.25)', 'borderRightStyle': 'solid', 'borderRightColor': 'rgba(255, 255, 255, 0.25)', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(255, 255, 255, 0.25)', 'borderTopWidth': '1px', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px', 'borderRightWidth': '1px'}, internal-fsb-guid="e5e63918")
               .container-fluid
@@ -294,16 +294,16 @@ class FlowLayout_c6ba5b53 extends Base {
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="9c338431")
                     input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_9c338431.bind(this), type="text", placeholder="เปลี่ยนวัสดุเป็น", value=this.state.title, data-com.agilebits.onepassword.initial-value=this.state.title, disabled=!this.props.enabled)
-                  .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '2px'}, internal-fsb-guid="06d40ba3")
-                    .container-fluid
-                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="d913e6a1")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.size, data-com.agilebits.onepassword.initial-value=this.state.size, disabled=!this.props.enabled)
                   .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '2px', 'paddingRight': '0px'}, internal-fsb-guid="a241ded8")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c22ec668")
                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="เปลี่ยนปริมาณเป็น", value=this.state.quantity, data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=!this.props.enabled)
+                  .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '2px'}, internal-fsb-guid="06d40ba3")
+                    .container-fluid
+                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                        .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="d913e6a1")
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="เปลี่ยนขนาดเป็น", value=this.state.unit, data-com.agilebits.onepassword.initial-value=this.state.size, disabled=!this.props.enabled)
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("lid"), internal-fsb-guid="ae7e2437")
     `
   }
