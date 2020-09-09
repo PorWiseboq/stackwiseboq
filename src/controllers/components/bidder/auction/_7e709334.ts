@@ -675,27 +675,27 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('1382e4c9', "relational", "Auction.Substitute", "price");
-		ValidationHelper.registerInput('1382e4c9', "Price", false, "");
+		ValidationHelper.registerInput('1382e4c9', "price", true, "กรุณาระบุราคาต่อหน่วยให้ครบ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '1382e4c9' + ((i == -1) ? '' : '[' + i + ']'));
     
-      // Override data parsing and manipulation of Price here:
+      // Override data parsing and manipulation of price here:
       // 
       
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('9c338431', "relational", "Auction.Substitute", "title");
-		ValidationHelper.registerInput('9c338431', "Name", false, undefined);
+		ValidationHelper.registerInput('9c338431', "name", true, "กรุณาระบุชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียดให้ครบ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '9c338431' + ((i == -1) ? '' : '[' + i + ']'));
     
-      // Override data parsing and manipulation of Name here:
+      // Override data parsing and manipulation of name here:
       // 
       
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('c22ec668', "relational", "Auction.Substitute", "quantity");
-		ValidationHelper.registerInput('c22ec668', "quantity", false, undefined);
+		ValidationHelper.registerInput('c22ec668', "quantity", true, "กรุณาระบุปริมาณให้ครบ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'c22ec668' + ((i == -1) ? '' : '[' + i + ']'));
     
@@ -705,11 +705,11 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('d913e6a1', "relational", "Auction.Substitute", "size");
-		ValidationHelper.registerInput('d913e6a1', "Unit", false, undefined);
+		ValidationHelper.registerInput('d913e6a1', "unit", true, "กรุณาระบุหน่วยให้ครบ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'd913e6a1' + ((i == -1) ? '' : '[' + i + ']'));
     
-      // Override data parsing and manipulation of Unit here:
+      // Override data parsing and manipulation of unit here:
       // 
       
       if (input != null) data.push(input);
