@@ -122,6 +122,9 @@ class Controller extends Base {
      		    case 'bidder':
               this.response.redirect('/authentication/role/bidder');
      		      return;
+     		    case 'admin':
+              this.response.redirect('/authentication/role/admin');
+     		      return;
      		    default:
      		      break;
      		  }

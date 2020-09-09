@@ -165,6 +165,11 @@ class Controller extends Base {
                 break;
         }
     }
+ 		
+ 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'buyer') {
+      this.response.redirect('/authentication');
+      throw new Error('Wrong Authentication');
+    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -200,60 +205,56 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
-     		if (this.request.session && this.request.session.uid) {
-     		  let schemata = ProjectConfigurationHelper.getDataSchema();
-          let inputs = RequestHelper.createInputs({
-            'User.id': this.request.session.uid
-          });
-          let results = await DatabaseHelper.retrieve(inputs, schemata.tables['User'], this.request.session);
-          
-          if (results['User'].rows.length == 0 || !results['User'].rows[0].columns['firstName']) {
-            this.response.redirect('/authentication/role/buyer');
-          } else {
-       		  data = RequestHelper.createInputs({
-       		    'Quote.uid': parseInt(this.request.session.uid),
-       		    'Quote.filled': null
-       		  });
-       		  let datasetA = await DatabaseHelper.retrieve(data, null, this.request.session);
+   		  let schemata = ProjectConfigurationHelper.getDataSchema();
+        let inputs = RequestHelper.createInputs({
+          'User.id': this.request.session.uid
+        });
+        let results = await DatabaseHelper.retrieve(inputs, schemata.tables['User'], this.request.session);
+        
+        if (results['User'].rows.length == 0 || !results['User'].rows[0].columns['firstName']) {
+          this.response.redirect('/authentication/role/buyer');
+        } else {
+     		  data = RequestHelper.createInputs({
+     		    'Quote.uid': parseInt(this.request.session.uid),
+     		    'Quote.filled': null
+     		  });
+     		  let datasetA = await DatabaseHelper.retrieve(data, null, this.request.session);
+     		  
+     		  if (datasetA['Quote'].rows.length != 0 && datasetA['Quote'].rows[0].columns['status'] == 2) {
+     		    this.response.redirect('/buyer/auction/waiting');
+     		  } else {
+       		  if (datasetA['Quote'].rows.length != 0) {
+    	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
+    	   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
+    	   		    
+    	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = this.convertDateToString(date);
+    	   		  } else {
+    	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
+    	   		  }
+    	 		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
+    	 		      datasetA['Quote'].rows[0].columns['hours'] = null;
+    	 		    }
+    	 		  }
        		  
-       		  if (datasetA['Quote'].rows.length != 0 && datasetA['Quote'].rows[0].columns['status'] == 2) {
-       		    this.response.redirect('/buyer/auction/waiting');
+       		  let datasetB;
+       		  if (DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)) {
+       		    data = RequestHelper.createInputs({
+         		    'Listing.qid': DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)
+         		  });
+         		  datasetB = await DatabaseHelper.retrieve(data, null, this.request.session);
        		  } else {
-         		  if (datasetA['Quote'].rows.length != 0) {
-      	   		  if (!isNaN(datasetA['Quote'].rows[0].columns['deliverAt'])) {
-      	   		    let date = new Date(datasetA['Quote'].rows[0].columns['deliverAt']);
-      	   		    
-      	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = this.convertDateToString(date);
-      	   		  } else {
-      	   		    datasetA['Quote'].rows[0].columns['deliverAt'] = null;
-      	   		  }
-      	 		    if (datasetA['Quote'].rows[0].columns['hours'] == '0') {
-      	 		      datasetA['Quote'].rows[0].columns['hours'] = null;
-      	 		    }
-      	 		  }
-         		  
-         		  let datasetB;
-         		  if (DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)) {
-         		    data = RequestHelper.createInputs({
-           		    'Listing.qid': DataManipulationHelper.getDataFromNotation('Quote.qid', datasetA)
-           		  });
-           		  datasetB = await DatabaseHelper.retrieve(data, null, this.request.session);
-         		  } else {
-         		    datasetB = {
-         		      Listing: {
-         		        source: SourceType.Relational,
-                  	group: 'Listing',
-                    rows: []
-         		      }
-         		    };
-         		  }
-         		  
-         		  resolve(Object.assign({}, datasetA, datasetB));
+       		    datasetB = {
+       		      Listing: {
+       		        source: SourceType.Relational,
+                	group: 'Listing',
+                  rows: []
+       		      }
+       		    };
        		  }
-          }
-     		} else {
-     		  this.response.redirect('/authentication');
-     		}
+       		  
+       		  resolve(Object.assign({}, datasetA, datasetB));
+     		  }
+        }
  		  } catch(error) {
  		    reject(error);
  		  }
