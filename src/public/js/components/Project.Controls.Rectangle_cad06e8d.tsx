@@ -419,7 +419,9 @@ class Rectangle_cad06e8d extends Base {
       this.state.discount = this.getDataFromNotation('Quote[#i].Auction.discount') || '';
       this.state.vatType = this.getDataFromNotation('Quote[#i].Auction.vatType') || 0;
       this.state.promotion = this.getDataFromNotation('Quote[#i].Auction.promotion') || '';
+      
       this.forceUpdate();
+      this.updatePrice();
     }).bind(this), 0);
   }
   

@@ -203,7 +203,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "65e04a88",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "84b618a7"
   },
@@ -5520,7 +5520,9 @@
         "      this.state.discount = this.getDataFromNotation('Quote[#i].Auction.discount') || '';",
         "      this.state.vatType = this.getDataFromNotation('Quote[#i].Auction.vatType') || 0;",
         "      this.state.promotion = this.getDataFromNotation('Quote[#i].Auction.promotion') || '';",
+        "      ",
         "      this.forceUpdate();",
+        "      this.updatePrice();",
         "    }).bind(this), 0);",
         "  }",
         "  ",
@@ -7413,7 +7415,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a30c3884",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
           "24731127",
           0,
@@ -8767,7 +8769,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "1bc39a2b",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
           "88c6a7ee",
           0,
@@ -23652,7 +23654,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "2b7822b347b56b89d1c1ce4d9361a71e9c915284",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "e8b6a7566b4e3be3bdf6a8e5c7be44b9210a8e3b",
+    "Project.Controls.Rectangle_cad06e8d": "dc82dc3e71112aa40d270c7282cfa2a7121ec240",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
