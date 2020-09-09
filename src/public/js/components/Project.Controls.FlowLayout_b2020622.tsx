@@ -254,6 +254,27 @@ class FlowLayout_b2020622 extends Base {
       status: Status.DELIVERY
     });
     
+    if (ReactDOM.findDOMNode(this.refs.title).value != '' ||
+      ReactDOM.findDOMNode(this.refs.quantity).value != '' ||
+      ReactDOM.findDOMNode(this.refs.unit).value != '' ||
+      ReactDOM.findDOMNode(this.refs.note).value != '' ||
+      ReactDOM.findDOMNode(this.refs.radio1).checked != false ||
+      ReactDOM.findDOMNode(this.refs.radio2).checked != false ||
+      ReactDOM.findDOMNode(this.refs.radio3).checked != false) {
+      
+      if (confirm('เหมือนว่าคุณลืมกดปุ่มเพิ่มก่อนที่จะกดปุ่มถัดไป คุณต้องการกลับไปแก้ไขหรือไม่?')) {
+        return EventHelper.cancel(event);
+      } else {
+        ReactDOM.findDOMNode(this.refs.title).value = '';
+        ReactDOM.findDOMNode(this.refs.quantity).value = '';
+        ReactDOM.findDOMNode(this.refs.unit).value = '';
+        ReactDOM.findDOMNode(this.refs.note).value = '';
+        ReactDOM.findDOMNode(this.refs.radio1).checked = false;
+        ReactDOM.findDOMNode(this.refs.radio2).checked = false;
+        ReactDOM.findDOMNode(this.refs.radio3).checked = false;
+      }
+    }
+    
   }
 
   protected onButtonClick_88297439(event: Event) {
@@ -370,7 +391,7 @@ class FlowLayout_b2020622 extends Base {
                   .internal-fsb-element.col-12.-fsb-preset-7a279686(style={'FsbInheritedPresets': '7a279686'}, internal-fsb-guid="1e4c0d68")
                     | รายการวัสดุก่อสร้าง
                   .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'marginBottom': '10px'}, internal-fsb-guid="65ca1989")
-                    | กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, ขนาด, ปริมาณ)
+                    | กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียด, ปริมาณ, หน่วย)
                   .internal-fsb-element.col-12.offset-0.-fsb-self-97d707b7(style={'minHeight': '22px', 'FsbReusableName': '', 'FsbReusableId': '97d707b7', 'marginTop': '5px'}, internal-fsb-guid="97d707b7")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -431,7 +452,7 @@ class FlowLayout_b2020622 extends Base {
                                 .container-fluid
                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                     .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="54e20435")
-                                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px'}, ref="title", type="text", placeholder="วัสดุ", required=true, disabled=this.state.disabled)
+                                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px'}, ref="title", type="text", placeholder="ชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียด", required=true, disabled=this.state.disabled)
                                     .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '2px', 'paddingRight': '0px'}, internal-fsb-guid="a36ad946")
                                       .container-fluid
                                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
