@@ -6133,7 +6133,7 @@
         "                                                                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"a818c946\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\" style=\"font-weight: bold; font-size: 14px; border-bottom-width: 1px; border-bottom-color: rgba(77, 195, 250, 0.25); border-bottom-style: solid; padding-left: 0px; padding-right: 0px; margin-bottom: 5px; color: rgba(69, 69, 69, 1)\">ชื่อวัสดุ</div>",
         "",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"0e3365eb\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"quantity\" style=\"padding-left: 0px; padding-right: 0px; color: rgba(69, 69, 69, 1)\">",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"0e3365eb\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"\" style=\"padding-left: 0px; padding-right: 0px; color: rgba(69, 69, 69, 1)\">",
         "                                                                                                            <div><span style=\"background-color: rgba(255, 255, 255, 0); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;\">#{this.getDataFromNotation(\"quantity\")}</span></div>",
         "                                                                                                        </div>",
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"eccb7c51\" internal-fsb-name=\"Unit\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"unit\" style=\"padding-left: 0px; padding-right: 0px; color: rgba(69, 69, 69, 1)\">หน่วย</div>",
@@ -6499,7 +6499,7 @@
         "                                                                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"07673d1a\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\" style=\"font-weight: bold; font-size: 14px; padding-left: 0px; padding-right: 0px; border-bottom-width: 1px; margin-bottom: 5px; border-bottom-style: solid; border-bottom-color: rgba(128, 128, 128, 0.25)\">ชื่อวัสดุ</div>",
         "",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"bd0d3bad\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"quantity\" style=\"padding-left: 0px; padding-right: 0px\">#{this.getDataFromNotation(\"Quote[#i].Listing[\" + i + \"].quantity\")}</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"bd0d3bad\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"\" style=\"padding-left: 0px; padding-right: 0px\">#{this.getDataFromNotation(\"Quote[#i].Listing[\" + i + \"].quantity\")}</div>",
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"19d0b023\" internal-fsb-name=\"Unit\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"unit\" style=\"padding-left: 0px; padding-right: 0px\">หน่วย</div>",
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"937cee3d\" internal-fsb-name=\"Note\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 0px; padding-right: 0px; margin-top: 10px; font-size: 12px; color: rgba(128, 128, 128, 1)\" internal-fsb-react-data=\"note\">หมายเหตุ</div>",
         "                                                                                                    </div>",
@@ -6529,7 +6529,7 @@
         "                                                                                                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                                                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8656cea5\" internal-fsb-name=\"Name\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Substitute.title\" style=\"font-weight: bold; font-size: 14px; padding-left: 0px; padding-right: 0px; border-bottom-width: 1px; margin-bottom: 5px; border-top-color: rgba(128, 128, 128, 1); border-bottom-style: solid; border-bottom-color: rgba(128, 128, 128, 0.25)\">ชื่อวัสดุใหม่</div>",
-        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"a9a3406a\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Substitute.quantity\" style=\"padding-left: 0px; padding-right: 0px\">#{this.getDataFromNotation(\"Quote[#i].Listing[\" + i + \"].Substitute.quantity\")}</div>",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"a9a3406a\" internal-fsb-name=\"Quantity\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"\" style=\"padding-left: 0px; padding-right: 0px\">#{this.getDataFromNotation(\"Quote[#i].Listing[\" + i + \"].Substitute.quantity\")}</div>",
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"ed22bc9a\" internal-fsb-name=\"Unit\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"Substitute.unit\" style=\"padding-left: 0px; padding-right: 0px\">หน่วยใหม่</div>",
         "",
         "                                                                                                    </div>",
@@ -7421,11 +7421,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "3e557242",
+        "selectingElementGUID": "0e3365eb",
         "currentCursorWalkPath": [
-          "24731127",
+          "0d51ec0d",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -7446,13 +7446,11 @@
           "Rank": {},
           "Listing": {
             "title": {},
-            "quantity": {},
             "unit": {},
             "note": {},
             "Substitute": {
               "type": {},
               "title": {},
-              "quantity": {},
               "unit": {}
             },
             "lid": {}
@@ -23665,11 +23663,11 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "8e7f44cfd102c826373f3ad03990c4a3eea631ac",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "91767dea536da181f526ffeb129f5e38dc4bcef6",
+    "Project.Controls.Rectangle_cad06e8d": "e3ff84852f26f3af626ff08bf709a62abc7ace56",
     "Project.Controls.FlowLayout_56ca37d0": "d1cd5f7976fc8fb65db52cd777291ac9f040e457",
     "Project.Controls.FlowLayout_cbb338d5": "05e9db3626ffabd71f125439ee70b2577d2dd4ad",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
-    "Project.Controls.FlowLayout_c6ba5b53": "94feba23f858966fbb0be242e0e6e6aab937a7fa",
+    "Project.Controls.FlowLayout_c6ba5b53": "6e086d3b2ed1555b4ae3e08ae497f50605a505d3",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "26f0545bb50d9e54f8ba0b16f88eee740104d960",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
