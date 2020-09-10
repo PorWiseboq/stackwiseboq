@@ -65,7 +65,7 @@ class FlowLayout_56ca37d0 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("68130617", "navigate", ["ab3a1c6e","340b9ddb","30d60c48","bd78c5c4","d0730a53","93258c7d","49cd4587","6b3ded89","5daed5dd","a1a014e1","5412d45d","6a438452","74ccd157","547e2875","6217437d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
