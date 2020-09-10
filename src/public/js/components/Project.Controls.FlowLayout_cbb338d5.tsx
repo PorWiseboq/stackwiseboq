@@ -111,79 +111,82 @@ class FlowLayout_cbb338d5 extends Base {
       div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-6 offset-3 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="cbb338d5")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+            .internal-fsb-element.col-12.-fsb-preset-8141382a(style={'FsbInheritedPresets': '8141382a'}, internal-fsb-guid="3ed1711b")
+              | กรุณากรอกข้อมูลของร้านค้า
+            .internal-fsb-element.internal-fsb-allow-cursor.-fsb-preset-41e62256.col-12(style={'FsbInheritedPresets': '41e62256'}, internal-fsb-guid="e9e7d664")
             .internal-fsb-element.col-12(internal-fsb-guid="91074151")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-4.offset-0(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'}, internal-fsb-guid="267cdd86")
+                  .internal-fsb-element.col-4.offset-0.-fsb-preset-4ce43ee9(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px', 'fontSize': '14px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="267cdd86")
                     | ชื่อร้านค้า
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'}, internal-fsb-guid="d66b23a4")
                     input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
             .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="d331c249")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-4.offset-0(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right'}, internal-fsb-guid="b29e039a")
+                  .internal-fsb-element.col-4.offset-0.-fsb-preset-4ce43ee9(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right', 'fontSize': '14px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="b29e039a")
                     | ชื่อ (เจ้าของร้านค้า)
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'}, internal-fsb-guid="e27d4c3b")
                     input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
             .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="75a9d0dc")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-4.offset-0(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'}, internal-fsb-guid="7d617e5d")
+                  .internal-fsb-element.col-4.offset-0.-fsb-preset-4ce43ee9(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px', 'fontSize': '14px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="7d617e5d")
                     | นามสกุล (เจ้าของร้านค้า)
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'}, internal-fsb-guid="3a931201")
                     input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
             .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="c7e794b0")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-4.offset-0(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'}, internal-fsb-guid="3a9447ea")
+                  .internal-fsb-element.col-4.offset-0.-fsb-preset-4ce43ee9(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px', 'fontSize': '14px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="3a9447ea")
                     | เบอร์โทรศัพท์ (เจ้าของร้านค้า)
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'}, internal-fsb-guid="8bcca5bc")
                     input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
             .internal-fsb-element.col-12.offset-0(style={'marginTop': '10px'}, internal-fsb-guid="3353b490")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  .internal-fsb-element.col-12(internal-fsb-guid="8a053c9a")
+                  .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="8a053c9a")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-2.offset-0(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right'}, internal-fsb-guid="bee7e7b3")
+                        .internal-fsb-element.col-2.offset-0.-fsb-preset-4ce43ee9(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right', 'fontSize': '14px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="bee7e7b3")
                           | ที่อยู่:
-                        .internal-fsb-element.col-2.offset-0(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'}, internal-fsb-guid="aca398eb")
+                        .internal-fsb-element.col-2.offset-0.-fsb-preset-4ce43ee9(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px', 'fontSize': '14px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="aca398eb")
                           | จังหวัด
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="37473e1c")
                           input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
-                  .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="4bb18449")
+                  .internal-fsb-element.col-12(style={'marginTop': '10px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="4bb18449")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-4(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'}, internal-fsb-guid="86ab6312")
+                        .internal-fsb-element.col-4.-fsb-preset-4ce43ee9(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px', 'fontSize': '14px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="86ab6312")
                           | อำเภอ / แขวง
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="9d2bb91e")
                           input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
-                  .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="9708548b")
+                  .internal-fsb-element.col-12(style={'marginTop': '10px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="9708548b")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-4(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'}, internal-fsb-guid="d43d7ee8")
+                        .internal-fsb-element.col-4.-fsb-preset-4ce43ee9(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="d43d7ee8")
                           | ตำบล / เขต
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="c085ee08")
                           input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
-                  .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="2bc69d3c")
+                  .internal-fsb-element.col-12(style={'marginTop': '10px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="2bc69d3c")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-2.offset-2(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px'}, internal-fsb-guid="005dc3d9")
+                        .internal-fsb-element.col-2.offset-2.-fsb-preset-4ce43ee9(style={'textAlign': 'right', 'paddingTop': '7px', 'paddingRight': '10px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="005dc3d9")
                           | บ้านเลขที่
                         .internal-fsb-element.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="eca33837")
                           input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
-                        .internal-fsb-element.col-1.offset-0(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right'}, internal-fsb-guid="9476b17d")
+                        .internal-fsb-element.col-1.offset-0.-fsb-preset-4ce43ee9(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="9476b17d")
                           | ซอย
                         .internal-fsb-element.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="3a91a437")
                           input.form-control(style={'display': 'block', 'width': '100%'}, type="text", disabled=this.state.disabled)
-                        .internal-fsb-element.col-1.offset-0(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right'}, internal-fsb-guid="7c1d19a9")
+                        .internal-fsb-element.col-1.offset-0.-fsb-preset-4ce43ee9(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="7c1d19a9")
                           | ถนน
                         .internal-fsb-element.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="e07e83cb")
                           input.form-control(style={'display': 'block', 'width': '100%'}, type="text", disabled=this.state.disabled)
-                  .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="a2495b85")
+                  .internal-fsb-element.col-12(style={'marginTop': '10px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="a2495b85")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-2.offset-2(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right'}, internal-fsb-guid="d1a3b49b")
+                        .internal-fsb-element.col-2.offset-2.-fsb-preset-4ce43ee9(style={'paddingTop': '7px', 'paddingRight': '10px', 'textAlign': 'right', 'FsbInheritedPresets': '4ce43ee9', 'fontSize': '13px'}, internal-fsb-guid="d1a3b49b")
                           | รหัสไปรษณีย์
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="903420db")
                           input.form-control(style={'display': 'block', 'width': '100%'}, type="text", required=true, disabled=this.state.disabled)
