@@ -273,11 +273,121 @@ class Controller extends Base {
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('30d60c48', "relational", "User", "contactNumber");
-		ValidationHelper.registerInput('30d60c48', "Textbox 7", true, "กรุณาระบุหมายเลขโทรศัพท์");
+		ValidationHelper.registerInput('30d60c48', "Textbox 7", true, "กรุณาระบุเบอร์โทรศัพท์ส่วนตัว");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '30d60c48' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 7 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('d0730a53', "relational", "User", "taxerName");
+		ValidationHelper.registerInput('d0730a53', "Textbox 1", true, "กรุณาระบุชื่อนิติบุคคล / บุคคลธรรมดา");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'd0730a53' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('49cd4587', "relational", "User", "taxerBranch");
+		ValidationHelper.registerInput('49cd4587', "Textbox 2", true, "กรุณาระบุสาขา");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '49cd4587' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('93258c7d', "relational", "User", "taxerID");
+		ValidationHelper.registerInput('93258c7d', "Textbox 3", true, "กรุณาระบุหมายเลขประจำตัวผู้เสียภาษี");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '93258c7d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('6b3ded89', "relational", "User", "province");
+		ValidationHelper.registerInput('6b3ded89', "Textbox 5", true, "กรุณาระบุจังหวัด");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '6b3ded89' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 5 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('5daed5dd', "relational", "User", "district");
+		ValidationHelper.registerInput('5daed5dd', "Textbox 6", true, "กรุณาระบุอำเภอ / แขวง");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '5daed5dd' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 6 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('a1a014e1', "relational", "User", "subDistrict");
+		ValidationHelper.registerInput('a1a014e1', "Textbox 7", true, "กรุณาระบุตำบล / เขต");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'a1a014e1' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 7 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('5412d45d', "relational", "User", "address");
+		ValidationHelper.registerInput('5412d45d', "Textbox 8", true, "กรุณาระบุบ้านเลขที่ / ตึก / อาคาร");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '5412d45d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 8 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('6a438452', "relational", "User", "lane");
+		ValidationHelper.registerInput('6a438452', "Textbox 10", false, "");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '6a438452' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 10 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('74ccd157', "relational", "User", "road");
+		ValidationHelper.registerInput('74ccd157', "Textbox 11", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '74ccd157' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 11 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('547e2875', "relational", "User", "postalCode");
+		ValidationHelper.registerInput('547e2875', "Textbox 9", true, "กรุณาระบุรหัสไปรษณีย์");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '547e2875' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 9 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('6217437d', "relational", "User", "taxerContactNumber");
+		ValidationHelper.registerInput('6217437d', "Textbox 4", true, "กรุณาระบุเบอร์โทรศัพท์สำหรับติดต่อ");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '6217437d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 4 here:
       // 
       
       if (input != null) data.push(input);
