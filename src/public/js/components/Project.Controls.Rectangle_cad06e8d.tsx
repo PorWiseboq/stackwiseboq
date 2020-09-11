@@ -61,6 +61,7 @@ interface IState extends IAutoBaseState {
   discount: string;
   vatType: number;
   promotion: string;
+  showHours: string;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -78,7 +79,8 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   deliverCost: '',
   discount: '',
   vatType: 0,
-  promotion: ''
+  promotion: '',
+  showHours: ''
 });
 
 // Auto[ClassBegin]--->
@@ -428,6 +430,7 @@ class Rectangle_cad06e8d extends Base {
       this.state.discount = this.getDataFromNotation('Quote[#i].Auction.discount') || '';
       this.state.vatType = this.getDataFromNotation('Quote[#i].Auction.vatType') || 0;
       this.state.promotion = this.getDataFromNotation('Quote[#i].Auction.promotion') || '';
+      this.state.showHours = this.getDataFromNotation('Quote[#i].Auction.showHours') || '';
       
       this.forceUpdate();
       this.updatePrice();
@@ -669,6 +672,17 @@ class Rectangle_cad06e8d extends Base {
     this.forceUpdate();
     
     this.updatePrice();
+    
+  }
+
+  protected onTextboxChange_7c044793(event: Event) {
+
+    // Handle the event of onTextboxChange (showHours) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.showHours = element.value;
+    this.forceUpdate();
     
   }
 
@@ -999,7 +1013,7 @@ class Rectangle_cad06e8d extends Base {
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
                                         .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="7c044793")
-                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", required=true, placeholder="ยืนราคาไว้หลังหมดเวลาประมูล")
+                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, onChange=this.onTextboxChange_7c044793.bind(this), type="text", required=true, placeholder="ยืนราคาไว้หลังหมดเวลาประมูล", disabled=!this.getFormEnabledState(), value=this.state.showHours)
                                         .internal-fsb-element.col-2.offset-0(style={'marginTop': '5px'}, internal-fsb-guid="c70a78d6")
                                           | ชั่วโมง
                                         input.internal-fsb-element.col-12(type="hidden", value="", internal-fsb-guid="d30aa93b")
