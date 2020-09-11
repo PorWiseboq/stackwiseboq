@@ -145,7 +145,7 @@ class Controller extends Base {
  		return new Promise(async (resolve, reject) => {
  		  try {
         RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
           try {
             let schemata = ProjectConfigurationHelper.getDataSchema();
             let inputs = RequestHelper.createInputs({
@@ -516,7 +516,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     return new Promise(async (resolve, reject) => {
     	try {
     	  RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
           try {
             let options = RequestHelper.getOptions(this.pageId, this.request);
             
