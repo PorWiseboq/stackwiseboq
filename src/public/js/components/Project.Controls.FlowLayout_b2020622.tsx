@@ -376,7 +376,7 @@ class FlowLayout_b2020622 extends Base {
                         .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="5a972a57")
                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ชื่อโครงการ", required=true, disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.title"))
                         .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="607d8ee2")
-                          textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", rows="3", placeholder="ระบุสถานที่ตั้งโครงการโดยละเอียด", disabled=this.state.disabled, required=true, defaultValue=this.getDataFromNotation("Quote.description"))
+                          textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", rows="3", placeholder="สถานที่ตั้งโครงการโดยละเอียด", disabled=this.state.disabled, required=true, defaultValue=this.getDataFromNotation("Quote.description"))
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="5d34dc3b")
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.uid"), internal-fsb-guid="5752cb4d")
                   input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="2acce16d")
