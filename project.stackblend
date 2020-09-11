@@ -14539,7 +14539,7 @@
         "  }",
         "  ",
         "  private getRemainingTime(): string {",
-        "    if (this.props.cancel) return 'หมดเวลา';",
+        "    if (this.props.cancel) return 'ยกเลิก';",
         "    ",
         "    const createdAt = this.props.begin;",
         "    const auctionHours = this.props.auctionhours + this.props.showinghours;",
@@ -25054,7 +25054,7 @@
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
-    "Project.Controls.FlowLayout_2d5ecc43": "446f4aad706bcfac1f11d7063c068a686c7eafe9"
+    "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "675041c51de2436fce19801606e4849e5b8649b8",

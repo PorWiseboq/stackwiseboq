@@ -84,7 +84,7 @@ class FlowLayout_2d5ecc43 extends Base {
   }
   
   private getRemainingTime(): string {
-    if (this.props.cancel) return 'หมดเวลา';
+    if (this.props.cancel) return 'ยกเลิก';
     
     const createdAt = this.props.begin;
     const auctionHours = this.props.auctionhours + this.props.showinghours;
