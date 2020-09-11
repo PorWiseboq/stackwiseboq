@@ -6234,7 +6234,7 @@
         "    // Handle the event of onTextboxKeyUp (Quantity) here:",
         "    // ",
         "    ",
-        "    \" internal-fsb-data-validation-message=\"กรุณาระบุปริมาณให้ครบ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; font-size: 12px\" class=\"form-control form-control-sm \" placeholder=\"ระบุปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"quantity\" value=\"{([0,1,2].indexOf(this.state.type) != -1) ? this.state.quantity : '0'}\" data-com.agilebits.onepassword.initial-value=\"{this.state.quantity}\" disabled=\"{!this.props.enabled}\" required=\"true\"></div>",
+        "    \" internal-fsb-data-validation-message=\"กรุณาระบุปริมาณให้ครบ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; font-size: 12px\" class=\"form-control form-control-sm \" placeholder=\"ระบุปริมาณ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"quantity\" value=\"{([1,2].indexOf(this.state.type) != -1) ? this.state.quantity : '0'}\" data-com.agilebits.onepassword.initial-value=\"{this.state.quantity}\" disabled=\"{!this.props.enabled}\" required=\"true\"></div>",
         "                                                                                                                </div>",
         "                                                                                                            </div>",
         "                                                                                                        </div>",
@@ -6250,7 +6250,7 @@
         "    this.state.unit = element.value;",
         "    this.forceUpdate();",
         "    ",
-        "    \" internal-fsb-data-validation-message=\"กรุณาระบุหน่วยให้ครบ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-bottom: 5px; font-size: 12px\" class=\"form-control form-control-sm \" placeholder=\"ระบุหน่วย\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"size\" value=\"{([0,1,2].indexOf(this.state.type) != -1) ? this.state.unit : 'n/a'}\" data-com.agilebits.onepassword.initial-value=\"{this.state.size}\" disabled=\"{!this.props.enabled}\" required=\"true\"></div>",
+        "    \" internal-fsb-data-validation-message=\"กรุณาระบุหน่วยให้ครบ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-bottom: 5px; font-size: 12px\" class=\"form-control form-control-sm \" placeholder=\"ระบุหน่วย\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"size\" value=\"{([1,2].indexOf(this.state.type) != -1) ? this.state.unit : 'n/a'}\" data-com.agilebits.onepassword.initial-value=\"{this.state.size}\" disabled=\"{!this.props.enabled}\" required=\"true\"></div>",
         "                                                                                                                </div>",
         "                                                                                                            </div>",
         "                                                                                                        </div>",
@@ -7393,11 +7393,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "d913e6a1",
         "currentCursorWalkPath": [
-          "57b28be1",
+          "06d40ba3",
           0,
-          0,
+          1,
           null
         ]
       },
@@ -25054,7 +25054,7 @@
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
-    "Project.Controls.FlowLayout_c6ba5b53": "5fb496fcfef837797c4c133ad427ea818df077f4",
+    "Project.Controls.FlowLayout_c6ba5b53": "1660effa59620902572b090adda3edf2eb83fb5b",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
     "Project.Controls.FlowLayout_a23ed480": "35b4f3d9e9e9f0bb19a86853b2841494f11fa1b8",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",

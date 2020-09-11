@@ -301,12 +301,12 @@ class FlowLayout_c6ba5b53 extends Base {
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c22ec668")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="ระบุปริมาณ", value=([0,1,2].indexOf(this.state.type) != -1) ? this.state.quantity : '0', data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=!this.props.enabled, required=true)
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'fontSize': '12px'}, ref="quantity", onChange=this.onTextboxChange_c22ec668.bind(this), type="text", placeholder="ระบุปริมาณ", value=([1,2].indexOf(this.state.type) != -1) ? this.state.quantity : '0', data-com.agilebits.onepassword.initial-value=this.state.quantity, disabled=!this.props.enabled, required=true)
                   .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '0px', 'paddingRight': '2px'}, internal-fsb-guid="06d40ba3")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="d913e6a1")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="ระบุหน่วย", value=([0,1,2].indexOf(this.state.type) != -1) ? this.state.unit : 'n/a', data-com.agilebits.onepassword.initial-value=this.state.size, disabled=!this.props.enabled, required=true)
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_d913e6a1.bind(this), type="text", placeholder="ระบุหน่วย", value=([1,2].indexOf(this.state.type) != -1) ? this.state.unit : 'n/a', data-com.agilebits.onepassword.initial-value=this.state.size, disabled=!this.props.enabled, required=true)
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("lid"), internal-fsb-guid="ae7e2437")
     `
   }
