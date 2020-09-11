@@ -5216,6 +5216,8 @@
         "    ",
         "    if (!auction || auction.length == 0) return 'ใหม่';",
         "    else {",
+        "      if (auction[0].columns['cancelled']) return 'ร้านค้ายกเลิก';",
+        "      ",
         "      let specific = true;",
         "      ",
         "      for (const item of auction[0].relations['Substitute'].rows) {",
@@ -5231,6 +5233,7 @@
         "  ",
         "  private getTransferringStatus(i: number): string {",
         "    if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';",
+        "    if (this.getDataFromNotation('Quote[' + i + '].Auction.cancelled')) return 'ร้านค้ายกเลิก';",
         "    ",
         "    switch (this.getDataFromNotation('Quote[' + i + '].Auction.Payment.Transfer.status')) {",
         "      case 1:",
@@ -7400,11 +7403,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a5dc13ac",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "57b28be1",
+          "24731127",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -25057,7 +25060,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "948504c99ad071824e53236058096ad842f8adb9",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "af0456beaf92ed907ab50c63617a3bcc217ccae9",
+    "Project.Controls.Rectangle_cad06e8d": "f46b3b84c808f7752e31771f5193345bcb1f8ff3",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",

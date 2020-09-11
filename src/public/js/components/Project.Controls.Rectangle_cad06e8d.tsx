@@ -171,6 +171,8 @@ class Rectangle_cad06e8d extends Base {
     
     if (!auction || auction.length == 0) return 'ใหม่';
     else {
+      if (auction[0].columns['cancelled']) return 'ร้านค้ายกเลิก';
+      
       let specific = true;
       
       for (const item of auction[0].relations['Substitute'].rows) {
@@ -186,6 +188,7 @@ class Rectangle_cad06e8d extends Base {
   
   private getTransferringStatus(i: number): string {
     if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';
+    if (this.getDataFromNotation('Quote[' + i + '].Auction.cancelled')) return 'ร้านค้ายกเลิก';
     
     switch (this.getDataFromNotation('Quote[' + i + '].Auction.Payment.Transfer.status')) {
       case 1:
