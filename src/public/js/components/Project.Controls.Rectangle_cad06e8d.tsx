@@ -165,6 +165,8 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getTag(i: number): string {
+    if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';
+    
     const substitute = this.getDataFromNotation('Quote[' + i + '].Listing.substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
     
