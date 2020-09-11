@@ -319,8 +319,6 @@ class FlowLayout_a23ed480 extends Base {
 
     // Handle the event of onButtonSubmitting (Button 1) here:
     // 
-    this.setState({submitting: true});
-    
     const totalAmountInWord = ReactDOM.findDOMNode(this.refs.totalAmountInWord);
     const checkboxes = $('[data-pricing]:checked').toArray();
     let total = 0;
@@ -337,6 +335,8 @@ class FlowLayout_a23ed480 extends Base {
     }
     
     totalAmountInWord.innerHTML = convertFullMoney(total);
+    
+    this.setState({submitting: true});
     
   }
 
