@@ -250,9 +250,6 @@ class FlowLayout_b2020622 extends Base {
 
     // Handle the event of onButtonClick (Button 5) here:
     // 
-    this.setState({
-      status: Status.DELIVERY
-    });
     
     if (ReactDOM.findDOMNode(this.refs.title).value != '' ||
       ReactDOM.findDOMNode(this.refs.quantity).value != '' ||
@@ -274,6 +271,10 @@ class FlowLayout_b2020622 extends Base {
         ReactDOM.findDOMNode(this.refs.radio3).checked = false;
       }
     }
+    
+    this.setState({
+      status: Status.DELIVERY
+    });
     
   }
 
