@@ -20,12 +20,13 @@ import {ProjectConfigurationHelper} from '../../../../helpers/ProjectConfigurati
 import {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'
 
 setInterval(() => {
-  RelationalDatabaseClient.query(`SELECT Auction.aid FROM Auction
+  RelationalDatabaseClient.query(`SELECT Auction.sid, Auction.qid FROM Auction
 INNER JOIN Quote ON Quote.qid = Auction.qid
 WHERE DATE_ADD(Quote.createdAt, interval (IF(Quote.hoursChecked = 0, 24, Quote.hours) + IF(Auction.showHours IS NULL, 24, Auction.showHours)) hour) < now() AND Auction.cancelled = 0`, [], async (error, results, fields) => {
     let hash = {};
     for (let i=0; i<results.length; i++) {
-      hash['Auction.aid[' + i + ']'] = results[i]['aid'];
+      hash['Auction.sid[' + i + ']'] = results[i]['sid'];
+      hash['Auction.qid[' + i + ']'] = results[i]['qid'];
       hash['Auction.cancelled[' + i + ']'] = true;
     }
     
