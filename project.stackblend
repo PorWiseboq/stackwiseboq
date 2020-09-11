@@ -14523,6 +14523,11 @@
         "      }",
         "    }",
         "    ",
+        "    if (total == 0) {",
+        "      alert('กรุณาเลือกร้านค้าอย่างน้อยหนึ่งรายการ');",
+        "      return EventHelper.cancel(event);",
+        "    }",
+        "    ",
         "    totalAmountInWord.innerHTML = convertFullMoney(total);",
         "    ",
         "    \" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
@@ -15685,7 +15690,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d40e3b62",
+        "selectingElementGUID": "bdcbb907",
         "currentCursorWalkPath": [
           "a23ed480",
           0,
@@ -24916,7 +24921,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "5fb496fcfef837797c4c133ad427ea818df077f4",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "bed19d0e0b2287192f3ac001487bd6e22ae1c814",
+    "Project.Controls.FlowLayout_a23ed480": "3b2063003e9c4419039697fdf6cddf8a88b3753e",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",

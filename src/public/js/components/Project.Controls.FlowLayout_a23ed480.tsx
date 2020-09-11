@@ -331,6 +331,11 @@ class FlowLayout_a23ed480 extends Base {
       }
     }
     
+    if (total == 0) {
+      alert('กรุณาเลือกร้านค้าอย่างน้อยหนึ่งรายการ');
+      return EventHelper.cancel(event);
+    }
+    
     totalAmountInWord.innerHTML = convertFullMoney(total);
     
   }
