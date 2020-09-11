@@ -316,6 +316,16 @@ class FlowLayout_a23ed480 extends Base {
   }
   
   // Auto[Merging]--->
+  protected onButtonSubmitting_bb84ee28(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 3) here:
+    // 
+    if (!confirm('คุณมั่นใจหรือว่าคุณจะยกเลิกงานประมูลนี้?')) {
+      return EventHelper.cancel(event);
+    }
+    
+  }
+
   protected onButtonSubmitting_bdcbb907(event: Event) {
 
     // Handle the event of onButtonSubmitting (Button 1) here:
@@ -509,7 +519,7 @@ class FlowLayout_a23ed480 extends Base {
                                       input(style={'display': 'block'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'), defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
             input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="51776455")
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].qid"), internal-fsb-guid="4935a92c")
-            Button.internal-fsb-element.internal-fsb-allow-cursor.offset-3.col-3.btn.btn-danger.btn-sm(style={'marginTop': '15px', 'marginRight': '10px'}, onClick=((event) => { window.internalFsbSubmit('bb84ee28', 'Quote', event, ((results) => { this.manipulate('bb84ee28', 'Quote', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="bb84ee28")
+            Button.internal-fsb-element.internal-fsb-allow-cursor.offset-3.col-3.btn.btn-danger.btn-sm(style={'marginTop': '15px', 'marginRight': '10px'}, onClick=((event) => { window.internalFsbSubmit('bb84ee28', 'Quote', event, ((results) => { this.manipulate('bb84ee28', 'Quote', results); }).bind(this)); }).bind(this), type="button", onSubmitting=this.onButtonSubmitting_bb84ee28.bind(this), internal-fsb-guid="bb84ee28")
               .internal-fsb-element(internal-fsb-guid="bb84ee28-text")
                 | ยกเลิกงานประมูล
             Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-3(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('bdcbb907', 'Auction', event, ((results) => { this.manipulate('bdcbb907', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSubmitting=this.onButtonSubmitting_bdcbb907.bind(this), onSuccess=this.onButtonSuccess_bdcbb907.bind(this), onSubmitted=this.onButtonSubmitted_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
