@@ -161,8 +161,8 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
               this.request.session.save(async () => {
       				  let quoteData = RequestHelper.createInputs({
          		      'Quote.status': 1,
-         		      'Quote.filled': null,
-     		          'Quote.cancelled': null,
+         		      'Quote.filled': false,
+     		          'Quote.cancelled': false,
          		      'Quote.Auction.qid': null,
          		      'Quote.Auction.sid': this.request.session.sid,
          		      'Quote.Auction.Substitute.aid': null,
@@ -516,8 +516,8 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
               const value = data.filter(item => item.name == 'status')[0].value;
     				  let quoteData = RequestHelper.createInputs(Object.assign({}, {
        		      'Quote.status': value,
-           		  'Quote.filled': null,
-     		        'Quote.cancelled': null,
+           		  'Quote.filled': false,
+     		        'Quote.cancelled': false,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
        		      'Quote.Auction.Substitute.aid': null,

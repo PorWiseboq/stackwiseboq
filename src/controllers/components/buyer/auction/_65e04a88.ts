@@ -221,8 +221,8 @@ class Controller extends Base {
         } else {
      		  data = RequestHelper.createInputs({
      		    'Quote.uid': parseInt(this.request.session.uid),
-     		    'Quote.filled': null,
-     		    'Quote.cancelled': null
+     		    'Quote.filled': false,
+     		    'Quote.cancelled': false
      		  });
      		  let datasetA = await DatabaseHelper.retrieve(data, null, this.request.session);
      		  
@@ -303,7 +303,8 @@ class Controller extends Base {
   private async checkForBOQCRUDRestriction(data: Input[]) {
     let _data = RequestHelper.createInputs({
  	    'Quote.uid': parseInt(this.request.session.uid),
- 	    'Quote.filled': null 
+ 	    'Quote.filled': false,
+ 	    'Quote.cancelled': false 
  	  });
  	  let dataset = await DatabaseHelper.retrieve(_data, null, this.request.session);
  	  
