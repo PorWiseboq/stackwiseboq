@@ -189,6 +189,7 @@ class FlowLayout_a23ed480 extends Base {
   }
   
   register() {
+    DataManipulationHelper.register("bb84ee28", "navigate", ["4935a92c","51776455"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("bdcbb907", "update", ["c18d1ab2","6e068626","939d2d75"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("d480ae4d", "update", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","775b58b9","939d2d75","4b5256da","137c966d"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("0a5b0022", "retrieve", ["dc7901c9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
@@ -203,7 +204,8 @@ class FlowLayout_a23ed480 extends Base {
     }
     
     window.setInterval((() => {
-      ReactDOM.findDOMNode(this.refs.refresh).click();
+      const element = ReactDOM.findDOMNode(this.refs.refresh);
+      element && element.click();
     }).bind(this), 15 * 1000);
   }
   
@@ -314,21 +316,48 @@ class FlowLayout_a23ed480 extends Base {
   }
   
   // Auto[Merging]--->
+  protected onButtonSubmitting_bb84ee28(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 3) here:
+    // 
+    if (!confirm('คุณมั่นใจหรือว่าคุณจะยกเลิกงานประมูลนี้?')) {
+      return EventHelper.cancel(event);
+    }
+    
+    this.setState({submitting: true});
+    
+  }
+
+  protected onButtonSubmitted_bb84ee28(event: Event) {
+
+    // Handle the event of onButtonSubmitted (Button 3) here:
+    // 
+    this.setState({submitting: false});
+    
+  }
+
   protected onButtonSubmitting_bdcbb907(event: Event) {
 
     // Handle the event of onButtonSubmitting (Button 1) here:
     // 
-    this.setState({submitting: true});
-    
     const totalAmountInWord = ReactDOM.findDOMNode(this.refs.totalAmountInWord);
     const checkboxes = $('[data-pricing]:checked').toArray();
     let total = 0;
     
     for (const checkbox of checkboxes) {
-      total += parseFloat(checkbox.getAttribute('data-pricing').toString());
+      if (!$(checkbox).is(':disabled')) {
+        total += parseFloat(checkbox.getAttribute('data-pricing').toString());
+      }
+    }
+    
+    if (total == 0) {
+      alert('กรุณาเลือกร้านค้าอย่างน้อยหนึ่งรายการ');
+      return EventHelper.cancel(event);
     }
     
     totalAmountInWord.innerHTML = convertFullMoney(total);
+    
+    this.setState({submitting: true});
     
   }
 
@@ -423,8 +452,9 @@ class FlowLayout_a23ed480 extends Base {
                             .container-fluid
                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                 .internal-fsb-element.offset-0.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].title"))}, internal-fsb-guid="9d162b51")
-                                .internal-fsb-element.offset-0.col-6.-fsb-self-13b0cd97(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].size"))}, internal-fsb-guid="13b0cd97")
-                                .internal-fsb-element.offset-0.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].quantity"))}, internal-fsb-guid="57421653")
+                                .internal-fsb-element.offset-0.col-6.-fsb-self-13b0cd97(internal-fsb-guid="13b0cd97")
+                                  | #{this.getDataFromNotation("Quote[0].Listing[" + i + "].quantity")}
+                                .internal-fsb-element.offset-0.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].unit"))}, internal-fsb-guid="57421653")
                         .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="94e22e23")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -474,7 +504,8 @@ class FlowLayout_a23ed480 extends Base {
                                               .container-fluid
                                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                   .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center'}, data-toggle="tooltip", data-placement="top", title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].title"), dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].title"))}, internal-fsb-guid="1eae4292")
-                                                  .internal-fsb-element.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '2px', 'paddingRight': '5px', 'textAlign': 'center'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].quantity"), data-toggle="tooltip", data-placement="top", dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].quantity"))}, internal-fsb-guid="8dca02ed")
+                                                  .internal-fsb-element.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '2px', 'paddingRight': '5px', 'textAlign': 'center'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].quantity"), data-toggle="tooltip", data-placement="top", internal-fsb-guid="8dca02ed")
+                                                    | #{this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].quantity")}
                                                   .internal-fsb-element.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '2px', 'textAlign': 'center'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].unit"), data-toggle="tooltip", data-placement="top", dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].unit"))}, internal-fsb-guid="b5026407")
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'position': 'absolute', 'left': '0px', 'right': '0px', 'bottom': '0px', display: (()=>{return ([0,1,2].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="92eba465")
                                               .container-fluid
@@ -490,13 +521,18 @@ class FlowLayout_a23ed480 extends Base {
                                       | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].discount') || 0).toFixed(2)} บาท
                                     .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '2px', 'paddingRight': '2px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'marginBottom': '20px'}, title=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี', data-toggle="tooltip", data-placement="top", internal-fsb-guid="67979486")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี'}
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'color': (()=>{return (this.isMerchandiseInError(i, -1)) ? '#ff0000' : '';})() || 'rgba(22, 98, 250, 1)', 'paddingLeft': '2px', 'paddingRight': '2px', 'marginBottom': '20px'}, internal-fsb-guid="d40e3b62")
-                                      | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'color': (()=>{return (this.isMerchandiseInError(i, -1) || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? '#ff0000' : '';})() || 'rgba(22, 98, 250, 1)', 'paddingLeft': '2px', 'paddingRight': '2px', 'marginBottom': '20px'}, internal-fsb-guid="d40e3b62")
+                                      | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? 'ยกเลิกไปแล้ว' : this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price') + ' บาท'}
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].sid"), internal-fsb-guid="c18d1ab2")
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].qid"), internal-fsb-guid="939d2d75")
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
-                                      input(style={'display': 'block'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting, defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
-            Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('bdcbb907', 'Auction', event, ((results) => { this.manipulate('bdcbb907', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSubmitting=this.onButtonSubmitting_bdcbb907.bind(this), onSuccess=this.onButtonSuccess_bdcbb907.bind(this), onSubmitted=this.onButtonSubmitted_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
+                                      input(style={'display': 'block'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'), defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
+            input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="51776455")
+            input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].qid"), internal-fsb-guid="4935a92c")
+            Button.internal-fsb-element.internal-fsb-allow-cursor.offset-3.col-3.btn.btn-danger.btn-sm(style={'marginTop': '15px', 'marginRight': '10px'}, onClick=((event) => { window.internalFsbSubmit('bb84ee28', 'Quote', event, ((results) => { this.manipulate('bb84ee28', 'Quote', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSubmitting=this.onButtonSubmitting_bb84ee28.bind(this), onSubmitted=this.onButtonSubmitted_bb84ee28.bind(this), internal-fsb-guid="bb84ee28")
+              .internal-fsb-element(internal-fsb-guid="bb84ee28-text")
+                | ยกเลิกงานประมูล
+            Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-3(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('bdcbb907', 'Auction', event, ((results) => { this.manipulate('bdcbb907', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSubmitting=this.onButtonSubmitting_bdcbb907.bind(this), onSuccess=this.onButtonSuccess_bdcbb907.bind(this), onSubmitted=this.onButtonSubmitted_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
               .internal-fsb-element(internal-fsb-guid="bdcbb907-text")
                 | ถัดไป: เลือกวิธีการจ่ายเงิน
             .internal-fsb-element.col-10.offset-1.-fsb-preset-180079a2(style={'FsbInheritedPresets': '180079a2', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, internal-fsb-guid="41288a78")

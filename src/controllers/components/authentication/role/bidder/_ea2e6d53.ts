@@ -124,8 +124,8 @@ class Controller extends Base {
         });
         let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
         
-        if (results['Store'].rows.length != 0) {
-          this.response.redirect('/bidder/auction');
+        if (results['Store'].rows.length != 0 && results['Store'].rows[0].columns['name']) {
+          this.response.redirect('/bidder/agreement');
         }
         
      	  resolve(null);

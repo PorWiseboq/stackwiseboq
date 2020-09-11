@@ -165,6 +165,8 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getTag(i: number): string {
+    if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';
+    
     const substitute = this.getDataFromNotation('Quote[' + i + '].Listing.substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
     
@@ -184,6 +186,8 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getTransferringStatus(i: number): string {
+    if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';
+    
     switch (this.getDataFromNotation('Quote[' + i + '].Auction.Payment.Transfer.status')) {
       case 1:
         return 'ลูกค้าแจ้งโอน';
@@ -349,6 +353,10 @@ class Rectangle_cad06e8d extends Base {
   //
   private getFormEnabledState() {
     return !this.state.submitting && (this.getShortRemainingTime(this.state.selectedIndex) != '00:00:00');
+  }
+  
+  private getIsEmpty() {
+    return (this.getDataFromNotation('Quote').length == 0);
   }
   
   private getQuoteTypeDisplay(quoteType: QuoteType, active: boolean) {
@@ -897,7 +905,9 @@ class Rectangle_cad06e8d extends Base {
                                               | #{this.getNoticeCount(i)}
                         .internal-fsb-element.internal-fsb-allow-cursor(style={'position': 'relative', 'flexGrow': '1', 'WebkitFlexGrow': '1'}, internal-fsb-guid="154b7137")
                           .internal-fsb-element.internal-fsb-allow-cursor(style={'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'left': '0px', 'top': '0px', 'right': '0px', 'bottom': '0px', 'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="ed65b978")
-                            .internal-fsb-element(style={display: (()=>{return this.getQuoteTypeDisplay(QuoteType.AUCTIONING, true);})()}, internal-fsb-guid="ae9a328e")
+                            .internal-fsb-element.col-12(style={'color': 'rgba(212, 212, 212, 1)', 'fontSize': '13px', 'textAlign': 'center', 'paddingTop': '30px', 'paddingBottom': '30px', 'display': (()=>{return (this.getIsEmpty()) ? 'block' : 'none';})() || 'none'}, internal-fsb-guid="0a287153")
+                              | ไม่มีรายการ
+                            .internal-fsb-element(style={display: (()=>{return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.AUCTIONING, true);})()}, internal-fsb-guid="ae9a328e")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-12(internal-fsb-guid="64a6ac8c")
@@ -992,7 +1002,7 @@ class Rectangle_cad06e8d extends Base {
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=!this.getFormEnabledState(), onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
-                            .internal-fsb-element(style={display: (()=>{return this.getQuoteTypeDisplay(QuoteType.OFFERING_OR_PAID, true);})()}, internal-fsb-guid="51201e78")
+                            .internal-fsb-element(style={display: (()=>{return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.OFFERING_OR_PAID, true);})()}, internal-fsb-guid="51201e78")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-12(internal-fsb-guid="7b15e8a1")

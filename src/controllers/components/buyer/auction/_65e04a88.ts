@@ -210,7 +210,7 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
-   		  let schemata = ProjectConfigurationHelper.getDataSchema();
+ 		    let schemata = ProjectConfigurationHelper.getDataSchema();
         let inputs = RequestHelper.createInputs({
           'User.id': this.request.session.uid
         });
@@ -221,7 +221,8 @@ class Controller extends Base {
         } else {
      		  data = RequestHelper.createInputs({
      		    'Quote.uid': parseInt(this.request.session.uid),
-     		    'Quote.filled': null
+     		    'Quote.filled': false,
+     		    'Quote.cancelled': false
      		  });
      		  let datasetA = await DatabaseHelper.retrieve(data, null, this.request.session);
      		  
@@ -302,7 +303,8 @@ class Controller extends Base {
   private async checkForBOQCRUDRestriction(data: Input[]) {
     let _data = RequestHelper.createInputs({
  	    'Quote.uid': parseInt(this.request.session.uid),
- 	    'Quote.filled': null 
+ 	    'Quote.filled': false,
+ 	    'Quote.cancelled': false 
  	  });
  	  let dataset = await DatabaseHelper.retrieve(_data, null, this.request.session);
  	  

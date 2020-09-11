@@ -145,6 +145,15 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
             });
             let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
             
+            if (results['Store'].rows.length != 0 && !results['Store'].rows[0].columns['agreedTermsOn']) {
+              this.response.redirect('/bidder/agreement');
+            }
+            
+            inputs = RequestHelper.createInputs({
+              'Store.oid': this.request.session.uid
+            });
+            results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+            
             if (results['Store'].rows.length == 0) {
               this.response.redirect('/authentication/role/bidder');
             } else {
@@ -152,7 +161,8 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
               this.request.session.save(async () => {
       				  let quoteData = RequestHelper.createInputs({
          		      'Quote.status': 1,
-         		      'Quote.filled': null,
+         		      'Quote.filled': false,
+     		          'Quote.cancelled': false,
          		      'Quote.Auction.qid': null,
          		      'Quote.Auction.sid': this.request.session.sid,
          		      'Quote.Auction.Substitute.aid': null,
@@ -506,7 +516,8 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
               const value = data.filter(item => item.name == 'status')[0].value;
     				  let quoteData = RequestHelper.createInputs(Object.assign({}, {
        		      'Quote.status': value,
-           		  'Quote.filled': null,
+           		  'Quote.filled': false,
+     		        'Quote.cancelled': false,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
        		      'Quote.Auction.Substitute.aid': null,

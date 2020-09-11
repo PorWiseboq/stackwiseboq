@@ -3,20 +3,20 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../../../../helpers/ValidationHelper.js';
-import {RequestHelper} from '../../../../helpers/RequestHelper.js';
-import {RenderHelper} from '../../../../helpers/RenderHelper.js';
-import {DataTableSchema} from '../../../../helpers/SchemaHelper.js';
-import {Base} from '../../../Base.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../../../helpers/ValidationHelper.js';
+import {RequestHelper} from '../../../helpers/RequestHelper.js';
+import {RenderHelper} from '../../../helpers/RenderHelper.js';
+import {DataTableSchema} from '../../../helpers/SchemaHelper.js';
+import {Base} from '../../Base.js';
 
 // <---Auto[Import]
 
 // Import additional modules here:
-// 
-import {ProjectConfigurationHelper} from "../../../../helpers/ProjectConfigurationHelper.js";
-import {RelationalDatabaseClient} from "../../../../helpers/ConnectionHelper.js";
-import crypto from 'crypto';
+//
+import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
+import {RelationalDatabaseClient} from '../../../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -81,18 +81,12 @@ class Controller extends Base {
 	  }
   }
   // <---Auto[ClassBegin]
-  
   // Declare class variables and functions here:
   //
   protected validate(data: Input[]): void {
   	// The message of thrown error will be the validation message.
   	//
  		ValidationHelper.validate(data);
- 		
- 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'buyer') {
-      this.response.redirect('/authentication');
-      throw new Error('Wrong Authentication');
-    }
   }
   
   protected async accessories(data: Input[]): Promise<any> {
@@ -120,44 +114,17 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
-          try {
-            let schemata = ProjectConfigurationHelper.getDataSchema();
-            let inputs = RequestHelper.createInputs({
-              'Quote.uid': this.request.session.uid,
-              'Quote.User.id': null,
-     		      'Quote.filled': false,
-     		      'Quote.cancelled': false
-            });
-            let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session, true);
-            
-            if (results['Quote'].rows.length != 0) {
-              if (results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] == null) {
-                let md5Code = results['Quote'].rows[0].relations['User'].rows[0].keys['id'].toString();
-                md5Code = crypto.createHash('md5').update(md5Code).digest('hex').substring(0, 6).toUpperCase();
-                
-                inputs = RequestHelper.createInputs({
-                  'User.id': this.request.session.uid,
-                  'User.refID': md5Code
-                });
-                await DatabaseHelper.update(inputs, schemata.tables['User'], false, this.request.session);
-                
-                results['Quote'].rows[0].relations['User'].rows[0].columns['refID'] = md5Code;
-              }
-              
-              if (results['Quote'].rows[0].columns['status'] == 2) {
-                this.response.redirect('/buyer/auction/results');
-              } else {
-                resolve(results);
-              }
-            } else {
-              this.response.redirect('/buyer/auction');
-            }
-          } catch(error) {
-            reject(error);
-          }
+        let schemata = ProjectConfigurationHelper.getDataSchema();
+        let inputs = RequestHelper.createInputs({
+          'Store.oid': this.request.session.uid
         });
+        let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+        
+        if (results['Store'].rows.length != 0 && results['Store'].rows[0].columns['agreedTermsOn']) {
+          this.response.redirect('/bidder/auction');
+        }
+        
+     	  resolve(null);
       } catch(error) {
         reject(error);
       }
@@ -199,78 +166,69 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
   
   protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow insert action of any button on the page. */
-      /* try {
+      try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
   protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow update action of any button on the page. */
-      /* try {
+    	try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
         resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow update action of any button on the page. */
-      /* try {
+    	try {
         resolve(await DatabaseHelper.upsert(data, schema, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
   protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow delete action of any button on the page. */
-      /* try {
+    	try {
         resolve(await DatabaseHelper.delete(data, schema, this.request.session));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
   protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow retrieve action of any button on the page. */
-      /* try {
-        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session));
+    	try {
+      	let options = RequestHelper.getOptions(this.pageId, this.request);
+        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow navigate action of any button on the page. */
-      /* try {
-        resolve('/');
+    	try {
+    	  await DatabaseHelper.upsert(data, schema, this.request.session);
+    	  
+      	resolve('/bidder/auction');
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
-  
+ 	
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
@@ -280,6 +238,31 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+    RequestHelper.registerSubmit("e269aa1d", "a84b67bd", "navigate", ["4586c89d","b4698194"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+		RequestHelper.registerInput('4586c89d', "relational", "Store", "oid");
+		ValidationHelper.registerInput('4586c89d', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '4586c89d' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['uid'];
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('b4698194', "relational", "Store", "agreedTermsOn");
+		ValidationHelper.registerInput('b4698194', "Hidden 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'b4698194' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 2 here:
+      // 
+      if (input) {
+        input.value = new Date();
+      }
+      
+      if (input != null) data.push(input);
+    }
 
 	  // <---Auto[Merging]
 	  

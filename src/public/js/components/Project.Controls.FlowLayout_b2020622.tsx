@@ -393,7 +393,7 @@ class FlowLayout_b2020622 extends Base {
                     | รายการวัสดุก่อสร้าง
                   .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'marginBottom': '10px'}, internal-fsb-guid="65ca1989")
                     | กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียด, ปริมาณ, หน่วย)
-                  .internal-fsb-element.col-12.offset-0.-fsb-self-97d707b7(style={'minHeight': '22px', 'FsbReusableName': '', 'FsbReusableId': '97d707b7', 'marginTop': '5px'}, internal-fsb-guid="97d707b7")
+                  .internal-fsb-element.col-12.offset-0.-fsb-self-97d707b7(style={'minHeight': '22px', 'FsbReusableName': '', 'FsbReusableId': '97d707b7', 'marginTop': '5px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="97d707b7")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         each data, i in this.getDataFromNotation("Listing", true)
