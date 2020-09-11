@@ -117,10 +117,10 @@ class FlowLayout_8542de09 extends Base {
                   .internal-fsb-element.col-12.-fsb-preset-8141382a(style={'FsbInheritedPresets': '8141382a'}, internal-fsb-guid="71062a1a")
                     | ข้อตกลงระหว่าง WiseBOQ กับเจ้าของสินค้า
                   .internal-fsb-element.internal-fsb-allow-cursor.col-6.offset-3.-fsb-preset-41e62256(style={'FsbInheritedPresets': '41e62256'}, internal-fsb-guid="4e785829")
-                  .internal-fsb-element.col-12(internal-fsb-guid="278b0b1a")
+                  .internal-fsb-element.col-12(style={'null': 'undefined'}, internal-fsb-guid="278b0b1a")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                        .internal-fsb-element.col-12.offset-0(internal-fsb-guid="8b9a0241")
+                        .internal-fsb-element.col-10.offset-1(style={'paddingTop': '30px', 'paddingBottom': '30px'}, internal-fsb-guid="8b9a0241")
                           | บันทึกข้อตกลงเบื้องต้น นี้ ทำขึ้น ระหว่าง บริษัท ไวซ์บีโอคิว จำกัด นิติบุคคลไทยซึ่งจัดตั้งขึ้นตามกฎหมายแห่งราชอาณาจักรไทย ทะเบียนนิติบุคคลเลขที่ …....................... สำนักงานแห่งใหญ่ตั้งอยู่ ณ …...................................รหัสไปรษณีย์ ซึ่งต่อไปในสัญญานี้เรียกว่า “WiseBOQ” ฝ่ายหนึ่ง กับ
                           div
                             br

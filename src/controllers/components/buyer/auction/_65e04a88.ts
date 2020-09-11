@@ -210,11 +210,20 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
  		return new Promise(async (resolve, reject) => {
  		  try {
-   		  let schemata = ProjectConfigurationHelper.getDataSchema();
+ 		    let schemata = ProjectConfigurationHelper.getDataSchema();
         let inputs = RequestHelper.createInputs({
+          'Store.oid': this.request.session.uid
+        });
+        let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+        
+        if (results['Store'].rows.length != 0 && !results['Store'].rows[0].columns['agreedTermsOn']) {
+          this.response.redirect('/bidder/agreement');
+        }
+        
+        inputs = RequestHelper.createInputs({
           'User.id': this.request.session.uid
         });
-        let results = await DatabaseHelper.retrieve(inputs, schemata.tables['User'], this.request.session);
+        results = await DatabaseHelper.retrieve(inputs, schemata.tables['User'], this.request.session);
         
         if (results['User'].rows.length == 0 || !results['User'].rows[0].columns['firstName']) {
           this.response.redirect('/authentication/role/buyer');
