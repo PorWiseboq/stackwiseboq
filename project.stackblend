@@ -217,7 +217,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "473d370d",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "84b618a7"
   },
@@ -6571,10 +6571,16 @@
         "",
         "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"57b28be1\" internal-fsb-name=\"FlowLayout 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0 || this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == null) ? 'block' : 'none';]\">",
         "                                                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm \" internal-fsb-guid=\"d3e31c36\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\" internal-fsb-data-controls=\" d0422ee6 32b391ac 55c86c21\" internal-fsb-data-wizard-type=\"update\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';]\">",
+        "                                                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor col-4 offset-4 btn btn-danger btn-sm \" internal-fsb-guid=\"d3e31c36\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\" internal-fsb-data-controls=\" d0422ee6 32b391ac 55c86c21\" internal-fsb-data-wizard-type=\"update\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';]\" onfsbsubmitting=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
+        "",
+        "    // Handle the event of onButtonSubmitting (Button 1) here:",
+        "    // ",
+        "    if (!confirm('คุณแน่ใจหรือไม่ว่าคุณต้องการที่จะยกเลิกทันที?')) {",
+        "      return EventHelper.cancel(event);",
+        "    }",
+        "    ",
+        "    \">",
         "                                                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"d3e31c36-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ยกเลิก</div>",
-        "                                                                                </button><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-4\" internal-fsb-guid=\"4d4e42bd\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; margin-bottom: 10px\" internal-fsb-data-controls=\" 55c86c21 2a58dbd2 d0422ee6\" internal-fsb-data-wizard-type=\"update\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'block' : 'none';]\">",
-        "                                                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"4d4e42bd-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">นำกลับมา</div>",
         "                                                                                </button></div>",
         "                                                                        </div>",
         "                                                                    </div>",
@@ -7392,9 +7398,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "d3e31c36",
         "currentCursorWalkPath": [
-          "24731127",
+          "57b28be1",
           0,
           1,
           null
@@ -25027,7 +25033,7 @@
     "8857ca68": "566622387898785485cdf6521266e6433682a27e",
     "b140e86b": "e7606bf67068fc29a3b5cd40978893f7913eb5c0",
     "b6eb1b83": "a6eae035bb5b47223036096f1ea234b4a5c12341",
-    "7e709334": "283f9f6bbff6b2ebacf4fdb210d15698ab858608",
+    "7e709334": "091c20af4a991494e0fcd81ba70d56dfc7024e54",
     "65e04a88": "a5328793fe4fa4171bd8536b005160532e29e8b7",
     "9d37c390": "287509bae25d0cfeae763629e23dabc55ec09322",
     "6ce794ec": "f0a134512eca9c10d2ba1f358371bf76e54c06e8",
@@ -25049,7 +25055,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "948504c99ad071824e53236058096ad842f8adb9",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "a1e05db4e5cfa71cbd4bdd751376dac4f876c2aa",
+    "Project.Controls.Rectangle_cad06e8d": "dd8186fb20680c24ccf36f4770ff33fc15ea400b",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",

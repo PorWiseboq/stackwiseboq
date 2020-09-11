@@ -102,7 +102,6 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b","7c044793"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("d3e31c36", "update", ["d0422ee6","32b391ac","55c86c21"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
-    DataManipulationHelper.register("4d4e42bd", "update", ["55c86c21","2a58dbd2","d0422ee6"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
@@ -704,6 +703,16 @@ class Rectangle_cad06e8d extends Base {
     
   }
 
+  protected onButtonSubmitting_d3e31c36(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 1) here:
+    // 
+    if (!confirm('คุณแน่ใจหรือไม่ว่าคุณต้องการที่จะยกเลิกทันที?')) {
+      return EventHelper.cancel(event);
+    }
+    
+  }
+
   protected onButtonClick_2b2a0681(event: Event) {
 
     // Handle the event of onButtonClick (Button 1) here:
@@ -1148,12 +1157,9 @@ class Rectangle_cad06e8d extends Base {
                                   .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0 || this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == null) ? 'block' : 'none';})()}, internal-fsb-guid="57b28be1")
                                     .container-fluid
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('d3e31c36', 'Auction', event, ((results) => { this.manipulate('d3e31c36', 'Auction', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="d3e31c36")
+                                        Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('d3e31c36', 'Auction', event, ((results) => { this.manipulate('d3e31c36', 'Auction', results); }).bind(this)); }).bind(this), type="button", onSubmitting=this.onButtonSubmitting_d3e31c36.bind(this), internal-fsb-guid="d3e31c36")
                                           .internal-fsb-element(internal-fsb-guid="d3e31c36-text")
                                             | ยกเลิก
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('4d4e42bd', 'Auction', event, ((results) => { this.manipulate('4d4e42bd', 'Auction', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="4d4e42bd")
-                                          .internal-fsb-element(internal-fsb-guid="4d4e42bd-text")
-                                            | นำกลับมา
                                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.qid"), internal-fsb-guid="d0422ee6")
                                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.sid"), internal-fsb-guid="55c86c21")
                                   input.internal-fsb-element.col-12(type="hidden", value="true", internal-fsb-guid="32b391ac")
