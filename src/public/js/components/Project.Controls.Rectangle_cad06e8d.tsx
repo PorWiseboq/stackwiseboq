@@ -96,6 +96,7 @@ class Rectangle_cad06e8d extends Base {
   }
   
   register() {
+    DataManipulationHelper.register("108bb2b9", "navigate", ["4b47ece5"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
     DataManipulationHelper.register("c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
     DataManipulationHelper.register("e9c9b721", "retrieve", ["d1920261"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: true, retrieveInto: null});
@@ -779,9 +780,10 @@ class Rectangle_cad06e8d extends Base {
             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor(style={'display': 'block'})
               .internal-fsb-element.offset-0(style={'fontSize': '24px', 'marginTop': '10px', 'marginLeft': '10px', 'marginBottom': '10px', 'float': 'left'}, internal-fsb-guid="c6200677")
                 | WiseBOQ
-              Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary(style={'paddingLeft': '15px', 'paddingRight': '15px', 'float': 'right', 'fontSize': '14px', 'marginTop': '10px', 'marginRight': '10px'}, type="button", onSubmitting=this.onButtonSubmitting_108bb2b9.bind(this), onFailed=this.onButtonFailed_108bb2b9.bind(this), internal-fsb-guid="108bb2b9")
+              Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary(style={'paddingLeft': '15px', 'paddingRight': '15px', 'float': 'right', 'fontSize': '14px', 'marginTop': '10px', 'marginRight': '10px'}, onClick=((event) => { window.internalFsbSubmit('108bb2b9', 'User', event, ((results) => { this.manipulate('108bb2b9', 'User', results); }).bind(this)); }).bind(this), type="button", onSubmitting=this.onButtonSubmitting_108bb2b9.bind(this), onFailed=this.onButtonFailed_108bb2b9.bind(this), internal-fsb-guid="108bb2b9")
                 .internal-fsb-element(internal-fsb-guid="108bb2b9-text")
                   | ออกจากระบบ
+              input.internal-fsb-element.col-12(type="hidden", internal-fsb-guid="4b47ece5")
         .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'flexGrow': '1', 'WebkitFlexGrow': '1', 'position': 'relative'}, internal-fsb-guid="a30c3884")
           .internal-fsb-element.internal-fsb-allow-cursor(style={'height': '100%', 'width': '100%', 'position': 'absolute', 'top': '0px', 'left': '0px', 'right': '0px', 'bottom': '0px'}, internal-fsb-guid="9b826999")
             .internal-fsb-element.internal-fsb-allow-cursor.-fsb-self-e2254eb7(style={'height': '100%', 'width': '100%', 'position': 'relative', 'display': 'flex', 'flexDirection': 'row', 'WebkitFlexDirection': 'row', 'MsFlexDirection': 'row', 'FsbReusableName': '', 'FsbReusableId': 'e2254eb7', 'FsbInheritedPresets': ''}, internal-fsb-guid="e2254eb7")
