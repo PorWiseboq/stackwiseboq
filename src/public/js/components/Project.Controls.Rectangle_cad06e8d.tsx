@@ -470,6 +470,22 @@ class Rectangle_cad06e8d extends Base {
   }
   
   // Auto[Merging]--->
+  protected onButtonSubmitting_108bb2b9(event: Event) {
+
+    // Handle the event of onButtonSubmitting (Button 1) here:
+    // 
+    this.setState({submitting: true});
+    
+  }
+
+  protected onButtonFailed_108bb2b9(event: Event) {
+
+    // Handle the event of onButtonFailed (Button 1) here:
+    // 
+    this.setState({submitting: false});
+    
+  }
+
   protected onButtonSubmitting_4a579143(event: Event) {
 
     // Handle the event of onButtonSubmitting (Button 1) here:
@@ -763,7 +779,7 @@ class Rectangle_cad06e8d extends Base {
             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor(style={'display': 'block'})
               .internal-fsb-element.offset-0(style={'fontSize': '24px', 'marginTop': '10px', 'marginLeft': '10px', 'marginBottom': '10px', 'float': 'left'}, internal-fsb-guid="c6200677")
                 | WiseBOQ
-              Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary(style={'paddingLeft': '15px', 'paddingRight': '15px', 'float': 'right', 'fontSize': '14px', 'marginTop': '10px', 'marginRight': '10px'}, type="button", internal-fsb-guid="108bb2b9")
+              Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary(style={'paddingLeft': '15px', 'paddingRight': '15px', 'float': 'right', 'fontSize': '14px', 'marginTop': '10px', 'marginRight': '10px'}, type="button", onSubmitting=this.onButtonSubmitting_108bb2b9.bind(this), onFailed=this.onButtonFailed_108bb2b9.bind(this), internal-fsb-guid="108bb2b9")
                 .internal-fsb-element(internal-fsb-guid="108bb2b9-text")
                   | ออกจากระบบ
         .internal-fsb-element.internal-fsb-allow-cursor(style={'background': 'rgba(255, 255, 255, 0)', 'flexGrow': '1', 'WebkitFlexGrow': '1', 'position': 'relative'}, internal-fsb-guid="a30c3884")
