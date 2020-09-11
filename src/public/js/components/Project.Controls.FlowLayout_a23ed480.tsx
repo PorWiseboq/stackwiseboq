@@ -473,6 +473,8 @@ class FlowLayout_a23ed480 extends Base {
                                   br
                               .internal-fsb-element.col-12(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="5eed917a")
                                 | เลือกซื้อ
+                              .internal-fsb-element.col-12(style={'marginTop': '5px'}, internal-fsb-guid="726e70cd")
+                                | หมดเวลาภายใน
                   .internal-fsb-element.internal-fsb-allow-cursor.col-6.col-sm-7.col-md-8.col-lg-9(style={'overflowX': 'auto', 'MsOverflowX': 'auto', 'overflowY': 'hidden', 'MsOverflowY': 'hidden', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', 'borderTopColor': 'rgba(0, 53, 117, 1)', 'borderRightColor': 'rgba(0, 53, 117, 1)', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderBottomStyle': 'solid', 'borderBottomWidth': '1px', 'borderRightStyle': 'solid', 'borderTopStyle': 'solid', 'borderRightWidth': '1px', 'borderTopWidth': '1px'}, internal-fsb-guid="56392ad7")
                     .internal-fsb-element(style={'display': 'block', 'whiteSpace': 'nowrap'}, internal-fsb-guid="ebeaa554")
                       each data, i in this.getDataFromNotation("Quote[0].Auction", true)
@@ -527,6 +529,8 @@ class FlowLayout_a23ed480 extends Base {
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].qid"), internal-fsb-guid="939d2d75")
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
                                       input(style={'display': 'block'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'), defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
+                                    - const Project_Controls_FlowLayout_2d5ecc43_ = Project.Controls.FlowLayout_2d5ecc43;
+                                    _Project_Controls_FlowLayout_2d5ecc43_(begin=this.getDataFromNotation('Quote[0].createdAt'), showinghours=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].showingHours') || 24, auctionhours=this.getDataFromNotation('Quote[0].hoursChecked') ? this.getDataFromNotation('Quote[0].hours') : 24)
             input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="51776455")
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].qid"), internal-fsb-guid="4935a92c")
             Button.internal-fsb-element.internal-fsb-allow-cursor.offset-3.col-3.btn.btn-danger.btn-sm(style={'marginTop': '15px', 'marginRight': '10px'}, onClick=((event) => { window.internalFsbSubmit('bb84ee28', 'Quote', event, ((results) => { this.manipulate('bb84ee28', 'Quote', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSubmitting=this.onButtonSubmitting_bb84ee28.bind(this), onSubmitted=this.onButtonSubmitted_bb84ee28.bind(this), internal-fsb-guid="bb84ee28")
@@ -615,6 +619,9 @@ class FlowLayout_a23ed480 extends Base {
                   Button.internal-fsb-element.internal-fsb-allow-cursor(style={'display': 'none'}, ref="refresh", onClick=((event) => { window.internalFsbSubmit('0a5b0022', 'Quote', event, ((results) => { this.manipulate('0a5b0022', 'Quote', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="0a5b0022")
                     .internal-fsb-element(internal-fsb-guid="0a5b0022-text")
                       | Button
+            .internal-fsb-element.col-12(internal-fsb-guid="96279622")
+              .container-fluid
+                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
     `
   }
 }
