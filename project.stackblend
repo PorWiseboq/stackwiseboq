@@ -14401,7 +14401,7 @@
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element offset-0 col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"9d162b51\" internal-fsb-name=\"TextElement 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; -fsb-inherited-presets: 13b0cd97\" internal-fsb-react-data=\"title\">ABC</div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element offset-0 col-6 -fsb-self-13b0cd97\" internal-fsb-guid=\"13b0cd97\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"size\" internal-fsb-reusable-preset-name=\"ellipsis_\">ABC</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element offset-0 col-6 -fsb-self-13b0cd97\" internal-fsb-guid=\"13b0cd97\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"\" internal-fsb-reusable-preset-name=\"ellipsis_\">#{this.getDataFromNotation(\"Quote[0].Listing[\" + i + \"].quantity\")}</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element offset-0 col-6 -fsb-preset-13b0cd97\" internal-fsb-guid=\"57421653\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 13b0cd97\" internal-fsb-react-data=\"quantity\">ABC</div>",
         "                                                        </div>",
         "                                                    </div>",
@@ -15683,7 +15683,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a23ed480",
+        "selectingElementGUID": "13b0cd97",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -15701,7 +15701,6 @@
         "Quote[0]": {
           "Listing": {
             "title": {},
-            "size": {},
             "quantity": {}
           },
           "Auction": {
@@ -24915,7 +24914,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "5fb496fcfef837797c4c133ad427ea818df077f4",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "624087e811a75381eb381cf03edb6b8358b5acaf",
+    "Project.Controls.FlowLayout_a23ed480": "c31356e969a7da23b5833d53aea464f149ab2b89",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",

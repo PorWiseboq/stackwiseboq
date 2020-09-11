@@ -424,7 +424,8 @@ class FlowLayout_a23ed480 extends Base {
                             .container-fluid
                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                 .internal-fsb-element.offset-0.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].title"))}, internal-fsb-guid="9d162b51")
-                                .internal-fsb-element.offset-0.col-6.-fsb-self-13b0cd97(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].size"))}, internal-fsb-guid="13b0cd97")
+                                .internal-fsb-element.offset-0.col-6.-fsb-self-13b0cd97(internal-fsb-guid="13b0cd97")
+                                  | #{this.getDataFromNotation("Quote[0].Listing[" + i + "].quantity")}
                                 .internal-fsb-element.offset-0.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].quantity"))}, internal-fsb-guid="57421653")
                         .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="94e22e23")
                           .container-fluid
