@@ -6,6 +6,8 @@ import * as homeController from './controllers/Home.js';
 const route = (app: any) => {
  app.get("/", homeController.index);
  app.post("/", homeController.index);
+ app.get("/admin/accounting", homeController._5b199584);
+ app.post("/admin/accounting", homeController._5b199584);
  app.get("/article/:id/:title", homeController._6ce794ec);
  app.post("/article/:id/:title", homeController._6ce794ec);
  app.get("/authentication", homeController._d1e3b3b3);
@@ -38,8 +40,8 @@ const route = (app: any) => {
  app.post("/buyer/chat/:refID/:sid/:qid", homeController._73d1cec9);
  app.get("/error/:code", homeController._bbc7dba3);
  app.post("/error/:code", homeController._bbc7dba3);
- app.get("/admin/accounting", homeController._5b199584);
- app.post("/admin/accounting", homeController._5b199584);
+ app.get("/bidder/agreement", homeController._e269aa1d);
+ app.post("/bidder/agreement", homeController._e269aa1d);
 }
 
 export default route;

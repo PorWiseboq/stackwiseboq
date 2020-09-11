@@ -3,6 +3,7 @@
 
 import {Request, Response} from "express";
 import Componentindex from "./components/index.js";
+import Component5b199584 from "./components/admin/accounting/_5b199584.js";
 import Component6ce794ec from "./components/article/_6ce794ec.js";
 import Componentd1e3b3b3 from "./components/authentication/_d1e3b3b3.js";
 import Componentb6eb1b83 from "./components/authentication/role/_b6eb1b83.js";
@@ -19,10 +20,13 @@ import Component473d370d from "./components/buyer/auction/results/_473d370d.js";
 import Component8a4a42e4 from "./components/buyer/auction/waiting/_8a4a42e4.js";
 import Component73d1cec9 from "./components/buyer/chat/_73d1cec9.js";
 import Componentbbc7dba3 from "./components/error/_bbc7dba3.js";
-import Component5b199584 from "./components/admin/accounting/_5b199584.js";
+import Componente269aa1d from "./components/bidder/agreement/_e269aa1d.js";
 
 export const index = (req: Request, res: Response) => {
 	new Componentindex(req, res, "home/index");
+}
+export const _5b199584 = (req: Request, res: Response) => {
+	new Component5b199584(req, res, "home/admin/accounting/_5b199584");
 }
 export const _6ce794ec = (req: Request, res: Response) => {
 	new Component6ce794ec(req, res, "home/article/_6ce794ec");
@@ -72,8 +76,8 @@ export const _73d1cec9 = (req: Request, res: Response) => {
 export const _bbc7dba3 = (req: Request, res: Response) => {
 	new Componentbbc7dba3(req, res, "home/error/_bbc7dba3");
 }
-export const _5b199584 = (req: Request, res: Response) => {
-	new Component5b199584(req, res, "home/admin/accounting/_5b199584");
+export const _e269aa1d = (req: Request, res: Response) => {
+	new Componente269aa1d(req, res, "home/bidder/agreement/_e269aa1d");
 }
 
 // <--- Auto[Generating:V1]
