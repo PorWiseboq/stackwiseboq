@@ -84,6 +84,8 @@ class FlowLayout_2d5ecc43 extends Base {
   }
   
   private getRemainingTime(): string {
+    if (this.props.cancel) return 'หมดเวลา';
+    
     const createdAt = this.props.begin;
     const auctionHours = this.props.auctionhours + this.props.showinghours;
     
@@ -129,7 +131,7 @@ class FlowLayout_2d5ecc43 extends Base {
       div(style=Object.assign({'paddingLeft': '0px', 'paddingRight': '0px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="2d5ecc43")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-            .internal-fsb-element.col-12(style={'marginTop': '12px', 'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'center'}, internal-fsb-guid="56307895")
+            .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'center', 'marginTop': '7px'}, internal-fsb-guid="56307895")
               | #{this.getRemainingTime()}
     `
   }

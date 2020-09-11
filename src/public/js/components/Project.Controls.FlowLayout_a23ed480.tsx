@@ -451,11 +451,11 @@ class FlowLayout_a23ed480 extends Base {
                           .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'borderBottomWidth': '1px', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'height': '65px', 'paddingTop': '3px', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(0, 53, 117, 1)', 'borderLeftWidth': '1px'}, key="item_" + i, internal-fsb-guid="11eb0e55")
                             .container-fluid
                               .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                .internal-fsb-element.offset-0.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].title"))}, internal-fsb-guid="9d162b51")
+                                .internal-fsb-element.offset-0.col-12.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].title"))}, internal-fsb-guid="9d162b51")
                                 .internal-fsb-element.offset-0.col-6.-fsb-self-13b0cd97(internal-fsb-guid="13b0cd97")
                                   | #{this.getDataFromNotation("Quote[0].Listing[" + i + "].quantity")}
                                 .internal-fsb-element.offset-0.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Listing[" + i + "].unit"))}, internal-fsb-guid="57421653")
-                        .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="94e22e23")
+                        .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'textAlign': 'right'}, internal-fsb-guid="94e22e23")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="83de46b7")
@@ -466,12 +466,12 @@ class FlowLayout_a23ed480 extends Base {
                                 | ส่วนลด
                               .internal-fsb-element.col-12(style={'marginBottom': '20px'}, internal-fsb-guid="e3acab6b")
                                 | โปรโมชั่น
-                              .internal-fsb-element.col-12(style={'marginBottom': '20px'}, internal-fsb-guid="a92445c5")
+                              .internal-fsb-element.col-12(style={'marginBottom': '20px', 'fontWeight': 'bold'}, internal-fsb-guid="a92445c5")
                                 div
                                   span(style={'fontFamily': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'})
                                     | ราคารวมภาษี
                                   br
-                              .internal-fsb-element.col-12(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="5eed917a")
+                              .internal-fsb-element.col-12(style={'textAlign': 'right'}, internal-fsb-guid="5eed917a")
                                 | เลือกซื้อ
                               .internal-fsb-element.col-12(style={'marginTop': '5px'}, internal-fsb-guid="726e70cd")
                                 | หมดเวลาภายใน
@@ -492,12 +492,12 @@ class FlowLayout_a23ed480 extends Base {
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return ([0].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="542d249d")
                                               .container-fluid
                                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'fontWeight': 'bold', 'textAlign': 'center'}, internal-fsb-guid="cbd47cb3")
+                                                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center'}, internal-fsb-guid="cbd47cb3")
                                                     | เจาะจง
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return ([3].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="7848170c")
                                               .container-fluid
                                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center', 'fontWeight': 'bold'}, internal-fsb-guid="6b009c31")
+                                                  .internal-fsb-element.col-12(style={'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center'}, internal-fsb-guid="6b009c31")
                                                     div
                                                       br
                                                     | ไม่มี
@@ -505,21 +505,21 @@ class FlowLayout_a23ed480 extends Base {
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return ([1, 2].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="6d820b70")
                                               .container-fluid
                                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center'}, data-toggle="tooltip", data-placement="top", title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].title"), dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].title"))}, internal-fsb-guid="1eae4292")
+                                                  .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center'}, data-toggle="tooltip", data-placement="top", title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].title"), dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].title"))}, internal-fsb-guid="1eae4292")
                                                   .internal-fsb-element.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '2px', 'paddingRight': '5px', 'textAlign': 'center'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].quantity"), data-toggle="tooltip", data-placement="top", internal-fsb-guid="8dca02ed")
                                                     | #{this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].quantity")}
                                                   .internal-fsb-element.col-6.-fsb-preset-13b0cd97(style={'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '2px', 'textAlign': 'center'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].unit"), data-toggle="tooltip", data-placement="top", dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].unit"))}, internal-fsb-guid="b5026407")
                                             .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'position': 'absolute', 'left': '0px', 'right': '0px', 'bottom': '0px', display: (()=>{return ([0,1,2].indexOf(this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].type")) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="92eba465")
                                               .container-fluid
                                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                                  .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'textAlign': 'center', 'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '5px', 'fontWeight': 'bold'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].price") + ' บาท', data-toggle="tooltip", data-placement="top", internal-fsb-guid="d58e0636")
+                                                  .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'textAlign': 'center', 'FsbInheritedPresets': '13b0cd97', 'paddingLeft': '5px', 'paddingRight': '5px'}, title=this.getDataFromNotation("Quote[0].Auction[" + i + "].Substitute[" + j + "].price") + ' บาท', data-toggle="tooltip", data-placement="top", internal-fsb-guid="d58e0636")
                                                     | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].Substitute.price')} บาท
                               .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', 'paddingBottom': '10px'}, internal-fsb-guid="65beb763")
                                 .container-fluid
                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '5px', 'paddingRight': '5px', 'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'marginTop': '10px'}, internal-fsb-guid="215196e7")
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '5px', 'paddingRight': '5px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'marginTop': '10px'}, internal-fsb-guid="215196e7")
                                       | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].deliverCost') || 0).toFixed(2)} บาท
-                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '2px', 'paddingRight': '2px', 'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center'}, internal-fsb-guid="981552b5")
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '2px', 'paddingRight': '2px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center'}, internal-fsb-guid="981552b5")
                                       | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].discount') || 0).toFixed(2)} บาท
                                     .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '2px', 'paddingRight': '2px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'marginBottom': '20px'}, title=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี', data-toggle="tooltip", data-placement="top", internal-fsb-guid="67979486")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี'}
@@ -528,9 +528,9 @@ class FlowLayout_a23ed480 extends Base {
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].sid"), internal-fsb-guid="c18d1ab2")
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].qid"), internal-fsb-guid="939d2d75")
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
-                                      input(style={'display': 'block'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'), defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
+                                      input(style={'display': 'block', 'marginTop': '4px'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'), defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
                                     - const Project_Controls_FlowLayout_2d5ecc43_ = Project.Controls.FlowLayout_2d5ecc43;
-                                    _Project_Controls_FlowLayout_2d5ecc43_(begin=this.getDataFromNotation('Quote[0].createdAt'), showinghours=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].showingHours') || 24, auctionhours=this.getDataFromNotation('Quote[0].hoursChecked') ? this.getDataFromNotation('Quote[0].hours') : 24)
+                                    _Project_Controls_FlowLayout_2d5ecc43_(begin=this.getDataFromNotation('Quote[0].createdAt'), showinghours=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].showingHours') || 24, auctionhours=this.getDataFromNotation('Quote[0].hoursChecked') ? this.getDataFromNotation('Quote[0].hours') : 24, cancel=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'))
             input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="51776455")
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].qid"), internal-fsb-guid="4935a92c")
             Button.internal-fsb-element.internal-fsb-allow-cursor.offset-3.col-3.btn.btn-danger.btn-sm(style={'marginTop': '15px', 'marginRight': '10px'}, onClick=((event) => { window.internalFsbSubmit('bb84ee28', 'Quote', event, ((results) => { this.manipulate('bb84ee28', 'Quote', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSubmitting=this.onButtonSubmitting_bb84ee28.bind(this), onSubmitted=this.onButtonSubmitted_bb84ee28.bind(this), internal-fsb-guid="bb84ee28")
