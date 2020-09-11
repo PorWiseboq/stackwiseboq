@@ -100,7 +100,7 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
-    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b","7c044793"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("d3e31c36", "update", ["d0422ee6","32b391ac","55c86c21"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("4d4e42bd", "update", ["55c86c21","2a58dbd2","d0422ee6"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
@@ -997,6 +997,10 @@ class Rectangle_cad06e8d extends Base {
                                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="price", type="text", placeholder="ราคารวมทั้งหมด", disabled=true, defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
+                                        .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="7c044793")
+                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", required=true, placeholder="ยืนราคาไว้หลังหมดเวลาประมูล")
+                                        .internal-fsb-element.col-2.offset-0(style={'marginTop': '5px'}, internal-fsb-guid="c70a78d6")
+                                          | ชั่วโมง
                                         input.internal-fsb-element.col-12(type="hidden", value="", internal-fsb-guid="d30aa93b")
                                         input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="a5b102c4")
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=!this.getFormEnabledState(), onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), internal-fsb-guid="9868a6d5")
