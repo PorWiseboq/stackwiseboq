@@ -302,13 +302,12 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow navigate action of any button on the page. */
-      /* try {
+    	try {
+        await DatabaseHelper.update(data, schema, false, this.request.session);
         resolve('/');
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
@@ -321,6 +320,7 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+    RequestHelper.registerSubmit("473d370d", "bb84ee28", "navigate", ["4935a92c"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "bdcbb907", "update", ["c18d1ab2","6e068626","939d2d75"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "d480ae4d", "update", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","775b58b9","939d2d75","4b5256da","137c966d"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
@@ -352,6 +352,26 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
       input = RequestHelper.getInput(this.pageId, request, '6e068626' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Checkbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('51776455', "relational", "Quote", "cancelled");
+		ValidationHelper.registerInput('51776455', "Hidden 3", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '51776455' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('4935a92c', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('4935a92c', "Hidden 4", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '4935a92c' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 4 here:
       // 
       
       if (input != null) data.push(input);
