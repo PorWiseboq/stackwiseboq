@@ -162,6 +162,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       				  let quoteData = RequestHelper.createInputs({
          		      'Quote.status': 1,
          		      'Quote.filled': null,
+     		          'Quote.cancelled': null,
          		      'Quote.Auction.qid': null,
          		      'Quote.Auction.sid': this.request.session.sid,
          		      'Quote.Auction.Substitute.aid': null,
@@ -516,6 +517,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     				  let quoteData = RequestHelper.createInputs(Object.assign({}, {
        		      'Quote.status': value,
            		  'Quote.filled': null,
+     		        'Quote.cancelled': null,
        		      'Quote.Auction.qid': null,
        		      'Quote.Auction.sid': this.request.session.sid,
        		      'Quote.Auction.Substitute.aid': null,

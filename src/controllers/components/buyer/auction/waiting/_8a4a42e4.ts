@@ -126,7 +126,8 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
             let schemata = ProjectConfigurationHelper.getDataSchema();
             let inputs = RequestHelper.createInputs({
               'Quote.uid': this.request.session.uid,
-              'Quote.User.id': null
+              'Quote.User.id': null,
+     		      'Quote.cancelled': null
             });
             let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Quote'], this.request.session, true);
             

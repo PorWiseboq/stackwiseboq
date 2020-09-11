@@ -184,6 +184,8 @@ class Rectangle_cad06e8d extends Base {
   }
   
   private getTransferringStatus(i: number): string {
+    if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';
+    
     switch (this.getDataFromNotation('Quote[' + i + '].Auction.Payment.Transfer.status')) {
       case 1:
         return 'ลูกค้าแจ้งโอน';

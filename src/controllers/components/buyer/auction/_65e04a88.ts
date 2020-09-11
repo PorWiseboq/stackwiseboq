@@ -221,7 +221,8 @@ class Controller extends Base {
         } else {
      		  data = RequestHelper.createInputs({
      		    'Quote.uid': parseInt(this.request.session.uid),
-     		    'Quote.filled': null
+     		    'Quote.filled': null,
+     		    'Quote.cancelled': null
      		  });
      		  let datasetA = await DatabaseHelper.retrieve(data, null, this.request.session);
      		  
