@@ -145,6 +145,15 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
             });
             let results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
             
+            if (results['Store'].rows.length != 0 && !results['Store'].rows[0].columns['agreedTermsOn']) {
+              this.response.redirect('/bidder/agreement');
+            }
+            
+            inputs = RequestHelper.createInputs({
+              'Store.oid': this.request.session.uid
+            });
+            results = await DatabaseHelper.retrieve(inputs, schemata.tables['Store'], this.request.session);
+            
             if (results['Store'].rows.length == 0) {
               this.response.redirect('/authentication/role/bidder');
             } else {
