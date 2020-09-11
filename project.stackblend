@@ -14539,7 +14539,7 @@
         "    // ",
         "    this.setState({submitting: false});",
         "    ",
-        "    \">",
+        "    \" disabled=\"{this.state.submitting}\">",
         "                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"bb84ee28-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ยกเลิกงานประมูล</div>",
         "                        </button><button type=\"button\" class=\"internal-fsb-element -fsb-preset-180079a2 btn btn-primary btn-sm col-3\" internal-fsb-guid=\"bdcbb907\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 15px\" internal-fsb-react-style-display=\"CODE[return (this.state.step == Step.SELECTION) ? 'block' : 'none';]\" onfsbclick=\"{}\" internal-fsb-react-code-onfsbclick=\"",
         "",
@@ -15729,11 +15729,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "bb84ee28",
+        "selectingElementGUID": "a23ed480",
         "currentCursorWalkPath": [
           "a23ed480",
           0,
-          4,
+          10,
           null
         ]
       },
@@ -24961,7 +24961,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "5fb496fcfef837797c4c133ad427ea818df077f4",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "bb2d9e6200ef5800470ce7d78083ce519b38331e",
+    "Project.Controls.FlowLayout_a23ed480": "7f7331a0fe971316b2e2f8dbce77fc8ad0833046",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
