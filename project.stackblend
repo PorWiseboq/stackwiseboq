@@ -217,7 +217,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "7e709334",
+    "editingPageID": "65e04a88",
     "currentMode": "site",
     "editingComponentID": "84b618a7"
   },
@@ -7581,7 +7581,7 @@
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"5a972a57\" internal-fsb-name=\"Textbox 4\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"Quote.title\" internal-fsb-data-validation-message=\"กรุณาระบุชื่อโครงการ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" placeholder=\"ชื่อโครงการ\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"title\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
         "",
-        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"607d8ee2\" internal-fsb-name=\"Textbox 5\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-react-data=\"Quote.description\" internal-fsb-data-validation-message=\"กรุณาระบุสถานที่ตั้งโครงการ\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 5px\" class=\"form-control form-control-sm\" rows=\"3\" placeholder=\"ระบุสถานที่ตั้งโครงการโดยละเอียด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"description\" disabled=\"{this.state.disabled}\" required=\"true\"></textarea></div>",
+        "                                                <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"607d8ee2\" internal-fsb-name=\"Textbox 5\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-react-data=\"Quote.description\" internal-fsb-data-validation-message=\"กรุณาระบุสถานที่ตั้งโครงการ\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-top: 5px\" class=\"form-control form-control-sm\" rows=\"3\" placeholder=\"สถานที่ตั้งโครงการโดยละเอียด\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"description\" disabled=\"{this.state.disabled}\" required=\"true\"></textarea></div>",
         "                                            </div>",
         "                                        </div>",
         "                                    </div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"5d34dc3b\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"Quote.qid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-id=\"\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"5752cb4d\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"Quote.uid\" internal-fsb-data-code=\"",
@@ -8783,7 +8783,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "607d8ee2",
         "currentCursorWalkPath": [
           "b2020622",
           0,
@@ -25060,7 +25060,7 @@
     "Project.Common.Header": "7fda1bd94a8a20636fb311de5136406c81ee2be9",
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
-    "Project.Controls.FlowLayout_b2020622": "948504c99ad071824e53236058096ad842f8adb9",
+    "Project.Controls.FlowLayout_b2020622": "c260504c5fe98ae5254c2bbaa18cd000d7813674",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
     "Project.Controls.Rectangle_cad06e8d": "6e7fa095f0425a01fb8a1cb4688cf172902d41a8",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
