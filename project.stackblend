@@ -14489,9 +14489,9 @@
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"215196e7\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 5px; padding-right: 5px; font-weight: bold; -fsb-inherited-presets: 13b0cd97; text-align: center; margin-top: 10px\">#{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].deliverCost') || 0).toFixed(2)} บาท</div>",
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"981552b5\" internal-fsb-name=\"TextElement 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 2px; padding-right: 2px; font-weight: bold; -fsb-inherited-presets: 13b0cd97; text-align: center\">#{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].discount') || 0).toFixed(2)} บาท</div>",
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"67979486\" internal-fsb-name=\"TextElement 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"padding-left: 2px; padding-right: 2px; -fsb-inherited-presets: 13b0cd97; text-align: center; margin-bottom: 20px\" title=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี'}\" data-toggle=\"tooltip\" data-placement=\"top\">#{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี'}</div>",
-        "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"d40e3b62\" internal-fsb-name=\"TextElement 24\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; -fsb-inherited-presets: 13b0cd97; text-align: center; color: rgba(22, 98, 250, 1); padding-left: 2px; padding-right: 2px; margin-bottom: 20px\" internal-fsb-react-style-color=\"CODE[return (this.isMerchandiseInError(i, -1)) ? '#ff0000' : '';]\">#{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท</div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c18d1ab2\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" value=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].sid&quot;)}\">",
+        "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"d40e3b62\" internal-fsb-name=\"TextElement 24\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; -fsb-inherited-presets: 13b0cd97; text-align: center; color: rgba(22, 98, 250, 1); padding-left: 2px; padding-right: 2px; margin-bottom: 20px\" internal-fsb-react-style-color=\"CODE[return (this.isMerchandiseInError(i, -1)) ? '#ff0000' : '';]\">#{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? 'ยกเลิก' : `${this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท`}</div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c18d1ab2\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" value=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].sid&quot;)}\">",
         "                                                                    <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"939d2d75\" internal-fsb-name=\"Hidden 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"qid\" value=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].qid&quot;)}\">",
-        "                                                                    <div class=\"internal-fsb-element offset-5\" internal-fsb-guid=\"6e068626\" internal-fsb-name=\"Checkbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Checkbox\" internal-fsb-data-validation-message=\"กรุณาเลือกรายการอย่างน้อยหนึ่ง\" internal-fsb-react-data=\"bought\" data-index=\"{i}\" data-pricing=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')}\"><input type=\"checkbox\" style=\"display: block; -fsb-for-children: true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"bought\" class=\"\" value=\"1\" required=\"true\" disabled=\"{this.state.submitting}\"></div>",
+        "                                                                    <div class=\"internal-fsb-element offset-5\" internal-fsb-guid=\"6e068626\" internal-fsb-name=\"Checkbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Checkbox\" internal-fsb-data-validation-message=\"กรุณาเลือกรายการอย่างน้อยหนึ่ง\" internal-fsb-react-data=\"bought\" data-index=\"{i}\" data-pricing=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')}\"><input type=\"checkbox\" style=\"display: block; -fsb-for-children: true\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"bought\" class=\"\" value=\"1\" required=\"true\" disabled=\"{this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')}\"></div>",
         "                                                                </div>",
         "                                                            </div>",
         "                                                        </div>",
@@ -14518,7 +14518,9 @@
         "    let total = 0;",
         "    ",
         "    for (const checkbox of checkboxes) {",
-        "      total += parseFloat(checkbox.getAttribute('data-pricing').toString());",
+        "      if (!$(checkbox).is(':disabled')) {",
+        "        total += parseFloat(checkbox.getAttribute('data-pricing').toString());",
+        "      }",
         "    }",
         "    ",
         "    totalAmountInWord.innerHTML = convertFullMoney(total);",
@@ -15683,11 +15685,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "57421653",
+        "selectingElementGUID": "bdcbb907",
         "currentCursorWalkPath": [
-          "11eb0e55",
+          "a23ed480",
           0,
-          3,
+          2,
           null
         ]
       },
@@ -24914,7 +24916,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "5fb496fcfef837797c4c133ad427ea818df077f4",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "244fa815c03cd85b3943713760c3799c79fa16c3",
+    "Project.Controls.FlowLayout_a23ed480": "becb4bafacc277ca1e0e5531c2626d6bb48005ca",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",

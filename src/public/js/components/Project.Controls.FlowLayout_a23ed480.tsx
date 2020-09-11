@@ -326,7 +326,9 @@ class FlowLayout_a23ed480 extends Base {
     let total = 0;
     
     for (const checkbox of checkboxes) {
-      total += parseFloat(checkbox.getAttribute('data-pricing').toString());
+      if (!$(checkbox).is(':disabled')) {
+        total += parseFloat(checkbox.getAttribute('data-pricing').toString());
+      }
     }
     
     totalAmountInWord.innerHTML = convertFullMoney(total);
@@ -494,11 +496,11 @@ class FlowLayout_a23ed480 extends Base {
                                     .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'paddingLeft': '2px', 'paddingRight': '2px', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'marginBottom': '20px'}, title=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี', data-toggle="tooltip", data-placement="top", internal-fsb-guid="67979486")
                                       | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].promotion') || 'ไม่มี'}
                                     .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'fontWeight': 'bold', 'FsbInheritedPresets': '13b0cd97', 'textAlign': 'center', 'color': (()=>{return (this.isMerchandiseInError(i, -1)) ? '#ff0000' : '';})() || 'rgba(22, 98, 250, 1)', 'paddingLeft': '2px', 'paddingRight': '2px', 'marginBottom': '20px'}, internal-fsb-guid="d40e3b62")
-                                      | #{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท
+                                      | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? 'ยกเลิก' : `${this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')} บาท`}
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].sid"), internal-fsb-guid="c18d1ab2")
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].qid"), internal-fsb-guid="939d2d75")
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
-                                      input(style={'display': 'block'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting, defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
+                                      input(style={'display': 'block'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'), defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
             Button.internal-fsb-element.-fsb-preset-180079a2.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('bdcbb907', 'Auction', event, ((results) => { this.manipulate('bdcbb907', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSubmitting=this.onButtonSubmitting_bdcbb907.bind(this), onSuccess=this.onButtonSuccess_bdcbb907.bind(this), onSubmitted=this.onButtonSubmitted_bdcbb907.bind(this), internal-fsb-guid="bdcbb907")
               .internal-fsb-element(internal-fsb-guid="bdcbb907-text")
                 | ถัดไป: เลือกวิธีการจ่ายเงิน
