@@ -5946,7 +5946,7 @@
         "                                                <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"154b7137\" internal-fsb-name=\"Content\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"position: relative; flex-grow: 1; -webkit-flex-grow: 1\">",
         "                                                    <div class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"ed65b978\" internal-fsb-name=\"Scrolling\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"overflow-x: hidden; -ms-overflow-x: hidden; overflow-y: auto; -ms-overflow-y: auto; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; padding-top: 5px; padding-bottom: 5px\">",
         "                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0a287153\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-style-display=\"CODE[return (this.getIsEmpty()) ? 'block' : 'none';]\" style=\"color: rgba(212, 212, 212, 1); font-size: 13px; text-align: center; padding-top: 30px; padding-bottom: 30px; display: none\">ไม่มีรายการ</div>",
-        "                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"ae9a328e\" internal-fsb-name=\"Auction\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.AUCTIONING, true);]\">",
+        "                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"ae9a328e\" internal-fsb-name=\"Auction\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.AUCTIONING, true);]\" style=\"padding-bottom: 80px\">",
         "                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"64a6ac8c\" internal-fsb-name=\"Inner\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\">",
@@ -6412,7 +6412,7 @@
         "                                                                </div>",
         "                                                            </div>",
         "                                                        </div>",
-        "                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"51201e78\" internal-fsb-name=\"Success\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.OFFERING_OR_PAID, true);]\">",
+        "                                                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"51201e78\" internal-fsb-name=\"Success\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-style-display=\"CODE[return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.OFFERING_OR_PAID, true);]\" style=\"padding-bottom: 80px\">",
         "                                                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
@@ -7390,7 +7390,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "51201e78",
+        "selectingElementGUID": "ae9a328e",
         "currentCursorWalkPath": [
           "24731127",
           0,
@@ -24960,7 +24960,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "948504c99ad071824e53236058096ad842f8adb9",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "9ac8c267433ca01eb3c488302d0e373b7de677c1",
+    "Project.Controls.Rectangle_cad06e8d": "803eeedaadfe7f3e2a33a91dfad67dd28b2cf561",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
