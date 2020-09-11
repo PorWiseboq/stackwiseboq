@@ -203,7 +203,8 @@ class FlowLayout_a23ed480 extends Base {
     }
     
     window.setInterval((() => {
-      ReactDOM.findDOMNode(this.refs.refresh).click();
+      const element = ReactDOM.findDOMNode(this.refs.refresh);
+      element && element.click();
     }).bind(this), 15 * 1000);
   }
   

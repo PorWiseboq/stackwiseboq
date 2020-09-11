@@ -14093,7 +14093,8 @@
         "    }",
         "    ",
         "    window.setInterval((() => {",
-        "      ReactDOM.findDOMNode(this.refs.refresh).click();",
+        "      const element = ReactDOM.findDOMNode(this.refs.refresh);",
+        "      element &amp;&amp; element.click();",
         "    }).bind(this), 15 * 1000);",
         "  }",
         "  ",
@@ -15684,7 +15685,7 @@
       "accessories": {
         "selectingElementGUID": "a23ed480",
         "currentCursorWalkPath": [
-          "6d820b70",
+          "0",
           0,
           2,
           null
@@ -24914,7 +24915,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "5fb496fcfef837797c4c133ad427ea818df077f4",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "16b5b6e1cbe32458f2af2ff6d5c2f1202a1859c2",
+    "Project.Controls.FlowLayout_a23ed480": "624087e811a75381eb381cf03edb6b8358b5acaf",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
