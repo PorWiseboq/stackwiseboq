@@ -217,7 +217,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "e269aa1d",
+    "editingPageID": "473d370d",
     "currentMode": "site",
     "editingComponentID": "84b618a7"
   },
@@ -14459,7 +14459,8 @@
         "                                                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"1eae4292\" internal-fsb-name=\"TextElement 15\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"title\" style=\"font-weight: bold; -fsb-inherited-presets: 13b0cd97; padding-left: 5px; padding-right: 5px; text-align: center\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].Substitute[&quot; + j + &quot;].title&quot;)}\">ABC</div>",
         "",
-        "                                                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-6 -fsb-preset-13b0cd97\" internal-fsb-guid=\"8dca02ed\" internal-fsb-name=\"TextElement 17\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"quantity\" style=\"-fsb-inherited-presets: 13b0cd97; padding-left: 2px; padding-right: 5px; text-align: center\" title=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].Substitute[&quot; + j + &quot;].quantity&quot;)}\" data-toggle=\"tooltip\" data-placement=\"top\">ABC</div>",
+        "",
+        "                                                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-6 -fsb-preset-13b0cd97\" internal-fsb-guid=\"8dca02ed\" internal-fsb-name=\"TextElement 17\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"\" style=\"-fsb-inherited-presets: 13b0cd97; padding-left: 2px; padding-right: 5px; text-align: center\" title=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].Substitute[&quot; + j + &quot;].quantity&quot;)}\" data-toggle=\"tooltip\" data-placement=\"top\">#{this.getDataFromNotation(\"Quote[0].Auction[\" + i + \"].Substitute[\" + j + \"].quantity\")}</div>",
         "                                                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-6 -fsb-preset-13b0cd97\" internal-fsb-guid=\"b5026407\" internal-fsb-name=\"TextElement 16\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" internal-fsb-react-data=\"unit\" style=\"-fsb-inherited-presets: 13b0cd97; padding-left: 5px; padding-right: 2px; text-align: center\" title=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].Substitute[&quot; + j + &quot;].unit&quot;)}\" data-toggle=\"tooltip\" data-placement=\"top\">ABC</div>",
         "                                                                                        </div>",
         "                                                                                    </div>",
@@ -15581,6 +15582,23 @@
         "            -fsb-reusable-id: 81b0161d",
         "        }",
         "",
+        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-4ce43ee9,",
+        "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-preset-4ce43ee9,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-self-4ce43ee9,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-preset-4ce43ee9,",
+        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-self-4ce43ee9,",
+        "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-preset-4ce43ee9,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-4ce43ee9,",
+        "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-4ce43ee9 {",
+        "            text-align: right;",
+        "            padding-top: 7px;",
+        "            padding-right: 10px;",
+        "            font-size: 14px;",
+        "            -fsb-reusable-name: form_item_title;",
+        "            -fsb-reusable-id: 4ce43ee9;",
+        "            padding-left: 0px",
+        "        }",
+        "",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-d0010264,",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-preset-d0010264,",
         "        .internal-fsb-absolute-layout>.internal-fsb-element.-fsb-self-d0010264,",
@@ -15664,11 +15682,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b5026407",
+        "selectingElementGUID": "a23ed480",
         "currentCursorWalkPath": [
           "6d820b70",
           0,
-          3,
+          2,
           null
         ]
       },
@@ -15691,7 +15709,6 @@
             },
             "Substitute": {
               "title": {},
-              "quantity": {},
               "unit": {}
             },
             "bought": {}
@@ -21548,7 +21565,7 @@
         "currentCursorWalkPath": [
           "0",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -24897,7 +24914,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "5fb496fcfef837797c4c133ad427ea818df077f4",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "26f0545bb50d9e54f8ba0b16f88eee740104d960",
+    "Project.Controls.FlowLayout_a23ed480": "16b5b6e1cbe32458f2af2ff6d5c2f1202a1859c2",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
@@ -24916,7 +24933,7 @@
     "bbc7dba3": "b9161edc330918db3f82f92638659eae5dbd6de4",
     "c3da32d7": "740a43d8f17b3f402a6eb41b6e8c7b1a1b3f7ff4",
     "8a4a42e4": "f110887598e1a5bbac8f089a29d566c83f78eb9c",
-    "473d370d": "61f4979b6d085a790c9f3ff4d1adeb8114a99b3a",
+    "473d370d": "e2e58152c50ab2c6aeb09535c9cabcbb71251f72",
     "ea2e6d53": "3b62a91fa592675c442e45a03783dacbcea86600",
     "5488072c": "ed65858cdf9e9c1684b034b8027bbba7a3161ed4",
     "73d1cec9": "50784dd08c5389d9f67748e99839fb706937c7a6",
