@@ -5580,9 +5580,10 @@
         "    // ",
         "    this.setState({submitting: false});",
         "    ",
-        "    \">",
+        "    \" internal-fsb-data-controls=\" 4b47ece5\">",
         "                                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"108bb2b9-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
         "                            </button>",
+        "                            <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"4b47ece5\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"User\" internal-fsb-data-source-column=\"id\" internal-fsb-data-value-source=\"session\" internal-fsb-data-session-name=\"uid\">",
         "                        </div>",
         "                    </div>",
         "                </div>",
@@ -7420,7 +7421,7 @@
       "accessories": {
         "selectingElementGUID": "108bb2b9",
         "currentCursorWalkPath": [
-          "06d40ba3",
+          "6a56a9be",
           0,
           2,
           null
@@ -25053,7 +25054,7 @@
     "8857ca68": "566622387898785485cdf6521266e6433682a27e",
     "b140e86b": "e7606bf67068fc29a3b5cd40978893f7913eb5c0",
     "b6eb1b83": "a6eae035bb5b47223036096f1ea234b4a5c12341",
-    "7e709334": "a6d96a78722d5e45877ef4ba92e88999a5a9a3c2",
+    "7e709334": "03f1723ed3e3d8b6c3cd5b3a815e379c95381ff8",
     "65e04a88": "a5328793fe4fa4171bd8536b005160532e29e8b7",
     "9d37c390": "287509bae25d0cfeae763629e23dabc55ec09322",
     "6ce794ec": "f0a134512eca9c10d2ba1f358371bf76e54c06e8",
@@ -25075,7 +25076,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "c260504c5fe98ae5254c2bbaa18cd000d7813674",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "9f387319ca55f7f7c93c05e5386acaf99ceb99ee",
+    "Project.Controls.Rectangle_cad06e8d": "f9a8e2fea4c9c13ac4002b9ba53074850fcb388e",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",

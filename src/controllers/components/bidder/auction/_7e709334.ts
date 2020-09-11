@@ -584,7 +584,7 @@ WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) <
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("7e709334", "108bb2b9", "navigate", [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "108bb2b9", "navigate", ["4b47ece5"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
@@ -594,6 +594,17 @@ WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) <
     RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b","7c044793"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "2b2a0681", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+		RequestHelper.registerInput('4b47ece5', "relational", "User", "id");
+		ValidationHelper.registerInput('4b47ece5', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '4b47ece5' + ((i == -1) ? '' : '[' + i + ']'));
+      if (input) input.value = request.session['uid'];
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
 		ValidationHelper.registerInput('1ae8405a', "Hidden 1", false, undefined);
     for (let i=-1; i<128; i++) {
