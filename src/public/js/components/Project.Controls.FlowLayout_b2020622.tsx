@@ -241,6 +241,42 @@ class FlowLayout_b2020622 extends Base {
     return EventHelper.cancel(event);
   }
 
+  protected onButtonClick_aea42e1c(event: Event) {
+
+    if (this.getDataFromNotation("Listing", true).length == 0) {
+      alert('กรุณาระบุรายการวัสดุก่อสร้างอย่างน้อยหนึ่งรายการ');
+      return EventHelper.cancel(event);
+    }
+
+    // Handle the event of onButtonClick (Button 5) here:
+    // 
+    this.setState({
+      status: Status.DELIVERY
+    });
+    
+    if (ReactDOM.findDOMNode(this.refs.title).value != '' ||
+      ReactDOM.findDOMNode(this.refs.quantity).value != '' ||
+      ReactDOM.findDOMNode(this.refs.unit).value != '' ||
+      ReactDOM.findDOMNode(this.refs.note).value != '' ||
+      ReactDOM.findDOMNode(this.refs.radio1).checked != false ||
+      ReactDOM.findDOMNode(this.refs.radio2).checked != false ||
+      ReactDOM.findDOMNode(this.refs.radio3).checked != false) {
+      
+      if (confirm('เหมือนว่าคุณลืมกดปุ่มเพิ่มก่อนที่จะกดปุ่มถัดไป คุณต้องการกลับไปแก้ไขหรือไม่?')) {
+        return EventHelper.cancel(event);
+      } else {
+        ReactDOM.findDOMNode(this.refs.title).value = '';
+        ReactDOM.findDOMNode(this.refs.quantity).value = '';
+        ReactDOM.findDOMNode(this.refs.unit).value = '';
+        ReactDOM.findDOMNode(this.refs.note).value = '';
+        ReactDOM.findDOMNode(this.refs.radio1).checked = false;
+        ReactDOM.findDOMNode(this.refs.radio2).checked = false;
+        ReactDOM.findDOMNode(this.refs.radio3).checked = false;
+      }
+    }
+    
+  }
+
   protected onButtonClick_88297439(event: Event) {
 
     // Handle the event of onButtonClick (Button 6) here:
@@ -459,6 +495,9 @@ class FlowLayout_b2020622 extends Base {
                   Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-2(style={'marginTop': '15px', 'marginRight': '10px'}, type="button", disabled=this.state.disabled, onSubmitting=this.onButtonSubmitting_1bb72b1a.bind(this), onClick=this.onButtonClick_1bb72b1a.bind(this), internal-fsb-guid="1bb72b1a")
                     .internal-fsb-element(internal-fsb-guid="1bb72b1a-text")
                       | ย้อนกลับ
+                  Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-0(style={'marginLeft': '10px', 'marginTop': '15px'}, type="button", disabled=this.state.disabled, onClick=this.onButtonClick_aea42e1c.bind(this), internal-fsb-guid="aea42e1c")
+                    .internal-fsb-element(internal-fsb-guid="aea42e1c-text")
+                      | ถัดไป: ระบุสินค้าเทียบเคียง
             .internal-fsb-element.-fsb-preset-180079a2.col-10.offset-1(style={'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.SUBSTITUTE);})()}, internal-fsb-guid="b1a8c59c")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -470,7 +509,7 @@ class FlowLayout_b2020622 extends Base {
                   Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-2(style={'marginRight': '10px'}, type="button", disabled=this.state.disabled, onSubmitting=this.onButtonSubmitting_88297439.bind(this), onClick=this.onButtonClick_88297439.bind(this), internal-fsb-guid="88297439")
                     .internal-fsb-element(internal-fsb-guid="88297439-text")
                       | ย้อนกลับ
-                  Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-0(style={'marginLeft': '10px'}, onClick=((event) => { window.internalFsbSubmit('67c431d0', 'Listing', event, ((results) => { this.manipulate('67c431d0', 'Listing', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.disabled, onSuccess=this.onButtonSuccess_67c431d0.bind(this), onSubmitting=this.onButtonSubmitting_67c431d0.bind(this), onSubmitted=this.onButtonSubmitted_67c431d0.bind(this), internal-fsb-guid="67c431d0")
+                  Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-0.btn.btn-primary.btn-sm(style={'marginLeft': '10px'}, onClick=((event) => { window.internalFsbSubmit('67c431d0', 'Listing', event, ((results) => { this.manipulate('67c431d0', 'Listing', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.disabled, onSuccess=this.onButtonSuccess_67c431d0.bind(this), onSubmitting=this.onButtonSubmitting_67c431d0.bind(this), onSubmitted=this.onButtonSubmitted_67c431d0.bind(this), internal-fsb-guid="67c431d0")
                     .internal-fsb-element(internal-fsb-guid="67c431d0-text")
                       | ถัดไป: ระบุข้อมูลจัดส่งและระยะเวลา
             .internal-fsb-element.col-10.offset-1.-fsb-preset-180079a2(style={'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.DELIVERY);})()}, internal-fsb-guid="e01619d3")
