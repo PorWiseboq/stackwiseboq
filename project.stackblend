@@ -7618,7 +7618,7 @@
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-7a279686\" internal-fsb-guid=\"1e4c0d68\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686\">รายการวัสดุก่อสร้าง</div>",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"65ca1989\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353; margin-bottom: 10px\">กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียด, ปริมาณ, หน่วย)</div>",
-        "                                    <div class=\"internal-fsb-element col-12 offset-0 -fsb-self-97d707b7\" internal-fsb-guid=\"97d707b7\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"min-height: 22px; -fsb-reusable-name: ; -fsb-reusable-id: 97d707b7; margin-top: 5px\" internal-fsb-react-data=\"\">",
+        "                                    <div class=\"internal-fsb-element col-12 offset-0 -fsb-self-97d707b7\" internal-fsb-guid=\"97d707b7\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"min-height: 22px; -fsb-reusable-name: ; -fsb-reusable-id: 97d707b7; margin-top: 5px; padding-left: 0px; padding-right: 0px\" internal-fsb-react-data=\"\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "",
@@ -8750,9 +8750,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "aea42e1c",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
-          "7600ca53",
+          "b2020622",
           0,
           5,
           null
@@ -23916,7 +23916,7 @@
     "Project.Common.Header": "7fda1bd94a8a20636fb311de5136406c81ee2be9",
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
-    "Project.Controls.FlowLayout_b2020622": "11779029a5a8cdde20c9bda965565c7271de1999",
+    "Project.Controls.FlowLayout_b2020622": "948504c99ad071824e53236058096ad842f8adb9",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
     "Project.Controls.Rectangle_cad06e8d": "e3ff84852f26f3af626ff08bf709a62abc7ace56",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
