@@ -562,13 +562,16 @@ WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) <
   
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
-    	/* Uncomment to allow navigate action of any button on the page. */
-      /* try {
-        resolve('/');
+    	try {
+    	  this.request.session.uid = null;
+    	  this.request.session.sid = null;
+    	  this.request.session.role = null;
+        this.request.session.save(async () => {
+      	  resolve('/');
+        });
       } catch(error) {
         reject(error);
-      } */
-      reject(new Error("Not Implemented Error"));
+      }
     });
   }
   
@@ -581,7 +584,7 @@ WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) <
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("7e709334", "108bb2b9", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "108bb2b9", "navigate", [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "4a579143", "retrieve", ["1ae8405a","0856c24b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "c05b11c1", "retrieve", ["4cade2e7","93ab7a0b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
     RequestHelper.registerSubmit("7e709334", "e9c9b721", "retrieve", ["d1920261"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: true});
