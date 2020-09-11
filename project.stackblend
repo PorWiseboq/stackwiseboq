@@ -14527,7 +14527,7 @@
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"d40e3b62\" internal-fsb-name=\"TextElement 24\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; -fsb-inherited-presets: 13b0cd97; text-align: center; color: rgba(22, 98, 250, 1); padding-left: 2px; padding-right: 2px; margin-bottom: 20px\" internal-fsb-react-style-color=\"CODE[return (this.isMerchandiseInError(i, -1) || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? '#ff0000' : '';]\">#{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? 'ยกเลิกไปแล้ว' : this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price') + ' บาท'}</div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c18d1ab2\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" value=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].sid&quot;)}\">",
         "                                                                    <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"939d2d75\" internal-fsb-name=\"Hidden 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"qid\" value=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].qid&quot;)}\">",
         "                                                                    <div class=\"internal-fsb-element offset-5\" internal-fsb-guid=\"6e068626\" internal-fsb-name=\"Checkbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Checkbox\" internal-fsb-data-validation-message=\"กรุณาเลือกรายการอย่างน้อยหนึ่ง\" internal-fsb-react-data=\"bought\" data-index=\"{i}\" data-pricing=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')}\"><input type=\"checkbox\" style=\"display: block; -fsb-for-children: true; margin-top: 4px\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"bought\" class=\"\" value=\"1\" required=\"true\" disabled=\"{this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')}\"></div>",
-        "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2d5ecc43\" internal-fsb-name=\"FlowLayout 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-react-mode=\"Document\" begin=\"{this.getDataFromNotation('Quote[0].createdAt')}\" showinghours=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].showingHours') || 24}\" auctionhours=\"{this.getDataFromNotation('Quote[0].hoursChecked') ? this.getDataFromNotation('Quote[0].hours') : 24}\" internal-fsb-react-code-body=\"",
+        "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2d5ecc43\" internal-fsb-name=\"FlowLayout 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-react-mode=\"Document\" begin=\"{this.getDataFromNotation('Quote[0].createdAt')}\" showinghours=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].showHours') || 24}\" auctionhours=\"{this.getDataFromNotation('Quote[0].hoursChecked') ? this.getDataFromNotation('Quote[0].hours') : 24}\" internal-fsb-react-code-body=\"",
         "  ",
         "  // Declare class variables and functions here:",
         "  //",
@@ -15817,11 +15817,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "2d5ecc43",
+        "selectingElementGUID": "a23ed480",
         "currentCursorWalkPath": [
-          "65beb763",
+          "41288a78",
           0,
-          8,
+          4,
           null
         ]
       },
@@ -22073,11 +22073,11 @@
     "default": [
       "<body class=\"internal-fsb-guide-on internal-fsb-disabled-guide\">",
       "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\" style=\"height: 100%;\">",
-      "        <div class=\"row internal-fsb-absolute-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" style=\"height: 100%; min-height: 1148px;\" internal-fsb-event-no-propagate=\"1\">",
+      "        <div class=\"row internal-fsb-absolute-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" style=\"height: 100%; min-height: 1126px;\" internal-fsb-event-no-propagate=\"1\">",
       "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"00032595\" internal-fsb-name=\"RelationalDatabase 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalDatabase\" style=\"; left: 49px; top: 55px; width: 2080px; min-height: 1069px\" data-title-name=\"MySQL Database\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\">",
       "                <div class=\"internal-fsb-title internal-fsb-dragging-handle\">MySQL Database</div>",
       "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 1174px;\">",
+      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 1150px;\">",
       "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9957a62d\" internal-fsb-name=\"RelationalTable 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 815px; top: 66px; width: 225px; min-height: 95px;\" data-title-name=\"Employee\" data-lock-source-group=\"Store\" data-lock-mode=\"relation\" data-lock-source-entity=\"oid\" data-lock-relation-matching-constant-value=\"\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Employee</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -25061,7 +25061,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "5fb496fcfef837797c4c133ad427ea818df077f4",
     "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "50386a52fd8f06289c5cb76cce6ceabaa41a0b38",
+    "Project.Controls.FlowLayout_a23ed480": "35b4f3d9e9e9f0bb19a86853b2841494f11fa1b8",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "ae35f15369476a5bb3942ed8f5909150fd9783a4",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
