@@ -6253,7 +6253,7 @@
         "    this.state.unit = element.value;",
         "    this.forceUpdate();",
         "    ",
-        "    \" internal-fsb-data-validation-message=\"กรุณาระบุหน่วยให้ครบ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-bottom: 5px; font-size: 12px\" class=\"form-control form-control-sm \" placeholder=\"ระบุหน่วย\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"size\" value=\"{([1,2].indexOf(this.state.type) != -1) ? this.state.unit : 'n/a'}\" data-com.agilebits.onepassword.initial-value=\"{this.state.size}\" disabled=\"{!this.props.enabled}\" required=\"true\"></div>",
+        "    \" internal-fsb-data-validation-message=\"กรุณาระบุหน่วยให้ครบ\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true; margin-bottom: 5px; font-size: 12px\" class=\"form-control form-control-sm \" placeholder=\"ระบุหน่วย\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction.Substitute\" internal-fsb-data-source-column=\"unit\" value=\"{([1,2].indexOf(this.state.type) != -1) ? this.state.unit : 'n/a'}\" data-com.agilebits.onepassword.initial-value=\"{this.state.size}\" disabled=\"{!this.props.enabled}\" required=\"true\"></div>",
         "                                                                                                                </div>",
         "                                                                                                            </div>",
         "                                                                                                        </div>",
@@ -7405,11 +7405,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "7c044793",
+        "selectingElementGUID": "d913e6a1",
         "currentCursorWalkPath": [
-          "64a6ac8c",
+          "06d40ba3",
           0,
-          13,
+          1,
           null
         ]
       },
@@ -25040,7 +25040,7 @@
     "8857ca68": "566622387898785485cdf6521266e6433682a27e",
     "b140e86b": "e7606bf67068fc29a3b5cd40978893f7913eb5c0",
     "b6eb1b83": "a6eae035bb5b47223036096f1ea234b4a5c12341",
-    "7e709334": "ffb067061f4a07ef616e7e90d588e8718a9d3226",
+    "7e709334": "c468cd71b58289f7c4569239480b70887d82a056",
     "65e04a88": "a5328793fe4fa4171bd8536b005160532e29e8b7",
     "9d37c390": "287509bae25d0cfeae763629e23dabc55ec09322",
     "6ce794ec": "f0a134512eca9c10d2ba1f358371bf76e54c06e8",

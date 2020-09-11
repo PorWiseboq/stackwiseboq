@@ -721,7 +721,7 @@ WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) <
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('d913e6a1', "relational", "Auction.Substitute", "size");
+		RequestHelper.registerInput('d913e6a1', "relational", "Auction.Substitute", "unit");
 		ValidationHelper.registerInput('d913e6a1', "unit", true, "กรุณาระบุหน่วยให้ครบ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'd913e6a1' + ((i == -1) ? '' : '[' + i + ']'));
