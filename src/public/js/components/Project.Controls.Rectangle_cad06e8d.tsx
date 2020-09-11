@@ -1160,6 +1160,8 @@ class Rectangle_cad06e8d extends Base {
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('d3e31c36', 'Auction', event, ((results) => { this.manipulate('d3e31c36', 'Auction', results); }).bind(this)); }).bind(this), type="button", onSubmitting=this.onButtonSubmitting_d3e31c36.bind(this), internal-fsb-guid="d3e31c36")
                                           .internal-fsb-element(internal-fsb-guid="d3e31c36-text")
                                             | ยกเลิก
+                                        .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(255, 0, 0, 1)', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'block' : 'none';})()}, internal-fsb-guid="a5dc13ac")
+                                          | งานประมูลนี้ร้านค้าได้ยกเลิกไปเป็นที่เรียบร้อยแล้ว
                                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.qid"), internal-fsb-guid="d0422ee6")
                                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.sid"), internal-fsb-guid="55c86c21")
                                   input.internal-fsb-element.col-12(type="hidden", value="true", internal-fsb-guid="32b391ac")

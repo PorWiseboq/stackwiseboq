@@ -217,7 +217,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "473d370d",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "84b618a7"
   },
@@ -6581,7 +6581,9 @@
         "    ",
         "    \">",
         "                                                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"d3e31c36-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ยกเลิก</div>",
-        "                                                                                </button></div>",
+        "                                                                                </button>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"a5dc13ac\" internal-fsb-name=\"TextElement 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; color: rgba(255, 0, 0, 1)\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'block' : 'none';]\">งานประมูลนี้ร้านค้าได้ยกเลิกไปเป็นที่เรียบร้อยแล้ว</div>",
+        "                                                                            </div>",
         "                                                                        </div>",
         "                                                                    </div>",
         "                                                                    <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"d0422ee6\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"Quote[#i].Auction.qid\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"55c86c21\" internal-fsb-name=\"Hidden 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" internal-fsb-react-data=\"Quote[#i].Auction.sid\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"32b391ac\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"cancelled\" value=\"true\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2a58dbd2\" internal-fsb-name=\"Hidden 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"cancelled\" value=\"false\">",
@@ -7398,11 +7400,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d3e31c36",
+        "selectingElementGUID": "a5dc13ac",
         "currentCursorWalkPath": [
           "57b28be1",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -25055,7 +25057,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "948504c99ad071824e53236058096ad842f8adb9",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "dd8186fb20680c24ccf36f4770ff33fc15ea400b",
+    "Project.Controls.Rectangle_cad06e8d": "af0456beaf92ed907ab50c63617a3bcc217ccae9",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
