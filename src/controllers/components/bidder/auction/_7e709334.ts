@@ -107,6 +107,14 @@ class Controller extends Base {
                     throw new Error("กรุณาระบุปริมาณเป็นตัวเลข");
                 }
                 break;
+            case 'showHours':
+                if (item.value && isNaN(parseFloat(item.value))) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมงที่จะยืนราคาไว้เป็นตัวเลข");
+                }
+                if (parseFloat(item.value) < 24) {
+                    throw new Error("กรุณาระบุจำนวนชั่วโมงที่จะยืนราคาไว้มากกว่า 24 ชั่วโมง");
+                }
+                break;
         }
     }
   }
@@ -137,7 +145,7 @@ class Controller extends Base {
  		return new Promise(async (resolve, reject) => {
  		  try {
         RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
           try {
             let schemata = ProjectConfigurationHelper.getDataSchema();
             let inputs = RequestHelper.createInputs({
@@ -508,7 +516,7 @@ ORDER BY Auction.price ASC`, [qid], async (error, results, fields) => {
     return new Promise(async (resolve, reject) => {
     	try {
     	  RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
           try {
             let options = RequestHelper.getOptions(this.pageId, this.request);
             
@@ -580,9 +588,7 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
     RequestHelper.registerSubmit("7e709334", "e76846ad", "retrieve", ["31c75169"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "802159d0", "retrieve", ["72aecc3a"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "323ba37c", "retrieve", ["95270ad9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "d3e31c36", "update", ["d0422ee6","32b391ac","55c86c21"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("7e709334", "4d4e42bd", "update", ["55c86c21","2a58dbd2","d0422ee6"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("7e709334", "9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b","7c044793"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "2b2a0681", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("7e709334", "c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('1ae8405a', "relational", "Quote", "status");
@@ -791,6 +797,16 @@ WHERE DATE_ADD(createdAt, interval IF(hours = NULL, 24, hours) hour) < now() AND
       input = RequestHelper.getInput(this.pageId, request, 'c03d6613' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 5 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('7c044793', "relational", "Auction", "showHours");
+		ValidationHelper.registerInput('7c044793', "showHours", true, "กรุณาระบุจำนวนชั่วโมงที่จะยืนราคาไว้");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '7c044793' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of showHours here:
       // 
       
       if (input != null) data.push(input);

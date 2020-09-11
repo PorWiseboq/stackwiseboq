@@ -100,9 +100,7 @@ class Rectangle_cad06e8d extends Base {
     DataManipulationHelper.register("e76846ad", "retrieve", ["31c75169"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("802159d0", "retrieve", ["72aecc3a"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
     DataManipulationHelper.register("323ba37c", "retrieve", ["95270ad9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: "Quote[#i]"});
-    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
-    DataManipulationHelper.register("d3e31c36", "update", ["d0422ee6","32b391ac","55c86c21"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
-    DataManipulationHelper.register("4d4e42bd", "update", ["55c86c21","2a58dbd2","d0422ee6"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("9868a6d5", "upsert", ["1832b944","b91e2739","03aab0e5","957c1568","9c338431","c22ec668","d913e6a1","c03d6613","d30aa93b","ae7e2437","a5b102c4","1382e4c9","9d1cc748","1e76478b","54c30d5c","05733be3","baa65b1b","7c044793"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("c788d322", "insert", ["b16eadbb","208c3d23","8d1ec385","a1a3c540"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
@@ -172,6 +170,8 @@ class Rectangle_cad06e8d extends Base {
     
     if (!auction || auction.length == 0) return 'ใหม่';
     else {
+      if (auction[0].columns['cancelled']) return 'ยืนราคาเสร็จ';
+      
       let specific = true;
       
       for (const item of auction[0].relations['Substitute'].rows) {
@@ -187,6 +187,7 @@ class Rectangle_cad06e8d extends Base {
   
   private getTransferringStatus(i: number): string {
     if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';
+    if (this.getDataFromNotation('Quote[' + i + '].Auction.cancelled')) return 'ยืนราคาเสร็จ';
     
     switch (this.getDataFromNotation('Quote[' + i + '].Auction.Payment.Transfer.status')) {
       case 1:
@@ -907,7 +908,7 @@ class Rectangle_cad06e8d extends Base {
                           .internal-fsb-element.internal-fsb-allow-cursor(style={'overflowX': 'hidden', 'MsOverflowX': 'hidden', 'overflowY': 'auto', 'MsOverflowY': 'auto', 'position': 'absolute', 'left': '0px', 'top': '0px', 'right': '0px', 'bottom': '0px', 'paddingTop': '5px', 'paddingBottom': '5px'}, internal-fsb-guid="ed65b978")
                             .internal-fsb-element.col-12(style={'color': 'rgba(212, 212, 212, 1)', 'fontSize': '13px', 'textAlign': 'center', 'paddingTop': '30px', 'paddingBottom': '30px', 'display': (()=>{return (this.getIsEmpty()) ? 'block' : 'none';})() || 'none'}, internal-fsb-guid="0a287153")
                               | ไม่มีรายการ
-                            .internal-fsb-element(style={display: (()=>{return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.AUCTIONING, true);})()}, internal-fsb-guid="ae9a328e")
+                            .internal-fsb-element(style={'paddingBottom': '80px', display: (()=>{return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.AUCTIONING, true);})()}, internal-fsb-guid="ae9a328e")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-12(internal-fsb-guid="64a6ac8c")
@@ -997,12 +998,16 @@ class Rectangle_cad06e8d extends Base {
                                           input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, ref="price", type="text", placeholder="ราคารวมทั้งหมด", disabled=true, defaultValue=this.getDataFromNotation("Quote[#i].Auction.price"))
                                         .internal-fsb-element.col-2.offset-0(internal-fsb-guid="2b06dab6")
                                           | บาท
+                                        .internal-fsb-element.col-6.offset-3(style={padding: '0px'}, internal-fsb-guid="7c044793")
+                                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", required=true, placeholder="ยืนราคาไว้หลังหมดเวลาประมูล")
+                                        .internal-fsb-element.col-2.offset-0(style={'marginTop': '5px'}, internal-fsb-guid="c70a78d6")
+                                          | ชั่วโมง
                                         input.internal-fsb-element.col-12(type="hidden", value="", internal-fsb-guid="d30aa93b")
                                         input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].qid"), internal-fsb-guid="a5b102c4")
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=!this.getFormEnabledState(), onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
-                            .internal-fsb-element(style={display: (()=>{return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.OFFERING_OR_PAID, true);})()}, internal-fsb-guid="51201e78")
+                            .internal-fsb-element(style={'paddingBottom': '80px', display: (()=>{return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.OFFERING_OR_PAID, true);})()}, internal-fsb-guid="51201e78")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-12(internal-fsb-guid="7b15e8a1")
@@ -1144,12 +1149,8 @@ class Rectangle_cad06e8d extends Base {
                                   .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0 || this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == null) ? 'block' : 'none';})()}, internal-fsb-guid="57b28be1")
                                     .container-fluid
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-4.btn.btn-danger.btn-sm(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'none' : 'block';})()}, onClick=((event) => { window.internalFsbSubmit('d3e31c36', 'Auction', event, ((results) => { this.manipulate('d3e31c36', 'Auction', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="d3e31c36")
-                                          .internal-fsb-element(internal-fsb-guid="d3e31c36-text")
-                                            | ยกเลิก
-                                        Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('4d4e42bd', 'Auction', event, ((results) => { this.manipulate('4d4e42bd', 'Auction', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="4d4e42bd")
-                                          .internal-fsb-element(internal-fsb-guid="4d4e42bd-text")
-                                            | นำกลับมา
+                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'textAlign': 'center', 'color': 'rgba(255, 0, 0, 1)', 'FsbInheritedPresets': '1715aae1', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.cancelled')) ? 'block' : 'none';})()}, internal-fsb-guid="a5dc13ac")
+                                          | งานประมูลนี้หมดเวลายืนราคา
                                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.qid"), internal-fsb-guid="d0422ee6")
                                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[#i].Auction.sid"), internal-fsb-guid="55c86c21")
                                   input.internal-fsb-element.col-12(type="hidden", value="true", internal-fsb-guid="32b391ac")
