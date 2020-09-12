@@ -3,12 +3,12 @@
 
 // Auto[Import]--->
 import {Request, Response} from "express";
-import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../helpers/DatabaseHelper.js';
-import {ValidationInfo, ValidationHelper} from '../../../helpers/ValidationHelper.js';
-import {RequestHelper} from '../../../helpers/RequestHelper.js';
-import {RenderHelper} from '../../../helpers/RenderHelper.js';
-import {DataTableSchema} from '../../../helpers/SchemaHelper.js';
-import {Base} from '../../Base.js';
+import {SourceType, ActionType, HierarchicalDataTable, HierarchicalDataRow, Input, DatabaseHelper} from '../../../../helpers/DatabaseHelper.js';
+import {ValidationInfo, ValidationHelper} from '../../../../helpers/ValidationHelper.js';
+import {RequestHelper} from '../../../../helpers/RequestHelper.js';
+import {RenderHelper} from '../../../../helpers/RenderHelper.js';
+import {DataTableSchema} from '../../../../helpers/SchemaHelper.js';
+import {Base} from '../../../Base.js';
 
 // <---Auto[Import]
 
@@ -116,19 +116,7 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
- 		    let dataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
- 		      'Quote.status': 1,
- 		      'Quote.filled': false,
-          'Quote.cancelled': false,
-          'Quote.Listing.qid': null,
- 		      'Quote.Auction.qid': null,
- 		      'Quote.Auction.bought': true,
- 		      'Quote.Auction.Substitute.aid': null,
- 		      'Quote.Auction.Payment.aid': null,
- 		      'Quote.Auction.Payment.Transfer.aid': null
- 		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], this.request.session, true);
- 		    
- 		    resolve(dataset);
+        resolve(await super.get(data));
       } catch(error) {
         reject(error);
       }
@@ -231,7 +219,7 @@ class Controller extends Base {
       }
     });
   }
- 	
+  
   // Auto[MergingBegin]--->  
   private initialize(request: Request): [ActionType, DataTableSchema, Input[]] {
   	let schema: DataTableSchema = RequestHelper.getSchema(this.pageId, request);
