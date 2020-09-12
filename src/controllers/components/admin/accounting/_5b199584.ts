@@ -88,7 +88,7 @@ class Controller extends Base {
   	//
  		ValidationHelper.validate(data);
  		
- 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'buyer') {
+ 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'admin') {
       this.response.redirect('/authentication');
       throw new Error('Wrong Authentication');
     }
@@ -120,7 +120,7 @@ class Controller extends Base {
     return new Promise(async (resolve, reject) => {
       try {
  		    let dataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
- 		      'Quote.status': 1,
+ 		      'Quote.status': 3,
  		      'Quote.filled': false,
           'Quote.cancelled': false,
           'Quote.Listing.qid': null,

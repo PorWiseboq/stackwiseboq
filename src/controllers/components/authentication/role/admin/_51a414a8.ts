@@ -85,7 +85,7 @@ class Controller extends Base {
   	//
  		ValidationHelper.validate(data);
  		
- 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'buyer') {
+ 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'admin') {
       this.response.redirect('/authentication');
       throw new Error('Wrong Authentication');
     }
