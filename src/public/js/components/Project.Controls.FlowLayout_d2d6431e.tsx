@@ -187,9 +187,11 @@ class FlowLayout_d2d6431e extends Base {
                     .internal-fsb-element.col-9.offset-1.-fsb-self-692a7269(internal-fsb-guid="692a7269")
                       .container-fluid
                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                          .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="4eb60b84")
+                          .internal-fsb-element.-fsb-preset-8d0a83d8.col-1.offset-0(style={'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="09918342")
+                            | #
+                          .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8', 'paddingLeft': '2px', 'paddingRight': '2px'}, internal-fsb-guid="4eb60b84")
                             | ประเภท
-                          .internal-fsb-element.col-5.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="85e83b64")
+                          .internal-fsb-element.-fsb-preset-8d0a83d8.col-4.offset-0(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="85e83b64")
                             | ชื่อ
                           .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="83b5e323")
                             | ปริมาณ
@@ -201,9 +203,11 @@ class FlowLayout_d2d6431e extends Base {
                       .internal-fsb-element.col-9.offset-1.-fsb-self-e1eca1c8(key="item_" + j, internal-fsb-guid="e1eca1c8")
                         .container-fluid
                           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                            .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="ad5606be")
+                              | #{this.getDataFromNotation('Quote['+i+'].Listing['+j+'].lid')}
                             .internal-fsb-element.col-1.offset-0.-fsb-self-8d0a83d8(internal-fsb-guid="8d0a83d8")
                               | #{this.getDataFromNotation('Quote['+i+'].Listing['+j+'].substitute')}
-                            .internal-fsb-element.col-5.offset-0(style={'borderLeftColor': 'rgba(69, 69, 69, 1)', 'borderLeftStyle': 'solid', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(69, 69, 69, 1)', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Listing[" + j + "].title"))}, internal-fsb-guid="be4558d8")
+                            .internal-fsb-element.col-4.offset-0(style={'borderLeftColor': 'rgba(69, 69, 69, 1)', 'borderLeftStyle': 'solid', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(69, 69, 69, 1)', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Listing[" + j + "].title"))}, internal-fsb-guid="be4558d8")
                             .internal-fsb-element.col-2.offset-0(style={'borderLeftColor': 'rgba(69, 69, 69, 1)', 'borderLeftStyle': 'solid', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(69, 69, 69, 1)', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px', 'textAlign': 'center'}, internal-fsb-guid="93dc28b2")
                               | #{this.getDataFromNotation('Quote['+i+'].Listing['+j+'].quantity')}
                             .internal-fsb-element.col-2.offset-0(style={'borderTopColor': 'rgba(69, 69, 69, 1)', 'borderLeftStyle': 'solid', 'borderLeftColor': 'rgba(69, 69, 69, 1)', 'borderBottomStyle': 'solid', 'borderBottomColor': 'rgba(69, 69, 69, 1)', 'borderRightColor': 'rgba(69, 69, 69, 1)', 'borderLeftWidth': '1px', 'borderBottomWidth': '1px', 'borderRightWidth': '1px', 'textAlign': 'center'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Listing[" + j + "].unit"))}, internal-fsb-guid="cee6162b")
@@ -267,9 +271,11 @@ class FlowLayout_d2d6431e extends Base {
                             .internal-fsb-element.col-9.offset-1.-fsb-preset-692a7269(style={'FsbInheritedPresets': '692a7269'}, internal-fsb-guid="49ed86cd")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                  .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="9d73dab4")
+                                  .internal-fsb-element.col-1.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="87d3ec19")
+                                    | #
+                                  .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="9d73dab4")
                                     | ประเภท
-                                  .internal-fsb-element.col-5.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="bdecba32")
+                                  .internal-fsb-element.offset-0.-fsb-preset-8d0a83d8.col-4(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="bdecba32")
                                     | ชื่อ
                                   .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="d64d6830")
                                     | ปริมาณ
@@ -281,9 +287,11 @@ class FlowLayout_d2d6431e extends Base {
                               .internal-fsb-element.col-9.offset-1.-fsb-preset-e1eca1c8(style={'paddingLeft': '0px', 'paddingRight': '0px', 'FsbInheritedPresets': 'e1eca1c8'}, key="item_" + k, internal-fsb-guid="5b477135")
                                 .container-fluid
                                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                    .internal-fsb-element.col-1.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="984463eb")
+                                      | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].lid')}
                                     .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="0a7052b6")
                                       | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')}
-                                    .internal-fsb-element.col-5.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8', textDecorationLine: (()=>{return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Substitute[" + k + "].title"))}, internal-fsb-guid="e5107496")
+                                    .internal-fsb-element.offset-0.-fsb-preset-8d0a83d8.col-4(style={'FsbInheritedPresets': '8d0a83d8', textDecorationLine: (()=>{return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Substitute[" + k + "].title"))}, internal-fsb-guid="e5107496")
                                     .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8', textDecorationLine: (()=>{return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';})()}, internal-fsb-guid="49ac23b6")
                                       | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].quantity')}
                                     .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8', textDecorationLine: (()=>{return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Substitute[" + k + "].unit"))}, internal-fsb-guid="514d7609")
