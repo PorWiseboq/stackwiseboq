@@ -20407,7 +20407,7 @@
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"4156799c\" internal-fsb-name=\"TextElement 15\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-size: 10px\">สถานะ<div>0 = n/a</div>",
         "                                                                <div>1 = ลูกค้าโอนแล้ว</div>",
         "                                                                <div>2 = ตรวจแล้วว่าโอน</div>",
-        "                                                                <div>3 = โอนเงินให้ร้าน</div>",
+        "                                                                <div>3 = โอนให้ร้านแล้ว</div>",
         "                                                            </div>",
         "                                                        </div>",
         "                                                    </div>",
@@ -20441,9 +20441,17 @@
         "                                                        </div>",
         "                                                    </div>",
         "                                                </label>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-1\" internal-fsb-guid=\"2b9505c9\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: right; font-weight: bold; padding-top: 5px\">แจ้งเบอร์โทรศัพท์ลูกค้า</div>",
+        "                                                <div class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"5071eee9\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-right: 0px\">",
+        "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "                                                            <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"731935a5\" internal-fsb-name=\"Textbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-react-data=\"Payment.Transfer.number\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Transfer\" internal-fsb-data-source-column=\"number\" placeholder=\"ส่วนนี้ร้านค้าต้องทราบหลังจากได้รับเงินแล้ว\"></div>",
+        "                                                        </div>",
+        "                                                    </div>",
+        "                                                </div>",
         "                                                <div class=\"internal-fsb-element col-4 offset-3\" internal-fsb-guid=\"86681b46\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"\">",
         "                                                    <div class=\"container-fluid d-print-none\" internal-fsb-event-no-propagate=\"1\">",
-        "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ebe3854c\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Transfer\" internal-fsb-data-source-column=\"aid\" internal-fsb-react-data=\"Payment.Transfer.aid\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor offset--8 btn-primary btn-sm col-12\" internal-fsb-guid=\"d5ac1d26\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-right: 15px; margin-top: 10px; font-size: 13px\" internal-fsb-data-wizard-type=\"update\" internal-fsb-data-controls=\" 3a2356dd 6dc254be aa6eb86d 52651cce a1ee24b3 d39b258a 620ea154 ebe3854c 52da5356 26e1ae39\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
+        "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ebe3854c\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Transfer\" internal-fsb-data-source-column=\"aid\" internal-fsb-react-data=\"Payment.Transfer.aid\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor offset--8 btn-primary btn-sm col-12\" internal-fsb-guid=\"d5ac1d26\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-right: 15px; margin-top: 10px; font-size: 13px\" internal-fsb-data-wizard-type=\"update\" internal-fsb-data-controls=\" 3a2356dd 6dc254be aa6eb86d 52651cce a1ee24b3 d39b258a 620ea154 ebe3854c 52da5356 26e1ae39 731935a5\" onfsbsuccess=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsuccess=\"",
         "",
         "    // Handle the event of onButtonSuccess (Button 1) here:",
         "    // ",
@@ -21315,11 +21323,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "76310279",
+        "selectingElementGUID": "902975e1",
         "currentCursorWalkPath": [
-          "1c9a70e0",
+          "7d4eb9c6",
           0,
-          1,
+          53,
           null
         ]
       },
@@ -21386,6 +21394,7 @@
                 "forwardingAmount": {},
                 "forwardingNote": {},
                 "status": {},
+                "number": {},
                 "aid": {}
               }
             }
@@ -23006,7 +23015,7 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"312cb874\" internal-fsb-name=\"RelationalTable 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 357px; top: 316px; width: 225px; min-height: 313px\" data-title-name=\"Transfer\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"Store\" data-rendering-condition-source-entity=\"oid\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"312cb874\" internal-fsb-name=\"RelationalTable 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 354px; top: 306px; width: 225px; min-height: 334px;\" data-title-name=\"Transfer\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\" data-rendering-condition-mode=\"relation\" data-rendering-condition-source-group=\"Store\" data-rendering-condition-source-entity=\"oid\" data-rendering-condition-matching-mode=\"session\" data-rendering-condition-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Transfer</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -23024,6 +23033,9 @@
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"15569823\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"status\" data-field-type=\"number\" data-lock-mode=\"always\" data-required=\"true\">",
       "                                        <div class=\"internal-fsb-title\">status</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"0a9663e3\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"number\">",
+      "                                        <div class=\"internal-fsb-title\">number</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"de6697c6\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-lock-mode=\"always\" data-title-name=\"forwardingOrigin\">",
       "                                        <div class=\"internal-fsb-title\">forwardingOrigin</div>",
@@ -23044,7 +23056,7 @@
       "                            </div>",
       "                        </div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"aa052b1e\" internal-fsb-name=\"Connection 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 598px; top: 242px; width: 150px;\" data-source-group-name=\"Payment\" data-source-entity-name=\"aid\" data-target-group-name=\"Card\" data-target-entity-name=\"aid\"></div>",
-      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"049a9d39\" internal-fsb-name=\"Connection 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 599px; top: 324px; width: 150px;\" data-source-group-name=\"Payment\" data-source-entity-name=\"aid\" data-target-group-name=\"Transfer\" data-target-entity-name=\"aid\" data-title-name=\"\"></div>",
+      "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"049a9d39\" internal-fsb-name=\"Connection 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 601px; top: 310px; width: 150px;\" data-source-group-name=\"Payment\" data-source-entity-name=\"aid\" data-target-group-name=\"Transfer\" data-target-entity-name=\"aid\" data-title-name=\"\"></div>",
       "                        <div class=\"internal-fsb-element internal-fsb-dragging-handle\" internal-fsb-guid=\"22b0dab6\" internal-fsb-name=\"Connection 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Connection\" style=\"left: 897px; top: 326px; width: 150px;\" data-source-group-name=\"Auction\" data-source-entity-name=\"aid\" data-target-group-name=\"Payment\" data-target-entity-name=\"aid\"></div>",
       "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"d9ee31b8\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 960px; top: 757px; width: 225px; min-height: 201px;\" data-title-name=\"Rank\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Rank</div>",
@@ -25321,6 +25333,15 @@
             },
             "retrievingPermission": null
           },
+          "number": {
+            "name": "number",
+            "guid": "0a9663e3",
+            "fieldType": null,
+            "required": false,
+            "unique": false,
+            "modifyingPermission": null,
+            "retrievingPermission": null
+          },
           "forwardingOrigin": {
             "name": "forwardingOrigin",
             "guid": "de6697c6",
@@ -25695,7 +25716,7 @@
     "5488072c": "044e30e7326dade34817c338f6df37b65592f03c",
     "73d1cec9": "e4ec0156549571571a4ef1b5f98ca72a642d8315",
     "51a414a8": "b58b3fd7da8a53f8fcf3f7e1d95d74a884498022",
-    "5b199584": "cc046d9ce5fcd7311b87e1baca436d903be3aa3f",
+    "5b199584": "e9982f7dd964489ca065b8942abacddf8e8f2f0b",
     "e269aa1d": "005ab85d28da5c86e72d4637a18db31b8285ae56"
   },
   "frontEndComponentsBlobSHADict": {
@@ -25717,7 +25738,7 @@
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
-    "Project.Controls.FlowLayout_d2d6431e": "24274e797252435742e0aff7a8983e52e9f7ffce"
+    "Project.Controls.FlowLayout_d2d6431e": "f882d56d3e004952932a9874993cbde28d02c6bb"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "675041c51de2436fce19801606e4849e5b8649b8",
