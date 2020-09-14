@@ -413,18 +413,18 @@ class FlowLayout_d2d6431e extends Base {
                                   Button.internal-fsb-element.internal-fsb-allow-cursor.offset--8.btn-primary.btn-sm.col-12(style={'marginRight': '15px', 'marginTop': '10px', 'fontSize': '13px'}, onClick=((event) => { window.internalFsbSubmit('d5ac1d26', 'Quote', event, ((results) => { this.manipulate('d5ac1d26', 'Quote', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="d5ac1d26")
                                     .internal-fsb-element(internal-fsb-guid="d5ac1d26-text")
                                       | บันทึก
-            .internal-fsb-element.col-4.offset-3(internal-fsb-guid="1c9a70e0")
-              .container-fluid.d-print-none
-                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  Button.internal-fsb-element.internal-fsb-allow-cursor.btn-danger.btn-sm.col-12(style={'marginTop': '10px', 'fontSize': '13px'}, onClick=((event) => { window.internalFsbSubmit('76310279', 'Quote', event, ((results) => { this.manipulate('76310279', 'Quote', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="76310279")
-                    .internal-fsb-element(internal-fsb-guid="76310279-text")
-                      | ปิดงาน
-                    input.internal-fsb-element(type="hidden", value=this.getDataFromNotation("qid"), internal-fsb-guid="132cd171")
-                    input.internal-fsb-element.col-12(type="hidden", value="true", internal-fsb-guid="00745396")
-                  .internal-fsb-element.col-12(style={'marginTop': '10px', 'fontSize': '10px', 'color': 'rgba(184, 184, 184, 1)', 'textAlign': 'center'}, internal-fsb-guid="bc6dd531")
-                    | กรุณาตรวจเช็คความเรียบร้อยก่อนปิดงาน
-            .internal-fsb-element.col-12(style={'color': 'rgba(184, 184, 184, 1)', 'fontSize': '10px', 'textAlign': 'center', 'marginTop': '20px', 'borderTopColor': 'rgba(184, 184, 184, 1)', 'borderTopWidth': '1px', 'borderBottomStyle': 'dashed', 'borderBottomColor': 'rgba(184, 184, 184, 1)', 'borderBottomWidth': '1px'}, internal-fsb-guid="768b1e89")
-              | จบข้อมูลงานประมูล #{this.getDataFromNotation('Quote['+i+'].title')} สร้าง #{this.getDataFromNotation('Quote['+i+'].createdAt')} แก้ไข #{this.getDataFromNotation('Quote['+i+'].updatedAt')}
+                    .internal-fsb-element.col-4.offset-3(internal-fsb-guid="1c9a70e0")
+                      .container-fluid.d-print-none
+                        .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                          Button.internal-fsb-element.internal-fsb-allow-cursor.btn-danger.btn-sm.col-12(style={'marginTop': '10px', 'fontSize': '13px'}, onClick=((event) => { window.internalFsbSubmit('76310279', 'Quote', event, ((results) => { this.manipulate('76310279', 'Quote', results); }).bind(this)); }).bind(this), type="button", internal-fsb-guid="76310279")
+                            .internal-fsb-element(internal-fsb-guid="76310279-text")
+                              | ปิดงาน
+                            input.internal-fsb-element(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="132cd171")
+                            input.internal-fsb-element.col-12(type="hidden", value="true", internal-fsb-guid="00745396")
+                          .internal-fsb-element.col-12(style={'marginTop': '10px', 'fontSize': '10px', 'color': 'rgba(184, 184, 184, 1)', 'textAlign': 'center'}, internal-fsb-guid="bc6dd531")
+                            | กรุณาตรวจเช็คความเรียบร้อยก่อนปิดงาน
+                    .internal-fsb-element.col-12(style={'color': 'rgba(184, 184, 184, 1)', 'fontSize': '10px', 'textAlign': 'center', 'marginTop': '20px', 'borderTopColor': 'rgba(184, 184, 184, 1)', 'borderTopWidth': '1px', 'borderBottomStyle': 'dashed', 'borderBottomColor': 'rgba(184, 184, 184, 1)', 'borderBottomWidth': '1px'}, internal-fsb-guid="768b1e89")
+                      | จบข้อมูลงานประมูล #{this.getDataFromNotation('Quote['+i+'].title')} สร้าง #{this.getDataFromNotation('Quote['+i+'].createdAt')} แก้ไข #{this.getDataFromNotation('Quote['+i+'].updatedAt')}
     `
   }
 }

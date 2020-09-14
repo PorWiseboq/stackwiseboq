@@ -20451,19 +20451,19 @@
         "                                            </div>",
         "                                        </div>",
         "                                    </div>",
+        "                                    <div class=\"internal-fsb-element col-4 offset-3\" internal-fsb-guid=\"1c9a70e0\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"\">",
+        "                                        <div class=\"container-fluid d-print-none\" internal-fsb-event-no-propagate=\"1\">",
+        "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn-danger btn-sm col-12\" internal-fsb-guid=\"76310279\" internal-fsb-name=\"Button 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; font-size: 13px\" internal-fsb-data-controls=\" 132cd171 00745396\" internal-fsb-data-wizard-type=\"update\">",
+        "                                                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"76310279-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ปิดงาน</div><input type=\"hidden\" class=\"internal-fsb-element\" internal-fsb-guid=\"132cd171\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"qid\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"00745396\" internal-fsb-name=\"Hidden 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"filled\" value=\"true\">",
+        "                                                </button>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"bc6dd531\" internal-fsb-name=\"TextElement 21\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-top: 10px; font-size: 10px; color: rgba(184, 184, 184, 1); text-align: center\">กรุณาตรวจเช็คความเรียบร้อยก่อนปิดงาน</div>",
+        "                                            </div>",
+        "                                        </div>",
+        "                                    </div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"768b1e89\" internal-fsb-name=\"TextElement 90\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"color: rgba(184, 184, 184, 1); font-size: 10px; text-align: center; margin-top: 20px; border-top-color: rgba(184, 184, 184, 1); border-top-width: 1px; border-bottom-style: dashed; border-bottom-color: rgba(184, 184, 184, 1); border-bottom-width: 1px\">จบข้อมูลงานประมูล #{this.getDataFromNotation('Quote['+i+'].title')} สร้าง #{this.getDataFromNotation('Quote['+i+'].createdAt')} แก้ไข #{this.getDataFromNotation('Quote['+i+'].updatedAt')}</div>",
         "                                </div>",
         "                            </div>",
         "                        </div>",
-        "                        <div class=\"internal-fsb-element col-4 offset-3\" internal-fsb-guid=\"1c9a70e0\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"\">",
-        "                            <div class=\"container-fluid d-print-none\" internal-fsb-event-no-propagate=\"1\">",
-        "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn-danger btn-sm col-12\" internal-fsb-guid=\"76310279\" internal-fsb-name=\"Button 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 10px; font-size: 13px\" internal-fsb-data-controls=\" 132cd171 00745396\" internal-fsb-data-wizard-type=\"update\">",
-        "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"76310279-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ปิดงาน</div><input type=\"hidden\" class=\"internal-fsb-element\" internal-fsb-guid=\"132cd171\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"qid\" internal-fsb-react-data=\"qid\"><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"00745396\" internal-fsb-name=\"Hidden 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"filled\" value=\"true\">",
-        "                                    </button>",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"bc6dd531\" internal-fsb-name=\"TextElement 21\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-top: 10px; font-size: 10px; color: rgba(184, 184, 184, 1); text-align: center\">กรุณาตรวจเช็คความเรียบร้อยก่อนปิดงาน</div>",
-        "                                </div>",
-        "                            </div>",
-        "                        </div>",
-        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"768b1e89\" internal-fsb-name=\"TextElement 90\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"color: rgba(184, 184, 184, 1); font-size: 10px; text-align: center; margin-top: 20px; border-top-color: rgba(184, 184, 184, 1); border-top-width: 1px; border-bottom-style: dashed; border-bottom-color: rgba(184, 184, 184, 1); border-bottom-width: 1px\">จบข้อมูลงานประมูล #{this.getDataFromNotation('Quote['+i+'].title')} สร้าง #{this.getDataFromNotation('Quote['+i+'].createdAt')} แก้ไข #{this.getDataFromNotation('Quote['+i+'].updatedAt')}</div>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -21297,9 +21297,9 @@
       "accessories": {
         "selectingElementGUID": "d2d6431e",
         "currentCursorWalkPath": [
-          "7d4eb9c6",
+          "902975e1",
           0,
-          51,
+          54,
           null
         ]
       },
@@ -21369,9 +21369,9 @@
                 "aid": {}
               }
             }
-          }
-        },
-        "qid": {}
+          },
+          "qid": {}
+        }
       }
     },
     "e269aa1d": {
@@ -25697,7 +25697,7 @@
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
-    "Project.Controls.FlowLayout_d2d6431e": "1b694a5157744264feb438e90b70d727860cc27e"
+    "Project.Controls.FlowLayout_d2d6431e": "f8229750eea8ff22ad89efdb48bce6097e4d4518"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "675041c51de2436fce19801606e4849e5b8649b8",
