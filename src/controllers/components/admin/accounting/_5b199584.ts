@@ -247,7 +247,7 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("5b199584", "d5ac1d26", "update", ["3a2356dd","6dc254be","aa6eb86d","52651cce","a1ee24b3","d39b258a","620ea154","ebe3854c","52da5356","26e1ae39"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("5b199584", "d5ac1d26", "update", ["3a2356dd","6dc254be","aa6eb86d","52651cce","a1ee24b3","d39b258a","620ea154","ebe3854c","52da5356","26e1ae39","731935a5"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("5b199584", "76310279", "navigate", ["132cd171","00745396"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('3a2356dd', "relational", "Transfer", "forwardingOrigin");
 		ValidationHelper.registerInput('3a2356dd', "Textbox 1", false, "กรุณากรอกชื่อสาขา");
@@ -335,6 +335,16 @@ class Controller extends Base {
       input = RequestHelper.getInput(this.pageId, request, '26e1ae39' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Radio 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('731935a5', "relational", "Transfer", "number");
+		ValidationHelper.registerInput('731935a5', "Textbox 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '731935a5' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 1 here:
       // 
       
       if (input != null) data.push(input);
