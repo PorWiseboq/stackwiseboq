@@ -92,7 +92,7 @@ class FlowLayout_d2d6431e extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'marginTop': '30px', 'fontSize': '13px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-10 offset-1 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="d2d6431e")
+      div(style=Object.assign({'marginTop': '30px', 'fontSize': '13px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 offset-0 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="d2d6431e")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             each data, i in this.getDataFromNotation("Quote", true)
@@ -187,15 +187,15 @@ class FlowLayout_d2d6431e extends Base {
                     .internal-fsb-element.col-9.offset-1.-fsb-self-692a7269(internal-fsb-guid="692a7269")
                       .container-fluid
                         .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                          .internal-fsb-element.col-1.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="4eb60b84")
+                          .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="4eb60b84")
                             | ประเภท
-                          .internal-fsb-element.col-5.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="85e83b64")
+                          .internal-fsb-element.col-5.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="85e83b64")
                             | ชื่อ
-                          .internal-fsb-element.col-2.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="83b5e323")
+                          .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="83b5e323")
                             | ปริมาณ
-                          .internal-fsb-element.col-2.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="b3117217")
+                          .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="b3117217")
                             | หน่วย
-                          .internal-fsb-element.col-2.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="46b52271")
+                          .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="46b52271")
                             | หมายเหตุ
                     each data, j in this.getDataFromNotation("Quote[" + i + "].Listing", true)
                       .internal-fsb-element.col-9.offset-1.-fsb-self-e1eca1c8(key="item_" + j, internal-fsb-guid="e1eca1c8")
@@ -267,15 +267,15 @@ class FlowLayout_d2d6431e extends Base {
                             .internal-fsb-element.col-9.offset-1.-fsb-preset-692a7269(style={'FsbInheritedPresets': '692a7269'}, internal-fsb-guid="49ed86cd")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                  .internal-fsb-element.col-1.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="9d73dab4")
+                                  .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="9d73dab4")
                                     | ประเภท
-                                  .internal-fsb-element.col-5.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="bdecba32")
+                                  .internal-fsb-element.col-5.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="bdecba32")
                                     | ชื่อ
-                                  .internal-fsb-element.col-2.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="d64d6830")
+                                  .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="d64d6830")
                                     | ปริมาณ
-                                  .internal-fsb-element.col-2.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="85bad855")
+                                  .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="85bad855")
                                     | หน่วย
-                                  .internal-fsb-element.col-2.offset-0(style={'textAlign': 'center'}, internal-fsb-guid="754383d6")
+                                  .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'textAlign': 'center', 'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="754383d6")
                                     | ราคาต่อหน่วย
                             each data, k in this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Substitute", true)
                               .internal-fsb-element.col-9.offset-1.-fsb-preset-e1eca1c8(style={'paddingLeft': '0px', 'paddingRight': '0px', 'FsbInheritedPresets': 'e1eca1c8'}, key="item_" + k, internal-fsb-guid="5b477135")

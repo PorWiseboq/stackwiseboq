@@ -20088,7 +20088,7 @@
         "fonts": {}
       },
       "body": [
-        "<body class=\"\">",
+        "<body class=\"\" style=\"background-image: url(https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/watermark.png)\">",
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"38e22d16\" internal-fsb-name=\"Logo 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"float: left; padding-bottom: 10px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Header\" internal-fsb-inheriting=\"00ce1665\">",
@@ -20106,7 +20106,7 @@
         "                    </div>",
         "                </div>",
         "            </div>",
-        "            <div class=\"internal-fsb-element col-10 offset-1\" internal-fsb-guid=\"d2d6431e\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 30px; font-size: 13px\" internal-fsb-react-mode=\"Document\">",
+        "            <div class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"d2d6431e\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 30px; font-size: 13px\" internal-fsb-react-mode=\"Document\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                        <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"902975e1\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-data=\"Quote\" style=\"margin-bottom: 30px; border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: rgba(184, 184, 184, 1); padding-left: 0px; padding-right: 0px\">",
@@ -20175,11 +20175,11 @@
         "                                    <div class=\"internal-fsb-element col-9 offset-1 -fsb-self-692a7269\" internal-fsb-guid=\"692a7269\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-reusable-preset-name=\"table_header\">",
         "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                            <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0\" internal-fsb-guid=\"4eb60b84\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">ประเภท</div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0\" internal-fsb-guid=\"85e83b64\" internal-fsb-name=\"TextElement 41\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">ชื่อ</div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"83b5e323\" internal-fsb-name=\"TextElement 42\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">ปริมาณ</div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"b3117217\" internal-fsb-name=\"TextElement 43\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">หน่วย</div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"46b52271\" internal-fsb-name=\"TextElement 46\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">หมายเหตุ</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"4eb60b84\" internal-fsb-name=\"TextElement 40\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">ประเภท</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"85e83b64\" internal-fsb-name=\"TextElement 41\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">ชื่อ</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"83b5e323\" internal-fsb-name=\"TextElement 42\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">ปริมาณ</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"b3117217\" internal-fsb-name=\"TextElement 43\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">หน่วย</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"46b52271\" internal-fsb-name=\"TextElement 46\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">หมายเหตุ</div>",
         "                                            </div>",
         "                                        </div>",
         "                                    </div>",
@@ -20236,11 +20236,11 @@
         "                                                <div class=\"internal-fsb-element col-9 offset-1 -fsb-preset-692a7269\" internal-fsb-guid=\"49ed86cd\" internal-fsb-name=\"FlowLayout 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 692a7269\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0\" internal-fsb-guid=\"9d73dab4\" internal-fsb-name=\"TextElement 48\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">ประเภท</div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0\" internal-fsb-guid=\"bdecba32\" internal-fsb-name=\"TextElement 49\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">ชื่อ</div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"d64d6830\" internal-fsb-name=\"TextElement 50\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">ปริมาณ</div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"85bad855\" internal-fsb-name=\"TextElement 51\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">หน่วย</div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0\" internal-fsb-guid=\"754383d6\" internal-fsb-name=\"TextElement 52\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">ราคาต่อหน่วย</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"9d73dab4\" internal-fsb-name=\"TextElement 48\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">ประเภท</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-5 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"bdecba32\" internal-fsb-name=\"TextElement 49\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">ชื่อ</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"d64d6830\" internal-fsb-name=\"TextElement 50\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">ปริมาณ</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"85bad855\" internal-fsb-name=\"TextElement 51\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">หน่วย</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"754383d6\" internal-fsb-name=\"TextElement 52\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; -fsb-inherited-presets: 8d0a83d8\">ราคาต่อหน่วย</div>",
         "                                                        </div>",
         "                                                    </div>",
         "                                                </div>",
@@ -20369,7 +20369,10 @@
         "            padding-right: 0px;",
         "            font-weight: bold;",
         "            -fsb-reusable-name: table_header;",
-        "            -fsb-reusable-id: 692a7269",
+        "            -fsb-reusable-id: 692a7269;",
+        "            border-right-color: rgba(69, 69, 69, 1);",
+        "            border-right-style: solid;",
+        "            border-right-width: 1px",
         "        }",
         "",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-8d0a83d8,",
@@ -21116,11 +21119,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d2d6431e",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
-          "7d4eb9c6",
+          "0",
           0,
-          43,
+          1,
           null
         ]
       },
@@ -25465,7 +25468,7 @@
     "e729be84": "-fsb-inherited-presets: ; -fsb-reusable-name: main_notice; -fsb-reusable-id: e729be84; top: 10px; padding-top: 0px; padding-left: 0px; padding-right: 0px; padding-bottom: 0px; width: 20px; height: 20px; background: rgba(255, 0, 0, 1); position: absolute; color: rgba(255, 255, 255, 1); font-weight: bold; text-align: center; font-size: 10px; line-height: 20px; border-radius: 20px 20px 20px 20px; -webkit-border-radius: 20px 20px 20px 20px; right: 2px; overflow-y: hidden; -ms-overflow-y: hidden; overflow-x: hidden; -ms-overflow-x: hidden",
     "4ce43ee9": "text-align: right; padding-top: 7px; padding-right: 10px; font-size: 14px; -fsb-reusable-name: form_item_title; -fsb-reusable-id: 4ce43ee9; padding-left: 0px",
     "93c1d2a1": "font-weight: bold; padding-top: 5px; padding-bottom: 5px; border-bottom-width: 1px; border-bottom-color: rgba(69, 69, 69, 1); border-bottom-style: solid; -fsb-reusable-name: table_title ; -fsb-reusable-id: 93c1d2a1; margin-top: 10px",
-    "692a7269": "background: rgba(69, 69, 69, 1); color: rgba(255, 255, 255, 1); padding-left: 0px; padding-right: 0px; font-weight: bold; -fsb-reusable-name: table_header; -fsb-reusable-id: 692a7269",
+    "692a7269": "background: rgba(69, 69, 69, 1); color: rgba(255, 255, 255, 1); padding-left: 0px; padding-right: 0px; font-weight: bold; -fsb-reusable-name: table_header; -fsb-reusable-id: 692a7269; border-right-color: rgba(69, 69, 69, 1); border-right-style: solid; border-right-width: 1px",
     "e1eca1c8": "padding-left: 0px; padding-right: 0px; -fsb-reusable-name: table_row; -fsb-reusable-id: e1eca1c8; border-right-color: rgba(69, 69, 69, 1); border-right-style: solid; border-right-width: 1px; margin-bottom: 20px",
     "8d0a83d8": "border-top-color: rgba(69, 69, 69, 1); border-left-style: solid; border-left-color: rgba(69, 69, 69, 1); border-bottom-color: rgba(69, 69, 69, 1); border-bottom-style: solid; border-left-width: 1px; border-bottom-width: 1px; text-align: center; -fsb-reusable-name: table_cell; -fsb-reusable-id: 8d0a83d8",
     "77d2cecb": "font-size: 10px; color: rgba(212, 212, 212, 1); -fsb-reusable-name: token_title; -fsb-reusable-id: 77d2cecb; vertical-align: middle; line-height: 18px"
@@ -25510,7 +25513,7 @@
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
-    "Project.Controls.FlowLayout_d2d6431e": "715998df89bf8585e8de61b04cd2132958a8d0c1"
+    "Project.Controls.FlowLayout_d2d6431e": "0e66c8cc17e4be8845783a7f68809f53ad39fcf9"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "675041c51de2436fce19801606e4849e5b8649b8",
@@ -25530,7 +25533,7 @@
     "5488072c": "ed65858cdf9e9c1684b034b8027bbba7a3161ed4",
     "73d1cec9": "50784dd08c5389d9f67748e99839fb706937c7a6",
     "51a414a8": "7e547cac36a2a091f3f2693b8ce09af651abf256",
-    "5b199584": "81efb470319b5f589fad40bc342ac32840358963",
+    "5b199584": "f1e2d9d52aad00dc9381b3d200f5c0b7831e75f9",
     "e269aa1d": "be8f0d24ea79dd61df263f76bc09326c68f8d5cb"
   },
   "currentPersistingFiles": [
