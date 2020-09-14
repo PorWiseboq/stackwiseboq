@@ -129,7 +129,7 @@ class Controller extends Base {
  		      'Quote.Auction.Substitute.aid': null,
  		      'Quote.Auction.Payment.aid': null,
  		      'Quote.Auction.Payment.Transfer.aid': null
- 		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], this.request.session, true);
+ 		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], this.request.session, true, true);
  		    
  		    resolve(dataset);
       } catch(error) {
