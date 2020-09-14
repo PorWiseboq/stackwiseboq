@@ -153,7 +153,6 @@ WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) <
           try {
             let quoteData = RequestHelper.createInputs({
      		      'Quote.uid': this.request.session.uid,
-     		      'Quote.status': 2,
      		      'Quote.filled': false,
      		      'Quote.cancelled': false,
      		      'Quote.Listing.qid': null,
@@ -263,7 +262,14 @@ GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].keys['qid']], async (_error
     return new Promise(async (resolve, reject) => {
     	try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
-        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));
+      	let results = await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session);
+      	
+      	await DatabaseHelper.update(RequestHelper.createInputs({
+          'Quote.qid': results[0].keys['qid'],
+          'Quote.status': 3
+ 		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], false, this.request.session);
+      	
+      	resolve(results);
       } catch(error) {
         reject(error);
       }
