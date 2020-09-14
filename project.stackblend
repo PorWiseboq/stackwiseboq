@@ -21295,11 +21295,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "76310279",
+        "selectingElementGUID": "4156799c",
         "currentCursorWalkPath": [
-          "902975e1",
+          "5609d3ca",
           0,
-          54,
+          1,
           null
         ]
       },
@@ -22993,16 +22993,16 @@
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"3b2e2319\" internal-fsb-name=\"RelationalColumn 28\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"aid\" data-column-type=\"primary\" data-field-type=\"number\" data-required=\"true\" data-unique=\"true\">",
       "                                        <div class=\"internal-fsb-title\">aid</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8a3cb099\" internal-fsb-name=\"RelationalColumn 29\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"origin\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"8a3cb099\" internal-fsb-name=\"RelationalColumn 29\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"origin\" data-required=\"true\">",
       "                                        <div class=\"internal-fsb-title\">origin</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"78039716\" internal-fsb-name=\"RelationalColumn 30\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"transferrer\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"78039716\" internal-fsb-name=\"RelationalColumn 30\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"transferrer\" data-required=\"true\">",
       "                                        <div class=\"internal-fsb-title\">transferrer</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c1082b93\" internal-fsb-name=\"RelationalColumn 31\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"time\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c1082b93\" internal-fsb-name=\"RelationalColumn 31\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"time\" data-required=\"true\">",
       "                                        <div class=\"internal-fsb-title\">time</div>",
       "                                    </div>",
-      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"15569823\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"status\" data-field-type=\"number\" data-lock-mode=\"always\">",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"15569823\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"status\" data-field-type=\"number\" data-lock-mode=\"always\" data-required=\"true\">",
       "                                        <div class=\"internal-fsb-title\">status</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"de6697c6\" internal-fsb-name=\"RelationalColumn 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-lock-mode=\"always\" data-title-name=\"forwardingOrigin\">",
@@ -25260,7 +25260,7 @@
             "name": "origin",
             "guid": "8a3cb099",
             "fieldType": null,
-            "required": false,
+            "required": true,
             "unique": false,
             "modifyingPermission": null,
             "retrievingPermission": null
@@ -25269,7 +25269,7 @@
             "name": "transferrer",
             "guid": "78039716",
             "fieldType": null,
-            "required": false,
+            "required": true,
             "unique": false,
             "modifyingPermission": null,
             "retrievingPermission": null
@@ -25278,7 +25278,7 @@
             "name": "time",
             "guid": "c1082b93",
             "fieldType": null,
-            "required": false,
+            "required": true,
             "unique": false,
             "modifyingPermission": null,
             "retrievingPermission": null
@@ -25287,7 +25287,7 @@
             "name": "status",
             "guid": "15569823",
             "fieldType": "number",
-            "required": false,
+            "required": true,
             "unique": false,
             "modifyingPermission": {
               "mode": "always",
