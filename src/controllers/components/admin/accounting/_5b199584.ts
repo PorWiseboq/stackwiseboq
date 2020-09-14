@@ -189,7 +189,7 @@ class Controller extends Base {
     return new Promise(async (resolve, reject) => {
     	try {
       	let options = RequestHelper.getOptions(this.pageId, this.request);
-        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session, true));
+        resolve(await DatabaseHelper.update(data, ProjectConfigurationHelper.getDataSchema().tables['Transfer'], options.crossRelationUpsert, this.request.session, true));
       } catch(error) {
         reject(error);
       }
