@@ -64,7 +64,7 @@ class FlowLayout_d2d6431e extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("d5ac1d26", "update", ["3a2356dd","6dc254be","aa6eb86d","52651cce","a1ee24b3","d39b258a","620ea154","ebe3854c","52da5356","26e1ae39"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("d5ac1d26", "update", ["3a2356dd","6dc254be","aa6eb86d","52651cce","a1ee24b3","d39b258a","620ea154","ebe3854c","52da5356","26e1ae39","731935a5"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("76310279", "navigate", ["132cd171","00745396"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
@@ -400,7 +400,7 @@ class FlowLayout_d2d6431e extends Base {
                                     div
                                       | 2 = ตรวจแล้วว่าโอน
                                     div
-                                      | 3 = โอนเงินให้ร้าน
+                                      | 3 = โอนให้ร้านแล้ว
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold', 'paddingTop': '9px'}, internal-fsb-guid="b17313d6")
                               | เปลี่ยนสถานะ
                             label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="2ec2645a")
@@ -431,6 +431,13 @@ class FlowLayout_d2d6431e extends Base {
                                     input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="3", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '3')
                                   .internal-fsb-element.col-10(internal-fsb-guid="97ae9783")
                                     | โอนให้ร้านแล้ว
+                            .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold', 'paddingTop': '5px'}, internal-fsb-guid="2b9505c9")
+                              | แจ้งเบอร์โทรศัพท์ลูกค้า
+                            .internal-fsb-element.col-6.offset-0(style={'paddingRight': '0px'}, internal-fsb-guid="5071eee9")
+                              .container-fluid
+                                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                  .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="731935a5")
+                                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ส่วนนี้ร้านค้าต้องทราบหลังจากได้รับเงินแล้ว", defaultValue=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.number"))
                             .internal-fsb-element.col-4.offset-3(internal-fsb-guid="86681b46")
                               .container-fluid.d-print-none
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
