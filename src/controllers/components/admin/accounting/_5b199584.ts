@@ -123,9 +123,12 @@ class Controller extends Base {
  		      'Quote.status': 3,
  		      'Quote.filled': false,
           'Quote.cancelled': false,
+          'Quote.User.id': null,
           'Quote.Listing.qid': null,
  		      'Quote.Auction.qid': null,
  		      'Quote.Auction.bought': true,
+ 		      'Quote.Auction.Store.sid': null,
+ 		      'Quote.Auction.Store.User.id': null,
  		      'Quote.Auction.Substitute.aid': null,
  		      'Quote.Auction.Payment.aid': null,
  		      'Quote.Auction.Payment.Transfer.aid': null
