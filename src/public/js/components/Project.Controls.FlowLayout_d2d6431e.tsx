@@ -361,7 +361,8 @@ class FlowLayout_d2d6431e extends Base {
                                     input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", defaultValue=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.forwardingAmount"))
                                   .internal-fsb-element.offset-0.col-4(style={padding: '0px'}, internal-fsb-guid="a1ee24b3")
                                     textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", rows="1", defaultValue=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.forwardingNote"))
-                                  .internal-fsb-element.offset-0.col-4(style={'textAlign': 'center'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status"))}, internal-fsb-guid="5e6711ad")
+                                  .internal-fsb-element.offset-0.col-4(style={'textAlign': 'center'}, internal-fsb-guid="5e6711ad")
+                                    | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Payment.Transfer.status')}
                             .internal-fsb-element.col-2.offset-1(internal-fsb-guid="5609d3ca")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor

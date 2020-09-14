@@ -20393,7 +20393,7 @@
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-77d2cecb offset-0 col-4\" internal-fsb-guid=\"0310185a\" internal-fsb-name=\"TextElement 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 77d2cecb; text-align: center\">สถานะ</div>",
         "                                                            <div class=\"internal-fsb-element col-4\" internal-fsb-guid=\"52651cce\" internal-fsb-name=\"Textbox 4\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-data-validation-message=\"กรุณากรอกจำนวน\" internal-fsb-react-data=\"Payment.Transfer.forwardingAmount\"><input type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Transfer\" internal-fsb-data-source-column=\"forwardingAmount\"></div>",
         "                                                            <div class=\"internal-fsb-element offset-0 col-4\" internal-fsb-guid=\"a1ee24b3\" internal-fsb-name=\"Textbox 5\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Textbox\" internal-fsb-textbox-mode=\"multiple\" internal-fsb-data-validation-message=\"กรุณากรอกหมายเหตุ\" internal-fsb-react-data=\"Payment.Transfer.forwardingNote\"><textarea type=\"text\" style=\"display: block; width: 100%; -fsb-for-children: true\" class=\"form-control form-control-sm \" rows=\"1\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Transfer\" internal-fsb-data-source-column=\"forwardingNote\"></textarea></div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element offset-0 col-4\" internal-fsb-guid=\"5e6711ad\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\" internal-fsb-react-data=\"Payment.Transfer.status\">status</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element offset-0 col-4\" internal-fsb-guid=\"5e6711ad\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\" internal-fsb-react-data=\"\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Payment.Transfer.status')}</div>",
         "                                                        </div>",
         "                                                    </div>",
         "                                                </div>",
@@ -21297,9 +21297,9 @@
       "accessories": {
         "selectingElementGUID": "d2d6431e",
         "currentCursorWalkPath": [
-          "d2d6431e",
+          "7d4eb9c6",
           0,
-          3,
+          51,
           null
         ]
       },
@@ -25697,7 +25697,7 @@
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
-    "Project.Controls.FlowLayout_d2d6431e": "99c8be7895ac0ff33e70c3af63f6504e49b34b75"
+    "Project.Controls.FlowLayout_d2d6431e": "1b694a5157744264feb438e90b70d727860cc27e"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "675041c51de2436fce19801606e4849e5b8649b8",
