@@ -14,6 +14,9 @@ import {Base} from '../../Base.js';
 
 // Import additional modules here:
 //
+import {SchemaHelper} from '../../../helpers/SchemaHelper.js';
+import {ProjectConfigurationHelper} from '../../../helpers/ProjectConfigurationHelper.js';
+import {RelationalDatabaseClient} from '../../../helpers/ConnectionHelper.js'
 
 // Auto[Declare]--->
 /*enum SourceType {
@@ -85,7 +88,7 @@ class Controller extends Base {
   	//
  		ValidationHelper.validate(data);
  		
- 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'buyer') {
+ 		if (!this.request.session || !this.request.session.uid || this.request.session.role != 'admin') {
       this.response.redirect('/authentication');
       throw new Error('Wrong Authentication');
     }
@@ -116,7 +119,22 @@ class Controller extends Base {
   protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {
     return new Promise(async (resolve, reject) => {
       try {
-        resolve(await super.get(data));
+ 		    let dataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
+ 		      'Quote.status': 3,
+ 		      'Quote.filled': false,
+          'Quote.cancelled': false,
+          'Quote.User.id': null,
+          'Quote.Listing.qid': null,
+ 		      'Quote.Auction.qid': null,
+ 		      'Quote.Auction.bought': true,
+ 		      'Quote.Auction.Store.sid': null,
+ 		      'Quote.Auction.Store.User.id': null,
+ 		      'Quote.Auction.Substitute.aid': null,
+ 		      'Quote.Auction.Payment.aid': null,
+ 		      'Quote.Auction.Payment.Transfer.aid': null
+ 		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], this.request.session, true, true);
+ 		    
+ 		    resolve(dataset);
       } catch(error) {
         reject(error);
       }
