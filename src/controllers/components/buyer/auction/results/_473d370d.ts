@@ -188,7 +188,7 @@ INNER JOIN Auction ON Quote.qid = Auction.qid
 INNER JOIN Payment ON Auction.aid = Payment.aid
 INNER JOIN Transfer ON Payment.aid = Transfer.aid
 WHERE Auction.bought = 1 AND Quote.qid = ?
-GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].columns['qid']], async (_error, _results, _fields) => {
+GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].keys['qid']], async (_error, _results, _fields) => {
        		    quoteDatasetA['Statuses'] = {
                 source: SourceType.Relational,
               	group: 'Statuses',
