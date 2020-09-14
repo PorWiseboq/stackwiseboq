@@ -247,6 +247,128 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
+    RequestHelper.registerSubmit("5b199584", "d5ac1d26", "update", ["3a2356dd","6dc254be","aa6eb86d","52651cce","a1ee24b3","d39b258a","620ea154","ebe3854c","52da5356","26e1ae39"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("5b199584", "76310279", "update", ["132cd171","00745396"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+		RequestHelper.registerInput('3a2356dd', "relational", "Transfer", "forwardingOrigin");
+		ValidationHelper.registerInput('3a2356dd', "Textbox 1", false, "กรุณากรอกชื่อสาขา");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '3a2356dd' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('6dc254be', "relational", "Transfer", "forwardingTransferrer");
+		ValidationHelper.registerInput('6dc254be', "Textbox 2", false, "กรุณากรอกชื่อผู้โอน");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '6dc254be' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('aa6eb86d', "relational", "Transfer", "forwardingTime");
+		ValidationHelper.registerInput('aa6eb86d', "Textbox 3", false, "กรุณากรอกเวลาโอน");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'aa6eb86d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('52651cce', "relational", "Transfer", "forwardingAmount");
+		ValidationHelper.registerInput('52651cce', "Textbox 4", false, "กรุณากรอกจำนวน");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '52651cce' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 4 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('a1ee24b3', "relational", "Transfer", "forwardingNote");
+		ValidationHelper.registerInput('a1ee24b3', "Textbox 5", false, "กรุณากรอกหมายเหตุ");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'a1ee24b3' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Textbox 5 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('d39b258a', "relational", "Transfer", "status");
+		ValidationHelper.registerInput('d39b258a', "Radio 4", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'd39b258a' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 4 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('52da5356', "relational", "Transfer", "status");
+		ValidationHelper.registerInput('52da5356', "Radio 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '52da5356' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('620ea154', "relational", "Transfer", "status");
+		ValidationHelper.registerInput('620ea154', "Radio 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '620ea154' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('26e1ae39', "relational", "Transfer", "status");
+		ValidationHelper.registerInput('26e1ae39', "Radio 3", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '26e1ae39' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('ebe3854c', "relational", "Transfer", "aid");
+		ValidationHelper.registerInput('ebe3854c', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'ebe3854c' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('132cd171', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('132cd171', "Hidden 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '132cd171' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('00745396', "relational", "Quote", "filled");
+		ValidationHelper.registerInput('00745396', "Hidden 3", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '00745396' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 
 	  // <---Auto[Merging]
 	  
