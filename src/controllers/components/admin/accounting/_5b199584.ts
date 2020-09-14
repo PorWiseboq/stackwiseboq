@@ -230,8 +230,8 @@ class Controller extends Base {
   protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {
     return new Promise(async (resolve, reject) => {
     	try {
-      	throw new Error("Not Implemented Error");
-        // resolve('/');
+    	  await DatabaseHelper.update(data, schema, false, this.request.session, true);
+        resolve('/admin/accounting');
       } catch(error) {
         reject(error);
       }
@@ -248,7 +248,7 @@ class Controller extends Base {
 	  
 	  // Auto[Merging]--->
     RequestHelper.registerSubmit("5b199584", "d5ac1d26", "update", ["3a2356dd","6dc254be","aa6eb86d","52651cce","a1ee24b3","d39b258a","620ea154","ebe3854c","52da5356","26e1ae39"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("5b199584", "76310279", "update", ["132cd171","00745396"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("5b199584", "76310279", "navigate", ["132cd171","00745396"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('3a2356dd', "relational", "Transfer", "forwardingOrigin");
 		ValidationHelper.registerInput('3a2356dd', "Textbox 1", false, "กรุณากรอกชื่อสาขา");
     for (let i=-1; i<128; i++) {
