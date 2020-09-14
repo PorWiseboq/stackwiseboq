@@ -382,28 +382,28 @@ class FlowLayout_d2d6431e extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="d39b258a")
-                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == 'null')
+                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="0", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '0')
                                   .internal-fsb-element.col-10(internal-fsb-guid="b526dbe5")
                                     | ไม่มีรายการ
                             label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="911206ee")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="52da5356")
-                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == 'null')
+                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="1", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '1')
                                   .internal-fsb-element.offset-0.col-10(internal-fsb-guid="d00a39b6")
                                     | ลูกค้าโอนแล้ว
                             label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="cb5786d8")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="620ea154")
-                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == 'null')
+                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="2", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '2')
                                   .internal-fsb-element.col-10(internal-fsb-guid="929893e5")
                                     | ตรวจแล้วว่าโอน
                             label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="aa620501")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="26e1ae39")
-                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == 'null')
+                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="3", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '3')
                                   .internal-fsb-element.col-10(internal-fsb-guid="97ae9783")
                                     | โอนให้ร้านแล้ว
                             .internal-fsb-element.col-4.offset-3(internal-fsb-guid="86681b46")
