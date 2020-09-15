@@ -167,7 +167,6 @@ class Rectangle_cad06e8d extends Base {
   
   private getTag(i: number): string {
     if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';
-    if (this.getShortRemainingTime(i) == '00:00:00') return 'หมดเวลา';
     
     const substitute = this.getDataFromNotation('Quote[' + i + '].Listing.substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
@@ -176,6 +175,7 @@ class Rectangle_cad06e8d extends Base {
     else {
       if (auction[0].columns['cancelled']) return 'ยืนราคาเสร็จ';
       if (!auction[0].relations['Substitute']) return 'เพิ่งเสนอราคา';
+      if (this.state.quoteType == QuoteType.AUCTIONING && this.getShortRemainingTime(i) == '00:00:00') return 'ดูประมูลผ่าน';
       
       let specific = true;
       
@@ -1061,6 +1061,8 @@ class Rectangle_cad06e8d extends Base {
                                         Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '10px', 'marginBottom': '10px'}, onClick=((event) => { window.internalFsbSubmit('9868a6d5', 'Auction', event, ((results) => { this.manipulate('9868a6d5', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=!this.getFormEnabledState(), onSuccess=this.onButtonSuccess_9868a6d5.bind(this), onSubmitting=this.onButtonSubmitting_9868a6d5.bind(this), onSubmitted=this.onButtonSubmitted_9868a6d5.bind(this), internal-fsb-guid="9868a6d5")
                                           .internal-fsb-element(internal-fsb-guid="9868a6d5-text")
                                             | เคาะ
+                                        .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(22, 98, 250, 1)', display: (()=>{return (this.state.quoteType == QuoteType.AUCTIONING && this.getShortRemainingTime(this.state.selectedIndex) == '00:00:00') ? 'block' : 'none';})()}, internal-fsb-guid="b4128221")
+                                          | หมดเวลาและถูกย้ายไปแล้ว.. กรุณาดูในแท็บ "ประมูลผ่าน"
                             .internal-fsb-element(style={'paddingBottom': '80px', display: (()=>{return (this.getIsEmpty()) ? 'none' : this.getQuoteTypeDisplay(QuoteType.OFFERING_OR_PAID, true);})()}, internal-fsb-guid="51201e78")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
