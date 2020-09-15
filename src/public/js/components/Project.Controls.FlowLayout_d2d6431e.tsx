@@ -87,6 +87,44 @@ class FlowLayout_d2d6431e extends Base {
     return super.getDataFromNotation(notation, inArray);
   }
   
+  private getSum(i: number, j: number) {
+    const substitutes = this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute');
+    let sum = 0;
+    for (const substitute of substitutes) {
+      if (substitute.columns['type'] == 3) continue;
+      sum += substitute.columns['quantity'] * substitute.columns['price'];
+    }
+    return sum;
+  }
+  private getDeliveryCost(i: number, j: number) {
+    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliveryCost');
+  }
+  private getTotalPrice(i: number, j: number) {
+    return this.getSum() + this.getDeliveryCost();
+  }
+  private getDiscount(i: number, j: number) {
+    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].discount');
+  }
+  private getTotalAfterDiscount(i: number, j: number) {
+    return this.getTotalPrice() - this.getDiscount();
+  }
+  private getTotalExcludeVAT(i: number, j: number) {
+    return this.getTotalPrice() - this.getDiscount();
+  }
+  private getTotalBeforeVAT(i: number, j: number) {
+    if (this.getDataFromNotation('Quote['+i+'].Auction['+j+'].vatType') == 0) {
+      return this.getTotalExcludeVAT() / 1.07;
+    } else {
+      return this.getTotalExcludeVAT();
+    }
+  }
+  private getActualTotal(i: number, j: number) {
+    return this.getTotalBeforeVAT() * 1.07;
+  }
+  private getSeenTotal(i: number, j: number) {
+    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].price');
+  }
+  
   // Auto[Merging]--->
   protected onButtonSuccess_d5ac1d26(event: Event) {
 
@@ -336,18 +374,38 @@ class FlowLayout_d2d6431e extends Base {
                                       | 2 = ทดแทน
                                     div
                                       | 3 = ไม่มี
-                            .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right', 'marginTop': '20px'}, internal-fsb-guid="7d08489d")
+                            .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold', 'marginTop': '15px'}, internal-fsb-guid="8db692ce")
                               | ค่าขนส่ง
-                            .internal-fsb-element.col-9.offset-0(style={'marginTop': '20px'}, internal-fsb-guid="9bc0864d")
-                              | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliverCost')}
+                            .internal-fsb-element.col-9.offset-0(style={'marginTop': '15px'}, internal-fsb-guid="4110c0b2")
+                              | #{this.getDeliveryCost(i, j)}
+                            .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="7d08489d")
+                              | รวมเป็นเงิน
+                            .internal-fsb-element.col-9.offset-0(internal-fsb-guid="9bc0864d")
+                              | #{this.getTotalPrice(i, j)}
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="d511a7cb")
                               | ส่วนลด
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="3cd7da7a")
-                              | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].discount')}
+                              | #{this.getDiscount(i, j)}
+                            .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="cc561d70")
+                              | จำนวนเงินที่หักส่วนลด
+                            .internal-fsb-element.col-9.offset-0(internal-fsb-guid="15036048")
+                              | #{this.getTotalAfterDiscount(i, j)}
+                            .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="9678b56b")
+                              | ค่าสินค้าก่อนภาษีมูลค่าเพิ่ม
+                            .internal-fsb-element.col-9.offset-0(internal-fsb-guid="9da91391")
+                              | #{this.getTotalExcludeVAT(i, j)}
+                            .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="668337cd")
+                              | ไม่รวม VAT 7%
+                            .internal-fsb-element.col-9.offset-0(internal-fsb-guid="1951de0c")
+                              | #{this.getTotalBeforeVAT(i, j)}
                             .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="c8d660a1")
-                              | ราคารวมภาษี
+                              | จำนวนเงินรวมทั้งหมด
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="068e6701")
-                              | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].price')}
+                              | #{this.getActualTotal(i, j)}
+                            .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="3126ae0e")
+                              | จำนวนเงินรวมที่ลูกค้าเห็น
+                            .internal-fsb-element.col-9.offset-0(internal-fsb-guid="77520b68")
+                              | #{this.getSeenTotal(i, j)}
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="5b49c684")
                               | ลูกค้าโอนเงินจาก
                             .internal-fsb-element.col-2.offset-0.-fsb-preset-77d2cecb(style={'FsbInheritedPresets': '77d2cecb'}, internal-fsb-guid="7a9cd00c")
