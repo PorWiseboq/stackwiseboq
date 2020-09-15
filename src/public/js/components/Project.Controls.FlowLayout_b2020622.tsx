@@ -500,7 +500,7 @@ class FlowLayout_b2020622 extends Base {
                       | ย้อนกลับ
                   Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-0(style={'marginLeft': '10px', 'marginTop': '15px'}, type="button", disabled=this.state.disabled, onClick=this.onButtonClick_aea42e1c.bind(this), internal-fsb-guid="aea42e1c")
                     .internal-fsb-element(internal-fsb-guid="aea42e1c-text")
-                      | ถัดไป: ระบุสินค้าเทียบเคียง
+                      | ถัดไป: ระบุข้อมูลจัดส่งและระยะเวลา
             .internal-fsb-element.-fsb-preset-180079a2.col-10.offset-1(style={'FsbInheritedPresets': '180079a2', display: (()=>{return this.getDisplay(Status.SUBSTITUTE);})()}, internal-fsb-guid="b1a8c59c")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
