@@ -5330,12 +5330,12 @@
         "      ",
         "      let specific = true;",
         "      ",
-        "      for (const item of auction[0].relations['Substitute'].rows) {",
+        "      /* for (const item of auction[0].relations['Substitute'].rows) {",
         "        if (item.columns['type'] == 3) {",
         "          specific = false;",
         "          break;",
         "        }",
-        "      }",
+        "      } */",
         "      ",
         "      return (specific) ? 'เสนอครบ' : 'เสนอไม่ครบ';",
         "    }",
@@ -7622,9 +7622,9 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "9c338431",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "483390a6",
+          "24731127",
           0,
           1,
           null
@@ -26314,7 +26314,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "19d8b2412206e9a6f2b69d9374c0671c96c40c03",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "f9a8e2fea4c9c13ac4002b9ba53074850fcb388e",
+    "Project.Controls.Rectangle_cad06e8d": "d53b9d9c4d1c949104e002380f2c7dd99399852a",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",

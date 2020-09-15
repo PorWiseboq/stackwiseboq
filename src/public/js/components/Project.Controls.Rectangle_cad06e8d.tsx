@@ -177,12 +177,12 @@ class Rectangle_cad06e8d extends Base {
       
       let specific = true;
       
-      for (const item of auction[0].relations['Substitute'].rows) {
+      /* for (const item of auction[0].relations['Substitute'].rows) {
         if (item.columns['type'] == 3) {
           specific = false;
           break;
         }
-      }
+      } */
       
       return (specific) ? 'เสนอครบ' : 'เสนอไม่ครบ';
     }
