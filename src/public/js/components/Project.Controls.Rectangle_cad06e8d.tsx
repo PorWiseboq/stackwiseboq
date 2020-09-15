@@ -167,24 +167,46 @@ class Rectangle_cad06e8d extends Base {
   
   private getTag(i: number): string {
     if (this.getDataFromNotation('Quote[' + i + '].cancelled')) return 'ลูกค้ายกเลิก';
+    if (this.getShortRemainingTime(i) == '00:00:00') return 'หมดเวลา';
     
     const substitute = this.getDataFromNotation('Quote[' + i + '].Listing.substitute');
     const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
     
-    if (!auction || auction.length == 0) return 'ใหม่';
+    if (!auction || auction.length == 0) return 'งานใหม่';
     else {
       if (auction[0].columns['cancelled']) return 'ยืนราคาเสร็จ';
+      if (!auction[0].relations['Substitute']) return 'เพิ่งเสนอราคา';
       
       let specific = true;
       
-      /* for (const item of auction[0].relations['Substitute'].rows) {
+      for (const item of auction[0].relations['Substitute'].rows) {
         if (item.columns['type'] == 3) {
           specific = false;
           break;
         }
-      } */
+      }
       
       return (specific) ? 'เสนอครบ' : 'เสนอไม่ครบ';
+    }
+  }
+  
+  private getGroup(i: number): string {
+    const substitute = this.getDataFromNotation('Quote[' + i + '].Listing.substitute');
+    const auction = this.getDataFromNotation('Quote[' + i + '].Auction');
+    
+    if (!auction || auction.length == 0) return '';
+    else {
+      if (!auction[0].relations['Substitute']) return '';      
+      let specific = true;
+      
+      for (const item of auction[0].relations['Substitute'].rows) {
+        if (item.columns['type'] == 3) {
+          specific = false;
+          break;
+        }
+      }
+      
+      return (specific) ? 'ในกลุ่มที่เสนอครบ' : 'ในกลุ่มที่เสนอไม่ครบ';
     }
   }
   
@@ -218,13 +240,13 @@ class Rectangle_cad06e8d extends Base {
   
   private getAuctionSummary(i: number): string {
     const rank = this.getRank(i);
-    const tag = this.getTag(i);
+    const tag = this.getGroup(i);
     
     if (rank == -1) return 'งานประมูลนี้ทางร้านค้ายังไม่เคยเคาะประมูลมาก่อน';
-    if (rank == null) return 'งานประมูลของคุณยังไม่ได้ถูกจัดอันดับ... โปรดกรุณารอสักครู่';
+    if (rank == null) return 'งานประมูลของคุณยังไม่ได้ถูกจัดอันดับ... กรุณารีเฟรชเว็บไซต์หรือกดปุ่ม F5';
     if (rank > 10) return 'งานประมูลนี้ทางร้านค้าเคยเคาะประมูลแล้วแต่พบว่าราคาแพงเกินไปจนหลุด 10 อันดับแรก';
     
-    return `ตอนนี้คุณอยู่อันดับที่ ${rank} / 10 อันดับที่ลูกค้าสามารถเห็นได้ในกลุ่มที่${tag}`;
+    return `ตอนนี้คุณอยู่อันดับที่ ${rank} / 10 อันดับที่ลูกค้าสามารถเห็นได้${tag}`;
   }
   
   private getRankSequenceTag(i: number): string {
