@@ -317,12 +317,12 @@ class FlowLayout_d2d6431e extends Base {
                                       | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].lid')}
                                     .internal-fsb-element.col-1.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="0a7052b6")
                                       | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')}
-                                    .internal-fsb-element.offset-0.-fsb-preset-8d0a83d8.col-4(style={'FsbInheritedPresets': '8d0a83d8', textDecorationLine: (()=>{return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Substitute[" + k + "].title"))}, internal-fsb-guid="e5107496")
-                                    .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8', textDecorationLine: (()=>{return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';})()}, internal-fsb-guid="49ac23b6")
-                                      | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].quantity')}
-                                    .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8', textDecorationLine: (()=>{return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';})()}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Substitute[" + k + "].unit"))}, internal-fsb-guid="514d7609")
-                                    .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8', textDecorationLine: (()=>{return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';})()}, internal-fsb-guid="b7a81420")
-                                      | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].price')}
+                                    .internal-fsb-element.offset-0.-fsb-preset-8d0a83d8.col-4(style={'FsbInheritedPresets': '8d0a83d8'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Substitute[" + k + "].title"))}, internal-fsb-guid="e5107496")
+                                    .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="49ac23b6")
+                                      | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].quantity') || 'n/a'}
+                                    .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8'}, dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Substitute[" + k + "].unit"))}, internal-fsb-guid="514d7609")
+                                    .internal-fsb-element.col-2.offset-0.-fsb-preset-8d0a83d8(style={'FsbInheritedPresets': '8d0a83d8'}, internal-fsb-guid="b7a81420")
+                                      | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].price') || 'n/a'}
                             .internal-fsb-element.col-2.offset-0(internal-fsb-guid="b30cc596")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -336,9 +336,9 @@ class FlowLayout_d2d6431e extends Base {
                                       | 2 = ทดแทน
                                     div
                                       | 3 = ไม่มี
-                            .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="7d08489d")
+                            .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right', 'marginTop': '20px'}, internal-fsb-guid="7d08489d")
                               | ค่าขนส่ง
-                            .internal-fsb-element.col-9.offset-0(internal-fsb-guid="9bc0864d")
+                            .internal-fsb-element.col-9.offset-0(style={'marginTop': '20px'}, internal-fsb-guid="9bc0864d")
                               | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliverCost')}
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="d511a7cb")
                               | ส่วนลด

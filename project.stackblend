@@ -217,7 +217,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "73d1cec9",
+    "editingPageID": "5b199584",
     "currentMode": "site",
     "editingComponentID": "84b618a7"
   },
@@ -21256,11 +21256,11 @@
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-1 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"984463eb\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].lid')}</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-1 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"0a7052b6\" internal-fsb-name=\"TextElement 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\" internal-fsb-react-data=\"\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')}</div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element offset-0 -fsb-preset-8d0a83d8 col-4\" internal-fsb-guid=\"e5107496\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\" internal-fsb-react-data=\"title\" internal-fsb-react-style-text-decoration-line=\"CODE[return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';]\">ABC</div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"49ac23b6\" internal-fsb-name=\"TextElement 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\" internal-fsb-react-data=\"\" internal-fsb-react-style-text-decoration-line=\"CODE[return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';]\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].quantity')}</div>",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"514d7609\" internal-fsb-name=\"TextElement 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\" internal-fsb-react-data=\"unit\" internal-fsb-react-style-text-decoration-line=\"CODE[return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';]\">ABC</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element offset-0 -fsb-preset-8d0a83d8 col-4\" internal-fsb-guid=\"e5107496\" internal-fsb-name=\"TextElement 10\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\" internal-fsb-react-data=\"title\">ABC</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"49ac23b6\" internal-fsb-name=\"TextElement 11\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\" internal-fsb-react-data=\"\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].quantity') || 'n/a'}</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"514d7609\" internal-fsb-name=\"TextElement 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\" internal-fsb-react-data=\"unit\">ABC</div>",
         "",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"b7a81420\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\" internal-fsb-react-style-text-decoration-line=\"CODE[return ([0,3].indexOf(this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].type')) != -1) ? 'line-through' : '';]\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].price')}</div>",
+        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-0 -fsb-preset-8d0a83d8\" internal-fsb-guid=\"b7a81420\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 8d0a83d8\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute['+k+'].price') || 'n/a'}</div>",
         "",
         "                                                        </div>",
         "                                                    </div>",
@@ -21276,8 +21276,8 @@
         "                                                        </div>",
         "                                                    </div>",
         "                                                </div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-1\" internal-fsb-guid=\"7d08489d\" internal-fsb-name=\"TextElement 27\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; text-align: right\">ค่าขนส่ง</div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"9bc0864d\" internal-fsb-name=\"TextElement 28\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliverCost')}</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-1\" internal-fsb-guid=\"7d08489d\" internal-fsb-name=\"TextElement 27\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; text-align: right; margin-top: 20px\">ค่าขนส่ง</div>",
+        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"9bc0864d\" internal-fsb-name=\"TextElement 28\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"margin-top: 20px\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliverCost')}</div>",
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-1\" internal-fsb-guid=\"d511a7cb\" internal-fsb-name=\"TextElement 29\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: right; font-weight: bold\">ส่วนลด</div>",
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"3cd7da7a\" internal-fsb-name=\"TextElement 30\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].discount')}</div>",
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-1\" internal-fsb-guid=\"c8d660a1\" internal-fsb-name=\"TextElement 31\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; text-align: right\">ราคารวมภาษี</div>",
@@ -21479,8 +21479,7 @@
         "            -fsb-reusable-id: e1eca1c8;",
         "            border-right-color: rgba(69, 69, 69, 1);",
         "            border-right-style: solid;",
-        "            border-right-width: 1px;",
-        "            margin-bottom: 20px",
+        "            border-right-width: 1px",
         "        }",
         "",
         "        .internal-fsb-strict-layout>.internal-fsb-element.-fsb-self-692a7269,",
@@ -22249,9 +22248,9 @@
       "accessories": {
         "selectingElementGUID": "d2d6431e",
         "currentCursorWalkPath": [
-          "902975e1",
+          "b30cc596",
           0,
-          54,
+          1,
           null
         ]
       },
@@ -26618,7 +26617,7 @@
     "4ce43ee9": "text-align: right; padding-top: 7px; padding-right: 10px; font-size: 14px; -fsb-reusable-name: form_item_title; -fsb-reusable-id: 4ce43ee9; padding-left: 0px",
     "93c1d2a1": "font-weight: bold; padding-top: 5px; padding-bottom: 5px; border-bottom-width: 1px; border-bottom-color: rgba(69, 69, 69, 1); border-bottom-style: solid; -fsb-reusable-name: table_title ; -fsb-reusable-id: 93c1d2a1; margin-top: 10px",
     "692a7269": "background: rgba(69, 69, 69, 1); color: rgba(255, 255, 255, 1); padding-left: 0px; padding-right: 0px; font-weight: bold; -fsb-reusable-name: table_header; -fsb-reusable-id: 692a7269; border-right-color: rgba(69, 69, 69, 1); border-right-style: solid; border-right-width: 1px",
-    "e1eca1c8": "padding-left: 0px; padding-right: 0px; -fsb-reusable-name: table_row; -fsb-reusable-id: e1eca1c8; border-right-color: rgba(69, 69, 69, 1); border-right-style: solid; border-right-width: 1px; margin-bottom: 20px",
+    "e1eca1c8": "padding-left: 0px; padding-right: 0px; -fsb-reusable-name: table_row; -fsb-reusable-id: e1eca1c8; border-right-color: rgba(69, 69, 69, 1); border-right-style: solid; border-right-width: 1px",
     "8d0a83d8": "border-top-color: rgba(69, 69, 69, 1); border-left-style: solid; border-left-color: rgba(69, 69, 69, 1); border-bottom-color: rgba(69, 69, 69, 1); border-bottom-style: solid; border-left-width: 1px; border-bottom-width: 1px; text-align: center; -fsb-reusable-name: table_cell; -fsb-reusable-id: 8d0a83d8",
     "77d2cecb": "font-size: 10px; color: rgba(212, 212, 212, 1); -fsb-reusable-name: token_title; -fsb-reusable-id: 77d2cecb; vertical-align: middle; line-height: 18px"
   },
@@ -26662,7 +26661,7 @@
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
-    "Project.Controls.FlowLayout_d2d6431e": "ff63ea8abd38aeb6a1c7cb6c30c8191b99f94da1"
+    "Project.Controls.FlowLayout_d2d6431e": "f89f30b26c41cf89dfd7371e3b179a4c7049df82"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "ebf74b4786bcb197f7ce638843592ca609ef38d6",
@@ -26682,7 +26681,7 @@
     "5488072c": "62947e773df16a5aa2cea677856bc53a5cb237bb",
     "73d1cec9": "9ea894e39ac9ae94bc7ee74738382a6d354e5ab7",
     "51a414a8": "4c97729d9a95a0b8fa8bc8601afc9c863bed9e90",
-    "5b199584": "f1e2d9d52aad00dc9381b3d200f5c0b7831e75f9",
+    "5b199584": "53940155ba8a79e0bfa62c7c103c34b6da566c3a",
     "e269aa1d": "be8f0d24ea79dd61df263f76bc09326c68f8d5cb"
   },
   "currentPersistingFiles": [
