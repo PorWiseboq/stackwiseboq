@@ -89,10 +89,18 @@ class FlowLayout_d2d6431e extends Base {
   
   private getSum(i: number, j: number) {
     const substitutes = this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Substitute');
+    const listings = this.getDataFromNotation('Quote['+i+'].Listing');
     let sum = 0;
     for (const substitute of substitutes) {
       if (substitute.columns['type'] == 3) continue;
-      sum += substitute.columns['quantity'] * substitute.columns['price'];
+      if (substitute.columns['type'] == 1 || substitute.columns['type'] == 2) {
+        sum += substitute.columns['quantity'] * substitute.columns['price'];
+      } else {
+        const listing = listings.filter(item => item.keys['lid'] == substitute.keys['lid'])[0];
+        if (listing) {
+          sum += listing.columns['quantity'] * substitute.columns['price'];
+        }
+      }
     }
     return sum || 0;
   }
