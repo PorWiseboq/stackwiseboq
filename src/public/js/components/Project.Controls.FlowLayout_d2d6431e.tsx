@@ -94,16 +94,16 @@ class FlowLayout_d2d6431e extends Base {
       if (substitute.columns['type'] == 3) continue;
       sum += substitute.columns['quantity'] * substitute.columns['price'];
     }
-    return sum;
+    return sum || 0;
   }
   private getDeliveryCost(i: number, j: number) {
-    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliveryCost');
+    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliveryCost') || 0;
   }
   private getTotalPrice(i: number, j: number) {
     return this.getSum(i, j) + this.getDeliveryCost(i, j);
   }
   private getDiscount(i: number, j: number) {
-    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].discount');
+    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].discount') || 0;
   }
   private getTotalAfterDiscount(i: number, j: number) {
     return this.getTotalPrice(i, j) - this.getDiscount(i, j);
@@ -122,7 +122,7 @@ class FlowLayout_d2d6431e extends Base {
     return this.getTotalBeforeVAT(i, j) * 1.07;
   }
   private getSeenTotal(i: number, j: number) {
-    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].price');
+    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].price') || 0;
   }
   
   // Auto[Merging]--->
@@ -377,35 +377,35 @@ class FlowLayout_d2d6431e extends Base {
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold', 'marginTop': '15px'}, internal-fsb-guid="8db692ce")
                               | ค่าขนส่ง
                             .internal-fsb-element.col-9.offset-0(style={'marginTop': '15px'}, internal-fsb-guid="4110c0b2")
-                              | #{this.getDeliveryCost(i, j)}
+                              | #{this.getDeliveryCost(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="7d08489d")
                               | รวมเป็นเงิน
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="9bc0864d")
-                              | #{this.getTotalPrice(i, j)}
+                              | #{this.getTotalPrice(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="d511a7cb")
                               | ส่วนลด
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="3cd7da7a")
-                              | #{this.getDiscount(i, j)}
+                              | #{this.getDiscount(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="cc561d70")
                               | จำนวนเงินที่หักส่วนลด
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="15036048")
-                              | #{this.getTotalAfterDiscount(i, j)}
+                              | #{this.getTotalAfterDiscount(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="9678b56b")
                               | ค่าสินค้าก่อนภาษีมูลค่าเพิ่ม
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="9da91391")
-                              | #{this.getTotalExcludeVAT(i, j)}
+                              | #{this.getTotalExcludeVAT(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="668337cd")
                               | ไม่รวม VAT 7%
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="1951de0c")
-                              | #{this.getTotalBeforeVAT(i, j)}
+                              | #{this.getTotalBeforeVAT(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="c8d660a1")
                               | จำนวนเงินรวมทั้งหมด
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="068e6701")
-                              | #{this.getActualTotal(i, j)}
+                              | #{this.getActualTotal(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="3126ae0e")
                               | จำนวนเงินรวมที่ลูกค้าเห็น
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="77520b68")
-                              | #{this.getSeenTotal(i, j)}
+                              | #{this.getSeenTotal(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="5b49c684")
                               | ลูกค้าโอนเงินจาก
                             .internal-fsb-element.col-2.offset-0.-fsb-preset-77d2cecb(style={'FsbInheritedPresets': '77d2cecb'}, internal-fsb-guid="7a9cd00c")
