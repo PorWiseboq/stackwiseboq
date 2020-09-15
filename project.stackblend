@@ -21419,19 +21419,9 @@
         "                                                        </div>",
         "                                                    </div>",
         "                                                </div>",
-        "                                                <div class=\"internal-fsb-element col-2\" internal-fsb-guid=\"5609d3ca\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"\">",
-        "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-12 offset-0\" internal-fsb-guid=\"4156799c\" internal-fsb-name=\"TextElement 15\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-size: 10px; margin-top: 22px\">สถานะ<div>0 = n/a</div>",
-        "                                                                <div>1 = ลูกค้าโอนแล้ว</div>",
-        "                                                                <div>2 = ตรวจแล้วว่าโอน</div>",
-        "                                                                <div>3 = โอนให้ร้านแล้ว</div>",
-        "                                                            </div>",
-        "                                                        </div>",
-        "                                                    </div>",
-        "                                                </div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-3 offset-0\" internal-fsb-guid=\"0310185a\" internal-fsb-name=\"TextElement 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: ; text-align: right; font-weight: bold; margin-top: 10px\">สถานะ</div>",
-        "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"5e6711ad\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: left; margin-top: 10px\" internal-fsb-react-data=\"\">#{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Payment.Transfer.status')}</div>",
+        "",
+        "",
+        "",
         "                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-2 offset-1\" internal-fsb-guid=\"b17313d6\" internal-fsb-name=\"TextElement 16\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: right; font-weight: bold; padding-top: 9px\">เปลี่ยนสถานะ</div>",
         "                                                <div class=\"internal-fsb-element col-7 offset-0\" internal-fsb-guid=\"c5d76e13\" internal-fsb-name=\"FlowLayout 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -22355,11 +22345,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d2d6431e",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
-          "86681b46",
+          "7d4eb9c6",
           0,
-          2,
+          54,
           null
         ]
       },
@@ -26770,7 +26760,7 @@
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
-    "Project.Controls.FlowLayout_d2d6431e": "e9976cd90d67e2626ff7376d117a53cae106b17f"
+    "Project.Controls.FlowLayout_d2d6431e": "c6824f95dfea05551416419c3844ada644cd470d"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "ebf74b4786bcb197f7ce638843592ca609ef38d6",
