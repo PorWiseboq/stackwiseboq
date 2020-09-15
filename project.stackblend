@@ -8092,7 +8092,7 @@
         "    });",
         "    ",
         "    \">",
-        "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"aea42e1c-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ถัดไป: ระบุสินค้าเทียบเคียง</div>",
+        "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"aea42e1c-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ถัดไป: ระบุข้อมูลจัดส่งและระยะเวลา</div>",
         "                                    </button>",
         "                                </div>",
         "                            </div>",
@@ -9093,7 +9093,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "9ce000e1",
+        "selectingElementGUID": "aea42e1c",
         "currentCursorWalkPath": [
           "180079a2",
           0,
@@ -26312,7 +26312,7 @@
     "Project.Common.Header": "7fda1bd94a8a20636fb311de5136406c81ee2be9",
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
-    "Project.Controls.FlowLayout_b2020622": "ba77db77136b2ae7b90d2979032b28c9ccaef42a",
+    "Project.Controls.FlowLayout_b2020622": "19d8b2412206e9a6f2b69d9374c0671c96c40c03",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
     "Project.Controls.Rectangle_cad06e8d": "f9a8e2fea4c9c13ac4002b9ba53074850fcb388e",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
