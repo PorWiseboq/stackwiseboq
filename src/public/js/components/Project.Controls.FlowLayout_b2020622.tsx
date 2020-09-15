@@ -74,7 +74,7 @@ class FlowLayout_b2020622 extends Base {
   }
   
   register() {
-    DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d","0e26b1b8","b552218c"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("d910ad00", "delete", ["41bdc9b3"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1","b6c9ad89","a0b78888","cc34eced","e92d687b"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
@@ -380,6 +380,8 @@ class FlowLayout_b2020622 extends Base {
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="5d34dc3b")
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.uid"), internal-fsb-guid="5752cb4d")
                   input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="2acce16d")
+                  input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="0e26b1b8")
+                  input.internal-fsb-element.col-12(type="hidden", value="0", internal-fsb-guid="b552218c")
                   Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-4.offset-4(style={'marginTop': '15px', display: (()=>{return this.state.inserted ? 'none' : 'block'})()}, onClick=((event) => { window.internalFsbSubmit('9ce000e1', 'Quote', event, ((results) => { this.manipulate('9ce000e1', 'Quote', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.disabled, onSuccess=this.onButtonSuccess_9ce000e1.bind(this), onSubmitting=this.onButtonSubmitting_9ce000e1.bind(this), onSubmitted=this.onButtonSubmitted_9ce000e1.bind(this), internal-fsb-guid="9ce000e1")
                     .internal-fsb-element(internal-fsb-guid="9ce000e1-text")
                       | ถัดไป: ระบุรายการวัสดุก่อสร้าง

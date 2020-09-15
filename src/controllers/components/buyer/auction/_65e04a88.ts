@@ -418,7 +418,7 @@ class Controller extends Base {
 	  // <---Auto[MergingBegin]
 	  
 	  // Auto[Merging]--->
-    RequestHelper.registerSubmit("65e04a88", "9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "9ce000e1", "insert", ["5a972a57","607d8ee2","5752cb4d","2acce16d","0e26b1b8","b552218c"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "1bc39a2b", "update", ["5a972a57","607d8ee2","5d34dc3b","5752cb4d"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "d910ad00", "delete", ["41bdc9b3"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1","b6c9ad89","a0b78888","cc34eced","e92d687b"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
@@ -478,6 +478,26 @@ class Controller extends Base {
     // 
     if (input) input.value = '0';
     
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('0e26b1b8', "relational", "Quote", "cancelled");
+		ValidationHelper.registerInput('0e26b1b8', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '0e26b1b8' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('b552218c', "relational", "Quote", "filled");
+		ValidationHelper.registerInput('b552218c', "Hidden 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'b552218c' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 2 here:
+      // 
+      
       if (input != null) data.push(input);
     }
 		RequestHelper.registerInput('41bdc9b3', "relational", "Listing", "lid");
