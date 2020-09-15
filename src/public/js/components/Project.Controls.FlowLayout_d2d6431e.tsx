@@ -105,7 +105,7 @@ class FlowLayout_d2d6431e extends Base {
     return sum || 0;
   }
   private getDeliveryCost(i: number, j: number) {
-    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliveryCost') || 0;
+    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliverCost') || 0;
   }
   private getTotalPrice(i: number, j: number) {
     return this.getSum(i, j) + this.getDeliveryCost(i, j);
