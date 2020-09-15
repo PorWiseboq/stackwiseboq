@@ -1166,6 +1166,8 @@ class Rectangle_cad06e8d extends Base {
                                                 | เวลา:
                                               .internal-fsb-element.col-7.offset-0(internal-fsb-guid="1566119e")
                                                 | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.time')}
+                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'color': 'rgba(255, 0, 0, 1)', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0) ? 'block' : 'none';})()}, internal-fsb-guid="7a7576c8")
+                                          | ไม่พบรายการโอนเงินและกำลังรอให้ลูกค้าแก้ไขให้เรียบร้อย
                                         .internal-fsb-element.-fsb-preset-1715aae1.col-12(style={'FsbInheritedPresets': '1715aae1', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 1) ? 'block' : 'none';})()}, internal-fsb-guid="36ed3d83")
                                           | ทาง WiseBOQ กำลังเช็คยอดเงินโอน
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'color': 'rgba(22, 98, 250, 1)', 'textAlign': 'center', 'FsbInheritedPresets': '1715aae1', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 2) ? 'block' : 'none';})()}, internal-fsb-guid="a0e469c3")

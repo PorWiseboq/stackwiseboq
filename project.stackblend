@@ -6700,6 +6700,7 @@
         "                                                                                        </div>",
         "                                                                                    </div>",
         "                                                                                </div>",
+        "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1715aae1\" internal-fsb-guid=\"7a7576c8\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1; color: rgba(255, 0, 0, 1)\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0) ? 'block' : 'none';]\">ไม่พบรายการโอนเงินและกำลังรอให้ลูกค้าแก้ไขให้เรียบร้อย</div>",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-1715aae1 col-12\" internal-fsb-guid=\"36ed3d83\" internal-fsb-name=\"TextElement 23\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1715aae1\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 1) ? 'block' : 'none';]\">ทาง WiseBOQ กำลังเช็คยอดเงินโอน</div>",
         "                                                                                <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1715aae1\" internal-fsb-guid=\"a0e469c3\" internal-fsb-name=\"TextElement 12\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"color: rgba(22, 98, 250, 1); text-align: center; -fsb-inherited-presets: 1715aae1\" internal-fsb-react-style-display=\"CODE[return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 2) ? 'block' : 'none';]\">ทาง WiseBOQ เช็คยอดเงินโอนเสร็จแล้วและกำลังออกใบสั่งสินค้า</div>",
         "",
@@ -7649,11 +7650,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "24731127",
+        "selectingElementGUID": "7a7576c8",
         "currentCursorWalkPath": [
-          "57b28be1",
+          "782a46eb",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -26745,7 +26746,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "19d8b2412206e9a6f2b69d9374c0671c96c40c03",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "45870edf669413a045acf8c1b132200b1d1ede58",
+    "Project.Controls.Rectangle_cad06e8d": "f1dd2f538df6b0f2397a2ddcf9b11c2bf499de0e",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
