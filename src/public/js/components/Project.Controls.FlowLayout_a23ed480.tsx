@@ -256,11 +256,14 @@ class FlowLayout_a23ed480 extends Base {
   }
   
   private getPaymentStatus(): string {
-    if (this.getDataFromNotation('Statuses.status') == 3) {
-      return 'เกิดความผิดพลาด.. กรุณารอทางเราประสานงานกลับไป';
+    if (this.getDataFromNotation('Statuses.status') == 4) {
+      return 'เกิดความผิดพลาดและกำลังประสานงานเร่งแก้ไข';
+    }
+    else if (this.getDataFromNotation('Statuses.status') == 3) {
+      return 'ผู้ซื้อได้รับสินค้าและลงลายชื่อในใบส่งสินค้าแล้ว';
     }
     else if (this.getDataFromNotation('Statuses.status') == 2) {
-      return 'ทางร้านค้าได้รับเงินเรียบร้อยและกำลังทำการจัดส่งสินค้า';
+      return 'WiseBOQ ได้รับเงินเรียบร้อยแล้วกำลังสั่งสินค้า';
     }
     else if (this.getDataFromNotation('Statuses.status') == 1) {
       return 'WiseBOQ กำลังตรวจสอบจำนวนเงินที่ได้รับจากการโอน';

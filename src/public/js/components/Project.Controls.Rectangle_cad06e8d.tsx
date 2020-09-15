@@ -218,8 +218,10 @@ class Rectangle_cad06e8d extends Base {
       case 1:
         return 'ลูกค้าแจ้งโอน';
       case 2:
-        return 'โอนเสร็จแล้ว'
+        return 'รอใบสั่งของ'
       case 3:
+        return 'ได้รับเงินแล้ว';
+      case 4:
         return 'ไม่สำเร็จ';
       default:
         return 'รอลูกค้า';
@@ -1164,17 +1166,21 @@ class Rectangle_cad06e8d extends Base {
                                                 | เวลา:
                                               .internal-fsb-element.col-7.offset-0(internal-fsb-guid="1566119e")
                                                 | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.time')}
-                                        .internal-fsb-element.-fsb-preset-1715aae1.col-12(style={'FsbInheritedPresets': '1715aae1', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0) ? 'block' : 'none';})()}, internal-fsb-guid="36ed3d83")
-                                          | ทาง WiseBOQ กำลังเช็คยอดเงินโอนและกำลังโอนเงินให้ทางร้านค้า
+                                        .internal-fsb-element.-fsb-preset-1715aae1.col-12(style={'FsbInheritedPresets': '1715aae1', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 1) ? 'block' : 'none';})()}, internal-fsb-guid="36ed3d83")
+                                          | ทาง WiseBOQ กำลังเช็คยอดเงินโอน
+                                        .internal-fsb-element.col-12(style={'color': 'rgba(22, 98, 250, 1)', 'textAlign': 'center', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 2) ? 'block' : 'none';})()}, internal-fsb-guid="a0e469c3")
+                                          | ทาง WiseBOQ เช็คยอดเงินโอนเสร็จแล้วและกำลังออกใบสั่งสินค้า
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'display': (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 1) ? 'block' : 'none';})() || 'none'}, internal-fsb-guid="07623084")
                                           | ทาง WiseBOQ ตรวจเช็คยอดเงินโอนเสร็จแล้วและกำลังโอนเงินให้ทางร้านค้า
                                         .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'display': (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 2) ? 'block' : 'none';})() || 'none'}, internal-fsb-guid="323e3062")
                                           | ทาง WiseBOQ โอนเงินให้ทางร้านค้าเรียบร้อยแล้ว
-                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'color': 'rgba(255, 0, 0, 1)', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 3) ? 'block' : 'none';})()}, internal-fsb-guid="9600723b")
+                                        .internal-fsb-element.col-12.-fsb-preset-1715aae1(style={'FsbInheritedPresets': '1715aae1', 'color': 'rgba(255, 0, 0, 1)', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 4) ? 'block' : 'none';})()}, internal-fsb-guid="9600723b")
                                           | ทาง WiseBOQ ได้เช็คยอดเงินโอนแล้วพบว่าเกิดความผิดพลาด
-                                        .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(255, 0, 0, 1)', 'fontSize': '13px', 'fontWeight': 'bold', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 3) ? 'block' : 'none';})()}, internal-fsb-guid="8e502349")
+                                        .internal-fsb-element.col-12(style={'textAlign': 'center', 'color': 'rgba(255, 0, 0, 1)', 'fontSize': '13px', 'fontWeight': 'bold', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 4) ? 'block' : 'none';})()}, internal-fsb-guid="8e502349")
                                           | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.forwardingNote') || 'กรุณาติดต่อ WiseBOQ เพื่อสอบถามข้อมูลเพิ่มเติม'} 
-                                        .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 2) ? 'block' : 'none';})()}, internal-fsb-guid="70267cd8")
+                                        .internal-fsb-element.-fsb-preset-4839e353.col-4.offset-4(style={'FsbInheritedPresets': '4839e353', 'paddingTop': '2px', 'paddingBottom': '2px', 'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center', 'background': 'rgba(255, 223, 43, 1)', 'marginTop': '10px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 2) ? 'block' : 'none';})()}, internal-fsb-guid="e3a90426")
+                                          | กรุณาเตรียมสินค้าตามใบสั่งสินค้าที่กำลังจะได้รับทางอีเมล์และทำการจัดส่งให้เรียบร้อย
+                                        .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 3) ? 'block' : 'none';})()}, internal-fsb-guid="70267cd8")
                                           .container-fluid
                                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                               .internal-fsb-element.col-6.offset-3(style={'marginTop': '5px', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px'}, internal-fsb-guid="9c819cb9")
@@ -1200,8 +1206,8 @@ class Rectangle_cad06e8d extends Base {
                                                       | หมายเหตุ:
                                                     .internal-fsb-element.col-7(internal-fsb-guid="9c0475b2")
                                                       | #{this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.forwardingNote') || 'ไม่มี'} 
-                                              .internal-fsb-element.-fsb-preset-4839e353.col-4.offset-4(style={'FsbInheritedPresets': '4839e353', 'paddingTop': '2px', 'paddingBottom': '2px', 'paddingLeft': '5px', 'paddingRight': '5px', 'textAlign': 'center', 'background': 'rgba(255, 223, 43, 1)', 'marginTop': '10px'}, internal-fsb-guid="e3a90426")
-                                                | เบอร์โทรศัพท์ของลูกค้าคือ #{this.getDataFromNotation('Quote[#i].Auction.Payment.number')} กรุณาเตรียมสินค้าตามรายการและทำการจัดส่งให้เรียบร้อย
+                                              .internal-fsb-element.col-12(style={'marginTop': '15px', 'textAlign': 'center', 'color': 'rgba(22, 98, 250, 1)'}, internal-fsb-guid="ac9da392")
+                                                | ทาง WiseBOQ ได้รับใบส่งสินค้าและโอนเงินไปให้ร้านค้าแล้ว
                                   .internal-fsb-element.col-12(style={'paddingLeft': '0px', 'paddingRight': '0px', display: (()=>{return (this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == 0 || this.getDataFromNotation('Quote[#i].Auction.Payment.Transfer.status') == null) ? 'block' : 'none';})()}, internal-fsb-guid="57b28be1")
                                     .container-fluid
                                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
