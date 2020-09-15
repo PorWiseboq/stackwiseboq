@@ -151,7 +151,7 @@ class Rectangle_a8055802 extends Base {
                 .container-fluid
                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                     .internal-fsb-element.col-9.col-sm-10.col-md-11(style={padding: '0px'}, internal-fsb-guid="4522d52e")
-                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'background': 'rgba(252, 252, 252, 0.15)', 'color': 'rgba(255, 255, 255, 1)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, ref="chatInput", type="text", required=true, placeholder="ข้อความ", disabled=this.state.submitting)
+                      input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'background': 'rgba(252, 252, 252, 0.15)', 'color': 'rgba(255, 255, 255, 1)', 'borderTopStyle': 'none', 'borderLeftStyle': 'none', 'borderRightStyle': 'none', 'borderBottomStyle': 'none', 'borderRadius': '20px 20px 20px 20px', 'WebkitBorderRadius': '20px 20px 20px 20px'}, ref="chatInput", autocomplete="off", autocorrect="off", autocapitalize="off", type="text", required=true, placeholder="ข้อความ", disabled=this.state.submitting)
                     input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="d09070d8")
                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="a4147a38")
                     input.internal-fsb-element.col-12(type="hidden", value=this.state.sid, internal-fsb-guid="7e11119e")
