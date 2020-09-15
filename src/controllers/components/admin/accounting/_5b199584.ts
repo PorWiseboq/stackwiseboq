@@ -339,6 +339,16 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
+		RequestHelper.registerInput('a3bd0252', "relational", "Transfer", "status");
+		ValidationHelper.registerInput('a3bd0252', "Radio 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'a3bd0252' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Radio 1 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
 		RequestHelper.registerInput('731935a5', "relational", "Transfer", "number");
 		ValidationHelper.registerInput('731935a5', "Textbox 1", false, undefined);
     for (let i=-1; i<128; i++) {
