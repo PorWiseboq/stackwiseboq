@@ -459,7 +459,7 @@ class FlowLayout_d2d6431e extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.-fsb-preset-77d2cecb.col-12.offset-0(style={'FsbInheritedPresets': '77d2cecb', 'paddingLeft': '0px'}, internal-fsb-guid="3dad43b0")
-                                    | หมายเหตุ
+                                    | ข้อผิดพลาด
                                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="a1ee24b3")
                                     textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", rows="4", defaultValue=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.forwardingNote"))
                             .internal-fsb-element.col-2(internal-fsb-guid="5609d3ca")
@@ -481,42 +481,52 @@ class FlowLayout_d2d6431e extends Base {
                               | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Payment.Transfer.status')}
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold', 'paddingTop': '9px'}, internal-fsb-guid="b17313d6")
                               | เปลี่ยนสถานะ
-                            label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="2ec2645a")
+                            .internal-fsb-element.col-7.offset-0(internal-fsb-guid="c5d76e13")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                  .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="d39b258a")
-                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="0", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '0')
-                                  .internal-fsb-element.col-10(internal-fsb-guid="b526dbe5")
-                                    | ไม่มีรายการ
-                            label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="911206ee")
-                              .container-fluid
-                                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                  .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="52da5356")
-                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="1", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '1')
-                                  .internal-fsb-element.offset-0.col-10(internal-fsb-guid="d00a39b6")
-                                    | ลูกค้าโอนแล้ว
-                            label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="cb5786d8")
-                              .container-fluid
-                                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                  .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="620ea154")
-                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="2", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '2')
-                                  .internal-fsb-element.col-10(internal-fsb-guid="929893e5")
-                                    | ตรวจแล้วว่าโอน
-                            label.internal-fsb-element.col-2.offset-0(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="aa620501")
-                              .container-fluid
-                                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                  .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="26e1ae39")
-                                    input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="3", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '3')
-                                  .internal-fsb-element.col-10(internal-fsb-guid="97ae9783")
-                                    | โอนให้ร้านแล้ว
-                            .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold', 'paddingTop': '5px'}, internal-fsb-guid="2b9505c9")
+                                  label.internal-fsb-element.offset-0.col-4(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="2ec2645a")
+                                    .container-fluid
+                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                        .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="d39b258a")
+                                          input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="0", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '0')
+                                        .internal-fsb-element.col-10(internal-fsb-guid="b526dbe5")
+                                          | ไม่พบยอดโอนและลูกค้าต้องกลับไปแก้
+                                  label.internal-fsb-element.offset-0.col-4(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="911206ee")
+                                    .container-fluid
+                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                        .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="52da5356")
+                                          input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="1", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '1')
+                                        .internal-fsb-element.offset-0.col-10(internal-fsb-guid="d00a39b6")
+                                          | ลูกค้าแจ้งว่าโอนเงินแล้ว
+                                  label.internal-fsb-element.offset-0.col-4(style={'paddingLeft': '0px', 'marginTop': '10px'}, internal-fsb-guid="cb5786d8")
+                                    .container-fluid
+                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                        .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="620ea154")
+                                          input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="2", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '2')
+                                        .internal-fsb-element.col-10(internal-fsb-guid="929893e5")
+                                          | ตรวจแล้วว่าลูกค้าโอนเงินมาครบ
+                                  label.internal-fsb-element.offset-0.col-4(style={'paddingLeft': '0px', 'marginTop': '0px'}, internal-fsb-guid="aa620501")
+                                    .container-fluid
+                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                        .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="26e1ae39")
+                                          input(style={'display': 'block', 'marginTop': '2px'}, type="radio", name=i + ':' + j, value="3", defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '3')
+                                        .internal-fsb-element.col-10(internal-fsb-guid="97ae9783")
+                                          | โอนเงินให้ร้านค้าแล้ว
+                                  label.internal-fsb-element.col-4.offset-0(style={'marginTop': '0px', 'paddingLeft': '0px'}, internal-fsb-guid="d6223b28")
+                                    .container-fluid
+                                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                                        .internal-fsb-element.col-1.offset-1(style={padding: '0px'}, internal-fsb-guid="a3bd0252")
+                                          input(style={'display': 'block', 'marginTop': '2px'}, type="radio", value="4", name=i + ':' + j, defaultChecked=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.status") == '4')
+                                        .internal-fsb-element.col-10.offset-0(internal-fsb-guid="8855862b")
+                                          | เกิดข้อผิดพลาด
+                            .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold', 'paddingTop': '5px', 'display': 'none'}, internal-fsb-guid="2b9505c9")
                               | แจ้งเบอร์โทรศัพท์ลูกค้า
-                            .internal-fsb-element.col-4.offset-0(style={'paddingRight': '0px'}, internal-fsb-guid="5071eee9")
+                            .internal-fsb-element.col-4.offset-0(style={'paddingRight': '0px', 'display': 'none'}, internal-fsb-guid="5071eee9")
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="731935a5")
                                     input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="", defaultValue=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.number"))
-                            .internal-fsb-element.col-5.offset-0(style={'fontSize': '10px', 'paddingTop': '8px'}, internal-fsb-guid="3b262002")
+                            .internal-fsb-element.col-5.offset-0(style={'fontSize': '10px', 'paddingTop': '8px', 'display': 'none'}, internal-fsb-guid="3b262002")
                               | ส่วนนี้ร้านค้าต้องทราบหลังจากได้รับเงินแล้ว
                             .internal-fsb-element.col-4.offset-3(internal-fsb-guid="86681b46")
                               .container-fluid.d-print-none
@@ -534,7 +544,7 @@ class FlowLayout_d2d6431e extends Base {
                             input.internal-fsb-element(type="hidden", value=this.getDataFromNotation("Quote[" + i + "].qid"), internal-fsb-guid="132cd171")
                             input.internal-fsb-element.col-12(type="hidden", value="true", internal-fsb-guid="00745396")
                           .internal-fsb-element.col-12(style={'marginTop': '10px', 'fontSize': '10px', 'color': 'rgba(184, 184, 184, 1)', 'textAlign': 'center'}, internal-fsb-guid="bc6dd531")
-                            | กรุณาตรวจเช็คความเรียบร้อยก่อนปิดงาน
+                            | กรุณาทิ้งช่วงก่อนปิดงานประมาณหนึ่งสัปดาห์หลังจากโอนเงินให้ร้านค้าแล้ว
                     .internal-fsb-element.col-12(style={'color': 'rgba(184, 184, 184, 1)', 'fontSize': '10px', 'textAlign': 'center', 'marginTop': '20px', 'borderTopColor': 'rgba(184, 184, 184, 1)', 'borderTopWidth': '1px', 'borderBottomStyle': 'dashed', 'borderBottomColor': 'rgba(184, 184, 184, 1)', 'borderBottomWidth': '1px'}, internal-fsb-guid="768b1e89")
                       | จบข้อมูลงานประมูล #{this.getDataFromNotation('Quote['+i+'].title')} สร้าง #{this.getDataFromNotation('Quote['+i+'].createdAt')} แก้ไข #{this.getDataFromNotation('Quote['+i+'].updatedAt')}
     `
