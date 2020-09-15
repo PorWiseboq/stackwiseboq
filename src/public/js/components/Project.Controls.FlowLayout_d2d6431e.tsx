@@ -100,26 +100,26 @@ class FlowLayout_d2d6431e extends Base {
     return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliveryCost');
   }
   private getTotalPrice(i: number, j: number) {
-    return this.getSum() + this.getDeliveryCost();
+    return this.getSum(i, j) + this.getDeliveryCost(i, j);
   }
   private getDiscount(i: number, j: number) {
     return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].discount');
   }
   private getTotalAfterDiscount(i: number, j: number) {
-    return this.getTotalPrice() - this.getDiscount();
+    return this.getTotalPrice(i, j) - this.getDiscount(i, j);
   }
   private getTotalExcludeVAT(i: number, j: number) {
-    return this.getTotalPrice() - this.getDiscount();
+    return this.getTotalPrice(i, j) - this.getDiscount(i, j);
   }
   private getTotalBeforeVAT(i: number, j: number) {
     if (this.getDataFromNotation('Quote['+i+'].Auction['+j+'].vatType') == 0) {
-      return this.getTotalExcludeVAT() / 1.07;
+      return this.getTotalExcludeVAT(i, j) / 1.07;
     } else {
-      return this.getTotalExcludeVAT();
+      return this.getTotalExcludeVAT(i, j);
     }
   }
   private getActualTotal(i: number, j: number) {
-    return this.getTotalBeforeVAT() * 1.07;
+    return this.getTotalBeforeVAT(i, j) * 1.07;
   }
   private getSeenTotal(i: number, j: number) {
     return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].price');
