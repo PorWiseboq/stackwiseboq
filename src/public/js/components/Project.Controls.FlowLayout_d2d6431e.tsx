@@ -459,7 +459,7 @@ class FlowLayout_d2d6431e extends Base {
                               .container-fluid
                                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                   .internal-fsb-element.-fsb-preset-77d2cecb.col-12.offset-0(style={'FsbInheritedPresets': '77d2cecb', 'paddingLeft': '0px'}, internal-fsb-guid="3dad43b0")
-                                    | ข้อผิดพลาด
+                                    | ข้อผิดพลาด / หมายเหตุ
                                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="a1ee24b3")
                                     textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", rows="4", defaultValue=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.forwardingNote"))
                             .internal-fsb-element.col-2(internal-fsb-guid="5609d3ca")
