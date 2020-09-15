@@ -21148,7 +21148,7 @@
         "    return sum || 0;",
         "  }",
         "  private getDeliveryCost(i: number, j: number) {",
-        "    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliveryCost') || 0;",
+        "    return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].deliverCost') || 0;",
         "  }",
         "  private getTotalPrice(i: number, j: number) {",
         "    return this.getSum(i, j) + this.getDeliveryCost(i, j);",
@@ -26737,7 +26737,7 @@
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
-    "Project.Controls.FlowLayout_d2d6431e": "de0e16699c617b491a6fdb2c1a1d8c1076c899bc"
+    "Project.Controls.FlowLayout_d2d6431e": "1ee30a0b73ff9706d807dd70f42ee7ff58724167"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "ebf74b4786bcb197f7ce638843592ca609ef38d6",
