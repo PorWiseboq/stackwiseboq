@@ -462,23 +462,6 @@ class FlowLayout_d2d6431e extends Base {
                                     | ข้อผิดพลาด / หมายเหตุ
                                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="a1ee24b3")
                                     textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", rows="4", defaultValue=this.getDataFromNotation("Quote[" + i + "].Auction[" + j + "].Payment.Transfer.forwardingNote"))
-                            .internal-fsb-element.col-2(internal-fsb-guid="5609d3ca")
-                              .container-fluid
-                                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                                  .internal-fsb-element.col-12.offset-0(style={'fontSize': '10px', 'marginTop': '22px'}, internal-fsb-guid="4156799c")
-                                    | สถานะ
-                                    div
-                                      | 0 = n/a
-                                    div
-                                      | 1 = ลูกค้าโอนแล้ว
-                                    div
-                                      | 2 = ตรวจแล้วว่าโอน
-                                    div
-                                      | 3 = โอนให้ร้านแล้ว
-                            .internal-fsb-element.col-3.offset-0(style={'FsbInheritedPresets': '', 'textAlign': 'right', 'fontWeight': 'bold', 'marginTop': '10px'}, internal-fsb-guid="0310185a")
-                              | สถานะ
-                            .internal-fsb-element.col-9.offset-0(style={'textAlign': 'left', 'marginTop': '10px'}, internal-fsb-guid="5e6711ad")
-                              | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Payment.Transfer.status')}
                             .internal-fsb-element.col-2.offset-1(style={'textAlign': 'right', 'fontWeight': 'bold', 'paddingTop': '9px'}, internal-fsb-guid="b17313d6")
                               | เปลี่ยนสถานะ
                             .internal-fsb-element.col-7.offset-0(internal-fsb-guid="c5d76e13")
