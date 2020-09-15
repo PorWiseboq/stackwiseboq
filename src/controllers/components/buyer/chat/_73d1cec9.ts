@@ -213,11 +213,12 @@ WHERE (D.notice1 IS NULL AND C.total != 0) OR (D.notice1 IS NOT NULL AND C.total
 UNION
 
 (SELECT C.sid, 2 AS slot, C.total FROM
-	(SELECT A.sid, COUNT(B.type) AS total FROM
-		(SELECT store.sid, K.qid, K.status, MAX(K.createdAt) AS latest FROM store
+	(SELECT A.sid, IF(A.bought, COUNT(B.type), 0) AS total FROM
+		(SELECT store.sid, K.qid, K.status, auction.bought, MAX(K.createdAt) AS latest FROM store
 		LEFT JOIN (SELECT I.qid, I.sid, I.type, I.createdAt, J.status FROM message AS I
 			INNER JOIN quote AS J ON I.qid = J.qid
 			WHERE J.status = 3) AS K ON store.sid = K.sid AND K.type = 0
+		INNER JOIN auction ON auction.qid = K.qid AND auction.sid = K.sid
 		GROUP BY store.sid, K.qid) AS A
 	LEFT JOIN message AS B ON A.sid = B.sid AND B.type = 1 AND B.createdAt > A.latest
 	GROUP BY A.sid) AS C
