@@ -165,6 +165,12 @@ WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) <
      		    let quoteDatasetA = await DatabaseHelper.retrieve(quoteData, quote, this.request.session, true);
      		    let quoteDatasetB = CodeHelper.clone(quoteDatasetA);
      		    
+     		    if (quoteDatasetA['Quote'].rows.length == 0) {
+     		      this.response.redirect('/buyer/auction');
+     		      resolve({});
+     		      return;
+     		    }
+     		    
      		    quoteDatasetA['Quote'].rows[0].relations['Auction'].rows = quoteDatasetA['Quote'].rows[0].relations['Auction'].rows.filter((auction) => {
      		      return auction.relations['Substitute'].rows.every((substitute) => {
      		        return substitute.columns['type'] <= quoteDatasetA['Quote'].rows[0].relations['Listing'].rows.filter(row => row.keys['lid'] == substitute.keys['lid'])[0].columns['substitute'];
