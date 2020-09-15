@@ -296,7 +296,7 @@ class FlowLayout_c6ba5b53 extends Base {
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="9c338431")
-                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_9c338431.bind(this), type="text", placeholder="ระบุชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียด", value=([0,1,2].indexOf(this.state.type) != -1) ? this.state.title : 'n/a', data-com.agilebits.onepassword.initial-value=this.state.title, disabled=!this.props.enabled, required=true)
+                    input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginBottom': '5px', 'fontSize': '12px'}, onChange=this.onTextboxChange_9c338431.bind(this), type="text", placeholder="ระบุชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียด", value=([1,2].indexOf(this.state.type) != -1) ? this.state.title : 'n/a', data-com.agilebits.onepassword.initial-value=this.state.title, disabled=!this.props.enabled, required=true)
                   .internal-fsb-element.col-6.offset-0(style={'paddingLeft': '2px', 'paddingRight': '0px'}, internal-fsb-guid="a241ded8")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
