@@ -92,7 +92,7 @@ class FlowLayout_089c5b39 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'paddingLeft': '0px', 'paddingRight': '0px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="089c5b39")
+      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="089c5b39")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             .internal-fsb-element.col-9.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="20d6308c")
@@ -100,9 +100,10 @@ class FlowLayout_089c5b39 extends Base {
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   - const Project_Common_Header_ = Project.Common.Header;
                   _Project_Common_Header_(forward={'classes': '', 'styles': {}})
-            a.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0(style={'textAlign': 'right', 'marginTop': '15px', 'fontSize': '14px', 'paddingRight': '25px'}, href="/authentication/logout", internal-fsb-guid="a231737d")
-              .internal-fsb-element(internal-fsb-guid="a231737d-text")
-                | ออกจากระบบ
+            .internal-fsb-element.internal-fsb-allow-cursor.col-3(style={'paddingTop': '15px', 'textAlign': 'right'}, internal-fsb-guid="badb6ddd")
+              a.internal-fsb-element.internal-fsb-allow-cursor(style={'fontSize': '14px', 'display': 'inline-block'}, href="/authentication/logout", internal-fsb-guid="a231737d")
+                .internal-fsb-element(internal-fsb-guid="a231737d-text")
+                  | ออกจากระบบ
     `
   }
 }
