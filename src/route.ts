@@ -12,6 +12,8 @@ const route = (app: any) => {
  app.post("/article/:id/:title", homeController._6ce794ec);
  app.get("/authentication", homeController._d1e3b3b3);
  app.post("/authentication", homeController._d1e3b3b3);
+ app.get("/authentication/logout", homeController._baded02d);
+ app.post("/authentication/logout", homeController._baded02d);
  app.get("/authentication/role", homeController._b6eb1b83);
  app.post("/authentication/role", homeController._b6eb1b83);
  app.get("/authentication/role/admin", homeController._51a414a8);
@@ -42,8 +44,6 @@ const route = (app: any) => {
  app.post("/buyer/chat/:refID/:sid/:qid", homeController._73d1cec9);
  app.get("/error/:code", homeController._bbc7dba3);
  app.post("/error/:code", homeController._bbc7dba3);
- app.get("/authentication/logout", homeController._baded02d);
- app.post("/authentication/logout", homeController._baded02d);
 }
 
 export default route;
