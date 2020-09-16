@@ -115,7 +115,7 @@ class Controller extends Base {
     	  this.request.session.sid = null;
     	  this.request.session.role = null;
         this.request.session.save(async () => {
-          this.response.redirect('/authentication/logout');
+          this.response.redirect('/authentication');
       	  resolve({});
         });
       } catch(error) {
