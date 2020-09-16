@@ -87,6 +87,13 @@ class Header extends Base {
   }
   
   // Auto[Merging]--->
+  protected onFlowLayoutClick_61c7ceb8(event: Event) {
+
+    // Handle the event of onFlowLayoutClick (brand) here:
+    // 
+    window.location = '/';
+    
+  }
   // <---Auto[Merging]
   
   // Auto[ClassEnd]--->
@@ -95,7 +102,7 @@ class Header extends Base {
       div(style=Object.assign({'float': 'left', 'paddingBottom': '10px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="00ce1665")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-            .internal-fsb-element(style={'width': '210px'}, internal-fsb-guid="61c7ceb8")
+            .internal-fsb-element(style={'width': '210px', 'cursor': 'pointer'}, onClick=this.onFlowLayoutClick_61c7ceb8.bind(this), internal-fsb-guid="61c7ceb8")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.col-6.offset-0(style={'textAlign': 'center', 'fontFamily': 'Roboto', 'color': 'rgba(22, 98, 250, 1)', 'fontSize': '24px', 'fontWeight': '400'}, internal-fsb-guid="367aa105")
