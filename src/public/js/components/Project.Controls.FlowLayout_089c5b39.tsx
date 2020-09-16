@@ -87,13 +87,6 @@ class FlowLayout_089c5b39 extends Base {
   }
   
   // Auto[Merging]--->
-  protected onButtonClick_9cbc254e(event: Event) {
-
-    // Handle the event of onButtonClick (Button 1) here:
-    // 
-    window.location = '/authentication/logout';
-    
-  }
   // <---Auto[Merging]
   
   // Auto[ClassEnd]--->
@@ -107,12 +100,9 @@ class FlowLayout_089c5b39 extends Base {
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   - const Project_Common_Header_ = Project.Common.Header;
                   _Project_Common_Header_(forward={'classes': '', 'styles': {}})
-            .internal-fsb-element.col-3(style={'paddingTop': '15px'}, internal-fsb-guid="4e8626eb")
-              .container-fluid
-                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
-                  Button.internal-fsb-element.internal-fsb-allow-cursor.btn-primary.btn-sm.col-12.offset-0(type="button", onClick=this.onButtonClick_9cbc254e.bind(this), internal-fsb-guid="9cbc254e")
-                    .internal-fsb-element(internal-fsb-guid="9cbc254e-text")
-                      | ออกจากระบบ
+            a.internal-fsb-element.internal-fsb-allow-cursor.col-3.offset-0(style={'textAlign': 'right', 'marginTop': '15px', 'fontSize': '14px', 'paddingRight': '25px'}, href="/authentication/logout", internal-fsb-guid="a231737d")
+              .internal-fsb-element(internal-fsb-guid="a231737d-text")
+                | ออกจากระบบ
     `
   }
 }
