@@ -6,10 +6,11 @@ import Componentindex from "./components/index.js";
 import Component5b199584 from "./components/admin/accounting/_5b199584.js";
 import Component6ce794ec from "./components/article/_6ce794ec.js";
 import Componentd1e3b3b3 from "./components/authentication/_d1e3b3b3.js";
+import Componentbaded02d from "./components/authentication/logout/_baded02d.js";
 import Componentb6eb1b83 from "./components/authentication/role/_b6eb1b83.js";
+import Component51a414a8 from "./components/authentication/role/admin/_51a414a8.js";
 import Componentea2e6d53 from "./components/authentication/role/bidder/_ea2e6d53.js";
 import Component5488072c from "./components/authentication/role/buyer/_5488072c.js";
-import Component51a414a8 from "./components/authentication/role/admin/_51a414a8.js";
 import Component8857ca68 from "./components/bidder/_8857ca68.js";
 import Componente269aa1d from "./components/bidder/agreement/_e269aa1d.js";
 import Component7e709334 from "./components/bidder/auction/_7e709334.js";
@@ -34,17 +35,20 @@ export const _6ce794ec = (req: Request, res: Response) => {
 export const _d1e3b3b3 = (req: Request, res: Response) => {
 	new Componentd1e3b3b3(req, res, "home/authentication/_d1e3b3b3");
 }
+export const _baded02d = (req: Request, res: Response) => {
+	new Componentbaded02d(req, res, "home/authentication/logout/_baded02d");
+}
 export const _b6eb1b83 = (req: Request, res: Response) => {
 	new Componentb6eb1b83(req, res, "home/authentication/role/_b6eb1b83");
+}
+export const _51a414a8 = (req: Request, res: Response) => {
+	new Component51a414a8(req, res, "home/authentication/role/admin/_51a414a8");
 }
 export const _ea2e6d53 = (req: Request, res: Response) => {
 	new Componentea2e6d53(req, res, "home/authentication/role/bidder/_ea2e6d53");
 }
 export const _5488072c = (req: Request, res: Response) => {
 	new Component5488072c(req, res, "home/authentication/role/buyer/_5488072c");
-}
-export const _51a414a8 = (req: Request, res: Response) => {
-	new Component51a414a8(req, res, "home/authentication/role/admin/_51a414a8");
 }
 export const _8857ca68 = (req: Request, res: Response) => {
 	new Component8857ca68(req, res, "home/bidder/_8857ca68");

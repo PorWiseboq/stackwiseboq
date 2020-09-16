@@ -12,14 +12,16 @@ const route = (app: any) => {
  app.post("/article/:id/:title", homeController._6ce794ec);
  app.get("/authentication", homeController._d1e3b3b3);
  app.post("/authentication", homeController._d1e3b3b3);
+ app.get("/authentication/logout", homeController._baded02d);
+ app.post("/authentication/logout", homeController._baded02d);
  app.get("/authentication/role", homeController._b6eb1b83);
  app.post("/authentication/role", homeController._b6eb1b83);
+ app.get("/authentication/role/admin", homeController._51a414a8);
+ app.post("/authentication/role/admin", homeController._51a414a8);
  app.get("/authentication/role/bidder", homeController._ea2e6d53);
  app.post("/authentication/role/bidder", homeController._ea2e6d53);
  app.get("/authentication/role/buyer", homeController._5488072c);
  app.post("/authentication/role/buyer", homeController._5488072c);
- app.get("/authentication/role/admin", homeController._51a414a8);
- app.post("/authentication/role/admin", homeController._51a414a8);
  app.get("/bidder", homeController._8857ca68);
  app.post("/bidder", homeController._8857ca68);
  app.get("/bidder/agreement", homeController._e269aa1d);
