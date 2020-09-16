@@ -104,7 +104,7 @@ class FlowLayout_69085d73 extends Base {
             a.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-info.-fsb-self-856191b9.col-10.offset-1(href="/authentication", internal-fsb-guid="856191b9")
               .internal-fsb-element(internal-fsb-guid="856191b9-text")
                 | เริ่มต้นใช้งาน
-            a.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-info.col-10.offset-1.-fsb-preset-856191b9(style={'FsbInheritedPresets': '856191b9'}, href="/buyer", internal-fsb-guid="9328819e")
+            a.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-info.col-10.offset-1.-fsb-preset-856191b9(style={'FsbInheritedPresets': '856191b9', display: (()=>{return (window.location.href.indexOf('/buyer') == -1) ? 'block' : 'none';})()}, href="/buyer", internal-fsb-guid="9328819e")
               .internal-fsb-element(internal-fsb-guid="9328819e-text")
                 | เรียนรู้เพิ่มเติม
     `
