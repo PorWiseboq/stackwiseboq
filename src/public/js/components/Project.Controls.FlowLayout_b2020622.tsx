@@ -360,7 +360,7 @@ class FlowLayout_b2020622 extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="b2020622")
+      div(style=Object.assign({}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element col-12 offset-0 " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="b2020622")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             .internal-fsb-element.col-10.offset-1.-fsb-self-180079a2(style={display: (()=>{return this.getDisplay(Status.CREATE);})()}, internal-fsb-guid="180079a2")
@@ -589,9 +589,6 @@ class FlowLayout_b2020622 extends Base {
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="147c9060")
                   input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="ab790b53")
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.beginAt"), internal-fsb-guid="db7a3578")
-            .internal-fsb-element.col-12(internal-fsb-guid="34b6a57b")
-              .container-fluid
-                .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
     `
   }
 }
