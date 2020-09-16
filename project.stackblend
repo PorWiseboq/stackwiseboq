@@ -190,31 +190,6 @@
     ],
     "components": [
       {
-        "id": "7aee6ed8",
-        "name": "Login Control",
-        "state": "update"
-      },
-      {
-        "id": "535be65e",
-        "name": "Navigation Bar",
-        "state": "update"
-      },
-      {
-        "id": "d22b95d9",
-        "name": "Footer",
-        "state": "update"
-      },
-      {
-        "id": "00ce1665",
-        "name": "Logo",
-        "state": "update"
-      },
-      {
-        "id": "84b618a7",
-        "name": "FlowLayout 1",
-        "state": "create"
-      },
-      {
         "id": "741d5692",
         "name": "Bidder Control",
         "state": "create"
@@ -225,15 +200,40 @@
         "state": "create"
       },
       {
-        "id": "089c5b39",
-        "name": "Logout Navigation",
+        "id": "84b618a7",
+        "name": "FlowLayout 1",
         "state": "create"
+      },
+      {
+        "id": "d22b95d9",
+        "name": "Footer",
+        "state": "update"
+      },
+      {
+        "id": "7aee6ed8",
+        "name": "Login Control",
+        "state": "update"
+      },
+      {
+        "id": "00ce1665",
+        "name": "Logo",
+        "state": "update"
+      },
+      {
+        "id": "089c5b39",
+        "name": "Logout Control",
+        "state": "update"
+      },
+      {
+        "id": "535be65e",
+        "name": "Navigation Bar",
+        "state": "update"
       }
     ],
     "popups": [],
-    "editingPageID": "65e04a88",
-    "currentMode": "site",
-    "editingComponentID": "84b618a7"
+    "editingPageID": "51a414a8",
+    "currentMode": "components",
+    "editingComponentID": "089c5b39"
   },
   "sites": {
     "index": {
@@ -2117,16 +2117,22 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "81b0161d",
+        "selectingElementGUID": "570decac",
         "currentCursorWalkPath": [
           "570decac",
           0,
@@ -5541,7 +5547,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2004234",
+        "selectingElementGUID": "885ed632",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -7979,7 +7985,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a30c3884",
+        "selectingElementGUID": "9b826999",
         "currentCursorWalkPath": [
           "24731127",
           0,
@@ -8063,19 +8069,10 @@
         "                                </div>",
         "                            </div>",
         "                        </div>",
-        "                        <div class=\"col-3 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" style=\"padding-top: 15px\">",
-        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                <div class=\"row internal-fsb-strict-layout\"><button type=\"button\" class=\"btn-primary btn-sm col-12 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" style=\"\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
-        "    // Handle the event of onButtonClick (Button 1) here:",
-        "    // ",
-        "    window.location = '/authentication/logout';",
-        "    ",
-        "    \">",
-        "                                        <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "                                    </button></div>",
-        "                            </div>",
-        "                        </div>",
+        "                        <a class=\"col-3 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: right; margin-top: 15px; font-size: 14px; padding-right: 25px\" href=\"/authentication/logout\">",
+        "                            <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                        </a>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -10426,7 +10423,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "e5020200",
+        "selectingElementGUID": "ad9205ea",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -11383,9 +11380,9 @@
       "accessories": {
         "selectingElementGUID": "4baede68",
         "currentCursorWalkPath": [
-          "776bcb63",
+          "0",
           0,
-          1,
+          3,
           null
         ]
       },
@@ -11416,7 +11413,7 @@
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
-        "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"895c26bc\" internal-fsb-name=\"Logout Navigation 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-inheriting=\"089c5b39\">",
+        "            <div class=\"col-12 internal-fsb-element \" internal-fsb-guid=\"895c26bc\" internal-fsb-name=\"Logout Navigation 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-inheriting=\"089c5b39\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div class=\"col-9 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" style=\"padding-left: 0px; padding-right: 0px\">",
@@ -11440,19 +11437,10 @@
         "                                </div>",
         "                            </div>",
         "                        </div>",
-        "                        <div class=\"col-3 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" style=\"padding-top: 15px\">",
-        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                <div class=\"row internal-fsb-strict-layout\"><button type=\"button\" class=\"btn-primary btn-sm col-12 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" style=\"\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
-        "    // Handle the event of onButtonClick (Button 1) here:",
-        "    // ",
-        "    window.location = '/authentication/logout';",
-        "    ",
-        "    \">",
-        "                                        <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "                                    </button></div>",
-        "                            </div>",
-        "                        </div>",
+        "                        <a class=\"col-3 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: right; margin-top: 15px; font-size: 14px; padding-right: 25px\" href=\"/authentication/logout\">",
+        "                            <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                        </a>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -12399,7 +12387,7 @@
         "currentCursorWalkPath": [
           "0",
           0,
-          1,
+          2,
           null
         ]
       },
@@ -14270,19 +14258,10 @@
         "                                </div>",
         "                            </div>",
         "                        </div>",
-        "                        <div class=\"col-3 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" style=\"padding-top: 15px\">",
-        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                <div class=\"row internal-fsb-strict-layout\"><button type=\"button\" class=\"btn-primary btn-sm col-12 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" style=\"\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
-        "    // Handle the event of onButtonClick (Button 1) here:",
-        "    // ",
-        "    window.location = '/authentication/logout';",
-        "    ",
-        "    \">",
-        "                                        <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "                                    </button></div>",
-        "                            </div>",
-        "                        </div>",
+        "                        <a class=\"col-3 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: right; margin-top: 15px; font-size: 14px; padding-right: 25px\" href=\"/authentication/logout\">",
+        "                            <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                        </a>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -15336,11 +15315,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0776c5e7",
+        "selectingElementGUID": "2b82e32d",
         "currentCursorWalkPath": [
-          "0",
+          "2b82e32d",
           0,
-          1,
+          5,
           null
         ]
       },
@@ -15368,7 +15347,7 @@
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
-        "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"78d02855\" internal-fsb-name=\"Logout Navigation 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-inheriting=\"089c5b39\">",
+        "            <div class=\"col-12 internal-fsb-element \" internal-fsb-guid=\"78d02855\" internal-fsb-name=\"Logout Navigation 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-inheriting=\"089c5b39\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div class=\"col-9 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" style=\"padding-left: 0px; padding-right: 0px\">",
@@ -15392,19 +15371,10 @@
         "                                </div>",
         "                            </div>",
         "                        </div>",
-        "                        <div class=\"col-3 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" style=\"padding-top: 15px\">",
-        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                <div class=\"row internal-fsb-strict-layout\"><button type=\"button\" class=\"btn-primary btn-sm col-12 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" style=\"\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
-        "    // Handle the event of onButtonClick (Button 1) here:",
-        "    // ",
-        "    window.location = '/authentication/logout';",
-        "    ",
-        "    \">",
-        "                                        <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "                                    </button></div>",
-        "                            </div>",
-        "                        </div>",
+        "                        <a class=\"col-3 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: right; margin-top: 15px; font-size: 14px; padding-right: 25px\" href=\"/authentication/logout\">",
+        "                            <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                        </a>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -17203,11 +17173,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "78d02855",
+        "selectingElementGUID": "a23ed480",
         "currentCursorWalkPath": [
-          "0",
+          "a23ed480",
           0,
-          1,
+          11,
           null
         ]
       },
@@ -18264,7 +18234,7 @@
         "currentCursorWalkPath": [
           "0",
           0,
-          1,
+          3,
           null
         ]
       },
@@ -20954,7 +20924,7 @@
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
         "",
-        "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b0e50493\" internal-fsb-name=\"Logout Navigation 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-inheriting=\"089c5b39\">",
+        "            <div class=\"col-12 internal-fsb-element \" internal-fsb-guid=\"b0e50493\" internal-fsb-name=\"Logout Navigation 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"\" internal-fsb-inheriting=\"089c5b39\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div class=\"col-9 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" style=\"padding-left: 0px; padding-right: 0px\">",
@@ -20978,19 +20948,10 @@
         "                                </div>",
         "                            </div>",
         "                        </div>",
-        "                        <div class=\"col-3 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" style=\"padding-top: 15px\">",
-        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                <div class=\"row internal-fsb-strict-layout\"><button type=\"button\" class=\"btn-primary btn-sm col-12 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" style=\"\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
-        "    // Handle the event of onButtonClick (Button 1) here:",
-        "    // ",
-        "    window.location = '/authentication/logout';",
-        "    ",
-        "    \">",
-        "                                        <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "                                    </button></div>",
-        "                            </div>",
-        "                        </div>",
+        "                        <a class=\"col-3 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: right; margin-top: 15px; font-size: 14px\" href=\"/authentication/logout\">",
+        "                            <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                        </a>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -21836,11 +21797,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b0e50493",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
           "0",
           0,
-          1,
+          3,
           null
         ]
       },
@@ -21892,19 +21853,10 @@
         "                                </div>",
         "                            </div>",
         "                        </div>",
-        "                        <div class=\"internal-fsb-element col-3\" internal-fsb-guid=\"4e8626eb\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-top: 15px\">",
-        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn-primary btn-sm col-12 offset-0\" internal-fsb-guid=\"9cbc254e\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
-        "    // Handle the event of onButtonClick (Button 1) here:",
-        "    // ",
-        "    window.location = '/authentication/logout';",
-        "    ",
-        "    \">",
-        "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"9cbc254e-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "                                    </button></div>",
-        "                            </div>",
-        "                        </div>",
+        "                        <a class=\"internal-fsb-element internal-fsb-allow-cursor col-3 offset-0\" internal-fsb-guid=\"a231737d\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"text-align: right; margin-top: 15px; font-size: 14px; padding-right: 25px\" href=\"/authentication/logout\">",
+        "                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a231737d-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                        </a>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -23138,7 +23090,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "4e8626eb",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
           "902975e1",
           0,
@@ -25055,7 +25007,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        this.request.session.uid = null;\n    \t  this.request.session.sid = null;\n    \t  this.request.session.role = null;\n        this.request.session.save(async () => {\n      \t  resolve({});\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n      try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tthrow new Error(\"Not Implemented Error\");\n        // resolve('/');\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n \t\n  "
+        "internal-fsb-data-code-body": "\n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        this.request.session.uid = null;\n    \t  this.request.session.sid = null;\n    \t  this.request.session.role = null;\n        this.request.session.save(async () => {\n          this.response.redirect('/authentication/logout');\n      \t  resolve({});\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n      try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tthrow new Error(\"Not Implemented Error\");\n        // resolve('/');\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n \t\n  "
       },
       "notations": {}
     }
@@ -25358,10 +25310,7 @@
         "        </div>",
         "    </div>",
         "</div>"
-      ],
-      "id": "84b618a7",
-      "name": "FlowLayout 1",
-      "state": "create"
+      ]
     },
     "741d5692": {
       "namespace": "Project.Controls",
@@ -25418,31 +25367,41 @@
       "namespace": "Project.Controls",
       "klass": "FlowLayout_089c5b39",
       "html": [
-        "<div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"089c5b39\" internal-fsb-name=\"Logout Navigation\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"padding-left: 0px; padding-right: 0px\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><div class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"20d6308c\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><div class=\"internal-fsb-element\" internal-fsb-guid=\"38e22d16\" internal-fsb-name=\"Logo 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"float: left; padding-bottom: 10px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Header\" internal-fsb-inheriting=\"00ce1665\">",
+        "<div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"089c5b39\" internal-fsb-name=\"Logout Navigation\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"\">",
         "    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "        <div class=\"row internal-fsb-strict-layout\">",
-        "            <div class=\"internal-fsb-inheriting-element\" internal-fsb-name=\"brand\" internal-fsb-event-no-propagate=\"1\" style=\"width: 210px\">",
+        "        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "            <div class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"20d6308c\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "                    <div class=\"row internal-fsb-strict-layout\">",
-        "                        <div contenteditable=\"true\" class=\"col-6 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Wise\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: center; font-family: Roboto; color: rgba(22, 98, 250, 1); font-size: 24px; font-weight: 400\">Wise</div>",
-        "                        <div contenteditable=\"true\" class=\"col-6 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"BOQ\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: center; color: rgba(255, 255, 255, 1); font-family: Roboto; font-size: 24px; font-weight: 400; background: rgba(22, 98, 250, 1); border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\">BOQ</div>",
-        "                        <div contenteditable=\"true\" class=\"col-12 internal-fsb-inheriting-element\" internal-fsb-name=\"description\" internal-fsb-event-no-propagate=\"1\" style=\"padding-left: 5px; padding-right: 5px; font-family: Roboto; font-size: 13px; text-align: center; padding-top: 5px\">สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์</div>",
+        "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"38e22d16\" internal-fsb-name=\"Logo 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"float: left; padding-bottom: 10px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Header\" internal-fsb-inheriting=\"00ce1665\">",
+        "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                <div class=\"row internal-fsb-strict-layout\">",
+        "                                    <div class=\"internal-fsb-inheriting-element\" internal-fsb-name=\"brand\" internal-fsb-event-no-propagate=\"1\" style=\"width: 210px\">",
+        "                                        <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "                                            <div class=\"row internal-fsb-strict-layout\">",
+        "                                                <div contenteditable=\"true\" class=\"col-6 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Wise\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: center; font-family: Roboto; color: rgba(22, 98, 250, 1); font-size: 24px; font-weight: 400\">Wise</div>",
+        "                                                <div contenteditable=\"true\" class=\"col-6 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"BOQ\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: center; color: rgba(255, 255, 255, 1); font-family: Roboto; font-size: 24px; font-weight: 400; background: rgba(22, 98, 250, 1); border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px\">BOQ</div>",
+        "                                                <div contenteditable=\"true\" class=\"col-12 internal-fsb-inheriting-element\" internal-fsb-name=\"description\" internal-fsb-event-no-propagate=\"1\" style=\"padding-left: 5px; padding-right: 5px; font-family: Roboto; font-size: 13px; text-align: center; padding-top: 5px\">สืบราคา-สั่งซื้อ วัสดุก่อสร้างออนไลน์</div>",
+        "                                            </div>",
+        "                                        </div>",
+        "                                    </div>",
+        "                                </div>",
+        "                            </div>",
+        "                        </div>",
         "                    </div>",
         "                </div>",
         "            </div>",
+        "",
+        "            <a class=\"internal-fsb-element internal-fsb-allow-cursor col-3 offset-0\" internal-fsb-guid=\"a231737d\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"text-align: right; margin-top: 15px; font-size: 14px\" href=\"/authentication/logout\">",
+        "                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a231737d-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "            </a>",
         "        </div>",
         "    </div>",
-        "</div></div></div></div><div class=\"internal-fsb-element col-3\" internal-fsb-guid=\"4e8626eb\" internal-fsb-name=\"FlowLayout 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-top: 15px\"><div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\"><div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\"><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn-primary btn-sm col-12 offset-0\" internal-fsb-guid=\"9cbc254e\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
-        "",
-        "    // Handle the event of onButtonClick (Button 1) here:",
-        "    // ",
-        "    window.location = '/authentication/logout';",
-        "    ",
-        "    \"><div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"9cbc254e-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div></button></div></div></div></div></div></div>"
+        "</div>"
       ],
       "id": "089c5b39",
-      "name": "Logout Navigation",
-      "state": "create"
+      "name": "Logout Control",
+      "state": "update"
     }
   },
   "popups": {},
@@ -28514,9 +28473,9 @@
     "5488072c": "044e30e7326dade34817c338f6df37b65592f03c",
     "73d1cec9": "f10541fa38d8e35b023f4ffe8f6059e894d64403",
     "51a414a8": "b58b3fd7da8a53f8fcf3f7e1d95d74a884498022",
-    "5b199584": "97d64d2a845da385349f5fafb3d1a9b47fa90be3",
+    "5b199584": "3aab21c3a9f203a9d9bdea8fb227332cebcb9fdb",
     "e269aa1d": "005ab85d28da5c86e72d4637a18db31b8285ae56",
-    "baded02d": "91223e67df206fae0c616efe3c4bbf228124a490"
+    "baded02d": "07776fc9b316d1018dc92fb89da13252721a28a9"
   },
   "frontEndComponentsBlobSHADict": {
     "Project.Common.NavigationBar": "b7111f3ab75f942e0a0c529c46a5613504077841",
@@ -28538,11 +28497,11 @@
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
     "Project.Controls.FlowLayout_d2d6431e": "c6824f95dfea05551416419c3844ada644cd470d",
-    "Project.Controls.FlowLayout_089c5b39": "9ec8e28aa81b09b8b163bea8e8e76ec20ca7a072"
+    "Project.Controls.FlowLayout_089c5b39": "14d444ffaa842c5af3e1931afd76a4c6848da2e8"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "44b9a2e61fca1ad2f804fde240508399834605bd",
-    "index": "03c0d8e74594e1abdb1350d595ec72814200c957",
+    "index": "4517acb5bdc1c01d8e156b800b2458836e67cde0",
     "b140e86b": "0df30b6d42e1d71ba1573a5f5836198964455561",
     "8857ca68": "677c8f69d3d5dc9ac57f36b3b94696a64d82386c",
     "b6eb1b83": "19cff53a1ec2d84bfd283638dc5d79ddf3814fd8",
@@ -28557,7 +28516,7 @@
     "ea2e6d53": "4e7e9b516e395ab0239a128519c47f529eaa903a",
     "5488072c": "6ea67ef79e0bfb0c253581ad96c412be3b78e2ee",
     "73d1cec9": "bd5f37e2e2b54d455ff329cac4e13b92215d5f66",
-    "51a414a8": "474ee34ffda46293e295aeee152592abea2a7fc7",
+    "51a414a8": "bb9bab8953a3027c072184906f2f861951515cab",
     "5b199584": "00fcbe198b76e39cb4f9f3db66b5042599ec9f89",
     "e269aa1d": "b192ce963567dbaee7747b50095ea77dc5684abd",
     "baded02d": "0fdfd57c58e31096d57380eaa167d6f3e92952e6"
