@@ -228,7 +228,7 @@
     "popups": [],
     "editingPageID": "index",
     "currentMode": "site",
-    "editingComponentID": "69085d73"
+    "editingComponentID": "00ce1665"
   },
   "sites": {
     "index": {
@@ -2142,12 +2142,18 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,1,400;1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,1,400;1,1,1,500;1,1,1,600;1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,1,100;1,1,1,300;1,1,1,400;1,1,1,500;1,1,1,700;1,1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -25270,7 +25276,13 @@
         "<div class=\"internal-fsb-element\" internal-fsb-guid=\"00ce1665\" internal-fsb-name=\"header\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"float: left; padding-bottom: 10px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Header\">",
         "    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"61c7ceb8\" internal-fsb-name=\"brand\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"width: 210px\">",
+        "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"61c7ceb8\" internal-fsb-name=\"brand\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"width: 210px; cursor: pointer\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
+        "",
+        "    // Handle the event of onFlowLayoutClick (brand) here:",
+        "    // ",
+        "    window.location.href = '/';",
+        "    ",
+        "    \">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-6 offset-0\" internal-fsb-guid=\"367aa105\" internal-fsb-name=\"Wise\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; font-family: Roboto; color: rgba(22, 98, 250, 1); font-size: 24px; font-weight: 400\">Wise</div>",
@@ -28477,7 +28489,7 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "44b9a2e61fca1ad2f804fde240508399834605bd",
-    "index": "bfffa98002eb648f91a583c3a6e86fc8422e7b98",
+    "index": "0a20f4c45202725908cf981959f2c9517696479d",
     "b140e86b": "0df30b6d42e1d71ba1573a5f5836198964455561",
     "8857ca68": "4fc088c8e3759173e80e5141e8ddd128d0b3b5b6",
     "b6eb1b83": "19cff53a1ec2d84bfd283638dc5d79ddf3814fd8",
