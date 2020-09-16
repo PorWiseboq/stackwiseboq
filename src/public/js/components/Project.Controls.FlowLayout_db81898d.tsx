@@ -97,7 +97,7 @@ class FlowLayout_db81898d extends Base {
   }
   
   private getShortRemainingTime(): string {
-    const createdAt = this.getDataFromNotation('Quote.createdAt');
+    const createdAt = this.getDataFromNotation('Quote.beginAt');
     const hoursChecked = this.getDataFromNotation('Quote.hoursChecked');
     let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote.hours')) : 24;
     

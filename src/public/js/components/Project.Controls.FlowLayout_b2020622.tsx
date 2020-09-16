@@ -79,7 +79,7 @@ class FlowLayout_b2020622 extends Base {
     DataManipulationHelper.register("d910ad00", "delete", ["41bdc9b3"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("05179431", "insert", ["54e20435","31894d87","b2321320","eda631c1","b6c9ad89","a0b78888","cc34eced","e92d687b"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
-    DataManipulationHelper.register("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53","db7a3578"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
   
@@ -588,6 +588,7 @@ class FlowLayout_b2020622 extends Base {
                       | เริ่มต้นการประมูลราคา
                   input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="147c9060")
                   input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="ab790b53")
+                  input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.beginAt"), internal-fsb-guid="db7a3578")
             .internal-fsb-element.col-12(internal-fsb-guid="34b6a57b")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor

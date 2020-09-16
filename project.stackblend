@@ -217,7 +217,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "473d370d",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "84b618a7"
   },
@@ -5409,7 +5409,7 @@
         "  }",
         "  ",
         "  private getShortRemainingTime(i: number): string {",
-        "    const createdAt = this.getDataFromNotation('Quote[' + i + '].createdAt');",
+        "    const createdAt = this.getDataFromNotation('Quote[' + i + '].beginAt');",
         "    const hoursChecked = this.getDataFromNotation('Quote[' + i + '].hoursChecked');",
         "    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote[' + i + '].hours')) : 24;",
         "    ",
@@ -7650,11 +7650,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "7a7576c8",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
-          "782a46eb",
+          "24731127",
           0,
-          2,
+          1,
           null
         ]
       },
@@ -8262,7 +8262,7 @@
         "    ",
         "    \" disabled=\"{this.state.disabled}\">",
         "                                        <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a7592071-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ย้อนกลับ</div>",
-        "                                    </button><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-0\" internal-fsb-guid=\"0e75306a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 15px; margin-left: 10px\" internal-fsb-data-wizard-type=\"navigate\" internal-fsb-data-controls=\" 33408187 230ab296 babc9e30 9200d56a 12403b79 c3daa46d 0606ea02 4a397863 147c9060 ab790b53\" disabled=\"{this.state.disabled}\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
+        "                                    </button><button type=\"button\" class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-primary btn-sm col-4 offset-0\" internal-fsb-guid=\"0e75306a\" internal-fsb-name=\"Button 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Button\" style=\"margin-top: 15px; margin-left: 10px\" internal-fsb-data-wizard-type=\"navigate\" internal-fsb-data-controls=\" 33408187 230ab296 babc9e30 9200d56a 12403b79 c3daa46d 0606ea02 4a397863 147c9060 ab790b53 db7a3578\" disabled=\"{this.state.disabled}\" onfsbsubmitting=\"{&quot;event&quot;:true}\" onfsbsubmitted=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbsubmitting=\"",
         "",
         "    // Handle the event of onButtonSubmitting (Button 1) here:",
         "    // ",
@@ -8279,6 +8279,13 @@
         "                                    </button>",
         "                                    <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"147c9060\" internal-fsb-name=\"Hidden 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-react-data=\"Quote.qid\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-column=\"qid\" internal-fsb-data-source-name=\"Quote\">",
         "                                    <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"ab790b53\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"status\" value=\"1\">",
+        "                                    <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"db7a3578\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-code=\"",
+        "    ",
+        "      // Override data parsing and manipulation of Hidden 1 here:",
+        "      // ",
+        "      if (input &amp;&amp; !input.value) input.value = new Date();",
+        "      ",
+        "      \" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"beginAt\" internal-fsb-react-data=\"Quote.beginAt\">",
         "                                </div>",
         "                            </div>",
         "                        </div>",
@@ -9120,11 +9127,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "aea42e1c",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
-          "180079a2",
+          "88c6a7ee",
           0,
-          9,
+          2,
           null
         ]
       },
@@ -9146,7 +9153,8 @@
           "deliverAt": {},
           "pickup": {},
           "number": {},
-          "address": {}
+          "address": {},
+          "beginAt": {}
         },
         "Listing": {
           "lid": {},
@@ -13591,7 +13599,7 @@
         "  }",
         "  ",
         "  private getShortRemainingTime(): string {",
-        "    const createdAt = this.getDataFromNotation('Quote.createdAt');",
+        "    const createdAt = this.getDataFromNotation('Quote.beginAt');",
         "    const hoursChecked = this.getDataFromNotation('Quote.hoursChecked');",
         "    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote.hours')) : 24;",
         "    ",
@@ -14611,7 +14619,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a04733d3",
+        "selectingElementGUID": "db81898d",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -15076,7 +15084,7 @@
         "                                                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-13b0cd97\" internal-fsb-guid=\"d40e3b62\" internal-fsb-name=\"TextElement 24\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; -fsb-inherited-presets: 13b0cd97; text-align: center; color: rgba(22, 98, 250, 1); padding-left: 2px; padding-right: 2px; margin-bottom: 20px\" internal-fsb-react-style-color=\"CODE[return (this.isMerchandiseInError(i, -1) || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? '#ff0000' : '';]\">#{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? 'ยกเลิกไปแล้ว' : this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price') + ' บาท'}</div><input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"c18d1ab2\" internal-fsb-name=\"Hidden 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"sid\" value=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].sid&quot;)}\">",
         "                                                                    <input type=\"hidden\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"939d2d75\" internal-fsb-name=\"Hidden 9\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Hidden\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"qid\" value=\"{this.getDataFromNotation(&quot;Quote[0].Auction[&quot; + i + &quot;].qid&quot;)}\">",
         "                                                                    <div class=\"internal-fsb-element offset-5\" internal-fsb-guid=\"6e068626\" internal-fsb-name=\"Checkbox 1\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Checkbox\" internal-fsb-data-validation-message=\"กรุณาเลือกรายการอย่างน้อยหนึ่ง\" internal-fsb-react-data=\"bought\" data-index=\"{i}\" data-pricing=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price')}\"><input type=\"checkbox\" style=\"display: block; -fsb-for-children: true; margin-top: 4px\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Auction\" internal-fsb-data-source-column=\"bought\" class=\"\" value=\"1\" required=\"true\" disabled=\"{this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')}\"></div>",
-        "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2d5ecc43\" internal-fsb-name=\"FlowLayout 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-react-mode=\"Document\" begin=\"{this.getDataFromNotation('Quote[0].createdAt')}\" showinghours=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].showHours') || 24}\" auctionhours=\"{this.getDataFromNotation('Quote[0].hoursChecked') ? this.getDataFromNotation('Quote[0].hours') : 24}\" internal-fsb-react-code-body=\"",
+        "                                                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"2d5ecc43\" internal-fsb-name=\"FlowLayout 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-react-mode=\"Document\" begin=\"{this.getDataFromNotation('Quote[0].beginAt')}\" showinghours=\"{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].showHours') || 24}\" auctionhours=\"{this.getDataFromNotation('Quote[0].hoursChecked') ? this.getDataFromNotation('Quote[0].hours') : 24}\" internal-fsb-react-code-body=\"",
         "  ",
         "  // Declare class variables and functions here:",
         "  //",
@@ -16458,11 +16466,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "41288a78",
+        "selectingElementGUID": "a23ed480",
         "currentCursorWalkPath": [
-          "41288a78",
+          "0",
           0,
-          4,
+          2,
           null
         ]
       },
@@ -23689,7 +23697,7 @@
       "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"00032595\" internal-fsb-name=\"RelationalDatabase 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalDatabase\" style=\"; left: 49px; top: 55px; width: 2080px; min-height: 1069px\" data-title-name=\"MySQL Database\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\">",
       "                <div class=\"internal-fsb-title internal-fsb-dragging-handle\">MySQL Database</div>",
       "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 1150px;\">",
+      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 1192px;\">",
       "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9957a62d\" internal-fsb-name=\"RelationalTable 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 815px; top: 66px; width: 225px; min-height: 95px;\" data-title-name=\"Employee\" data-lock-source-group=\"Store\" data-lock-mode=\"relation\" data-lock-source-entity=\"oid\" data-lock-relation-matching-constant-value=\"\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Employee</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -23809,7 +23817,7 @@
       "                                </div>",
       "                            </div>",
       "                        </div>",
-      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9e6bb0d3\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 351px; top: 666px; width: 225px; min-height: 484px;\" data-title-name=\"Quote\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\">",
+      "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9e6bb0d3\" internal-fsb-name=\"RelationalTable 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 353px; top: 676px; width: 225px; min-height: 516px\" data-title-name=\"Quote\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Quote</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
       "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
@@ -23856,6 +23864,9 @@
       "",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"16ce3b3e\" internal-fsb-name=\"RelationalColumn 13\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"boolean\" data-title-name=\"cancelled\">",
       "                                        <div class=\"internal-fsb-title\">cancelled</div>",
+      "                                    </div>",
+      "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"7d3e78d4\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-field-type=\"datetime\" data-title-name=\"beginAt\">",
+      "                                        <div class=\"internal-fsb-title\">beginAt</div>",
       "                                    </div>",
       "                                    <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"aa0d9d47\" internal-fsb-name=\"RelationalColumn 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalColumn\" data-title-name=\"createdAt\" data-lock-mode=\"always\" data-field-type=\"datetime\">",
       "                                        <div class=\"internal-fsb-title\">createdAt</div>",
@@ -25485,6 +25496,15 @@
             "modifyingPermission": null,
             "retrievingPermission": null
           },
+          "beginAt": {
+            "name": "beginAt",
+            "guid": "7d3e78d4",
+            "fieldType": "datetime",
+            "required": false,
+            "unique": false,
+            "modifyingPermission": null,
+            "retrievingPermission": null
+          },
           "createdAt": {
             "name": "createdAt",
             "guid": "aa0d9d47",
@@ -26726,7 +26746,7 @@
     "b140e86b": "e7606bf67068fc29a3b5cd40978893f7913eb5c0",
     "b6eb1b83": "a6eae035bb5b47223036096f1ea234b4a5c12341",
     "7e709334": "ff632507b2811ecc99f37fd8756aaf52533a2704",
-    "65e04a88": "29340f2e4aa1695c2dedae0ae74054de6520675a",
+    "65e04a88": "139f1be1815e1cf141d1153f070c2556391eb602",
     "9d37c390": "287509bae25d0cfeae763629e23dabc55ec09322",
     "6ce794ec": "f0a134512eca9c10d2ba1f358371bf76e54c06e8",
     "bbc7dba3": "fad800d48eea12459718b2484a2575ce33c260f6",
@@ -26745,15 +26765,15 @@
     "Project.Common.Header": "7fda1bd94a8a20636fb311de5136406c81ee2be9",
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
-    "Project.Controls.FlowLayout_b2020622": "19d8b2412206e9a6f2b69d9374c0671c96c40c03",
+    "Project.Controls.FlowLayout_b2020622": "64a58b8e8032f92b3d123422732f3039dc5b53e8",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "f1dd2f538df6b0f2397a2ddcf9b11c2bf499de0e",
+    "Project.Controls.Rectangle_cad06e8d": "957ff156dde52df1cbd83ce14844eb847397d863",
     "Project.Controls.FlowLayout_56ca37d0": "56518d39b5f3efb0f11215b52182b15716ae165b",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "69f870905fe71aff06c36255f234b0627e5ba546",
-    "Project.Controls.FlowLayout_db81898d": "836f349c03c3e3704ee9e78e9506af37e68be6a4",
-    "Project.Controls.FlowLayout_a23ed480": "574f71f7341a2307df009632b0f6630599586a9f",
+    "Project.Controls.FlowLayout_db81898d": "95afd7700def8801629d0eb013d0362cb25fc341",
+    "Project.Controls.FlowLayout_a23ed480": "ddff2094ccb2bb0f1f7f3f9d4af4fdf35b7f01dc",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "d4fea67d6faa176119732cffd5e2d6341fd1dda0",
     "Project.Controls.FlowLayout_69085d73": "dcd0d198312239d7782015a08f5f77093b8a3ffd",
