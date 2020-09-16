@@ -427,7 +427,7 @@ class Controller extends Base {
     RequestHelper.registerSubmit("65e04a88", "88297439", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "67c431d0", "update", ["b6c9ad89","a0b78888","cc34eced","9036c707"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("65e04a88", "a7592071", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("65e04a88", "0e75306a", "navigate", ["33408187","230ab296","babc9e30","9200d56a","12403b79","c3daa46d","0606ea02","4a397863","147c9060","ab790b53","db7a3578"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('5a972a57', "relational", "Quote", "title");
 		ValidationHelper.registerInput('5a972a57', "Textbox 4", true, "กรุณาระบุชื่อโครงการ");
     for (let i=-1; i<128; i++) {
@@ -767,6 +767,17 @@ class Controller extends Base {
     
       // Override data parsing and manipulation of Hidden 1 here:
       // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('db7a3578', "relational", "Quote", "beginAt");
+		ValidationHelper.registerInput('db7a3578', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'db7a3578' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
+      // 
+      if (input && !input.value) input.value = new Date();
       
       if (input != null) data.push(input);
     }
