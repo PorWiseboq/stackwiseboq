@@ -24,7 +24,7 @@
       "rgba(40, 49, 69, 1)",
       "rgba(255, 0, 0, 1)",
       "rgba(255, 223, 43, 1)",
-      "rgba(255, 255, 255, 1)",
+      "rgba(138, 138, 138, 1)",
       "rgba(255, 255, 255, 1)",
       "rgba(255, 255, 255, 1)",
       null,
@@ -231,8 +231,8 @@
       }
     ],
     "popups": [],
-    "editingPageID": "51a414a8",
-    "currentMode": "components",
+    "editingPageID": "65e04a88",
+    "currentMode": "site",
     "editingComponentID": "089c5b39"
   },
   "sites": {
@@ -338,7 +338,7 @@
         "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"23ee6874\" internal-fsb-name=\"FlowLayout 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 30px\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9336237b\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center\">มารู้จักกับเรา..</div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9336237b\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; font-size: 14px; color: rgba(138, 138, 138, 1)\">กรุณาใช้เบราว์เซอร์หรือแท็บเล็ตในขณะที่เรากำลังพัฒนาเว็บไซต์สำหรับมือถืออยู่</div>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -1223,6 +1223,18 @@
         "            color: rgba(22, 98, 250, 1)",
         "        }",
         "    </style>",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -8045,7 +8057,7 @@
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
         "",
-        "            <div class=\"col-12 internal-fsb-element \" internal-fsb-guid=\"8becc4a7\" internal-fsb-name=\"Logout Navigation 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"padding-left: 0px; padding-right: 0px\" internal-fsb-inheriting=\"089c5b39\">",
+        "            <div class=\"col-12 internal-fsb-element \" internal-fsb-guid=\"8becc4a7\" internal-fsb-name=\"Logout Navigation 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"\" internal-fsb-inheriting=\"089c5b39\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div class=\"col-9 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" style=\"padding-left: 0px; padding-right: 0px\">",
@@ -8070,9 +8082,9 @@
         "                            </div>",
         "                        </div>",
         "",
-        "                        <a class=\"col-3 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: right; margin-top: 15px; font-size: 14px; padding-right: 25px\" href=\"/authentication/logout\">",
-        "                            <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "                        </a>",
+        "                        <div class=\"col-3 internal-fsb-inheriting-element\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" style=\"padding-top: 15px; text-align: right\"><a class=\"internal-fsb-inheriting-element\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" style=\"font-size: 14px; display: inline-block\" href=\"/authentication/logout\">",
+        "                                <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                            </a></div>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -9469,7 +9481,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
           "b2020622",
           0,
@@ -20924,7 +20936,7 @@
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
         "",
-        "            <div class=\"col-12 internal-fsb-element \" internal-fsb-guid=\"b0e50493\" internal-fsb-name=\"Logout Navigation 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"\" internal-fsb-inheriting=\"089c5b39\">",
+        "            <div class=\"col-12 internal-fsb-element \" internal-fsb-guid=\"b0e50493\" internal-fsb-name=\"Logout Navigation 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"089c5b39\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div class=\"col-9 offset-0 internal-fsb-inheriting-element\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" style=\"padding-left: 0px; padding-right: 0px\">",
@@ -21829,7 +21841,7 @@
         "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\">",
         "        <div class=\"row internal-fsb-strict-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" internal-fsb-event-no-propagate=\"1\">",
         "",
-        "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"089c5b39\" internal-fsb-name=\"Logout Navigation\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"padding-left: 0px; padding-right: 0px\">",
+        "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"089c5b39\" internal-fsb-name=\"Logout Navigation\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                        <div class=\"internal-fsb-element col-9 offset-0\" internal-fsb-guid=\"20d6308c\" internal-fsb-name=\"FlowLayout 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"padding-left: 0px; padding-right: 0px\">",
@@ -21854,9 +21866,9 @@
         "                            </div>",
         "                        </div>",
         "",
-        "                        <a class=\"internal-fsb-element internal-fsb-allow-cursor col-3 offset-0\" internal-fsb-guid=\"a231737d\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"text-align: right; margin-top: 15px; font-size: 14px; padding-right: 25px\" href=\"/authentication/logout\">",
-        "                            <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a231737d-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "                        </a>",
+        "                        <div class=\"internal-fsb-element internal-fsb-allow-cursor col-3\" internal-fsb-guid=\"badb6ddd\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"padding-top: 15px; text-align: right\"><a class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"a231737d\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"font-size: 14px; display: inline-block\" href=\"/authentication/logout\">",
+        "                                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a231737d-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                            </a></div>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -23090,11 +23102,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "d2d6431e",
         "currentCursorWalkPath": [
           "902975e1",
           0,
-          2,
+          53,
           null
         ]
       },
@@ -25007,7 +25019,7 @@
         "internal-fsb-data-code-import": "\n\n// Import additional modules here:\n//\n\n",
         "internal-fsb-data-code-declare": "\n\n// Declare private static variables here:\n//\n\n",
         "internal-fsb-data-code-interface": "\n\n// Declare or extend interfaces here:\n//\n\n",
-        "internal-fsb-data-code-body": "\n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        this.request.session.uid = null;\n    \t  this.request.session.sid = null;\n    \t  this.request.session.role = null;\n        this.request.session.save(async () => {\n          this.response.redirect('/authentication/logout');\n      \t  resolve({});\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n      try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tthrow new Error(\"Not Implemented Error\");\n        // resolve('/');\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n \t\n  "
+        "internal-fsb-data-code-body": "\n  // Declare class variables and functions here:\n  //\n  protected validate(data: Input[]): void {\n  \t// The message of thrown error will be the validation message.\n  \t//\n \t\tValidationHelper.validate(data);\n  }\n  \n  protected async accessories(data: Input[]): Promise<any> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        resolve({\n          title: null,\n          description: null,\n          keywords: null,\n          language: null,\n          contentType: null,\n          revisitAfter: null,\n          robots: null,\n          linkUrl: null,\n          imageUrl: null,\n          itemType: null,\n          contentLocale: null\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async get(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      try {\n        this.request.session.uid = null;\n    \t  this.request.session.sid = null;\n    \t  this.request.session.role = null;\n        this.request.session.save(async () => {\n          this.response.redirect('/authentication');\n      \t  resolve({});\n        });\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async post(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.post(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async put(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.put(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async delete(data: Input[]): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n      /* try {\n        resolve(await super.delete(data));\n      } catch(error) {\n        reject(error);\n      } */\n      reject(new Error(\"Not Implemented Error\"));\n    });\n  }\n  \n  protected async insert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n      try {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.insert(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async update(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.update(data, schema, options.crossRelationUpsert, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async remove(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n        resolve(await DatabaseHelper.delete(data, schema, this.request.session));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async retrieve(data: Input[], schema: DataTableSchema): Promise<{[Identifier: string]: HierarchicalDataTable}> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tlet options = RequestHelper.getOptions(this.pageId, this.request);\n        resolve(await DatabaseHelper.retrieve(data, schema, this.request.session, options.enabledRealTimeUpdate));\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n  \n  protected async navigate(data: Input[], schema: DataTableSchema): Promise<string> {\n    return new Promise(async (resolve, reject) => {\n    \ttry {\n      \tthrow new Error(\"Not Implemented Error\");\n        // resolve('/');\n      } catch(error) {\n        reject(error);\n      }\n    });\n  }\n \t\n  "
       },
       "notations": {}
     }
@@ -25392,9 +25404,9 @@
         "                </div>",
         "            </div>",
         "",
-        "            <a class=\"internal-fsb-element internal-fsb-allow-cursor col-3 offset-0\" internal-fsb-guid=\"a231737d\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"text-align: right; margin-top: 15px; font-size: 14px\" href=\"/authentication/logout\">",
-        "                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a231737d-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
-        "            </a>",
+        "            <div class=\"internal-fsb-element internal-fsb-allow-cursor col-3\" internal-fsb-guid=\"badb6ddd\" internal-fsb-name=\"Rectangle 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Rectangle\" style=\"padding-top: 15px; text-align: right\"><a class=\"internal-fsb-element internal-fsb-allow-cursor\" internal-fsb-guid=\"a231737d\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"font-size: 14px; display: inline-block\" href=\"/authentication/logout\">",
+        "                    <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a231737d-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">ออกจากระบบ</div>",
+        "                </a></div>",
         "        </div>",
         "    </div>",
         "</div>"
@@ -28475,7 +28487,7 @@
     "51a414a8": "b58b3fd7da8a53f8fcf3f7e1d95d74a884498022",
     "5b199584": "3aab21c3a9f203a9d9bdea8fb227332cebcb9fdb",
     "e269aa1d": "005ab85d28da5c86e72d4637a18db31b8285ae56",
-    "baded02d": "07776fc9b316d1018dc92fb89da13252721a28a9"
+    "baded02d": "fda864563e8bc4f9b80c2499c63c65d76bd8b120"
   },
   "frontEndComponentsBlobSHADict": {
     "Project.Common.NavigationBar": "b7111f3ab75f942e0a0c529c46a5613504077841",
@@ -28497,11 +28509,11 @@
     "Project.Controls.FlowLayout_8542de09": "f1e5fa29991a942a0bf9caa1c736e8b25548a37d",
     "Project.Controls.FlowLayout_2d5ecc43": "b2a9ec4def2afe0323d64148ffd4a2889131cc81",
     "Project.Controls.FlowLayout_d2d6431e": "c6824f95dfea05551416419c3844ada644cd470d",
-    "Project.Controls.FlowLayout_089c5b39": "14d444ffaa842c5af3e1931afd76a4c6848da2e8"
+    "Project.Controls.FlowLayout_089c5b39": "51b48ea13f92c07ae1437209bc8cd177719cc947"
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "44b9a2e61fca1ad2f804fde240508399834605bd",
-    "index": "4517acb5bdc1c01d8e156b800b2458836e67cde0",
+    "index": "bfffa98002eb648f91a583c3a6e86fc8422e7b98",
     "b140e86b": "0df30b6d42e1d71ba1573a5f5836198964455561",
     "8857ca68": "677c8f69d3d5dc9ac57f36b3b94696a64d82386c",
     "b6eb1b83": "19cff53a1ec2d84bfd283638dc5d79ddf3814fd8",
@@ -28516,7 +28528,7 @@
     "ea2e6d53": "4e7e9b516e395ab0239a128519c47f529eaa903a",
     "5488072c": "6ea67ef79e0bfb0c253581ad96c412be3b78e2ee",
     "73d1cec9": "bd5f37e2e2b54d455ff329cac4e13b92215d5f66",
-    "51a414a8": "bb9bab8953a3027c072184906f2f861951515cab",
+    "51a414a8": "474ee34ffda46293e295aeee152592abea2a7fc7",
     "5b199584": "00fcbe198b76e39cb4f9f3db66b5042599ec9f89",
     "e269aa1d": "b192ce963567dbaee7747b50095ea77dc5684abd",
     "baded02d": "0fdfd57c58e31096d57380eaa167d6f3e92952e6"
