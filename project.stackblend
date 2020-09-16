@@ -190,7 +190,7 @@
     ],
     "components": [
       {
-        "id": "741d5692",
+        "id": "d54b23a5",
         "name": "Bidder Control",
         "state": "create"
       },
@@ -231,9 +231,9 @@
       }
     ],
     "popups": [],
-    "editingPageID": "index",
+    "editingPageID": "8857ca68",
     "currentMode": "site",
-    "editingComponentID": "741d5692"
+    "editingComponentID": "d54b23a5"
   },
   "sites": {
     "index": {
@@ -343,7 +343,7 @@
         "                </div>",
         "            </div>",
         "",
-        "            <div class=\"internal-fsb-element -fsb-preset-69085d73 col-6 offset-3\" internal-fsb-guid=\"6159ab17\" internal-fsb-name=\"Buyer Control 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 69085d73; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"0ddb39ed\">",
+        "            <div class=\"col-6 offset-3 internal-fsb-element -fsb-preset-69085d73  \" internal-fsb-guid=\"6159ab17\" internal-fsb-name=\"Buyer Control 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 69085d73; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"0ddb39ed\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div contenteditable=\"true\" class=\"col-12 -fsb-self-4011457d internal-fsb-inheriting-element\" internal-fsb-name=\"title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-reusable-preset-name=\"role_title\">ผู้ต้องการสั่งซื้อ</div>",
@@ -2098,12 +2098,18 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -4665,15 +4671,14 @@
         "            </div>",
         "",
         "",
-        "            <div class=\"col-8 offset-2 internal-fsb-element -fsb-preset-69085d73  \" internal-fsb-guid=\"d3a0bab8\" internal-fsb-name=\"Bidder Control 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"background: rgba(153, 24, 245, 1); color: rgba(255, 255, 255, 1); -fsb-inherited-presets: 69085d73; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"741d5692\">",
+        "",
+        "",
+        "            <div class=\"internal-fsb-element -fsb-preset-69085d73 col-6 offset-3\" internal-fsb-guid=\"555c7c5a\" internal-fsb-name=\"Bidder Control 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"-fsb-inherited-presets: 69085d73; background: rgba(153, 24, 245, 1); margin-top: 30px\" internal-fsb-inheriting=\"d54b23a5\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div contenteditable=\"true\" class=\"col-12 -fsb-preset-4011457d internal-fsb-inheriting-element\" internal-fsb-name=\"title\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-inherited-presets: 4011457d\">ร้านค้าวัสดุก่อสร้าง</div>",
         "                        <div class=\"col-6 offset-3 internal-fsb-inheriting-element\" internal-fsb-name=\"Image 4\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\"><img style=\"display: block; width: 100%; min-height: 100px; -fsb-for-children: true; margin-top: 15px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/laptop-auction.png\"></div>",
-        "                        <div contenteditable=\"true\" class=\"col-12 -fsb-preset-5d1104e1 internal-fsb-inheriting-element\" internal-fsb-name=\"subtitle\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-inherited-presets: 5d1104e1\">ไม่ว่าคุณจะเป็นร้านค้าวัสดุก่อสร้าง เล็กหรือใหญ่ คุณสามารถหาลูกค้าของคุณได้มากยิ่งขึ้นจากอินเทอร์เน็ต โดยใช้ระบบประมูลราคาเพื่อดึงดูดให้ลูกค้าเลือกซื้อ โดยที่ราคาวัสดุก่อสร้างของคุณนั้นไม่สามารถเห็นได้โดยคู่แข่ง</div>",
-        "",
-        "",
-        "                        <a class=\"btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 3\" internal-fsb-event-no-propagate=\"1\" href=\"/authentication\" style=\"-fsb-inherited-presets: 856191b9\">",
+        "                        <div contenteditable=\"true\" class=\"col-12 -fsb-preset-5d1104e1 internal-fsb-inheriting-element\" internal-fsb-name=\"subtitle\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-inherited-presets: 5d1104e1\">ไม่ว่าคุณจะเป็นร้านค้าวัสดุก่อสร้าง เล็กหรือใหญ่ คุณสามารถหาลูกค้าของคุณได้มากยิ่งขึ้นจากอินเทอร์เน็ต โดยใช้ระบบประมูลราคาเพื่อดึงดูดให้ลูกค้าเลือกซื้อ โดยที่ราคาวัสดุก่อสร้างของคุณนั้นไม่สามารถเห็นได้โดยคู่แข่ง</div><a class=\"btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 3\" internal-fsb-event-no-propagate=\"1\" href=\"/authentication\" style=\"-fsb-inherited-presets: 856191b9\">",
         "                            <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\">เข้าร่วมเป็นพาร์ทเนอร์กับเรา</div>",
         "                        </a><a class=\"btn btn-info col-10 offset-1 -fsb-preset-856191b9 internal-fsb-inheriting-element\" internal-fsb-name=\"Link 4\" internal-fsb-event-no-propagate=\"1\" href=\"/bidder\" style=\"-fsb-inherited-presets: 856191b9\">",
         "                            <div contenteditable=\"true\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-inheriting-element\" internal-fsb-event-no-propagate=\"1\" style=\"null\">เรียนรู้เพิ่มเติม</div>",
@@ -4681,7 +4686,7 @@
         "                    </div>",
         "                </div>",
         "            </div>",
-        "            <div class=\"col-10 offset-1 internal-fsb-element  \" internal-fsb-guid=\"2ab933a5\" internal-fsb-name=\"Footer 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-top-style: solid; border-top-color: rgba(22, 98, 250, 1); padding-top: 20px; padding-bottom: 20px; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Footer\" internal-fsb-inheriting=\"d22b95d9\">",
+        "            <div class=\"internal-fsb-element col-10 offset-1\" internal-fsb-guid=\"452bb70e\" internal-fsb-name=\"Footer 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-top-style: solid; border-top-color: rgba(22, 98, 250, 1); padding-top: 20px; padding-bottom: 20px; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Footer\" internal-fsb-inheriting=\"d22b95d9\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div contenteditable=\"true\" class=\"col-12 internal-fsb-inheriting-element\" internal-fsb-name=\"copyright\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: center; font-size: 13px\">ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ<div class=\"\">บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170</div>",
@@ -5508,11 +5513,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "d3a0bab8",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
           "0",
           0,
-          6,
+          7,
           null
         ]
       },
@@ -25276,31 +25281,6 @@
       "name": "FlowLayout 1",
       "state": "create"
     },
-    "741d5692": {
-      "namespace": "Project.Controls",
-      "klass": "FlowLayout_741d5692",
-      "html": [
-        "<div class=\"internal-fsb-element -fsb-preset-69085d73 col-12 offset-0\" internal-fsb-guid=\"741d5692\" internal-fsb-name=\"Bidder Control\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"background: rgba(153, 24, 245, 1); color: rgba(255, 255, 255, 1); -fsb-inherited-presets: 69085d73\" internal-fsb-react-mode=\"Site\">",
-        "    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-        "        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4011457d\" internal-fsb-guid=\"39317018\" internal-fsb-name=\"title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4011457d\">ร้านค้าวัสดุก่อสร้าง</div>",
-        "            <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"e2354390\" internal-fsb-name=\"Image 4\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 100%; min-height: 100px; -fsb-for-children: true; margin-top: 15px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/laptop-auction.png\"></div>",
-        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-5d1104e1\" internal-fsb-guid=\"5453a7a0\" internal-fsb-name=\"subtitle\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 5d1104e1\">ไม่ว่าคุณจะเป็นร้านค้าวัสดุก่อสร้าง เล็กหรือใหญ่ คุณสามารถหาลูกค้าของคุณได้มากยิ่งขึ้นจากอินเทอร์เน็ต โดยใช้ระบบประมูลราคาเพื่อดึงดูดให้ลูกค้าเลือกซื้อ โดยที่ราคาวัสดุก่อสร้างของคุณนั้นไม่สามารถเห็นได้โดยคู่แข่ง</div>",
-        "",
-        "",
-        "            <a class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9\" internal-fsb-guid=\"9c6d1b75\" internal-fsb-name=\"Link 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/authentication\" style=\"-fsb-inherited-presets: 856191b9\">",
-        "                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"9c6d1b75-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เข้าร่วมเป็นพาร์ทเนอร์กับเรา</div>",
-        "            </a><a class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9\" internal-fsb-guid=\"a2aa6041\" internal-fsb-name=\"Link 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/bidder\" style=\"-fsb-inherited-presets: 856191b9\" internal-fsb-react-id=\"\">",
-        "                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a2aa6041-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\" style=\"null\">เรียนรู้เพิ่มเติม</div>",
-        "            </a>",
-        "        </div>",
-        "    </div>",
-        "</div>"
-      ],
-      "id": "741d5692",
-      "name": "Bidder Control",
-      "state": "create"
-    },
     "089c5b39": {
       "namespace": "Project.Controls",
       "klass": "FlowLayout_089c5b39",
@@ -25361,6 +25341,28 @@
       ],
       "id": "0ddb39ed",
       "name": "Buyer Control",
+      "state": "create"
+    },
+    "d54b23a5": {
+      "namespace": "Project.Controls",
+      "klass": "FlowLayout_d54b23a5",
+      "html": [
+        "<div class=\"internal-fsb-element col-12 -fsb-preset-69085d73\" internal-fsb-guid=\"d54b23a5\" internal-fsb-name=\"Bidder Control\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" internal-fsb-react-mode=\"Site\" style=\"-fsb-inherited-presets: 69085d73; background: rgba(153, 24, 245, 1)\">",
+        "    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
+        "        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4011457d\" internal-fsb-guid=\"39317018\" internal-fsb-name=\"title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4011457d\">ร้านค้าวัสดุก่อสร้าง</div>",
+        "            <div class=\"internal-fsb-element col-6 offset-3\" internal-fsb-guid=\"e2354390\" internal-fsb-name=\"Image 4\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Image\"><img style=\"display: block; width: 100%; min-height: 100px; -fsb-for-children: true; margin-top: 15px\" class=\"\" src=\"https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/laptop-auction.png\"></div>",
+        "            <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-5d1104e1\" internal-fsb-guid=\"5453a7a0\" internal-fsb-name=\"subtitle\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 5d1104e1\">ไม่ว่าคุณจะเป็นร้านค้าวัสดุก่อสร้าง เล็กหรือใหญ่ คุณสามารถหาลูกค้าของคุณได้มากยิ่งขึ้นจากอินเทอร์เน็ต โดยใช้ระบบประมูลราคาเพื่อดึงดูดให้ลูกค้าเลือกซื้อ โดยที่ราคาวัสดุก่อสร้างของคุณนั้นไม่สามารถเห็นได้โดยคู่แข่ง</div><a class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9\" internal-fsb-guid=\"9c6d1b75\" internal-fsb-name=\"Link 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/authentication\" style=\"-fsb-inherited-presets: 856191b9\">",
+        "                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"9c6d1b75-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\">เข้าร่วมเป็นพาร์ทเนอร์กับเรา</div>",
+        "            </a><a class=\"internal-fsb-element internal-fsb-allow-cursor btn btn-info col-10 offset-1 -fsb-preset-856191b9\" internal-fsb-guid=\"a2aa6041\" internal-fsb-name=\"Link 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" href=\"/bidder\" style=\"-fsb-inherited-presets: 856191b9\" internal-fsb-react-id=\"\">",
+        "                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"a2aa6041-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\" style=\"null\">เรียนรู้เพิ่มเติม</div>",
+        "            </a>",
+        "        </div>",
+        "    </div>",
+        "</div>"
+      ],
+      "id": "d54b23a5",
+      "name": "Bidder Control",
       "state": "create"
     }
   },
@@ -28459,9 +28461,9 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "44b9a2e61fca1ad2f804fde240508399834605bd",
-    "index": "123623a4a6925d9b72482c1d5e3f3a7d45bfd0f8",
+    "index": "929fa9b8de76a96c7216c5a425e355bf78a676cb",
     "b140e86b": "4f2ff20a6b530c0bb1e445bcfe183a80ba68914b",
-    "8857ca68": "20846be1355639bc3d18c5ae0ed0dde5a2cc45c5",
+    "8857ca68": "5c8c97b32bb160695a1573e789cf918b1f83d0fa",
     "b6eb1b83": "19cff53a1ec2d84bfd283638dc5d79ddf3814fd8",
     "65e04a88": "96cbd8631800b861f1a6aca078bd5a28c3c46aec",
     "7e709334": "7fcd8c509eeeb5a531cb4f2dff9d945fb5ab0fef",
