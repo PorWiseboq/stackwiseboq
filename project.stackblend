@@ -231,7 +231,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "8857ca68",
+    "editingPageID": "b140e86b",
     "currentMode": "site",
     "editingComponentID": "d54b23a5"
   },
@@ -343,7 +343,7 @@
         "                </div>",
         "            </div>",
         "",
-        "            <div class=\"col-6 offset-3 internal-fsb-element -fsb-preset-69085d73  \" internal-fsb-guid=\"6159ab17\" internal-fsb-name=\"Buyer Control 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 69085d73; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"0ddb39ed\">",
+        "            <div class=\"internal-fsb-element -fsb-preset-69085d73 col-6 offset-3\" internal-fsb-guid=\"6159ab17\" internal-fsb-name=\"Buyer Control 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 69085d73; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"0ddb39ed\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div contenteditable=\"true\" class=\"col-12 -fsb-self-4011457d internal-fsb-inheriting-element\" internal-fsb-name=\"title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-reusable-preset-name=\"role_title\">ผู้ต้องการสั่งซื้อ</div>",
@@ -2104,12 +2104,18 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,1,400;1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,1,400;1,1,1,500;1,1,1,600;1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,1,100;1,1,1,300;1,1,1,400;1,1,1,500;1,1,1,700;1,1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -3556,7 +3562,7 @@
         "            </div>",
         "",
         "",
-        "            <div class=\"col-8 offset-2 internal-fsb-element -fsb-preset-69085d73  \" internal-fsb-guid=\"39e87874\" internal-fsb-name=\"Buyer Control 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 69085d73; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"0ddb39ed\">",
+        "            <div class=\"internal-fsb-element -fsb-preset-69085d73 col-6 offset-3\" internal-fsb-guid=\"39e87874\" internal-fsb-name=\"Buyer Control 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 69085d73; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-inheriting=\"0ddb39ed\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div contenteditable=\"true\" class=\"col-12 -fsb-self-4011457d internal-fsb-inheriting-element\" internal-fsb-name=\"title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-reusable-preset-name=\"role_title\">ผู้ต้องการสั่งซื้อ</div>",
@@ -4686,7 +4692,7 @@
         "                    </div>",
         "                </div>",
         "            </div>",
-        "            <div class=\"internal-fsb-element col-10 offset-1\" internal-fsb-guid=\"452bb70e\" internal-fsb-name=\"Footer 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-top-style: solid; border-top-color: rgba(22, 98, 250, 1); padding-top: 20px; padding-bottom: 20px; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Footer\" internal-fsb-inheriting=\"d22b95d9\">",
+        "            <div class=\"col-10 offset-1 internal-fsb-element  \" internal-fsb-guid=\"452bb70e\" internal-fsb-name=\"Footer 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-top-style: solid; border-top-color: rgba(22, 98, 250, 1); padding-top: 20px; padding-bottom: 20px; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Footer\" internal-fsb-inheriting=\"d22b95d9\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout\">",
         "                        <div contenteditable=\"true\" class=\"col-12 internal-fsb-inheriting-element\" internal-fsb-name=\"copyright\" internal-fsb-event-no-propagate=\"1\" style=\"text-align: center; font-size: 13px\">ลิขสิทธิ์ปีพุทธศักราช 2563 บริษัท WiseBOQ<div class=\"\">บจก. ร้อยเอ็ดคอนกรีตอัดแรง 54 ม.6 ต.ทุ่งเขาหลวง อ.ทุ่งเขาหลวง จ.ร้อยเอ็ด 45170</div>",
@@ -5513,11 +5519,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "555c7c5a",
         "currentCursorWalkPath": [
           "0",
           0,
-          7,
+          6,
           null
         ]
       },
@@ -28461,8 +28467,8 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "44b9a2e61fca1ad2f804fde240508399834605bd",
-    "index": "929fa9b8de76a96c7216c5a425e355bf78a676cb",
-    "b140e86b": "4f2ff20a6b530c0bb1e445bcfe183a80ba68914b",
+    "index": "5091c7412cd34451961248774e49cc4008cedbed",
+    "b140e86b": "2baaf629568500c4f5cec0f0667157f937fc79ad",
     "8857ca68": "5c8c97b32bb160695a1573e789cf918b1f83d0fa",
     "b6eb1b83": "19cff53a1ec2d84bfd283638dc5d79ddf3814fd8",
     "65e04a88": "96cbd8631800b861f1a6aca078bd5a28c3c46aec",
