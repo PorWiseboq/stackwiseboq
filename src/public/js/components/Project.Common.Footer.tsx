@@ -107,7 +107,6 @@ DeclarationHelper.declare('Site', 'Common.Footer', Footer);
 
 // Export variables here:
 //
-DeclarationHelper.declare('Site', 'Project.Common.Footer', Footer);
 
 export {IProps, IState, DefaultProps, DefaultState};
 
