@@ -226,7 +226,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "index",
+    "editingPageID": "b140e86b",
     "currentMode": "site",
     "editingComponentID": "69085d73"
   },
@@ -339,7 +339,7 @@
         "            <div class=\"internal-fsb-element col-12\" internal-fsb-guid=\"23ee6874\" internal-fsb-name=\"FlowLayout 8\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"margin-top: 30px\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9336237b\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; font-size: 14px; color: rgba(138, 138, 138, 1)\">กรุณาใช้เบราว์เซอร์หรือแท็บเล็ตในขณะที่เรากำลังพัฒนาเว็บไซต์สำหรับมือถืออยู่</div>",
+        "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"9336237b\" internal-fsb-name=\"TextElement 14\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"text-align: center; font-size: 14px; color: rgba(138, 138, 138, 1)\">กรุณาใช้เบราว์เซอร์หรือแท็บเล็ตโดยใช้ Safari หรือ Chrome ในขณะที่เรากำลังพัฒนาเว็บไซต์สำหรับมือถืออยู่</div>",
         "                    </div>",
         "                </div>",
         "            </div>",
@@ -2230,12 +2230,24 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,1,1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,1,1,1,400;1,1,1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,1,1,1,400;1,1,1,1,1,500;1,1,1,1,1,600;1,1,1,1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,1,1,1,100;1,1,1,1,1,300;1,1,1,1,1,400;1,1,1,1,1,500;1,1,1,1,1,700;1,1,1,1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -3968,7 +3980,7 @@
         "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-preset-69085d73,",
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-69085d73,",
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-69085d73 {",
-        "            background: linear-gradient(0deg, rgba(10, 157, 255, 1) 0%, rgba(22, 98, 250, 1) 100%);",
+        "            background: linear-gradient(0deg, rgba(22, 98, 250, 1) 0%, rgba(10, 157, 255, 1) 100%);",
         "            color: rgba(255, 255, 255, 1);",
         "            -fsb-reusable-name: role_box;",
         "            -fsb-reusable-id: 69085d73;",
@@ -4551,7 +4563,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b90bc716",
+        "selectingElementGUID": "93a78772",
         "currentCursorWalkPath": [
           "b90bc716",
           0,
@@ -4832,7 +4844,7 @@
         "            </div>",
         "",
         "",
-        "            <a class=\"internal-fsb-element internal-fsb-allow-cursor col-6 offset-3 btn btn-info\" internal-fsb-guid=\"8a375799\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"margin-top: 30px\" href=\"/authentication\">",
+        "            <a class=\"internal-fsb-element internal-fsb-allow-cursor col-6 offset-3 btn btn-primary\" internal-fsb-guid=\"8a375799\" internal-fsb-name=\"Link 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Link\" style=\"margin-top: 30px\" href=\"/authentication\">",
         "                <div contenteditable=\"true\" internal-fsb-class=\"TextElement\" internal-fsb-guid=\"8a375799-text\" internal-fsb-name=\"TextElement\" class=\"internal-fsb-element\" internal-fsb-event-no-propagate=\"1\" style=\"color: rgba(255, 255, 255, 1)\">เข้าร่วมเป็นพาร์ทเนอร์กับเรา</div>",
         "            </a>",
         "            <div class=\"col-10 offset-1 internal-fsb-element  \" internal-fsb-guid=\"2ab933a5\" internal-fsb-name=\"Footer 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"border-top-width: 1px; border-top-style: solid; border-top-color: rgba(22, 98, 250, 1); padding-top: 20px; padding-bottom: 20px; margin-top: 30px\" internal-fsb-react-mode=\"Site\" internal-fsb-react-namespace=\"Project.Common\" internal-fsb-react-class=\"Footer\" internal-fsb-inheriting=\"d22b95d9\">",
@@ -5560,7 +5572,7 @@
         "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-preset-81b0161d,",
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-81b0161d,",
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-81b0161d {",
-        "            background: linear-gradient(45deg, rgba(22, 98, 250, 1) 0%, rgba(10, 157, 255, 1) 48.67256637168141%, rgba(22, 98, 250, 1) 100%);",
+        "            background: linear-gradient(45deg, rgba(22, 98, 250, 1) 0%, rgba(10, 157, 255, 1) 48.67256637168141%, rgba(88, 181, 53, 1) 100%);",
         "            -fsb-reusable-name: herounit_box;",
         "            -fsb-reusable-id: 81b0161d;",
         "            -fsb-background-type: linear",
@@ -5666,11 +5678,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "83bb535d",
+        "selectingElementGUID": null,
         "currentCursorWalkPath": [
           "0",
           0,
-          3,
+          7,
           null
         ]
       },
@@ -25594,11 +25606,11 @@
     "default": [
       "<body class=\"internal-fsb-guide-on internal-fsb-disabled-guide\">",
       "    <div class=\"container-fluid internal-fsb-begin\" internal-fsb-guid=\"0\" style=\"height: 100%;\">",
-      "        <div class=\"row internal-fsb-absolute-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" style=\"height: 100%; min-height: 1148px;\" internal-fsb-event-no-propagate=\"1\">",
+      "        <div class=\"row internal-fsb-absolute-layout internal-fsb-begin-layout internal-fsb-allow-cursor\" style=\"height: 100%; min-height: 1150px;\" internal-fsb-event-no-propagate=\"1\">",
       "            <div class=\"internal-fsb-element\" internal-fsb-guid=\"00032595\" internal-fsb-name=\"RelationalDatabase 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalDatabase\" style=\"; left: 49px; top: 55px; width: 2080px; min-height: 1069px\" data-title-name=\"MySQL Database\" data-lock-mode=\"relation\" data-lock-source-group=\"User\" data-lock-source-entity=\"id\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\">",
       "                <div class=\"internal-fsb-title internal-fsb-dragging-handle\">MySQL Database</div>",
       "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
-      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 1216px;\">",
+      "                    <div class=\"row internal-fsb-absolute-layout internal-fsb-allow-cursor\" style=\"position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; min-height: 1218px;\">",
       "                        <div class=\"internal-fsb-element\" internal-fsb-guid=\"9957a62d\" internal-fsb-name=\"RelationalTable 2\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"RelationalTable\" style=\"left: 815px; top: 66px; width: 225px; min-height: 95px;\" data-title-name=\"Employee\" data-lock-source-group=\"Store\" data-lock-mode=\"relation\" data-lock-source-entity=\"oid\" data-lock-relation-matching-constant-value=\"\" data-lock-matching-mode=\"session\" data-lock-relation-matching-session-name=\"uid\">",
       "                            <div class=\"internal-fsb-title internal-fsb-dragging-handle\">Employee</div>",
       "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
@@ -28686,9 +28698,9 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "4a330a20a2b5dfe37733bb08d6f723870fa858e5",
-    "index": "efc11880f59d922e7949052ba19b541dbad8e404",
-    "b140e86b": "a24e0846c8c953fdc57ccb89b0b3c4ccddd8ac1a",
-    "8857ca68": "8beb9968c4181108fd382f65825575228cf6167f",
+    "index": "e252dabcee7b17800de11723a8b0651439d45375",
+    "b140e86b": "37a2cee7d8cc14641eafc575312780c30f1247fe",
+    "8857ca68": "dc4cf690bff6f3cdf148d563ae83e95abfaf6eeb",
     "b6eb1b83": "e29d4117cc870cad730815fcbc0f8af3ae51415a",
     "65e04a88": "96cbd8631800b861f1a6aca078bd5a28c3c46aec",
     "7e709334": "6624fcc36d72dc340f6a41c39bdc333a0ee7a553",
