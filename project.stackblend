@@ -226,7 +226,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "473d370d",
+    "editingPageID": "65e04a88",
     "currentMode": "site",
     "editingComponentID": "69085d73"
   },
@@ -8767,7 +8767,7 @@
         "                                                <label class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"47881859\" internal-fsb-name=\"Label 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"-fsb-inherited-presets: ; padding-left: 0px; padding-right: 0px\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89\" internal-fsb-guid=\"12403b79\" internal-fsb-name=\"pickup\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"Quote.pickup\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในการรับสินค้า\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89\" internal-fsb-guid=\"12403b79\" internal-fsb-name=\"pickup\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในการรับสินค้า\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
         "    // Handle the event of onRadioClick (pickup) here:",
         "    // ",
@@ -8794,7 +8794,7 @@
         "                                                <label class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"165d186a\" internal-fsb-name=\"Label 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89\" internal-fsb-guid=\"0606ea02\" internal-fsb-name=\"pickup\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"Quote.pickup\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในการรับสินค้า\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89\" internal-fsb-guid=\"0606ea02\" internal-fsb-name=\"pickup\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในการรับสินค้า\" onfsbclick=\"{&quot;event&quot;:true}\" internal-fsb-react-code-onfsbclick=\"",
         "",
         "    // Handle the event of onRadioClick (pickup) here:",
         "    // ",
@@ -9708,7 +9708,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b2020622",
+        "selectingElementGUID": "0606ea02",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -9732,7 +9732,6 @@
           "hours": {},
           "deliverChecked": {},
           "deliverAt": {},
-          "pickup": {},
           "address": {},
           "number": {},
           "beginAt": {}
@@ -28806,7 +28805,7 @@
     "Project.Common.Header": "f3b574fd017daea9140128e4969a1e970b912a60",
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
-    "Project.Controls.FlowLayout_b2020622": "ab070a1d4d16e5065b65ad5717c5f8bad4043a34",
+    "Project.Controls.FlowLayout_b2020622": "995c01c7137009b25502b4b87d8f2830933d8179",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
     "Project.Controls.Rectangle_cad06e8d": "c0243b0d3a271bdef6ab26151b2dc6d3c0f4310a",
     "Project.Controls.FlowLayout_56ca37d0": "2d993a0e03f6b910132a68ab7486619c22c6cae1",
