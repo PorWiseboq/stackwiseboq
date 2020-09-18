@@ -597,7 +597,7 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="12403b79")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="delivery", value="1", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == '1')
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="delivery", value="true", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == 'true')
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="b8a9d038")
                                 | ไปรับสินค้าด้วยตนเอง
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="c00c3c67")
@@ -609,7 +609,7 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="0606ea02")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="delivery", value="0", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == '0')
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="delivery", value="false", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == 'false')
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="94ec51a9")
                                 | จัดส่งสินค้ามาให้
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="9e55d0d6")

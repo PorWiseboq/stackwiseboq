@@ -8740,7 +8740,7 @@
         "                                                <label class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"47881859\" internal-fsb-name=\"Label 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"-fsb-inherited-presets: ; padding-left: 0px; padding-right: 0px\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89\" internal-fsb-guid=\"12403b79\" internal-fsb-name=\"pickup\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"Quote.pickup\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในการรับสินค้า\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" name=\"delivery\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"pickup\" value=\"1\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89\" internal-fsb-guid=\"12403b79\" internal-fsb-name=\"pickup\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"Quote.pickup\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในการรับสินค้า\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" name=\"delivery\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"pickup\" value=\"true\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"b8a9d038\" internal-fsb-name=\"TextElement 5\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">ไปรับสินค้าด้วยตนเอง</div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2 -fsb-preset-e51ca172\" internal-fsb-guid=\"c00c3c67\" internal-fsb-name=\"TextElement 6\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: e51ca172\">กรุณาระบุหมายเลขโทรศัพท์</div>",
         "                                                        </div>",
@@ -8758,7 +8758,7 @@
         "                                                <label class=\"internal-fsb-element col-4 offset-0\" internal-fsb-guid=\"165d186a\" internal-fsb-name=\"Label 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"Label\" style=\"padding-left: 0px; padding-right: 0px\">",
         "                                                    <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                                        <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
-        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89\" internal-fsb-guid=\"0606ea02\" internal-fsb-name=\"pickup\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"Quote.pickup\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในการรับสินค้า\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" name=\"delivery\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"pickup\" value=\"0\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
+        "                                                            <div class=\"internal-fsb-element col-2 offset-0 -fsb-preset-b6c9ad89\" internal-fsb-guid=\"0606ea02\" internal-fsb-name=\"pickup\" internal-fsb-event-no-propagate=\"1\" style=\"-fsb-empty\" internal-fsb-class=\"Radio\" internal-fsb-react-data=\"Quote.pickup\" internal-fsb-data-validation-message=\"คุณต้องเลือกวิธีในการรับสินค้า\"><input type=\"radio\" style=\"display: block; -fsb-for-children: true; -fsb-inherited-presets: b6c9ad89\" class=\"\" name=\"delivery\" internal-fsb-data-source-type=\"relational\" internal-fsb-data-source-name=\"Quote\" internal-fsb-data-source-column=\"pickup\" value=\"false\" required=\"true\" disabled=\"{this.state.disabled}\"></div>",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-0 -fsb-preset-b5cd72c0\" internal-fsb-guid=\"94ec51a9\" internal-fsb-name=\"TextElement 7\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: b5cd72c0\">จัดส่งสินค้ามาให้</div>",
         "",
         "                                                            <div contenteditable=\"true\" class=\"internal-fsb-element col-10 offset-2 -fsb-preset-e51ca172\" internal-fsb-guid=\"9e55d0d6\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: e51ca172\">กรุณาระบุที่อยู่สำหรับรับสินค้า</div>",
@@ -9663,11 +9663,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "0606ea02",
         "currentCursorWalkPath": [
-          "e01619d3",
+          "165d186a",
           0,
-          7,
+          1,
           null
         ]
       },
@@ -28749,7 +28749,7 @@
     "Project.Common.Header": "f3b574fd017daea9140128e4969a1e970b912a60",
     "Project.Common.RoleSelector": "693901e108eb10672647938f7426f521d3f86b0e",
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
-    "Project.Controls.FlowLayout_b2020622": "ae67eb4dcaced83222627c620a803651b705a6d0",
+    "Project.Controls.FlowLayout_b2020622": "a5edd24a8eafb9f0d8916615430b1c9235635c16",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
     "Project.Controls.Rectangle_cad06e8d": "a31c33dbe11d2f43f756da2f4bcf22aaf5713722",
     "Project.Controls.FlowLayout_56ca37d0": "2d993a0e03f6b910132a68ab7486619c22c6cae1",
