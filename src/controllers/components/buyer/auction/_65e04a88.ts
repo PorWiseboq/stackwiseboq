@@ -321,7 +321,7 @@ class Controller extends Base {
             throw new Error(`กรุณาระบุวันที่ต้องใช้สินค้าตั้งแต่วันที่ ${this.convertDateToString(date)} หรือหลังจากนั้น`);
           }
    	    } else {
-   	      if (this.dateInput < new Date(new Date().getTime() + 1 * 24 * 60 * 60 * 1000)) {
+   	      if (this.dateInput < new Date()) {
             throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งวัน");
           }
    	    }
