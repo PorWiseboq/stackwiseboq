@@ -352,7 +352,7 @@ class FlowLayout_a23ed480 extends Base {
       if (!$(checkbox).is(':disabled')) {
         total += parseFloat(checkbox.getAttribute('data-pricing').toString());
       } else {
-        event.detail.params[`6e068626[${count}]`] = false;
+        event.detail.params[`6e068626[${count}]`] = 'false';
       }
       
       count += 1;
