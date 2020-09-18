@@ -220,7 +220,7 @@ class Controller extends Base {
            		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
            		    
            		    if (quoteDataset['Quote'].rows.length != 0) {
-           		      const time = this.getLongRemainingTime(quoteDataset['Quote'].rows[0].columns['createdAt'], quoteDataset['Quote'].rows[0].columns['hourChecked'], quoteDataset['Quote'].rows[0].columns['hours']);
+           		      const time = this.getLongRemainingTime(quoteDataset['Quote'].rows[0].columns['beginAt'], quoteDataset['Quote'].rows[0].columns['hourChecked'], quoteDataset['Quote'].rows[0].columns['hours']);
            		      
            		      if (quoteDataset['Quote'].rows[0].relations['Auction'].rows.length != 0) {
                       await client.replyMessage(event.replyToken, {
