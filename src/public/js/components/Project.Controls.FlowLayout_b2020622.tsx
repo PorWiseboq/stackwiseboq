@@ -129,6 +129,15 @@ class FlowLayout_b2020622 extends Base {
   
   protected componentDidMount() {
     this.register();
+    
+    if (this.state.pickup === true) {
+      ReactDOM.findDOMNode(this.refs.pickup1).checked = true;
+      ReactDOM.findDOMNode(this.refs.pickup2).checked = false;
+    }
+    if (this.state.pickup === false) {
+      ReactDOM.findDOMNode(this.refs.pickup2).checked = true;
+      ReactDOM.findDOMNode(this.refs.pickup1).checked = false;
+    }
   }
   
   private getDisplay(status: Status) {
@@ -622,7 +631,7 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="12403b79")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_12403b79.bind(this), type="radio", name="delivery", value=true, required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == '{true}')
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, ref="pickup1", onClick=this.onRadioClick_12403b79.bind(this), type="radio", name="delivery", value="true", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == 'true')
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="b8a9d038")
                                 | ไปรับสินค้าด้วยตนเอง
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="c00c3c67")
@@ -634,7 +643,7 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="0606ea02")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_0606ea02.bind(this), type="radio", name="delivery", value=false, required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == '{false}')
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, ref="pickup2", onClick=this.onRadioClick_0606ea02.bind(this), type="radio", name="delivery", value="false", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == 'false')
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="94ec51a9")
                                 | จัดส่งสินค้ามาให้
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="9e55d0d6")
