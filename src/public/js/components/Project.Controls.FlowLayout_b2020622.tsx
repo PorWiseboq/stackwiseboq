@@ -50,6 +50,8 @@ interface IState extends IAutoBaseState {
   status: Status;
   inserted: boolean;
   disabled: boolean;
+  hoursChecked: boolean;
+  deliverChecked: boolean;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -58,7 +60,9 @@ let DefaultProps = Object.assign({}, DefaultBaseProps, {
 let DefaultState = Object.assign({}, DefaultBaseState, {
   status: Status.CREATE,
   inserted: false,
-  disabled: false
+  disabled: false,
+  hoursChecked: false,
+  deliverChecked: false
 });
 
 // Auto[ClassBegin]--->
@@ -87,6 +91,8 @@ class FlowLayout_b2020622 extends Base {
   //
   protected initialize(): void {
     this.state.inserted = (super.getDataFromNotation('Quote.qid') !== null);
+    this.state.hoursChecked = (super.getDataFromNotation('Quote.hoursChecked') === true);
+    this.state.deliverChecked = (super.getDataFromNotation('Quote.deliverChecked') === true);
   }
   
   // Providing data array base on dot notation:
@@ -322,6 +328,28 @@ class FlowLayout_b2020622 extends Base {
     
   }
 
+  protected onCheckboxClick_33408187(event: Event) {
+
+    // Handle the event of onCheckboxClick (hoursChecked) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.hoursChecked = element.checked;
+    this.forceUpdate();
+    
+  }
+
+  protected onCheckboxClick_babc9e30(event: Event) {
+
+    // Handle the event of onCheckboxClick (deliverChecked) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.deliverChecked = element.checked;
+    this.forceUpdate();
+    
+  }
+
   protected onButtonClick_a7592071(event: Event) {
 
     // Handle the event of onButtonClick (Button 1) here:
@@ -395,6 +423,16 @@ class FlowLayout_b2020622 extends Base {
                     | รายการวัสดุก่อสร้าง
                   .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'marginBottom': '10px'}, internal-fsb-guid="65ca1989")
                     | กรุณาระบุรายละเอียดสินค้า (ชื่อวัสดุ, สเปค, ยี่ห้อ, รายละเอียด, ปริมาณ, หน่วย)
+                    div
+                      br
+                    div
+                      | หมายเหตุ:
+                    div
+                      | ทดแทน = สเปคและยี่ห้อไม่ตรงก็ได้ แต่ใช้งานได้
+                    div
+                      | เทียบเท่า = สเปคต้องตรง แต่ยี่ห้อไม่ตรงก็ได้
+                    div
+                      | เจาะจง = ตรงทั้งสเปคและยี่ห้อ
                   .internal-fsb-element.col-12.offset-0.-fsb-self-97d707b7(style={'minHeight': '22px', 'FsbReusableName': '', 'FsbReusableId': '97d707b7', 'marginTop': '5px', 'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="97d707b7")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -529,13 +567,13 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="33408187")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="checkbox", disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.hoursChecked") === true)
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onCheckboxClick_33408187.bind(this), type="checkbox", disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.hoursChecked") === true)
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="9875301c")
                                 | ต้องการราคาภายในเวลา
                               .internal-fsb-element.col-10.offset-2.-fsb-self-e51ca172(internal-fsb-guid="e51ca172")
                                 | กรุณาระบุเป็นจำนวนเต็ม
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="230ab296")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="จำนวนชั่วโมง", disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.hours"))
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="จำนวนชั่วโมง", disabled=this.state.disabled || !this.state.hoursChecked, defaultValue=this.getDataFromNotation("Quote.hours"))
                         .internal-fsb-element.col-4.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="1d96cc04")
                           | ชั่วโมง
                   .internal-fsb-element.col-12(internal-fsb-guid="b33625ae")
@@ -545,7 +583,7 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="babc9e30")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="checkbox", disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.deliverChecked") === true)
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onCheckboxClick_babc9e30.bind(this), type="checkbox", disabled=this.state.disabled || !this.state.hoursChecked, defaultChecked=this.getDataFromNotation("Quote.deliverChecked") === true)
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="23ba11a8")
                                 | วันที่ต้องใช้สินค้า
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="b77168a5")
@@ -564,8 +602,6 @@ class FlowLayout_b2020622 extends Base {
                                 | ไปรับสินค้าด้วยตนเอง
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="c00c3c67")
                                 | กรุณาระบุหมายเลขโทรศัพท์
-                        .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="c3daa46d")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="หมายเลขโทรศัพท์", required=true, disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.number"))
                   .internal-fsb-element.col-12(internal-fsb-guid="22543809")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -577,9 +613,19 @@ class FlowLayout_b2020622 extends Base {
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="94ec51a9")
                                 | จัดส่งสินค้ามาให้
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="9e55d0d6")
-                                | กรุณาระบุที่อยู่สำหรับรับสินค้าและหมายเลขโทรศัพท์
+                                | กรุณาระบุที่อยู่สำหรับรับสินค้า
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="4a397863")
                           textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ที่อยู่สำหรับจัดส่งสินค้า", disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.address"))
+                  .internal-fsb-element.col-12(internal-fsb-guid="6ac913db")
+                    .container-fluid
+                      .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                        label.internal-fsb-element.col-4.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="c52a5549")
+                          .container-fluid
+                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                              .internal-fsb-element.-fsb-preset-b5cd72c0.col-10.offset-2(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="27abbc7b")
+                                | กรุณาระบุหมายเลขโทรศัพท์สำหรับรับสินค้า
+                        .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="c3daa46d")
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="หมายเลขโทรศัพท์", required=true, disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.number"))
                   Button.internal-fsb-element.internal-fsb-allow-cursor.col-4.offset-2.btn.btn-primary.btn-sm(style={'marginTop': '15px', 'marginRight': '10px'}, type="button", disabled=this.state.disabled, onSubmitting=this.onButtonSubmitting_a7592071.bind(this), onClick=this.onButtonClick_a7592071.bind(this), internal-fsb-guid="a7592071")
                     .internal-fsb-element(internal-fsb-guid="a7592071-text")
                       | ย้อนกลับ

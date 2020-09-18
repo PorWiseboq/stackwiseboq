@@ -720,16 +720,6 @@ class Controller extends Base {
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('c3daa46d', "relational", "Quote", "number");
-		ValidationHelper.registerInput('c3daa46d', "Number", true, "คุณจำเป็นต้องระบุหมายเลขโทรศัพท์");
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, 'c3daa46d' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Number here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
 		RequestHelper.registerInput('0606ea02', "relational", "Quote", "pickup");
 		ValidationHelper.registerInput('0606ea02', "pickup", true, "คุณต้องเลือกวิธีในการรับสินค้า");
     for (let i=-1; i<128; i++) {
@@ -746,6 +736,16 @@ class Controller extends Base {
       input = RequestHelper.getInput(this.pageId, request, '4a397863' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Address here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('c3daa46d', "relational", "Quote", "number");
+		ValidationHelper.registerInput('c3daa46d', "Number", true, "คุณจำเป็นต้องระบุหมายเลขโทรศัพท์");
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, 'c3daa46d' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Number here:
       // 
       
       if (input != null) data.push(input);

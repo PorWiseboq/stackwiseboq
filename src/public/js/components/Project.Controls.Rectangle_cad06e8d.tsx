@@ -877,6 +877,16 @@ class Rectangle_cad06e8d extends Base {
                                       | เคาะประมูล
                                     .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353', 'textAlign': 'left'}, internal-fsb-guid="49d55ce2")
                                       | หน้านี้จะแสดงงานประมูลวัสดุก่อสร้างทั้งหมดที่คุณสามารถเคาะราคาได้ กรุณาระบุราคาของแต่ละรายการก่อนที่เวลาจะหมด
+                                      div
+                                        br
+                                      div
+                                        | หมายเหตุ: 
+                                        span(style={'fontFamily': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'})
+                                          | ทดแทน = สเปคและยี่ห้อไม่ตรงก็ได้ แต่ใช้งานได้; 
+                                        span(style={'fontFamily': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'})
+                                          | เทียบเท่า = สเปคต้องตรง แต่ยี่ห้อไม่ตรงก็ได้; 
+                                        span(style={'fontFamily': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'})
+                                          | เจาะจง = ตรงทั้งสเปคและยี่ห้อ
                         .internal-fsb-element.col-12(style={display: (()=>{return this.getQuoteTypeDisplay(QuoteType.OFFERING, true);})()}, internal-fsb-guid="0d656c9d")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor

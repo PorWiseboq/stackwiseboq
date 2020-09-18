@@ -346,11 +346,16 @@ class FlowLayout_a23ed480 extends Base {
     const totalAmountInWord = ReactDOM.findDOMNode(this.refs.totalAmountInWord);
     const checkboxes = $('[data-pricing]:checked').toArray();
     let total = 0;
+    let count = 0;
     
     for (const checkbox of checkboxes) {
       if (!$(checkbox).is(':disabled')) {
         total += parseFloat(checkbox.getAttribute('data-pricing').toString());
+      } else {
+        event.detail.params[`6e068626[${count}]`] = false;
       }
+      
+      count += 1;
     }
     
     if (total == 0) {

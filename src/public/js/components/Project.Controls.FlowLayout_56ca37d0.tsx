@@ -142,7 +142,7 @@ class FlowLayout_56ca37d0 extends Base {
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                   .internal-fsb-element.-fsb-preset-4ce43ee9.col-4.offset-0(style={'textAlign': 'right', 'fontSize': '14px', 'FsbInheritedPresets': '4ce43ee9'}, internal-fsb-guid="0b76d112")
-                    | ชื่อนิติบุคคล / บุคคลธรรมดา
+                    | ชื่อนิติบุคคล / ชื่อบุคคลธรรมดา
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'}, internal-fsb-guid="d0730a53")
                     input.form-control(style={'display': 'block', 'width': '100%'}, type="text", disabled=this.state.disabled, required=true)
             .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="60183893")
@@ -152,6 +152,8 @@ class FlowLayout_56ca37d0 extends Base {
                     | สาขา
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'}, internal-fsb-guid="49cd4587")
                     input.form-control(style={'display': 'block', 'width': '100%'}, type="text", disabled=this.state.disabled, required=true)
+                  .internal-fsb-element.col-8.offset-4(style={'fontSize': '13px', 'color': 'rgba(138, 138, 138, 1)', 'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '5px'}, internal-fsb-guid="90a32e79")
+                    | กรณีชื่อบุคคลธรรมดาใส่ 0 (ศูนย์)
             .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="2d2a5565")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -159,6 +161,8 @@ class FlowLayout_56ca37d0 extends Base {
                     | หมายเลขประจำตัวผู้เสียภาษี
                   .internal-fsb-element.col-8.offset-0(style={padding: '0px'}, internal-fsb-guid="93258c7d")
                     input.form-control(style={'display': 'block', 'width': '100%'}, type="text", disabled=this.state.disabled, required=true)
+                  .internal-fsb-element.col-8.offset-4(style={'color': 'rgba(138, 138, 138, 1)', 'fontSize': '13px', 'paddingLeft': '0px', 'paddingRight': '0px', 'marginTop': '5px'}, internal-fsb-guid="e94d059e")
+                    | กรณีชื่อบุคคลธรรมดาใส่เลขบัตรประชาชน
             .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="dba43b7a")
               .container-fluid
                 .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
