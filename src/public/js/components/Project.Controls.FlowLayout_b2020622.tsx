@@ -616,7 +616,7 @@ class FlowLayout_b2020622 extends Base {
                                 | กรุณาระบุที่อยู่สำหรับรับสินค้า
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="4a397863")
                           textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ที่อยู่สำหรับจัดส่งสินค้า", disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.address"))
-                  .internal-fsb-element.col-12(internal-fsb-guid="6ac913db")
+                  .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="6ac913db")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                         label.internal-fsb-element.col-4.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="c52a5549")
