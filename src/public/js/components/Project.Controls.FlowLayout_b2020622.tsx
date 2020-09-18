@@ -52,6 +52,7 @@ interface IState extends IAutoBaseState {
   disabled: boolean;
   hoursChecked: boolean;
   deliverChecked: boolean;
+  pickup: any;
 }
 
 let DefaultProps = Object.assign({}, DefaultBaseProps, {
@@ -62,7 +63,8 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
   inserted: false,
   disabled: false,
   hoursChecked: false,
-  deliverChecked: false
+  deliverChecked: false,
+  pickup: null
 });
 
 // Auto[ClassBegin]--->
@@ -93,6 +95,7 @@ class FlowLayout_b2020622 extends Base {
     this.state.inserted = (super.getDataFromNotation('Quote.qid') !== null);
     this.state.hoursChecked = (super.getDataFromNotation('Quote.hoursChecked') === true);
     this.state.deliverChecked = (super.getDataFromNotation('Quote.deliverChecked') === true);
+    this.state.pickup = (super.getDataFromNotation('Quote.pickup') === true);
   }
   
   // Providing data array base on dot notation:
@@ -350,6 +353,28 @@ class FlowLayout_b2020622 extends Base {
     
   }
 
+  protected onRadioClick_12403b79(event: Event) {
+
+    // Handle the event of onRadioClick (pickup) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.pickup = true;
+    this.forceUpdate();
+    
+  }
+
+  protected onRadioClick_0606ea02(event: Event) {
+
+    // Handle the event of onRadioClick (pickup) here:
+    // 
+    const element = EventHelper.getCurrentElement(event);
+    
+    this.state.pickup = false;
+    this.forceUpdate();
+    
+  }
+
   protected onButtonClick_a7592071(event: Event) {
 
     // Handle the event of onButtonClick (Button 1) here:
@@ -597,7 +622,7 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="12403b79")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="delivery", value="true", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == 'true')
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_12403b79.bind(this), type="radio", name="delivery", value=true, required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == '{true}')
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="b8a9d038")
                                 | ไปรับสินค้าด้วยตนเอง
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="c00c3c67")
@@ -609,13 +634,13 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-2.offset-0.-fsb-preset-b6c9ad89(style={padding: '0px'}, internal-fsb-guid="0606ea02")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, type="radio", name="delivery", value="false", required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == 'false')
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onRadioClick_0606ea02.bind(this), type="radio", name="delivery", value=false, required=true, disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.pickup") == '{false}')
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="94ec51a9")
                                 | จัดส่งสินค้ามาให้
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="9e55d0d6")
                                 | กรุณาระบุที่อยู่สำหรับรับสินค้า
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="4a397863")
-                          textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ที่อยู่สำหรับจัดส่งสินค้า", disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.address"))
+                          textarea.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ที่อยู่สำหรับจัดส่งสินค้า", disabled=this.state.disabled || this.state.pickup !== false, defaultValue=this.getDataFromNotation("Quote.address"))
                   .internal-fsb-element.col-12(style={'marginTop': '10px'}, internal-fsb-guid="6ac913db")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
