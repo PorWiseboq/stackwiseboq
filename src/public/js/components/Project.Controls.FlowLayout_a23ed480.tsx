@@ -447,6 +447,10 @@ class FlowLayout_a23ed480 extends Base {
                     | ผลการประมูลราคาวัสดุก่อสร้าง
                   .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="b864ab8e")
                     | ข้างล่างนี้คือผลการประมูล กรุณาเลือกร้านค้าที่คุณพอใจมากที่สุด เพื่อชำระเงินในขั้นถัดไป
+                    div
+                      br
+                    div
+                      | หมายเหตุ: พิมพ์รหัสร้านค้าที่ขึ้นต้นด้วย s___ ลงใน Line App เพื่อสอบถามข้อมูลจากร้านค้า
                   .internal-fsb-element.col-6.col-sm-5.col-md-4.col-lg-3(style={'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', 'borderRightColor': 'rgba(0, 53, 117, 1)', 'borderLeftColor': 'rgba(0, 53, 117, 1)', 'borderTopColor': 'rgba(0, 53, 117, 1)', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderRightWidth': '1px', 'borderRightStyle': 'solid'}, internal-fsb-guid="0ed4d727")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -483,6 +487,8 @@ class FlowLayout_a23ed480 extends Base {
                                 | เลือกซื้อ
                               .internal-fsb-element.col-12(style={'marginTop': '5px'}, internal-fsb-guid="726e70cd")
                                 | หมดเวลาภายใน
+                              .internal-fsb-element.col-12(style={'marginTop': '5px'}, internal-fsb-guid="286227b5")
+                                | รหัสร้านค้า
                   .internal-fsb-element.internal-fsb-allow-cursor.col-6.col-sm-7.col-md-8.col-lg-9(style={'overflowX': 'auto', 'MsOverflowX': 'auto', 'overflowY': 'hidden', 'MsOverflowY': 'hidden', 'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', 'borderTopColor': 'rgba(0, 53, 117, 1)', 'borderRightColor': 'rgba(0, 53, 117, 1)', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderBottomStyle': 'solid', 'borderBottomWidth': '1px', 'borderRightStyle': 'solid', 'borderTopStyle': 'solid', 'borderRightWidth': '1px', 'borderTopWidth': '1px'}, internal-fsb-guid="56392ad7")
                     .internal-fsb-element(style={'display': 'block', 'whiteSpace': 'nowrap'}, internal-fsb-guid="ebeaa554")
                       each data, i in this.getDataFromNotation("Quote[0].Auction", true)
@@ -539,6 +545,8 @@ class FlowLayout_a23ed480 extends Base {
                                       input(style={'display': 'block', 'marginTop': '4px'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'), defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
                                     - const Project_Controls_FlowLayout_2d5ecc43_ = Project.Controls.FlowLayout_2d5ecc43;
                                     _Project_Controls_FlowLayout_2d5ecc43_(begin=this.getDataFromNotation('Quote[0].beginAt'), showinghours=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].showHours') || 24, auctionhours=this.getDataFromNotation('Quote[0].hoursChecked') ? this.getDataFromNotation('Quote[0].hours') : 3, cancel=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'))
+                                    .internal-fsb-element.col-12.-fsb-preset-13b0cd97(style={'marginTop': '5px', 'textAlign': 'center', 'FsbInheritedPresets': '13b0cd97'}, internal-fsb-guid="44c641d3")
+                                      | s#{this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].Store.sid')}
             input.internal-fsb-element(type="hidden", value="1", internal-fsb-guid="51776455")
             input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].qid"), internal-fsb-guid="4935a92c")
             Button.internal-fsb-element.internal-fsb-allow-cursor.offset-3.col-3.btn.btn-danger.btn-sm(style={'marginTop': '15px', 'marginRight': '10px', display: (()=>{return (this.state.step == Step.SELECTION) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('bb84ee28', 'Quote', event, ((results) => { this.manipulate('bb84ee28', 'Quote', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSubmitting=this.onButtonSubmitting_bb84ee28.bind(this), onSubmitted=this.onButtonSubmitted_bb84ee28.bind(this), internal-fsb-guid="bb84ee28")
