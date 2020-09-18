@@ -8264,6 +8264,7 @@
         "    this.state.pickup = super.getDataFromNotation('Quote.pickup');",
         "  }",
         "  ",
+        "  ",
         "  // Providing data array base on dot notation:",
         "  // ",
         "  protected getDataFromNotation(notation: string, inArray: boolean=false): any {",
@@ -9708,11 +9709,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "0606ea02",
+        "selectingElementGUID": "b2020622",
         "currentCursorWalkPath": [
-          "0",
+          "165d186a",
           0,
-          2,
+          1,
           null
         ]
       },
