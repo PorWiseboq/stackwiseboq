@@ -99,9 +99,9 @@ class FlowLayout_db81898d extends Base {
   private getShortRemainingTime(): string {
     const createdAt = this.getDataFromNotation('Quote.beginAt');
     const hoursChecked = this.getDataFromNotation('Quote.hoursChecked');
-    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote.hours')) : 24;
+    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote.hours')) : 3;
     
-    if (isNaN(auctionHours)) auctionHours = 24;
+    if (isNaN(auctionHours)) auctionHours = 3;
     
     const remaining = Math.max(0, new Date(createdAt).getTime() + auctionHours * 60 * 60 * 1000 - new Date().getTime());
     let seconds = remaining / 1000;

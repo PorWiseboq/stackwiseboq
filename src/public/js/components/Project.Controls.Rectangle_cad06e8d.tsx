@@ -258,7 +258,7 @@ class Rectangle_cad06e8d extends Base {
   private getShortRemainingTime(i: number): string {
     const createdAt = this.getDataFromNotation('Quote[' + i + '].beginAt');
     const hoursChecked = this.getDataFromNotation('Quote[' + i + '].hoursChecked');
-    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote[' + i + '].hours')) : 24;
+    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote[' + i + '].hours')) : 3;
     
     if (isNaN(auctionHours)) auctionHours = 24;
     

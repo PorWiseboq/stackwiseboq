@@ -22,7 +22,7 @@ import {RelationalDatabaseClient} from '../../../../helpers/ConnectionHelper.js'
 setInterval(() => {
   RelationalDatabaseClient.query(`SELECT Auction.sid, Auction.qid FROM Auction
 INNER JOIN Quote ON Quote.qid = Auction.qid
-WHERE DATE_ADD(Quote.createdAt, interval (IF(Quote.hoursChecked = 0, 24, Quote.hours) + IF(Auction.showHours IS NULL, 24, Auction.showHours)) hour) < now() AND Auction.cancelled IS NULL`, [], async (error, results, fields) => {
+WHERE DATE_ADD(Quote.createdAt, interval (IF(Quote.hoursChecked = 0, 3, Quote.hours) + IF(Auction.showHours IS NULL, 24, Auction.showHours)) hour) < now() AND Auction.cancelled IS NULL`, [], async (error, results, fields) => {
     let hash = {};
     for (let i=0; i<results.length; i++) {
       hash['Auction.sid[' + i + ']'] = results[i]['sid'];
@@ -149,7 +149,7 @@ class Controller extends Base {
     return new Promise(async (resolve, reject) => {
       try {
         RelationalDatabaseClient.query(`UPDATE Quote SET status = 2
-WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 24, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
+WHERE DATE_ADD(createdAt, interval IF(Quote.hoursChecked = 0, 3, hours) hour) < now() AND status =  1`, [], async (_error, _results, _fields) => {
           try {
             let quoteData = RequestHelper.createInputs({
      		      'Quote.uid': this.request.session.uid,

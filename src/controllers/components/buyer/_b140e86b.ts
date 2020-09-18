@@ -129,9 +129,9 @@ class Controller extends Base {
   }
   
   private getShortRemainingTime(createdAt: string, hoursChecked: boolean, auctionHours: number): string {
-    if (isNaN(auctionHours)) auctionHours = 24;
+    if (isNaN(auctionHours)) auctionHours = 3;
     
-    const remaining = Math.max(0, new Date(createdAt).getTime() + ((hoursChecked && !isNaN(auctionHours)) ? auctionHours : 24) * 60 * 60 * 1000 - new Date().getTime());
+    const remaining = Math.max(0, new Date(createdAt).getTime() + ((hoursChecked && !isNaN(auctionHours)) ? auctionHours : 3) * 60 * 60 * 1000 - new Date().getTime());
     let seconds = remaining / 1000;
     let minutes = seconds / 60;
     let hours = minutes / 60;

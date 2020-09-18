@@ -606,10 +606,15 @@ class FlowLayout_b2020622 extends Base {
                                 | ต้องการราคาภายในเวลา
                               .internal-fsb-element.col-10.offset-2.-fsb-self-e51ca172(internal-fsb-guid="e51ca172")
                                 | กรุณาระบุเป็นจำนวนเต็ม
-                        .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="230ab296")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="จำนวนชั่วโมง", disabled=this.state.disabled || !this.state.hoursChecked, defaultValue=this.getDataFromNotation("Quote.hours"))
-                        .internal-fsb-element.col-4.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="1d96cc04")
-                          | ชั่วโมง
+                        .internal-fsb-element.col-8.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="96e39046")
+                          .container-fluid
+                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                              .internal-fsb-element.offset-0.col-6(style={padding: '0px'}, internal-fsb-guid="230ab296")
+                                input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="จำนวนชั่วโมง", disabled=this.state.disabled || !this.state.hoursChecked, defaultValue=this.getDataFromNotation("Quote.hours"))
+                              .internal-fsb-element.offset-0.-fsb-preset-b5cd72c0.col-6(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="1d96cc04")
+                                | ชั่วโมง
+                              .internal-fsb-element.col-6.offset-0(style={'fontSize': '13px', 'paddingLeft': '0px', 'paddingRight': '0px', 'color': 'rgba(138, 138, 138, 1)', 'marginTop': '5px'}, internal-fsb-guid="7ca9a966")
+                                | ถ้าไม่กรอกข้อมูล ระบบจะใช้จำนวนชั่วโมงตามปกติ คือ 3 ชั่วโมง
                   .internal-fsb-element.col-12(internal-fsb-guid="b33625ae")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
@@ -622,8 +627,11 @@ class FlowLayout_b2020622 extends Base {
                                 | วันที่ต้องใช้สินค้า
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="b77168a5")
                                 | กรุณาระบุ ddmmyyyy เช่น 15102563
-                        .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="9200d56a")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ddmmyyyy", disabled=this.state.disabled || !this.state.deliverChecked, defaultValue=this.getDataFromNotation("Quote.deliverAt"))
+                        .internal-fsb-element.col-4.offset-0(style={'paddingLeft': '0px', 'paddingRight': '0px'}, internal-fsb-guid="90798e32")
+                          .container-fluid
+                            .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                              .internal-fsb-element.offset-0.col-12(style={padding: '0px'}, internal-fsb-guid="9200d56a")
+                                input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ddmmyyyy", disabled=this.state.disabled || !this.state.deliverChecked, defaultValue=this.getDataFromNotation("Quote.deliverAt"))
                   .internal-fsb-element.col-12.offset-0(internal-fsb-guid="22b7c898")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor

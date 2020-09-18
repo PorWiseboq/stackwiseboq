@@ -126,8 +126,8 @@ class Controller extends Base {
                         throw new Error("กรุณาระบุจำนวนชั่วโมง");
                     } else if (item.value && !item.value.match(/^[0-9]+$/)) {
                         throw new Error("กรุณาระบุจำนวนชั่วโมงเป็นตัวเลข");
-                    } else if (parseInt(item.value) < 24) {
-                        throw new Error("กรุณาระบุจำนวนชั่วโมงไม่ต่ำกว่า 24 ชั่วโมง");
+                    } else if (parseInt(item.value) < 1) {
+                        throw new Error("กรุณาระบุจำนวนชั่วโมงไม่ต่ำกว่า 1 ชั่วโมง");
                     } else if (parseInt(item.value) > 168) {
                         throw new Error("กรุณาระบุจำนวนชั่วโมงไม่มากไปกว่า 168 ชั่วโมง");
                     }
@@ -321,8 +321,8 @@ class Controller extends Base {
             throw new Error(`กรุณาระบุวันที่ต้องใช้สินค้าตั้งแต่วันที่ ${this.convertDateToString(date)} หรือหลังจากนั้น`);
           }
    	    } else {
-   	      if (this.dateInput < new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)) {
-            throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งสัปดาห์");
+   	      if (this.dateInput < new Date(new Date().getTime() + 1 * 24 * 60 * 60 * 1000)) {
+            throw new Error("กรุณาระบุวันที่ต้องใช้สินค้าหลังจากวันนี้หนึ่งวัน");
           }
    	    }
    	  }
