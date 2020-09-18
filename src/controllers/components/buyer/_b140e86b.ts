@@ -186,7 +186,8 @@ class Controller extends Base {
                 if (event.postback.data == 'list') {
                   let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'Quote.uid': results['User'].rows[0].keys['id'],
-           		      'Quote.filled': null,
+           		      'Quote.filled': false,
+           		      'Quote.cancelled': false,
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.Store.sid': null
            		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
@@ -212,7 +213,8 @@ class Controller extends Base {
                 } else if (event.postback.data == 'status') {
                   let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'Quote.uid': results['User'].rows[0].keys['id'],
-           		      'Quote.filled': null,
+           		      'Quote.filled': false,
+           		      'Quote.cancelled': false,
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.Store.sid': null
            		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
@@ -246,7 +248,8 @@ class Controller extends Base {
                   const sid = parseInt(event.message.text.toLowerCase().trim().split('s')[1]);
                   const quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
            		      'Quote.uid': results['User'].rows[0].keys['id'],
-           		      'Quote.filled': null,
+           		      'Quote.filled': false,
+           		      'Quote.cancelled': false,
            		      'Quote.Auction.qid': null,
            		      'Quote.Auction.Store.sid': null
            		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
@@ -352,7 +355,8 @@ class Controller extends Base {
                     
                     let quoteDataset = await DatabaseHelper.retrieve(RequestHelper.createInputs({
              		      'Quote.uid': results['User'].rows[0].keys['id'],
-             		      'Quote.filled': null,
+             		      'Quote.filled': false,
+             		      'Quote.cancelled': false,
              		      'Quote.Message.qid': null,
              		      'Quote.Message.Store.sid': null
              		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], {});
