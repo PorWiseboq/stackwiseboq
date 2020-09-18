@@ -260,7 +260,7 @@ class Rectangle_cad06e8d extends Base {
     const hoursChecked = this.getDataFromNotation('Quote[' + i + '].hoursChecked');
     let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote[' + i + '].hours')) : 3;
     
-    if (isNaN(auctionHours)) auctionHours = 24;
+    if (isNaN(auctionHours)) auctionHours = 3;
     
     const remaining = Math.max(0, new Date(createdAt).getTime() + auctionHours * 60 * 60 * 1000 - new Date().getTime());
     let seconds = remaining / 1000;

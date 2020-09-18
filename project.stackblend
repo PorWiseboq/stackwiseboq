@@ -226,7 +226,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "65e04a88",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "69085d73"
   },
@@ -5891,7 +5891,7 @@
         "    const hoursChecked = this.getDataFromNotation('Quote[' + i + '].hoursChecked');",
         "    let auctionHours = (hoursChecked) ? parseInt(this.getDataFromNotation('Quote[' + i + '].hours')) : 3;",
         "    ",
-        "    if (isNaN(auctionHours)) auctionHours = 24;",
+        "    if (isNaN(auctionHours)) auctionHours = 3;",
         "    ",
         "    const remaining = Math.max(0, new Date(createdAt).getTime() + auctionHours * 60 * 60 * 1000 - new Date().getTime());",
         "    let seconds = remaining / 1000;",
@@ -28800,7 +28800,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "f4d1b28376637a2e91971f7ce8b963be88092fd9",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "6df0cc91288d179038875ab9b80e8ad299bc492e",
+    "Project.Controls.Rectangle_cad06e8d": "c0243b0d3a271bdef6ab26151b2dc6d3c0f4310a",
     "Project.Controls.FlowLayout_56ca37d0": "2d993a0e03f6b910132a68ab7486619c22c6cae1",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
