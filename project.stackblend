@@ -226,7 +226,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "b140e86b",
+    "editingPageID": "index",
     "currentMode": "site",
     "editingComponentID": "69085d73"
   },
@@ -931,7 +931,7 @@
         "            -fsb-inherited-presets: ;",
         "            -fsb-reusable-name: membership_box_bottom;",
         "            -fsb-reusable-id: 023baa4c;",
-        "            background: linear-gradient(0deg, rgba(43, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
+        "            background: linear-gradient(0deg, rgba(102, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
         "            padding-bottom: 15px;",
         "            border-radius: 0px 0px 5px 5px;",
         "            -webkit-border-radius: 0px 0px 5px 5px;",
@@ -2242,12 +2242,18 @@
         "",
         "",
         "",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,1,400;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Average+Sans:ital,wght@1,400&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:ital,wght@1,400;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,1,400;1,1,500;1,1,600;1,1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
-        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,1,100;1,1,300;1,1,400;1,1,500;1,1,700;1,1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
+        "    <link internal-fsb-link=\"true\" href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap\" rel=\"stylesheet\" class=\"internal-fsb-font\">",
         "</body>"
       ],
       "accessories": {
@@ -4263,7 +4269,7 @@
         "            -fsb-inherited-presets: ;",
         "            -fsb-reusable-name: membership_box_bottom;",
         "            -fsb-reusable-id: 023baa4c;",
-        "            background: linear-gradient(0deg, rgba(43, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
+        "            background: linear-gradient(0deg, rgba(102, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
         "            padding-bottom: 15px;",
         "            border-radius: 0px 0px 5px 5px;",
         "            -webkit-border-radius: 0px 0px 5px 5px;",
@@ -4563,7 +4569,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "93a78772",
+        "selectingElementGUID": "b90bc716",
         "currentCursorWalkPath": [
           "b90bc716",
           0,
@@ -4672,7 +4678,7 @@
         "                    </div>",
         "                </div>",
         "            </div>",
-        "            <div class=\"internal-fsb-element col-12 -fsb-preset-81b0161d\" internal-fsb-guid=\"83bb535d\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 81b0161d; background: linear-gradient(45deg, rgba(76, 17, 250, 1) 0%, rgba(10, 157, 255, 1) 48.37758112094395%, rgba(22, 98, 250, 1) 100%); -fsb-background-type: linear\">",
+        "            <div class=\"internal-fsb-element col-12 -fsb-preset-81b0161d\" internal-fsb-guid=\"83bb535d\" internal-fsb-name=\"FlowLayout 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"FlowLayout\" style=\"-fsb-inherited-presets: 81b0161d; background: linear-gradient(45deg, rgba(102, 24, 245, 1) 0%, rgba(10, 157, 255, 1) 48.37758112094395%, rgba(22, 98, 250, 1) 100%); -fsb-background-type: linear\">",
         "                <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                    <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-1c6d525c\" internal-fsb-guid=\"200e2846\" internal-fsb-name=\"TextElement 1\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 1c6d525c\">WiseBOQ ช่วยให้คุณหาลูกค้าได้มากยิ่งขึ้น<div>จากระบบอินเทอร์เน็ต<span style=\"font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;\">และสามารถโต้ตอบกับลูกค้าได้ทันท่วงที</span></div>",
@@ -5378,7 +5384,7 @@
         "            -fsb-inherited-presets: ;",
         "            -fsb-reusable-name: membership_box_bottom;",
         "            -fsb-reusable-id: 023baa4c;",
-        "            background: linear-gradient(0deg, rgba(43, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
+        "            background: linear-gradient(0deg, rgba(102, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
         "            padding-bottom: 15px;",
         "            border-radius: 0px 0px 5px 5px;",
         "            -webkit-border-radius: 0px 0px 5px 5px;",
@@ -5678,11 +5684,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": null,
+        "selectingElementGUID": "023baa4c",
         "currentCursorWalkPath": [
           "0",
           0,
-          7,
+          3,
           null
         ]
       },
@@ -7820,7 +7826,7 @@
         "            -fsb-inherited-presets: ;",
         "            -fsb-reusable-name: membership_box_bottom;",
         "            -fsb-reusable-id: 023baa4c;",
-        "            background: linear-gradient(0deg, rgba(43, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
+        "            background: linear-gradient(0deg, rgba(102, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
         "            padding-bottom: 15px;",
         "            border-radius: 0px 0px 5px 5px;",
         "            -webkit-border-radius: 0px 0px 5px 5px;",
@@ -8014,7 +8020,7 @@
         "        .internal-fsb-strict-layout>.internal-fsb-inheriting-element.-fsb-preset-81b0161d,",
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-self-81b0161d,",
         "        .internal-fsb-absolute-layout>.internal-fsb-inheriting-element.-fsb-preset-81b0161d {",
-        "            background: linear-gradient(45deg, rgba(22, 98, 250, 1) 0%, rgba(10, 157, 255, 1) 48.67256637168141%, rgba(22, 98, 250, 1) 100%);",
+        "            background: linear-gradient(45deg, rgba(22, 98, 250, 1) 0%, rgba(10, 157, 255, 1) 48.67256637168141%, rgba(88, 181, 53, 1) 100%);",
         "            -fsb-reusable-name: herounit_box;",
         "            -fsb-reusable-id: 81b0161d;",
         "            -fsb-background-type: linear",
@@ -8120,7 +8126,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a30c3884",
+        "selectingElementGUID": "cad06e8d",
         "currentCursorWalkPath": [
           "24731127",
           0,
@@ -10268,7 +10274,7 @@
         "            -fsb-inherited-presets: ;",
         "            -fsb-reusable-name: membership_box_bottom;",
         "            -fsb-reusable-id: 023baa4c;",
-        "            background: linear-gradient(0deg, rgba(43, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
+        "            background: linear-gradient(0deg, rgba(102, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%);",
         "            padding-bottom: 15px;",
         "            border-radius: 0px 0px 5px 5px;",
         "            -webkit-border-radius: 0px 0px 5px 5px;",
@@ -10568,7 +10574,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "24428d5c",
+        "selectingElementGUID": "29b56091",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -28622,7 +28628,7 @@
     "bb540e9d": "-fsb-reusable-name: membership_box_top; -fsb-reusable-id: bb540e9d; color: rgba(255, 255, 255, 1); background: linear-gradient(0deg, rgba(22, 98, 250, 1) 0%, rgba(10, 157, 255, 1) 100%); padding-left: 30px; padding-right: 30px; padding-bottom: 20px; padding-top: 20px; border-right-color: rgba(255, 255, 255, 1); border-right-width: 1px; border-left-width: 1px; border-left-color: rgba(255, 255, 255, 1); border-radius: 5px 5px 0px 0px; -webkit-border-radius: 5px 5px 0px 0px; border-left-style: solid; border-right-style: solid; -fsb-background-type: linear",
     "7b53142e": "-fsb-reusable-name: membership_detail; -fsb-reusable-id: 7b53142e; text-align: center; font-size: 14px",
     "e1ea91ae": "-fsb-reusable-name: membership_price; -fsb-reusable-id: e1ea91ae; text-align: center; margin-top: 15px; background: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 1); padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; font-size: 14px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-top-style: solid; border-top-color: rgba(255, 255, 255, 0.5); border-left-style: solid; border-left-color: rgba(255, 255, 255, 0.5); border-bottom-style: solid; border-right-style: solid; border-right-color: rgba(255, 255, 255, 0.5); border-bottom-color: rgba(255, 255, 255, 0.5); border-top-width: 1px; border-left-width: 1px; border-bottom-width: 1px; border-right-width: 1px",
-    "023baa4c": "-fsb-inherited-presets: ; -fsb-reusable-name: membership_box_bottom; -fsb-reusable-id: 023baa4c; background: linear-gradient(0deg, rgba(43, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%); padding-bottom: 15px; border-radius: 0px 0px 5px 5px; -webkit-border-radius: 0px 0px 5px 5px; border-right-style: solid; border-right-color: rgba(255, 255, 255, 1); border-left-color: rgba(255, 255, 255, 1); border-left-style: solid; border-left-width: 1px; border-right-width: 1px; -fsb-background-type: linear",
+    "023baa4c": "-fsb-inherited-presets: ; -fsb-reusable-name: membership_box_bottom; -fsb-reusable-id: 023baa4c; background: linear-gradient(0deg, rgba(102, 24, 245, 1) 0%, rgba(22, 98, 250, 1) 100%); padding-bottom: 15px; border-radius: 0px 0px 5px 5px; -webkit-border-radius: 0px 0px 5px 5px; border-right-style: solid; border-right-color: rgba(255, 255, 255, 1); border-left-color: rgba(255, 255, 255, 1); border-left-style: solid; border-left-width: 1px; border-right-width: 1px; -fsb-background-type: linear",
     "856191b9": "-fsb-reusable-name: role_button; -fsb-reusable-id: 856191b9; margin-bottom: 15px",
     "ace3bb6e": "font-weight: bold; -fsb-reusable-name: navigation_title; -fsb-reusable-id: ace3bb6e; font-size: 15px",
     "99c51e64": "-fsb-reusable-name: inbox_item; -fsb-reusable-id: 99c51e64; background: rgba(214, 237, 255, 1); padding-bottom: 10px; padding-left: 10px; padding-right: 10px; color: rgba(69, 69, 69, 1); padding-top: 10px; font-size: 14px; margin-bottom: 3px; border-top-width: 1px; border-left-width: 1px; border-bottom-width: 1px; border-right-width: 1px; border-top-style: solid; border-left-style: solid; border-right-style: solid; border-bottom-style: solid; border-top-color: rgba(77, 195, 250, 1); border-right-color: rgba(77, 195, 250, 1); border-bottom-color: rgba(77, 195, 250, 1); border-left-color: rgba(77, 195, 250, 1)",
@@ -28698,12 +28704,12 @@
   },
   "viewBlobSHADict": {
     "d1e3b3b3": "4a330a20a2b5dfe37733bb08d6f723870fa858e5",
-    "index": "e252dabcee7b17800de11723a8b0651439d45375",
-    "b140e86b": "37a2cee7d8cc14641eafc575312780c30f1247fe",
-    "8857ca68": "dc4cf690bff6f3cdf148d563ae83e95abfaf6eeb",
-    "b6eb1b83": "e29d4117cc870cad730815fcbc0f8af3ae51415a",
+    "index": "36ea60a576a1fffda32cdfd62ad8db94cf62e8c8",
+    "b140e86b": "6223ecedf5b016270e62130a4b82dc79330457bb",
+    "8857ca68": "e9e67c7f134404c01b7d3d0c4df1a71e3113fae7",
+    "b6eb1b83": "c86056d3cbf12daf2d71356dcb603b52f512a408",
     "65e04a88": "96cbd8631800b861f1a6aca078bd5a28c3c46aec",
-    "7e709334": "6624fcc36d72dc340f6a41c39bdc333a0ee7a553",
+    "7e709334": "1bcc1df744420b142b17edd66f1030fb828b4a29",
     "6ce794ec": "68dc05887a0e7ef5e424efc8b20588e46266126d",
     "9d37c390": "46ef0cd41f0f157143d6c7bba7c53b35e721db0c",
     "bbc7dba3": "859053df212cce72c34f3fefee7bb015b485f3ea",
