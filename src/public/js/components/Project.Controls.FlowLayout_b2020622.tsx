@@ -95,7 +95,7 @@ class FlowLayout_b2020622 extends Base {
     this.state.inserted = (super.getDataFromNotation('Quote.qid') !== null);
     this.state.hoursChecked = (super.getDataFromNotation('Quote.hoursChecked') === true);
     this.state.deliverChecked = (super.getDataFromNotation('Quote.deliverChecked') === true);
-    this.state.pickup = (super.getDataFromNotation('Quote.pickup') === true);
+    this.state.pickup = super.getDataFromNotation('Quote.pickup');
   }
   
   // Providing data array base on dot notation:

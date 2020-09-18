@@ -111,7 +111,7 @@ class Controller extends Base {
                 }
                 break;
             case 'pickup':
-                if (item.value == '1') {
+                if (item.value == 'true') {
                     pickup = true;
                 }
                 break;
