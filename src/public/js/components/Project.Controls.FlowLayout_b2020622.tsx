@@ -583,13 +583,13 @@ class FlowLayout_b2020622 extends Base {
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.-fsb-preset-b6c9ad89.col-2.offset-0(style={padding: '0px'}, internal-fsb-guid="babc9e30")
-                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onCheckboxClick_babc9e30.bind(this), type="checkbox", disabled=this.state.disabled || !this.state.hoursChecked, defaultChecked=this.getDataFromNotation("Quote.deliverChecked") === true)
+                                input(style={'display': 'block', 'FsbInheritedPresets': 'b6c9ad89'}, onClick=this.onCheckboxClick_babc9e30.bind(this), type="checkbox", disabled=this.state.disabled, defaultChecked=this.getDataFromNotation("Quote.deliverChecked") === true)
                               .internal-fsb-element.col-10.offset-0.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0'}, internal-fsb-guid="23ba11a8")
                                 | วันที่ต้องใช้สินค้า
                               .internal-fsb-element.col-10.offset-2.-fsb-preset-e51ca172(style={'FsbInheritedPresets': 'e51ca172'}, internal-fsb-guid="b77168a5")
                                 | กรุณาระบุ ddmmyyyy เช่น 15102563
                         .internal-fsb-element.col-4.offset-0(style={padding: '0px'}, internal-fsb-guid="9200d56a")
-                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ddmmyyyy", disabled=this.state.disabled, defaultValue=this.getDataFromNotation("Quote.deliverAt"))
+                          input.form-control.form-control-sm(style={'display': 'block', 'width': '100%'}, type="text", placeholder="ddmmyyyy", disabled=this.state.disabled || !this.state.deliverChecked, defaultValue=this.getDataFromNotation("Quote.deliverAt"))
                   .internal-fsb-element.col-12.offset-0(internal-fsb-guid="22b7c898")
                     .container-fluid
                       .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
