@@ -191,7 +191,7 @@ class FlowLayout_a23ed480 extends Base {
   register() {
     DataManipulationHelper.register("bb84ee28", "navigate", ["4935a92c","51776455"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("bdcbb907", "update", ["c18d1ab2","6e068626","939d2d75"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
-    DataManipulationHelper.register("d480ae4d", "update", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","775b58b9","939d2d75","4b5256da","137c966d"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
+    DataManipulationHelper.register("d480ae4d", "upsert", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","775b58b9","1b8971eb"], {initClass: null, submitCrossType: "upsert", enabledRealTimeUpdate: false, retrieveInto: null});
     DataManipulationHelper.register("0a5b0022", "retrieve", ["dc7901c9"], {initClass: null, submitCrossType: null, enabledRealTimeUpdate: false, retrieveInto: null});
   }
   // <---Auto[ClassBegin]
@@ -344,6 +344,7 @@ class FlowLayout_a23ed480 extends Base {
     // Handle the event of onButtonSubmitting (Button 1) here:
     // 
     const totalAmountInWord = ReactDOM.findDOMNode(this.refs.totalAmountInWord);
+    const totalAmountInNumber = ReactDOM.findDOMNode(this.refs.totalAmountInNumber);
     const checkboxes = $('[data-pricing]').toArray();
     let total = 0;
     let count = 0;
@@ -364,6 +365,7 @@ class FlowLayout_a23ed480 extends Base {
     }
     
     totalAmountInWord.innerHTML = convertFullMoney(total);
+    totalAmountInNumber.innerHTML = convertFullMoney(total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
     
     this.setState({submitting: true});
     
@@ -541,6 +543,7 @@ class FlowLayout_a23ed480 extends Base {
                                       | #{(this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled')) ? 'ยกเลิกไปแล้ว' : this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price') + ' บาท'}
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].sid"), internal-fsb-guid="c18d1ab2")
                                     input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote[0].Auction[" + i + "].qid"), internal-fsb-guid="939d2d75")
+                                    input.internal-fsb-element.col-12(type="hidden", internal-fsb-guid="9a5b58d5")
                                     .internal-fsb-element.offset-5(style={padding: '0px'}, internal-fsb-guid="6e068626")
                                       input(style={'display': 'block', 'marginTop': '4px'}, data-index=i, data-pricing=this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].price'), type="checkbox", value="1", required=true, disabled=this.state.submitting || this.getDataFromNotation('Quote[0].Listing.Auction[' + i + '].cancelled'), defaultChecked=this.getDataFromNotation("Quote[0].Auction[" + i + "].bought") === true)
                                     - const Project_Controls_FlowLayout_2d5ecc43_ = Project.Controls.FlowLayout_2d5ecc43;
@@ -576,6 +579,8 @@ class FlowLayout_a23ed480 extends Base {
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                               .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'textAlign': 'center', 'FsbInheritedPresets': 'b5cd72c0', 'fontWeight': 'bold', 'marginBottom': '5px', 'fontSize': '14px'}, internal-fsb-guid="ae38da00")
                                 | จำนวนเงิน
+                              .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center'}, ref="totalAmountInNumber", internal-fsb-guid="eadea92c")
+                                | 15,000.20
                               .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center'}, ref="totalAmountInWord", internal-fsb-guid="9699d64d")
                                 | หนึ่งหมื่นห้าพันบาทยี่สิบสตางค์ถ้วน
                         .internal-fsb-element.col-12(style={'marginTop': '15px'}, internal-fsb-guid="a3c6554b")
@@ -586,8 +591,6 @@ class FlowLayout_a23ed480 extends Base {
                               .internal-fsb-element.col-12.-fsb-preset-b5cd72c0(style={'FsbInheritedPresets': 'b5cd72c0', 'textAlign': 'center', 'marginBottom': '15px'}, internal-fsb-guid="5eeaed97")
                                 | คุณอาจเปิดหน้านี้ทิ้งไว้หรือเข้าสู่ระบบเพื่อกลับเข้ามายังหน้านี้ในภายหลังได้เช่นกัน
                               input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="39c374d3")
-                              input.internal-fsb-element.col-12(type="hidden", value="123", internal-fsb-guid="137c966d")
-                              input.internal-fsb-element.col-12(type="hidden", value="123", internal-fsb-guid="4b5256da")
                               input.internal-fsb-element.col-12(type="hidden", value="1", internal-fsb-guid="775b58b9")
                               .internal-fsb-element.col-12.offset-0(style={padding: '0px'}, internal-fsb-guid="c6cd6a36")
                                 input.form-control.form-control-sm(style={'display': 'block', 'width': '100%', 'marginTop': '5px'}, type="text", placeholder="วันและเวลาที่โอนสำเร็จ ddmmyyyy hhmm", required=true, disabled=this.state.submitting)
@@ -606,10 +609,11 @@ class FlowLayout_a23ed480 extends Base {
                         .internal-fsb-element.col-12(internal-fsb-guid="26a1c7b0")
                           .container-fluid
                             .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+            input.internal-fsb-element.col-12(type="hidden", value=this.getDataFromNotation("Quote.qid"), internal-fsb-guid="1b8971eb")
             Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.offset-3.col-3(style={'marginTop': '15px', 'marginRight': '10px', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, type="button", disabled=this.state.submitting, onClick=this.onButtonClick_c1c0694d.bind(this), internal-fsb-guid="c1c0694d")
               .internal-fsb-element(internal-fsb-guid="c1c0694d-text")
                 | ย้อนกลับ
-            Button.internal-fsb-element.internal-fsb-allow-cursor.offset-0.btn.btn-primary.btn-sm.col-3(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('d480ae4d', 'Auction', event, ((results) => { this.manipulate('d480ae4d', 'Auction', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSuccess=this.onButtonSuccess_d480ae4d.bind(this), onSubmitting=this.onButtonSubmitting_d480ae4d.bind(this), onSubmitted=this.onButtonSubmitted_d480ae4d.bind(this), internal-fsb-guid="d480ae4d")
+            Button.internal-fsb-element.internal-fsb-allow-cursor.offset-0.btn.btn-primary.btn-sm.col-3(style={'marginTop': '15px', display: (()=>{return (this.state.step == Step.PAYMENT) ? 'block' : 'none';})()}, onClick=((event) => { window.internalFsbSubmit('d480ae4d', 'Payment', event, ((results) => { this.manipulate('d480ae4d', 'Payment', results); }).bind(this)); }).bind(this), type="button", disabled=this.state.submitting, onSuccess=this.onButtonSuccess_d480ae4d.bind(this), onSubmitting=this.onButtonSubmitting_d480ae4d.bind(this), onSubmitted=this.onButtonSubmitted_d480ae4d.bind(this), internal-fsb-guid="d480ae4d")
               .internal-fsb-element(internal-fsb-guid="d480ae4d-text")
                 | โอนเงินผ่านธนาคาร
             Button.internal-fsb-element.internal-fsb-allow-cursor.btn.btn-primary.btn-sm.col-2(style={'marginTop': '15px', 'marginLeft': '10px', 'display': 'none'}, type="button", onClick=this.onButtonClick_3d97109b.bind(this), internal-fsb-guid="3d97109b")

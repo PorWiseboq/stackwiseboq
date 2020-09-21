@@ -285,7 +285,25 @@ GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].keys['qid']], async (_error
   protected async upsert(data: Input[], schema: DataTableSchema): Promise<HierarchicalDataRow[]> {
     return new Promise(async (resolve, reject) => {
     	try {
-        resolve(await DatabaseHelper.upsert(data, schema, this.request.session));
+    	  let qid = data.filter(item => item.group == 'Quote')[0].value;
+    	  let filteredData = data.filter(item => item.group != 'Quote');
+    	  
+    	  let dataset = await DatabaseHelper.update(RequestHelper.createInputs({
+ 		      'Quote.qid': qid,
+ 		      'Quote.Auction.qid': null,
+ 		      'Quote.Auction.bought': true
+ 		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], false, this.request.session);
+    	  
+    	  for (let row of dataset['Quote'].rows[0].relations['Auction'].rows) {
+    	    let moreData = RequestHelper.createInputs({
+            'Payment.aid': row.columns['aid'],
+            'Payment.Transfer.aid': row.columns['aid']
+   		    });
+    	  
+          await DatabaseHelper.upsert([...filteredData, ...moreData], ProjectConfigurationHelper.getDataSchema().tables['Payment'], this.request.session);
+    	  }
+    	  
+    	  resolve({});
       } catch(error) {
         reject(error);
       }
@@ -354,7 +372,7 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
     RequestHelper.registerSubmit("473d370d", "bb84ee28", "navigate", ["4935a92c","51776455"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "bdcbb907", "update", ["c18d1ab2","6e068626","939d2d75"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "c1c0694d", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
-    RequestHelper.registerSubmit("473d370d", "d480ae4d", "update", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","c18d1ab2","6e068626","775b58b9","939d2d75","4b5256da","137c966d"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
+    RequestHelper.registerSubmit("473d370d", "d480ae4d", "upsert", ["c6cd6a36","5cab012e","39c374d3","0c59a0a4","775b58b9","1b8971eb"], {initClass: null, crossRelationUpsert: true, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "3d97109b", null, [], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
     RequestHelper.registerSubmit("473d370d", "0a5b0022", "retrieve", ["dc7901c9"], {initClass: null, crossRelationUpsert: false, enabledRealTimeUpdate: false});
 		RequestHelper.registerInput('c18d1ab2', "relational", "Auction", "sid");
@@ -373,6 +391,16 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
       input = RequestHelper.getInput(this.pageId, request, '939d2d75' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Hidden 9 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('9a5b58d5', "relational", "Auction", "aid");
+		ValidationHelper.registerInput('9a5b58d5', "Hidden 1", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '9a5b58d5' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 1 here:
       // 
       
       if (input != null) data.push(input);
@@ -407,7 +435,7 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('39c374d3', "relational", "Auction.Payment", "gateway");
+		RequestHelper.registerInput('39c374d3', "relational", "Payment", "gateway");
 		ValidationHelper.registerInput('39c374d3', "Hidden 2", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '39c374d3' + ((i == -1) ? '' : '[' + i + ']'));
@@ -417,27 +445,7 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('137c966d', "relational", "Auction.Payment", "aid");
-		ValidationHelper.registerInput('137c966d', "Hidden 10", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '137c966d' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 10 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('4b5256da', "relational", "Auction.Payment.Transfer", "aid");
-		ValidationHelper.registerInput('4b5256da', "Hidden 11", false, undefined);
-    for (let i=-1; i<128; i++) {
-      input = RequestHelper.getInput(this.pageId, request, '4b5256da' + ((i == -1) ? '' : '[' + i + ']'));
-    
-      // Override data parsing and manipulation of Hidden 11 here:
-      // 
-      
-      if (input != null) data.push(input);
-    }
-		RequestHelper.registerInput('775b58b9', "relational", "Auction.Payment.Transfer", "status");
+		RequestHelper.registerInput('775b58b9', "relational", "Payment.Transfer", "status");
 		ValidationHelper.registerInput('775b58b9', "Hidden 5", false, undefined);
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '775b58b9' + ((i == -1) ? '' : '[' + i + ']'));
@@ -448,7 +456,7 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('c6cd6a36', "relational", "Auction.Payment.Transfer", "time");
+		RequestHelper.registerInput('c6cd6a36', "relational", "Payment.Transfer", "time");
 		ValidationHelper.registerInput('c6cd6a36', "transferringTime", true, "กรุณากรอกวันและเวลาที่โอนสำเร็จ");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, 'c6cd6a36' + ((i == -1) ? '' : '[' + i + ']'));
@@ -458,7 +466,7 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('0c59a0a4', "relational", "Auction.Payment.Transfer", "transferrer");
+		RequestHelper.registerInput('0c59a0a4', "relational", "Payment.Transfer", "transferrer");
 		ValidationHelper.registerInput('0c59a0a4', "Textbox 2", true, "กรุณากรอกชื่อผู้ที่ได้ทำการโอน");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '0c59a0a4' + ((i == -1) ? '' : '[' + i + ']'));
@@ -468,12 +476,22 @@ GROUP BY Quote.qid`, [parseInt(data[0].value)], async (_error, _results, _fields
       
       if (input != null) data.push(input);
     }
-		RequestHelper.registerInput('5cab012e', "relational", "Auction.Payment.Transfer", "origin");
+		RequestHelper.registerInput('5cab012e', "relational", "Payment.Transfer", "origin");
 		ValidationHelper.registerInput('5cab012e', "Textbox 3", true, "กรุณากรอกชื่อธนาคารและสาขาต้นทาง");
     for (let i=-1; i<128; i++) {
       input = RequestHelper.getInput(this.pageId, request, '5cab012e' + ((i == -1) ? '' : '[' + i + ']'));
     
       // Override data parsing and manipulation of Textbox 3 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+		RequestHelper.registerInput('1b8971eb', "relational", "Quote", "qid");
+		ValidationHelper.registerInput('1b8971eb', "Hidden 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '1b8971eb' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Hidden 2 here:
       // 
       
       if (input != null) data.push(input);
