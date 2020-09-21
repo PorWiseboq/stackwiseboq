@@ -303,7 +303,7 @@ GROUP BY Quote.qid`, [quoteDatasetA['Quote'].rows[0].keys['qid']], async (_error
           await DatabaseHelper.upsert([...filteredData, ...moreData], ProjectConfigurationHelper.getDataSchema().tables['Payment'], this.request.session);
     	  }
     	  
-    	  resolve({});
+    	  resolve([]);
       } catch(error) {
         reject(error);
       }
