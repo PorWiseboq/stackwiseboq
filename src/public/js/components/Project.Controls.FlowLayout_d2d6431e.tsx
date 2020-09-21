@@ -117,20 +117,35 @@ class FlowLayout_d2d6431e extends Base {
     return this.getTotalPrice(i, j) - this.getDiscount(i, j);
   }
   private getTotalExcludeVAT(i: number, j: number) {
-    return this.getTotalPrice(i, j) - this.getDiscount(i, j);
-  }
-  private getTotalBeforeVAT(i: number, j: number) {
     if (this.getDataFromNotation('Quote['+i+'].Auction['+j+'].vatType') == 0) {
-      return this.getTotalExcludeVAT(i, j) / 1.07;
+      return this.getTotalAfterDiscount(i, j) / 1.07;
     } else {
-      return this.getTotalExcludeVAT(i, j);
+      return this.getTotalAfterDiscount(i, j);
+    }
+  }
+  private getTotalAboutVAT(i: number, j: number) {
+    if (this.getDataFromNotation('Quote['+i+'].Auction['+j+'].vatType') == 0) {
+      return this.getTotalAfterDiscount(i, j) - this.getTotalExcludeVAT(i, j);
+    } else {
+      return this.getTotalAfterDiscount(i, j) * 0.07;
     }
   }
   private getActualTotal(i: number, j: number) {
-    return this.getTotalBeforeVAT(i, j) * 1.07;
+    if (this.getDataFromNotation('Quote['+i+'].Auction['+j+'].vatType') == 0) {
+      return this.getTotalAfterDiscount(i, j);
+    } else {
+      return this.getTotalExcludeVAT(i, j) + this.getTotalAboutVAT(i, j);
+    }
   }
   private getSeenTotal(i: number, j: number) {
     return this.getDataFromNotation('Quote['+i+'].Auction['+j+'].price') || 0;
+  }
+  private getTitleAboutVAT(i: number, j: number) {
+    if (this.getDataFromNotation('Quote['+i+'].Auction['+j+'].vatType') == 0) {
+      return 'รวม VAT';
+    } else {
+      return 'ไม่รวม VAT';
+    }
   }
   
   // Auto[Merging]--->
@@ -171,6 +186,10 @@ class FlowLayout_d2d6431e extends Base {
               .internal-fsb-element.col-12(style={'marginBottom': '30px', 'borderBottomStyle': 'none', 'borderBottomColor': 'rgba(184, 184, 184, 1)', 'paddingLeft': '0px', 'paddingRight': '0px'}, key="item_" + i, internal-fsb-guid="902975e1")
                 .container-fluid
                   .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
+                    .internal-fsb-element.col-2.offset-0(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="a942bdeb")
+                      | หมายเลข
+                    .internal-fsb-element.col-10.offset-0(internal-fsb-guid="9b89e296")
+                      | #{this.getDataFromNotation('Quote['+i+'].qid')}
                     .internal-fsb-element.col-2.offset-0(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="d54358d0")
                       | ชื่อโครงการ
                     .internal-fsb-element.col-10.offset-0(dangerouslySetInnerHTML={__html: CodeHelper.escape(this.getDataFromNotation("Quote[" + i + "].title"))}, internal-fsb-guid="e4dbc285")
@@ -308,6 +327,10 @@ class FlowLayout_d2d6431e extends Base {
                             .internal-fsb-element.internal-fsb-allow-cursor.col-10.offset-1(style={'marginTop': '15px', 'borderTopStyle': 'dashed', 'borderTopColor': 'rgba(184, 184, 184, 1)', 'borderTopWidth': '1px'}, internal-fsb-guid="07258a9b")
                             .internal-fsb-element.col-10.offset-1(style={'marginBottom': '15px', 'textAlign': 'center', 'color': 'rgba(184, 184, 184, 1)', 'fontSize': '10px'}, internal-fsb-guid="73b4bee4")
                               | ประมูลโดย #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].Store.name')} สร้าง #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].createdAt')} แก้ไข #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].updatedAt')}
+                            .internal-fsb-element.col-2.offset-0(style={'textAlign': 'right', 'fontWeight': 'bold'}, internal-fsb-guid="2154401e")
+                              | หมายเลข
+                            .internal-fsb-element.col-10.offset-0(internal-fsb-guid="9a931c46")
+                              | #{this.getDataFromNotation('Quote['+i+'].Auction['+j+'].aid')}
                             .internal-fsb-element.col-2.offset-0(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="7a6344dc")
                               | ประมูลโดย
                             .internal-fsb-element.-fsb-preset-77d2cecb.col-2.offset-0(style={'FsbInheritedPresets': '77d2cecb'}, internal-fsb-guid="e4a06c31")
@@ -412,9 +435,9 @@ class FlowLayout_d2d6431e extends Base {
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="9da91391")
                               | #{this.getTotalExcludeVAT(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="668337cd")
-                              | ไม่รวม VAT 7%
+                              | #{this.getTitleAboutVAT(i, j)}
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="1951de0c")
-                              | #{this.getTotalBeforeVAT(i, j).toFixed(2)} บาท
+                              | #{this.getTotalAboutVAT(i, j).toFixed(2)} บาท
                             .internal-fsb-element.col-2.offset-1(style={'fontWeight': 'bold', 'textAlign': 'right'}, internal-fsb-guid="c8d660a1")
                               | จำนวนเงินรวมทั้งหมด
                             .internal-fsb-element.col-9.offset-0(internal-fsb-guid="068e6701")

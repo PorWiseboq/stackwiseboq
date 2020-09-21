@@ -134,6 +134,8 @@ class Controller extends Base {
  		      'Quote.Auction.Payment.Transfer.aid': null
  		    }), ProjectConfigurationHelper.getDataSchema().tables['Quote'], this.request.session, false, true);
  		    
+ 		    dataset['Quote'].rows = dataset['Quote'].rows.filter(quote => quote.relations['Auction'].any(auction => auction.relations['Payment'].rows.length != 0));
+ 		    
  		    resolve(dataset);
       } catch(error) {
         reject(error);
