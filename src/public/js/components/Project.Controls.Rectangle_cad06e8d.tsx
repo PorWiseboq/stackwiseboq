@@ -1121,6 +1121,8 @@ class Rectangle_cad06e8d extends Base {
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
                                                       .internal-fsb-element.col-12(style={'fontWeight': 'bold', 'marginBottom': '5px'}, internal-fsb-guid="00758360")
                                                         | สินค้าเทียบเคียง: #{this.getSubstituteDisplayText(i)}
+                                                      .internal-fsb-element.col-12(style={'fontWeight': 'bold', display: (()=>{return ([0,1,2].indexOf(data.relations['Substitute'] && data.relations['Substitute'].rows[0] && data.relations['Substitute'].rows[0].columns['type']) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="b22d8c96")
+                                                        | ราคาต่อหน่วย: #{this.getDataFromNotation("Quote[#i].Listing[" + i + "].Substitute.price")} บาท
                                                 .internal-fsb-element.-fsb-preset-65ec89d1.col-2.offset-0(style={'FsbInheritedPresets': '65ec89d1', display: (()=>{return ([1, 2].indexOf(data.relations['Substitute'] && data.relations['Substitute'].rows[0] && data.relations['Substitute'].rows[0].columns['type']) != -1) ? 'block' : 'none';})()}, internal-fsb-guid="176a4c29")
                                                   .container-fluid
                                                     .row.internal-fsb-strict-layout.internal-fsb-allow-cursor

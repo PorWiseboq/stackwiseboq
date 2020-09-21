@@ -226,7 +226,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "473d370d",
+    "editingPageID": "7e709334",
     "currentMode": "site",
     "editingComponentID": "69085d73"
   },
@@ -7109,6 +7109,7 @@
         "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"00758360\" internal-fsb-name=\"Title\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold; margin-bottom: 5px\">สินค้าเทียบเคียง: #{this.getSubstituteDisplayText(i)}</div>",
         "",
         "",
+        "                                                                                                        <div contenteditable=\"true\" class=\"internal-fsb-element col-12\" internal-fsb-guid=\"b22d8c96\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"font-weight: bold\" internal-fsb-react-style-display=\"CODE[return ([0,1,2].indexOf(data.relations['Substitute'] &amp;&amp; data.relations['Substitute'].rows[0] &amp;&amp; data.relations['Substitute'].rows[0].columns['type']) != -1) ? 'block' : 'none';]\">ราคาต่อหน่วย: #{this.getDataFromNotation(\"Quote[#i].Listing[\" + i + \"].Substitute.price\")} บาท</div>",
         "                                                                                                    </div>",
         "                                                                                                </div>",
         "                                                                                            </div>",
@@ -8134,11 +8135,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "cad06e8d",
+        "selectingElementGUID": "24731127",
         "currentCursorWalkPath": [
-          "24731127",
+          "51201e78",
           0,
-          1,
+          9,
           null
         ]
       },
@@ -17463,11 +17464,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "bdcbb907",
+        "selectingElementGUID": "a23ed480",
         "currentCursorWalkPath": [
-          "a23ed480",
+          "0",
           0,
-          5,
+          2,
           null
         ]
       },
@@ -28835,7 +28836,7 @@
     "Project.Common.Footer": "bfe2e8734baebc98e2a063080ac3049ecdd3c9fa",
     "Project.Controls.FlowLayout_b2020622": "995c01c7137009b25502b4b87d8f2830933d8179",
     "Project.Controls.FlowLayout_d58ae925": "48d15367aca8ba141aa1a9440435822963c167ad",
-    "Project.Controls.Rectangle_cad06e8d": "c0243b0d3a271bdef6ab26151b2dc6d3c0f4310a",
+    "Project.Controls.Rectangle_cad06e8d": "e1c60ed203bf83cdb99634f0b574842b508808fd",
     "Project.Controls.FlowLayout_56ca37d0": "2d993a0e03f6b910132a68ab7486619c22c6cae1",
     "Project.Controls.FlowLayout_cbb338d5": "1fd6488e690bb134c22c950be176ff98f97fdc04",
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
