@@ -344,12 +344,12 @@ class FlowLayout_a23ed480 extends Base {
     // Handle the event of onButtonSubmitting (Button 1) here:
     // 
     const totalAmountInWord = ReactDOM.findDOMNode(this.refs.totalAmountInWord);
-    const checkboxes = $('[data-pricing]:checked').toArray();
+    const checkboxes = $('[data-pricing]').toArray();
     let total = 0;
     let count = 0;
     
     for (const checkbox of checkboxes) {
-      if (!$(checkbox).is(':disabled')) {
+      if (!$(checkbox).is(':disabled') && $(checkbox).is(':checked')) {
         total += parseFloat(checkbox.getAttribute('data-pricing').toString());
       } else {
         (event as CustomEvent).detail.params[`6e068626[${count}]`] = 'false';

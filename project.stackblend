@@ -226,7 +226,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "5b199584",
+    "editingPageID": "473d370d",
     "currentMode": "site",
     "editingComponentID": "69085d73"
   },
@@ -16175,12 +16175,12 @@
         "    // Handle the event of onButtonSubmitting (Button 1) here:",
         "    // ",
         "    const totalAmountInWord = ReactDOM.findDOMNode(this.refs.totalAmountInWord);",
-        "    const checkboxes = $('[data-pricing]:checked').toArray();",
+        "    const checkboxes = $('[data-pricing]').toArray();",
         "    let total = 0;",
         "    let count = 0;",
         "    ",
         "    for (const checkbox of checkboxes) {",
-        "      if (!$(checkbox).is(':disabled')) {",
+        "      if (!$(checkbox).is(':disabled') &amp;&amp; $(checkbox).is(':checked')) {",
         "        total += parseFloat(checkbox.getAttribute('data-pricing').toString());",
         "      } else {",
         "        (event as CustomEvent).detail.params[`6e068626[${count}]`] = 'false';",
@@ -17459,11 +17459,11 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "b864ab8e",
+        "selectingElementGUID": "bdcbb907",
         "currentCursorWalkPath": [
-          "65beb763",
+          "a23ed480",
           0,
-          9,
+          5,
           null
         ]
       },
@@ -28834,7 +28834,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "69f870905fe71aff06c36255f234b0627e5ba546",
     "Project.Controls.FlowLayout_db81898d": "688697eff71ddda572726fb16ed43f6dc703b2d4",
-    "Project.Controls.FlowLayout_a23ed480": "71d48aa8311ef86b9f1da90f0c684d4408996295",
+    "Project.Controls.FlowLayout_a23ed480": "260a2e6de9bcc42abb442824ab44c9be69df31f3",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "d4fea67d6faa176119732cffd5e2d6341fd1dda0",
     "Project.Controls.FlowLayout_69085d73": "791bb6ca395b41f7de39477021c27c2c26c302ae",
