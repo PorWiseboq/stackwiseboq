@@ -448,9 +448,13 @@ class FlowLayout_a23ed480 extends Base {
                   .internal-fsb-element.-fsb-preset-7a279686.col-12.offset-0(style={'FsbInheritedPresets': '7a279686'}, internal-fsb-guid="d4338262")
                     | ผลการประมูลราคาวัสดุก่อสร้าง
                   .internal-fsb-element.col-12.-fsb-preset-4839e353(style={'FsbInheritedPresets': '4839e353'}, internal-fsb-guid="b864ab8e")
-                    | ข้างล่างนี้คือผลการประมูล กรุณาเลือกร้านค้าที่คุณพอใจมากที่สุด เพื่อชำระเงินในขั้นถัดไป
+                    div
+                      | #{this.getDataFromNotation('Quote[0].title')}
+                    div
+                      | #{this.getDataFromNotation('Quote[0].description')}
                     div
                       br
+                    | ข้างล่างนี้คือผลการประมูล กรุณาเลือกร้านค้าที่คุณพอใจมากที่สุด เพื่อชำระเงินในขั้นถัดไป
                     div
                       | หมายเหตุ: พิมพ์รหัสร้านค้าที่ขึ้นต้นด้วย s___ ลงใน Line App เพื่อสอบถามข้อมูลจากร้านค้า
                   .internal-fsb-element.col-6.col-sm-5.col-md-4.col-lg-3(style={'paddingLeft': '0px', 'paddingRight': '0px', 'fontSize': '13px', 'borderRightColor': 'rgba(0, 53, 117, 1)', 'borderLeftColor': 'rgba(0, 53, 117, 1)', 'borderTopColor': 'rgba(0, 53, 117, 1)', 'borderBottomColor': 'rgba(0, 53, 117, 1)', 'borderRightWidth': '1px', 'borderRightStyle': 'solid'}, internal-fsb-guid="0ed4d727")

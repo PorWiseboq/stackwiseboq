@@ -226,7 +226,7 @@
       }
     ],
     "popups": [],
-    "editingPageID": "7e709334",
+    "editingPageID": "473d370d",
     "currentMode": "site",
     "editingComponentID": "69085d73"
   },
@@ -15956,7 +15956,10 @@
         "                            <div class=\"container-fluid\" internal-fsb-event-no-propagate=\"1\">",
         "                                <div class=\"row internal-fsb-strict-layout internal-fsb-allow-cursor\">",
         "                                    <div contenteditable=\"true\" class=\"internal-fsb-element -fsb-preset-7a279686 col-12 offset-0\" internal-fsb-guid=\"d4338262\" internal-fsb-name=\"TextElement 3\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 7a279686\">ผลการประมูลราคาวัสดุก่อสร้าง</div>",
-        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"b864ab8e\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353\">ข้างล่างนี้คือผลการประมูล กรุณาเลือกร้านค้าที่คุณพอใจมากที่สุด เพื่อชำระเงินในขั้นถัดไป<div><br></div>",
+        "                                    <div contenteditable=\"true\" class=\"internal-fsb-element col-12 -fsb-preset-4839e353\" internal-fsb-guid=\"b864ab8e\" internal-fsb-name=\"TextElement 4\" internal-fsb-event-no-propagate=\"1\" internal-fsb-class=\"TextElement\" style=\"-fsb-inherited-presets: 4839e353\">",
+        "                                        <div>#{this.getDataFromNotation('Quote[0].title')}</div>",
+        "                                        <div>#{this.getDataFromNotation('Quote[0].description')}</div>",
+        "                                        <div><br></div>ข้างล่างนี้คือผลการประมูล กรุณาเลือกร้านค้าที่คุณพอใจมากที่สุด เพื่อชำระเงินในขั้นถัดไป",
         "                                        <div>หมายเหตุ: พิมพ์รหัสร้านค้าที่ขึ้นต้นด้วย s___ ลงใน Line App เพื่อสอบถามข้อมูลจากร้านค้า</div>",
         "                                    </div>",
         "",
@@ -17464,7 +17467,7 @@
         "</body>"
       ],
       "accessories": {
-        "selectingElementGUID": "a23ed480",
+        "selectingElementGUID": "b864ab8e",
         "currentCursorWalkPath": [
           "0",
           0,
@@ -28852,7 +28855,7 @@
     "Project.Common.LoginControl": "983f5c1235bbfcb5d0875f08719603b62677e10e",
     "Project.Controls.FlowLayout_c6ba5b53": "69f870905fe71aff06c36255f234b0627e5ba546",
     "Project.Controls.FlowLayout_db81898d": "688697eff71ddda572726fb16ed43f6dc703b2d4",
-    "Project.Controls.FlowLayout_a23ed480": "c7a642d500a83e01bfdb2fdb7399cdb04499c8a4",
+    "Project.Controls.FlowLayout_a23ed480": "d8ee15f960f14ffe68d0d74ff14eb0a5ef739e0f",
     "Project.Controls.FlowLayout_84b618a7": "f3660c70466cb1a5f9fd04864cd4573331fd0786",
     "Project.Controls.Rectangle_a8055802": "f9603d0e84af96feb2f3f845fed1b7bd178f86ea",
     "Project.Controls.FlowLayout_69085d73": "791bb6ca395b41f7de39477021c27c2c26c302ae",
