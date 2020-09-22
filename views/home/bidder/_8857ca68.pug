@@ -28,7 +28,7 @@ html
     
     .container-fluid.internal-fsb-begin(internal-fsb-guid="0")
       .row.internal-fsb-strict-layout.internal-fsb-begin-layout
-        span(internal-fsb-init-class="Project.Common.NavigationBar" internal-fsb-init-forward="{'classes': 'col-12', 'styles': {}}")
+        span(internal-fsb-init-class="Project.Common.NavigationBar" internal-fsb-init-forward="{'classes': 'col-12 offset-0', 'styles': {'position': 'sticky'}}")
         .internal-fsb-element.col-12.-fsb-preset-81b0161d(style={'-fsb-inherited-presets': '81b0161d', 'background': 'rgba(153, 24, 245, 1)'}, internal-fsb-guid="83bb535d")
           .container-fluid
             .row.internal-fsb-strict-layout
@@ -76,10 +76,10 @@ html
                       img(style={'display': 'block', 'width': '100%', 'margin-bottom': '15px'}, src="https://wiseboq-static-files.s3-ap-northeast-1.amazonaws.com/mobile.png")
                     .internal-fsb-element.col-12(internal-fsb-guid="58977e28")
                       | คุณสามารถโต้ตอบกับลูกค้าผ่านระบบของเราได้ทันที
-        .internal-fsb-element.col-10.offset-1(style={'flex-wrap': 'wrap', '-webkit-flex-wrap': 'wrap', '-ms-flex-wrap': 'wrap', 'display': 'flex', 'flex-direction': 'column', '-webkit-flex-direction': 'column', '-ms-flex-direction': 'column', 'justify-content': 'center', '-webkit-justify-content': 'center', 'align-items': 'center', '-webkit-align-items': 'center', 'align-content': 'center', '-webkit-align-content': 'center'}, internal-fsb-guid="885ed632")
+        .internal-fsb-element.col-10.offset-1(style={'flex-wrap': 'wrap', '-webkit-flex-wrap': 'wrap', '-ms-flex-wrap': 'wrap', 'display': 'flex', 'flex-direction': 'column', '-webkit-flex-direction': 'column', '-ms-flex-direction': 'column', 'justify-content': 'center', '-webkit-justify-content': 'center', 'align-items': 'center', '-webkit-align-items': 'center', 'align-content': 'center', '-webkit-align-content': 'center', 'min-width': '400px'}, internal-fsb-guid="885ed632")
           .container-fluid
             .row.internal-fsb-strict-layout
-              .internal-fsb-element.col-3.offset-0(internal-fsb-guid="926888a8")
+              .internal-fsb-element.offset-0.col-3.offset-sm-0(style={'max-width': '600px', 'min-width': '200px'}, internal-fsb-guid="926888a8")
                 .container-fluid
                   .row.internal-fsb-strict-layout
                     .internal-fsb-element.-fsb-preset-9edb5748.col-8.offset-2(style={'-fsb-inherited-presets': '9edb5748', 'border-top-color': 'rgba(153, 24, 245, 1)'}, internal-fsb-guid="b5447929")
@@ -89,13 +89,13 @@ html
                         br
                       div
                         | นอกจากนี้เราการ์รันตีว่าบริษัทจะปกป้องรักษาข้อมูลต่างๆ ที่คุณได้มอบไว้กับ WiseBOQ ไม่ให้รั่วไหลไปยังคู่ค้าของคุณโดยเด็ดขาด
-              .internal-fsb-element.col-3.offset-0(internal-fsb-guid="c812489a")
+              .internal-fsb-element.col-3.offset-0(style={'max-width': '600px', 'min-width': '200px'}, internal-fsb-guid="c812489a")
                 .container-fluid
                   .row.internal-fsb-strict-layout
                     .internal-fsb-element.-fsb-preset-9edb5748.col-8.offset-2(style={'-fsb-inherited-presets': '9edb5748', 'border-top-color': 'rgba(153, 24, 245, 1)'}, internal-fsb-guid="ca52b076")
                     .internal-fsb-element.col-12.-fsb-preset-71b995e4(style={'-fsb-inherited-presets': '71b995e4'}, internal-fsb-guid="2a95dab1")
                       | นอกจากการที่คุณจะต้องแข่งขันราคาประมูลเพื่อให้ได้ราคาถูกที่สุด คุณสามารถยื่นเสนออื่นๆ ให้กับลูกค้าของคุณได้ อาทิเช่น ส่วนลดในครั้งถัดไป, นักออกแบบบ้านหรือสถาปนิก, ช่างสวนและช่างก่อสร้างระดับมืออาชีพ เป็นต้น เพื่อจูงใจให้ลูกค้านั้นเลือกร้านค้าของคุณโดยที่คุณไม่จำเป็นต้องตัดใจสร้างยอดขายโดยลดกำไรลงให้เหลือน้อยที่สุดแต่อย่างไร
-              .internal-fsb-element.col-3.offset-0(internal-fsb-guid="01b5c328")
+              .internal-fsb-element.col-3.offset-0(style={'max-width': '600px', 'min-width': '200px'}, internal-fsb-guid="01b5c328")
                 .container-fluid
                   .row.internal-fsb-strict-layout
                     .internal-fsb-element.-fsb-preset-9edb5748.col-8.offset-2(style={'-fsb-inherited-presets': '9edb5748', 'border-top-color': 'rgba(153, 24, 245, 1)'}, internal-fsb-guid="cb2cd0b9")
@@ -105,7 +105,7 @@ html
                         br
                       div
                         | นอกจากนี้คุณสามารถปรับเปลี่ยนระดับของการเป็นสมาชิก ตั้งแต่ระดับพื้นฐาน (ค่าคอมมิชชั่น 2.5% โดยไม่มีค่าสมาชิกรายเดือน) ไปจนระดับแพลตตินั่ม (ค่าคอมมิชชั่น 0.5% โดยจ่ายค่าสมาชิกรายเดือนสูงสุดเพียงห้าหมื่นบาท) เพื่อทำให้คุณนั้นสามารถสร้างกำไรที่สูงที่สุดสัมพันธ์กับยอดขายของคุณที่ได้รับต่อเดือนได้อีกด้วย
-              .internal-fsb-element.col-3.offset-0(internal-fsb-guid="91cb2020")
+              .internal-fsb-element.col-3.offset-0(style={'max-width': '600px', 'min-width': '200px'}, internal-fsb-guid="91cb2020")
                 .container-fluid
                   .row.internal-fsb-strict-layout
                     .internal-fsb-element.-fsb-preset-9edb5748.col-8.offset-2(style={'-fsb-inherited-presets': '9edb5748', 'border-top-color': 'rgba(153, 24, 245, 1)'}, internal-fsb-guid="4bdcdb34")
@@ -120,7 +120,7 @@ html
                       div
                         span(style={'font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'})
                           | ทั้งนี้สามารถเข้าถึงระบบปฏิสัมพันธ์กับลูกค้าดังกล่าวจากมือถือของพนักงานได้โดยตรงซึ่งจะเชื่อมโยงข้อมูลเข้าด้วยกันและมีหน้า Dashboard ที่สามารถสรุปผลการดำเนินงานของแต่ละพนักงานโดยไม่ต้องทำเองได้อีกด้วย
-        .internal-fsb-element.col-8.offset-2(style={'margin-top': '30px', 'overflow-x': 'hidden', '-ms-overflow-x': 'hidden', 'overflow-y': 'hidden', '-ms-overflow-y': 'hidden', 'padding-left': '0px', 'padding-right': '0px', 'background': 'rgba(153, 24, 245, 0)'}, internal-fsb-guid="5c827d4d")
+        .internal-fsb-element.col-8.d-block.d-sm-block.d-md-block.d-lg-block.d-xl-block.offset-2(style={'margin-top': '30px', 'overflow-x': 'hidden', '-ms-overflow-x': 'hidden', 'overflow-y': 'hidden', '-ms-overflow-y': 'hidden', 'padding-left': '0px', 'padding-right': '0px', 'background': 'rgba(153, 24, 245, 0)', 'display': 'flex', 'flex-wrap': 'wrap', '-webkit-flex-wrap': 'wrap', '-ms-flex-wrap': 'wrap'}, internal-fsb-guid="5c827d4d")
           .container-fluid
             .row.internal-fsb-strict-layout
               .internal-fsb-element.col-4.offset-0.-fsb-self-bb540e9d(internal-fsb-guid="bb540e9d")
@@ -137,7 +137,7 @@ html
                         | ✓ สามารถยื่นข้อเสนอพิเศษสุดได้
                       div
                         | ✓ สามารถแชทคุยกับลูกค้าได้ทีละคน มากกว่านั้นคิดเพิ่ม 1,000 บาทต่อคน
-              .internal-fsb-element.col-4.offset-0.-fsb-preset-bb540e9d(style={'-fsb-inherited-presets': 'bb540e9d'}, internal-fsb-guid="80154d87")
+              .internal-fsb-element.-fsb-preset-bb540e9d.col-4.offset-0(style={'-fsb-inherited-presets': 'bb540e9d', 'min-height': '1244px'}, internal-fsb-guid="80154d87")
                 .container-fluid
                   .row.internal-fsb-strict-layout
                     .internal-fsb-element.col-12.-fsb-preset-39295633(style={'-fsb-inherited-presets': '39295633'}, internal-fsb-guid="e4b845b9")
@@ -168,7 +168,7 @@ html
                         | ✓ สามารถแชทคุยกับลูกค้าได้ไม่จำกัด
                       | ✓ แสดงยอดขายไว้บนสุดของหน้า
                       |                                     
-              .internal-fsb-element.col-12(style={'padding-left': '0px', 'padding-right': '0px'}, internal-fsb-guid="3e836398")
+              .internal-fsb-element.col-12(style={'padding-left': '0px', 'padding-right': '0px', 'display': 'flex', 'flex-wrap': 'wrap', '-webkit-flex-wrap': 'wrap', '-ms-flex-wrap': 'wrap', 'min-width': '400px'}, internal-fsb-guid="3e836398")
                 .container-fluid
                   .row.internal-fsb-strict-layout
                     .internal-fsb-element.col-4.offset-0.-fsb-self-023baa4c(internal-fsb-guid="023baa4c")
