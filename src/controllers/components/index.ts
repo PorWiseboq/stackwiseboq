@@ -279,6 +279,17 @@ class Controller extends Base {
 	  
 	  // Auto[Merging]--->
 
+		RequestHelper.registerInput('537e60db', undefined, undefined, undefined);
+		ValidationHelper.registerInput('537e60db', "Select 2", false, undefined);
+    for (let i=-1; i<128; i++) {
+      input = RequestHelper.getInput(this.pageId, request, '537e60db' + ((i == -1) ? '' : '[' + i + ']'));
+    
+      // Override data parsing and manipulation of Select 2 here:
+      // 
+      
+      if (input != null) data.push(input);
+    }
+
 	  // <---Auto[Merging]
 	  
 	  // Auto[MergingEnd]--->

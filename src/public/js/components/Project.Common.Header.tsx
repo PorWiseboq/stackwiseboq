@@ -92,7 +92,7 @@ class Header extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'float': 'left', 'paddingBottom': '10px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="00ce1665")
+      div(style=Object.assign({'float': 'left', 'paddingBottom': '10px', 'alignSelf': 'center', 'WebkitAlignSelf': 'center', 'flexWrap': 'wrap', 'WebkitFlexWrap': 'wrap', 'MsFlexWrap': 'wrap', 'alignItems': 'center', 'WebkitAlignItems': 'center', 'alignContent': 'center', 'WebkitAlignContent': 'center', 'justifyContent': 'center', 'WebkitJustifyContent': 'center', 'display': 'flex'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element d-block d-sm-block d-md-block d-lg-block d-xl-block " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="00ce1665")
         .container-fluid
           .row.internal-fsb-strict-layout.internal-fsb-allow-cursor
             .internal-fsb-element(style={'width': '210px'}, internal-fsb-guid="61c7ceb8")

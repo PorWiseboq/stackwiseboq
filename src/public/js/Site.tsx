@@ -22,6 +22,8 @@ import './components/Project.Controls.FlowLayout_8542de09.js';
 import './components/Project.Controls.FlowLayout_2d5ecc43.js';
 import './components/Project.Controls.FlowLayout_d2d6431e.js';
 import './components/Project.Controls.FlowLayout_089c5b39.js';
+import './components/Project.Controls.Select_537e60db.js';
+import './components/Project.Controls.FlowLayout_1136ae7c.js';
 
 declare let React: any;
 declare let ReactDOM: any;

@@ -10,7 +10,7 @@ import {IBaseProps, IBaseState, DefaultBaseProps, DefaultBaseState, Button as $B
 // <---Auto[Import]
 
 // Import additional modules here:
-//Project['Controls'] =
+//
 
 // Auto[Declare]--->
 
@@ -27,7 +27,6 @@ let Project = $Project;
 
 // Declare private static variables here:
 //
-Project['Controls'] = Project['Controls'] || {};
 
 // Auto[Interface]--->
 interface IAutoBaseProps extends IBaseProps {
@@ -53,7 +52,7 @@ let DefaultState = Object.assign({}, DefaultBaseState, {
 });
 
 // Auto[ClassBegin]--->
-class NavigationBar extends Base {
+class Select_537e60db extends Base {
   state: IState = null;
   protected static defaultProps: IProps = DefaultProps;
   
@@ -74,10 +73,17 @@ class NavigationBar extends Base {
   protected initialize(): void {
   }
   
+  protected componentDidMount(): void {
+  	this.register();
+  }
+  
+  protected componentWillUnmount(): void {
+  }
+  
   // Providing data array base on dot notation:
   // 
-  protected getDataFromNotation(notation: string): any {
-    return super.getDataFromNotation(notation);
+  protected getDataFromNotation(notation: string, inArray: boolean=false): any {
+    return super.getDataFromNotation(notation, inArray);
   }
   
   // Auto[Merging]--->
@@ -86,19 +92,20 @@ class NavigationBar extends Base {
   // Auto[ClassEnd]--->
   protected render(): any {
     return pug `
-      div(style=Object.assign({'display': 'flex', 'flexWrap': 'wrap', 'WebkitFlexWrap': 'wrap', 'MsFlexWrap': 'wrap', 'justifyContent': 'center', 'WebkitJustifyContent': 'center', 'alignContent': 'center', 'WebkitAlignContent': 'center', 'alignItems': 'center', 'WebkitAlignItems': 'center', 'alignSelf': 'center', 'WebkitAlignSelf': 'center'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element d-block d-sm-block d-md-block d-lg-block d-xl-block " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="535be65e")
-        .container-fluid
-          .row.internal-fsb-strict-layout.internal-fsb-allow-cursor(style={'display': 'block'})
-            - const Project_Common_Header_ = Project.Common.Header;
-            _Project_Common_Header_(forward={'classes': 'offset-lg-0 offset-3', 'styles': {}})
-            - const Project_Controls_Select_537e60db_ = Project.Controls.Select_537e60db;
-            _Project_Controls_Select_537e60db_(forward={'classes': 'col-12 offset-0', 'styles': {}})
-            - const Project_Controls_FlowLayout_1136ae7c_ = Project.Controls.FlowLayout_1136ae7c;
-            _Project_Controls_FlowLayout_1136ae7c_()
+      div(style=Object.assign({padding: '0px'}, this.props.forward && this.props.forward.styles || {}), className="internal-fsb-element d-block d-sm-none d-md-none d-lg-none d-xl-none " + (this.props.forward && this.props.forward.classes || ''), internal-fsb-guid="537e60db")
+        select(style={'display': 'block', 'width': '100%'})
+          option(value="1")
+            | สำหรับผู้ที่ต้องการสั่งซื้อ
+          option(value="2")
+            | สำหรับร้านค้าวัสดุก่อสร้าง
+          option(value="3")
+            | บทความ
+          option(value="4")
+            | เข้าสู่ระบบ
     `
   }
 }
-DeclarationHelper.declare('Site', 'Common.NavigationBar', NavigationBar);
+DeclarationHelper.declare('Site', 'Controls.Select_537e60db', Select_537e60db);
 // <---Auto[ClassEnd]
 
 // Export variables here:
