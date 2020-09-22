@@ -333,6 +333,7 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
     
       // Override data parsing and manipulation of Hidden 6 here:
       // 
+      if (input) input.value = this.request.params.qid;
       
       if (input != null) data.push(input);
     }
@@ -343,6 +344,7 @@ WHERE (D.notice2 IS NULL AND C.total != 0) OR (D.notice2 IS NOT NULL AND C.total
     
       // Override data parsing and manipulation of Hidden 2 here:
       // 
+      if (input) input.value = this.request.params.sid;
       
       if (input != null) data.push(input);
     }
